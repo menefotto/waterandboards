@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, Container, Menu} from 'semantic-ui-react';
+import FontAwesome from 'react-fontawesome';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 injectTapEventPlugin();
 
-import {MenuPublic, MenuPrivate} from './menu.js'
-import CustomGrid from './geargrid.js'
+import {
+   CustomAppBar,
+   CustomGridList,
+} from './components.js'
 
-var MainComponent = React.createClass({
-  render: function () {
-    return <Container fluid>
-      <MenuPrivate/>
-      <CustomGrid/>
-    </Container>
-  }
-})
+const App = () => (
+  <MuiThemeProvider>
+    <div> 
+      <CustomAppBar />
+      <CustomGridList />
+    </div>
+  </MuiThemeProvider>
+)
 
-ReactDOM.render(
-  <MainComponent/>, document.getElementById('content'))
+ReactDOM.render(<App/>, document.getElementById('content'))
