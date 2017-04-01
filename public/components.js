@@ -1,27 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import AppBar from 'material-ui/AppBar';
+import Avatar from 'material-ui/Avatar';
+import Drawer from 'material-ui/Drawer';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import {Card, CardHeader, CardTitle, CardActions, CardMedia, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import Chip from 'material-ui/Chip';
+import AutoComplete from 'material-ui/AutoComplete';
+import Paper from 'material-ui/Paper';
+
 import FontAwesome from 'react-fontawesome';
-import {
-    AppBar, 
-    Avatar,
-    Drawer,
-    IconButton,
-    GridList,
-    GridTile,
-    Card,
-    CardHeader,
-    CardMedia,
-    CardTitle,
-    CardText,
-    CardActions,
-    FlatButton,
-    Chip,
-    AutoComplete,
-    Paper,
-} from 'material-ui'
-import NavigationClose from 'material-ui/svg-icons/navigation/close'
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 
+// social bar style and layout
 const iconStyle = {
     social: {
         marginRight: 12,
@@ -45,7 +41,10 @@ const SocialBar = () => (
         <FontAwesome name="facebook-official" size="2x" style={iconStyle.social} />
     </div>
 )
+// end social bar --------------------------------------
 
+
+// chips layout and style
 const itemStyles = {
   chip: {
     margin: 4,
@@ -64,49 +63,83 @@ const ItemChips = () => (
       <Chip style={itemStyles.chip} > Price: 1900$ </Chip>
     </div>
 )
+// chip style and layout end -------------------------------
 
-const YouTubeEmbed = () => (
-    <div style={{marginLeft: "2.5%"}}>
-        <iframe 
-            width="640" 
-            height="360" 
-            frameBorder="0"
-            src="https://www.youtube.com/embed/kI1-E6Bm-70?controls=1">
-        </iframe>
-    </div>
-)
 
-// Card with avatar goes inside the grid as main element and contains the videos
+// youtube embed
+class YouTubeEmbed extends React.Component {
+ 
+    render(){
+        var source = "https://www.youtube.com/embed/" +
+        this.props.videoid + "?controls=1";
+        return(
+            <div style={{marginLeft: "2.5%"}}>
+                <iframe 
+                    width="640" 
+                    height="360" 
+                    frameBorder="0"
+                    src={source}>
+                </iframe>
+            </div>
+        )
+    }
+}
+// end youtube embed -----------------------------------------
+
+
+// card with avatar and style
+const cardStyle = {
+    paper: {
+        marginBottom: 20,
+        marginTop: 20,
+        width: 680,
+    },
+    header : {
+        marginLeft: 5,
+    },
+    title : {
+        marginLeft: 5,
+        height: 15,
+    },
+}
+
 const CardWithAvatar = () => (
-    <Paper zDepth={1}>
+    <Paper zDepth={1} style={cardStyle.paper}>
       <Card>
         <CardHeader
         title="Avatar Name Url"
         subtitle="added item XXX time ago"
         avatar="images/avatar.jpg"
+        style={cardStyle.header}
         />
         <CardMedia>
-            <YouTubeEmbed/>
+            <YouTubeEmbed videoid="7AsiCX4Z4Eo"/>
         </CardMedia>
-        <CardTitle title="Simmer Quantum 85lt" />
+            <CardTitle 
+                title="Simmer Quantum 85lt" 
+                style={cardStyle.title}
+            />
         <CardText>
             <ItemChips/>
         </CardText>
         <CardActions>
-        <SocialBar />
+            <SocialBar />
         </CardActions>
       </Card>
     </Paper>
 );
+// card with avatar end -----------------------------------------
 
+
+// search style and data source
 const source = ["board","sails","misc"]
 const searchStyle = {
     paper: {
         align: "center",
-        width: "100%",
+        width: 680,
+        height: 50,
         marginTop : 20,
-        marginLeft: "26%",
-        marginRight: "26%",
+        marginBottom: 20,
         backgroundColor: "#FFFFFF",
     },
     input: {
@@ -123,13 +156,14 @@ const SearchBar = () => (
                 fullWidth={true} 
                 dataSource={source} 
                 hintText="Search for windsurf gear"
-                style={searchStyle.input}
             />
         </Paper>
     </div>
 )
+// end search style and data source ------------------------------
 
-// Grid styles
+
+// Grid style and layout 
 const gridStyles = {
   root: {
     display: 'flex',
@@ -138,7 +172,7 @@ const gridStyles = {
   },
   gridList: {
     marginTop: 20,
-    width: 680,
+    width: 720,
     height: 1000,
     overflowY: 'auto',
   },
@@ -148,8 +182,8 @@ const gridStyles = {
 // Actual grid
 const CustomGridList = () => (
   <div style={gridStyles.root}>
+    <GridList cellHeight='auto' cols={1} style={gridStyles.gridList} >
         <SearchBar />
-    <GridList cellHeight={680} cols={1} style={gridStyles.gridList} >
         <GridTile>
             <CardWithAvatar/>
         </GridTile>
@@ -161,25 +195,46 @@ const CustomGridList = () => (
         </GridTile>
         <GridTile>
             <CardWithAvatar/>
-        </GridTile>
-    </GridList>
+        </GridTile> 
+    </GridList> 
   </div>
 )
+// end grid style and layout ---------------------------------------
 
+
+// app bar style and layout
 const barStyle = {
-    right: {
-        marginTop: 3,
+    rightLogin: {
+        marginTop: 4,
+        marginRight: 96,
+    },
+    rightLogged: {
+        marginTop: 4,
         marginRight: 96,
     },
     left: {
-        marginTop: 3,
+        marginTop: 4,
         marginLeft: 96,
     },
+    title: {
+        fontFamily: "'Architects Daughter', cursive"
+    }
 }
-// Top app bar contains a drawer as well
+
+const Logged = () => (
+    < Avatar style={barStyle.right} src="images/avatar.jpg" />
+)
+
+const Login = () => (
+    <RaisedButton default={true} style={barStyle.rightLogin} >
+        Login
+    </RaisedButton>
+)
+
 class CustomAppBar extends React.Component {
     state = { 
-        open: false, 
+        open: false,
+        logged: false,
     }
 
     constructor(props) {
@@ -188,6 +243,7 @@ class CustomAppBar extends React.Component {
     }
 
     handleClose = () => this.setState({open: false});
+    handleChange = (event, logged) => { this.setState({logged: logged});};
     handleToggle = () => this.setState({open: !this.state.open});
 
     render() {
@@ -195,7 +251,8 @@ class CustomAppBar extends React.Component {
             <div>
                 <AppBar
                     title={<span> WaterAndBoards </span>}
-                    iconElementRight={< Avatar style={barStyle.right} src="images/avatar.jpg" />}
+                    titleStyle={barStyle.title}
+                    iconElementRight={this.state.logged ? <Logged /> : <Login />}
                     iconElementLeft={< Avatar style={barStyle.left} src="images/waterdrop.png" />} 
                     onRightIconButtonTouchTap={this.handleToggle}
                 />
@@ -209,5 +266,7 @@ class CustomAppBar extends React.Component {
         )
     }
 }
+//  app bar end ----------------------------------------------------
+
 
 export {CustomAppBar, CustomGridList};

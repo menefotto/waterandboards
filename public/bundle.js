@@ -381,7 +381,7 @@ process.env.NODE_ENV !== "production" ? AppBar.propTypes = {
 } : void 0;
 exports.default = AppBar;
 }).call(this,require('_process'))
-},{"../IconButton":57,"../Paper":73,"../svg-icons/navigation/menu":347,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/core-js/object/keys":164,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326,"warning":327}],2:[function(require,module,exports){
+},{"../IconButton":30,"../Paper":40,"../svg-icons/navigation/menu":245,"../utils/propTypes":254,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/core-js/object/keys":71,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228,"warning":229}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1076,7 +1076,7 @@ AutoComplete.Divider = _Divider2.default;
 
 exports.default = AutoComplete;
 }).call(this,require('_process'))
-},{"../Divider":41,"../Menu":68,"../MenuItem":71,"../Popover/Popover":74,"../TextField":120,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/typeof":178,"keycode":305,"react":559,"react-dom":364,"simple-assign":326}],4:[function(require,module,exports){
+},{"../Divider":18,"../Menu":35,"../MenuItem":38,"../Popover/Popover":41,"../TextField":54,"../utils/propTypes":254,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"babel-runtime/helpers/typeof":84,"keycode":207,"react":451,"react-dom":256,"simple-assign":228}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1260,7 +1260,7 @@ process.env.NODE_ENV !== "production" ? Avatar.propTypes = {
 } : void 0;
 exports.default = Avatar;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],6:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1276,420 +1276,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _Avatar2.default;
 },{"./Avatar":5}],7:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var primary = props.primary,
-      secondary = props.secondary;
-  var badge = context.muiTheme.badge;
-
-
-  var badgeBackgroundColor = void 0;
-  var badgeTextColor = void 0;
-
-  if (primary) {
-    badgeBackgroundColor = badge.primaryColor;
-    badgeTextColor = badge.primaryTextColor;
-  } else if (secondary) {
-    badgeBackgroundColor = badge.secondaryColor;
-    badgeTextColor = badge.secondaryTextColor;
-  } else {
-    badgeBackgroundColor = badge.color;
-    badgeTextColor = badge.textColor;
-  }
-
-  var radius = 12;
-  var radius2x = Math.floor(2 * radius);
-
-  return {
-    root: {
-      position: 'relative',
-      display: 'inline-block',
-      padding: radius2x + 'px ' + radius2x + 'px ' + radius + 'px ' + radius + 'px'
-    },
-    badge: {
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      alignContent: 'center',
-      alignItems: 'center',
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      fontWeight: badge.fontWeight,
-      fontSize: radius,
-      width: radius2x,
-      height: radius2x,
-      borderRadius: '50%',
-      backgroundColor: badgeBackgroundColor,
-      color: badgeTextColor
-    }
-  };
-}
-
-var Badge = function (_Component) {
-  (0, _inherits3.default)(Badge, _Component);
-
-  function Badge() {
-    (0, _classCallCheck3.default)(this, Badge);
-    return (0, _possibleConstructorReturn3.default)(this, (Badge.__proto__ || (0, _getPrototypeOf2.default)(Badge)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(Badge, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          badgeContent = _props.badgeContent,
-          badgeStyle = _props.badgeStyle,
-          children = _props.children,
-          primary = _props.primary,
-          secondary = _props.secondary,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['badgeContent', 'badgeStyle', 'children', 'primary', 'secondary', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, style)) }),
-        children,
-        _react2.default.createElement(
-          'span',
-          { style: prepareStyles((0, _simpleAssign2.default)({}, styles.badge, badgeStyle)) },
-          badgeContent
-        )
-      );
-    }
-  }]);
-  return Badge;
-}(_react.Component);
-
-Badge.defaultProps = {
-  primary: false,
-  secondary: false
-};
-Badge.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Badge.propTypes = {
-  /**
-   * This is the content rendered within the badge.
-   */
-  badgeContent: _react.PropTypes.node.isRequired,
-  /**
-   * Override the inline-styles of the badge element.
-   */
-  badgeStyle: _react.PropTypes.object,
-  /**
-   * The badge will be added relativelty to this node.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * If true, the badge will use the primary badge colors.
-   */
-  primary: _react.PropTypes.bool,
-  /**
-   * If true, the badge will use the secondary badge colors.
-   */
-  secondary: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = Badge;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],8:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _Badge = require('./Badge');
-
-var _Badge2 = _interopRequireDefault(_Badge);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _Badge2.default;
-},{"./Badge":7}],9:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var bottomNavigation = context.muiTheme.bottomNavigation;
-
-
-  var styles = {
-    root: {
-      position: 'relative',
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      backgroundColor: bottomNavigation.backgroundColor,
-      height: bottomNavigation.height
-    },
-    item: {
-      flex: '1'
-    }
-  };
-
-  return styles;
-}
-
-var BottomNavigation = function BottomNavigation(props, context) {
-  var children = props.children,
-      style = props.style,
-      selectedIndex = props.selectedIndex,
-      other = (0, _objectWithoutProperties3.default)(props, ['children', 'style', 'selectedIndex']);
-  var prepareStyles = context.muiTheme.prepareStyles;
-
-  var styles = getStyles(props, context);
-
-  var preparedChildren = _react.Children.map(children, function (child, index) {
-    return (0, _react.cloneElement)(child, {
-      style: (0, _simpleAssign2.default)({}, styles.item, child.props.style),
-      selected: index === selectedIndex
-    });
-  });
-
-  return _react2.default.createElement(
-    'div',
-    (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, style)) }),
-    preparedChildren
-  );
-};
-
-process.env.NODE_ENV !== "production" ? BottomNavigation.propTypes = {
-  /**
-   * The `BottomNavigationItem`s to populate the element with.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The index of the currently selected navigation item.
-   */
-  selectedIndex: _react.PropTypes.number,
-  /**
-   * @ignore
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-
-BottomNavigation.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-
-exports.default = BottomNavigation;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/objectWithoutProperties":173,"react":559,"simple-assign":326}],10:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _EnhancedButton = require('../internal/EnhancedButton');
-
-var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var selected = props.selected;
-  var bottomNavigation = context.muiTheme.bottomNavigation;
-
-
-  var color = selected ? bottomNavigation.selectedColor : bottomNavigation.unselectedColor;
-
-  var styles = {
-    root: {
-      transition: 'padding-top 0.3s',
-      paddingTop: selected ? 6 : 8,
-      paddingBottom: 10,
-      paddingLeft: 12,
-      paddingRight: 12,
-      minWidth: 80,
-      maxWidth: 168
-    },
-    label: {
-      fontSize: selected ? bottomNavigation.selectedFontSize : bottomNavigation.unselectedFontSize,
-      transition: 'color 0.3s, font-size 0.3s',
-      color: color
-    },
-    icon: {
-      display: 'block',
-      /**
-       * Used to ensure SVG icons are centered
-       */
-      width: '100%'
-    },
-    iconColor: color
-  };
-
-  return styles;
-}
-
-var BottomNavigationItem = function BottomNavigationItem(props, context) {
-  var label = props.label,
-      icon = props.icon,
-      style = props.style,
-      other = (0, _objectWithoutProperties3.default)(props, ['label', 'icon', 'style']);
-  var prepareStyles = context.muiTheme.prepareStyles;
-
-  var styles = getStyles(props, context);
-
-  var styledIcon = (0, _react.cloneElement)(icon, {
-    style: (0, _simpleAssign2.default)({}, styles.icon, icon.props.style),
-    color: icon.props.color || styles.iconColor
-  });
-
-  return _react2.default.createElement(
-    _EnhancedButton2.default,
-    (0, _extends3.default)({}, other, { style: (0, _simpleAssign2.default)({}, styles.root, style) }),
-    styledIcon,
-    _react2.default.createElement(
-      'div',
-      { style: prepareStyles(styles.label) },
-      label
-    )
-  );
-};
-
-process.env.NODE_ENV !== "production" ? BottomNavigationItem.propTypes = {
-  /**
-   * Set the icon representing the view for this item.
-   */
-  icon: _react.PropTypes.node,
-  /**
-   * Set the label describing the view for this item.
-   */
-  label: _react.PropTypes.node,
-  /**
-   * @ignore
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-
-BottomNavigationItem.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-
-exports.default = BottomNavigationItem;
-}).call(this,require('_process'))
-},{"../internal/EnhancedButton":144,"_process":560,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/objectWithoutProperties":173,"react":559,"simple-assign":326}],11:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.BottomNavigationItem = exports.BottomNavigation = undefined;
-
-var _BottomNavigation2 = require('./BottomNavigation');
-
-var _BottomNavigation3 = _interopRequireDefault(_BottomNavigation2);
-
-var _BottomNavigationItem2 = require('./BottomNavigationItem');
-
-var _BottomNavigationItem3 = _interopRequireDefault(_BottomNavigationItem2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.BottomNavigation = _BottomNavigation3.default;
-exports.BottomNavigationItem = _BottomNavigationItem3.default;
-exports.default = _BottomNavigation3.default;
-},{"./BottomNavigation":9,"./BottomNavigationItem":10}],12:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1906,7 +1492,7 @@ process.env.NODE_ENV !== "production" ? Card.propTypes = {
 } : void 0;
 exports.default = Card;
 }).call(this,require('_process'))
-},{"../Paper":73,"./CardExpandable":14,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],13:[function(require,module,exports){
+},{"../Paper":40,"./CardExpandable":9,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],8:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2030,7 +1616,7 @@ process.env.NODE_ENV !== "production" ? CardActions.propTypes = {
 } : void 0;
 exports.default = CardActions;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],14:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],9:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2134,7 +1720,7 @@ process.env.NODE_ENV !== "production" ? CardExpandable.propTypes = {
 } : void 0;
 exports.default = CardExpandable;
 }).call(this,require('_process'))
-},{"../IconButton":57,"../svg-icons/hardware/keyboard-arrow-down":337,"../svg-icons/hardware/keyboard-arrow-up":338,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],15:[function(require,module,exports){
+},{"../IconButton":30,"../svg-icons/hardware/keyboard-arrow-down":238,"../svg-icons/hardware/keyboard-arrow-up":239,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],10:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2358,7 +1944,7 @@ process.env.NODE_ENV !== "production" ? CardHeader.propTypes = {
 } : void 0;
 exports.default = CardHeader;
 }).call(this,require('_process'))
-},{"../Avatar":6,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],16:[function(require,module,exports){
+},{"../Avatar":6,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],11:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2566,7 +2152,7 @@ process.env.NODE_ENV !== "production" ? CardMedia.propTypes = {
 } : void 0;
 exports.default = CardMedia;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],17:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],12:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2686,7 +2272,7 @@ process.env.NODE_ENV !== "production" ? CardText.propTypes = {
 } : void 0;
 exports.default = CardText;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],18:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],13:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2858,7 +2444,7 @@ process.env.NODE_ENV !== "production" ? CardTitle.propTypes = {
 } : void 0;
 exports.default = CardTitle;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],19:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2904,315 +2490,7 @@ exports.CardText = _CardText3.default;
 exports.CardActions = _CardActions3.default;
 exports.CardExpandable = _CardExpandable3.default;
 exports.default = _Card3.default;
-},{"./Card":12,"./CardActions":13,"./CardExpandable":14,"./CardHeader":15,"./CardMedia":16,"./CardText":17,"./CardTitle":18}],20:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _EnhancedSwitch = require('../internal/EnhancedSwitch');
-
-var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _checkBoxOutlineBlank = require('../svg-icons/toggle/check-box-outline-blank');
-
-var _checkBoxOutlineBlank2 = _interopRequireDefault(_checkBoxOutlineBlank);
-
-var _checkBox = require('../svg-icons/toggle/check-box');
-
-var _checkBox2 = _interopRequireDefault(_checkBox);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var checkbox = context.muiTheme.checkbox;
-
-  var checkboxSize = 24;
-
-  return {
-    icon: {
-      height: checkboxSize,
-      width: checkboxSize
-    },
-    check: {
-      position: 'absolute',
-      opacity: 0,
-      transform: 'scale(0)',
-      transitionOrigin: '50% 50%',
-      transition: _transitions2.default.easeOut('450ms', 'opacity', '0ms') + ', ' + _transitions2.default.easeOut('0ms', 'transform', '450ms'),
-      fill: checkbox.checkedColor
-    },
-    checkWhenSwitched: {
-      opacity: 1,
-      transform: 'scale(1)',
-      transition: _transitions2.default.easeOut('0ms', 'opacity', '0ms') + ', ' + _transitions2.default.easeOut('800ms', 'transform', '0ms')
-    },
-    checkWhenDisabled: {
-      fill: checkbox.disabledColor
-    },
-    box: {
-      position: 'absolute',
-      opacity: 1,
-      fill: checkbox.boxColor,
-      transition: _transitions2.default.easeOut('1000ms', 'opacity', '200ms')
-    },
-    boxWhenSwitched: {
-      opacity: 0,
-      transition: _transitions2.default.easeOut('650ms', 'opacity', '150ms'),
-      fill: checkbox.checkedColor
-    },
-    boxWhenDisabled: {
-      fill: props.checked ? 'transparent' : checkbox.disabledColor
-    },
-    label: {
-      color: props.disabled ? checkbox.labelDisabledColor : checkbox.labelColor
-    }
-  };
-}
-
-var Checkbox = function (_Component) {
-  (0, _inherits3.default)(Checkbox, _Component);
-
-  function Checkbox() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Checkbox);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Checkbox.__proto__ || (0, _getPrototypeOf2.default)(Checkbox)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      switched: false
-    }, _this.handleStateChange = function (newSwitched) {
-      _this.setState({
-        switched: newSwitched
-      });
-    }, _this.handleCheck = function (event, isInputChecked) {
-      if (_this.props.onCheck) {
-        _this.props.onCheck(event, isInputChecked);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Checkbox, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var _props = this.props,
-          checked = _props.checked,
-          defaultChecked = _props.defaultChecked,
-          valueLink = _props.valueLink;
-
-
-      if (checked || defaultChecked || valueLink && valueLink.value) {
-        this.setState({
-          switched: true
-        });
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (this.props.checked !== nextProps.checked) {
-        this.setState({
-          switched: nextProps.checked
-        });
-      }
-    }
-  }, {
-    key: 'isChecked',
-    value: function isChecked() {
-      return this.refs.enhancedSwitch.isSwitched();
-    }
-  }, {
-    key: 'setChecked',
-    value: function setChecked(newCheckedValue) {
-      this.refs.enhancedSwitch.setSwitched(newCheckedValue);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props2 = this.props,
-          iconStyle = _props2.iconStyle,
-          onCheck = _props2.onCheck,
-          checkedIcon = _props2.checkedIcon,
-          uncheckedIcon = _props2.uncheckedIcon,
-          other = (0, _objectWithoutProperties3.default)(_props2, ['iconStyle', 'onCheck', 'checkedIcon', 'uncheckedIcon']);
-
-      var styles = getStyles(this.props, this.context);
-      var boxStyles = (0, _simpleAssign2.default)(styles.box, this.state.switched && styles.boxWhenSwitched, iconStyle, this.props.disabled && styles.boxWhenDisabled);
-      var checkStyles = (0, _simpleAssign2.default)(styles.check, this.state.switched && styles.checkWhenSwitched, iconStyle, this.props.disabled && styles.checkWhenDisabled);
-
-      var checkedElement = checkedIcon ? _react2.default.cloneElement(checkedIcon, {
-        style: (0, _simpleAssign2.default)(checkStyles, checkedIcon.props.style)
-      }) : _react2.default.createElement(_checkBox2.default, {
-        style: checkStyles
-      });
-
-      var unCheckedElement = uncheckedIcon ? _react2.default.cloneElement(uncheckedIcon, {
-        style: (0, _simpleAssign2.default)(boxStyles, uncheckedIcon.props.style)
-      }) : _react2.default.createElement(_checkBoxOutlineBlank2.default, {
-        style: boxStyles
-      });
-
-      var checkboxElement = _react2.default.createElement(
-        'div',
-        null,
-        unCheckedElement,
-        checkedElement
-      );
-
-      var rippleColor = this.state.switched ? checkStyles.fill : boxStyles.fill;
-      var mergedIconStyle = (0, _simpleAssign2.default)(styles.icon, iconStyle);
-
-      var labelStyle = (0, _simpleAssign2.default)(styles.label, this.props.labelStyle);
-
-      var enhancedSwitchProps = {
-        ref: 'enhancedSwitch',
-        inputType: 'checkbox',
-        switched: this.state.switched,
-        switchElement: checkboxElement,
-        rippleColor: rippleColor,
-        iconStyle: mergedIconStyle,
-        onSwitch: this.handleCheck,
-        labelStyle: labelStyle,
-        onParentShouldUpdate: this.handleStateChange,
-        labelPosition: this.props.labelPosition
-      };
-
-      return _react2.default.createElement(_EnhancedSwitch2.default, (0, _extends3.default)({}, other, enhancedSwitchProps));
-    }
-  }]);
-  return Checkbox;
-}(_react.Component);
-
-Checkbox.defaultProps = {
-  labelPosition: 'right',
-  disabled: false
-};
-Checkbox.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Checkbox.propTypes = {
-  /**
-   * Checkbox is checked if true.
-   */
-  checked: _react.PropTypes.bool,
-  /**
-   * The SvgIcon to use for the checked state.
-   * This is useful to create icon toggles.
-   */
-  checkedIcon: _react.PropTypes.element,
-  /**
-   * The default state of our checkbox component.
-   * **Warning:** This cannot be used in conjunction with `checked`.
-   * Decide between using a controlled or uncontrolled input element and remove one of these props.
-   * More info: https://fb.me/react-controlled-components
-   */
-  defaultChecked: _react.PropTypes.bool,
-  /**
-   * Disabled if true.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * Overrides the inline-styles of the icon element.
-   */
-  iconStyle: _react.PropTypes.object,
-  /**
-   * Overrides the inline-styles of the input element.
-   */
-  inputStyle: _react.PropTypes.object,
-  /**
-   * Where the label will be placed next to the checkbox.
-   */
-  labelPosition: _react.PropTypes.oneOf(['left', 'right']),
-  /**
-   * Overrides the inline-styles of the Checkbox element label.
-   */
-  labelStyle: _react.PropTypes.object,
-  /**
-   * Callback function that is fired when the checkbox is checked.
-   *
-   * @param {object} event `change` event targeting the underlying checkbox `input`.
-   * @param {boolean} isInputChecked The `checked` value of the underlying checkbox `input`.
-   */
-  onCheck: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The SvgIcon to use for the unchecked state.
-   * This is useful to create icon toggles.
-   */
-  uncheckedIcon: _react.PropTypes.element,
-  /**
-   * ValueLink for when using controlled checkbox.
-   */
-  valueLink: _react.PropTypes.object
-} : void 0;
-exports.default = Checkbox;
-}).call(this,require('_process'))
-},{"../internal/EnhancedSwitch":145,"../styles/transitions":333,"../svg-icons/toggle/check-box":349,"../svg-icons/toggle/check-box-outline-blank":348,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],21:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _Checkbox = require('./Checkbox');
-
-var _Checkbox2 = _interopRequireDefault(_Checkbox);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _Checkbox2.default;
-},{"./Checkbox":20}],22:[function(require,module,exports){
+},{"./Card":7,"./CardActions":8,"./CardExpandable":9,"./CardHeader":10,"./CardMedia":11,"./CardText":12,"./CardTitle":13}],15:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3558,7 +2836,7 @@ process.env.NODE_ENV !== "production" ? Chip.propTypes = {
 } : void 0;
 exports.default = Chip;
 }).call(this,require('_process'))
-},{"../internal/EnhancedButton":144,"../svg-icons/navigation/cancel":340,"../utils/colorManipulator":356,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"simple-assign":326}],23:[function(require,module,exports){
+},{"../internal/EnhancedButton":58,"../svg-icons/navigation/cancel":240,"../utils/colorManipulator":250,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"keycode":207,"react":451,"simple-assign":228}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3573,3428 +2851,7 @@ var _Chip2 = _interopRequireDefault(_Chip);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Chip2.default;
-},{"./Chip":22}],24:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _autoPrefix = require('../utils/autoPrefix');
-
-var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getRelativeValue(value, min, max) {
-  var clampedValue = Math.min(Math.max(min, value), max);
-  return clampedValue / (max - min);
-}
-
-function getArcLength(fraction, props) {
-  return fraction * Math.PI * (props.size - props.thickness);
-}
-
-function getStyles(props, context) {
-  var max = props.max,
-      min = props.min,
-      size = props.size,
-      value = props.value;
-  var palette = context.muiTheme.baseTheme.palette;
-
-
-  var styles = {
-    root: {
-      position: 'relative',
-      display: 'inline-block',
-      width: size,
-      height: size
-    },
-    wrapper: {
-      width: size,
-      height: size,
-      display: 'inline-block',
-      transition: _transitions2.default.create('transform', '20s', null, 'linear'),
-      transitionTimingFunction: 'linear'
-    },
-    svg: {
-      width: size,
-      height: size,
-      position: 'relative'
-    },
-    path: {
-      stroke: props.color || palette.primary1Color,
-      strokeLinecap: 'round',
-      transition: _transitions2.default.create('all', '1.5s', null, 'ease-in-out')
-    }
-  };
-
-  if (props.mode === 'determinate') {
-    var relVal = getRelativeValue(value, min, max);
-    styles.path.transition = _transitions2.default.create('all', '0.3s', null, 'linear');
-    styles.path.strokeDasharray = getArcLength(relVal, props) + ', ' + getArcLength(1, props);
-  }
-
-  return styles;
-}
-
-var CircularProgress = function (_Component) {
-  (0, _inherits3.default)(CircularProgress, _Component);
-
-  function CircularProgress() {
-    (0, _classCallCheck3.default)(this, CircularProgress);
-    return (0, _possibleConstructorReturn3.default)(this, (CircularProgress.__proto__ || (0, _getPrototypeOf2.default)(CircularProgress)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(CircularProgress, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.scalePath(this.refs.path);
-      this.rotateWrapper(this.refs.wrapper);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.scalePathTimer);
-      clearTimeout(this.rotateWrapperTimer);
-    }
-  }, {
-    key: 'scalePath',
-    value: function scalePath(path) {
-      var _this2 = this;
-
-      var step = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-      if (this.props.mode !== 'indeterminate') return;
-
-      step %= 3;
-
-      if (step === 0) {
-        path.style.strokeDasharray = getArcLength(0, this.props) + ', ' + getArcLength(1, this.props);
-        path.style.strokeDashoffset = 0;
-        path.style.transitionDuration = '0ms';
-      } else if (step === 1) {
-        path.style.strokeDasharray = getArcLength(0.7, this.props) + ', ' + getArcLength(1, this.props);
-        path.style.strokeDashoffset = getArcLength(-0.3, this.props);
-        path.style.transitionDuration = '750ms';
-      } else {
-        path.style.strokeDasharray = getArcLength(0.7, this.props) + ', ' + getArcLength(1, this.props);
-        path.style.strokeDashoffset = getArcLength(-1, this.props);
-        path.style.transitionDuration = '850ms';
-      }
-
-      this.scalePathTimer = setTimeout(function () {
-        return _this2.scalePath(path, step + 1);
-      }, step ? 750 : 250);
-    }
-  }, {
-    key: 'rotateWrapper',
-    value: function rotateWrapper(wrapper) {
-      var _this3 = this;
-
-      if (this.props.mode !== 'indeterminate') return;
-
-      _autoPrefix2.default.set(wrapper.style, 'transform', 'rotate(0deg)');
-      _autoPrefix2.default.set(wrapper.style, 'transitionDuration', '0ms');
-
-      setTimeout(function () {
-        _autoPrefix2.default.set(wrapper.style, 'transform', 'rotate(1800deg)');
-        _autoPrefix2.default.set(wrapper.style, 'transitionDuration', '10s');
-        _autoPrefix2.default.set(wrapper.style, 'transitionTimingFunction', 'linear');
-      }, 50);
-
-      this.rotateWrapperTimer = setTimeout(function () {
-        return _this3.rotateWrapper(wrapper);
-      }, 10050);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          style = _props.style,
-          innerStyle = _props.innerStyle,
-          size = _props.size,
-          thickness = _props.thickness,
-          other = (0, _objectWithoutProperties3.default)(_props, ['style', 'innerStyle', 'size', 'thickness']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }),
-        _react2.default.createElement(
-          'div',
-          { ref: 'wrapper', style: prepareStyles((0, _simpleAssign2.default)(styles.wrapper, innerStyle)) },
-          _react2.default.createElement(
-            'svg',
-            {
-              viewBox: '0 0 ' + size + ' ' + size,
-              style: prepareStyles(styles.svg)
-            },
-            _react2.default.createElement('circle', {
-              ref: 'path',
-              style: prepareStyles(styles.path),
-              cx: size / 2,
-              cy: size / 2,
-              r: (size - thickness) / 2,
-              fill: 'none',
-              strokeWidth: thickness,
-              strokeMiterlimit: '20'
-            })
-          )
-        )
-      );
-    }
-  }]);
-  return CircularProgress;
-}(_react.Component);
-
-CircularProgress.defaultProps = {
-  mode: 'indeterminate',
-  value: 0,
-  min: 0,
-  max: 100,
-  size: 40,
-  thickness: 3.5
-};
-CircularProgress.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? CircularProgress.propTypes = {
-  /**
-   * Override the progress's color.
-   */
-  color: _react.PropTypes.string,
-  /**
-   * Style for inner wrapper div.
-   */
-  innerStyle: _react.PropTypes.object,
-  /**
-   * The max value of progress, only works in determinate mode.
-   */
-  max: _react.PropTypes.number,
-  /**
-   * The min value of progress, only works in determinate mode.
-   */
-  min: _react.PropTypes.number,
-  /**
-   * The mode of show your progress, indeterminate
-   * for when there is no value for progress.
-   */
-  mode: _react.PropTypes.oneOf(['determinate', 'indeterminate']),
-  /**
-   * The diameter of the progress in pixels.
-   */
-  size: _react.PropTypes.number,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Stroke width in pixels.
-   */
-  thickness: _react.PropTypes.number,
-  /**
-   * The value of progress, only works in determinate mode.
-   */
-  value: _react.PropTypes.number
-} : void 0;
-exports.default = CircularProgress;
-}).call(this,require('_process'))
-},{"../styles/transitions":333,"../utils/autoPrefix":352,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],25:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _CircularProgress = require('./CircularProgress');
-
-var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _CircularProgress2.default;
-},{"./CircularProgress":24}],26:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactEventListener = require('react-event-listener');
-
-var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
-
-var _keycode = require('keycode');
-
-var _keycode2 = _interopRequireDefault(_keycode);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _CalendarActionButtons = require('./CalendarActionButtons');
-
-var _CalendarActionButtons2 = _interopRequireDefault(_CalendarActionButtons);
-
-var _CalendarMonth = require('./CalendarMonth');
-
-var _CalendarMonth2 = _interopRequireDefault(_CalendarMonth);
-
-var _CalendarYear = require('./CalendarYear');
-
-var _CalendarYear2 = _interopRequireDefault(_CalendarYear);
-
-var _CalendarToolbar = require('./CalendarToolbar');
-
-var _CalendarToolbar2 = _interopRequireDefault(_CalendarToolbar);
-
-var _DateDisplay = require('./DateDisplay');
-
-var _DateDisplay2 = _interopRequireDefault(_DateDisplay);
-
-var _SlideIn = require('../internal/SlideIn');
-
-var _SlideIn2 = _interopRequireDefault(_SlideIn);
-
-var _dateUtils = require('./dateUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var daysArray = [].concat((0, _toConsumableArray3.default)(Array(7)));
-
-var Calendar = function (_Component) {
-  (0, _inherits3.default)(Calendar, _Component);
-
-  function Calendar() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Calendar);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Calendar.__proto__ || (0, _getPrototypeOf2.default)(Calendar)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      displayDate: undefined,
-      displayMonthDay: true,
-      selectedDate: undefined,
-      transitionDirection: 'left',
-      transitionEnter: true
-    }, _this.handleTouchTapDay = function (event, date) {
-      _this.setSelectedDate(date);
-      if (_this.props.onTouchTapDay) _this.props.onTouchTapDay(event, date);
-    }, _this.handleMonthChange = function (months) {
-      _this.setState({
-        transitionDirection: months >= 0 ? 'left' : 'right',
-        displayDate: (0, _dateUtils.addMonths)(_this.state.displayDate, months)
-      });
-    }, _this.handleTouchTapYear = function (event, year) {
-      var date = (0, _dateUtils.cloneDate)(_this.state.selectedDate);
-      date.setFullYear(year);
-      _this.setSelectedDate(date, event);
-      _this.handleTouchTapDateDisplayMonthDay();
-    }, _this.handleTouchTapDateDisplayMonthDay = function () {
-      _this.setState({
-        displayMonthDay: true
-      });
-    }, _this.handleTouchTapDateDisplayYear = function () {
-      _this.setState({
-        displayMonthDay: false
-      });
-    }, _this.handleWindowKeyDown = function (event) {
-      if (_this.props.open) {
-        switch ((0, _keycode2.default)(event)) {
-          case 'up':
-            if (event.altKey && event.shiftKey) {
-              _this.addSelectedYears(-1);
-            } else if (event.shiftKey) {
-              _this.addSelectedMonths(-1);
-            } else {
-              _this.addSelectedDays(-7);
-            }
-            break;
-
-          case 'down':
-            if (event.altKey && event.shiftKey) {
-              _this.addSelectedYears(1);
-            } else if (event.shiftKey) {
-              _this.addSelectedMonths(1);
-            } else {
-              _this.addSelectedDays(7);
-            }
-            break;
-
-          case 'right':
-            if (event.altKey && event.shiftKey) {
-              _this.addSelectedYears(1);
-            } else if (event.shiftKey) {
-              _this.addSelectedMonths(1);
-            } else {
-              _this.addSelectedDays(1);
-            }
-            break;
-
-          case 'left':
-            if (event.altKey && event.shiftKey) {
-              _this.addSelectedYears(-1);
-            } else if (event.shiftKey) {
-              _this.addSelectedMonths(-1);
-            } else {
-              _this.addSelectedDays(-1);
-            }
-            break;
-        }
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Calendar, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({
-        displayDate: (0, _dateUtils.getFirstDayOfMonth)(this.props.initialDate),
-        selectedDate: this.props.initialDate
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.initialDate !== this.props.initialDate) {
-        var date = nextProps.initialDate || new Date();
-        this.setState({
-          displayDate: (0, _dateUtils.getFirstDayOfMonth)(date),
-          selectedDate: date
-        });
-      }
-    }
-  }, {
-    key: 'getSelectedDate',
-    value: function getSelectedDate() {
-      return this.state.selectedDate;
-    }
-  }, {
-    key: 'isSelectedDateDisabled',
-    value: function isSelectedDateDisabled() {
-      if (!this.state.displayMonthDay) {
-        return false;
-      }
-
-      return this.refs.calendar.isSelectedDateDisabled();
-    }
-  }, {
-    key: 'addSelectedDays',
-    value: function addSelectedDays(days) {
-      this.setSelectedDate((0, _dateUtils.addDays)(this.state.selectedDate, days));
-    }
-  }, {
-    key: 'addSelectedMonths',
-    value: function addSelectedMonths(months) {
-      this.setSelectedDate((0, _dateUtils.addMonths)(this.state.selectedDate, months));
-    }
-  }, {
-    key: 'addSelectedYears',
-    value: function addSelectedYears(years) {
-      this.setSelectedDate((0, _dateUtils.addYears)(this.state.selectedDate, years));
-    }
-  }, {
-    key: 'setDisplayDate',
-    value: function setDisplayDate(date, newSelectedDate) {
-      var newDisplayDate = (0, _dateUtils.getFirstDayOfMonth)(date);
-      var direction = newDisplayDate > this.state.displayDate ? 'left' : 'right';
-
-      if (newDisplayDate !== this.state.displayDate) {
-        this.setState({
-          displayDate: newDisplayDate,
-          transitionDirection: direction,
-          selectedDate: newSelectedDate || this.state.selectedDate
-        });
-      }
-    }
-  }, {
-    key: 'setSelectedDate',
-    value: function setSelectedDate(date) {
-      var adjustedDate = date;
-      if ((0, _dateUtils.isBeforeDate)(date, this.props.minDate)) {
-        adjustedDate = this.props.minDate;
-      } else if ((0, _dateUtils.isAfterDate)(date, this.props.maxDate)) {
-        adjustedDate = this.props.maxDate;
-      }
-
-      var newDisplayDate = (0, _dateUtils.getFirstDayOfMonth)(adjustedDate);
-      if (newDisplayDate !== this.state.displayDate) {
-        this.setDisplayDate(newDisplayDate, adjustedDate);
-      } else {
-        this.setState({
-          selectedDate: adjustedDate
-        });
-      }
-    }
-  }, {
-    key: 'getToolbarInteractions',
-    value: function getToolbarInteractions() {
-      return {
-        prevMonth: (0, _dateUtils.monthDiff)(this.state.displayDate, this.props.minDate) > 0,
-        nextMonth: (0, _dateUtils.monthDiff)(this.state.displayDate, this.props.maxDate) < 0
-      };
-    }
-  }, {
-    key: 'yearSelector',
-    value: function yearSelector() {
-      if (!this.props.disableYearSelection) {
-        return _react2.default.createElement(_CalendarYear2.default, {
-          key: 'years',
-          DateTimeFormat: this.props.DateTimeFormat,
-          locale: this.props.locale,
-          onTouchTapYear: this.handleTouchTapYear,
-          selectedDate: this.state.selectedDate,
-          minDate: this.props.minDate,
-          maxDate: this.props.maxDate
-        });
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-      var hideCalendarDate = this.props.hideCalendarDate;
-
-      var toolbarInteractions = this.getToolbarInteractions();
-      var isLandscape = this.props.mode === 'landscape';
-      var calendarTextColor = this.context.muiTheme.datePicker.calendarTextColor;
-
-
-      var styles = {
-        root: {
-          color: calendarTextColor,
-          userSelect: 'none',
-          width: !hideCalendarDate && isLandscape ? 479 : 310
-        },
-        calendar: {
-          display: 'flex',
-          flexDirection: 'column'
-        },
-        calendarContainer: {
-          display: 'flex',
-          alignContent: 'space-between',
-          justifyContent: 'space-between',
-          flexDirection: 'column',
-          fontSize: 12,
-          fontWeight: 400,
-          padding: '0px 8px',
-          transition: _transitions2.default.easeOut()
-        },
-        yearContainer: {
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexDirection: 'column',
-          height: 272,
-          marginTop: 10,
-          overflow: 'hidden',
-          width: 310
-        },
-        weekTitle: {
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          fontWeight: '500',
-          height: 20,
-          lineHeight: '15px',
-          opacity: '0.5',
-          textAlign: 'center'
-        },
-        weekTitleDay: {
-          width: 42
-        },
-        transitionSlide: {
-          height: 214
-        }
-      };
-
-      var weekTitleDayStyle = prepareStyles(styles.weekTitleDay);
-
-      var _props = this.props,
-          minDate = _props.minDate,
-          maxDate = _props.maxDate,
-          cancelLabel = _props.cancelLabel,
-          DateTimeFormat = _props.DateTimeFormat,
-          firstDayOfWeek = _props.firstDayOfWeek,
-          locale = _props.locale,
-          okLabel = _props.okLabel,
-          onTouchTapCancel = _props.onTouchTapCancel,
-          onTouchTapOk = _props.onTouchTapOk;
-
-
-      return _react2.default.createElement(
-        'div',
-        { style: prepareStyles(styles.root) },
-        _react2.default.createElement(_reactEventListener2.default, {
-          target: 'window',
-          onKeyDown: this.handleWindowKeyDown
-        }),
-        !hideCalendarDate && _react2.default.createElement(_DateDisplay2.default, {
-          DateTimeFormat: DateTimeFormat,
-          disableYearSelection: this.props.disableYearSelection,
-          onTouchTapMonthDay: this.handleTouchTapDateDisplayMonthDay,
-          onTouchTapYear: this.handleTouchTapDateDisplayYear,
-          locale: locale,
-          monthDaySelected: this.state.displayMonthDay,
-          mode: this.props.mode,
-          selectedDate: this.state.selectedDate
-        }),
-        _react2.default.createElement(
-          'div',
-          { style: prepareStyles(styles.calendar) },
-          this.state.displayMonthDay && _react2.default.createElement(
-            'div',
-            { style: prepareStyles(styles.calendarContainer) },
-            _react2.default.createElement(_CalendarToolbar2.default, {
-              DateTimeFormat: DateTimeFormat,
-              locale: locale,
-              displayDate: this.state.displayDate,
-              onMonthChange: this.handleMonthChange,
-              prevMonth: toolbarInteractions.prevMonth,
-              nextMonth: toolbarInteractions.nextMonth
-            }),
-            _react2.default.createElement(
-              'div',
-              { style: prepareStyles(styles.weekTitle) },
-              daysArray.map(function (event, i) {
-                return _react2.default.createElement(
-                  'span',
-                  { key: i, style: weekTitleDayStyle },
-                  (0, _dateUtils.localizedWeekday)(DateTimeFormat, locale, i, firstDayOfWeek)
-                );
-              })
-            ),
-            _react2.default.createElement(
-              _SlideIn2.default,
-              { direction: this.state.transitionDirection, style: styles.transitionSlide },
-              _react2.default.createElement(_CalendarMonth2.default, {
-                DateTimeFormat: DateTimeFormat,
-                locale: locale,
-                displayDate: this.state.displayDate,
-                firstDayOfWeek: this.props.firstDayOfWeek,
-                key: this.state.displayDate.toDateString(),
-                minDate: minDate,
-                maxDate: maxDate,
-                onTouchTapDay: this.handleTouchTapDay,
-                ref: 'calendar',
-                selectedDate: this.state.selectedDate,
-                shouldDisableDate: this.props.shouldDisableDate
-              })
-            )
-          ),
-          !this.state.displayMonthDay && _react2.default.createElement(
-            'div',
-            { style: prepareStyles(styles.yearContainer) },
-            this.yearSelector()
-          ),
-          okLabel && _react2.default.createElement(_CalendarActionButtons2.default, {
-            autoOk: this.props.autoOk,
-            cancelLabel: cancelLabel,
-            okLabel: okLabel,
-            onTouchTapCancel: onTouchTapCancel,
-            onTouchTapOk: onTouchTapOk
-          })
-        )
-      );
-    }
-  }]);
-  return Calendar;
-}(_react.Component);
-
-Calendar.defaultProps = {
-  DateTimeFormat: _dateUtils.dateTimeFormat,
-  disableYearSelection: false,
-  initialDate: new Date(),
-  locale: 'en-US',
-  minDate: (0, _dateUtils.addYears)(new Date(), -100),
-  maxDate: (0, _dateUtils.addYears)(new Date(), 100)
-};
-Calendar.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Calendar.propTypes = {
-  DateTimeFormat: _react.PropTypes.func.isRequired,
-  autoOk: _react.PropTypes.bool,
-  cancelLabel: _react.PropTypes.node,
-  disableYearSelection: _react.PropTypes.bool,
-  firstDayOfWeek: _react.PropTypes.number,
-  hideCalendarDate: _react.PropTypes.bool,
-  initialDate: _react.PropTypes.object,
-  locale: _react.PropTypes.string.isRequired,
-  maxDate: _react.PropTypes.object,
-  minDate: _react.PropTypes.object,
-  mode: _react.PropTypes.oneOf(['portrait', 'landscape']),
-  okLabel: _react.PropTypes.node,
-  onTouchTapCancel: _react.PropTypes.func,
-  onTouchTapDay: _react.PropTypes.func,
-  onTouchTapOk: _react.PropTypes.func,
-  open: _react.PropTypes.bool,
-  shouldDisableDate: _react.PropTypes.func
-} : void 0;
-exports.default = Calendar;
-}).call(this,require('_process'))
-},{"../internal/SlideIn":153,"../styles/transitions":333,"./CalendarActionButtons":27,"./CalendarMonth":28,"./CalendarToolbar":29,"./CalendarYear":30,"./DateDisplay":31,"./dateUtils":36,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/toConsumableArray":177,"keycode":305,"react":559,"react-event-listener":311}],27:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _FlatButton = require('../FlatButton');
-
-var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var CalendarActionButton = function (_Component) {
-  (0, _inherits3.default)(CalendarActionButton, _Component);
-
-  function CalendarActionButton() {
-    (0, _classCallCheck3.default)(this, CalendarActionButton);
-    return (0, _possibleConstructorReturn3.default)(this, (CalendarActionButton.__proto__ || (0, _getPrototypeOf2.default)(CalendarActionButton)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(CalendarActionButton, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          cancelLabel = _props.cancelLabel,
-          okLabel = _props.okLabel;
-
-
-      var styles = {
-        root: {
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-          margin: 0,
-          maxHeight: 48,
-          padding: 0
-        },
-        flatButtons: {
-          fontsize: 14,
-          margin: '4px 8px 8px 0px',
-          maxHeight: 36,
-          minWidth: 64,
-          padding: 0
-        }
-      };
-
-      return _react2.default.createElement(
-        'div',
-        { style: styles.root },
-        _react2.default.createElement(_FlatButton2.default, {
-          label: cancelLabel,
-          onTouchTap: this.props.onTouchTapCancel,
-          primary: true,
-          style: styles.flatButtons
-        }),
-        !this.props.autoOk && _react2.default.createElement(_FlatButton2.default, {
-          disabled: this.refs.calendar !== undefined && this.refs.calendar.isSelectedDateDisabled(),
-          label: okLabel,
-          onTouchTap: this.props.onTouchTapOk,
-          primary: true,
-          style: styles.flatButtons
-        })
-      );
-    }
-  }]);
-  return CalendarActionButton;
-}(_react.Component);
-
-process.env.NODE_ENV !== "production" ? CalendarActionButton.propTypes = {
-  autoOk: _react.PropTypes.bool,
-  cancelLabel: _react.PropTypes.node,
-  okLabel: _react.PropTypes.node,
-  onTouchTapCancel: _react.PropTypes.func,
-  onTouchTapOk: _react.PropTypes.func
-} : void 0;
-exports.default = CalendarActionButton;
-}).call(this,require('_process'))
-},{"../FlatButton":48,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],28:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _dateUtils = require('./dateUtils');
-
-var _DayButton = require('./DayButton');
-
-var _DayButton2 = _interopRequireDefault(_DayButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var styles = {
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    fontWeight: 400,
-    height: 228,
-    lineHeight: 2,
-    position: 'relative',
-    textAlign: 'center',
-    MozPaddingStart: 0
-  },
-  week: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    height: 34,
-    marginBottom: 2
-  }
-};
-
-var CalendarMonth = function (_Component) {
-  (0, _inherits3.default)(CalendarMonth, _Component);
-
-  function CalendarMonth() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, CalendarMonth);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = CalendarMonth.__proto__ || (0, _getPrototypeOf2.default)(CalendarMonth)).call.apply(_ref, [this].concat(args))), _this), _this.handleTouchTapDay = function (event, date) {
-      if (_this.props.onTouchTapDay) {
-        _this.props.onTouchTapDay(event, date);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(CalendarMonth, [{
-    key: 'isSelectedDateDisabled',
-    value: function isSelectedDateDisabled() {
-      return this.selectedDateDisabled;
-    }
-  }, {
-    key: 'shouldDisableDate',
-    value: function shouldDisableDate(day) {
-      if (day === null) return false;
-      var disabled = !(0, _dateUtils.isBetweenDates)(day, this.props.minDate, this.props.maxDate);
-      if (!disabled && this.props.shouldDisableDate) disabled = this.props.shouldDisableDate(day);
-
-      return disabled;
-    }
-  }, {
-    key: 'getWeekElements',
-    value: function getWeekElements() {
-      var _this2 = this;
-
-      var weekArray = (0, _dateUtils.getWeekArray)(this.props.displayDate, this.props.firstDayOfWeek);
-
-      return weekArray.map(function (week, i) {
-        return _react2.default.createElement(
-          'div',
-          { key: i, style: styles.week },
-          _this2.getDayElements(week, i)
-        );
-      }, this);
-    }
-  }, {
-    key: 'getDayElements',
-    value: function getDayElements(week, i) {
-      var _this3 = this;
-
-      var _props = this.props,
-          DateTimeFormat = _props.DateTimeFormat,
-          locale = _props.locale,
-          selectedDate = _props.selectedDate;
-
-
-      return week.map(function (day, j) {
-        var isSameDate = (0, _dateUtils.isEqualDate)(selectedDate, day);
-        var disabled = _this3.shouldDisableDate(day);
-        var selected = !disabled && isSameDate;
-
-        if (isSameDate) {
-          _this3.selectedDateDisabled = disabled;
-        }
-
-        return _react2.default.createElement(_DayButton2.default, {
-          DateTimeFormat: DateTimeFormat,
-          locale: locale,
-          date: day,
-          disabled: disabled,
-          key: 'db' + (i + j),
-          onTouchTap: _this3.handleTouchTapDay,
-          selected: selected
-        });
-      }, this);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { style: styles.root },
-        this.getWeekElements()
-      );
-    }
-  }]);
-  return CalendarMonth;
-}(_react.Component);
-
-process.env.NODE_ENV !== "production" ? CalendarMonth.propTypes = {
-  DateTimeFormat: _react.PropTypes.func.isRequired,
-  autoOk: _react.PropTypes.bool,
-  displayDate: _react.PropTypes.object.isRequired,
-  firstDayOfWeek: _react.PropTypes.number,
-  locale: _react.PropTypes.string.isRequired,
-  maxDate: _react.PropTypes.object,
-  minDate: _react.PropTypes.object,
-  onTouchTapDay: _react.PropTypes.func,
-  selectedDate: _react.PropTypes.object.isRequired,
-  shouldDisableDate: _react.PropTypes.func
-} : void 0;
-exports.default = CalendarMonth;
-}).call(this,require('_process'))
-},{"./DayButton":34,"./dateUtils":36,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],29:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _IconButton = require('../IconButton');
-
-var _IconButton2 = _interopRequireDefault(_IconButton);
-
-var _chevronLeft = require('../svg-icons/navigation/chevron-left');
-
-var _chevronLeft2 = _interopRequireDefault(_chevronLeft);
-
-var _chevronRight = require('../svg-icons/navigation/chevron-right');
-
-var _chevronRight2 = _interopRequireDefault(_chevronRight);
-
-var _SlideIn = require('../internal/SlideIn');
-
-var _SlideIn2 = _interopRequireDefault(_SlideIn);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var styles = {
-  root: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    backgroundColor: 'inherit',
-    height: 48
-  },
-  titleDiv: {
-    fontSize: 14,
-    fontWeight: '500',
-    textAlign: 'center',
-    width: '100%'
-  },
-  titleText: {
-    height: 'inherit',
-    paddingTop: 12
-  }
-};
-
-var CalendarToolbar = function (_Component) {
-  (0, _inherits3.default)(CalendarToolbar, _Component);
-
-  function CalendarToolbar() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, CalendarToolbar);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = CalendarToolbar.__proto__ || (0, _getPrototypeOf2.default)(CalendarToolbar)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      transitionDirection: 'up'
-    }, _this.handleTouchTapPrevMonth = function () {
-      if (_this.props.onMonthChange) {
-        _this.props.onMonthChange(-1);
-      }
-    }, _this.handleTouchTapNextMonth = function () {
-      if (_this.props.onMonthChange) {
-        _this.props.onMonthChange(1);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(CalendarToolbar, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.displayDate !== this.props.displayDate) {
-        var direction = nextProps.displayDate > this.props.displayDate ? 'left' : 'right';
-        this.setState({
-          transitionDirection: direction
-        });
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          DateTimeFormat = _props.DateTimeFormat,
-          locale = _props.locale,
-          displayDate = _props.displayDate;
-
-
-      var dateTimeFormatted = new DateTimeFormat(locale, {
-        month: 'long',
-        year: 'numeric'
-      }).format(displayDate);
-
-      return _react2.default.createElement(
-        'div',
-        { style: styles.root },
-        _react2.default.createElement(
-          _IconButton2.default,
-          {
-            disabled: !this.props.prevMonth,
-            onTouchTap: this.handleTouchTapPrevMonth
-          },
-          _react2.default.createElement(_chevronLeft2.default, null)
-        ),
-        _react2.default.createElement(
-          _SlideIn2.default,
-          {
-            direction: this.state.transitionDirection,
-            style: styles.titleDiv
-          },
-          _react2.default.createElement(
-            'div',
-            { key: dateTimeFormatted, style: styles.titleText },
-            dateTimeFormatted
-          )
-        ),
-        _react2.default.createElement(
-          _IconButton2.default,
-          {
-            disabled: !this.props.nextMonth,
-            onTouchTap: this.handleTouchTapNextMonth
-          },
-          _react2.default.createElement(_chevronRight2.default, null)
-        )
-      );
-    }
-  }]);
-  return CalendarToolbar;
-}(_react.Component);
-
-CalendarToolbar.defaultProps = {
-  nextMonth: true,
-  prevMonth: true
-};
-process.env.NODE_ENV !== "production" ? CalendarToolbar.propTypes = {
-  DateTimeFormat: _react.PropTypes.func.isRequired,
-  displayDate: _react.PropTypes.object.isRequired,
-  locale: _react.PropTypes.string.isRequired,
-  nextMonth: _react.PropTypes.bool,
-  onMonthChange: _react.PropTypes.func,
-  prevMonth: _react.PropTypes.bool
-} : void 0;
-exports.default = CalendarToolbar;
-}).call(this,require('_process'))
-},{"../IconButton":57,"../internal/SlideIn":153,"../svg-icons/navigation/chevron-left":342,"../svg-icons/navigation/chevron-right":343,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],30:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _YearButton = require('./YearButton');
-
-var _YearButton2 = _interopRequireDefault(_YearButton);
-
-var _dateUtils = require('./dateUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var CalendarYear = function (_Component) {
-  (0, _inherits3.default)(CalendarYear, _Component);
-
-  function CalendarYear() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, CalendarYear);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = CalendarYear.__proto__ || (0, _getPrototypeOf2.default)(CalendarYear)).call.apply(_ref, [this].concat(args))), _this), _this.handleTouchTapYear = function (event, year) {
-      if (_this.props.onTouchTapYear) {
-        _this.props.onTouchTapYear(event, year);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(CalendarYear, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.scrollToSelectedYear();
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.scrollToSelectedYear();
-    }
-  }, {
-    key: 'getYears',
-    value: function getYears() {
-      var _props = this.props,
-          DateTimeFormat = _props.DateTimeFormat,
-          locale = _props.locale,
-          minDate = _props.minDate,
-          maxDate = _props.maxDate,
-          selectedDate = _props.selectedDate;
-
-
-      var minYear = minDate.getFullYear();
-      var maxYear = maxDate.getFullYear();
-      var years = [];
-      var dateCheck = (0, _dateUtils.cloneDate)(selectedDate);
-
-      for (var year = minYear; year <= maxYear; year++) {
-        dateCheck.setFullYear(year);
-        var selected = selectedDate.getFullYear() === year;
-        var selectedProps = {};
-        if (selected) {
-          selectedProps.ref = 'selectedYearButton';
-        }
-
-        var yearFormated = new DateTimeFormat(locale, {
-          year: 'numeric'
-        }).format(dateCheck);
-
-        var yearButton = _react2.default.createElement(
-          _YearButton2.default,
-          (0, _extends3.default)({
-            key: 'yb' + year,
-            onTouchTap: this.handleTouchTapYear,
-            selected: selected,
-            year: year
-          }, selectedProps),
-          yearFormated
-        );
-
-        years.push(yearButton);
-      }
-
-      return years;
-    }
-  }, {
-    key: 'scrollToSelectedYear',
-    value: function scrollToSelectedYear() {
-      if (this.refs.selectedYearButton === undefined) {
-        return;
-      }
-
-      var container = _reactDom2.default.findDOMNode(this);
-      var yearButtonNode = _reactDom2.default.findDOMNode(this.refs.selectedYearButton);
-
-      var containerHeight = container.clientHeight;
-      var yearButtonNodeHeight = yearButtonNode.clientHeight || 32;
-
-      var scrollYOffset = yearButtonNode.offsetTop + yearButtonNodeHeight / 2 - containerHeight / 2;
-      container.scrollTop = scrollYOffset;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _context$muiTheme = this.context.muiTheme,
-          prepareStyles = _context$muiTheme.prepareStyles,
-          calendarYearBackgroundColor = _context$muiTheme.datePicker.calendarYearBackgroundColor;
-
-
-      var styles = {
-        root: {
-          backgroundColor: calendarYearBackgroundColor,
-          height: 'inherit',
-          lineHeight: '35px',
-          overflowX: 'hidden',
-          overflowY: 'scroll',
-          position: 'relative'
-        },
-        child: {
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          minHeight: '100%'
-        }
-      };
-
-      return _react2.default.createElement(
-        'div',
-        { style: prepareStyles(styles.root) },
-        _react2.default.createElement(
-          'div',
-          { style: prepareStyles(styles.child) },
-          this.getYears()
-        )
-      );
-    }
-  }]);
-  return CalendarYear;
-}(_react.Component);
-
-CalendarYear.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? CalendarYear.propTypes = {
-  DateTimeFormat: _react.PropTypes.func.isRequired,
-  locale: _react.PropTypes.string.isRequired,
-  maxDate: _react.PropTypes.object.isRequired,
-  minDate: _react.PropTypes.object.isRequired,
-  onTouchTapYear: _react.PropTypes.func,
-  selectedDate: _react.PropTypes.object.isRequired,
-  wordings: _react.PropTypes.object
-} : void 0;
-exports.default = CalendarYear;
-}).call(this,require('_process'))
-},{"./YearButton":35,"./dateUtils":36,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364}],31:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _SlideIn = require('../internal/SlideIn');
-
-var _SlideIn2 = _interopRequireDefault(_SlideIn);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context, state) {
-  var datePicker = context.muiTheme.datePicker;
-  var selectedYear = state.selectedYear;
-
-  var isLandscape = props.mode === 'landscape';
-
-  var styles = {
-    root: {
-      width: isLandscape ? 165 : '100%',
-      height: isLandscape ? 330 : 'auto',
-      float: isLandscape ? 'left' : 'none',
-      fontWeight: 700,
-      display: 'inline-block',
-      backgroundColor: datePicker.selectColor,
-      borderTopLeftRadius: 2,
-      borderTopRightRadius: isLandscape ? 0 : 2,
-      borderBottomLeftRadius: isLandscape ? 2 : 0,
-      color: datePicker.textColor,
-      padding: 20,
-      boxSizing: 'border-box'
-    },
-    monthDay: {
-      display: 'block',
-      fontSize: 36,
-      lineHeight: '36px',
-      height: props.mode === 'landscape' ? '100%' : 38,
-      opacity: selectedYear ? 0.7 : 1,
-      transition: _transitions2.default.easeOut(),
-      width: '100%',
-      fontWeight: '500'
-    },
-    monthDayTitle: {
-      cursor: !selectedYear ? 'default' : 'pointer',
-      width: '100%',
-      display: 'block'
-    },
-    year: {
-      margin: 0,
-      fontSize: 16,
-      fontWeight: '500',
-      lineHeight: '16px',
-      height: 16,
-      opacity: selectedYear ? 1 : 0.7,
-      transition: _transitions2.default.easeOut(),
-      marginBottom: 10
-    },
-    yearTitle: {
-      cursor: props.disableYearSelection ? 'not-allowed' : !selectedYear ? 'pointer' : 'default'
-    }
-  };
-
-  return styles;
-}
-
-var DateDisplay = function (_Component) {
-  (0, _inherits3.default)(DateDisplay, _Component);
-
-  function DateDisplay() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, DateDisplay);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = DateDisplay.__proto__ || (0, _getPrototypeOf2.default)(DateDisplay)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      selectedYear: false,
-      transitionDirection: 'up'
-    }, _this.handleTouchTapMonthDay = function () {
-      if (_this.props.onTouchTapMonthDay && _this.state.selectedYear) {
-        _this.props.onTouchTapMonthDay();
-      }
-
-      _this.setState({ selectedYear: false });
-    }, _this.handleTouchTapYear = function () {
-      if (_this.props.onTouchTapYear && !_this.props.disableYearSelection && !_this.state.selectedYear) {
-        _this.props.onTouchTapYear();
-      }
-
-      if (!_this.props.disableYearSelection) {
-        _this.setState({ selectedYear: true });
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(DateDisplay, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (!this.props.monthDaySelected) {
-        this.setState({ selectedYear: true });
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.selectedDate !== this.props.selectedDate) {
-        var direction = nextProps.selectedDate > this.props.selectedDate ? 'up' : 'down';
-        this.setState({
-          transitionDirection: direction
-        });
-      }
-
-      if (nextProps.monthDaySelected !== undefined) {
-        this.setState({
-          selectedYear: !nextProps.monthDaySelected
-        });
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          DateTimeFormat = _props.DateTimeFormat,
-          disableYearSelection = _props.disableYearSelection,
-          locale = _props.locale,
-          mode = _props.mode,
-          monthDaySelected = _props.monthDaySelected,
-          onTouchTapMonthDay = _props.onTouchTapMonthDay,
-          onTouchTapYear = _props.onTouchTapYear,
-          selectedDate = _props.selectedDate,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['DateTimeFormat', 'disableYearSelection', 'locale', 'mode', 'monthDaySelected', 'onTouchTapMonthDay', 'onTouchTapYear', 'selectedDate', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      var year = new DateTimeFormat(locale, {
-        year: 'numeric'
-      }).format(selectedDate);
-
-      var dateTime = new DateTimeFormat(locale, {
-        month: 'short',
-        weekday: 'short',
-        day: '2-digit'
-      }).format(selectedDate);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles(styles.root, style) }),
-        _react2.default.createElement(
-          _SlideIn2.default,
-          { style: styles.year, direction: this.state.transitionDirection },
-          _react2.default.createElement(
-            'div',
-            { key: year, style: styles.yearTitle, onTouchTap: this.handleTouchTapYear },
-            year
-          )
-        ),
-        _react2.default.createElement(
-          _SlideIn2.default,
-          { style: styles.monthDay, direction: this.state.transitionDirection },
-          _react2.default.createElement(
-            'div',
-            {
-              key: dateTime,
-              onTouchTap: this.handleTouchTapMonthDay,
-              style: styles.monthDayTitle
-            },
-            dateTime
-          )
-        )
-      );
-    }
-  }]);
-  return DateDisplay;
-}(_react.Component);
-
-DateDisplay.defaultProps = {
-  disableYearSelection: false,
-  monthDaySelected: true
-};
-DateDisplay.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? DateDisplay.propTypes = {
-  DateTimeFormat: _react.PropTypes.func.isRequired,
-  disableYearSelection: _react.PropTypes.bool,
-  locale: _react.PropTypes.string.isRequired,
-  mode: _react.PropTypes.oneOf(['portrait', 'landscape']),
-  monthDaySelected: _react.PropTypes.bool,
-  onTouchTapMonthDay: _react.PropTypes.func,
-  onTouchTapYear: _react.PropTypes.func,
-  selectedDate: _react.PropTypes.object.isRequired,
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = DateDisplay;
-}).call(this,require('_process'))
-},{"../internal/SlideIn":153,"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],32:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _dateUtils = require('./dateUtils');
-
-var _DatePickerDialog = require('./DatePickerDialog');
-
-var _DatePickerDialog2 = _interopRequireDefault(_DatePickerDialog);
-
-var _TextField = require('../TextField');
-
-var _TextField2 = _interopRequireDefault(_TextField);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DatePicker = function (_Component) {
-  (0, _inherits3.default)(DatePicker, _Component);
-
-  function DatePicker() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, DatePicker);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = DatePicker.__proto__ || (0, _getPrototypeOf2.default)(DatePicker)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      date: undefined
-    }, _this.handleAccept = function (date) {
-      if (!_this.isControlled()) {
-        _this.setState({
-          date: date
-        });
-      }
-      if (_this.props.onChange) {
-        _this.props.onChange(null, date);
-      }
-    }, _this.handleFocus = function (event) {
-      event.target.blur();
-      if (_this.props.onFocus) {
-        _this.props.onFocus(event);
-      }
-    }, _this.handleTouchTap = function (event) {
-      if (_this.props.onTouchTap) {
-        _this.props.onTouchTap(event);
-      }
-
-      if (!_this.props.disabled) {
-        setTimeout(function () {
-          _this.openDialog();
-        }, 0);
-      }
-    }, _this.formatDate = function (date) {
-      if (_this.props.locale) {
-        var DateTimeFormat = _this.props.DateTimeFormat || _dateUtils.dateTimeFormat;
-        return new DateTimeFormat(_this.props.locale, {
-          day: 'numeric',
-          month: 'numeric',
-          year: 'numeric'
-        }).format(date);
-      } else {
-        return (0, _dateUtils.formatIso)(date);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(DatePicker, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({
-        date: this.isControlled() ? this.getControlledDate() : this.props.defaultDate
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (this.isControlled()) {
-        var newDate = this.getControlledDate(nextProps);
-        if (!(0, _dateUtils.isEqualDate)(this.state.date, newDate)) {
-          this.setState({
-            date: newDate
-          });
-        }
-      }
-    }
-  }, {
-    key: 'getDate',
-    value: function getDate() {
-      return this.state.date;
-    }
-
-    /**
-     * Open the date-picker dialog programmatically from a parent.
-     */
-
-  }, {
-    key: 'openDialog',
-    value: function openDialog() {
-      /**
-       * if the date is not selected then set it to new date
-       * (get the current system date while doing so)
-       * else set it to the currently selected date
-       */
-      if (this.state.date !== undefined) {
-        this.setState({
-          dialogDate: this.getDate()
-        }, this.refs.dialogWindow.show);
-      } else {
-        this.setState({
-          dialogDate: new Date()
-        }, this.refs.dialogWindow.show);
-      }
-    }
-
-    /**
-     * Alias for `openDialog()` for an api consistent with TextField.
-     */
-
-  }, {
-    key: 'focus',
-    value: function focus() {
-      this.openDialog();
-    }
-  }, {
-    key: 'isControlled',
-    value: function isControlled() {
-      return this.props.hasOwnProperty('value');
-    }
-  }, {
-    key: 'getControlledDate',
-    value: function getControlledDate() {
-      var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props;
-
-      if (props.value instanceof Date) {
-        return props.value;
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          DateTimeFormat = _props.DateTimeFormat,
-          autoOk = _props.autoOk,
-          cancelLabel = _props.cancelLabel,
-          className = _props.className,
-          container = _props.container,
-          defaultDate = _props.defaultDate,
-          dialogContainerStyle = _props.dialogContainerStyle,
-          disableYearSelection = _props.disableYearSelection,
-          firstDayOfWeek = _props.firstDayOfWeek,
-          formatDateProp = _props.formatDate,
-          locale = _props.locale,
-          maxDate = _props.maxDate,
-          minDate = _props.minDate,
-          mode = _props.mode,
-          okLabel = _props.okLabel,
-          onDismiss = _props.onDismiss,
-          onFocus = _props.onFocus,
-          onShow = _props.onShow,
-          onTouchTap = _props.onTouchTap,
-          shouldDisableDate = _props.shouldDisableDate,
-          hideCalendarDate = _props.hideCalendarDate,
-          style = _props.style,
-          textFieldStyle = _props.textFieldStyle,
-          other = (0, _objectWithoutProperties3.default)(_props, ['DateTimeFormat', 'autoOk', 'cancelLabel', 'className', 'container', 'defaultDate', 'dialogContainerStyle', 'disableYearSelection', 'firstDayOfWeek', 'formatDate', 'locale', 'maxDate', 'minDate', 'mode', 'okLabel', 'onDismiss', 'onFocus', 'onShow', 'onTouchTap', 'shouldDisableDate', 'hideCalendarDate', 'style', 'textFieldStyle']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var formatDate = formatDateProp || this.formatDate;
-
-      return _react2.default.createElement(
-        'div',
-        { className: className, style: prepareStyles((0, _simpleAssign2.default)({}, style)) },
-        _react2.default.createElement(_TextField2.default, (0, _extends3.default)({}, other, {
-          onFocus: this.handleFocus,
-          onTouchTap: this.handleTouchTap,
-          ref: 'input',
-          style: textFieldStyle,
-          value: this.state.date ? formatDate(this.state.date) : ''
-        })),
-        _react2.default.createElement(_DatePickerDialog2.default, {
-          DateTimeFormat: DateTimeFormat,
-          autoOk: autoOk,
-          cancelLabel: cancelLabel,
-          container: container,
-          containerStyle: dialogContainerStyle,
-          disableYearSelection: disableYearSelection,
-          firstDayOfWeek: firstDayOfWeek,
-          initialDate: this.state.dialogDate,
-          locale: locale,
-          maxDate: maxDate,
-          minDate: minDate,
-          mode: mode,
-          okLabel: okLabel,
-          onAccept: this.handleAccept,
-          onShow: onShow,
-          onDismiss: onDismiss,
-          ref: 'dialogWindow',
-          shouldDisableDate: shouldDisableDate,
-          hideCalendarDate: hideCalendarDate
-        })
-      );
-    }
-  }]);
-  return DatePicker;
-}(_react.Component);
-
-DatePicker.defaultProps = {
-  autoOk: false,
-  container: 'dialog',
-  disabled: false,
-  disableYearSelection: false,
-  firstDayOfWeek: 1,
-  hideCalendarDate: false,
-  style: {}
-};
-DatePicker.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? DatePicker.propTypes = {
-  /**
-   * Constructor for date formatting for the specified `locale`.
-   * The constructor must follow this specification: ECMAScript Internationalization API 1.0 (ECMA-402).
-   * `Intl.DateTimeFormat` is supported by most modern browsers, see http://caniuse.com/#search=intl,
-   * otherwise https://github.com/andyearnshaw/Intl.js is a good polyfill.
-   *
-   * By default, a built-in `DateTimeFormat` is used which supports the 'en-US' `locale`.
-   */
-  DateTimeFormat: _react.PropTypes.func,
-  /**
-   * If true, automatically accept and close the picker on select a date.
-   */
-  autoOk: _react.PropTypes.bool,
-  /**
-   * Override the default text of the 'Cancel' button.
-   */
-  cancelLabel: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Used to control how the Date Picker will be displayed when the input field is focused.
-   * `dialog` (default) displays the DatePicker as a dialog with a modal.
-   * `inline` displays the DatePicker below the input field (similar to auto complete).
-   */
-  container: _react.PropTypes.oneOf(['dialog', 'inline']),
-  /**
-   * This is the initial date value of the component.
-   * If either `value` or `valueLink` is provided they will override this
-   * prop with `value` taking precedence.
-   */
-  defaultDate: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of DatePickerDialog's Container element.
-   */
-  dialogContainerStyle: _react.PropTypes.object,
-  /**
-   * Disables the year selection in the date picker.
-   */
-  disableYearSelection: _react.PropTypes.bool,
-  /**
-   * Disables the DatePicker.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * Used to change the first day of week. It varies from
-   * Saturday to Monday between different locales.
-   * The allowed range is 0 (Sunday) to 6 (Saturday).
-   * The default is `1`, Monday, as per ISO 8601.
-   */
-  firstDayOfWeek: _react.PropTypes.number,
-  /**
-   * This function is called to format the date displayed in the input field, and should return a string.
-   * By default if no `locale` and `DateTimeFormat` is provided date objects are formatted to ISO 8601 YYYY-MM-DD.
-   *
-   * @param {object} date Date object to be formatted.
-   * @returns {any} The formatted date.
-   */
-  formatDate: _react.PropTypes.func,
-  /**
-   * Hide date display
-   */
-  hideCalendarDate: _react.PropTypes.bool,
-  /**
-   * Locale used for formatting the `DatePicker` date strings. Other than for 'en-US', you
-   * must provide a `DateTimeFormat` that supports the chosen `locale`.
-   */
-  locale: _react.PropTypes.string,
-  /**
-   * The ending of a range of valid dates. The range includes the endDate.
-   * The default value is current date + 100 years.
-   */
-  maxDate: _react.PropTypes.object,
-  /**
-   * The beginning of a range of valid dates. The range includes the startDate.
-   * The default value is current date - 100 years.
-   */
-  minDate: _react.PropTypes.object,
-  /**
-   * Tells the component to display the picker in portrait or landscape mode.
-   */
-  mode: _react.PropTypes.oneOf(['portrait', 'landscape']),
-  /**
-   * Override the default text of the 'OK' button.
-   */
-  okLabel: _react.PropTypes.node,
-  /**
-   * Callback function that is fired when the date value changes.
-   *
-   * @param {null} null Since there is no particular event associated with the change,
-   * the first argument will always be null.
-   * @param {object} date The new date.
-   */
-  onChange: _react.PropTypes.func,
-  /**
-   * Callback function that is fired when the Date Picker's dialog is dismissed.
-   */
-  onDismiss: _react.PropTypes.func,
-  /**
-   * Callback function that is fired when the Date Picker's `TextField` gains focus.
-   */
-  onFocus: _react.PropTypes.func,
-  /**
-   * Callback function that is fired when the Date Picker's dialog is shown.
-   */
-  onShow: _react.PropTypes.func,
-  /**
-   * Callback function that is fired when a touch tap event occurs on the Date Picker's `TextField`.
-   *
-   * @param {object} event TouchTap event targeting the `TextField`.
-   */
-  onTouchTap: _react.PropTypes.func,
-  /**
-   * Callback function used to determine if a day's entry should be disabled on the calendar.
-   *
-   * @param {object} day Date object of a day.
-   * @returns {boolean} Indicates whether the day should be disabled.
-   */
-  shouldDisableDate: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of DatePicker's TextField element.
-   */
-  textFieldStyle: _react.PropTypes.object,
-  /**
-   * Sets the date for the Date Picker programmatically.
-   */
-  value: _react.PropTypes.object
-} : void 0;
-exports.default = DatePicker;
-}).call(this,require('_process'))
-},{"../TextField":120,"./DatePickerDialog":33,"./dateUtils":36,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],33:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactEventListener = require('react-event-listener');
-
-var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
-
-var _keycode = require('keycode');
-
-var _keycode2 = _interopRequireDefault(_keycode);
-
-var _Calendar = require('./Calendar');
-
-var _Calendar2 = _interopRequireDefault(_Calendar);
-
-var _Dialog = require('../Dialog');
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _Popover = require('../Popover/Popover');
-
-var _Popover2 = _interopRequireDefault(_Popover);
-
-var _PopoverAnimationVertical = require('../Popover/PopoverAnimationVertical');
-
-var _PopoverAnimationVertical2 = _interopRequireDefault(_PopoverAnimationVertical);
-
-var _dateUtils = require('./dateUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DatePickerDialog = function (_Component) {
-  (0, _inherits3.default)(DatePickerDialog, _Component);
-
-  function DatePickerDialog() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, DatePickerDialog);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = DatePickerDialog.__proto__ || (0, _getPrototypeOf2.default)(DatePickerDialog)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      open: false
-    }, _this.show = function () {
-      if (_this.props.onShow && !_this.state.open) {
-        _this.props.onShow();
-      }
-
-      _this.setState({
-        open: true
-      });
-    }, _this.dismiss = function () {
-      if (_this.props.onDismiss && _this.state.open) {
-        _this.props.onDismiss();
-      }
-
-      _this.setState({
-        open: false
-      });
-    }, _this.handleTouchTapDay = function () {
-      if (_this.props.autoOk) {
-        setTimeout(_this.handleTouchTapOk, 300);
-      }
-    }, _this.handleTouchTapCancel = function () {
-      _this.dismiss();
-    }, _this.handleRequestClose = function () {
-      _this.dismiss();
-    }, _this.handleTouchTapOk = function () {
-      if (_this.props.onAccept && !_this.refs.calendar.isSelectedDateDisabled()) {
-        _this.props.onAccept(_this.refs.calendar.getSelectedDate());
-      }
-
-      _this.setState({
-        open: false
-      });
-    }, _this.handleWindowKeyUp = function (event) {
-      switch ((0, _keycode2.default)(event)) {
-        case 'enter':
-          _this.handleTouchTapOk();
-          break;
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(DatePickerDialog, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          DateTimeFormat = _props.DateTimeFormat,
-          autoOk = _props.autoOk,
-          cancelLabel = _props.cancelLabel,
-          container = _props.container,
-          containerStyle = _props.containerStyle,
-          disableYearSelection = _props.disableYearSelection,
-          initialDate = _props.initialDate,
-          firstDayOfWeek = _props.firstDayOfWeek,
-          locale = _props.locale,
-          maxDate = _props.maxDate,
-          minDate = _props.minDate,
-          mode = _props.mode,
-          okLabel = _props.okLabel,
-          onAccept = _props.onAccept,
-          onDismiss = _props.onDismiss,
-          onShow = _props.onShow,
-          shouldDisableDate = _props.shouldDisableDate,
-          hideCalendarDate = _props.hideCalendarDate,
-          style = _props.style,
-          animation = _props.animation,
-          other = (0, _objectWithoutProperties3.default)(_props, ['DateTimeFormat', 'autoOk', 'cancelLabel', 'container', 'containerStyle', 'disableYearSelection', 'initialDate', 'firstDayOfWeek', 'locale', 'maxDate', 'minDate', 'mode', 'okLabel', 'onAccept', 'onDismiss', 'onShow', 'shouldDisableDate', 'hideCalendarDate', 'style', 'animation']);
-      var open = this.state.open;
-
-
-      var styles = {
-        dialogContent: {
-          width: !hideCalendarDate && mode === 'landscape' ? 479 : 310
-        },
-        dialogBodyContent: {
-          padding: 0,
-          minHeight: hideCalendarDate || mode === 'landscape' ? 330 : 434,
-          minWidth: hideCalendarDate || mode !== 'landscape' ? 310 : 479
-        }
-      };
-
-      var Container = container === 'inline' ? _Popover2.default : _Dialog2.default;
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { ref: 'root' }),
-        _react2.default.createElement(
-          Container,
-          {
-            anchorEl: this.refs.root // For Popover
-            , animation: animation || _PopoverAnimationVertical2.default // For Popover
-            , bodyStyle: styles.dialogBodyContent,
-            contentStyle: styles.dialogContent,
-            ref: 'dialog',
-            repositionOnUpdate: true,
-            open: open,
-            onRequestClose: this.handleRequestClose,
-            style: (0, _simpleAssign2.default)(styles.dialogBodyContent, containerStyle)
-          },
-          _react2.default.createElement(_reactEventListener2.default, {
-            target: 'window',
-            onKeyUp: this.handleWindowKeyUp
-          }),
-          _react2.default.createElement(_Calendar2.default, {
-            autoOk: autoOk,
-            DateTimeFormat: DateTimeFormat,
-            cancelLabel: cancelLabel,
-            disableYearSelection: disableYearSelection,
-            firstDayOfWeek: firstDayOfWeek,
-            initialDate: initialDate,
-            locale: locale,
-            onTouchTapDay: this.handleTouchTapDay,
-            maxDate: maxDate,
-            minDate: minDate,
-            mode: mode,
-            open: open,
-            ref: 'calendar',
-            onTouchTapCancel: this.handleTouchTapCancel,
-            onTouchTapOk: this.handleTouchTapOk,
-            okLabel: okLabel,
-            shouldDisableDate: shouldDisableDate,
-            hideCalendarDate: hideCalendarDate
-          })
-        )
-      );
-    }
-  }]);
-  return DatePickerDialog;
-}(_react.Component);
-
-DatePickerDialog.defaultProps = {
-  DateTimeFormat: _dateUtils.dateTimeFormat,
-  cancelLabel: 'Cancel',
-  container: 'dialog',
-  locale: 'en-US',
-  okLabel: 'OK'
-};
-DatePickerDialog.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? DatePickerDialog.propTypes = {
-  DateTimeFormat: _react.PropTypes.func,
-  animation: _react.PropTypes.func,
-  autoOk: _react.PropTypes.bool,
-  cancelLabel: _react.PropTypes.node,
-  container: _react.PropTypes.oneOf(['dialog', 'inline']),
-  containerStyle: _react.PropTypes.object,
-  disableYearSelection: _react.PropTypes.bool,
-  firstDayOfWeek: _react.PropTypes.number,
-  hideCalendarDate: _react.PropTypes.bool,
-  initialDate: _react.PropTypes.object,
-  locale: _react.PropTypes.string,
-  maxDate: _react.PropTypes.object,
-  minDate: _react.PropTypes.object,
-  mode: _react.PropTypes.oneOf(['portrait', 'landscape']),
-  okLabel: _react.PropTypes.node,
-  onAccept: _react.PropTypes.func,
-  onDismiss: _react.PropTypes.func,
-  onShow: _react.PropTypes.func,
-  open: _react.PropTypes.bool,
-  shouldDisableDate: _react.PropTypes.func,
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = DatePickerDialog;
-}).call(this,require('_process'))
-},{"../Dialog":39,"../Popover/Popover":74,"../Popover/PopoverAnimationVertical":76,"./Calendar":26,"./dateUtils":36,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"react-event-listener":311,"simple-assign":326}],34:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _dateUtils = require('./dateUtils');
-
-var _EnhancedButton = require('../internal/EnhancedButton');
-
-var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context, state) {
-  var date = props.date,
-      disabled = props.disabled,
-      selected = props.selected;
-  var hover = state.hover;
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      datePicker = _context$muiTheme.datePicker;
-
-
-  var labelColor = baseTheme.palette.textColor;
-  var buttonStateOpacity = 0;
-  var buttonStateTransform = 'scale(0)';
-
-  if (hover || selected) {
-    labelColor = datePicker.selectTextColor;
-    buttonStateOpacity = selected ? 1 : 0.6;
-    buttonStateTransform = 'scale(1)';
-  } else if ((0, _dateUtils.isEqualDate)(date, new Date())) {
-    labelColor = datePicker.color;
-  }
-
-  return {
-    root: {
-      boxSizing: 'border-box',
-      fontWeight: '400',
-      opacity: disabled && '0.4',
-      padding: '4px 0px',
-      position: 'relative',
-      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
-      width: 42
-    },
-    label: {
-      color: labelColor,
-      fontWeight: '400',
-      position: 'relative'
-    },
-    buttonState: {
-      backgroundColor: datePicker.selectColor,
-      borderRadius: '50%',
-      height: 34,
-      left: 4,
-      opacity: buttonStateOpacity,
-      position: 'absolute',
-      top: 0,
-      transform: buttonStateTransform,
-      transition: _transitions2.default.easeOut(),
-      width: 34
-    }
-  };
-}
-
-var DayButton = function (_Component) {
-  (0, _inherits3.default)(DayButton, _Component);
-
-  function DayButton() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, DayButton);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = DayButton.__proto__ || (0, _getPrototypeOf2.default)(DayButton)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hover: false
-    }, _this.handleMouseEnter = function () {
-      if (!_this.props.disabled) {
-        _this.setState({ hover: true });
-      }
-    }, _this.handleMouseLeave = function () {
-      if (!_this.props.disabled) {
-        _this.setState({ hover: false });
-      }
-    }, _this.handleTouchTap = function (event) {
-      if (!_this.props.disabled && _this.props.onTouchTap) {
-        _this.props.onTouchTap(event, _this.props.date);
-      }
-    }, _this.handleKeyboardFocus = function (event, keyboardFocused) {
-      if (!_this.props.disabled && _this.props.onKeyboardFocus) {
-        _this.props.onKeyboardFocus(event, keyboardFocused, _this.props.date);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(DayButton, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          DateTimeFormat = _props.DateTimeFormat,
-          date = _props.date,
-          disabled = _props.disabled,
-          locale = _props.locale,
-          onTouchTap = _props.onTouchTap,
-          selected = _props.selected,
-          other = (0, _objectWithoutProperties3.default)(_props, ['DateTimeFormat', 'date', 'disabled', 'locale', 'onTouchTap', 'selected']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      return date ? _react2.default.createElement(
-        _EnhancedButton2.default,
-        (0, _extends3.default)({}, other, {
-          disabled: disabled,
-          disableFocusRipple: true,
-          disableTouchRipple: true,
-          onKeyboardFocus: this.handleKeyboardFocus,
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave,
-          onTouchTap: this.handleTouchTap,
-          style: styles.root
-        }),
-        _react2.default.createElement('div', { style: prepareStyles(styles.buttonState) }),
-        _react2.default.createElement(
-          'span',
-          { style: prepareStyles(styles.label) },
-          new DateTimeFormat(locale, {
-            day: 'numeric'
-          }).format(date)
-        )
-      ) : _react2.default.createElement('span', { style: prepareStyles(styles.root) });
-    }
-  }]);
-  return DayButton;
-}(_react.Component);
-
-DayButton.defaultProps = {
-  selected: false,
-  disabled: false
-};
-DayButton.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? DayButton.propTypes = {
-  DateTimeFormat: _react.PropTypes.func.isRequired,
-  date: _react.PropTypes.object,
-  disabled: _react.PropTypes.bool,
-  locale: _react.PropTypes.string.isRequired,
-  onKeyboardFocus: _react.PropTypes.func,
-  onTouchTap: _react.PropTypes.func,
-  selected: _react.PropTypes.bool
-} : void 0;
-exports.default = DayButton;
-}).call(this,require('_process'))
-},{"../internal/EnhancedButton":144,"../styles/transitions":333,"./dateUtils":36,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],35:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _EnhancedButton = require('../internal/EnhancedButton');
-
-var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context, state) {
-  var selected = props.selected,
-      year = props.year;
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      datePicker = _context$muiTheme.datePicker;
-  var hover = state.hover;
-
-
-  return {
-    root: {
-      boxSizing: 'border-box',
-      color: year === new Date().getFullYear() && datePicker.color,
-      display: 'block',
-      fontSize: 14,
-      margin: '0 auto',
-      position: 'relative',
-      textAlign: 'center',
-      lineHeight: 'inherit',
-      WebkitTapHighlightColor: 'rgba(0,0,0,0)' },
-    label: {
-      alignSelf: 'center',
-      color: hover || selected ? datePicker.color : baseTheme.palette.textColor,
-      fontSize: selected ? 26 : 17,
-      fontWeight: hover ? 450 : selected ? 500 : 400,
-      position: 'relative',
-      top: -1
-    }
-  };
-}
-
-var YearButton = function (_Component) {
-  (0, _inherits3.default)(YearButton, _Component);
-
-  function YearButton() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, YearButton);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = YearButton.__proto__ || (0, _getPrototypeOf2.default)(YearButton)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hover: false
-    }, _this.handleMouseEnter = function () {
-      _this.setState({ hover: true });
-    }, _this.handleMouseLeave = function () {
-      _this.setState({ hover: false });
-    }, _this.handleTouchTap = function (event) {
-      if (_this.props.onTouchTap) {
-        _this.props.onTouchTap(event, _this.props.year);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(YearButton, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          className = _props.className,
-          onTouchTap = _props.onTouchTap,
-          selected = _props.selected,
-          year = _props.year,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'onTouchTap', 'selected', 'year']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      return _react2.default.createElement(
-        _EnhancedButton2.default,
-        (0, _extends3.default)({}, other, {
-          disableFocusRipple: true,
-          disableTouchRipple: true,
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave,
-          onTouchTap: this.handleTouchTap,
-          style: styles.root
-        }),
-        _react2.default.createElement(
-          'span',
-          { style: prepareStyles(styles.label) },
-          children
-        )
-      );
-    }
-  }]);
-  return YearButton;
-}(_react.Component);
-
-YearButton.defaultProps = {
-  selected: false
-};
-YearButton.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? YearButton.propTypes = {
-  children: _react.PropTypes.node.isRequired,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  onTouchTap: _react.PropTypes.func,
-  selected: _react.PropTypes.bool,
-  year: _react.PropTypes.number.isRequired
-} : void 0;
-exports.default = YearButton;
-}).call(this,require('_process'))
-},{"../internal/EnhancedButton":144,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],36:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.dateTimeFormat = dateTimeFormat;
-exports.addDays = addDays;
-exports.addMonths = addMonths;
-exports.addYears = addYears;
-exports.cloneDate = cloneDate;
-exports.cloneAsDate = cloneAsDate;
-exports.getDaysInMonth = getDaysInMonth;
-exports.getFirstDayOfMonth = getFirstDayOfMonth;
-exports.getFirstDayOfWeek = getFirstDayOfWeek;
-exports.getWeekArray = getWeekArray;
-exports.localizedWeekday = localizedWeekday;
-exports.formatIso = formatIso;
-exports.isEqualDate = isEqualDate;
-exports.isBeforeDate = isBeforeDate;
-exports.isAfterDate = isAfterDate;
-exports.isBetweenDates = isBetweenDates;
-exports.monthDiff = monthDiff;
-exports.yearDiff = yearDiff;
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var dayAbbreviation = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-var dayList = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-var monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-var monthLongList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-function dateTimeFormat(locale, options) {
-  process.env.NODE_ENV !== "production" ? (0, _warning2.default)(locale === 'en-US', 'Material-UI: The ' + locale + ' locale is not supported by the built-in DateTimeFormat.\n  Use the `DateTimeFormat` prop to supply an alternative implementation.') : void 0;
-
-  this.format = function (date) {
-    if (options.month === 'short' && options.weekday === 'short' && options.day === '2-digit') {
-      return dayList[date.getDay()] + ', ' + monthList[date.getMonth()] + ' ' + date.getDate();
-    } else if (options.year === 'numeric' && options.month === 'numeric' && options.day === 'numeric') {
-      return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
-    } else if (options.year === 'numeric' && options.month === 'long') {
-      return monthLongList[date.getMonth()] + ' ' + date.getFullYear();
-    } else if (options.weekday === 'narrow') {
-      return dayAbbreviation[date.getDay()];
-    } else if (options.year === 'numeric') {
-      return date.getFullYear().toString();
-    } else if (options.day === 'numeric') {
-      return date.getDate();
-    } else {
-      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI: Wrong usage of DateTimeFormat') : void 0;
-    }
-  };
-}
-
-function addDays(d, days) {
-  var newDate = cloneDate(d);
-  newDate.setDate(d.getDate() + days);
-  return newDate;
-}
-
-function addMonths(d, months) {
-  var newDate = cloneDate(d);
-  newDate.setMonth(d.getMonth() + months);
-  return newDate;
-}
-
-function addYears(d, years) {
-  var newDate = cloneDate(d);
-  newDate.setFullYear(d.getFullYear() + years);
-  return newDate;
-}
-
-function cloneDate(d) {
-  return new Date(d.getTime());
-}
-
-function cloneAsDate(d) {
-  var clonedDate = cloneDate(d);
-  clonedDate.setHours(0, 0, 0, 0);
-  return clonedDate;
-}
-
-function getDaysInMonth(d) {
-  var resultDate = getFirstDayOfMonth(d);
-
-  resultDate.setMonth(resultDate.getMonth() + 1);
-  resultDate.setDate(resultDate.getDate() - 1);
-
-  return resultDate.getDate();
-}
-
-function getFirstDayOfMonth(d) {
-  return new Date(d.getFullYear(), d.getMonth(), 1);
-}
-
-function getFirstDayOfWeek() {
-  var now = new Date();
-  return new Date(now.setDate(now.getDate() - now.getDay()));
-}
-
-function getWeekArray(d, firstDayOfWeek) {
-  var dayArray = [];
-  var daysInMonth = getDaysInMonth(d);
-  var weekArray = [];
-  var week = [];
-
-  for (var i = 1; i <= daysInMonth; i++) {
-    dayArray.push(new Date(d.getFullYear(), d.getMonth(), i));
-  }
-
-  var addWeek = function addWeek(week) {
-    var emptyDays = 7 - week.length;
-    for (var _i = 0; _i < emptyDays; ++_i) {
-      week[weekArray.length ? 'push' : 'unshift'](null);
-    }
-    weekArray.push(week);
-  };
-
-  dayArray.forEach(function (day) {
-    if (week.length > 0 && day.getDay() === firstDayOfWeek) {
-      addWeek(week);
-      week = [];
-    }
-    week.push(day);
-    if (dayArray.indexOf(day) === dayArray.length - 1) {
-      addWeek(week);
-    }
-  });
-
-  return weekArray;
-}
-
-function localizedWeekday(DateTimeFormat, locale, day, firstDayOfWeek) {
-  var weekdayFormatter = new DateTimeFormat(locale, { weekday: 'narrow' });
-  var firstDayDate = getFirstDayOfWeek();
-
-  return weekdayFormatter.format(addDays(firstDayDate, day + firstDayOfWeek));
-}
-
-// Convert date to ISO 8601 (YYYY-MM-DD) date string, accounting for current timezone
-function formatIso(date) {
-  return new Date(date.toDateString() + ' 12:00:00 +0000').toISOString().substring(0, 10);
-}
-
-function isEqualDate(d1, d2) {
-  return d1 && d2 && d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
-}
-
-function isBeforeDate(d1, d2) {
-  var date1 = cloneAsDate(d1);
-  var date2 = cloneAsDate(d2);
-
-  return date1.getTime() < date2.getTime();
-}
-
-function isAfterDate(d1, d2) {
-  var date1 = cloneAsDate(d1);
-  var date2 = cloneAsDate(d2);
-
-  return date1.getTime() > date2.getTime();
-}
-
-function isBetweenDates(dateToCheck, startDate, endDate) {
-  return !isBeforeDate(dateToCheck, startDate) && !isAfterDate(dateToCheck, endDate);
-}
-
-function monthDiff(d1, d2) {
-  var m = void 0;
-  m = (d1.getFullYear() - d2.getFullYear()) * 12;
-  m += d1.getMonth();
-  m -= d2.getMonth();
-  return m;
-}
-
-function yearDiff(d1, d2) {
-  return ~~(monthDiff(d1, d2) / 12);
-}
-}).call(this,require('_process'))
-},{"_process":560,"warning":327}],37:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _DatePicker = require('./DatePicker');
-
-var _DatePicker2 = _interopRequireDefault(_DatePicker);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _DatePicker2.default;
-},{"./DatePicker":32}],38:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _reactEventListener = require('react-event-listener');
-
-var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
-
-var _keycode = require('keycode');
-
-var _keycode2 = _interopRequireDefault(_keycode);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _Overlay = require('../internal/Overlay');
-
-var _Overlay2 = _interopRequireDefault(_Overlay);
-
-var _RenderToLayer = require('../internal/RenderToLayer');
-
-var _RenderToLayer2 = _interopRequireDefault(_RenderToLayer);
-
-var _Paper = require('../Paper');
-
-var _Paper2 = _interopRequireDefault(_Paper);
-
-var _reactAddonsTransitionGroup = require('react-addons-transition-group');
-
-var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TransitionItem = function (_Component) {
-  (0, _inherits3.default)(TransitionItem, _Component);
-
-  function TransitionItem() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TransitionItem);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TransitionItem.__proto__ || (0, _getPrototypeOf2.default)(TransitionItem)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      style: {}
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TransitionItem, [{
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.enterTimeout);
-      clearTimeout(this.leaveTimeout);
-    }
-  }, {
-    key: 'componentWillEnter',
-    value: function componentWillEnter(callback) {
-      this.componentWillAppear(callback);
-    }
-  }, {
-    key: 'componentWillAppear',
-    value: function componentWillAppear(callback) {
-      var spacing = this.context.muiTheme.baseTheme.spacing;
-
-      this.setState({
-        style: {
-          opacity: 1,
-          transform: 'translate(0, ' + spacing.desktopKeylineIncrement + 'px)'
-        }
-      });
-
-      this.enterTimeout = setTimeout(callback, 450); // matches transition duration
-    }
-  }, {
-    key: 'componentWillLeave',
-    value: function componentWillLeave(callback) {
-      this.setState({
-        style: {
-          opacity: 0,
-          transform: 'translate(0, 0)'
-        }
-      });
-
-      this.leaveTimeout = setTimeout(callback, 450); // matches transition duration
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          style = _props.style,
-          children = _props.children,
-          other = (0, _objectWithoutProperties3.default)(_props, ['style', 'children']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)({}, this.state.style, style)) }),
-        children
-      );
-    }
-  }]);
-  return TransitionItem;
-}(_react.Component);
-
-TransitionItem.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TransitionItem.propTypes = {
-  children: _react.PropTypes.node,
-  style: _react.PropTypes.object
-} : void 0;
-
-
-function getStyles(props, context) {
-  var autoScrollBodyContent = props.autoScrollBodyContent,
-      open = props.open;
-  var _context$muiTheme = context.muiTheme,
-      _context$muiTheme$bas = _context$muiTheme.baseTheme,
-      spacing = _context$muiTheme$bas.spacing,
-      palette = _context$muiTheme$bas.palette,
-      dialog = _context$muiTheme.dialog,
-      zIndex = _context$muiTheme.zIndex;
-
-
-  var gutter = spacing.desktopGutter;
-  var borderScroll = '1px solid ' + palette.borderColor;
-
-  return {
-    root: {
-      position: 'fixed',
-      boxSizing: 'border-box',
-      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
-      zIndex: zIndex.dialog,
-      top: 0,
-      left: open ? 0 : -10000,
-      width: '100%',
-      height: '100%',
-      transition: open ? _transitions2.default.easeOut('0ms', 'left', '0ms') : _transitions2.default.easeOut('0ms', 'left', '450ms')
-    },
-    content: {
-      boxSizing: 'border-box',
-      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
-      transition: _transitions2.default.easeOut(),
-      position: 'relative',
-      width: '75%',
-      maxWidth: spacing.desktopKeylineIncrement * 12,
-      margin: '0 auto',
-      zIndex: zIndex.dialog
-    },
-    actionsContainer: {
-      boxSizing: 'border-box',
-      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
-      padding: 8,
-      width: '100%',
-      textAlign: 'right',
-      marginTop: autoScrollBodyContent ? -1 : 0,
-      borderTop: autoScrollBodyContent ? borderScroll : 'none'
-    },
-    overlay: {
-      zIndex: zIndex.dialogOverlay
-    },
-    title: {
-      margin: 0,
-      padding: gutter + 'px ' + gutter + 'px 20px ' + gutter + 'px',
-      color: palette.textColor,
-      fontSize: dialog.titleFontSize,
-      lineHeight: '32px',
-      fontWeight: 400,
-      marginBottom: autoScrollBodyContent ? -1 : 0,
-      borderBottom: autoScrollBodyContent ? borderScroll : 'none'
-    },
-    body: {
-      fontSize: dialog.bodyFontSize,
-      color: dialog.bodyColor,
-      padding: (props.title ? 0 : gutter) + 'px ' + gutter + 'px ' + gutter + 'px',
-      boxSizing: 'border-box',
-      overflowY: autoScrollBodyContent ? 'auto' : 'hidden'
-    }
-  };
-}
-
-var DialogInline = function (_Component2) {
-  (0, _inherits3.default)(DialogInline, _Component2);
-
-  function DialogInline() {
-    var _ref2;
-
-    var _temp2, _this2, _ret2;
-
-    (0, _classCallCheck3.default)(this, DialogInline);
-
-    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    return _ret2 = (_temp2 = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref2 = DialogInline.__proto__ || (0, _getPrototypeOf2.default)(DialogInline)).call.apply(_ref2, [this].concat(args))), _this2), _this2.handleTouchTapOverlay = function () {
-      _this2.requestClose(false);
-    }, _this2.handleKeyUp = function (event) {
-      if ((0, _keycode2.default)(event) === 'esc') {
-        _this2.requestClose(false);
-      }
-    }, _this2.handleResize = function () {
-      _this2.positionDialog();
-    }, _temp2), (0, _possibleConstructorReturn3.default)(_this2, _ret2);
-  }
-
-  (0, _createClass3.default)(DialogInline, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.positionDialog();
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.positionDialog();
-    }
-  }, {
-    key: 'positionDialog',
-    value: function positionDialog() {
-      var _props2 = this.props,
-          actions = _props2.actions,
-          autoDetectWindowHeight = _props2.autoDetectWindowHeight,
-          autoScrollBodyContent = _props2.autoScrollBodyContent,
-          bodyStyle = _props2.bodyStyle,
-          open = _props2.open,
-          repositionOnUpdate = _props2.repositionOnUpdate,
-          title = _props2.title;
-
-
-      if (!open) {
-        return;
-      }
-
-      var clientHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-      var container = _reactDom2.default.findDOMNode(this);
-      var dialogWindow = _reactDom2.default.findDOMNode(this.refs.dialogWindow);
-      var dialogContent = _reactDom2.default.findDOMNode(this.refs.dialogContent);
-      var minPaddingTop = 16;
-
-      // Reset the height in case the window was resized.
-      dialogWindow.style.height = '';
-      dialogContent.style.height = '';
-
-      var dialogWindowHeight = dialogWindow.offsetHeight;
-      var paddingTop = (clientHeight - dialogWindowHeight) / 2 - 64;
-      if (paddingTop < minPaddingTop) paddingTop = minPaddingTop;
-
-      // Vertically center the dialog window, but make sure it doesn't
-      // transition to that position.
-      if (repositionOnUpdate || !container.style.paddingTop) {
-        container.style.paddingTop = paddingTop + 'px';
-      }
-
-      // Force a height if the dialog is taller than clientHeight
-      if (autoDetectWindowHeight || autoScrollBodyContent) {
-        var styles = getStyles(this.props, this.context);
-        styles.body = (0, _simpleAssign2.default)(styles.body, bodyStyle);
-        var maxDialogContentHeight = clientHeight - 2 * 64;
-
-        if (title) maxDialogContentHeight -= dialogContent.previousSibling.offsetHeight;
-
-        if (_react2.default.Children.count(actions)) {
-          maxDialogContentHeight -= dialogContent.nextSibling.offsetHeight;
-        }
-
-        dialogContent.style.maxHeight = maxDialogContentHeight + 'px';
-      }
-    }
-  }, {
-    key: 'requestClose',
-    value: function requestClose(buttonClicked) {
-      if (!buttonClicked && this.props.modal) {
-        return;
-      }
-
-      if (this.props.onRequestClose) {
-        this.props.onRequestClose(!!buttonClicked);
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props3 = this.props,
-          actions = _props3.actions,
-          actionsContainerClassName = _props3.actionsContainerClassName,
-          actionsContainerStyle = _props3.actionsContainerStyle,
-          bodyClassName = _props3.bodyClassName,
-          bodyStyle = _props3.bodyStyle,
-          children = _props3.children,
-          className = _props3.className,
-          contentClassName = _props3.contentClassName,
-          contentStyle = _props3.contentStyle,
-          overlayClassName = _props3.overlayClassName,
-          overlayStyle = _props3.overlayStyle,
-          open = _props3.open,
-          titleClassName = _props3.titleClassName,
-          titleStyle = _props3.titleStyle,
-          title = _props3.title,
-          style = _props3.style;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      styles.root = (0, _simpleAssign2.default)(styles.root, style);
-      styles.content = (0, _simpleAssign2.default)(styles.content, contentStyle);
-      styles.body = (0, _simpleAssign2.default)(styles.body, bodyStyle);
-      styles.actionsContainer = (0, _simpleAssign2.default)(styles.actionsContainer, actionsContainerStyle);
-      styles.overlay = (0, _simpleAssign2.default)(styles.overlay, overlayStyle);
-      styles.title = (0, _simpleAssign2.default)(styles.title, titleStyle);
-
-      var actionsContainer = _react2.default.Children.count(actions) > 0 && _react2.default.createElement(
-        'div',
-        { className: actionsContainerClassName, style: prepareStyles(styles.actionsContainer) },
-        _react2.default.Children.toArray(actions)
-      );
-
-      var titleElement = title;
-      if (_react2.default.isValidElement(title)) {
-        titleElement = _react2.default.cloneElement(title, {
-          className: title.props.className || titleClassName,
-          style: prepareStyles((0, _simpleAssign2.default)(styles.title, title.props.style))
-        });
-      } else if (typeof title === 'string') {
-        titleElement = _react2.default.createElement(
-          'h3',
-          { className: titleClassName, style: prepareStyles(styles.title) },
-          title
-        );
-      }
-
-      return _react2.default.createElement(
-        'div',
-        { className: className, style: prepareStyles(styles.root) },
-        open && _react2.default.createElement(_reactEventListener2.default, {
-          target: 'window',
-          onKeyUp: this.handleKeyUp,
-          onResize: this.handleResize
-        }),
-        _react2.default.createElement(
-          _reactAddonsTransitionGroup2.default,
-          {
-            component: 'div',
-            ref: 'dialogWindow',
-            transitionAppear: true,
-            transitionAppearTimeout: 450,
-            transitionEnter: true,
-            transitionEnterTimeout: 450
-          },
-          open && _react2.default.createElement(
-            TransitionItem,
-            {
-              className: contentClassName,
-              style: styles.content
-            },
-            _react2.default.createElement(
-              _Paper2.default,
-              { zDepth: 4 },
-              titleElement,
-              _react2.default.createElement(
-                'div',
-                {
-                  ref: 'dialogContent',
-                  className: bodyClassName,
-                  style: prepareStyles(styles.body)
-                },
-                children
-              ),
-              actionsContainer
-            )
-          )
-        ),
-        _react2.default.createElement(_Overlay2.default, {
-          show: open,
-          className: overlayClassName,
-          style: styles.overlay,
-          onTouchTap: this.handleTouchTapOverlay
-        })
-      );
-    }
-  }]);
-  return DialogInline;
-}(_react.Component);
-
-DialogInline.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? DialogInline.propTypes = {
-  actions: _react.PropTypes.node,
-  actionsContainerClassName: _react.PropTypes.string,
-  actionsContainerStyle: _react.PropTypes.object,
-  autoDetectWindowHeight: _react.PropTypes.bool,
-  autoScrollBodyContent: _react.PropTypes.bool,
-  bodyClassName: _react.PropTypes.string,
-  bodyStyle: _react.PropTypes.object,
-  children: _react.PropTypes.node,
-  className: _react.PropTypes.string,
-  contentClassName: _react.PropTypes.string,
-  contentStyle: _react.PropTypes.object,
-  modal: _react.PropTypes.bool,
-  onRequestClose: _react.PropTypes.func,
-  open: _react.PropTypes.bool.isRequired,
-  overlayClassName: _react.PropTypes.string,
-  overlayStyle: _react.PropTypes.object,
-  repositionOnUpdate: _react.PropTypes.bool,
-  style: _react.PropTypes.object,
-  title: _react.PropTypes.node,
-  titleClassName: _react.PropTypes.string,
-  titleStyle: _react.PropTypes.object
-} : void 0;
-
-var Dialog = function (_Component3) {
-  (0, _inherits3.default)(Dialog, _Component3);
-
-  function Dialog() {
-    var _ref3;
-
-    var _temp3, _this3, _ret3;
-
-    (0, _classCallCheck3.default)(this, Dialog);
-
-    for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    return _ret3 = (_temp3 = (_this3 = (0, _possibleConstructorReturn3.default)(this, (_ref3 = Dialog.__proto__ || (0, _getPrototypeOf2.default)(Dialog)).call.apply(_ref3, [this].concat(args))), _this3), _this3.renderLayer = function () {
-      return _react2.default.createElement(DialogInline, _this3.props);
-    }, _temp3), (0, _possibleConstructorReturn3.default)(_this3, _ret3);
-  }
-
-  (0, _createClass3.default)(Dialog, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(_RenderToLayer2.default, { render: this.renderLayer, open: true, useLayerForClickAway: false });
-    }
-  }]);
-  return Dialog;
-}(_react.Component);
-
-Dialog.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-Dialog.defaultProps = {
-  autoDetectWindowHeight: true,
-  autoScrollBodyContent: false,
-  modal: false,
-  repositionOnUpdate: true
-};
-process.env.NODE_ENV !== "production" ? Dialog.propTypes = {
-  /**
-   * Action buttons to display below the Dialog content (`children`).
-   * This property accepts either a React element, or an array of React elements.
-   */
-  actions: _react.PropTypes.node,
-  /**
-   * The `className` to add to the actions container's root element.
-   */
-  actionsContainerClassName: _react.PropTypes.string,
-  /**
-   * Overrides the inline-styles of the actions container's root element.
-   */
-  actionsContainerStyle: _react.PropTypes.object,
-  /**
-   * If set to true, the height of the `Dialog` will be auto detected. A max height
-   * will be enforced so that the content does not extend beyond the viewport.
-   */
-  autoDetectWindowHeight: _react.PropTypes.bool,
-  /**
-   * If set to true, the body content of the `Dialog` will be scrollable.
-   */
-  autoScrollBodyContent: _react.PropTypes.bool,
-  /**
-   * The `className` to add to the content's root element under the title.
-   */
-  bodyClassName: _react.PropTypes.string,
-  /**
-   * Overrides the inline-styles of the content's root element under the title.
-   */
-  bodyStyle: _react.PropTypes.object,
-  /**
-   * The contents of the `Dialog`.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * The `className` to add to the content container.
-   */
-  contentClassName: _react.PropTypes.string,
-  /**
-   * Overrides the inline-styles of the content container.
-   */
-  contentStyle: _react.PropTypes.object,
-  /**
-   * Force the user to use one of the actions in the `Dialog`.
-   * Clicking outside the `Dialog` will not trigger the `onRequestClose`.
-   */
-  modal: _react.PropTypes.bool,
-  /**
-   * Fired when the `Dialog` is requested to be closed by a click outside the `Dialog` or on the buttons.
-   *
-   * @param {bool} buttonClicked Determines whether a button click triggered this request.
-   */
-  onRequestClose: _react.PropTypes.func,
-  /**
-   * Controls whether the Dialog is opened or not.
-   */
-  open: _react.PropTypes.bool.isRequired,
-  /**
-   * The `className` to add to the `Overlay` component that is rendered behind the `Dialog`.
-   */
-  overlayClassName: _react.PropTypes.string,
-  /**
-   * Overrides the inline-styles of the `Overlay` component that is rendered behind the `Dialog`.
-   */
-  overlayStyle: _react.PropTypes.object,
-  /**
-   * Determines whether the `Dialog` should be repositioned when it's contents are updated.
-   */
-  repositionOnUpdate: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The title to display on the `Dialog`. Could be number, string, element or an array containing these types.
-   */
-  title: _react.PropTypes.node,
-  /**
-   * The `className` to add to the title's root container element.
-   */
-  titleClassName: _react.PropTypes.string,
-  /**
-   * Overrides the inline-styles of the title's root container element.
-   */
-  titleStyle: _react.PropTypes.object
-} : void 0;
-exports.default = Dialog;
-}).call(this,require('_process'))
-},{"../Paper":73,"../internal/Overlay":149,"../internal/RenderToLayer":150,"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"react-addons-transition-group":309,"react-dom":364,"react-event-listener":311,"simple-assign":326}],39:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _Dialog = require('./Dialog');
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _Dialog2.default;
-},{"./Dialog":38}],40:[function(require,module,exports){
+},{"./Chip":15}],17:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7066,7 +2923,7 @@ Divider.contextTypes = {
 
 exports.default = Divider;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/objectWithoutProperties":173,"react":559,"simple-assign":326}],41:[function(require,module,exports){
+},{"_process":452,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/objectWithoutProperties":80,"react":451,"simple-assign":228}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7081,7 +2938,7 @@ var _Divider2 = _interopRequireDefault(_Divider);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Divider2.default;
-},{"./Divider":40}],42:[function(require,module,exports){
+},{"./Divider":17}],19:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -7544,7 +3401,7 @@ process.env.NODE_ENV !== "production" ? Drawer.propTypes = {
 } : void 0;
 exports.default = Drawer;
 }).call(this,require('_process'))
-},{"../Paper":73,"../internal/Overlay":149,"../styles/transitions":333,"../utils/autoPrefix":352,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"react-dom":364,"react-event-listener":311,"simple-assign":326}],43:[function(require,module,exports){
+},{"../Paper":40,"../internal/Overlay":60,"../styles/transitions":235,"../utils/autoPrefix":246,"../utils/propTypes":254,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"keycode":207,"react":451,"react-dom":256,"react-event-listener":213,"simple-assign":228}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7559,593 +3416,7 @@ var _Drawer2 = _interopRequireDefault(_Drawer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Drawer2.default;
-},{"./Drawer":42}],44:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _arrowDropDown = require('../svg-icons/navigation/arrow-drop-down');
-
-var _arrowDropDown2 = _interopRequireDefault(_arrowDropDown);
-
-var _Menu = require('../Menu/Menu');
-
-var _Menu2 = _interopRequireDefault(_Menu);
-
-var _ClearFix = require('../internal/ClearFix');
-
-var _ClearFix2 = _interopRequireDefault(_ClearFix);
-
-var _Popover = require('../Popover/Popover');
-
-var _Popover2 = _interopRequireDefault(_Popover);
-
-var _PopoverAnimationVertical = require('../Popover/PopoverAnimationVertical');
-
-var _PopoverAnimationVertical2 = _interopRequireDefault(_PopoverAnimationVertical);
-
-var _keycode = require('keycode');
-
-var _keycode2 = _interopRequireDefault(_keycode);
-
-var _events = require('../utils/events');
-
-var _events2 = _interopRequireDefault(_events);
-
-var _IconButton = require('../IconButton');
-
-var _IconButton2 = _interopRequireDefault(_IconButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var anchorOrigin = {
-  vertical: 'top',
-  horizontal: 'left'
-};
-
-function getStyles(props, context) {
-  var disabled = props.disabled;
-
-  var spacing = context.muiTheme.baseTheme.spacing;
-  var palette = context.muiTheme.baseTheme.palette;
-  var accentColor = context.muiTheme.dropDownMenu.accentColor;
-  return {
-    control: {
-      cursor: disabled ? 'not-allowed' : 'pointer',
-      height: '100%',
-      position: 'relative',
-      width: '100%'
-    },
-    icon: {
-      fill: accentColor,
-      position: 'absolute',
-      right: spacing.desktopGutterLess,
-      top: (spacing.iconSize - 24) / 2 + spacing.desktopGutterMini / 2
-    },
-    iconChildren: {
-      fill: 'inherit'
-    },
-    label: {
-      color: disabled ? palette.disabledColor : palette.textColor,
-      height: spacing.desktopToolbarHeight + 'px',
-      lineHeight: spacing.desktopToolbarHeight + 'px',
-      overflow: 'hidden',
-      opacity: 1,
-      position: 'relative',
-      paddingLeft: spacing.desktopGutter,
-      paddingRight: spacing.iconSize * 2 + spacing.desktopGutterMini,
-      textOverflow: 'ellipsis',
-      top: 0,
-      whiteSpace: 'nowrap'
-    },
-    labelWhenOpen: {
-      opacity: 0,
-      top: spacing.desktopToolbarHeight / 8
-    },
-    root: {
-      display: 'inline-block',
-      fontSize: spacing.desktopDropDownMenuFontSize,
-      height: spacing.desktopSubheaderHeight,
-      fontFamily: context.muiTheme.baseTheme.fontFamily,
-      outline: 'none',
-      position: 'relative',
-      transition: _transitions2.default.easeOut()
-    },
-    rootWhenOpen: {
-      opacity: 1
-    },
-    underline: {
-      borderTop: 'solid 1px ' + accentColor,
-      bottom: 1,
-      left: 0,
-      margin: '-1px ' + spacing.desktopGutter + 'px',
-      right: 0,
-      position: 'absolute'
-    }
-  };
-}
-
-var DropDownMenu = function (_Component) {
-  (0, _inherits3.default)(DropDownMenu, _Component);
-
-  function DropDownMenu() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, DropDownMenu);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = DropDownMenu.__proto__ || (0, _getPrototypeOf2.default)(DropDownMenu)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      open: false
-    }, _this.rootNode = undefined, _this.arrowNode = undefined, _this.handleTouchTapControl = function (event) {
-      event.preventDefault();
-      if (!_this.props.disabled) {
-        _this.setState({
-          open: !_this.state.open,
-          anchorEl: _this.rootNode
-        });
-      }
-    }, _this.handleRequestCloseMenu = function () {
-      _this.close(false);
-    }, _this.handleEscKeyDownMenu = function () {
-      _this.close(true);
-    }, _this.handleKeyDown = function (event) {
-      switch ((0, _keycode2.default)(event)) {
-        case 'up':
-        case 'down':
-        case 'space':
-        case 'enter':
-          event.preventDefault();
-          _this.setState({
-            open: true,
-            anchorEl: _this.rootNode
-          });
-          break;
-      }
-    }, _this.handleItemTouchTap = function (event, child, index) {
-      if (_this.props.multiple) {
-        if (!_this.state.open) {
-          _this.setState({ open: true });
-        }
-      } else {
-        event.persist();
-        _this.setState({
-          open: false
-        }, function () {
-          if (_this.props.onChange) {
-            _this.props.onChange(event, index, child.props.value);
-          }
-
-          _this.close(_events2.default.isKeyboard(event));
-        });
-      }
-    }, _this.handleChange = function (event, value) {
-      if (_this.props.multiple && _this.props.onChange) {
-        _this.props.onChange(event, undefined, value);
-      }
-    }, _this.close = function (isKeyboard) {
-      _this.setState({
-        open: false
-      }, function () {
-        if (_this.props.onClose) {
-          _this.props.onClose();
-        }
-
-        if (isKeyboard) {
-          var dropArrow = _this.arrowNode;
-          var dropNode = _reactDom2.default.findDOMNode(dropArrow);
-          dropNode.focus();
-          dropArrow.setKeyboardFocus(true);
-        }
-      });
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  // The nested styles for drop-down-menu are modified by toolbar and possibly
-  // other user components, so it will give full access to its js styles rather
-  // than just the parent.
-
-
-  (0, _createClass3.default)(DropDownMenu, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      if (this.props.autoWidth) {
-        this.setWidth();
-      }
-      if (this.props.openImmediately) {
-        // TODO: Temporary fix to make openImmediately work with popover.
-        /* eslint-disable react/no-did-mount-set-state */
-        setTimeout(function () {
-          return _this2.setState({
-            open: true,
-            anchorEl: _this2.rootNode
-          });
-        }, 0);
-        /* eslint-enable react/no-did-mount-set-state */
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps() {
-      if (this.props.autoWidth) {
-        this.setWidth();
-      }
-    }
-  }, {
-    key: 'getInputNode',
-
-
-    /**
-     * This method is deprecated but still here because the TextField
-     * need it in order to work. TODO: That will be addressed later.
-     */
-    value: function getInputNode() {
-      var _this3 = this;
-
-      var rootNode = this.rootNode;
-
-      rootNode.focus = function () {
-        if (!_this3.props.disabled) {
-          _this3.setState({
-            open: !_this3.state.open,
-            anchorEl: _this3.rootNode
-          });
-        }
-      };
-
-      return rootNode;
-    }
-  }, {
-    key: 'setWidth',
-    value: function setWidth() {
-      var el = this.rootNode;
-      if (!this.props.style || !this.props.style.hasOwnProperty('width')) {
-        el.style.width = 'auto';
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this4 = this;
-
-      var _props = this.props,
-          animated = _props.animated,
-          animation = _props.animation,
-          autoWidth = _props.autoWidth,
-          multiple = _props.multiple,
-          children = _props.children,
-          className = _props.className,
-          disabled = _props.disabled,
-          iconStyle = _props.iconStyle,
-          labelStyle = _props.labelStyle,
-          listStyle = _props.listStyle,
-          maxHeight = _props.maxHeight,
-          menuStyleProp = _props.menuStyle,
-          selectionRenderer = _props.selectionRenderer,
-          onClose = _props.onClose,
-          openImmediately = _props.openImmediately,
-          menuItemStyle = _props.menuItemStyle,
-          selectedMenuItemStyle = _props.selectedMenuItemStyle,
-          style = _props.style,
-          underlineStyle = _props.underlineStyle,
-          value = _props.value,
-          iconButton = _props.iconButton,
-          other = (0, _objectWithoutProperties3.default)(_props, ['animated', 'animation', 'autoWidth', 'multiple', 'children', 'className', 'disabled', 'iconStyle', 'labelStyle', 'listStyle', 'maxHeight', 'menuStyle', 'selectionRenderer', 'onClose', 'openImmediately', 'menuItemStyle', 'selectedMenuItemStyle', 'style', 'underlineStyle', 'value', 'iconButton']);
-      var _state = this.state,
-          anchorEl = _state.anchorEl,
-          open = _state.open;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      var displayValue = '';
-      if (!multiple) {
-        _react2.default.Children.forEach(children, function (child) {
-          if (child && value === child.props.value) {
-            if (selectionRenderer) {
-              displayValue = selectionRenderer(value);
-            } else {
-              // This will need to be improved (in case primaryText is a node)
-              displayValue = child.props.label || child.props.primaryText;
-            }
-          }
-        });
-      } else {
-        (function () {
-          var values = [];
-          _react2.default.Children.forEach(children, function (child) {
-            if (child && value && value.includes(child.props.value)) {
-              if (selectionRenderer) {
-                values.push(child.props.value);
-              } else {
-                values.push(child.props.label || child.props.primaryText);
-              }
-            }
-          });
-
-          displayValue = [];
-          if (selectionRenderer) {
-            displayValue = selectionRenderer(values);
-          } else {
-            displayValue = values.join(', ');
-          }
-        })();
-      }
-
-      var menuStyle = void 0;
-      if (anchorEl && !autoWidth) {
-        menuStyle = (0, _simpleAssign2.default)({
-          width: anchorEl.clientWidth
-        }, menuStyleProp);
-      } else {
-        menuStyle = menuStyleProp;
-      }
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, {
-          ref: function ref(node) {
-            _this4.rootNode = node;
-          },
-          className: className,
-          style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, open && styles.rootWhenOpen, style))
-        }),
-        _react2.default.createElement(
-          _ClearFix2.default,
-          { style: styles.control, onTouchTap: this.handleTouchTapControl },
-          _react2.default.createElement(
-            'div',
-            { style: prepareStyles((0, _simpleAssign2.default)({}, styles.label, open && styles.labelWhenOpen, labelStyle)) },
-            displayValue
-          ),
-          _react2.default.createElement(
-            _IconButton2.default,
-            {
-              disabled: disabled,
-              onKeyDown: this.handleKeyDown,
-              ref: function ref(node) {
-                _this4.arrowNode = node;
-              },
-              style: (0, _simpleAssign2.default)({}, styles.icon, iconStyle),
-              iconStyle: styles.iconChildren
-            },
-            iconButton
-          ),
-          _react2.default.createElement('div', { style: prepareStyles((0, _simpleAssign2.default)({}, styles.underline, underlineStyle)) })
-        ),
-        _react2.default.createElement(
-          _Popover2.default,
-          {
-            anchorOrigin: anchorOrigin,
-            anchorEl: anchorEl,
-            animation: animation || _PopoverAnimationVertical2.default,
-            open: open,
-            animated: animated,
-            onRequestClose: this.handleRequestCloseMenu
-          },
-          _react2.default.createElement(
-            _Menu2.default,
-            {
-              multiple: multiple,
-              maxHeight: maxHeight,
-              desktop: true,
-              value: value,
-              onEscKeyDown: this.handleEscKeyDownMenu,
-              style: menuStyle,
-              listStyle: listStyle,
-              onItemTouchTap: this.handleItemTouchTap,
-              onChange: this.handleChange,
-              menuItemStyle: menuItemStyle,
-              selectedMenuItemStyle: selectedMenuItemStyle
-            },
-            children
-          )
-        )
-      );
-    }
-  }]);
-  return DropDownMenu;
-}(_react.Component);
-
-DropDownMenu.muiName = 'DropDownMenu';
-DropDownMenu.defaultProps = {
-  animated: true,
-  autoWidth: true,
-  disabled: false,
-  iconButton: _react2.default.createElement(_arrowDropDown2.default, null),
-  openImmediately: false,
-  maxHeight: 500,
-  multiple: false
-};
-DropDownMenu.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? DropDownMenu.propTypes = {
-  /**
-   * If true, the popover will apply transitions when
-   * it gets added to the DOM.
-   */
-  animated: _react.PropTypes.bool,
-  /**
-   * Override the default animation component used.
-   */
-  animation: _react.PropTypes.func,
-  /**
-   * The width will automatically be set according to the items inside the menu.
-   * To control this width in css instead, set this prop to `false`.
-   */
-  autoWidth: _react.PropTypes.bool,
-  /**
-   * The `MenuItem`s to populate the `Menu` with. If the `MenuItems` have the
-   * prop `label` that value will be used to render the representation of that
-   * item within the field.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Disables the menu.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * Overrides default `SvgIcon` dropdown arrow component.
-   */
-  iconButton: _react.PropTypes.node,
-  /**
-   * Overrides the styles of icon element.
-   */
-  iconStyle: _react.PropTypes.object,
-  /**
-   * Overrides the styles of label when the `DropDownMenu` is inactive.
-   */
-  labelStyle: _react.PropTypes.object,
-  /**
-   * The style object to use to override underlying list style.
-   */
-  listStyle: _react.PropTypes.object,
-  /**
-   * The maximum height of the `Menu` when it is displayed.
-   */
-  maxHeight: _react.PropTypes.number,
-  /**
-   * Override the inline-styles of menu items.
-   */
-  menuItemStyle: _react.PropTypes.object,
-  /**
-   * Overrides the styles of `Menu` when the `DropDownMenu` is displayed.
-   */
-  menuStyle: _react.PropTypes.object,
-  /**
-   * If true, `value` must be an array and the menu will support
-   * multiple selections.
-   */
-  multiple: _react.PropTypes.bool,
-  /**
-   * Callback function fired when a menu item is clicked, other than the one currently selected.
-   *
-   * @param {object} event TouchTap event targeting the menu item that was clicked.
-   * @param {number} key The index of the clicked menu item in the `children` collection.
-   * @param {any} value If `multiple` is true, the menu's `value`
-   * array with either the menu item's `value` added (if
-   * it wasn't already selected) or omitted (if it was already selected).
-   * Otherwise, the `value` of the menu item.
-   */
-  onChange: _react.PropTypes.func,
-  /**
-   * Callback function fired when the menu is closed.
-   */
-  onClose: _react.PropTypes.func,
-  /**
-   * Set to true to have the `DropDownMenu` automatically open on mount.
-   */
-  openImmediately: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of selected menu items.
-   */
-  selectedMenuItemStyle: _react.PropTypes.object,
-  /**
-   * Callback function fired when a menu item is clicked, other than the one currently selected.
-   *
-   * @param {any} value If `multiple` is true, the menu's `value`
-   * array with either the menu item's `value` added (if
-   * it wasn't already selected) or omitted (if it was already selected).
-   * Otherwise, the `value` of the menu item.
-   */
-  selectionRenderer: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Overrides the inline-styles of the underline.
-   */
-  underlineStyle: _react.PropTypes.object,
-  /**
-   * If `multiple` is true, an array of the `value`s of the selected
-   * menu items. Otherwise, the `value` of the selected menu item.
-   * If provided, the menu will be a controlled component.
-   */
-  value: _react.PropTypes.any
-} : void 0;
-exports.default = DropDownMenu;
-}).call(this,require('_process'))
-},{"../IconButton":57,"../Menu/Menu":67,"../Popover/Popover":74,"../Popover/PopoverAnimationVertical":76,"../internal/ClearFix":142,"../styles/transitions":333,"../svg-icons/navigation/arrow-drop-down":339,"../utils/events":359,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"react-dom":364,"simple-assign":326}],45:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.MenuItem = exports.DropDownMenu = undefined;
-
-var _DropDownMenu2 = require('./DropDownMenu');
-
-var _DropDownMenu3 = _interopRequireDefault(_DropDownMenu2);
-
-var _MenuItem2 = require('../MenuItem/MenuItem');
-
-var _MenuItem3 = _interopRequireDefault(_MenuItem2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.DropDownMenu = _DropDownMenu3.default;
-exports.MenuItem = _MenuItem3.default;
-exports.default = _DropDownMenu3.default;
-},{"../MenuItem/MenuItem":70,"./DropDownMenu":44}],46:[function(require,module,exports){
+},{"./Drawer":19}],21:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8501,7 +3772,7 @@ process.env.NODE_ENV !== "production" ? FlatButton.propTypes = {
 } : void 0;
 exports.default = FlatButton;
 }).call(this,require('_process'))
-},{"../internal/EnhancedButton":144,"../styles/transitions":333,"../utils/childUtils":355,"../utils/colorManipulator":356,"./FlatButtonLabel":47,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],47:[function(require,module,exports){
+},{"../internal/EnhancedButton":58,"../styles/transitions":235,"../utils/childUtils":249,"../utils/colorManipulator":250,"./FlatButtonLabel":22,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],22:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8590,7 +3861,7 @@ process.env.NODE_ENV !== "production" ? FlatButtonLabel.propTypes = {
 } : void 0;
 exports.default = FlatButtonLabel;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],48:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8605,413 +3876,7 @@ var _FlatButton2 = _interopRequireDefault(_FlatButton);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _FlatButton2.default;
-},{"./FlatButton":46}],49:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _colorManipulator = require('../utils/colorManipulator');
-
-var _EnhancedButton = require('../internal/EnhancedButton');
-
-var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-
-var _FontIcon = require('../FontIcon');
-
-var _FontIcon2 = _interopRequireDefault(_FontIcon);
-
-var _Paper = require('../Paper');
-
-var _Paper2 = _interopRequireDefault(_Paper);
-
-var _childUtils = require('../utils/childUtils');
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-var _propTypes = require('../utils/propTypes');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var floatingActionButton = context.muiTheme.floatingActionButton;
-
-
-  var backgroundColor = props.backgroundColor || floatingActionButton.color;
-  var iconColor = floatingActionButton.iconColor;
-
-  if (props.disabled) {
-    backgroundColor = props.disabledColor || floatingActionButton.disabledColor;
-    iconColor = floatingActionButton.disabledTextColor;
-  } else if (props.secondary) {
-    backgroundColor = floatingActionButton.secondaryColor;
-    iconColor = floatingActionButton.secondaryIconColor;
-  }
-
-  return {
-    root: {
-      transition: _transitions2.default.easeOut(),
-      display: 'inline-block',
-      backgroundColor: 'transparent'
-    },
-    container: {
-      backgroundColor: backgroundColor,
-      transition: _transitions2.default.easeOut(),
-      height: floatingActionButton.buttonSize,
-      width: floatingActionButton.buttonSize,
-      padding: 0,
-      overflow: 'hidden',
-      borderRadius: '50%',
-      textAlign: 'center',
-      verticalAlign: 'bottom'
-    },
-    containerWhenMini: {
-      height: floatingActionButton.miniSize,
-      width: floatingActionButton.miniSize
-    },
-    overlay: {
-      transition: _transitions2.default.easeOut(),
-      top: 0
-    },
-    overlayWhenHovered: {
-      backgroundColor: (0, _colorManipulator.fade)(iconColor, 0.4)
-    },
-    icon: {
-      height: floatingActionButton.buttonSize,
-      lineHeight: floatingActionButton.buttonSize + 'px',
-      fill: iconColor,
-      color: iconColor
-    },
-    iconWhenMini: {
-      height: floatingActionButton.miniSize,
-      lineHeight: floatingActionButton.miniSize + 'px'
-    }
-  };
-}
-
-var FloatingActionButton = function (_Component) {
-  (0, _inherits3.default)(FloatingActionButton, _Component);
-
-  function FloatingActionButton() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, FloatingActionButton);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = FloatingActionButton.__proto__ || (0, _getPrototypeOf2.default)(FloatingActionButton)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hovered: false,
-      touch: false,
-      zDepth: undefined
-    }, _this.handleMouseDown = function (event) {
-      // only listen to left clicks
-      if (event.button === 0) {
-        _this.setState({ zDepth: _this.props.zDepth + 1 });
-      }
-      if (_this.props.onMouseDown) _this.props.onMouseDown(event);
-    }, _this.handleMouseUp = function (event) {
-      _this.setState({ zDepth: _this.props.zDepth });
-      if (_this.props.onMouseUp) {
-        _this.props.onMouseUp(event);
-      }
-    }, _this.handleMouseLeave = function (event) {
-      if (!_this.refs.container.isKeyboardFocused()) {
-        _this.setState({ zDepth: _this.props.zDepth, hovered: false });
-      }
-      if (_this.props.onMouseLeave) {
-        _this.props.onMouseLeave(event);
-      }
-    }, _this.handleMouseEnter = function (event) {
-      if (!_this.refs.container.isKeyboardFocused() && !_this.state.touch) {
-        _this.setState({ hovered: true });
-      }
-      if (_this.props.onMouseEnter) {
-        _this.props.onMouseEnter(event);
-      }
-    }, _this.handleTouchStart = function (event) {
-      _this.setState({
-        touch: true,
-        zDepth: _this.props.zDepth + 1
-      });
-      if (_this.props.onTouchStart) {
-        _this.props.onTouchStart(event);
-      }
-    }, _this.handleTouchEnd = function (event) {
-      _this.setState({
-        touch: true,
-        zDepth: _this.props.zDepth
-      });
-      if (_this.props.onTouchEnd) {
-        _this.props.onTouchEnd(event);
-      }
-    }, _this.handleKeyboardFocus = function (event, keyboardFocused) {
-      if (keyboardFocused && !_this.props.disabled) {
-        _this.setState({ zDepth: _this.props.zDepth + 1 });
-        _this.refs.overlay.style.backgroundColor = (0, _colorManipulator.fade)(getStyles(_this.props, _this.context).icon.color, 0.4);
-      } else if (!_this.state.hovered) {
-        _this.setState({ zDepth: _this.props.zDepth });
-        _this.refs.overlay.style.backgroundColor = 'transparent';
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(FloatingActionButton, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({
-        zDepth: this.props.disabled ? 0 : this.props.zDepth
-      });
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(!this.props.iconClassName || !this.props.children, 'Material-UI: You have set both an iconClassName and a child icon. ' + 'It is recommended you use only one method when adding ' + 'icons to FloatingActionButtons.') : void 0;
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      var nextState = {};
-
-      if (nextProps.disabled !== this.props.disabled) {
-        nextState.zDepth = nextProps.disabled ? 0 : this.props.zDepth;
-      }
-      if (nextProps.disabled) {
-        nextState.hovered = false;
-      }
-
-      this.setState(nextState);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          backgroundColor = _props.backgroundColor,
-          className = _props.className,
-          childrenProp = _props.children,
-          disabled = _props.disabled,
-          disabledColor = _props.disabledColor,
-          mini = _props.mini,
-          secondary = _props.secondary,
-          iconStyle = _props.iconStyle,
-          iconClassName = _props.iconClassName,
-          zDepth = _props.zDepth,
-          other = (0, _objectWithoutProperties3.default)(_props, ['backgroundColor', 'className', 'children', 'disabled', 'disabledColor', 'mini', 'secondary', 'iconStyle', 'iconClassName', 'zDepth']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      var iconElement = void 0;
-      if (iconClassName) {
-        iconElement = _react2.default.createElement(_FontIcon2.default, {
-          className: iconClassName,
-          style: (0, _simpleAssign2.default)({}, styles.icon, mini && styles.iconWhenMini, iconStyle)
-        });
-      }
-
-      var children = void 0;
-
-      if (childrenProp) {
-        children = (0, _childUtils.extendChildren)(childrenProp, function (child) {
-          return {
-            style: (0, _simpleAssign2.default)({}, styles.icon, mini && styles.iconWhenMini, iconStyle, child.props.style)
-          };
-        });
-      }
-
-      var buttonEventHandlers = disabled ? null : {
-        onMouseDown: this.handleMouseDown,
-        onMouseUp: this.handleMouseUp,
-        onMouseLeave: this.handleMouseLeave,
-        onMouseEnter: this.handleMouseEnter,
-        onTouchStart: this.handleTouchStart,
-        onTouchEnd: this.handleTouchEnd,
-        onKeyboardFocus: this.handleKeyboardFocus
-      };
-
-      return _react2.default.createElement(
-        _Paper2.default,
-        {
-          className: className,
-          style: (0, _simpleAssign2.default)(styles.root, this.props.style),
-          zDepth: this.state.zDepth,
-          circle: true
-        },
-        _react2.default.createElement(
-          _EnhancedButton2.default,
-          (0, _extends3.default)({}, other, buttonEventHandlers, {
-            ref: 'container',
-            disabled: disabled,
-            style: (0, _simpleAssign2.default)(styles.container, this.props.mini && styles.containerWhenMini, iconStyle),
-            focusRippleColor: styles.icon.color,
-            touchRippleColor: styles.icon.color
-          }),
-          _react2.default.createElement(
-            'div',
-            {
-              ref: 'overlay',
-              style: prepareStyles((0, _simpleAssign2.default)(styles.overlay, this.state.hovered && !this.props.disabled && styles.overlayWhenHovered))
-            },
-            iconElement,
-            children
-          )
-        )
-      );
-    }
-  }]);
-  return FloatingActionButton;
-}(_react.Component);
-
-FloatingActionButton.defaultProps = {
-  disabled: false,
-  mini: false,
-  secondary: false,
-  zDepth: 2
-};
-FloatingActionButton.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? FloatingActionButton.propTypes = {
-  /**
-   * This value will override the default background color for the button.
-   * However it will not override the default disabled background color.
-   * This has to be set separately using the disabledColor attribute.
-   */
-  backgroundColor: _react.PropTypes.string,
-  /**
-   * This is what displayed inside the floating action button; for example, a SVG Icon.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Disables the button if set to true.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * This value will override the default background color for the button when it is disabled.
-   */
-  disabledColor: _react.PropTypes.string,
-  /**
-   * The URL to link to when the button is clicked.
-   */
-  href: _react.PropTypes.string,
-  /**
-   * The icon within the FloatingActionButton is a FontIcon component.
-   * This property is the classname of the icon to be displayed inside the button.
-   * An alternative to adding an iconClassName would be to manually insert a
-   * FontIcon component or custom SvgIcon component or as a child of FloatingActionButton.
-   */
-  iconClassName: _react.PropTypes.string,
-  /**
-   * This is the equivalent to iconClassName except that it is used for
-   * overriding the inline-styles of the FontIcon component.
-   */
-  iconStyle: _react.PropTypes.object,
-  /**
-   * If true, the button will be a small floating action button.
-   */
-  mini: _react.PropTypes.bool,
-  /** @ignore */
-  onMouseDown: _react.PropTypes.func,
-  /** @ignore */
-  onMouseEnter: _react.PropTypes.func,
-  /** @ignore */
-  onMouseLeave: _react.PropTypes.func,
-  /** @ignore */
-  onMouseUp: _react.PropTypes.func,
-  /** @ignore */
-  onTouchEnd: _react.PropTypes.func,
-  /** @ignore */
-  onTouchStart: _react.PropTypes.func,
-  /**
-   * Callback function fired when the button is touch-tapped.
-   *
-   * @param {object} event TouchTap event targeting the button.
-   */
-  onTouchTap: _react.PropTypes.func,
-  /**
-   * If true, the button will use the secondary button colors.
-   */
-  secondary: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The zDepth of the underlying `Paper` component.
-   */
-  zDepth: _propTypes2.default.zDepth
-} : void 0;
-exports.default = FloatingActionButton;
-}).call(this,require('_process'))
-},{"../FontIcon":52,"../Paper":73,"../internal/EnhancedButton":144,"../styles/transitions":333,"../utils/childUtils":355,"../utils/colorManipulator":356,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326,"warning":327}],50:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _FloatingActionButton = require('./FloatingActionButton');
-
-var _FloatingActionButton2 = _interopRequireDefault(_FloatingActionButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _FloatingActionButton2.default;
-},{"./FloatingActionButton":49}],51:[function(require,module,exports){
+},{"./FlatButton":21}],24:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -9168,7 +4033,7 @@ process.env.NODE_ENV !== "production" ? FontIcon.propTypes = {
 } : void 0;
 exports.default = FontIcon;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],52:[function(require,module,exports){
+},{"../styles/transitions":235,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9183,7 +4048,7 @@ var _FontIcon2 = _interopRequireDefault(_FontIcon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _FontIcon2.default;
-},{"./FontIcon":51}],53:[function(require,module,exports){
+},{"./FontIcon":24}],26:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -9327,7 +4192,7 @@ process.env.NODE_ENV !== "production" ? GridList.propTypes = {
 } : void 0;
 exports.default = GridList;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],54:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],27:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -9630,7 +4495,7 @@ process.env.NODE_ENV !== "production" ? GridTile.propTypes = {
 } : void 0;
 exports.default = GridTile;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/defineProperty":170,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],55:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/defineProperty":77,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9651,7 +4516,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.GridList = _GridList3.default;
 exports.GridTile = _GridTile3.default;
 exports.default = _GridList3.default;
-},{"./GridList":53,"./GridTile":54}],56:[function(require,module,exports){
+},{"./GridList":26,"./GridTile":27}],29:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -10034,7 +4899,7 @@ process.env.NODE_ENV !== "production" ? IconButton.propTypes = {
 } : void 0;
 exports.default = IconButton;
 }).call(this,require('_process'))
-},{"../FontIcon":52,"../internal/EnhancedButton":144,"../internal/Tooltip":155,"../styles/transitions":333,"../utils/childUtils":355,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],57:[function(require,module,exports){
+},{"../FontIcon":25,"../internal/EnhancedButton":58,"../internal/Tooltip":64,"../styles/transitions":235,"../utils/childUtils":249,"../utils/propTypes":254,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10049,692 +4914,7 @@ var _IconButton2 = _interopRequireDefault(_IconButton);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _IconButton2.default;
-},{"./IconButton":56}],58:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _events = require('../utils/events');
-
-var _events2 = _interopRequireDefault(_events);
-
-var _propTypes = require('../utils/propTypes');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _Menu = require('../Menu/Menu');
-
-var _Menu2 = _interopRequireDefault(_Menu);
-
-var _Popover = require('../Popover/Popover');
-
-var _Popover2 = _interopRequireDefault(_Popover);
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var IconMenu = function (_Component) {
-  (0, _inherits3.default)(IconMenu, _Component);
-
-  function IconMenu() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, IconMenu);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = IconMenu.__proto__ || (0, _getPrototypeOf2.default)(IconMenu)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      menuInitiallyKeyboardFocused: false,
-      open: false
-    }, _this.handleItemTouchTap = function (event, child) {
-      if (_this.props.touchTapCloseDelay !== 0 && !child.props.hasOwnProperty('menuItems')) {
-        (function () {
-          var isKeyboard = _events2.default.isKeyboard(event);
-          _this.timerCloseId = setTimeout(function () {
-            _this.close(isKeyboard ? 'enter' : 'itemTap', isKeyboard);
-          }, _this.props.touchTapCloseDelay);
-        })();
-      }
-
-      _this.props.onItemTouchTap(event, child);
-    }, _this.handleRequestClose = function (reason) {
-      _this.close(reason);
-    }, _this.handleEscKeyDownMenu = function (event) {
-      _this.close('escape', event);
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(IconMenu, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.open != null) {
-        this.setState({
-          open: nextProps.open,
-          anchorEl: this.refs.iconMenuContainer
-        });
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.timerCloseId);
-    }
-  }, {
-    key: 'isOpen',
-    value: function isOpen() {
-      return this.state.open;
-    }
-  }, {
-    key: 'close',
-    value: function close(reason, isKeyboard) {
-      var _this2 = this;
-
-      if (!this.state.open) {
-        return;
-      }
-
-      if (this.props.open !== null) {
-        this.props.onRequestChange(false, reason);
-      } else {
-        this.setState({ open: false }, function () {
-          // Set focus on the icon button when the menu close
-          if (isKeyboard) {
-            var iconButton = _this2.refs.iconButton;
-            _reactDom2.default.findDOMNode(iconButton).focus();
-            iconButton.setKeyboardFocus();
-          }
-        });
-      }
-    }
-  }, {
-    key: 'open',
-    value: function open(reason, event) {
-      if (this.props.open !== null) {
-        this.props.onRequestChange(true, reason);
-
-        return this.setState({
-          menuInitiallyKeyboardFocused: _events2.default.isKeyboard(event),
-          anchorEl: event.currentTarget
-        });
-      }
-
-      this.setState({
-        open: true,
-        menuInitiallyKeyboardFocused: _events2.default.isKeyboard(event),
-        anchorEl: event.currentTarget
-      });
-
-      event.preventDefault();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      var _props = this.props,
-          anchorOrigin = _props.anchorOrigin,
-          className = _props.className,
-          animated = _props.animated,
-          animation = _props.animation,
-          iconButtonElement = _props.iconButtonElement,
-          iconStyle = _props.iconStyle,
-          onItemTouchTap = _props.onItemTouchTap,
-          onKeyboardFocus = _props.onKeyboardFocus,
-          onMouseDown = _props.onMouseDown,
-          onMouseLeave = _props.onMouseLeave,
-          onMouseEnter = _props.onMouseEnter,
-          onMouseUp = _props.onMouseUp,
-          onRequestChange = _props.onRequestChange,
-          onTouchTap = _props.onTouchTap,
-          listStyle = _props.listStyle,
-          menuStyle = _props.menuStyle,
-          style = _props.style,
-          targetOrigin = _props.targetOrigin,
-          touchTapCloseDelay = _props.touchTapCloseDelay,
-          useLayerForClickAway = _props.useLayerForClickAway,
-          other = (0, _objectWithoutProperties3.default)(_props, ['anchorOrigin', 'className', 'animated', 'animation', 'iconButtonElement', 'iconStyle', 'onItemTouchTap', 'onKeyboardFocus', 'onMouseDown', 'onMouseLeave', 'onMouseEnter', 'onMouseUp', 'onRequestChange', 'onTouchTap', 'listStyle', 'menuStyle', 'style', 'targetOrigin', 'touchTapCloseDelay', 'useLayerForClickAway']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-      var _state = this.state,
-          open = _state.open,
-          anchorEl = _state.anchorEl;
-
-
-      var styles = {
-        root: {
-          display: 'inline-block',
-          position: 'relative'
-        },
-        menu: {
-          position: 'relative'
-        }
-      };
-
-      var mergedRootStyles = (0, _simpleAssign2.default)(styles.root, style);
-      var mergedMenuStyles = (0, _simpleAssign2.default)(styles.menu, menuStyle);
-
-      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(iconButtonElement.type.muiName !== 'SvgIcon', 'Material-UI: You shoud not provide an <SvgIcon /> to the \'iconButtonElement\' property of <IconMenu />.\nYou should wrapped it with an <IconButton />.') : void 0;
-
-      var iconButtonProps = {
-        onKeyboardFocus: onKeyboardFocus,
-        onTouchTap: function onTouchTap(event) {
-          _this3.open(_events2.default.isKeyboard(event) ? 'keyboard' : 'iconTap', event);
-          if (iconButtonElement.props.onTouchTap) {
-            iconButtonElement.props.onTouchTap(event);
-          }
-        },
-        ref: 'iconButton'
-      };
-      if (iconStyle || iconButtonElement.props.iconStyle) {
-        iconButtonProps.iconStyle = iconStyle ? (0, _simpleAssign2.default)({}, iconStyle, iconButtonElement.props.iconStyle) : iconButtonElement.props.iconStyle;
-      }
-      var iconButton = _react2.default.cloneElement(iconButtonElement, iconButtonProps);
-
-      var menu = _react2.default.createElement(
-        _Menu2.default,
-        (0, _extends3.default)({}, other, {
-          initiallyKeyboardFocused: this.state.menuInitiallyKeyboardFocused,
-          onEscKeyDown: this.handleEscKeyDownMenu,
-          onItemTouchTap: this.handleItemTouchTap,
-          style: mergedMenuStyles,
-          listStyle: listStyle
-        }),
-        this.props.children
-      );
-
-      return _react2.default.createElement(
-        'div',
-        {
-          ref: 'iconMenuContainer',
-          className: className,
-          onMouseDown: onMouseDown,
-          onMouseLeave: onMouseLeave,
-          onMouseEnter: onMouseEnter,
-          onMouseUp: onMouseUp,
-          onTouchTap: onTouchTap,
-          style: prepareStyles(mergedRootStyles)
-        },
-        iconButton,
-        _react2.default.createElement(
-          _Popover2.default,
-          {
-            anchorOrigin: anchorOrigin,
-            targetOrigin: targetOrigin,
-            open: open,
-            anchorEl: anchorEl,
-            childContextTypes: this.constructor.childContextTypes,
-            useLayerForClickAway: useLayerForClickAway,
-            onRequestClose: this.handleRequestClose,
-            animated: animated,
-            animation: animation,
-            context: this.context
-          },
-          menu
-        )
-      );
-    }
-  }]);
-  return IconMenu;
-}(_react.Component);
-
-IconMenu.muiName = 'IconMenu';
-IconMenu.defaultProps = {
-  anchorOrigin: {
-    vertical: 'top',
-    horizontal: 'left'
-  },
-  animated: true,
-  multiple: false,
-  open: null,
-  onItemTouchTap: function onItemTouchTap() {},
-  onKeyboardFocus: function onKeyboardFocus() {},
-  onMouseDown: function onMouseDown() {},
-  onMouseLeave: function onMouseLeave() {},
-  onMouseEnter: function onMouseEnter() {},
-  onMouseUp: function onMouseUp() {},
-  onRequestChange: function onRequestChange() {},
-  onTouchTap: function onTouchTap() {},
-  targetOrigin: {
-    vertical: 'top',
-    horizontal: 'left'
-  },
-  touchTapCloseDelay: 200,
-  useLayerForClickAway: false
-};
-IconMenu.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? IconMenu.propTypes = {
-  /**
-   * This is the point on the icon where the menu
-   * `targetOrigin` will attach.
-   * Options:
-   * vertical: [top, center, bottom]
-   * horizontal: [left, middle, right].
-   */
-  anchorOrigin: _propTypes2.default.origin,
-  /**
-   * If true, the popover will apply transitions when
-   * it gets added to the DOM.
-   */
-  animated: _react.PropTypes.bool,
-  /**
-   * Override the default animation component used.
-   */
-  animation: _react.PropTypes.func,
-  /**
-   * Should be used to pass `MenuItem` components.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The CSS class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * This is the `IconButton` to render. This button will open the menu.
-   */
-  iconButtonElement: _react.PropTypes.element.isRequired,
-  /**
-   * Override the inline-styles of the underlying icon element.
-   */
-  iconStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the underlying `List` element.
-   */
-  listStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the menu element.
-   */
-  menuStyle: _react.PropTypes.object,
-  /**
-   * If true, the value can an be array and allow the menu to be a multi-select.
-   */
-  multiple: _react.PropTypes.bool,
-  /**
-   * Callback function fired when a menu item is selected with a touch-tap.
-   *
-   * @param {object} event TouchTap event targeting the selected menu item element.
-   * @param {object} child The selected element.
-   */
-  onItemTouchTap: _react.PropTypes.func,
-  /**
-   * Callback function fired when the `IconButton` element is focused or blurred by the keyboard.
-   *
-   * @param {object} event `focus` or `blur` event targeting the `IconButton` element.
-   * @param {boolean} keyboardFocused If true, the `IconButton` element is focused.
-   */
-  onKeyboardFocus: _react.PropTypes.func,
-  /** @ignore */
-  onMouseDown: _react.PropTypes.func,
-  /** @ignore */
-  onMouseEnter: _react.PropTypes.func,
-  /** @ignore */
-  onMouseLeave: _react.PropTypes.func,
-  /** @ignore */
-  onMouseUp: _react.PropTypes.func,
-  /**
-   * Callback function fired when the `open` state of the menu is requested to be changed.
-   *
-   * @param {boolean} open If true, the menu was requested to be opened.
-   * @param {string} reason The reason for the open or close request. Possible values are
-   * 'keyboard' and 'iconTap' for open requests; 'enter', 'escape', 'itemTap', and 'clickAway'
-   * for close requests.
-   */
-  onRequestChange: _react.PropTypes.func,
-  /**
-   * Callback function fired when the `IconButton` element is touch-tapped.
-   *
-   * @param {object} event TouchTap event targeting the `IconButton` element.
-   */
-  onTouchTap: _react.PropTypes.func,
-  /**
-   * If true, the `IconMenu` is opened.
-   */
-  open: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * This is the point on the menu which will stick to the menu
-   * origin.
-   * Options:
-   * vertical: [top, center, bottom]
-   * horizontal: [left, middle, right].
-   */
-  targetOrigin: _propTypes2.default.origin,
-  /**
-   * Sets the delay in milliseconds before closing the
-   * menu when an item is clicked.
-   * If set to 0 then the auto close functionality
-   * will be disabled.
-   */
-  touchTapCloseDelay: _react.PropTypes.number,
-  /**
-   * If true, the popover will render on top of an invisible
-   * layer, which will prevent clicks to the underlying elements.
-   */
-  useLayerForClickAway: _react.PropTypes.bool
-} : void 0;
-exports.default = IconMenu;
-}).call(this,require('_process'))
-},{"../Menu/Menu":67,"../Popover/Popover":74,"../utils/events":359,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"simple-assign":326,"warning":327}],59:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.MenuItem = exports.IconMenu = undefined;
-
-var _IconMenu2 = require('./IconMenu');
-
-var _IconMenu3 = _interopRequireDefault(_IconMenu2);
-
-var _MenuItem2 = require('../MenuItem/MenuItem');
-
-var _MenuItem3 = _interopRequireDefault(_MenuItem2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.IconMenu = _IconMenu3.default;
-exports.MenuItem = _MenuItem3.default;
-exports.default = _IconMenu3.default;
-},{"../MenuItem/MenuItem":70,"./IconMenu":58}],60:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getRelativeValue(value, min, max) {
-  var clampedValue = Math.min(Math.max(min, value), max);
-  var rangeValue = max - min;
-  var relValue = Math.round((clampedValue - min) / rangeValue * 10000) / 10000;
-  return relValue * 100;
-}
-
-function getStyles(props, context) {
-  var max = props.max,
-      min = props.min,
-      value = props.value;
-  var _context$muiTheme = context.muiTheme,
-      palette = _context$muiTheme.baseTheme.palette,
-      borderRadius = _context$muiTheme.borderRadius;
-
-
-  var styles = {
-    root: {
-      position: 'relative',
-      height: 4,
-      display: 'block',
-      width: '100%',
-      backgroundColor: palette.primary3Color,
-      borderRadius: borderRadius,
-      margin: 0,
-      overflow: 'hidden'
-    },
-    bar: {
-      height: '100%'
-    },
-    barFragment1: {},
-    barFragment2: {}
-  };
-
-  if (props.mode === 'indeterminate') {
-    styles.barFragment1 = {
-      position: 'absolute',
-      backgroundColor: props.color || palette.primary1Color,
-      top: 0,
-      left: 0,
-      bottom: 0,
-      transition: _transitions2.default.create('all', '840ms', null, 'cubic-bezier(0.650, 0.815, 0.735, 0.395)')
-    };
-
-    styles.barFragment2 = {
-      position: 'absolute',
-      backgroundColor: props.color || palette.primary1Color,
-      top: 0,
-      left: 0,
-      bottom: 0,
-      transition: _transitions2.default.create('all', '840ms', null, 'cubic-bezier(0.165, 0.840, 0.440, 1.000)')
-    };
-  } else {
-    styles.bar.backgroundColor = props.color || palette.primary1Color;
-    styles.bar.transition = _transitions2.default.create('width', '.3s', null, 'linear');
-    styles.bar.width = getRelativeValue(value, min, max) + '%';
-  }
-
-  return styles;
-}
-
-var LinearProgress = function (_Component) {
-  (0, _inherits3.default)(LinearProgress, _Component);
-
-  function LinearProgress() {
-    (0, _classCallCheck3.default)(this, LinearProgress);
-    return (0, _possibleConstructorReturn3.default)(this, (LinearProgress.__proto__ || (0, _getPrototypeOf2.default)(LinearProgress)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(LinearProgress, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      this.timers = {};
-
-      this.timers.bar1 = this.barUpdate('bar1', 0, this.refs.bar1, [[-35, 100], [100, -90]], 0);
-
-      this.timers.bar2 = setTimeout(function () {
-        _this2.barUpdate('bar2', 0, _this2.refs.bar2, [[-200, 100], [107, -8]], 0);
-      }, 850);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.timers.bar1);
-      clearTimeout(this.timers.bar2);
-    }
-  }, {
-    key: 'barUpdate',
-    value: function barUpdate(id, step, barElement, stepValues, timeToNextStep) {
-      var _this3 = this;
-
-      if (this.props.mode !== 'indeterminate') return;
-
-      timeToNextStep = timeToNextStep || 420;
-      step = step || 0;
-      step %= 4;
-
-      var right = this.context.muiTheme.isRtl ? 'left' : 'right';
-      var left = this.context.muiTheme.isRtl ? 'right' : 'left';
-
-      if (step === 0) {
-        barElement.style[left] = stepValues[0][0] + '%';
-        barElement.style[right] = stepValues[0][1] + '%';
-      } else if (step === 1) {
-        barElement.style.transitionDuration = '840ms';
-      } else if (step === 2) {
-        barElement.style[left] = stepValues[1][0] + '%';
-        barElement.style[right] = stepValues[1][1] + '%';
-      } else if (step === 3) {
-        barElement.style.transitionDuration = '0ms';
-      }
-      this.timers[id] = setTimeout(function () {
-        return _this3.barUpdate(id, step + 1, barElement, stepValues);
-      }, timeToNextStep);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }),
-        _react2.default.createElement(
-          'div',
-          { style: prepareStyles(styles.bar) },
-          _react2.default.createElement('div', { ref: 'bar1', style: prepareStyles(styles.barFragment1) }),
-          _react2.default.createElement('div', { ref: 'bar2', style: prepareStyles(styles.barFragment2) })
-        )
-      );
-    }
-  }]);
-  return LinearProgress;
-}(_react.Component);
-
-LinearProgress.defaultProps = {
-  mode: 'indeterminate',
-  value: 0,
-  min: 0,
-  max: 100
-};
-LinearProgress.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? LinearProgress.propTypes = {
-  /**
-   * The color of the progress bar, defaults to
-   * primary color of theme.
-   */
-  color: _react.PropTypes.string,
-  /**
-   * The max value of progress, only works in determinate mode.
-   */
-  max: _react.PropTypes.number,
-  /**
-   * The min value of progress, only works in determinate mode.
-   */
-  min: _react.PropTypes.number,
-  /**
-   * The mode of show your progress, indeterminate for when
-   * there is no value for progress.
-   */
-  mode: _react.PropTypes.oneOf(['determinate', 'indeterminate']),
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The value of progress, only works in determinate mode.
-   */
-  value: _react.PropTypes.number
-} : void 0;
-exports.default = LinearProgress;
-}).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],61:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _LinearProgress = require('./LinearProgress');
-
-var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _LinearProgress2.default;
-},{"./LinearProgress":60}],62:[function(require,module,exports){
+},{"./IconButton":29}],31:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -10841,7 +5021,7 @@ process.env.NODE_ENV !== "production" ? List.propTypes = {
 } : void 0;
 exports.default = List;
 }).call(this,require('_process'))
-},{"../Subheader":99,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],63:[function(require,module,exports){
+},{"../Subheader":46,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],32:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11567,7 +5747,7 @@ process.env.NODE_ENV !== "production" ? ListItem.propTypes = {
 } : void 0;
 exports.default = ListItem;
 }).call(this,require('_process'))
-},{"../IconButton":57,"../internal/EnhancedButton":144,"../styles/transitions":333,"../svg-icons/navigation/expand-less":345,"../svg-icons/navigation/expand-more":346,"../utils/colorManipulator":356,"./NestedList":64,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"recompose/shallowEqual":322,"simple-assign":326}],64:[function(require,module,exports){
+},{"../IconButton":30,"../internal/EnhancedButton":58,"../styles/transitions":235,"../svg-icons/navigation/expand-less":243,"../svg-icons/navigation/expand-more":244,"../utils/colorManipulator":250,"./NestedList":33,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256,"recompose/shallowEqual":224,"simple-assign":228}],33:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -11619,202 +5799,7 @@ process.env.NODE_ENV !== "production" ? NestedList.propTypes = {
 
 exports.default = NestedList;
 }).call(this,require('_process'))
-},{"./List":62,"_process":560,"react":559}],65:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.makeSelectable = exports.ListItem = exports.List = undefined;
-
-var _List2 = require('./List');
-
-var _List3 = _interopRequireDefault(_List2);
-
-var _ListItem2 = require('./ListItem');
-
-var _ListItem3 = _interopRequireDefault(_ListItem2);
-
-var _makeSelectable2 = require('./makeSelectable');
-
-var _makeSelectable3 = _interopRequireDefault(_makeSelectable2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.List = _List3.default;
-exports.ListItem = _ListItem3.default;
-exports.makeSelectable = _makeSelectable3.default;
-exports.default = _List3.default;
-},{"./List":62,"./ListItem":63,"./makeSelectable":66}],66:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.makeSelectable = undefined;
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _colorManipulator = require('../utils/colorManipulator');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var makeSelectable = function makeSelectable(MyComponent) {
-  var _class, _temp2;
-
-  return _temp2 = _class = function (_Component) {
-    (0, _inherits3.default)(_class, _Component);
-
-    function _class() {
-      var _ref;
-
-      var _temp, _this, _ret;
-
-      (0, _classCallCheck3.default)(this, _class);
-
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = _class.__proto__ || (0, _getPrototypeOf2.default)(_class)).call.apply(_ref, [this].concat(args))), _this), _this.hasSelectedDescendant = function (previousValue, child) {
-        if (_react2.default.isValidElement(child) && child.props.nestedItems && child.props.nestedItems.length > 0) {
-          return child.props.nestedItems.reduce(_this.hasSelectedDescendant, previousValue);
-        }
-        return previousValue || _this.isChildSelected(child, _this.props);
-      }, _this.handleItemTouchTap = function (event, item) {
-        var itemValue = item.props.value;
-
-        if (itemValue !== _this.props.value) {
-          if (_this.props.onChange) {
-            _this.props.onChange(event, itemValue);
-          }
-        }
-      }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-    }
-
-    (0, _createClass3.default)(_class, [{
-      key: 'extendChild',
-      value: function extendChild(child, styles, selectedItemStyle) {
-        var _this2 = this;
-
-        if (child && child.type && child.type.muiName === 'ListItem') {
-          var selected = this.isChildSelected(child, this.props);
-          var selectedChildrenStyles = void 0;
-          if (selected) {
-            selectedChildrenStyles = (0, _simpleAssign2.default)({}, styles, selectedItemStyle);
-          }
-
-          var mergedChildrenStyles = (0, _simpleAssign2.default)({}, child.props.style, selectedChildrenStyles);
-
-          this.keyIndex += 1;
-
-          return _react2.default.cloneElement(child, {
-            onTouchTap: function onTouchTap(event) {
-              _this2.handleItemTouchTap(event, child);
-              if (child.props.onTouchTap) {
-                child.props.onTouchTap(event);
-              }
-            },
-            key: this.keyIndex,
-            style: mergedChildrenStyles,
-            nestedItems: child.props.nestedItems.map(function (child) {
-              return _this2.extendChild(child, styles, selectedItemStyle);
-            }),
-            initiallyOpen: this.isInitiallyOpen(child)
-          });
-        } else {
-          return child;
-        }
-      }
-    }, {
-      key: 'isInitiallyOpen',
-      value: function isInitiallyOpen(child) {
-        if (child.props.initiallyOpen) {
-          return child.props.initiallyOpen;
-        }
-        return this.hasSelectedDescendant(false, child);
-      }
-    }, {
-      key: 'isChildSelected',
-      value: function isChildSelected(child, props) {
-        return props.value === child.props.value;
-      }
-    }, {
-      key: 'render',
-      value: function render() {
-        var _this3 = this;
-
-        var _props = this.props,
-            children = _props.children,
-            selectedItemStyle = _props.selectedItemStyle,
-            other = (0, _objectWithoutProperties3.default)(_props, ['children', 'selectedItemStyle']);
-
-
-        this.keyIndex = 0;
-        var styles = {};
-
-        if (!selectedItemStyle) {
-          var textColor = this.context.muiTheme.baseTheme.palette.textColor;
-          styles.backgroundColor = (0, _colorManipulator.fade)(textColor, 0.2);
-        }
-
-        return _react2.default.createElement(
-          MyComponent,
-          (0, _extends3.default)({}, other, this.state),
-          _react.Children.map(children, function (child) {
-            return _this3.extendChild(child, styles, selectedItemStyle);
-          })
-        );
-      }
-    }]);
-    return _class;
-  }(_react.Component), _class.propTypes = {
-    children: _react.PropTypes.node,
-    onChange: _react.PropTypes.func,
-    selectedItemStyle: _react.PropTypes.object,
-    value: _react.PropTypes.any
-  }, _class.contextTypes = {
-    muiTheme: _react.PropTypes.object.isRequired
-  }, _temp2;
-};
-
-exports.makeSelectable = makeSelectable;
-exports.default = makeSelectable;
-},{"../utils/colorManipulator":356,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],67:[function(require,module,exports){
+},{"./List":31,"_process":452,"react":451}],34:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -12502,7 +6487,7 @@ process.env.NODE_ENV !== "production" ? Menu.propTypes = {
 } : void 0;
 exports.default = Menu;
 }).call(this,require('_process'))
-},{"../List/List":62,"../internal/ClickAwayListener":143,"../utils/propTypes":361,"./menuUtils":69,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/toArray":176,"keycode":305,"react":559,"react-dom":364,"recompose/shallowEqual":322,"simple-assign":326}],68:[function(require,module,exports){
+},{"../List/List":31,"../internal/ClickAwayListener":57,"../utils/propTypes":254,"./menuUtils":36,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"babel-runtime/helpers/toArray":82,"keycode":207,"react":451,"react-dom":256,"recompose/shallowEqual":224,"simple-assign":228}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12523,7 +6508,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.Menu = _Menu3.default;
 exports.MenuItem = _MenuItem3.default;
 exports.default = _Menu3.default;
-},{"../MenuItem":71,"./Menu":67}],69:[function(require,module,exports){
+},{"../MenuItem":38,"./Menu":34}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12563,7 +6548,7 @@ var HotKeyHolder = exports.HotKeyHolder = function () {
   }]);
   return HotKeyHolder;
 }();
-},{"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169}],70:[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76}],37:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -12953,7 +6938,7 @@ process.env.NODE_ENV !== "production" ? MenuItem.propTypes = {
 } : void 0;
 exports.default = MenuItem;
 }).call(this,require('_process'))
-},{"../List/ListItem":63,"../Menu/Menu":67,"../Popover/Popover":74,"../svg-icons/navigation/check":341,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"recompose/shallowEqual":322,"simple-assign":326}],71:[function(require,module,exports){
+},{"../List/ListItem":32,"../Menu/Menu":34,"../Popover/Popover":41,"../svg-icons/navigation/check":241,"../utils/propTypes":254,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256,"recompose/shallowEqual":224,"simple-assign":228}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12968,7 +6953,7 @@ var _MenuItem2 = _interopRequireDefault(_MenuItem);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MenuItem2.default;
-},{"./MenuItem":70}],72:[function(require,module,exports){
+},{"./MenuItem":37}],39:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -13118,7 +7103,7 @@ process.env.NODE_ENV !== "production" ? Paper.propTypes = {
 } : void 0;
 exports.default = Paper;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],73:[function(require,module,exports){
+},{"../styles/transitions":235,"../utils/propTypes":254,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13133,7 +7118,7 @@ var _Paper2 = _interopRequireDefault(_Paper);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Paper2.default;
-},{"./Paper":72}],74:[function(require,module,exports){
+},{"./Paper":39}],41:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -13648,7 +7633,7 @@ process.env.NODE_ENV !== "production" ? Popover.propTypes = {
 } : void 0;
 exports.default = Popover;
 }).call(this,require('_process'))
-},{"../Paper":73,"../internal/RenderToLayer":150,"../utils/iOSHelpers":360,"../utils/propTypes":361,"./PopoverAnimationDefault":75,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"lodash.throttle":307,"react":559,"react-dom":364,"react-event-listener":311,"simple-assign":326}],75:[function(require,module,exports){
+},{"../Paper":40,"../internal/RenderToLayer":61,"../utils/iOSHelpers":253,"../utils/propTypes":254,"./PopoverAnimationDefault":42,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"lodash.throttle":209,"react":451,"react-dom":256,"react-event-listener":213,"simple-assign":228}],42:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -13819,707 +7804,7 @@ process.env.NODE_ENV !== "production" ? PopoverAnimationDefault.propTypes = {
 } : void 0;
 exports.default = PopoverAnimationDefault;
 }).call(this,require('_process'))
-},{"../Paper":73,"../styles/transitions":333,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],76:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Paper = require('../Paper');
-
-var _Paper2 = _interopRequireDefault(_Paper);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _propTypes = require('../utils/propTypes');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context, state) {
-  var targetOrigin = props.targetOrigin;
-  var open = state.open;
-  var muiTheme = context.muiTheme;
-
-  var horizontal = targetOrigin.horizontal.replace('middle', 'vertical');
-
-  return {
-    root: {
-      position: 'fixed',
-      zIndex: muiTheme.zIndex.popover,
-      opacity: open ? 1 : 0,
-      transform: open ? 'scaleY(1)' : 'scaleY(0)',
-      transformOrigin: horizontal + ' ' + targetOrigin.vertical,
-      transition: _transitions2.default.easeOut('450ms', ['transform', 'opacity']),
-      maxHeight: '100%'
-    }
-  };
-}
-
-var PopoverAnimationVertical = function (_Component) {
-  (0, _inherits3.default)(PopoverAnimationVertical, _Component);
-
-  function PopoverAnimationVertical() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, PopoverAnimationVertical);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = PopoverAnimationVertical.__proto__ || (0, _getPrototypeOf2.default)(PopoverAnimationVertical)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      open: false
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(PopoverAnimationVertical, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.setState({ open: true }); // eslint-disable-line react/no-did-mount-set-state
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      this.setState({
-        open: nextProps.open
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          className = _props.className,
-          style = _props.style,
-          zDepth = _props.zDepth;
-
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      return _react2.default.createElement(
-        _Paper2.default,
-        {
-          style: (0, _simpleAssign2.default)(styles.root, style),
-          zDepth: zDepth,
-          className: className
-        },
-        this.props.children
-      );
-    }
-  }]);
-  return PopoverAnimationVertical;
-}(_react.Component);
-
-PopoverAnimationVertical.defaultProps = {
-  style: {},
-  zDepth: 1
-};
-PopoverAnimationVertical.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? PopoverAnimationVertical.propTypes = {
-  children: _react.PropTypes.node,
-  className: _react.PropTypes.string,
-  open: _react.PropTypes.bool.isRequired,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  targetOrigin: _propTypes2.default.origin.isRequired,
-  zDepth: _propTypes2.default.zDepth
-} : void 0;
-exports.default = PopoverAnimationVertical;
-}).call(this,require('_process'))
-},{"../Paper":73,"../styles/transitions":333,"../utils/propTypes":361,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],77:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.PopoverAnimationVertical = exports.Popover = undefined;
-
-var _Popover2 = require('./Popover');
-
-var _Popover3 = _interopRequireDefault(_Popover2);
-
-var _PopoverAnimationVertical2 = require('./PopoverAnimationVertical');
-
-var _PopoverAnimationVertical3 = _interopRequireDefault(_PopoverAnimationVertical2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Popover = _Popover3.default;
-exports.PopoverAnimationVertical = _PopoverAnimationVertical3.default;
-exports.default = _Popover3.default;
-},{"./Popover":74,"./PopoverAnimationVertical":76}],78:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _EnhancedSwitch = require('../internal/EnhancedSwitch');
-
-var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
-
-var _radioButtonUnchecked = require('../svg-icons/toggle/radio-button-unchecked');
-
-var _radioButtonUnchecked2 = _interopRequireDefault(_radioButtonUnchecked);
-
-var _radioButtonChecked = require('../svg-icons/toggle/radio-button-checked');
-
-var _radioButtonChecked2 = _interopRequireDefault(_radioButtonChecked);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var radioButton = context.muiTheme.radioButton;
-
-
-  return {
-    icon: {
-      height: radioButton.size,
-      width: radioButton.size
-    },
-    target: {
-      transition: _transitions2.default.easeOut(),
-      position: 'absolute',
-      opacity: 1,
-      transform: 'scale(1)',
-      fill: radioButton.borderColor
-    },
-    fill: {
-      position: 'absolute',
-      opacity: 1,
-      transform: 'scale(0)',
-      transformOrigin: '50% 50%',
-      transition: _transitions2.default.easeOut(),
-      fill: radioButton.checkedColor
-    },
-    targetWhenChecked: {
-      opacity: 0,
-      transform: 'scale(0)'
-    },
-    fillWhenChecked: {
-      opacity: 1,
-      transform: 'scale(1)'
-    },
-    targetWhenDisabled: {
-      fill: radioButton.disabledColor
-    },
-    fillWhenDisabled: {
-      fill: radioButton.disabledColor
-    },
-    label: {
-      color: props.disabled ? radioButton.labelDisabledColor : radioButton.labelColor
-    },
-    ripple: {
-      color: props.checked ? radioButton.checkedColor : radioButton.borderColor
-    }
-  };
-}
-
-var RadioButton = function (_Component) {
-  (0, _inherits3.default)(RadioButton, _Component);
-
-  function RadioButton() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, RadioButton);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = RadioButton.__proto__ || (0, _getPrototypeOf2.default)(RadioButton)).call.apply(_ref, [this].concat(args))), _this), _this.handleSwitch = function (event) {
-      if (_this.props.onCheck) {
-        _this.props.onCheck(event, _this.props.value);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  // Only called when selected, not when unselected.
-
-
-  (0, _createClass3.default)(RadioButton, [{
-    key: 'isChecked',
-    value: function isChecked() {
-      return this.refs.enhancedSwitch.isSwitched();
-    }
-
-    // Use RadioButtonGroup.setSelectedValue(newSelectionValue) to set a
-    // RadioButton's checked value.
-
-  }, {
-    key: 'setChecked',
-    value: function setChecked(newCheckedValue) {
-      this.refs.enhancedSwitch.setSwitched(newCheckedValue);
-    }
-  }, {
-    key: 'getValue',
-    value: function getValue() {
-      return this.refs.enhancedSwitch.getValue();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          checkedIcon = _props.checkedIcon,
-          checked = _props.checked,
-          iconStyle = _props.iconStyle,
-          labelStyle = _props.labelStyle,
-          labelPosition = _props.labelPosition,
-          onCheck = _props.onCheck,
-          uncheckedIcon = _props.uncheckedIcon,
-          disabled = _props.disabled,
-          other = (0, _objectWithoutProperties3.default)(_props, ['checkedIcon', 'checked', 'iconStyle', 'labelStyle', 'labelPosition', 'onCheck', 'uncheckedIcon', 'disabled']);
-
-
-      var styles = getStyles(this.props, this.context);
-
-      var uncheckedStyles = (0, _simpleAssign2.default)(styles.target, checked && styles.targetWhenChecked, iconStyle, disabled && styles.targetWhenDisabled);
-
-      var checkedStyles = (0, _simpleAssign2.default)(styles.fill, checked && styles.fillWhenChecked, iconStyle, disabled && styles.fillWhenDisabled);
-
-      var uncheckedElement = _react2.default.isValidElement(uncheckedIcon) ? _react2.default.cloneElement(uncheckedIcon, {
-        style: (0, _simpleAssign2.default)(uncheckedStyles, uncheckedIcon.props.style)
-      }) : _react2.default.createElement(_radioButtonUnchecked2.default, { style: uncheckedStyles });
-
-      var checkedElement = _react2.default.isValidElement(checkedIcon) ? _react2.default.cloneElement(checkedIcon, {
-        style: (0, _simpleAssign2.default)(checkedStyles, checkedIcon.props.style)
-      }) : _react2.default.createElement(_radioButtonChecked2.default, { style: checkedStyles });
-
-      var mergedIconStyle = (0, _simpleAssign2.default)(styles.icon, iconStyle);
-      var mergedLabelStyle = (0, _simpleAssign2.default)(styles.label, labelStyle);
-
-      return _react2.default.createElement(_EnhancedSwitch2.default, (0, _extends3.default)({}, other, {
-        ref: 'enhancedSwitch',
-        inputType: 'radio',
-        checked: checked,
-        switched: checked,
-        disabled: disabled,
-        rippleColor: styles.ripple.color,
-        iconStyle: mergedIconStyle,
-        labelStyle: mergedLabelStyle,
-        labelPosition: labelPosition,
-        onSwitch: this.handleSwitch,
-        switchElement: _react2.default.createElement(
-          'div',
-          null,
-          uncheckedElement,
-          checkedElement
-        )
-      }));
-    }
-  }]);
-  return RadioButton;
-}(_react.Component);
-
-RadioButton.defaultProps = {
-  checked: false,
-  disabled: false,
-  labelPosition: 'right'
-};
-RadioButton.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? RadioButton.propTypes = {
-  /**
-   * @ignore
-   * checked if true
-   * Used internally by `RadioButtonGroup`.
-   */
-  checked: _react.PropTypes.bool,
-  /**
-   * The icon element to show when the radio button is checked.
-   */
-  checkedIcon: _react.PropTypes.element,
-  /**
-   * If true, the radio button is disabled.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the icon element.
-   */
-  iconStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the input element.
-   */
-  inputStyle: _react.PropTypes.object,
-  /**
-   * @ignore
-   * Used internally by `RadioButtonGroup`. Use the `labelPosition` property of `RadioButtonGroup` instead.
-   * Where the label will be placed next to the radio button.
-   */
-  labelPosition: _react.PropTypes.oneOf(['left', 'right']),
-  /**
-   * Override the inline-styles of the label element.
-   */
-  labelStyle: _react.PropTypes.object,
-  /**
-   * @ignore
-   * Callback function fired when the radio button is checked. Note that this
-   * function will not be called if the radio button is part of a
-   * radio button group: in this case, use the `onChange` property of
-   * `RadioButtonGroup`.
-   *
-   * @param {object} event `change` event targeting the element.
-   * @param {string} value The element's `value`.
-   */
-  onCheck: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The icon element to show when the radio button is unchecked.
-   */
-  uncheckedIcon: _react.PropTypes.element,
-  /**
-   * The value of the radio button.
-   */
-  value: _react.PropTypes.any
-} : void 0;
-exports.default = RadioButton;
-}).call(this,require('_process'))
-},{"../internal/EnhancedSwitch":145,"../styles/transitions":333,"../svg-icons/toggle/radio-button-checked":350,"../svg-icons/toggle/radio-button-unchecked":351,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],79:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _RadioButton = require('./RadioButton');
-
-var _RadioButton2 = _interopRequireDefault(_RadioButton);
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var RadioButtonGroup = function (_Component) {
-  (0, _inherits3.default)(RadioButtonGroup, _Component);
-
-  function RadioButtonGroup() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, RadioButtonGroup);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = RadioButtonGroup.__proto__ || (0, _getPrototypeOf2.default)(RadioButtonGroup)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      numberCheckedRadioButtons: 0,
-      selected: ''
-    }, _this.handleChange = function (event, newSelection) {
-      _this.updateRadioButtons(newSelection);
-
-      // Successful update
-      if (_this.state.numberCheckedRadioButtons === 0) {
-        if (_this.props.onChange) _this.props.onChange(event, newSelection);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(RadioButtonGroup, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var _this2 = this;
-
-      var cnt = 0;
-      var selected = '';
-      var _props = this.props,
-          valueSelected = _props.valueSelected,
-          defaultSelected = _props.defaultSelected;
-
-      if (valueSelected !== undefined) {
-        selected = valueSelected;
-      } else if (defaultSelected !== undefined) {
-        selected = defaultSelected;
-      }
-
-      _react2.default.Children.forEach(this.props.children, function (option) {
-        if (_this2.hasCheckAttribute(option)) cnt++;
-      }, this);
-
-      this.setState({
-        numberCheckedRadioButtons: cnt,
-        selected: selected
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.hasOwnProperty('valueSelected')) {
-        this.setState({
-          selected: nextProps.valueSelected
-        });
-      }
-    }
-  }, {
-    key: 'hasCheckAttribute',
-    value: function hasCheckAttribute(radioButton) {
-      return radioButton.props.hasOwnProperty('checked') && radioButton.props.checked;
-    }
-  }, {
-    key: 'updateRadioButtons',
-    value: function updateRadioButtons(newSelection) {
-      if (this.state.numberCheckedRadioButtons === 0) {
-        this.setState({ selected: newSelection });
-      } else {
-        process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI: Cannot select a different radio button while another radio button\n        has the \'checked\' property set to true.') : void 0;
-      }
-    }
-  }, {
-    key: 'getSelectedValue',
-    value: function getSelectedValue() {
-      return this.state.selected;
-    }
-  }, {
-    key: 'setSelectedValue',
-    value: function setSelectedValue(newSelectionValue) {
-      this.updateRadioButtons(newSelectionValue);
-    }
-  }, {
-    key: 'clearValue',
-    value: function clearValue() {
-      this.setSelectedValue('');
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      var options = _react2.default.Children.map(this.props.children, function (option) {
-        var _option$props = option.props,
-            name = _option$props.name,
-            value = _option$props.value,
-            label = _option$props.label,
-            onCheck = _option$props.onCheck,
-            other = (0, _objectWithoutProperties3.default)(_option$props, ['name', 'value', 'label', 'onCheck']);
-
-
-        return _react2.default.createElement(_RadioButton2.default, (0, _extends3.default)({}, other, {
-          ref: option.props.value,
-          name: _this3.props.name,
-          key: option.props.value,
-          value: option.props.value,
-          label: option.props.label,
-          labelPosition: _this3.props.labelPosition,
-          onCheck: _this3.handleChange,
-          checked: option.props.value === _this3.state.selected
-        }));
-      }, this);
-
-      return _react2.default.createElement(
-        'div',
-        {
-          style: prepareStyles((0, _simpleAssign2.default)({}, this.props.style)),
-          className: this.props.className
-        },
-        options
-      );
-    }
-  }]);
-  return RadioButtonGroup;
-}(_react.Component);
-
-RadioButtonGroup.defaultProps = {
-  style: {}
-};
-RadioButtonGroup.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? RadioButtonGroup.propTypes = {
-  /**
-   * Should be used to pass `RadioButton` components.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The CSS class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * The `value` property of the radio button that will be
-   * selected by default. This takes precedence over the `checked` property
-   * of the `RadioButton` elements.
-   */
-  defaultSelected: _react.PropTypes.any,
-  /**
-   * Where the label will be placed for all child radio buttons.
-   * This takes precedence over the `labelPosition` property of the
-   * `RadioButton` elements.
-   */
-  labelPosition: _react.PropTypes.oneOf(['left', 'right']),
-  /**
-   * The name that will be applied to all child radio buttons.
-   */
-  name: _react.PropTypes.string.isRequired,
-  /**
-   * Callback function that is fired when a radio button has
-   * been checked.
-   *
-   * @param {object} event `change` event targeting the selected
-   * radio button.
-   * @param {*} value The `value` of the selected radio button.
-   */
-  onChange: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The `value` of the currently selected radio button.
-   */
-  valueSelected: _react.PropTypes.any
-} : void 0;
-exports.default = RadioButtonGroup;
-}).call(this,require('_process'))
-},{"./RadioButton":78,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326,"warning":327}],80:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.RadioButtonGroup = exports.RadioButton = undefined;
-
-var _RadioButton2 = require('./RadioButton');
-
-var _RadioButton3 = _interopRequireDefault(_RadioButton2);
-
-var _RadioButtonGroup2 = require('./RadioButtonGroup');
-
-var _RadioButtonGroup3 = _interopRequireDefault(_RadioButtonGroup2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.RadioButton = _RadioButton3.default;
-exports.RadioButtonGroup = _RadioButtonGroup3.default;
-exports.default = _RadioButton3.default;
-},{"./RadioButton":78,"./RadioButtonGroup":79}],81:[function(require,module,exports){
+},{"../Paper":40,"../styles/transitions":235,"../utils/propTypes":254,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],43:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -15014,7 +8299,7 @@ process.env.NODE_ENV !== "production" ? RaisedButton.propTypes = {
 } : void 0;
 exports.default = RaisedButton;
 }).call(this,require('_process'))
-},{"../Paper":73,"../internal/EnhancedButton":144,"../styles/transitions":333,"../utils/childUtils":355,"../utils/colorManipulator":356,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],82:[function(require,module,exports){
+},{"../Paper":40,"../internal/EnhancedButton":58,"../styles/transitions":235,"../utils/childUtils":249,"../utils/colorManipulator":250,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15029,3097 +8314,7 @@ var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _RaisedButton2.default;
-},{"./RaisedButton":81}],83:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _autoPrefix = require('../utils/autoPrefix');
-
-var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _Paper = require('../Paper');
-
-var _Paper2 = _interopRequireDefault(_Paper);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var VIEWBOX_SIZE = 32;
-
-function getStyles(props) {
-  var padding = props.size * 0.1; // same implementation of `this.getPaddingSize()`
-  return {
-    root: {
-      position: 'absolute',
-      zIndex: 2,
-      width: props.size,
-      height: props.size,
-      padding: padding,
-      top: -10000,
-      left: -10000,
-      transform: 'translate(' + (10000 + props.left) + 'px, ' + (10000 + props.top) + 'px)',
-      opacity: props.status === 'hide' ? 0 : 1,
-      transition: props.status === 'hide' ? _transitions2.default.create('all', '.3s', 'ease-out') : 'none'
-    }
-  };
-}
-
-var RefreshIndicator = function (_Component) {
-  (0, _inherits3.default)(RefreshIndicator, _Component);
-
-  function RefreshIndicator() {
-    (0, _classCallCheck3.default)(this, RefreshIndicator);
-    return (0, _possibleConstructorReturn3.default)(this, (RefreshIndicator.__proto__ || (0, _getPrototypeOf2.default)(RefreshIndicator)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(RefreshIndicator, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.scalePath(this.refs.path, 0);
-      this.rotateWrapper(this.refs.wrapper);
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      clearTimeout(this.scalePathTimer);
-      clearTimeout(this.rotateWrapperTimer);
-      clearTimeout(this.rotateWrapperSecondTimer);
-
-      this.scalePath(this.refs.path, 0);
-      this.rotateWrapper(this.refs.wrapper);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.scalePathTimer);
-      clearTimeout(this.rotateWrapperTimer);
-      clearTimeout(this.rotateWrapperSecondTimer);
-    }
-  }, {
-    key: 'renderChildren',
-    value: function renderChildren() {
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var paperSize = this.getPaperSize();
-
-      var childrenCmp = null;
-      if (this.props.status !== 'ready') {
-        var circleStyle = this.getCircleStyle(paperSize);
-        childrenCmp = _react2.default.createElement(
-          'div',
-          {
-            ref: 'wrapper',
-            style: prepareStyles({
-              transition: _transitions2.default.create('transform', '20s', null, 'linear'),
-              width: '100%',
-              height: '100%'
-            })
-          },
-          _react2.default.createElement(
-            'svg',
-            {
-              style: {
-                width: paperSize,
-                height: paperSize
-              },
-              viewBox: '0 0 ' + VIEWBOX_SIZE + ' ' + VIEWBOX_SIZE
-            },
-            _react2.default.createElement('circle', (0, _extends3.default)({
-              ref: 'path',
-              style: prepareStyles((0, _simpleAssign2.default)(circleStyle.style, {
-                transition: _transitions2.default.create('all', '1.5s', null, 'ease-in-out')
-              }))
-            }, circleStyle.attr))
-          )
-        );
-      } else {
-        var _circleStyle = this.getCircleStyle(paperSize);
-        var polygonStyle = this.getPolygonStyle(paperSize);
-        childrenCmp = _react2.default.createElement(
-          'svg',
-          {
-            style: {
-              width: paperSize,
-              height: paperSize
-            },
-            viewBox: '0 0 ' + VIEWBOX_SIZE + ' ' + VIEWBOX_SIZE
-          },
-          _react2.default.createElement('circle', (0, _extends3.default)({
-            style: prepareStyles(_circleStyle.style)
-          }, _circleStyle.attr)),
-          _react2.default.createElement('polygon', (0, _extends3.default)({
-            style: prepareStyles(polygonStyle.style)
-          }, polygonStyle.attr))
-        );
-      }
-
-      return childrenCmp;
-    }
-  }, {
-    key: 'getTheme',
-    value: function getTheme() {
-      return this.context.muiTheme.refreshIndicator;
-    }
-  }, {
-    key: 'getPaddingSize',
-    value: function getPaddingSize() {
-      var padding = this.props.size * 0.1;
-      return padding;
-    }
-  }, {
-    key: 'getPaperSize',
-    value: function getPaperSize() {
-      return this.props.size - this.getPaddingSize() * 2;
-    }
-  }, {
-    key: 'getCircleAttr',
-    value: function getCircleAttr() {
-      return {
-        radiu: VIEWBOX_SIZE / 2 - 5,
-        originX: VIEWBOX_SIZE / 2,
-        originY: VIEWBOX_SIZE / 2,
-        strokeWidth: 3
-      };
-    }
-  }, {
-    key: 'getArcDeg',
-    value: function getArcDeg() {
-      var p = this.props.percentage / 100;
-
-      var beginDeg = p * 120;
-      var endDeg = p * 410;
-      return [beginDeg, endDeg];
-    }
-  }, {
-    key: 'getFactor',
-    value: function getFactor() {
-      var p = this.props.percentage / 100;
-      var p1 = Math.min(1, p / 0.4);
-
-      return p1;
-    }
-  }, {
-    key: 'getCircleStyle',
-    value: function getCircleStyle() {
-      var isLoading = this.props.status === 'loading';
-      var p1 = isLoading ? 1 : this.getFactor();
-      var circle = this.getCircleAttr();
-      var perimeter = Math.PI * 2 * circle.radiu;
-
-      var _getArcDeg = this.getArcDeg(),
-          _getArcDeg2 = (0, _slicedToArray3.default)(_getArcDeg, 2),
-          beginDeg = _getArcDeg2[0],
-          endDeg = _getArcDeg2[1];
-
-      var arcLen = (endDeg - beginDeg) * perimeter / 360;
-      var dashOffset = -beginDeg * perimeter / 360;
-
-      var theme = this.getTheme();
-      return {
-        style: {
-          strokeDasharray: arcLen + ', ' + (perimeter - arcLen),
-          strokeDashoffset: dashOffset,
-          stroke: isLoading || this.props.percentage === 100 ? this.props.loadingColor || theme.loadingStrokeColor : this.props.color || theme.strokeColor,
-          strokeLinecap: 'round',
-          opacity: p1,
-          strokeWidth: circle.strokeWidth * p1,
-          fill: 'none'
-        },
-        attr: {
-          cx: circle.originX,
-          cy: circle.originY,
-          r: circle.radiu
-        }
-      };
-    }
-  }, {
-    key: 'getPolygonStyle',
-    value: function getPolygonStyle() {
-      var p1 = this.getFactor();
-      var circle = this.getCircleAttr();
-
-      var triangleCx = circle.originX + circle.radiu;
-      var triangleCy = circle.originY;
-      var dx = circle.strokeWidth * 7 / 4 * p1;
-      var trianglePath = triangleCx - dx + ',' + triangleCy + ' ' + (triangleCx + dx) + ',' + triangleCy + ' ' + triangleCx + ',' + (triangleCy + dx);
-
-      var _getArcDeg3 = this.getArcDeg(),
-          _getArcDeg4 = (0, _slicedToArray3.default)(_getArcDeg3, 2),
-          endDeg = _getArcDeg4[1];
-
-      var theme = this.getTheme();
-      return {
-        style: {
-          fill: this.props.percentage === 100 ? this.props.loadingColor || theme.loadingStrokeColor : this.props.color || theme.strokeColor,
-          transform: 'rotate(' + endDeg + 'deg)',
-          transformOrigin: circle.originX + 'px ' + circle.originY + 'px',
-          opacity: p1
-        },
-        attr: {
-          points: trianglePath
-        }
-      };
-    }
-  }, {
-    key: 'scalePath',
-    value: function scalePath(path, step) {
-      var _this2 = this;
-
-      if (this.props.status !== 'loading') return;
-
-      var currStep = (step || 0) % 3;
-
-      var circle = this.getCircleAttr();
-      var perimeter = Math.PI * 2 * circle.radiu;
-      var arcLen = perimeter * 0.64;
-
-      var strokeDasharray = void 0;
-      var strokeDashoffset = void 0;
-      var transitionDuration = void 0;
-
-      if (currStep === 0) {
-        strokeDasharray = '1, 200';
-        strokeDashoffset = 0;
-        transitionDuration = '0ms';
-      } else if (currStep === 1) {
-        strokeDasharray = arcLen + ', 200';
-        strokeDashoffset = -15;
-        transitionDuration = '750ms';
-      } else {
-        strokeDasharray = arcLen + ', 200';
-        strokeDashoffset = -(perimeter - 1);
-        transitionDuration = '850ms';
-      }
-
-      _autoPrefix2.default.set(path.style, 'strokeDasharray', strokeDasharray);
-      _autoPrefix2.default.set(path.style, 'strokeDashoffset', strokeDashoffset);
-      _autoPrefix2.default.set(path.style, 'transitionDuration', transitionDuration);
-
-      this.scalePathTimer = setTimeout(function () {
-        return _this2.scalePath(path, currStep + 1);
-      }, currStep ? 750 : 250);
-    }
-  }, {
-    key: 'rotateWrapper',
-    value: function rotateWrapper(wrapper) {
-      var _this3 = this;
-
-      if (this.props.status !== 'loading') return;
-
-      _autoPrefix2.default.set(wrapper.style, 'transform', null);
-      _autoPrefix2.default.set(wrapper.style, 'transform', 'rotate(0deg)');
-      _autoPrefix2.default.set(wrapper.style, 'transitionDuration', '0ms');
-
-      this.rotateWrapperSecondTimer = setTimeout(function () {
-        _autoPrefix2.default.set(wrapper.style, 'transform', 'rotate(1800deg)');
-        _autoPrefix2.default.set(wrapper.style, 'transitionDuration', '10s');
-        _autoPrefix2.default.set(wrapper.style, 'transitionTimingFunction', 'linear');
-      }, 50);
-
-      this.rotateWrapperTimer = setTimeout(function () {
-        return _this3.rotateWrapper(wrapper);
-      }, 10050);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          style = _props.style,
-          top = _props.top,
-          left = _props.left,
-          percentage = _props.percentage,
-          status = _props.status,
-          loadingColor = _props.loadingColor,
-          other = (0, _objectWithoutProperties3.default)(_props, ['style', 'top', 'left', 'percentage', 'status', 'loadingColor']);
-
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        _Paper2.default,
-        (0, _extends3.default)({
-          circle: true,
-          style: (0, _simpleAssign2.default)(styles.root, style)
-        }, other),
-        this.renderChildren()
-      );
-    }
-  }]);
-  return RefreshIndicator;
-}(_react.Component);
-
-RefreshIndicator.defaultProps = {
-  percentage: 0,
-  size: 40,
-  status: 'hide'
-};
-RefreshIndicator.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? RefreshIndicator.propTypes = {
-  /**
-   * Override the theme's color of the indicator while it's status is
-   * "ready" and it's percentage is less than 100.
-   */
-  color: _react.PropTypes.string,
-  /**
-   * The absolute left position of the indicator in pixels.
-   */
-  left: _react.PropTypes.number.isRequired,
-  /**
-   * Override the theme's color of the indicator while
-   * it's status is "loading" or when it's percentage is 100.
-   */
-  loadingColor: _react.PropTypes.string,
-  /**
-   * The confirmation progress to fetch data. Max value is 100.
-   */
-  percentage: _react.PropTypes.number,
-  /**
-   * Size in pixels.
-   */
-  size: _react.PropTypes.number,
-  /**
-   * The display status of the indicator. If the status is
-   * "ready", the indicator will display the ready state
-   * arrow. If the status is "loading", it will display
-   * the loading progress indicator. If the status is "hide",
-   * the indicator will be hidden.
-   */
-  status: _react.PropTypes.oneOf(['ready', 'loading', 'hide']),
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The absolute top position of the indicator in pixels.
-   */
-  top: _react.PropTypes.number.isRequired
-} : void 0;
-exports.default = RefreshIndicator;
-}).call(this,require('_process'))
-},{"../Paper":73,"../styles/transitions":333,"../utils/autoPrefix":352,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/slicedToArray":175,"react":559,"simple-assign":326}],84:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _RefreshIndicator = require('./RefreshIndicator');
-
-var _RefreshIndicator2 = _interopRequireDefault(_RefreshIndicator);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _RefreshIndicator2.default;
-},{"./RefreshIndicator":83}],85:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _TextField = require('../TextField');
-
-var _TextField2 = _interopRequireDefault(_TextField);
-
-var _DropDownMenu = require('../DropDownMenu');
-
-var _DropDownMenu2 = _interopRequireDefault(_DropDownMenu);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props) {
-  return {
-    label: {
-      paddingLeft: 0,
-      top: props.floatingLabelText ? 6 : -4
-    },
-    icon: {
-      right: 0,
-      top: props.floatingLabelText ? 8 : 0
-    },
-    hideDropDownUnderline: {
-      borderTop: 'none'
-    },
-    dropDownMenu: {
-      display: 'block'
-    }
-  };
-}
-
-var SelectField = function (_Component) {
-  (0, _inherits3.default)(SelectField, _Component);
-
-  function SelectField() {
-    (0, _classCallCheck3.default)(this, SelectField);
-    return (0, _possibleConstructorReturn3.default)(this, (SelectField.__proto__ || (0, _getPrototypeOf2.default)(SelectField)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(SelectField, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          autoWidth = _props.autoWidth,
-          multiple = _props.multiple,
-          children = _props.children,
-          style = _props.style,
-          labelStyle = _props.labelStyle,
-          iconStyle = _props.iconStyle,
-          id = _props.id,
-          underlineDisabledStyle = _props.underlineDisabledStyle,
-          underlineFocusStyle = _props.underlineFocusStyle,
-          menuItemStyle = _props.menuItemStyle,
-          selectedMenuItemStyle = _props.selectedMenuItemStyle,
-          underlineStyle = _props.underlineStyle,
-          errorStyle = _props.errorStyle,
-          disabled = _props.disabled,
-          floatingLabelFixed = _props.floatingLabelFixed,
-          floatingLabelText = _props.floatingLabelText,
-          floatingLabelStyle = _props.floatingLabelStyle,
-          hintStyle = _props.hintStyle,
-          hintText = _props.hintText,
-          fullWidth = _props.fullWidth,
-          errorText = _props.errorText,
-          listStyle = _props.listStyle,
-          maxHeight = _props.maxHeight,
-          menuStyle = _props.menuStyle,
-          onFocus = _props.onFocus,
-          onBlur = _props.onBlur,
-          onChange = _props.onChange,
-          selectionRenderer = _props.selectionRenderer,
-          value = _props.value,
-          other = (0, _objectWithoutProperties3.default)(_props, ['autoWidth', 'multiple', 'children', 'style', 'labelStyle', 'iconStyle', 'id', 'underlineDisabledStyle', 'underlineFocusStyle', 'menuItemStyle', 'selectedMenuItemStyle', 'underlineStyle', 'errorStyle', 'disabled', 'floatingLabelFixed', 'floatingLabelText', 'floatingLabelStyle', 'hintStyle', 'hintText', 'fullWidth', 'errorText', 'listStyle', 'maxHeight', 'menuStyle', 'onFocus', 'onBlur', 'onChange', 'selectionRenderer', 'value']);
-
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        _TextField2.default,
-        (0, _extends3.default)({}, other, {
-          style: style,
-          disabled: disabled,
-          floatingLabelFixed: floatingLabelFixed,
-          floatingLabelText: floatingLabelText,
-          floatingLabelStyle: floatingLabelStyle,
-          hintStyle: hintStyle,
-          hintText: !hintText && !floatingLabelText ? ' ' : hintText,
-          fullWidth: fullWidth,
-          errorText: errorText,
-          underlineStyle: underlineStyle,
-          errorStyle: errorStyle,
-          onFocus: onFocus,
-          onBlur: onBlur,
-          id: id,
-          underlineDisabledStyle: underlineDisabledStyle,
-          underlineFocusStyle: underlineFocusStyle
-        }),
-        _react2.default.createElement(
-          _DropDownMenu2.default,
-          {
-            disabled: disabled,
-            style: (0, _simpleAssign2.default)(styles.dropDownMenu, menuStyle),
-            labelStyle: (0, _simpleAssign2.default)(styles.label, labelStyle),
-            iconStyle: (0, _simpleAssign2.default)(styles.icon, iconStyle),
-            menuItemStyle: menuItemStyle,
-            selectedMenuItemStyle: selectedMenuItemStyle,
-            underlineStyle: styles.hideDropDownUnderline,
-            listStyle: listStyle,
-            autoWidth: autoWidth,
-            value: value,
-            onChange: onChange,
-            maxHeight: maxHeight,
-            multiple: multiple,
-            selectionRenderer: selectionRenderer
-          },
-          children
-        )
-      );
-    }
-  }]);
-  return SelectField;
-}(_react.Component);
-
-SelectField.defaultProps = {
-  autoWidth: false,
-  disabled: false,
-  fullWidth: false,
-  multiple: false
-};
-SelectField.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? SelectField.propTypes = {
-  /**
-   * If true, the width will automatically be set according to the
-   * items inside the menu.
-   * To control the width in CSS instead, leave this prop set to `false`.
-   */
-  autoWidth: _react.PropTypes.bool,
-  /**
-   * The `MenuItem` elements to populate the select field with.
-   * If the menu items have a `label` prop, that value will
-   * represent the selected menu item in the rendered select field.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * If true, the select field will be disabled.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the error element.
-   */
-  errorStyle: _react.PropTypes.object,
-  /**
-   * The error content to display.
-   */
-  errorText: _react.PropTypes.node,
-  /**
-   * If true, the floating label will float even when no value is selected.
-   */
-  floatingLabelFixed: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the floating label.
-   */
-  floatingLabelStyle: _react.PropTypes.object,
-  /**
-   * The content of the floating label.
-   */
-  floatingLabelText: _react.PropTypes.node,
-  /**
-   * If true, the select field will take up the full width of its container.
-   */
-  fullWidth: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the hint element.
-   */
-  hintStyle: _react.PropTypes.object,
-  /**
-   * The hint content to display.
-   */
-  hintText: _react.PropTypes.node,
-  /**
-   * Override the inline-styles of the icon element.
-   */
-  iconStyle: _react.PropTypes.object,
-  /**
-   * The id prop for the text field.
-   */
-  id: _react.PropTypes.string,
-  /**
-   * Override the label style when the select field is inactive.
-   */
-  labelStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the underlying `List` element.
-   */
-  listStyle: _react.PropTypes.object,
-  /**
-   * Override the default max-height of the underlying `DropDownMenu` element.
-   */
-  maxHeight: _react.PropTypes.number,
-  /**
-   * Override the inline-styles of menu items.
-   */
-  menuItemStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the underlying `DropDownMenu` element.
-   */
-  menuStyle: _react.PropTypes.object,
-  /**
-   * If true, `value` must be an array and the menu will support
-   * multiple selections.
-   */
-  multiple: _react.PropTypes.bool,
-  /** @ignore */
-  onBlur: _react.PropTypes.func,
-  /**
-   * Callback function fired when a menu item is selected.
-   *
-   * @param {object} event TouchTap event targeting the menu item
-   * that was selected.
-   * @param {number} key The index of the selected menu item, or undefined
-   * if `multiple` is true.
-   * @param {any} payload If `multiple` is true, the menu's `value`
-   * array with either the menu item's `value` added (if
-   * it wasn't already selected) or omitted (if it was already selected).
-   * Otherwise, the `value` of the menu item.
-   */
-  onChange: _react.PropTypes.func,
-  /** @ignore */
-  onFocus: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of selected menu items.
-   */
-  selectedMenuItemStyle: _react.PropTypes.object,
-  /**
-   * Customize the rendering of the selected item.
-   *
-   * @param {any} value If `multiple` is true, the menu's `value`
-   * array with either the menu item's `value` added (if
-   * it wasn't already selected) or omitted (if it was already selected).
-   * Otherwise, the `value` of the menu item.
-   */
-  selectionRenderer: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the underline element when the select
-   * field is disabled.
-   */
-  underlineDisabledStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the underline element when the select field
-   * is focused.
-   */
-  underlineFocusStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the underline element.
-   */
-  underlineStyle: _react.PropTypes.object,
-  /**
-   * If `multiple` is true, an array of the `value`s of the selected
-   * menu items. Otherwise, the `value` of the selected menu item.
-   * If provided, the menu will be a controlled component.
-   */
-  value: _react.PropTypes.any
-} : void 0;
-exports.default = SelectField;
-}).call(this,require('_process'))
-},{"../DropDownMenu":45,"../TextField":120,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],86:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _SelectField = require('./SelectField');
-
-var _SelectField2 = _interopRequireDefault(_SelectField);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _SelectField2.default;
-},{"./SelectField":85}],87:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _keycode = require('keycode');
-
-var _keycode2 = _interopRequireDefault(_keycode);
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _FocusRipple = require('../internal/FocusRipple');
-
-var _FocusRipple2 = _interopRequireDefault(_FocusRipple);
-
-var _deprecatedPropType = require('../utils/deprecatedPropType');
-
-var _deprecatedPropType2 = _interopRequireDefault(_deprecatedPropType);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Verifies min/max range.
- * @param   {Object} props         Properties of the React component.
- * @param   {String} propName      Name of the property to validate.
- * @param   {String} componentName Name of the component whose property is being validated.
- * @returns {Object} Returns an Error if min >= max otherwise null.
- */
-var minMaxPropType = function minMaxPropType(props, propName, componentName) {
-  for (var _len = arguments.length, rest = Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-    rest[_key - 3] = arguments[_key];
-  }
-
-  var error = _react.PropTypes.number.apply(_react.PropTypes, [props, propName, componentName].concat(rest));
-  if (error !== null) {
-    return error;
-  }
-
-  if (props.min >= props.max) {
-    var errorMsg = propName === 'min' ? 'min should be less than max' : 'max should be greater than min';
-    return new Error(errorMsg);
-  }
-};
-
-/**
- * Verifies value is within the min/max range.
- * @param   {Object} props         Properties of the React component.
- * @param   {String} propName      Name of the property to validate.
- * @param   {String} componentName Name of the component whose property is being validated.
- * @returns {Object} Returns an Error if the value is not within the range otherwise null.
- */
-var valueInRangePropType = function valueInRangePropType(props, propName, componentName) {
-  for (var _len2 = arguments.length, rest = Array(_len2 > 3 ? _len2 - 3 : 0), _key2 = 3; _key2 < _len2; _key2++) {
-    rest[_key2 - 3] = arguments[_key2];
-  }
-
-  var error = _react.PropTypes.number.apply(_react.PropTypes, [props, propName, componentName].concat(rest));
-  if (error !== null) {
-    return error;
-  }
-
-  var value = props[propName];
-  if (value < props.min || props.max < value) {
-    return new Error(propName + ' should be within the range specified by min and max');
-  }
-};
-
-var crossAxisProperty = {
-  x: 'height',
-  'x-reverse': 'height',
-  y: 'width',
-  'y-reverse': 'width'
-};
-
-var crossAxisOffsetProperty = {
-  x: 'top',
-  'x-reverse': 'top',
-  y: 'left',
-  'y-reverse': 'left'
-};
-
-var mainAxisProperty = {
-  x: 'width',
-  'x-reverse': 'width',
-  y: 'height',
-  'y-reverse': 'height'
-};
-
-var mainAxisMarginFromEnd = {
-  x: 'marginRight',
-  'x-reverse': 'marginLeft',
-  y: 'marginTop',
-  'y-reverse': 'marginBottom'
-};
-
-var mainAxisMarginFromStart = {
-  x: 'marginLeft',
-  'x-reverse': 'marginRight',
-  y: 'marginBottom',
-  'y-reverse': 'marginTop'
-};
-
-var mainAxisOffsetProperty = {
-  x: 'left',
-  'x-reverse': 'right',
-  y: 'bottom',
-  'y-reverse': 'top'
-};
-
-var mainAxisClientProperty = {
-  x: 'clientWidth',
-  'x-reverse': 'clientWidth',
-  y: 'clientHeight',
-  'y-reverse': 'clientHeight'
-};
-
-var mainAxisClientOffsetProperty = {
-  x: 'clientX',
-  'x-reverse': 'clientX',
-  y: 'clientY',
-  'y-reverse': 'clientY'
-};
-
-var reverseMainAxisOffsetProperty = {
-  x: 'right',
-  'x-reverse': 'left',
-  y: 'top',
-  'y-reverse': 'bottom'
-};
-
-var isMouseControlInverted = function isMouseControlInverted(axis) {
-  return axis === 'x-reverse' || axis === 'y';
-};
-
-function getPercent(value, min, max) {
-  var percent = (value - min) / (max - min);
-  if (isNaN(percent)) {
-    percent = 0;
-  }
-
-  return percent;
-}
-
-var getStyles = function getStyles(props, context, state) {
-  var _slider, _track, _filledAndRemaining, _handle, _objectAssign2, _objectAssign3;
-
-  var axis = props.axis,
-      disabled = props.disabled,
-      max = props.max,
-      min = props.min;
-  var _context$muiTheme$sli = context.muiTheme.slider,
-      handleColorZero = _context$muiTheme$sli.handleColorZero,
-      handleFillColor = _context$muiTheme$sli.handleFillColor,
-      handleSize = _context$muiTheme$sli.handleSize,
-      handleSizeDisabled = _context$muiTheme$sli.handleSizeDisabled,
-      handleSizeActive = _context$muiTheme$sli.handleSizeActive,
-      trackSize = _context$muiTheme$sli.trackSize,
-      trackColor = _context$muiTheme$sli.trackColor,
-      trackColorSelected = _context$muiTheme$sli.trackColorSelected,
-      rippleColor = _context$muiTheme$sli.rippleColor,
-      selectionColor = _context$muiTheme$sli.selectionColor;
-
-
-  var fillGutter = handleSize / 2;
-  var disabledGutter = trackSize + handleSizeDisabled / 2;
-  var calcDisabledSpacing = disabled ? ' - ' + disabledGutter + 'px' : '';
-  var percent = getPercent(state.value, min, max);
-
-  var styles = {
-    slider: (_slider = {
-      touchCallout: 'none',
-      userSelect: 'none',
-      cursor: 'default'
-    }, (0, _defineProperty3.default)(_slider, crossAxisProperty[axis], handleSizeActive), (0, _defineProperty3.default)(_slider, mainAxisProperty[axis], '100%'), (0, _defineProperty3.default)(_slider, 'position', 'relative'), (0, _defineProperty3.default)(_slider, 'marginTop', 24), (0, _defineProperty3.default)(_slider, 'marginBottom', 48), _slider),
-    track: (_track = {
-      position: 'absolute'
-    }, (0, _defineProperty3.default)(_track, crossAxisOffsetProperty[axis], (handleSizeActive - trackSize) / 2), (0, _defineProperty3.default)(_track, mainAxisOffsetProperty[axis], 0), (0, _defineProperty3.default)(_track, mainAxisProperty[axis], '100%'), (0, _defineProperty3.default)(_track, crossAxisProperty[axis], trackSize), _track),
-    filledAndRemaining: (_filledAndRemaining = {
-      position: 'absolute'
-    }, (0, _defineProperty3.default)(_filledAndRemaining, crossAxisOffsetProperty, 0), (0, _defineProperty3.default)(_filledAndRemaining, crossAxisProperty[axis], '100%'), (0, _defineProperty3.default)(_filledAndRemaining, 'transition', _transitions2.default.easeOut(null, 'margin')), _filledAndRemaining),
-    handle: (_handle = {
-      boxSizing: 'border-box',
-      position: 'absolute',
-      cursor: 'pointer',
-      pointerEvents: 'inherit'
-    }, (0, _defineProperty3.default)(_handle, crossAxisOffsetProperty[axis], 0), (0, _defineProperty3.default)(_handle, mainAxisOffsetProperty[axis], percent === 0 ? '0%' : percent * 100 + '%'), (0, _defineProperty3.default)(_handle, 'zIndex', 1), (0, _defineProperty3.default)(_handle, 'margin', {
-      x: trackSize / 2 + 'px 0 0 0',
-      'x-reverse': trackSize / 2 + 'px 0 0 0',
-      y: '0 0 0 ' + trackSize / 2 + 'px',
-      'y-reverse': '0 0 0 ' + trackSize / 2 + 'px'
-    }[axis]), (0, _defineProperty3.default)(_handle, 'width', handleSize), (0, _defineProperty3.default)(_handle, 'height', handleSize), (0, _defineProperty3.default)(_handle, 'backgroundColor', selectionColor), (0, _defineProperty3.default)(_handle, 'backgroundClip', 'padding-box'), (0, _defineProperty3.default)(_handle, 'border', '0px solid transparent'), (0, _defineProperty3.default)(_handle, 'borderRadius', '50%'), (0, _defineProperty3.default)(_handle, 'transform', {
-      x: 'translate(-50%, -50%)',
-      'x-reverse': 'translate(50%, -50%)',
-      y: 'translate(-50%, 50%)',
-      'y-reverse': 'translate(-50%, -50%)'
-    }[axis]), (0, _defineProperty3.default)(_handle, 'transition', _transitions2.default.easeOut('450ms', 'background') + ', ' + _transitions2.default.easeOut('450ms', 'border-color') + ', ' + _transitions2.default.easeOut('450ms', 'width') + ', ' + _transitions2.default.easeOut('450ms', 'height')), (0, _defineProperty3.default)(_handle, 'overflow', 'visible'), (0, _defineProperty3.default)(_handle, 'outline', 'none'), _handle),
-    handleWhenDisabled: {
-      boxSizing: 'content-box',
-      cursor: 'not-allowed',
-      backgroundColor: trackColor,
-      width: handleSizeDisabled,
-      height: handleSizeDisabled,
-      border: 'none'
-    },
-    handleWhenPercentZero: {
-      border: trackSize + 'px solid ' + handleColorZero,
-      backgroundColor: handleFillColor,
-      boxShadow: 'none'
-    },
-    handleWhenPercentZeroAndDisabled: {
-      cursor: 'not-allowed',
-      width: handleSizeDisabled,
-      height: handleSizeDisabled
-    },
-    handleWhenPercentZeroAndFocused: {
-      border: trackSize + 'px solid ' + trackColorSelected
-    },
-    handleWhenActive: {
-      width: handleSizeActive,
-      height: handleSizeActive
-    },
-    ripple: {
-      height: handleSize,
-      width: handleSize,
-      overflow: 'visible'
-    },
-    rippleWhenPercentZero: {
-      top: -trackSize,
-      left: -trackSize
-    },
-    rippleInner: {
-      height: '300%',
-      width: '300%',
-      top: -handleSize,
-      left: -handleSize
-    },
-    rippleColor: {
-      fill: percent === 0 ? handleColorZero : rippleColor
-    }
-  };
-  styles.filled = (0, _simpleAssign2.default)({}, styles.filledAndRemaining, (_objectAssign2 = {}, (0, _defineProperty3.default)(_objectAssign2, mainAxisOffsetProperty[axis], 0), (0, _defineProperty3.default)(_objectAssign2, 'backgroundColor', disabled ? trackColor : selectionColor), (0, _defineProperty3.default)(_objectAssign2, mainAxisMarginFromEnd[axis], fillGutter), (0, _defineProperty3.default)(_objectAssign2, mainAxisProperty[axis], 'calc(' + percent * 100 + '%' + calcDisabledSpacing + ')'), _objectAssign2));
-  styles.remaining = (0, _simpleAssign2.default)({}, styles.filledAndRemaining, (_objectAssign3 = {}, (0, _defineProperty3.default)(_objectAssign3, reverseMainAxisOffsetProperty[axis], 0), (0, _defineProperty3.default)(_objectAssign3, 'backgroundColor', (state.hovered || state.focused) && !disabled ? trackColorSelected : trackColor), (0, _defineProperty3.default)(_objectAssign3, mainAxisMarginFromStart[axis], fillGutter), (0, _defineProperty3.default)(_objectAssign3, mainAxisProperty[axis], 'calc(' + (1 - percent) * 100 + '%' + calcDisabledSpacing + ')'), _objectAssign3));
-
-  return styles;
-};
-
-var Slider = function (_Component) {
-  (0, _inherits3.default)(Slider, _Component);
-
-  function Slider() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Slider);
-
-    for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Slider.__proto__ || (0, _getPrototypeOf2.default)(Slider)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      active: false,
-      dragging: false,
-      focused: false,
-      hovered: false,
-      value: 0
-    }, _this.track = null, _this.handle = null, _this.handleKeyDown = function (event) {
-      var _this$props = _this.props,
-          axis = _this$props.axis,
-          min = _this$props.min,
-          max = _this$props.max,
-          step = _this$props.step;
-
-
-      var action = void 0;
-
-      switch ((0, _keycode2.default)(event)) {
-        case 'page down':
-        case 'down':
-          if (axis === 'y-reverse') {
-            action = 'increase';
-          } else {
-            action = 'decrease';
-          }
-          break;
-        case 'left':
-          if (axis === 'x-reverse') {
-            action = 'increase';
-          } else {
-            action = 'decrease';
-          }
-          break;
-        case 'page up':
-        case 'up':
-          if (axis === 'y-reverse') {
-            action = 'decrease';
-          } else {
-            action = 'increase';
-          }
-          break;
-        case 'right':
-          if (axis === 'x-reverse') {
-            action = 'decrease';
-          } else {
-            action = 'increase';
-          }
-          break;
-        case 'home':
-          action = 'min';
-          break;
-        case 'end':
-          action = 'max';
-          break;
-      }
-
-      if (action) {
-        var newValue = void 0;
-
-        // Cancel scroll
-        event.preventDefault();
-
-        switch (action) {
-          case 'decrease':
-            newValue = _this.state.value - step;
-            break;
-          case 'increase':
-            newValue = _this.state.value + step;
-            break;
-          case 'min':
-            newValue = min;
-            break;
-          case 'max':
-            newValue = max;
-            break;
-        }
-
-        // We need to use toFixed() because of float point errors.
-        // For example, 0.01 + 0.06 = 0.06999999999999999
-        newValue = parseFloat(newValue.toFixed(5));
-
-        if (newValue > max) {
-          newValue = max;
-        } else if (newValue < min) {
-          newValue = min;
-        }
-
-        if (_this.state.value !== newValue) {
-          _this.setState({
-            value: newValue
-          });
-
-          if (_this.props.onChange) {
-            _this.props.onChange(event, newValue);
-          }
-        }
-      }
-    }, _this.handleDragMouseMove = function (event) {
-      _this.onDragUpdate(event, 'mouse');
-    }, _this.handleTouchMove = function (event) {
-      _this.onDragUpdate(event, 'touch');
-    }, _this.handleMouseEnd = function (event) {
-      document.removeEventListener('mousemove', _this.handleDragMouseMove);
-      document.removeEventListener('mouseup', _this.handleMouseEnd);
-
-      _this.onDragStop(event);
-    }, _this.handleTouchEnd = function (event) {
-      document.removeEventListener('touchmove', _this.handleTouchMove);
-      document.removeEventListener('touchup', _this.handleTouchEnd);
-      document.removeEventListener('touchend', _this.handleTouchEnd);
-      document.removeEventListener('touchcancel', _this.handleTouchEnd);
-
-      _this.onDragStop(event);
-    }, _this.handleTouchStart = function (event) {
-      if (_this.props.disabled) {
-        return;
-      }
-
-      var position = void 0;
-      if (isMouseControlInverted(_this.props.axis)) {
-        position = _this.getTrackOffset() - event.touches[0][mainAxisClientOffsetProperty[_this.props.axis]];
-      } else {
-        position = event.touches[0][mainAxisClientOffsetProperty[_this.props.axis]] - _this.getTrackOffset();
-      }
-      _this.setValueFromPosition(event, position);
-
-      document.addEventListener('touchmove', _this.handleTouchMove);
-      document.addEventListener('touchup', _this.handleTouchEnd);
-      document.addEventListener('touchend', _this.handleTouchEnd);
-      document.addEventListener('touchcancel', _this.handleTouchEnd);
-
-      _this.onDragStart(event);
-
-      // Cancel scroll and context menu
-      event.preventDefault();
-    }, _this.handleFocus = function (event) {
-      _this.setState({
-        focused: true
-      });
-
-      if (_this.props.onFocus) {
-        _this.props.onFocus(event);
-      }
-    }, _this.handleBlur = function (event) {
-      _this.setState({
-        focused: false,
-        active: false
-      });
-
-      if (_this.props.onBlur) {
-        _this.props.onBlur(event);
-      }
-    }, _this.handleMouseDown = function (event) {
-      if (_this.props.disabled) {
-        return;
-      }
-
-      var position = void 0;
-      if (isMouseControlInverted(_this.props.axis)) {
-        position = _this.getTrackOffset() - event[mainAxisClientOffsetProperty[_this.props.axis]];
-      } else {
-        position = event[mainAxisClientOffsetProperty[_this.props.axis]] - _this.getTrackOffset();
-      }
-      _this.setValueFromPosition(event, position);
-
-      document.addEventListener('mousemove', _this.handleDragMouseMove);
-      document.addEventListener('mouseup', _this.handleMouseEnd);
-
-      // Cancel text selection
-      event.preventDefault();
-
-      // Set focus manually since we called preventDefault()
-      _this.handle.focus();
-
-      _this.onDragStart(event);
-    }, _this.handleMouseUp = function () {
-      if (!_this.props.disabled) {
-        _this.setState({
-          active: false
-        });
-      }
-    }, _this.handleMouseEnter = function () {
-      _this.setState({
-        hovered: true
-      });
-    }, _this.handleMouseLeave = function () {
-      _this.setState({
-        hovered: false
-      });
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Slider, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var _props = this.props,
-          valueProp = _props.value,
-          defaultValue = _props.defaultValue,
-          min = _props.min,
-          max = _props.max;
-
-
-      var value = valueProp;
-      if (value === undefined) {
-        value = defaultValue !== undefined ? defaultValue : min;
-      }
-
-      if (value > max) {
-        value = max;
-      } else if (value < min) {
-        value = min;
-      }
-
-      this.setState({
-        value: value
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.value !== undefined && !this.state.dragging) {
-        this.setState({
-          value: nextProps.value
-        });
-      }
-    }
-  }, {
-    key: 'getValue',
-    value: function getValue() {
-      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI Slider: getValue() method is deprecated.\n      Use the onChange callbacks instead.\n      It will be removed with v0.17.0.') : void 0;
-
-      return this.state.value;
-    }
-  }, {
-    key: 'clearValue',
-    value: function clearValue() {
-      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI Slider: clearValue() method is deprecated.\n      Use the value property to control the component instead.\n      It will be removed with v0.17.0.') : void 0;
-
-      this.setState({
-        value: this.props.min
-      });
-    }
-  }, {
-    key: 'getTrackOffset',
-    value: function getTrackOffset() {
-      return this.track.getBoundingClientRect()[mainAxisOffsetProperty[this.props.axis]];
-    }
-  }, {
-    key: 'onDragStart',
-    value: function onDragStart(event) {
-      this.setState({
-        dragging: true,
-        active: true
-      });
-
-      if (this.props.onDragStart) {
-        this.props.onDragStart(event);
-      }
-    }
-  }, {
-    key: 'onDragUpdate',
-    value: function onDragUpdate(event, type) {
-      var _this2 = this;
-
-      if (this.dragRunning) {
-        return;
-      }
-      this.dragRunning = true;
-
-      requestAnimationFrame(function () {
-        _this2.dragRunning = false;
-
-        var source = type === 'touch' ? event.touches[0] : event;
-
-        var position = void 0;
-        if (isMouseControlInverted(_this2.props.axis)) {
-          position = _this2.getTrackOffset() - source[mainAxisClientOffsetProperty[_this2.props.axis]];
-        } else {
-          position = source[mainAxisClientOffsetProperty[_this2.props.axis]] - _this2.getTrackOffset();
-        }
-
-        if (!_this2.props.disabled) {
-          _this2.setValueFromPosition(event, position);
-        }
-      });
-    }
-  }, {
-    key: 'onDragStop',
-    value: function onDragStop(event) {
-      this.setState({
-        dragging: false,
-        active: false
-      });
-
-      if (this.props.onDragStop) {
-        this.props.onDragStop(event);
-      }
-    }
-  }, {
-    key: 'setValueFromPosition',
-    value: function setValueFromPosition(event, position) {
-      var positionMax = this.track[mainAxisClientProperty[this.props.axis]];
-      if (position < 0) {
-        position = 0;
-      } else if (position > positionMax) {
-        position = positionMax;
-      }
-
-      var _props2 = this.props,
-          step = _props2.step,
-          min = _props2.min,
-          max = _props2.max;
-
-
-      var value = void 0;
-      value = position / positionMax * (max - min);
-      value = Math.round(value / step) * step + min;
-      value = parseFloat(value.toFixed(5));
-
-      if (value > max) {
-        value = max;
-      } else if (value < min) {
-        value = min;
-      }
-
-      if (this.state.value !== value) {
-        this.setState({
-          value: value
-        });
-
-        if (this.props.onChange) {
-          this.props.onChange(event, value);
-        }
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      var _props3 = this.props,
-          axis = _props3.axis,
-          description = _props3.description,
-          disabled = _props3.disabled,
-          disableFocusRipple = _props3.disableFocusRipple,
-          error = _props3.error,
-          max = _props3.max,
-          min = _props3.min,
-          name = _props3.name,
-          onBlur = _props3.onBlur,
-          onChange = _props3.onChange,
-          onDragStart = _props3.onDragStart,
-          onDragStop = _props3.onDragStop,
-          onFocus = _props3.onFocus,
-          required = _props3.required,
-          sliderStyle = _props3.sliderStyle,
-          step = _props3.step,
-          style = _props3.style,
-          other = (0, _objectWithoutProperties3.default)(_props3, ['axis', 'description', 'disabled', 'disableFocusRipple', 'error', 'max', 'min', 'name', 'onBlur', 'onChange', 'onDragStart', 'onDragStop', 'onFocus', 'required', 'sliderStyle', 'step', 'style']);
-      var _state = this.state,
-          active = _state.active,
-          focused = _state.focused,
-          hovered = _state.hovered,
-          value = _state.value;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-      var percent = getPercent(value, min, max);
-
-      var handleStyles = {};
-      if (percent === 0) {
-        handleStyles = (0, _simpleAssign2.default)({}, styles.handle, styles.handleWhenPercentZero, active && styles.handleWhenActive, (hovered || focused) && !disabled && styles.handleWhenPercentZeroAndFocused, disabled && styles.handleWhenPercentZeroAndDisabled);
-      } else {
-        handleStyles = (0, _simpleAssign2.default)({}, styles.handle, active && styles.handleWhenActive, disabled && styles.handleWhenDisabled);
-      }
-
-      var rippleStyle = (0, _simpleAssign2.default)({}, styles.ripple, percent === 0 && styles.rippleWhenPercentZero);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)({}, style)) }),
-        _react2.default.createElement(
-          'span',
-          null,
-          description
-        ),
-        _react2.default.createElement(
-          'span',
-          null,
-          error
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            style: prepareStyles((0, _simpleAssign2.default)({}, styles.slider, sliderStyle)),
-            onFocus: this.handleFocus,
-            onBlur: this.handleBlur,
-            onMouseDown: this.handleMouseDown,
-            onMouseEnter: this.handleMouseEnter,
-            onMouseLeave: this.handleMouseLeave,
-            onMouseUp: this.handleMouseUp,
-            onTouchStart: this.handleTouchStart,
-            onKeyDown: !disabled && this.handleKeyDown
-          },
-          _react2.default.createElement(
-            'div',
-            { ref: function ref(node) {
-                return _this3.track = node;
-              }, style: prepareStyles(styles.track) },
-            _react2.default.createElement('div', { style: prepareStyles(styles.filled) }),
-            _react2.default.createElement('div', { style: prepareStyles(styles.remaining) }),
-            _react2.default.createElement(
-              'div',
-              {
-                ref: function ref(node) {
-                  return _this3.handle = node;
-                },
-                style: prepareStyles(handleStyles),
-                tabIndex: 0
-              },
-              !disabled && !disableFocusRipple && _react2.default.createElement(_FocusRipple2.default, {
-                style: rippleStyle,
-                innerStyle: styles.rippleInner,
-                show: (hovered || focused) && !active,
-                color: styles.rippleColor.fill
-              })
-            )
-          )
-        ),
-        _react2.default.createElement('input', {
-          type: 'hidden',
-          name: name,
-          value: value,
-          required: required,
-          min: min,
-          max: max,
-          step: step
-        })
-      );
-    }
-  }]);
-  return Slider;
-}(_react.Component);
-
-Slider.defaultProps = {
-  axis: 'x',
-  disabled: false,
-  disableFocusRipple: false,
-  max: 1,
-  min: 0,
-  required: true,
-  step: 0.01,
-  style: {}
-};
-Slider.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Slider.propTypes = {
-  /**
-   * The axis on which the slider will slide.
-   */
-  axis: _react.PropTypes.oneOf(['x', 'x-reverse', 'y', 'y-reverse']),
-  /**
-   * The default value of the slider.
-   */
-  defaultValue: valueInRangePropType,
-  /**
-   * Describe the slider.
-   */
-  description: (0, _deprecatedPropType2.default)(_react.PropTypes.node, 'Use a sibling node element instead. It will be removed with v0.17.0.'),
-  /**
-   * Disables focus ripple if set to true.
-   */
-  disableFocusRipple: _react.PropTypes.bool,
-  /**
-   * If true, the slider will not be interactable.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * An error message for the slider.
-   */
-  error: (0, _deprecatedPropType2.default)(_react.PropTypes.node, 'Use a sibling node element instead. It will be removed with v0.17.0.'),
-  /**
-   * The maximum value the slider can slide to on
-   * a scale from 0 to 1 inclusive. Cannot be equal to min.
-   */
-  max: minMaxPropType,
-  /**
-   * The minimum value the slider can slide to on a scale
-   * from 0 to 1 inclusive. Cannot be equal to max.
-   */
-  min: minMaxPropType,
-  /**
-   * The name of the slider. Behaves like the name attribute
-   * of an input element.
-   */
-  name: _react.PropTypes.string,
-  /** @ignore */
-  onBlur: _react.PropTypes.func,
-  /**
-   * Callback function that is fired when the slider's value changed.
-   *
-   * @param {object} event KeyDown event targeting the slider.
-   * @param {number} newValue The new value of the slider.
-   */
-  onChange: _react.PropTypes.func,
-  /**
-   * Callback function that is fired when the slider has begun to move.
-   *
-   * @param {object} event MouseDown or TouchStart event targeting the slider.
-   */
-  onDragStart: _react.PropTypes.func,
-  /**
-   * Callback function that is fired when the slide has stopped moving.
-   *
-   * @param {object} event MouseEnd or TouchEnd event targeting the slider.
-   */
-  onDragStop: _react.PropTypes.func,
-  /** @ignore */
-  onFocus: _react.PropTypes.func,
-  /**
-   * Whether or not the slider is required in a form.
-   */
-  required: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the inner slider element.
-   */
-  sliderStyle: _react.PropTypes.object,
-  /**
-   * The granularity the slider can step through values.
-   */
-  step: _react.PropTypes.number,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The value of the slider.
-   */
-  value: valueInRangePropType
-} : void 0;
-exports.default = Slider;
-}).call(this,require('_process'))
-},{"../internal/FocusRipple":148,"../styles/transitions":333,"../utils/deprecatedPropType":357,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/defineProperty":170,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"simple-assign":326,"warning":327}],88:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _Slider = require('./Slider');
-
-var _Slider2 = _interopRequireDefault(_Slider);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _Slider2.default;
-},{"./Slider":87}],89:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _ClickAwayListener = require('../internal/ClickAwayListener');
-
-var _ClickAwayListener2 = _interopRequireDefault(_ClickAwayListener);
-
-var _SnackbarBody = require('./SnackbarBody');
-
-var _SnackbarBody2 = _interopRequireDefault(_SnackbarBody);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context, state) {
-  var _context$muiTheme = context.muiTheme,
-      desktopSubheaderHeight = _context$muiTheme.baseTheme.spacing.desktopSubheaderHeight,
-      zIndex = _context$muiTheme.zIndex;
-  var open = state.open;
-
-
-  var styles = {
-    root: {
-      position: 'fixed',
-      left: '50%',
-      display: 'flex',
-      bottom: 0,
-      zIndex: zIndex.snackbar,
-      visibility: open ? 'visible' : 'hidden',
-      transform: open ? 'translate(-50%, 0)' : 'translate(-50%, ' + desktopSubheaderHeight + 'px)',
-      transition: _transitions2.default.easeOut('400ms', 'transform') + ', ' + _transitions2.default.easeOut('400ms', 'visibility')
-    }
-  };
-
-  return styles;
-}
-
-var Snackbar = function (_Component) {
-  (0, _inherits3.default)(Snackbar, _Component);
-
-  function Snackbar() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Snackbar);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Snackbar.__proto__ || (0, _getPrototypeOf2.default)(Snackbar)).call.apply(_ref, [this].concat(args))), _this), _this.componentClickAway = function () {
-      if (_this.timerTransitionId) {
-        // If transitioning, don't close the snackbar.
-        return;
-      }
-
-      if (_this.props.open !== null && _this.props.onRequestClose) {
-        _this.props.onRequestClose('clickaway');
-      } else {
-        _this.setState({ open: false });
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Snackbar, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({
-        open: this.props.open,
-        message: this.props.message,
-        action: this.props.action
-      });
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      if (this.state.open) {
-        this.setAutoHideTimer();
-        this.setTransitionTimer();
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      var _this2 = this;
-
-      if (this.props.open && nextProps.open && (nextProps.message !== this.props.message || nextProps.action !== this.props.action)) {
-        this.setState({
-          open: false
-        });
-
-        clearTimeout(this.timerOneAtTheTimeId);
-        this.timerOneAtTheTimeId = setTimeout(function () {
-          _this2.setState({
-            message: nextProps.message,
-            action: nextProps.action,
-            open: true
-          });
-        }, 400);
-      } else {
-        var open = nextProps.open;
-
-        this.setState({
-          open: open !== null ? open : this.state.open,
-          message: nextProps.message,
-          action: nextProps.action
-        });
-      }
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate(prevProps, prevState) {
-      if (prevState.open !== this.state.open) {
-        if (this.state.open) {
-          this.setAutoHideTimer();
-          this.setTransitionTimer();
-        } else {
-          clearTimeout(this.timerAutoHideId);
-        }
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.timerAutoHideId);
-      clearTimeout(this.timerTransitionId);
-      clearTimeout(this.timerOneAtTheTimeId);
-    }
-  }, {
-    key: 'setAutoHideTimer',
-
-
-    // Timer that controls delay before snackbar auto hides
-    value: function setAutoHideTimer() {
-      var _this3 = this;
-
-      var autoHideDuration = this.props.autoHideDuration;
-
-      if (autoHideDuration > 0) {
-        clearTimeout(this.timerAutoHideId);
-        this.timerAutoHideId = setTimeout(function () {
-          if (_this3.props.open !== null && _this3.props.onRequestClose) {
-            _this3.props.onRequestClose('timeout');
-          } else {
-            _this3.setState({ open: false });
-          }
-        }, autoHideDuration);
-      }
-    }
-
-    // Timer that controls delay before click-away events are captured (based on when animation completes)
-
-  }, {
-    key: 'setTransitionTimer',
-    value: function setTransitionTimer() {
-      var _this4 = this;
-
-      this.timerTransitionId = setTimeout(function () {
-        _this4.timerTransitionId = undefined;
-      }, 400);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          autoHideDuration = _props.autoHideDuration,
-          contentStyle = _props.contentStyle,
-          bodyStyle = _props.bodyStyle,
-          messageProp = _props.message,
-          onRequestClose = _props.onRequestClose,
-          onActionTouchTap = _props.onActionTouchTap,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['autoHideDuration', 'contentStyle', 'bodyStyle', 'message', 'onRequestClose', 'onActionTouchTap', 'style']);
-      var _state = this.state,
-          action = _state.action,
-          message = _state.message,
-          open = _state.open;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      return _react2.default.createElement(
-        _ClickAwayListener2.default,
-        { onClickAway: open ? this.componentClickAway : null },
-        _react2.default.createElement(
-          'div',
-          (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }),
-          _react2.default.createElement(_SnackbarBody2.default, {
-            action: action,
-            contentStyle: contentStyle,
-            message: message,
-            open: open,
-            onActionTouchTap: onActionTouchTap,
-            style: bodyStyle
-          })
-        )
-      );
-    }
-  }]);
-  return Snackbar;
-}(_react.Component);
-
-Snackbar.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Snackbar.propTypes = {
-  /**
-   * The label for the action on the snackbar.
-   */
-  action: _react.PropTypes.node,
-  /**
-   * The number of milliseconds to wait before automatically dismissing.
-   * If no value is specified the snackbar will dismiss normally.
-   * If a value is provided the snackbar can still be dismissed normally.
-   * If a snackbar is dismissed before the timer expires, the timer will be cleared.
-   */
-  autoHideDuration: _react.PropTypes.number,
-  /**
-   * Override the inline-styles of the body element.
-   */
-  bodyStyle: _react.PropTypes.object,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Override the inline-styles of the content element.
-   */
-  contentStyle: _react.PropTypes.object,
-  /**
-   * The message to be displayed.
-   *
-   * (Note: If the message is an element or array, and the `Snackbar` may re-render while it is still open,
-   * ensure that the same object remains as the `message` property if you want to avoid the `Snackbar` hiding and
-   * showing again)
-   */
-  message: _react.PropTypes.node.isRequired,
-  /**
-   * Fired when the action button is touchtapped.
-   *
-   * @param {object} event Action button event.
-   */
-  onActionTouchTap: _react.PropTypes.func,
-  /**
-   * Fired when the `Snackbar` is requested to be closed by a click outside the `Snackbar`, or after the
-   * `autoHideDuration` timer expires.
-   *
-   * Typically `onRequestClose` is used to set state in the parent component, which is used to control the `Snackbar`
-   * `open` prop.
-   *
-   * The `reason` parameter can optionally be used to control the response to `onRequestClose`,
-   * for example ignoring `clickaway`.
-   *
-   * @param {string} reason Can be:`"timeout"` (`autoHideDuration` expired) or: `"clickaway"`
-   */
-  onRequestClose: _react.PropTypes.func,
-  /**
-   * Controls whether the `Snackbar` is opened or not.
-   */
-  open: _react.PropTypes.bool.isRequired,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = Snackbar;
-}).call(this,require('_process'))
-},{"../internal/ClickAwayListener":143,"../styles/transitions":333,"./SnackbarBody":90,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],90:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.SnackbarBody = undefined;
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _withWidth = require('../utils/withWidth');
-
-var _withWidth2 = _interopRequireDefault(_withWidth);
-
-var _FlatButton = require('../FlatButton');
-
-var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var open = props.open,
-      width = props.width;
-  var _context$muiTheme = context.muiTheme,
-      _context$muiTheme$bas = _context$muiTheme.baseTheme,
-      _context$muiTheme$bas2 = _context$muiTheme$bas.spacing,
-      desktopGutter = _context$muiTheme$bas2.desktopGutter,
-      desktopSubheaderHeight = _context$muiTheme$bas2.desktopSubheaderHeight,
-      fontFamily = _context$muiTheme$bas.fontFamily,
-      _context$muiTheme$sna = _context$muiTheme.snackbar,
-      backgroundColor = _context$muiTheme$sna.backgroundColor,
-      textColor = _context$muiTheme$sna.textColor,
-      actionColor = _context$muiTheme$sna.actionColor,
-      borderRadius = _context$muiTheme.borderRadius;
-
-
-  var isSmall = width === _withWidth.SMALL;
-
-  var styles = {
-    root: {
-      fontFamily: fontFamily,
-      backgroundColor: backgroundColor,
-      padding: '0 ' + desktopGutter + 'px',
-      height: desktopSubheaderHeight,
-      lineHeight: desktopSubheaderHeight + 'px',
-      borderRadius: isSmall ? 0 : borderRadius,
-      maxWidth: isSmall ? 'inherit' : 568,
-      minWidth: isSmall ? 'inherit' : 288,
-      width: isSmall ? 'calc(100vw - ' + desktopGutter * 2 + 'px)' : 'auto',
-      flexGrow: isSmall ? 1 : 0
-    },
-    content: {
-      fontSize: 14,
-      color: textColor,
-      opacity: open ? 1 : 0,
-      transition: open ? _transitions2.default.easeOut('500ms', 'opacity', '100ms') : _transitions2.default.easeOut('400ms', 'opacity')
-    },
-    action: {
-      color: actionColor,
-      float: 'right',
-      marginTop: 6,
-      marginRight: -16,
-      marginLeft: desktopGutter,
-      backgroundColor: 'transparent'
-    }
-  };
-
-  return styles;
-}
-
-var SnackbarBody = function SnackbarBody(props, context) {
-  var action = props.action,
-      contentStyle = props.contentStyle,
-      message = props.message,
-      open = props.open,
-      onActionTouchTap = props.onActionTouchTap,
-      style = props.style,
-      other = (0, _objectWithoutProperties3.default)(props, ['action', 'contentStyle', 'message', 'open', 'onActionTouchTap', 'style']);
-  var prepareStyles = context.muiTheme.prepareStyles;
-
-  var styles = getStyles(props, context);
-
-  var actionButton = action && _react2.default.createElement(_FlatButton2.default, {
-    style: styles.action,
-    label: action,
-    onTouchTap: onActionTouchTap
-  });
-
-  return _react2.default.createElement(
-    'div',
-    (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }),
-    _react2.default.createElement(
-      'div',
-      { style: prepareStyles((0, _simpleAssign2.default)(styles.content, contentStyle)) },
-      _react2.default.createElement(
-        'span',
-        null,
-        message
-      ),
-      actionButton
-    )
-  );
-};
-
-exports.SnackbarBody = SnackbarBody;
-process.env.NODE_ENV !== "production" ? SnackbarBody.propTypes = {
-  /**
-   * The label for the action on the snackbar.
-   */
-  action: _react.PropTypes.node,
-  /**
-   * Override the inline-styles of the content element.
-   */
-  contentStyle: _react.PropTypes.object,
-  /**
-   * The message to be displayed.
-   *
-   * (Note: If the message is an element or array, and the `Snackbar` may re-render while it is still open,
-   * ensure that the same object remains as the `message` property if you want to avoid the `Snackbar` hiding and
-   * showing again)
-   */
-  message: _react.PropTypes.node.isRequired,
-  /**
-   * Fired when the action button is touchtapped.
-   *
-   * @param {object} event Action button event.
-   */
-  onActionTouchTap: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Controls whether the `Snackbar` is opened or not.
-   */
-  open: _react.PropTypes.bool.isRequired,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * @ignore
-   * Width of the screen.
-   */
-  width: _react.PropTypes.number.isRequired
-} : void 0;
-
-SnackbarBody.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-
-exports.default = (0, _withWidth2.default)()(SnackbarBody);
-}).call(this,require('_process'))
-},{"../FlatButton":48,"../styles/transitions":333,"../utils/withWidth":363,"_process":560,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/objectWithoutProperties":173,"react":559,"simple-assign":326}],91:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _Snackbar = require('./Snackbar');
-
-var _Snackbar2 = _interopRequireDefault(_Snackbar);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _Snackbar2.default;
-},{"./Snackbar":89}],92:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var getStyles = function getStyles(_ref, _ref2) {
-  var index = _ref.index;
-  var stepper = _ref2.stepper;
-  var orientation = stepper.orientation;
-
-  var styles = {
-    root: {
-      flex: '0 0 auto'
-    }
-  };
-
-  if (index > 0) {
-    if (orientation === 'horizontal') {
-      styles.root.marginLeft = -6;
-    } else if (orientation === 'vertical') {
-      styles.root.marginTop = -14;
-    }
-  }
-
-  return styles;
-};
-
-var Step = function (_Component) {
-  (0, _inherits3.default)(Step, _Component);
-
-  function Step() {
-    var _ref3;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Step);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref3 = Step.__proto__ || (0, _getPrototypeOf2.default)(Step)).call.apply(_ref3, [this].concat(args))), _this), _this.renderChild = function (child) {
-      var _this$props = _this.props,
-          active = _this$props.active,
-          completed = _this$props.completed,
-          disabled = _this$props.disabled,
-          index = _this$props.index,
-          last = _this$props.last;
-
-
-      var icon = index + 1;
-
-      return _react2.default.cloneElement(child, (0, _simpleAssign2.default)({ active: active, completed: completed, disabled: disabled, icon: icon, last: last }, child.props));
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Step, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          active = _props.active,
-          completed = _props.completed,
-          disabled = _props.disabled,
-          index = _props.index,
-          last = _props.last,
-          children = _props.children,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['active', 'completed', 'disabled', 'index', 'last', 'children', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({ style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }, other),
-        _react2.default.Children.map(children, this.renderChild)
-      );
-    }
-  }]);
-  return Step;
-}(_react.Component);
-
-Step.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired,
-  stepper: _react.PropTypes.object
-};
-process.env.NODE_ENV !== "production" ? Step.propTypes = {
-  /**
-   * Sets the step as active. Is passed to child components.
-   */
-  active: _react.PropTypes.bool,
-  /**
-   * Should be `Step` sub-components such as `StepLabel`.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * Mark the step as completed. Is passed to child components.
-   */
-  completed: _react.PropTypes.bool,
-  /**
-   * Mark the step as disabled, will also disable the button if
-   * `StepButton` is a child of `Step`. Is passed to child components.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * @ignore
-   * Used internally for numbering.
-   */
-  index: _react.PropTypes.number,
-  /**
-   * @ignore
-   */
-  last: _react.PropTypes.bool,
-  /**
-   * Override the inline-style of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = Step;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],93:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _EnhancedButton = require('../internal/EnhancedButton');
-
-var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-
-var _StepLabel = require('./StepLabel');
-
-var _StepLabel2 = _interopRequireDefault(_StepLabel);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var isLabel = function isLabel(child) {
-  return child && child.type && child.type.muiName === 'StepLabel';
-};
-
-var getStyles = function getStyles(props, context, state) {
-  var hovered = state.hovered;
-  var _context$muiTheme$ste = context.muiTheme.stepper,
-      backgroundColor = _context$muiTheme$ste.backgroundColor,
-      hoverBackgroundColor = _context$muiTheme$ste.hoverBackgroundColor;
-
-
-  var styles = {
-    root: {
-      padding: 0,
-      backgroundColor: hovered ? hoverBackgroundColor : backgroundColor,
-      transition: _transitions2.default.easeOut()
-    }
-  };
-
-  if (context.stepper.orientation === 'vertical') {
-    styles.root.width = '100%';
-  }
-
-  return styles;
-};
-
-var StepButton = function (_Component) {
-  (0, _inherits3.default)(StepButton, _Component);
-
-  function StepButton() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, StepButton);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = StepButton.__proto__ || (0, _getPrototypeOf2.default)(StepButton)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hovered: false,
-      touched: false
-    }, _this.handleMouseEnter = function (event) {
-      var onMouseEnter = _this.props.onMouseEnter;
-      // Cancel hover styles for touch devices
-
-      if (!_this.state.touched) {
-        _this.setState({ hovered: true });
-      }
-      if (typeof onMouseEnter === 'function') {
-        onMouseEnter(event);
-      }
-    }, _this.handleMouseLeave = function (event) {
-      var onMouseLeave = _this.props.onMouseLeave;
-
-      _this.setState({ hovered: false });
-      if (typeof onMouseLeave === 'function') {
-        onMouseLeave(event);
-      }
-    }, _this.handleTouchStart = function (event) {
-      var onTouchStart = _this.props.onTouchStart;
-
-      if (!_this.state.touched) {
-        _this.setState({ touched: true });
-      }
-      if (typeof onTouchStart === 'function') {
-        onTouchStart(event);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(StepButton, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          active = _props.active,
-          children = _props.children,
-          completed = _props.completed,
-          disabled = _props.disabled,
-          icon = _props.icon,
-          iconContainerStyle = _props.iconContainerStyle,
-          last = _props.last,
-          onMouseEnter = _props.onMouseEnter,
-          onMouseLeave = _props.onMouseLeave,
-          onTouchStart = _props.onTouchStart,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['active', 'children', 'completed', 'disabled', 'icon', 'iconContainerStyle', 'last', 'onMouseEnter', 'onMouseLeave', 'onTouchStart', 'style']);
-
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      var child = isLabel(children) ? children : _react2.default.createElement(
-        _StepLabel2.default,
-        null,
-        children
-      );
-
-      return _react2.default.createElement(
-        _EnhancedButton2.default,
-        (0, _extends3.default)({
-          disabled: disabled,
-          style: (0, _simpleAssign2.default)(styles.root, style),
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave,
-          onTouchStart: this.handleTouchStart
-        }, other),
-        _react2.default.cloneElement(child, { active: active, completed: completed, disabled: disabled, icon: icon, iconContainerStyle: iconContainerStyle })
-      );
-    }
-  }]);
-  return StepButton;
-}(_react.Component);
-
-StepButton.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired,
-  stepper: _react.PropTypes.object
-};
-process.env.NODE_ENV !== "production" ? StepButton.propTypes = {
-  /**
-   * Passed from `Step` Is passed to StepLabel.
-   */
-  active: _react.PropTypes.bool,
-  /**
-   * Can be a `StepLabel` or a node to place inside `StepLabel` as children.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * Sets completed styling. Is passed to StepLabel.
-   */
-  completed: _react.PropTypes.bool,
-  /**
-   * Disables the button and sets disabled styling. Is passed to StepLabel.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * The icon displayed by the step label.
-   */
-  icon: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.string, _react.PropTypes.number]),
-  /**
-   * Override the inline-styles of the icon container element.
-   */
-  iconContainerStyle: _react.PropTypes.object,
-  /** @ignore */
-  last: _react.PropTypes.bool,
-  /** @ignore */
-  onMouseEnter: _react.PropTypes.func,
-  /** @ignore */
-  onMouseLeave: _react.PropTypes.func,
-  /** @ignore */
-  onTouchStart: _react.PropTypes.func,
-  /**
-   * Override the inline-style of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = StepButton;
-}).call(this,require('_process'))
-},{"../internal/EnhancedButton":144,"../styles/transitions":333,"./StepLabel":96,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],94:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.PlainStepConnector = undefined;
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var propTypes = {
-  /**
-   * Override the inline-style of the root element.
-   */
-  style: _react.PropTypes.object
-};
-
-var contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired,
-  stepper: _react.PropTypes.object
-};
-
-var StepConnector = function StepConnector(props, context) {
-  var muiTheme = context.muiTheme,
-      stepper = context.stepper;
-
-
-  var styles = {
-    wrapper: {
-      flex: '1 1 auto'
-    },
-    line: {
-      display: 'block',
-      borderColor: muiTheme.stepper.connectorLineColor
-    }
-  };
-
-  /**
-   * Clean up once we can use CSS pseudo elements
-   */
-  if (stepper.orientation === 'horizontal') {
-    styles.line.marginLeft = -6;
-    styles.line.borderTopStyle = 'solid';
-    styles.line.borderTopWidth = 1;
-  } else if (stepper.orientation === 'vertical') {
-    styles.wrapper.marginLeft = 14 + 11; // padding + 1/2 icon
-    styles.line.borderLeftStyle = 'solid';
-    styles.line.borderLeftWidth = 1;
-    styles.line.minHeight = 28;
-  }
-
-  var prepareStyles = muiTheme.prepareStyles;
-
-
-  return _react2.default.createElement(
-    'div',
-    { style: prepareStyles(styles.wrapper) },
-    _react2.default.createElement('span', { style: prepareStyles(styles.line) })
-  );
-};
-
-process.env.NODE_ENV !== "production" ? StepConnector.propTypes = propTypes : void 0;
-StepConnector.contextTypes = contextTypes;
-
-exports.PlainStepConnector = StepConnector;
-exports.default = (0, _pure2.default)(StepConnector);
-}).call(this,require('_process'))
-},{"_process":560,"react":559,"recompose/pure":321}],95:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ExpandTransition = require('../internal/ExpandTransition');
-
-var _ExpandTransition2 = _interopRequireDefault(_ExpandTransition);
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function ExpandTransition(props) {
-  return _react2.default.createElement(_ExpandTransition2.default, props);
-}
-
-var getStyles = function getStyles(props, context) {
-  var styles = {
-    root: {
-      marginTop: -14,
-      marginLeft: 14 + 11, // padding + 1/2 icon
-      paddingLeft: 24 - 11 + 8,
-      paddingRight: 16,
-      overflow: 'hidden'
-    }
-  };
-
-  if (!props.last) {
-    styles.root.borderLeft = '1px solid ' + context.muiTheme.stepper.connectorLineColor;
-  }
-
-  return styles;
-};
-
-var StepContent = function (_Component) {
-  (0, _inherits3.default)(StepContent, _Component);
-
-  function StepContent() {
-    (0, _classCallCheck3.default)(this, StepContent);
-    return (0, _possibleConstructorReturn3.default)(this, (StepContent.__proto__ || (0, _getPrototypeOf2.default)(StepContent)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(StepContent, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          active = _props.active,
-          children = _props.children,
-          completed = _props.completed,
-          last = _props.last,
-          style = _props.style,
-          transition = _props.transition,
-          transitionDuration = _props.transitionDuration,
-          other = (0, _objectWithoutProperties3.default)(_props, ['active', 'children', 'completed', 'last', 'style', 'transition', 'transitionDuration']);
-      var _context = this.context,
-          stepper = _context.stepper,
-          prepareStyles = _context.muiTheme.prepareStyles;
-
-
-      if (stepper.orientation !== 'vertical') {
-        process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI: <StepContent /> is only designed for use with the vertical stepper.') : void 0;
-        return null;
-      }
-
-      var styles = getStyles(this.props, this.context);
-      var transitionProps = {
-        enterDelay: transitionDuration,
-        transitionDuration: transitionDuration,
-        open: active
-      };
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({ style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }, other),
-        _react2.default.createElement(transition, transitionProps, _react2.default.createElement(
-          'div',
-          { style: { overflow: 'hidden' } },
-          children
-        ))
-      );
-    }
-  }]);
-  return StepContent;
-}(_react.Component);
-
-StepContent.defaultProps = {
-  transition: ExpandTransition,
-  transitionDuration: 450
-};
-StepContent.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired,
-  stepper: _react.PropTypes.object
-};
-process.env.NODE_ENV !== "production" ? StepContent.propTypes = {
-  /**
-   * Expands the content
-   */
-  active: _react.PropTypes.bool,
-  /**
-   * Step content
-   */
-  children: _react.PropTypes.node,
-  /**
-   * @ignore
-   */
-  completed: _react.PropTypes.bool,
-  /**
-   * @ignore
-   */
-  last: _react.PropTypes.bool,
-  /**
-   * Override the inline-style of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * ReactTransitionGroup component.
-   */
-  transition: _react.PropTypes.func,
-  /**
-   * Adjust the duration of the content expand transition. Passed as a prop to the transition component.
-   */
-  transitionDuration: _react.PropTypes.number
-} : void 0;
-exports.default = StepContent;
-}).call(this,require('_process'))
-},{"../internal/ExpandTransition":146,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326,"warning":327}],96:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _checkCircle = require('../svg-icons/action/check-circle');
-
-var _checkCircle2 = _interopRequireDefault(_checkCircle);
-
-var _SvgIcon = require('../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var getStyles = function getStyles(_ref, _ref2) {
-  var active = _ref.active,
-      completed = _ref.completed,
-      disabled = _ref.disabled;
-  var muiTheme = _ref2.muiTheme,
-      stepper = _ref2.stepper;
-  var _muiTheme$stepper = muiTheme.stepper,
-      textColor = _muiTheme$stepper.textColor,
-      disabledTextColor = _muiTheme$stepper.disabledTextColor,
-      iconColor = _muiTheme$stepper.iconColor,
-      inactiveIconColor = _muiTheme$stepper.inactiveIconColor;
-  var baseTheme = muiTheme.baseTheme;
-  var orientation = stepper.orientation;
-
-
-  var styles = {
-    root: {
-      height: orientation === 'horizontal' ? 72 : 64,
-      color: textColor,
-      display: 'flex',
-      alignItems: 'center',
-      fontFamily: baseTheme.fontFamily,
-      fontSize: 14,
-      paddingLeft: 14,
-      paddingRight: 14
-    },
-    icon: {
-      color: iconColor,
-      display: 'block',
-      fontSize: 24,
-      width: 24,
-      height: 24
-    },
-    iconContainer: {
-      paddingRight: 8
-    }
-  };
-
-  if (active) {
-    styles.root.fontWeight = 500;
-  }
-
-  if (!completed && !active) {
-    styles.icon.color = inactiveIconColor;
-  }
-
-  if (disabled) {
-    styles.icon.color = inactiveIconColor;
-    styles.root.color = disabledTextColor;
-    styles.root.cursor = 'not-allowed';
-  }
-
-  return styles;
-};
-
-var renderIcon = function renderIcon(completed, icon, styles) {
-  var iconType = typeof icon === 'undefined' ? 'undefined' : (0, _typeof3.default)(icon);
-
-  if (iconType === 'number' || iconType === 'string') {
-    if (completed) {
-      return _react2.default.createElement(_checkCircle2.default, {
-        color: styles.icon.color,
-        style: styles.icon
-      });
-    }
-
-    return _react2.default.createElement(
-      _SvgIcon2.default,
-      { color: styles.icon.color, style: styles.icon },
-      _react2.default.createElement('circle', { cx: '12', cy: '12', r: '10' }),
-      _react2.default.createElement(
-        'text',
-        {
-          x: '12',
-          y: '16',
-          textAnchor: 'middle',
-          fontSize: '12',
-          fill: '#fff'
-        },
-        icon
-      )
-    );
-  }
-
-  return icon;
-};
-
-var StepLabel = function StepLabel(props, context) {
-  var active = props.active,
-      children = props.children,
-      completed = props.completed,
-      userIcon = props.icon,
-      iconContainerStyle = props.iconContainerStyle,
-      last = props.last,
-      style = props.style,
-      other = (0, _objectWithoutProperties3.default)(props, ['active', 'children', 'completed', 'icon', 'iconContainerStyle', 'last', 'style']);
-  var prepareStyles = context.muiTheme.prepareStyles;
-
-  var styles = getStyles(props, context);
-  var icon = renderIcon(completed, userIcon, styles);
-
-  return _react2.default.createElement(
-    'span',
-    (0, _extends3.default)({ style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }, other),
-    icon && _react2.default.createElement(
-      'span',
-      { style: prepareStyles((0, _simpleAssign2.default)(styles.iconContainer, iconContainerStyle)) },
-      icon
-    ),
-    children
-  );
-};
-
-StepLabel.muiName = 'StepLabel';
-
-process.env.NODE_ENV !== "production" ? StepLabel.propTypes = {
-  /**
-   * Sets active styling. Overrides disabled coloring.
-   */
-  active: _react.PropTypes.bool,
-  /**
-   * The label text node
-   */
-  children: _react.PropTypes.node,
-  /**
-   * Sets completed styling. Overrides disabled coloring.
-   */
-  completed: _react.PropTypes.bool,
-  /**
-   * Sets disabled styling.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * The icon displayed by the step label.
-   */
-  icon: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.string, _react.PropTypes.number]),
-  /**
-   * Override the inline-styles of the icon container element.
-   */
-  iconContainerStyle: _react.PropTypes.object,
-  /**
-   * @ignore
-   */
-  last: _react.PropTypes.bool,
-  /**
-   * Override the inline-style of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-
-StepLabel.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired,
-  stepper: _react.PropTypes.object
-};
-
-exports.default = StepLabel;
-}).call(this,require('_process'))
-},{"../SvgIcon":101,"../svg-icons/action/check-circle":336,"_process":560,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/typeof":178,"react":559,"simple-assign":326}],97:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _StepConnector = require('./StepConnector');
-
-var _StepConnector2 = _interopRequireDefault(_StepConnector);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var getStyles = function getStyles(props) {
-  var orientation = props.orientation;
-
-  return {
-    root: {
-      display: 'flex',
-      flexDirection: orientation === 'horizontal' ? 'row' : 'column',
-      alignContent: 'center',
-      alignItems: orientation === 'horizontal' ? 'center' : 'stretch',
-      justifyContent: 'space-between'
-    }
-  };
-};
-
-var Stepper = function (_Component) {
-  (0, _inherits3.default)(Stepper, _Component);
-
-  function Stepper() {
-    (0, _classCallCheck3.default)(this, Stepper);
-    return (0, _possibleConstructorReturn3.default)(this, (Stepper.__proto__ || (0, _getPrototypeOf2.default)(Stepper)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(Stepper, [{
-    key: 'getChildContext',
-    value: function getChildContext() {
-      var orientation = this.props.orientation;
-
-      return { stepper: { orientation: orientation } };
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          activeStep = _props.activeStep,
-          children = _props.children,
-          connector = _props.connector,
-          linear = _props.linear,
-          style = _props.style;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      /**
-       * One day, we may be able to use real CSS tools
-       * For now, we need to create our own "pseudo" elements
-       * and nth child selectors, etc
-       * That's what some of this garbage is for :)
-       */
-      var numChildren = _react.Children.count(children);
-      var steps = _react.Children.map(children, function (step, index) {
-        var controlProps = { index: index };
-
-        if (activeStep === index) {
-          controlProps.active = true;
-        } else if (linear && activeStep > index) {
-          controlProps.completed = true;
-        } else if (linear && activeStep < index) {
-          controlProps.disabled = true;
-        }
-
-        if (index + 1 === numChildren) {
-          controlProps.last = true;
-        }
-
-        return [index > 0 && connector, _react2.default.cloneElement(step, (0, _simpleAssign2.default)(controlProps, step.props))];
-      });
-
-      return _react2.default.createElement(
-        'div',
-        { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) },
-        steps
-      );
-    }
-  }]);
-  return Stepper;
-}(_react.Component);
-
-Stepper.defaultProps = {
-  connector: _react2.default.createElement(_StepConnector2.default, null),
-  orientation: 'horizontal',
-  linear: true
-};
-Stepper.contextTypes = { muiTheme: _react.PropTypes.object.isRequired };
-Stepper.childContextTypes = { stepper: _react.PropTypes.object };
-process.env.NODE_ENV !== "production" ? Stepper.propTypes = {
-  /**
-   * Set the active step (zero based index). This will enable `Step` control helpers.
-   */
-  activeStep: _react.PropTypes.number,
-  /**
-   * Should be two or more `<Step />` components
-   */
-  children: _react.PropTypes.arrayOf(_react.PropTypes.node),
-  /**
-   * A component to be placed between each step.
-   */
-  connector: _react.PropTypes.node,
-  /**
-   * If set to `true`, the `Stepper` will assist in controlling steps for linear flow
-   */
-  linear: _react.PropTypes.bool,
-  /**
-   * The stepper orientation (layout flow direction)
-   */
-  orientation: _react.PropTypes.oneOf(['horizontal', 'vertical']),
-  /**
-   * Override the inline-style of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = Stepper;
-}).call(this,require('_process'))
-},{"./StepConnector":94,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],98:[function(require,module,exports){
+},{"./RaisedButton":43}],45:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18201,7 +8396,7 @@ Subheader.contextTypes = {
 
 exports.default = Subheader;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/objectWithoutProperties":173,"react":559,"simple-assign":326}],99:[function(require,module,exports){
+},{"_process":452,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/objectWithoutProperties":80,"react":451,"simple-assign":228}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18216,7 +8411,7 @@ var _Subheader2 = _interopRequireDefault(_Subheader);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Subheader2.default;
-},{"./Subheader":98}],100:[function(require,module,exports){
+},{"./Subheader":45}],47:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18380,7 +8575,7 @@ process.env.NODE_ENV !== "production" ? SvgIcon.propTypes = {
 } : void 0;
 exports.default = SvgIcon;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],101:[function(require,module,exports){
+},{"../styles/transitions":235,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],48:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18395,2710 +8590,7 @@ var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _SvgIcon2.default;
-},{"./SvgIcon":100}],102:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      table = _context$muiTheme.table;
-
-
-  return {
-    root: {
-      backgroundColor: table.backgroundColor,
-      width: '100%',
-      borderCollapse: 'collapse',
-      borderSpacing: 0,
-      tableLayout: 'fixed',
-      fontFamily: baseTheme.fontFamily
-    },
-    bodyTable: {
-      height: props.fixedHeader || props.fixedFooter ? props.height : 'auto',
-      overflowX: 'hidden',
-      overflowY: 'auto'
-    },
-    tableWrapper: {
-      height: props.fixedHeader || props.fixedFooter ? 'auto' : props.height,
-      overflow: 'auto'
-    }
-  };
-}
-
-var Table = function (_Component) {
-  (0, _inherits3.default)(Table, _Component);
-
-  function Table() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Table);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Table.__proto__ || (0, _getPrototypeOf2.default)(Table)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      allRowsSelected: false
-    }, _this.onCellClick = function (rowNumber, columnNumber, event) {
-      if (_this.props.onCellClick) _this.props.onCellClick(rowNumber, columnNumber, event);
-    }, _this.onCellHover = function (rowNumber, columnNumber, event) {
-      if (_this.props.onCellHover) _this.props.onCellHover(rowNumber, columnNumber, event);
-    }, _this.onCellHoverExit = function (rowNumber, columnNumber, event) {
-      if (_this.props.onCellHoverExit) _this.props.onCellHoverExit(rowNumber, columnNumber, event);
-    }, _this.onRowHover = function (rowNumber) {
-      if (_this.props.onRowHover) _this.props.onRowHover(rowNumber);
-    }, _this.onRowHoverExit = function (rowNumber) {
-      if (_this.props.onRowHoverExit) _this.props.onRowHoverExit(rowNumber);
-    }, _this.onRowSelection = function (selectedRows) {
-      if (_this.state.allRowsSelected) _this.setState({ allRowsSelected: false });
-      if (_this.props.onRowSelection) _this.props.onRowSelection(selectedRows);
-    }, _this.onSelectAll = function () {
-      if (_this.props.onRowSelection) {
-        if (!_this.state.allRowsSelected) {
-          _this.props.onRowSelection('all');
-        } else {
-          _this.props.onRowSelection('none');
-        }
-      }
-
-      _this.setState({ allRowsSelected: !_this.state.allRowsSelected });
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Table, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      if (this.props.allRowsSelected) {
-        this.setState({ allRowsSelected: true });
-      }
-    }
-  }, {
-    key: 'isScrollbarVisible',
-    value: function isScrollbarVisible() {
-      var tableDivHeight = this.refs.tableDiv.clientHeight;
-      var tableBodyHeight = this.refs.tableBody.clientHeight;
-
-      return tableBodyHeight > tableDivHeight;
-    }
-  }, {
-    key: 'createTableHeader',
-    value: function createTableHeader(base) {
-      return _react2.default.cloneElement(base, {
-        enableSelectAll: base.props.enableSelectAll && this.props.selectable && this.props.multiSelectable,
-        onSelectAll: this.onSelectAll,
-        selectAllSelected: this.state.allRowsSelected
-      });
-    }
-  }, {
-    key: 'createTableBody',
-    value: function createTableBody(base) {
-      return _react2.default.cloneElement(base, {
-        allRowsSelected: this.state.allRowsSelected,
-        multiSelectable: this.props.multiSelectable,
-        onCellClick: this.onCellClick,
-        onCellHover: this.onCellHover,
-        onCellHoverExit: this.onCellHoverExit,
-        onRowHover: this.onRowHover,
-        onRowHoverExit: this.onRowHoverExit,
-        onRowSelection: this.onRowSelection,
-        selectable: this.props.selectable,
-        style: (0, _simpleAssign2.default)({ height: this.props.height }, base.props.style)
-      });
-    }
-  }, {
-    key: 'createTableFooter',
-    value: function createTableFooter(base) {
-      return base;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          children = _props.children,
-          className = _props.className,
-          fixedFooter = _props.fixedFooter,
-          fixedHeader = _props.fixedHeader,
-          style = _props.style,
-          wrapperStyle = _props.wrapperStyle,
-          headerStyle = _props.headerStyle,
-          bodyStyle = _props.bodyStyle,
-          footerStyle = _props.footerStyle;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      var tHead = void 0;
-      var tFoot = void 0;
-      var tBody = void 0;
-
-      _react2.default.Children.forEach(children, function (child) {
-        if (!_react2.default.isValidElement(child)) return;
-
-        var muiName = child.type.muiName;
-
-        if (muiName === 'TableBody') {
-          tBody = _this2.createTableBody(child);
-        } else if (muiName === 'TableHeader') {
-          tHead = _this2.createTableHeader(child);
-        } else if (muiName === 'TableFooter') {
-          tFoot = _this2.createTableFooter(child);
-        } else {
-          process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI: Children of the Table component must be TableBody or TableHeader or TableFooter.\n           Nothing is rendered.') : void 0;
-        }
-      });
-
-      // If we could not find a table-header and a table-body, do not attempt to display anything.
-      if (!tBody && !tHead) return null;
-
-      var mergedTableStyle = (0, _simpleAssign2.default)(styles.root, style);
-      var headerTable = void 0;
-      var footerTable = void 0;
-      var inlineHeader = void 0;
-      var inlineFooter = void 0;
-
-      if (fixedHeader) {
-        headerTable = _react2.default.createElement(
-          'div',
-          { style: prepareStyles((0, _simpleAssign2.default)({}, headerStyle)) },
-          _react2.default.createElement(
-            'table',
-            { className: className, style: mergedTableStyle },
-            tHead
-          )
-        );
-      } else {
-        inlineHeader = tHead;
-      }
-
-      if (tFoot !== undefined) {
-        if (fixedFooter) {
-          footerTable = _react2.default.createElement(
-            'div',
-            { style: prepareStyles((0, _simpleAssign2.default)({}, footerStyle)) },
-            _react2.default.createElement(
-              'table',
-              { className: className, style: prepareStyles(mergedTableStyle) },
-              tFoot
-            )
-          );
-        } else {
-          inlineFooter = tFoot;
-        }
-      }
-
-      return _react2.default.createElement(
-        'div',
-        { style: prepareStyles((0, _simpleAssign2.default)(styles.tableWrapper, wrapperStyle)) },
-        headerTable,
-        _react2.default.createElement(
-          'div',
-          { style: prepareStyles((0, _simpleAssign2.default)(styles.bodyTable, bodyStyle)), ref: 'tableDiv' },
-          _react2.default.createElement(
-            'table',
-            { className: className, style: mergedTableStyle, ref: 'tableBody' },
-            inlineHeader,
-            inlineFooter,
-            tBody
-          )
-        ),
-        footerTable
-      );
-    }
-  }]);
-  return Table;
-}(_react.Component);
-
-Table.defaultProps = {
-  allRowsSelected: false,
-  fixedFooter: true,
-  fixedHeader: true,
-  height: 'inherit',
-  multiSelectable: false,
-  selectable: true
-};
-Table.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Table.propTypes = {
-  /**
-   * Set to true to indicate that all rows should be selected.
-   */
-  allRowsSelected: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the body's table element.
-   */
-  bodyStyle: _react.PropTypes.object,
-  /**
-   * Children passed to table.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * If true, the footer will appear fixed below the table.
-   * The default value is true.
-   */
-  fixedFooter: _react.PropTypes.bool,
-  /**
-   * If true, the header will appear fixed above the table.
-   * The default value is true.
-   */
-  fixedHeader: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the footer's table element.
-   */
-  footerStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the header's table element.
-   */
-  headerStyle: _react.PropTypes.object,
-  /**
-   * The height of the table.
-   */
-  height: _react.PropTypes.string,
-  /**
-   * If true, multiple table rows can be selected.
-   * CTRL/CMD+Click and SHIFT+Click are valid actions.
-   * The default value is false.
-   */
-  multiSelectable: _react.PropTypes.bool,
-  /**
-   * Called when a row cell is clicked.
-   * rowNumber is the row number and columnId is
-   * the column number or the column key.
-   */
-  onCellClick: _react.PropTypes.func,
-  /**
-   * Called when a table cell is hovered.
-   * rowNumber is the row number of the hovered row
-   * and columnId is the column number or the column key of the cell.
-   */
-  onCellHover: _react.PropTypes.func,
-  /**
-   * Called when a table cell is no longer hovered.
-   * rowNumber is the row number of the row and columnId
-   * is the column number or the column key of the cell.
-   */
-  onCellHoverExit: _react.PropTypes.func,
-  /**
-   * Called when a table row is hovered.
-   * rowNumber is the row number of the hovered row.
-   */
-  onRowHover: _react.PropTypes.func,
-  /**
-   * Called when a table row is no longer hovered.
-   * rowNumber is the row number of the row that is no longer hovered.
-   */
-  onRowHoverExit: _react.PropTypes.func,
-  /**
-   * Called when a row is selected.
-   * selectedRows is an array of all row selections.
-   * IF all rows have been selected, the string "all"
-   * will be returned instead to indicate that all rows have been selected.
-   */
-  onRowSelection: _react.PropTypes.func,
-  /**
-   * If true, table rows can be selected.
-   * If multiple row selection is desired, enable multiSelectable.
-   * The default value is true.
-   */
-  selectable: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the table's wrapper element.
-   */
-  wrapperStyle: _react.PropTypes.object
-} : void 0;
-exports.default = Table;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326,"warning":327}],103:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getIterator2 = require('babel-runtime/core-js/get-iterator');
-
-var _getIterator3 = _interopRequireDefault(_getIterator2);
-
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Checkbox = require('../Checkbox');
-
-var _Checkbox2 = _interopRequireDefault(_Checkbox);
-
-var _TableRowColumn = require('./TableRowColumn');
-
-var _TableRowColumn2 = _interopRequireDefault(_TableRowColumn);
-
-var _ClickAwayListener = require('../internal/ClickAwayListener');
-
-var _ClickAwayListener2 = _interopRequireDefault(_ClickAwayListener);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TableBody = function (_Component) {
-  (0, _inherits3.default)(TableBody, _Component);
-
-  function TableBody() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TableBody);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TableBody.__proto__ || (0, _getPrototypeOf2.default)(TableBody)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      selectedRows: []
-    }, _this.handleClickAway = function () {
-      if (_this.props.deselectOnClickaway && _this.state.selectedRows.length) {
-        _this.setState({
-          selectedRows: []
-        });
-        if (_this.props.onRowSelection) {
-          _this.props.onRowSelection([]);
-        }
-      }
-    }, _this.onRowClick = function (event, rowNumber) {
-      event.stopPropagation();
-
-      if (_this.props.selectable) {
-        // Prevent text selection while selecting rows.
-        window.getSelection().removeAllRanges();
-        _this.processRowSelection(event, rowNumber);
-      }
-    }, _this.onCellClick = function (event, rowNumber, columnNumber) {
-      event.stopPropagation();
-      if (_this.props.onCellClick) {
-        _this.props.onCellClick(rowNumber, _this.getColumnId(columnNumber), event);
-      }
-    }, _this.onCellHover = function (event, rowNumber, columnNumber) {
-      if (_this.props.onCellHover) {
-        _this.props.onCellHover(rowNumber, _this.getColumnId(columnNumber), event);
-      }
-      _this.onRowHover(event, rowNumber);
-    }, _this.onCellHoverExit = function (event, rowNumber, columnNumber) {
-      if (_this.props.onCellHoverExit) {
-        _this.props.onCellHoverExit(rowNumber, _this.getColumnId(columnNumber), event);
-      }
-      _this.onRowHoverExit(event, rowNumber);
-    }, _this.onRowHover = function (event, rowNumber) {
-      if (_this.props.onRowHover) {
-        _this.props.onRowHover(rowNumber);
-      }
-    }, _this.onRowHoverExit = function (event, rowNumber) {
-      if (_this.props.onRowHoverExit) {
-        _this.props.onRowHoverExit(rowNumber);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TableBody, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({ selectedRows: this.calculatePreselectedRows(this.props) });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (this.props.allRowsSelected !== nextProps.allRowsSelected) {
-        if (!nextProps.allRowsSelected) {
-          this.setState({
-            selectedRows: []
-          });
-        } else {
-          this.setState({
-            selectedRows: this.calculatePreselectedRows(nextProps)
-          });
-        }
-      }
-    }
-  }, {
-    key: 'createRows',
-    value: function createRows() {
-      var _this2 = this;
-
-      var numChildren = _react2.default.Children.count(this.props.children);
-      var rowNumber = 0;
-      var handlers = {
-        onCellClick: this.onCellClick,
-        onCellHover: this.onCellHover,
-        onCellHoverExit: this.onCellHoverExit,
-        onRowHover: this.onRowHover,
-        onRowHoverExit: this.onRowHoverExit,
-        onRowClick: this.onRowClick
-      };
-
-      return _react2.default.Children.map(this.props.children, function (child) {
-        if (_react2.default.isValidElement(child)) {
-          var _ret2 = function () {
-            var props = {
-              hoverable: _this2.props.showRowHover,
-              selected: _this2.isRowSelected(rowNumber),
-              striped: _this2.props.stripedRows && rowNumber % 2 === 0,
-              rowNumber: rowNumber++
-            };
-
-            if (rowNumber === numChildren) {
-              props.displayBorder = false;
-            }
-
-            var children = [_this2.createRowCheckboxColumn(props)];
-
-            _react2.default.Children.forEach(child.props.children, function (child) {
-              children.push(child);
-            });
-
-            return {
-              v: _react2.default.cloneElement(child, (0, _extends3.default)({}, props, handlers), children)
-            };
-          }();
-
-          if ((typeof _ret2 === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret2)) === "object") return _ret2.v;
-        }
-      });
-    }
-  }, {
-    key: 'createRowCheckboxColumn',
-    value: function createRowCheckboxColumn(rowProps) {
-      if (!this.props.displayRowCheckbox) {
-        return null;
-      }
-
-      var key = rowProps.rowNumber + '-cb';
-      var disabled = !this.props.selectable;
-      var checkbox = _react2.default.createElement(_Checkbox2.default, {
-        ref: 'rowSelectCB',
-        name: key,
-        value: 'selected',
-        disabled: disabled,
-        checked: rowProps.selected
-      });
-
-      return _react2.default.createElement(
-        _TableRowColumn2.default,
-        {
-          key: key,
-          columnNumber: 0,
-          style: {
-            width: 24,
-            cursor: disabled ? 'not-allowed' : 'inherit'
-          }
-        },
-        checkbox
-      );
-    }
-  }, {
-    key: 'calculatePreselectedRows',
-    value: function calculatePreselectedRows(props) {
-      // Determine what rows are 'pre-selected'.
-      var preSelectedRows = [];
-
-      if (props.selectable && props.preScanRows) {
-        (function () {
-          var index = 0;
-          _react2.default.Children.forEach(props.children, function (child) {
-            if (_react2.default.isValidElement(child)) {
-              if (child.props.selected && (preSelectedRows.length === 0 || props.multiSelectable)) {
-                preSelectedRows.push(index);
-              }
-
-              index++;
-            }
-          });
-        })();
-      }
-
-      return preSelectedRows;
-    }
-  }, {
-    key: 'isRowSelected',
-    value: function isRowSelected(rowNumber) {
-      if (this.props.allRowsSelected) {
-        return true;
-      }
-
-      for (var i = 0; i < this.state.selectedRows.length; i++) {
-        var selection = this.state.selectedRows[i];
-
-        if ((typeof selection === 'undefined' ? 'undefined' : (0, _typeof3.default)(selection)) === 'object') {
-          if (this.isValueInRange(rowNumber, selection)) return true;
-        } else {
-          if (selection === rowNumber) return true;
-        }
-      }
-
-      return false;
-    }
-  }, {
-    key: 'isValueInRange',
-    value: function isValueInRange(value, range) {
-      if (!range) return false;
-
-      if (range.start <= value && value <= range.end || range.end <= value && value <= range.start) {
-        return true;
-      }
-
-      return false;
-    }
-  }, {
-    key: 'processRowSelection',
-    value: function processRowSelection(event, rowNumber) {
-      var selectedRows = this.state.selectedRows;
-
-      if (event.shiftKey && this.props.multiSelectable && selectedRows.length) {
-        var lastIndex = selectedRows.length - 1;
-        var lastSelection = selectedRows[lastIndex];
-
-        if ((typeof lastSelection === 'undefined' ? 'undefined' : (0, _typeof3.default)(lastSelection)) === 'object') {
-          lastSelection.end = rowNumber;
-        } else {
-          selectedRows.splice(lastIndex, 1, { start: lastSelection, end: rowNumber });
-        }
-      } else if ((event.ctrlKey && !event.metaKey || event.metaKey && !event.ctrlKey) && this.props.multiSelectable) {
-        var idx = selectedRows.indexOf(rowNumber);
-        if (idx < 0) {
-          var foundRange = false;
-          for (var i = 0; i < selectedRows.length; i++) {
-            var range = selectedRows[i];
-            if ((typeof range === 'undefined' ? 'undefined' : (0, _typeof3.default)(range)) !== 'object') continue;
-
-            if (this.isValueInRange(rowNumber, range)) {
-              var _selectedRows;
-
-              foundRange = true;
-              var values = this.splitRange(range, rowNumber);
-              (_selectedRows = selectedRows).splice.apply(_selectedRows, [i, 1].concat((0, _toConsumableArray3.default)(values)));
-            }
-          }
-
-          if (!foundRange) selectedRows.push(rowNumber);
-        } else {
-          selectedRows.splice(idx, 1);
-        }
-      } else {
-        if (selectedRows.length === 1 && selectedRows[0] === rowNumber) {
-          selectedRows = [];
-        } else {
-          selectedRows = [rowNumber];
-        }
-      }
-
-      this.setState({ selectedRows: selectedRows });
-      if (this.props.onRowSelection) this.props.onRowSelection(this.flattenRanges(selectedRows));
-    }
-  }, {
-    key: 'splitRange',
-    value: function splitRange(range, splitPoint) {
-      var splitValues = [];
-      var startOffset = range.start - splitPoint;
-      var endOffset = range.end - splitPoint;
-
-      // Process start half
-      splitValues.push.apply(splitValues, (0, _toConsumableArray3.default)(this.genRangeOfValues(splitPoint, startOffset)));
-
-      // Process end half
-      splitValues.push.apply(splitValues, (0, _toConsumableArray3.default)(this.genRangeOfValues(splitPoint, endOffset)));
-
-      return splitValues;
-    }
-  }, {
-    key: 'genRangeOfValues',
-    value: function genRangeOfValues(start, offset) {
-      var values = [];
-      var dir = offset > 0 ? -1 : 1; // This forces offset to approach 0 from either direction.
-      while (offset !== 0) {
-        values.push(start + offset);
-        offset += dir;
-      }
-
-      return values;
-    }
-  }, {
-    key: 'flattenRanges',
-    value: function flattenRanges(selectedRows) {
-      var rows = [];
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = (0, _getIterator3.default)(selectedRows), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var selection = _step.value;
-
-          if ((typeof selection === 'undefined' ? 'undefined' : (0, _typeof3.default)(selection)) === 'object') {
-            var values = this.genRangeOfValues(selection.end, selection.start - selection.end);
-            rows.push.apply(rows, [selection.end].concat((0, _toConsumableArray3.default)(values)));
-          } else {
-            rows.push(selection);
-          }
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
-
-      return rows.sort();
-    }
-  }, {
-    key: 'getColumnId',
-    value: function getColumnId(columnNumber) {
-      var columnId = columnNumber;
-      if (this.props.displayRowCheckbox) {
-        columnId--;
-      }
-
-      return columnId;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          className = _props.className,
-          style = _props.style;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      return _react2.default.createElement(
-        _ClickAwayListener2.default,
-        { onClickAway: this.handleClickAway },
-        _react2.default.createElement(
-          'tbody',
-          { className: className, style: prepareStyles((0, _simpleAssign2.default)({}, style)) },
-          this.createRows()
-        )
-      );
-    }
-  }]);
-  return TableBody;
-}(_react.Component);
-
-TableBody.muiName = 'TableBody';
-TableBody.defaultProps = {
-  allRowsSelected: false,
-  deselectOnClickaway: true,
-  displayRowCheckbox: true,
-  multiSelectable: false,
-  preScanRows: true,
-  selectable: true,
-  style: {}
-};
-TableBody.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TableBody.propTypes = {
-  /**
-   * @ignore
-   * Set to true to indicate that all rows should be selected.
-   */
-  allRowsSelected: _react.PropTypes.bool,
-  /**
-   * Children passed to table body.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Controls whether or not to deselect all selected
-   * rows after clicking outside the table.
-   */
-  deselectOnClickaway: _react.PropTypes.bool,
-  /**
-   * Controls the display of the row checkbox. The default value is true.
-   */
-  displayRowCheckbox: _react.PropTypes.bool,
-  /**
-   * @ignore
-   * If true, multiple table rows can be selected.
-   * CTRL/CMD+Click and SHIFT+Click are valid actions.
-   * The default value is false.
-   */
-  multiSelectable: _react.PropTypes.bool,
-  /**
-   * @ignore
-   * Callback function for when a cell is clicked.
-   */
-  onCellClick: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table cell is hovered. rowNumber
-   * is the row number of the hovered row and columnId
-   * is the column number or the column key of the cell.
-   */
-  onCellHover: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table cell is no longer hovered.
-   * rowNumber is the row number of the row and columnId
-   * is the column number or the column key of the cell.
-   */
-  onCellHoverExit: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table row is hovered.
-   * rowNumber is the row number of the hovered row.
-   */
-  onRowHover: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table row is no longer
-   * hovered. rowNumber is the row number of the row
-   * that is no longer hovered.
-   */
-  onRowHoverExit: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a row is selected. selectedRows is an
-   * array of all row selections. IF all rows have been selected,
-   * the string "all" will be returned instead to indicate that
-   * all rows have been selected.
-   */
-  onRowSelection: _react.PropTypes.func,
-  /**
-   * Controls whether or not the rows are pre-scanned to determine
-   * initial state. If your table has a large number of rows and
-   * you are experiencing a delay in rendering, turn off this property.
-   */
-  preScanRows: _react.PropTypes.bool,
-  /**
-   * @ignore
-   * If true, table rows can be selected. If multiple
-   * row selection is desired, enable multiSelectable.
-   * The default value is true.
-   */
-  selectable: _react.PropTypes.bool,
-  /**
-   * If true, table rows will be highlighted when
-   * the cursor is hovering over the row. The default
-   * value is false.
-   */
-  showRowHover: _react.PropTypes.bool,
-  /**
-   * If true, every other table row starting
-   * with the first row will be striped. The default value is false.
-   */
-  stripedRows: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = TableBody;
-}).call(this,require('_process'))
-},{"../Checkbox":21,"../internal/ClickAwayListener":143,"./TableRowColumn":108,"_process":560,"babel-runtime/core-js/get-iterator":158,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/toConsumableArray":177,"babel-runtime/helpers/typeof":178,"react":559,"simple-assign":326}],104:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _TableRowColumn = require('./TableRowColumn');
-
-var _TableRowColumn2 = _interopRequireDefault(_TableRowColumn);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var tableFooter = context.muiTheme.tableFooter;
-
-
-  return {
-    cell: {
-      borderTop: '1px solid ' + tableFooter.borderColor,
-      verticalAlign: 'bottom',
-      padding: 20,
-      textAlign: 'left',
-      whiteSpace: 'nowrap'
-    }
-  };
-}
-
-var TableFooter = function (_Component) {
-  (0, _inherits3.default)(TableFooter, _Component);
-
-  function TableFooter() {
-    (0, _classCallCheck3.default)(this, TableFooter);
-    return (0, _possibleConstructorReturn3.default)(this, (TableFooter.__proto__ || (0, _getPrototypeOf2.default)(TableFooter)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(TableFooter, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          adjustForCheckbox = _props.adjustForCheckbox,
-          children = _props.children,
-          className = _props.className,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['adjustForCheckbox', 'children', 'className', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      var footerRows = _react2.default.Children.map(children, function (child, rowNumber) {
-        var newChildProps = {
-          displayBorder: false,
-          key: 'f-' + rowNumber,
-          rowNumber: rowNumber,
-          style: (0, _simpleAssign2.default)({}, styles.cell, child.props.style)
-        };
-
-        var newDescendants = void 0;
-
-        if (adjustForCheckbox) {
-          newDescendants = [_react2.default.createElement(_TableRowColumn2.default, { key: 'fpcb' + rowNumber, style: { width: 24 } })].concat((0, _toConsumableArray3.default)(_react2.default.Children.toArray(child.props.children)));
-        } else {
-          newDescendants = child.props.children;
-        }
-
-        return _react2.default.cloneElement(child, newChildProps, newDescendants);
-      });
-
-      return _react2.default.createElement(
-        'tfoot',
-        (0, _extends3.default)({ className: className, style: prepareStyles((0, _simpleAssign2.default)({}, style)) }, other),
-        footerRows
-      );
-    }
-  }]);
-  return TableFooter;
-}(_react.Component);
-
-TableFooter.muiName = 'TableFooter';
-TableFooter.defaultProps = {
-  adjustForCheckbox: true,
-  style: {}
-};
-TableFooter.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TableFooter.propTypes = {
-  /**
-   * @ignore
-   * Controls whether or not header rows should be adjusted
-   * for a checkbox column. If the select all checkbox is true,
-   * this property will not influence the number of columns.
-   * This is mainly useful for "super header" rows so that
-   * the checkbox column does not create an offset that needs
-   * to be accounted for manually.
-   */
-  adjustForCheckbox: _react.PropTypes.bool,
-  /**
-   * Children passed to table footer.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = TableFooter;
-}).call(this,require('_process'))
-},{"./TableRowColumn":108,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/toConsumableArray":177,"react":559,"simple-assign":326}],105:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Checkbox = require('../Checkbox');
-
-var _Checkbox2 = _interopRequireDefault(_Checkbox);
-
-var _TableHeaderColumn = require('./TableHeaderColumn');
-
-var _TableHeaderColumn2 = _interopRequireDefault(_TableHeaderColumn);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var tableHeader = context.muiTheme.tableHeader;
-
-
-  return {
-    root: {
-      borderBottom: '1px solid ' + tableHeader.borderColor
-    }
-  };
-}
-
-var TableHeader = function (_Component) {
-  (0, _inherits3.default)(TableHeader, _Component);
-
-  function TableHeader() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TableHeader);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TableHeader.__proto__ || (0, _getPrototypeOf2.default)(TableHeader)).call.apply(_ref, [this].concat(args))), _this), _this.handleCheckAll = function (event, checked) {
-      if (_this.props.onSelectAll) {
-        _this.props.onSelectAll(checked);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TableHeader, [{
-    key: 'createSuperHeaderRows',
-    value: function createSuperHeaderRows() {
-      var numChildren = _react2.default.Children.count(this.props.children);
-      if (numChildren === 1) return undefined;
-
-      var superHeaders = [];
-      for (var index = 0; index < numChildren - 1; index++) {
-        var child = this.props.children[index];
-
-        if (!_react2.default.isValidElement(child)) continue;
-
-        var props = {
-          key: 'sh' + index,
-          rowNumber: index
-        };
-        superHeaders.push(this.createSuperHeaderRow(child, props));
-      }
-
-      if (superHeaders.length) return superHeaders;
-    }
-  }, {
-    key: 'createSuperHeaderRow',
-    value: function createSuperHeaderRow(child, props) {
-      var children = [];
-      if (this.props.adjustForCheckbox) {
-        children.push(this.getCheckboxPlaceholder(props));
-      }
-      _react2.default.Children.forEach(child.props.children, function (child) {
-        children.push(child);
-      });
-
-      return _react2.default.cloneElement(child, props, children);
-    }
-  }, {
-    key: 'createBaseHeaderRow',
-    value: function createBaseHeaderRow() {
-      var numChildren = _react2.default.Children.count(this.props.children);
-      var child = numChildren === 1 ? this.props.children : this.props.children[numChildren - 1];
-      var props = {
-        key: 'h' + numChildren,
-        rowNumber: numChildren
-      };
-
-      var children = [this.getSelectAllCheckboxColumn(props)];
-      _react2.default.Children.forEach(child.props.children, function (child) {
-        children.push(child);
-      });
-
-      return _react2.default.cloneElement(child, props, children);
-    }
-  }, {
-    key: 'getCheckboxPlaceholder',
-    value: function getCheckboxPlaceholder(props) {
-      if (!this.props.adjustForCheckbox) return null;
-
-      var disabled = !this.props.enableSelectAll;
-      var key = 'hpcb' + props.rowNumber;
-      return _react2.default.createElement(_TableHeaderColumn2.default, {
-        key: key,
-        style: {
-          width: 24,
-          cursor: disabled ? 'not-allowed' : 'inherit'
-        }
-      });
-    }
-  }, {
-    key: 'getSelectAllCheckboxColumn',
-    value: function getSelectAllCheckboxColumn(props) {
-      if (!this.props.displaySelectAll) return this.getCheckboxPlaceholder(props);
-
-      var disabled = !this.props.enableSelectAll;
-      var checkbox = _react2.default.createElement(_Checkbox2.default, {
-        key: 'selectallcb',
-        name: 'selectallcb',
-        value: 'selected',
-        disabled: disabled,
-        checked: this.props.selectAllSelected,
-        onCheck: this.handleCheckAll
-      });
-
-      var key = 'hpcb' + props.rowNumber;
-      return _react2.default.createElement(
-        _TableHeaderColumn2.default,
-        {
-          key: key,
-          style: {
-            width: 24,
-            cursor: disabled ? 'not-allowed' : 'inherit'
-          }
-        },
-        checkbox
-      );
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          className = _props.className,
-          style = _props.style;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-      var superHeaderRows = this.createSuperHeaderRows();
-      var baseHeaderRow = this.createBaseHeaderRow();
-
-      return _react2.default.createElement(
-        'thead',
-        { className: className, style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) },
-        superHeaderRows,
-        baseHeaderRow
-      );
-    }
-  }]);
-  return TableHeader;
-}(_react.Component);
-
-TableHeader.muiName = 'TableHeader';
-TableHeader.defaultProps = {
-  adjustForCheckbox: true,
-  displaySelectAll: true,
-  enableSelectAll: true,
-  selectAllSelected: false
-};
-TableHeader.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TableHeader.propTypes = {
-  /**
-   * Controls whether or not header rows should be
-   * adjusted for a checkbox column. If the select all
-   * checkbox is true, this property will not influence
-   * the number of columns. This is mainly useful for
-   * "super header" rows so that the checkbox column
-   * does not create an offset that needs to be accounted
-   * for manually.
-   */
-  adjustForCheckbox: _react.PropTypes.bool,
-  /**
-   * Children passed to table header.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Controls whether or not the select all checkbox is displayed.
-   */
-  displaySelectAll: _react.PropTypes.bool,
-  /**
-   * If set to true, the select all button will be interactable.
-   * If set to false, the button will not be interactable.
-   * To hide the checkbox, set displaySelectAll to false.
-   */
-  enableSelectAll: _react.PropTypes.bool,
-  /**
-   * @ignore
-   * Callback when select all has been checked.
-   */
-  onSelectAll: _react.PropTypes.func,
-  /**
-   * @ignore
-   * True when select all has been checked.
-   */
-  selectAllSelected: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = TableHeader;
-}).call(this,require('_process'))
-},{"../Checkbox":21,"./TableHeaderColumn":106,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],106:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Tooltip = require('../internal/Tooltip');
-
-var _Tooltip2 = _interopRequireDefault(_Tooltip);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var tableHeaderColumn = context.muiTheme.tableHeaderColumn;
-
-
-  return {
-    root: {
-      fontWeight: 'normal',
-      fontSize: 12,
-      paddingLeft: tableHeaderColumn.spacing,
-      paddingRight: tableHeaderColumn.spacing,
-      height: tableHeaderColumn.height,
-      textAlign: 'left',
-      whiteSpace: 'nowrap',
-      textOverflow: 'ellipsis',
-      color: tableHeaderColumn.textColor,
-      position: 'relative'
-    },
-    tooltip: {
-      boxSizing: 'border-box',
-      marginTop: tableHeaderColumn.height / 2
-    }
-  };
-}
-
-var TableHeaderColumn = function (_Component) {
-  (0, _inherits3.default)(TableHeaderColumn, _Component);
-
-  function TableHeaderColumn() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TableHeaderColumn);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TableHeaderColumn.__proto__ || (0, _getPrototypeOf2.default)(TableHeaderColumn)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hovered: false
-    }, _this.onMouseEnter = function () {
-      if (_this.props.tooltip !== undefined) {
-        _this.setState({ hovered: true });
-      }
-    }, _this.onMouseLeave = function () {
-      if (_this.props.tooltip !== undefined) {
-        _this.setState({ hovered: false });
-      }
-    }, _this.onClick = function (event) {
-      if (_this.props.onClick) {
-        _this.props.onClick(event, _this.props.columnNumber);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TableHeaderColumn, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          className = _props.className,
-          columnNumber = _props.columnNumber,
-          hoverable = _props.hoverable,
-          onClick = _props.onClick,
-          onHover = _props.onHover,
-          onHoverExit = _props.onHoverExit,
-          style = _props.style,
-          tooltip = _props.tooltip,
-          tooltipStyle = _props.tooltipStyle,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'columnNumber', 'hoverable', 'onClick', 'onHover', 'onHoverExit', 'style', 'tooltip', 'tooltipStyle']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      var handlers = {
-        onMouseEnter: this.onMouseEnter,
-        onMouseLeave: this.onMouseLeave,
-        onClick: this.onClick
-      };
-
-      var tooltipNode = void 0;
-
-      if (tooltip !== undefined) {
-        tooltipNode = _react2.default.createElement(_Tooltip2.default, {
-          label: tooltip,
-          show: this.state.hovered,
-          style: (0, _simpleAssign2.default)(styles.tooltip, tooltipStyle)
-        });
-      }
-
-      return _react2.default.createElement(
-        'th',
-        (0, _extends3.default)({
-          className: className,
-          style: prepareStyles((0, _simpleAssign2.default)(styles.root, style))
-        }, handlers, other),
-        tooltipNode,
-        children
-      );
-    }
-  }]);
-  return TableHeaderColumn;
-}(_react.Component);
-
-TableHeaderColumn.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TableHeaderColumn.propTypes = {
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Number to identify the header row. This property
-   * is automatically populated when used with TableHeader.
-   */
-  columnNumber: _react.PropTypes.number,
-  /**
-   * @ignore
-   * Not used here but we need to remove it from the root element.
-   */
-  hoverable: _react.PropTypes.bool,
-  /** @ignore */
-  onClick: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Not used here but we need to remove it from the root element.
-   */
-  onHover: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Not used here but we need to remove it from the root element.
-   */
-  onHoverExit: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The string to supply to the tooltip. If not
-   * string is supplied no tooltip will be shown.
-   */
-  tooltip: _react.PropTypes.string,
-  /**
-   * Additional styling that can be applied to the tooltip.
-   */
-  tooltipStyle: _react.PropTypes.object
-} : void 0;
-exports.default = TableHeaderColumn;
-}).call(this,require('_process'))
-},{"../internal/Tooltip":155,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],107:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context, state) {
-  var tableRow = context.muiTheme.tableRow;
-
-
-  var cellBgColor = 'inherit';
-  if (props.hovered || state.hovered) {
-    cellBgColor = tableRow.hoverColor;
-  } else if (props.selected) {
-    cellBgColor = tableRow.selectedColor;
-  } else if (props.striped) {
-    cellBgColor = tableRow.stripeColor;
-  }
-
-  return {
-    root: {
-      borderBottom: props.displayBorder && '1px solid ' + tableRow.borderColor,
-      color: tableRow.textColor,
-      height: tableRow.height
-    },
-    cell: {
-      backgroundColor: cellBgColor
-    }
-  };
-}
-
-var TableRow = function (_Component) {
-  (0, _inherits3.default)(TableRow, _Component);
-
-  function TableRow() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TableRow);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TableRow.__proto__ || (0, _getPrototypeOf2.default)(TableRow)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hovered: false
-    }, _this.onCellClick = function (event, columnIndex) {
-      if (_this.props.selectable && _this.props.onCellClick) {
-        _this.props.onCellClick(event, _this.props.rowNumber, columnIndex);
-      }
-      event.ctrlKey = true;
-      _this.onRowClick(event);
-    }, _this.onCellHover = function (event, columnIndex) {
-      if (_this.props.hoverable) {
-        _this.setState({ hovered: true });
-        if (_this.props.onCellHover) _this.props.onCellHover(event, _this.props.rowNumber, columnIndex);
-        _this.onRowHover(event);
-      }
-    }, _this.onCellHoverExit = function (event, columnIndex) {
-      if (_this.props.hoverable) {
-        _this.setState({ hovered: false });
-        if (_this.props.onCellHoverExit) _this.props.onCellHoverExit(event, _this.props.rowNumber, columnIndex);
-        _this.onRowHoverExit(event);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TableRow, [{
-    key: 'onRowClick',
-    value: function onRowClick(event) {
-      if (this.props.selectable && this.props.onRowClick) this.props.onRowClick(event, this.props.rowNumber);
-    }
-  }, {
-    key: 'onRowHover',
-    value: function onRowHover(event) {
-      if (this.props.onRowHover) this.props.onRowHover(event, this.props.rowNumber);
-    }
-  }, {
-    key: 'onRowHoverExit',
-    value: function onRowHoverExit(event) {
-      if (this.props.onRowHoverExit) this.props.onRowHoverExit(event, this.props.rowNumber);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          className = _props.className,
-          displayBorder = _props.displayBorder,
-          hoverable = _props.hoverable,
-          hovered = _props.hovered,
-          onCellClick = _props.onCellClick,
-          onCellHover = _props.onCellHover,
-          onCellHoverExit = _props.onCellHoverExit,
-          onRowClick = _props.onRowClick,
-          onRowHover = _props.onRowHover,
-          onRowHoverExit = _props.onRowHoverExit,
-          rowNumber = _props.rowNumber,
-          selectable = _props.selectable,
-          selected = _props.selected,
-          striped = _props.striped,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['className', 'displayBorder', 'hoverable', 'hovered', 'onCellClick', 'onCellHover', 'onCellHoverExit', 'onRowClick', 'onRowHover', 'onRowHoverExit', 'rowNumber', 'selectable', 'selected', 'striped', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      var rowColumns = _react2.default.Children.map(this.props.children, function (child, columnNumber) {
-        if (_react2.default.isValidElement(child)) {
-          return _react2.default.cloneElement(child, {
-            columnNumber: columnNumber,
-            hoverable: _this2.props.hoverable,
-            key: _this2.props.rowNumber + '-' + columnNumber,
-            onClick: _this2.onCellClick,
-            onHover: _this2.onCellHover,
-            onHoverExit: _this2.onCellHoverExit,
-            style: (0, _simpleAssign2.default)({}, styles.cell, child.props.style)
-          });
-        }
-      });
-
-      return _react2.default.createElement(
-        'tr',
-        (0, _extends3.default)({
-          className: className,
-          style: prepareStyles((0, _simpleAssign2.default)(styles.root, style))
-        }, other),
-        rowColumns
-      );
-    }
-  }]);
-  return TableRow;
-}(_react.Component);
-
-TableRow.defaultProps = {
-  displayBorder: true,
-  hoverable: false,
-  hovered: false,
-  selectable: true,
-  selected: false,
-  striped: false
-};
-TableRow.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TableRow.propTypes = {
-  /**
-   * Children passed to table row.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * If true, row border will be displayed for the row.
-   * If false, no border will be drawn.
-   */
-  displayBorder: _react.PropTypes.bool,
-  /**
-   * Controls whether or not the row reponseds to hover events.
-   */
-  hoverable: _react.PropTypes.bool,
-  /**
-   * Controls whether or not the row should be rendered as being
-   * hovered. This property is evaluated in addition to this.state.hovered
-   * and can be used to synchronize the hovered state with some other
-   * external events.
-   */
-  hovered: _react.PropTypes.bool,
-  /**
-   * @ignore
-   * Called when a row cell is clicked.
-   * rowNumber is the row number and columnId is
-   * the column number or the column key.
-   */
-  onCellClick: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table cell is hovered.
-   * rowNumber is the row number of the hovered row
-   * and columnId is the column number or the column key of the cell.
-   */
-  onCellHover: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table cell is no longer hovered.
-   * rowNumber is the row number of the row and columnId
-   * is the column number or the column key of the cell.
-   */
-  onCellHoverExit: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when row is clicked.
-   */
-  onRowClick: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table row is hovered.
-   * rowNumber is the row number of the hovered row.
-   */
-  onRowHover: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Called when a table row is no longer hovered.
-   * rowNumber is the row number of the row that is no longer hovered.
-   */
-  onRowHoverExit: _react.PropTypes.func,
-  /**
-   * Number to identify the row. This property is
-   * automatically populated when used with the TableBody component.
-   */
-  rowNumber: _react.PropTypes.number,
-  /**
-   * If true, table rows can be selected. If multiple row
-   * selection is desired, enable multiSelectable.
-   * The default value is true.
-   */
-  selectable: _react.PropTypes.bool,
-  /**
-   * Indicates that a particular row is selected.
-   * This property can be used to programmatically select rows.
-   */
-  selected: _react.PropTypes.bool,
-  /**
-   * Indicates whether or not the row is striped.
-   */
-  striped: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = TableRow;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],108:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var tableRowColumn = context.muiTheme.tableRowColumn;
-
-
-  var styles = {
-    root: {
-      paddingLeft: tableRowColumn.spacing,
-      paddingRight: tableRowColumn.spacing,
-      height: tableRowColumn.height,
-      textAlign: 'left',
-      fontSize: 13,
-      overflow: 'hidden',
-      whiteSpace: 'nowrap',
-      textOverflow: 'ellipsis'
-    }
-  };
-
-  if (_react2.default.Children.count(props.children) === 1 && !isNaN(props.children)) {
-    styles.textAlign = 'right';
-  }
-
-  return styles;
-}
-
-var TableRowColumn = function (_Component) {
-  (0, _inherits3.default)(TableRowColumn, _Component);
-
-  function TableRowColumn() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TableRowColumn);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TableRowColumn.__proto__ || (0, _getPrototypeOf2.default)(TableRowColumn)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hovered: false
-    }, _this.onClick = function (event) {
-      if (_this.props.onClick) {
-        _this.props.onClick(event, _this.props.columnNumber);
-      }
-    }, _this.onMouseEnter = function (event) {
-      if (_this.props.hoverable) {
-        _this.setState({ hovered: true });
-        if (_this.props.onHover) {
-          _this.props.onHover(event, _this.props.columnNumber);
-        }
-      }
-    }, _this.onMouseLeave = function (event) {
-      if (_this.props.hoverable) {
-        _this.setState({ hovered: false });
-        if (_this.props.onHoverExit) {
-          _this.props.onHoverExit(event, _this.props.columnNumber);
-        }
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TableRowColumn, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          className = _props.className,
-          columnNumber = _props.columnNumber,
-          hoverable = _props.hoverable,
-          onClick = _props.onClick,
-          onHover = _props.onHover,
-          onHoverExit = _props.onHoverExit,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'columnNumber', 'hoverable', 'onClick', 'onHover', 'onHoverExit', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      var handlers = {
-        onClick: this.onClick,
-        onMouseEnter: this.onMouseEnter,
-        onMouseLeave: this.onMouseLeave
-      };
-
-      return _react2.default.createElement(
-        'td',
-        (0, _extends3.default)({
-          className: className,
-          style: prepareStyles((0, _simpleAssign2.default)(styles.root, style))
-        }, handlers, other),
-        children
-      );
-    }
-  }]);
-  return TableRowColumn;
-}(_react.Component);
-
-TableRowColumn.defaultProps = {
-  hoverable: false
-};
-TableRowColumn.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TableRowColumn.propTypes = {
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * @ignore
-   * Number to identify the header row. This property
-   * is automatically populated when used with TableHeader.
-   */
-  columnNumber: _react.PropTypes.number,
-  /**
-   * @ignore
-   * If true, this column responds to hover events.
-   */
-  hoverable: _react.PropTypes.bool,
-  /** @ignore */
-  onClick: _react.PropTypes.func,
-  /** @ignore */
-  onHover: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Callback function for hover exit event.
-   */
-  onHoverExit: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = TableRowColumn;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],109:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.TableRowColumn = exports.TableRow = exports.TableHeaderColumn = exports.TableHeader = exports.TableFooter = exports.TableBody = exports.Table = undefined;
-
-var _Table2 = require('./Table');
-
-var _Table3 = _interopRequireDefault(_Table2);
-
-var _TableBody2 = require('./TableBody');
-
-var _TableBody3 = _interopRequireDefault(_TableBody2);
-
-var _TableFooter2 = require('./TableFooter');
-
-var _TableFooter3 = _interopRequireDefault(_TableFooter2);
-
-var _TableHeader2 = require('./TableHeader');
-
-var _TableHeader3 = _interopRequireDefault(_TableHeader2);
-
-var _TableHeaderColumn2 = require('./TableHeaderColumn');
-
-var _TableHeaderColumn3 = _interopRequireDefault(_TableHeaderColumn2);
-
-var _TableRow2 = require('./TableRow');
-
-var _TableRow3 = _interopRequireDefault(_TableRow2);
-
-var _TableRowColumn2 = require('./TableRowColumn');
-
-var _TableRowColumn3 = _interopRequireDefault(_TableRowColumn2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Table = _Table3.default;
-exports.TableBody = _TableBody3.default;
-exports.TableFooter = _TableFooter3.default;
-exports.TableHeader = _TableHeader3.default;
-exports.TableHeaderColumn = _TableHeaderColumn3.default;
-exports.TableRow = _TableRow3.default;
-exports.TableRowColumn = _TableRowColumn3.default;
-exports.default = _Table3.default;
-},{"./Table":102,"./TableBody":103,"./TableFooter":104,"./TableHeader":105,"./TableHeaderColumn":106,"./TableRow":107,"./TableRowColumn":108}],110:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var inkBar = context.muiTheme.inkBar;
-
-
-  return {
-    root: {
-      left: props.left,
-      width: props.width,
-      bottom: 0,
-      display: 'block',
-      backgroundColor: props.color || inkBar.backgroundColor,
-      height: 2,
-      marginTop: -2,
-      position: 'relative',
-      transition: _transitions2.default.easeOut('1s', 'left')
-    }
-  };
-}
-
-var InkBar = function (_Component) {
-  (0, _inherits3.default)(InkBar, _Component);
-
-  function InkBar() {
-    (0, _classCallCheck3.default)(this, InkBar);
-    return (0, _possibleConstructorReturn3.default)(this, (InkBar.__proto__ || (0, _getPrototypeOf2.default)(InkBar)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(InkBar, [{
-    key: 'render',
-    value: function render() {
-      var style = this.props.style;
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement('div', { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) });
-    }
-  }]);
-  return InkBar;
-}(_react.Component);
-
-InkBar.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? InkBar.propTypes = {
-  color: _react.PropTypes.string,
-  left: _react.PropTypes.string.isRequired,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  width: _react.PropTypes.string.isRequired
-} : void 0;
-exports.default = InkBar;
-}).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],111:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _EnhancedButton = require('../internal/EnhancedButton');
-
-var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var tabs = context.muiTheme.tabs;
-
-
-  return {
-    root: {
-      color: props.selected ? tabs.selectedTextColor : tabs.textColor,
-      fontWeight: 500,
-      fontSize: 14,
-      width: props.width,
-      textTransform: 'uppercase',
-      padding: 0
-    },
-    button: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: props.label && props.icon ? 72 : 48
-    }
-  };
-}
-
-var Tab = function (_Component) {
-  (0, _inherits3.default)(Tab, _Component);
-
-  function Tab() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Tab);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Tab.__proto__ || (0, _getPrototypeOf2.default)(Tab)).call.apply(_ref, [this].concat(args))), _this), _this.handleTouchTap = function (event) {
-      if (_this.props.onTouchTap) {
-        _this.props.onTouchTap(_this.props.value, event, _this);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Tab, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          icon = _props.icon,
-          index = _props.index,
-          onActive = _props.onActive,
-          onTouchTap = _props.onTouchTap,
-          selected = _props.selected,
-          label = _props.label,
-          buttonStyle = _props.buttonStyle,
-          style = _props.style,
-          value = _props.value,
-          width = _props.width,
-          other = (0, _objectWithoutProperties3.default)(_props, ['icon', 'index', 'onActive', 'onTouchTap', 'selected', 'label', 'buttonStyle', 'style', 'value', 'width']);
-
-
-      var styles = getStyles(this.props, this.context);
-
-      var iconElement = void 0;
-      if (icon && _react2.default.isValidElement(icon)) {
-        var iconProps = {
-          style: {
-            fontSize: 24,
-            color: styles.root.color,
-            marginBottom: label ? 5 : 0
-          }
-        };
-        // If it's svg icon set color via props
-        if (icon.type.muiName !== 'FontIcon') {
-          iconProps.color = styles.root.color;
-        }
-        iconElement = _react2.default.cloneElement(icon, iconProps);
-      }
-
-      var rippleOpacity = 0.3;
-      var rippleColor = this.context.muiTheme.tabs.selectedTextColor;
-
-      return _react2.default.createElement(
-        _EnhancedButton2.default,
-        (0, _extends3.default)({}, other, {
-          style: (0, _simpleAssign2.default)(styles.root, style),
-          focusRippleColor: rippleColor,
-          touchRippleColor: rippleColor,
-          focusRippleOpacity: rippleOpacity,
-          touchRippleOpacity: rippleOpacity,
-          onTouchTap: this.handleTouchTap
-        }),
-        _react2.default.createElement(
-          'div',
-          { style: (0, _simpleAssign2.default)(styles.button, buttonStyle) },
-          iconElement,
-          label
-        )
-      );
-    }
-  }]);
-  return Tab;
-}(_react.Component);
-
-Tab.muiName = 'Tab';
-Tab.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Tab.propTypes = {
-  /**
-   * Override the inline-styles of the button element.
-   */
-  buttonStyle: _react.PropTypes.object,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Sets the icon of the tab, you can pass `FontIcon` or `SvgIcon` elements.
-   */
-  icon: _react.PropTypes.node,
-  /**
-   * @ignore
-   */
-  index: _react.PropTypes.any,
-  /**
-   * Sets the text value of the tab item to the string specified.
-   */
-  label: _react.PropTypes.node,
-  /**
-   * Fired when the active tab changes by touch or tap.
-   * Use this event to specify any functionality when an active tab changes.
-   * For example - we are using this to route to home when the third tab becomes active.
-   * This function will always recieve the active tab as it\'s first argument.
-   */
-  onActive: _react.PropTypes.func,
-  /**
-   * @ignore
-   * This property is overriden by the Tabs component.
-   */
-  onTouchTap: _react.PropTypes.func,
-  /**
-   * @ignore
-   * Defines if the current tab is selected or not.
-   * The Tabs component is responsible for setting this property.
-   */
-  selected: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * If value prop passed to Tabs component, this value prop is also required.
-   * It assigns a value to the tab so that it can be selected by the Tabs.
-   */
-  value: _react.PropTypes.any,
-  /**
-   * @ignore
-   * This property is overriden by the Tabs component.
-   */
-  width: _react.PropTypes.string
-} : void 0;
-exports.default = Tab;
-}).call(this,require('_process'))
-},{"../internal/EnhancedButton":144,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],112:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var styles = {
-  width: '100%',
-  position: 'relative',
-  textAlign: 'initial'
-};
-
-var TabTemplate = function TabTemplate(_ref) {
-  var children = _ref.children,
-      selected = _ref.selected,
-      style = _ref.style;
-
-  var templateStyle = (0, _simpleAssign2.default)({}, styles, style);
-  if (!selected) {
-    templateStyle.height = 0;
-    templateStyle.overflow = 'hidden';
-  }
-
-  return _react2.default.createElement(
-    'div',
-    { style: templateStyle },
-    children
-  );
-};
-
-process.env.NODE_ENV !== "production" ? TabTemplate.propTypes = {
-  children: _react.PropTypes.node,
-  selected: _react.PropTypes.bool,
-  style: _react.PropTypes.object
-} : void 0;
-
-exports.default = TabTemplate;
-}).call(this,require('_process'))
-},{"_process":560,"react":559,"simple-assign":326}],113:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-var _TabTemplate = require('./TabTemplate');
-
-var _TabTemplate2 = _interopRequireDefault(_TabTemplate);
-
-var _InkBar = require('./InkBar');
-
-var _InkBar2 = _interopRequireDefault(_InkBar);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var tabs = context.muiTheme.tabs;
-
-
-  return {
-    tabItemContainer: {
-      width: '100%',
-      backgroundColor: tabs.backgroundColor,
-      whiteSpace: 'nowrap',
-      display: 'flex'
-    }
-  };
-}
-
-var Tabs = function (_Component) {
-  (0, _inherits3.default)(Tabs, _Component);
-
-  function Tabs() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Tabs);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Tabs.__proto__ || (0, _getPrototypeOf2.default)(Tabs)).call.apply(_ref, [this].concat(args))), _this), _this.state = { selectedIndex: 0 }, _this.handleTabTouchTap = function (value, event, tab) {
-      var valueLink = _this.getValueLink(_this.props);
-      var index = tab.props.index;
-
-      if (valueLink.value && valueLink.value !== value || _this.state.selectedIndex !== index) {
-        valueLink.requestChange(value, event, tab);
-      }
-
-      _this.setState({ selectedIndex: index });
-
-      if (tab.props.onActive) {
-        tab.props.onActive(tab);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Tabs, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var valueLink = this.getValueLink(this.props);
-      var initialIndex = this.props.initialSelectedIndex;
-
-      this.setState({
-        selectedIndex: valueLink.value !== undefined ? this.getSelectedIndex(this.props) : initialIndex < this.getTabCount() ? initialIndex : 0
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(newProps, nextContext) {
-      var valueLink = this.getValueLink(newProps);
-      var newState = {
-        muiTheme: nextContext.muiTheme || this.context.muiTheme
-      };
-
-      if (valueLink.value !== undefined) {
-        newState.selectedIndex = this.getSelectedIndex(newProps);
-      }
-
-      this.setState(newState);
-    }
-  }, {
-    key: 'getTabs',
-    value: function getTabs() {
-      var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props;
-
-      var tabs = [];
-
-      _react.Children.forEach(props.children, function (tab) {
-        if ((0, _react.isValidElement)(tab)) {
-          tabs.push(tab);
-        }
-      });
-
-      return tabs;
-    }
-  }, {
-    key: 'getTabCount',
-    value: function getTabCount() {
-      return this.getTabs().length;
-    }
-
-    // Do not use outside of this component, it will be removed once valueLink is deprecated
-
-  }, {
-    key: 'getValueLink',
-    value: function getValueLink(props) {
-      return props.valueLink || {
-        value: props.value,
-        requestChange: props.onChange
-      };
-    }
-  }, {
-    key: 'getSelectedIndex',
-    value: function getSelectedIndex(props) {
-      var valueLink = this.getValueLink(props);
-      var selectedIndex = -1;
-
-      this.getTabs(props).forEach(function (tab, index) {
-        if (valueLink.value === tab.props.value) {
-          selectedIndex = index;
-        }
-      });
-
-      return selectedIndex;
-    }
-  }, {
-    key: 'getSelected',
-    value: function getSelected(tab, index) {
-      var valueLink = this.getValueLink(this.props);
-      return valueLink.value ? valueLink.value === tab.props.value : this.state.selectedIndex === index;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          contentContainerClassName = _props.contentContainerClassName,
-          contentContainerStyle = _props.contentContainerStyle,
-          initialSelectedIndex = _props.initialSelectedIndex,
-          inkBarStyle = _props.inkBarStyle,
-          onChange = _props.onChange,
-          style = _props.style,
-          tabItemContainerStyle = _props.tabItemContainerStyle,
-          tabTemplate = _props.tabTemplate,
-          tabTemplateStyle = _props.tabTemplateStyle,
-          other = (0, _objectWithoutProperties3.default)(_props, ['contentContainerClassName', 'contentContainerStyle', 'initialSelectedIndex', 'inkBarStyle', 'onChange', 'style', 'tabItemContainerStyle', 'tabTemplate', 'tabTemplateStyle']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-      var valueLink = this.getValueLink(this.props);
-      var tabValue = valueLink.value;
-      var tabContent = [];
-      var width = 100 / this.getTabCount();
-
-      var tabs = this.getTabs().map(function (tab, index) {
-        process.env.NODE_ENV !== "production" ? (0, _warning2.default)(tab.type && tab.type.muiName === 'Tab', 'Material-UI: Tabs only accepts Tab Components as children.\n        Found ' + (tab.type.muiName || tab.type) + ' as child number ' + (index + 1) + ' of Tabs') : void 0;
-
-        process.env.NODE_ENV !== "production" ? (0, _warning2.default)(!tabValue || tab.props.value !== undefined, 'Material-UI: Tabs value prop has been passed, but Tab ' + index + '\n        does not have a value prop. Needs value if Tabs is going\n        to be a controlled component.') : void 0;
-
-        tabContent.push(tab.props.children ? (0, _react.createElement)(tabTemplate || _TabTemplate2.default, {
-          key: index,
-          selected: _this2.getSelected(tab, index),
-          style: tabTemplateStyle
-        }, tab.props.children) : undefined);
-
-        return (0, _react.cloneElement)(tab, {
-          key: index,
-          index: index,
-          selected: _this2.getSelected(tab, index),
-          width: width + '%',
-          onTouchTap: _this2.handleTabTouchTap
-        });
-      });
-
-      var inkBar = this.state.selectedIndex !== -1 ? _react2.default.createElement(_InkBar2.default, {
-        left: width * this.state.selectedIndex + '%',
-        width: width + '%',
-        style: inkBarStyle
-      }) : null;
-
-      var inkBarContainerWidth = tabItemContainerStyle ? tabItemContainerStyle.width : '100%';
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({ style: prepareStyles((0, _simpleAssign2.default)({}, style)) }, other),
-        _react2.default.createElement(
-          'div',
-          { style: prepareStyles((0, _simpleAssign2.default)(styles.tabItemContainer, tabItemContainerStyle)) },
-          tabs
-        ),
-        _react2.default.createElement(
-          'div',
-          { style: { width: inkBarContainerWidth } },
-          inkBar
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            style: prepareStyles((0, _simpleAssign2.default)({}, contentContainerStyle)),
-            className: contentContainerClassName
-          },
-          tabContent
-        )
-      );
-    }
-  }]);
-  return Tabs;
-}(_react.Component);
-
-Tabs.defaultProps = {
-  initialSelectedIndex: 0,
-  onChange: function onChange() {}
-};
-Tabs.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Tabs.propTypes = {
-  /**
-   * Should be used to pass `Tab` components.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * The css class name of the content's container.
-   */
-  contentContainerClassName: _react.PropTypes.string,
-  /**
-   * Override the inline-styles of the content's container.
-   */
-  contentContainerStyle: _react.PropTypes.object,
-  /**
-   * Specify initial visible tab index.
-   * If `initialSelectedIndex` is set but larger than the total amount of specified tabs,
-   * `initialSelectedIndex` will revert back to default.
-   * If `initialSelectedIndex` is set to any negative value, no tab will be selected intially.
-   */
-  initialSelectedIndex: _react.PropTypes.number,
-  /**
-   * Override the inline-styles of the InkBar.
-   */
-  inkBarStyle: _react.PropTypes.object,
-  /**
-   * Called when the selected value change.
-   */
-  onChange: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the tab-labels container.
-   */
-  tabItemContainerStyle: _react.PropTypes.object,
-  /**
-   * Override the default tab template used to wrap the content of each tab element.
-   */
-  tabTemplate: _react.PropTypes.func,
-  /**
-   * Override the inline-styles of the tab template.
-   */
-  tabTemplateStyle: _react.PropTypes.object,
-  /**
-   * Makes Tabs controllable and selects the tab whose value prop matches this prop.
-   */
-  value: _react.PropTypes.any
-} : void 0;
-exports.default = Tabs;
-}).call(this,require('_process'))
-},{"./InkBar":110,"./TabTemplate":112,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326,"warning":327}],114:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.Tabs = exports.Tab = undefined;
-
-var _Tab2 = require('./Tab');
-
-var _Tab3 = _interopRequireDefault(_Tab2);
-
-var _Tabs2 = require('./Tabs');
-
-var _Tabs3 = _interopRequireDefault(_Tabs2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Tab = _Tab3.default;
-exports.Tabs = _Tabs3.default;
-exports.default = _Tabs3.default;
-},{"./Tab":111,"./Tabs":113}],115:[function(require,module,exports){
+},{"./SvgIcon":47}],49:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -21343,7 +8835,7 @@ process.env.NODE_ENV !== "production" ? EnhancedTextarea.propTypes = {
 } : void 0;
 exports.default = EnhancedTextarea;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-event-listener":311,"simple-assign":326}],116:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-event-listener":213,"simple-assign":228}],50:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -21921,7 +9413,7 @@ process.env.NODE_ENV !== "production" ? TextField.propTypes = {
 } : void 0;
 exports.default = TextField;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"./EnhancedTextarea":115,"./TextFieldHint":117,"./TextFieldLabel":118,"./TextFieldUnderline":119,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"recompose/shallowEqual":322,"simple-assign":326,"warning":327}],117:[function(require,module,exports){
+},{"../styles/transitions":235,"./EnhancedTextarea":49,"./TextFieldHint":51,"./TextFieldLabel":52,"./TextFieldUnderline":53,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256,"recompose/shallowEqual":224,"simple-assign":228,"warning":229}],51:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -22000,7 +9492,7 @@ TextFieldHint.defaultProps = {
 
 exports.default = TextFieldHint;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"react":559,"simple-assign":326}],118:[function(require,module,exports){
+},{"../styles/transitions":235,"_process":452,"react":451,"simple-assign":228}],52:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -22116,7 +9608,7 @@ TextFieldLabel.defaultProps = {
 
 exports.default = TextFieldLabel;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"react":559,"simple-assign":326}],119:[function(require,module,exports){
+},{"../styles/transitions":235,"_process":452,"react":451,"simple-assign":228}],53:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -22251,7 +9743,7 @@ TextFieldUnderline.defaultProps = defaultProps;
 
 exports.default = TextFieldUnderline;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"react":559,"simple-assign":326}],120:[function(require,module,exports){
+},{"../styles/transitions":235,"_process":452,"react":451,"simple-assign":228}],54:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22266,3121 +9758,7 @@ var _TextField2 = _interopRequireDefault(_TextField);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _TextField2.default;
-},{"./TextField":116}],121:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _TimeDisplay = require('./TimeDisplay');
-
-var _TimeDisplay2 = _interopRequireDefault(_TimeDisplay);
-
-var _ClockHours = require('./ClockHours');
-
-var _ClockHours2 = _interopRequireDefault(_ClockHours);
-
-var _ClockMinutes = require('./ClockMinutes');
-
-var _ClockMinutes2 = _interopRequireDefault(_ClockMinutes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Clock = function (_Component) {
-  (0, _inherits3.default)(Clock, _Component);
-
-  function Clock() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Clock);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Clock.__proto__ || (0, _getPrototypeOf2.default)(Clock)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      selectedTime: null,
-      mode: 'hour'
-    }, _this.setMode = function (mode) {
-      setTimeout(function () {
-        _this.setState({
-          mode: mode
-        });
-      }, 100);
-    }, _this.handleSelectAffix = function (affix) {
-      if (affix === _this.getAffix()) return;
-
-      var hours = _this.state.selectedTime.getHours();
-
-      if (affix === 'am') {
-        _this.handleChangeHours(hours - 12, affix);
-        return;
-      }
-
-      _this.handleChangeHours(hours + 12, affix);
-    }, _this.handleChangeHours = function (hours, finished) {
-      var time = new Date(_this.state.selectedTime);
-      var affix = void 0;
-
-      if (typeof finished === 'string') {
-        affix = finished;
-        finished = undefined;
-      }
-      if (!affix) {
-        affix = _this.getAffix();
-      }
-      if (affix === 'pm' && hours < 12) {
-        hours += 12;
-      }
-
-      time.setHours(hours);
-      _this.setState({
-        selectedTime: time
-      });
-
-      if (finished) {
-        setTimeout(function () {
-          _this.setState({
-            mode: 'minute'
-          });
-
-          var onChangeHours = _this.props.onChangeHours;
-
-          if (onChangeHours) {
-            onChangeHours(time);
-          }
-        }, 100);
-      }
-    }, _this.handleChangeMinutes = function (minutes, finished) {
-      var time = new Date(_this.state.selectedTime);
-      time.setMinutes(minutes);
-      _this.setState({
-        selectedTime: time
-      });
-
-      var onChangeMinutes = _this.props.onChangeMinutes;
-
-      if (onChangeMinutes && finished) {
-        setTimeout(function () {
-          onChangeMinutes(time);
-        }, 0);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Clock, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({
-        selectedTime: this.props.initialTime || new Date()
-      });
-    }
-  }, {
-    key: 'getAffix',
-    value: function getAffix() {
-      if (this.props.format !== 'ampm') return '';
-
-      var hours = this.state.selectedTime.getHours();
-      if (hours < 12) {
-        return 'am';
-      }
-
-      return 'pm';
-    }
-  }, {
-    key: 'getSelectedTime',
-    value: function getSelectedTime() {
-      return this.state.selectedTime;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var clock = null;
-
-      var _context$muiTheme = this.context.muiTheme,
-          prepareStyles = _context$muiTheme.prepareStyles,
-          timePicker = _context$muiTheme.timePicker;
-
-
-      var styles = {
-        root: {
-          userSelect: 'none'
-        },
-        container: {
-          height: 280,
-          padding: 10,
-          position: 'relative',
-          boxSizing: 'content-box'
-        },
-        circle: {
-          position: 'absolute',
-          top: 20,
-          width: 260,
-          height: 260,
-          borderRadius: '100%',
-          backgroundColor: timePicker.clockCircleColor
-        }
-      };
-
-      if (this.state.mode === 'hour') {
-        clock = _react2.default.createElement(_ClockHours2.default, {
-          key: 'hours',
-          format: this.props.format,
-          onChange: this.handleChangeHours,
-          initialHours: this.state.selectedTime.getHours()
-        });
-      } else {
-        clock = _react2.default.createElement(_ClockMinutes2.default, {
-          key: 'minutes',
-          onChange: this.handleChangeMinutes,
-          initialMinutes: this.state.selectedTime.getMinutes()
-        });
-      }
-
-      return _react2.default.createElement(
-        'div',
-        { style: prepareStyles(styles.root) },
-        _react2.default.createElement(_TimeDisplay2.default, {
-          selectedTime: this.state.selectedTime,
-          mode: this.state.mode,
-          format: this.props.format,
-          affix: this.getAffix(),
-          onSelectAffix: this.handleSelectAffix,
-          onSelectHour: this.setMode.bind(this, 'hour'),
-          onSelectMin: this.setMode.bind(this, 'minute')
-        }),
-        _react2.default.createElement(
-          'div',
-          { style: prepareStyles(styles.container) },
-          _react2.default.createElement('div', { style: prepareStyles(styles.circle) }),
-          clock
-        )
-      );
-    }
-  }]);
-  return Clock;
-}(_react.Component);
-
-Clock.defaultProps = {
-  initialTime: new Date()
-};
-Clock.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Clock.propTypes = {
-  format: _react.PropTypes.oneOf(['ampm', '24hr']),
-  initialTime: _react.PropTypes.object,
-  onChangeHours: _react.PropTypes.func,
-  onChangeMinutes: _react.PropTypes.func
-} : void 0;
-exports.default = Clock;
-}).call(this,require('_process'))
-},{"./ClockHours":122,"./ClockMinutes":123,"./TimeDisplay":126,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],122:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _ClockNumber = require('./ClockNumber');
-
-var _ClockNumber2 = _interopRequireDefault(_ClockNumber);
-
-var _ClockPointer = require('./ClockPointer');
-
-var _ClockPointer2 = _interopRequireDefault(_ClockPointer);
-
-var _timeUtils = require('./timeUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ClockHours = function (_Component) {
-  (0, _inherits3.default)(ClockHours, _Component);
-
-  function ClockHours() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, ClockHours);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = ClockHours.__proto__ || (0, _getPrototypeOf2.default)(ClockHours)).call.apply(_ref, [this].concat(args))), _this), _this.handleUp = function (event) {
-      event.preventDefault();
-      _this.setClock(event.nativeEvent, true);
-    }, _this.handleMove = function (event) {
-      event.preventDefault();
-      if (_this.isMousePressed(event) !== 1) return;
-      _this.setClock(event.nativeEvent, false);
-    }, _this.handleTouchMove = function (event) {
-      event.preventDefault();
-      _this.setClock(event.changedTouches[0], false);
-    }, _this.handleTouchEnd = function (event) {
-      event.preventDefault();
-      _this.setClock(event.changedTouches[0], true);
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(ClockHours, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var clockElement = _reactDom2.default.findDOMNode(this.refs.mask);
-
-      this.center = {
-        x: clockElement.offsetWidth / 2,
-        y: clockElement.offsetHeight / 2
-      };
-
-      this.basePoint = {
-        x: this.center.x,
-        y: 0
-      };
-    }
-  }, {
-    key: 'isMousePressed',
-    value: function isMousePressed(event) {
-      if (typeof event.buttons === 'undefined') {
-        return event.nativeEvent.which;
-      }
-
-      return event.buttons;
-    }
-  }, {
-    key: 'setClock',
-    value: function setClock(event, finish) {
-      if (typeof event.offsetX === 'undefined') {
-        var offset = (0, _timeUtils.getTouchEventOffsetValues)(event);
-
-        event.offsetX = offset.offsetX;
-        event.offsetY = offset.offsetY;
-      }
-
-      var hours = this.getHours(event.offsetX, event.offsetY);
-
-      this.props.onChange(hours, finish);
-    }
-  }, {
-    key: 'getHours',
-    value: function getHours(offsetX, offsetY) {
-      var step = 30;
-      var x = offsetX - this.center.x;
-      var y = offsetY - this.center.y;
-      var cx = this.basePoint.x - this.center.x;
-      var cy = this.basePoint.y - this.center.y;
-
-      var atan = Math.atan2(cx, cy) - Math.atan2(x, y);
-
-      var deg = (0, _timeUtils.rad2deg)(atan);
-      deg = Math.round(deg / step) * step;
-      deg %= 360;
-
-      var value = Math.floor(deg / step) || 0;
-
-      var delta = Math.pow(x, 2) + Math.pow(y, 2);
-      var distance = Math.sqrt(delta);
-
-      value = value || 12;
-      if (this.props.format === '24hr') {
-        if (distance < 90) {
-          value += 12;
-          value %= 24;
-        }
-      } else {
-        value %= 12;
-      }
-
-      return value;
-    }
-  }, {
-    key: 'getSelected',
-    value: function getSelected() {
-      var hour = this.props.initialHours;
-
-      if (this.props.format === 'ampm') {
-        hour %= 12;
-        hour = hour || 12;
-      }
-
-      return hour;
-    }
-  }, {
-    key: 'getHourNumbers',
-    value: function getHourNumbers() {
-      var _this2 = this;
-
-      var style = {
-        pointerEvents: 'none'
-      };
-      var hourSize = this.props.format === 'ampm' ? 12 : 24;
-
-      var hours = [];
-      for (var i = 1; i <= hourSize; i++) {
-        hours.push(i % 24);
-      }
-
-      return hours.map(function (hour) {
-        var isSelected = _this2.getSelected() === hour;
-        return _react2.default.createElement(_ClockNumber2.default, {
-          key: hour,
-          style: style,
-          isSelected: isSelected,
-          type: 'hour',
-          value: hour
-        });
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var styles = {
-        root: {
-          height: '100%',
-          width: '100%',
-          borderRadius: '100%',
-          position: 'relative',
-          pointerEvents: 'none',
-          boxSizing: 'border-box'
-        },
-
-        hitMask: {
-          height: '100%',
-          width: '100%',
-          pointerEvents: 'auto'
-        }
-      };
-
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var hours = this.getSelected();
-      var numbers = this.getHourNumbers();
-
-      return _react2.default.createElement(
-        'div',
-        { ref: 'clock', style: prepareStyles(styles.root) },
-        _react2.default.createElement(_ClockPointer2.default, { hasSelected: true, value: hours, type: 'hour' }),
-        numbers,
-        _react2.default.createElement('div', {
-          ref: 'mask', style: prepareStyles(styles.hitMask), onTouchMove: this.handleTouchMove,
-          onTouchEnd: this.handleTouchEnd, onMouseUp: this.handleUp, onMouseMove: this.handleMove
-        })
-      );
-    }
-  }]);
-  return ClockHours;
-}(_react.Component);
-
-ClockHours.defaultProps = {
-  initialHours: new Date().getHours(),
-  onChange: function onChange() {},
-  format: 'ampm'
-};
-ClockHours.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ClockHours.propTypes = {
-  format: _react.PropTypes.oneOf(['ampm', '24hr']),
-  initialHours: _react.PropTypes.number,
-  onChange: _react.PropTypes.func
-} : void 0;
-exports.default = ClockHours;
-}).call(this,require('_process'))
-},{"./ClockNumber":124,"./ClockPointer":125,"./timeUtils":130,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364}],123:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ClockNumber = require('./ClockNumber');
-
-var _ClockNumber2 = _interopRequireDefault(_ClockNumber);
-
-var _ClockPointer = require('./ClockPointer');
-
-var _ClockPointer2 = _interopRequireDefault(_ClockPointer);
-
-var _timeUtils = require('./timeUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ClockMinutes = function (_Component) {
-  (0, _inherits3.default)(ClockMinutes, _Component);
-
-  function ClockMinutes() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, ClockMinutes);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = ClockMinutes.__proto__ || (0, _getPrototypeOf2.default)(ClockMinutes)).call.apply(_ref, [this].concat(args))), _this), _this.handleUp = function (event) {
-      event.preventDefault();
-      _this.setClock(event.nativeEvent, true);
-    }, _this.handleMove = function (event) {
-      event.preventDefault();
-      if (_this.isMousePressed(event) !== 1) {
-        return;
-      }
-      _this.setClock(event.nativeEvent, false);
-    }, _this.handleTouch = function (event) {
-      event.preventDefault();
-      _this.setClock(event.changedTouches[0], event.type === 'touchend');
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(ClockMinutes, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var clockElement = this.refs.mask;
-
-      this.center = {
-        x: clockElement.offsetWidth / 2,
-        y: clockElement.offsetHeight / 2
-      };
-
-      this.basePoint = {
-        x: this.center.x,
-        y: 0
-      };
-    }
-  }, {
-    key: 'isMousePressed',
-    value: function isMousePressed(event) {
-      if (typeof event.buttons === 'undefined') {
-        return event.nativeEvent.which;
-      }
-      return event.buttons;
-    }
-  }, {
-    key: 'setClock',
-    value: function setClock(event, finish) {
-      if (typeof event.offsetX === 'undefined') {
-        var offset = (0, _timeUtils.getTouchEventOffsetValues)(event);
-
-        event.offsetX = offset.offsetX;
-        event.offsetY = offset.offsetY;
-      }
-
-      var minutes = this.getMinutes(event.offsetX, event.offsetY);
-
-      this.props.onChange(minutes, finish);
-    }
-  }, {
-    key: 'getMinutes',
-    value: function getMinutes(offsetX, offsetY) {
-      var step = 6;
-      var x = offsetX - this.center.x;
-      var y = offsetY - this.center.y;
-      var cx = this.basePoint.x - this.center.x;
-      var cy = this.basePoint.y - this.center.y;
-
-      var atan = Math.atan2(cx, cy) - Math.atan2(x, y);
-
-      var deg = (0, _timeUtils.rad2deg)(atan);
-      deg = Math.round(deg / step) * step;
-      deg %= 360;
-
-      var value = Math.floor(deg / step) || 0;
-
-      return value;
-    }
-  }, {
-    key: 'getMinuteNumbers',
-    value: function getMinuteNumbers() {
-      var minutes = [];
-      for (var i = 0; i < 12; i++) {
-        minutes.push(i * 5);
-      }
-      var selectedMinutes = this.props.initialMinutes;
-      var hasSelected = false;
-
-      var numbers = minutes.map(function (minute) {
-        var isSelected = selectedMinutes === minute;
-        if (isSelected) {
-          hasSelected = true;
-        }
-        return _react2.default.createElement(_ClockNumber2.default, {
-          key: minute,
-          isSelected: isSelected,
-          type: 'minute',
-          value: minute
-        });
-      });
-
-      return {
-        numbers: numbers,
-        hasSelected: hasSelected,
-        selected: selectedMinutes
-      };
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var styles = {
-        root: {
-          height: '100%',
-          width: '100%',
-          borderRadius: '100%',
-          position: 'relative',
-          pointerEvents: 'none',
-          boxSizing: 'border-box'
-        },
-
-        hitMask: {
-          height: '100%',
-          width: '100%',
-          pointerEvents: 'auto'
-        }
-      };
-
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var minutes = this.getMinuteNumbers();
-
-      return _react2.default.createElement(
-        'div',
-        { ref: 'clock', style: prepareStyles(styles.root) },
-        _react2.default.createElement(_ClockPointer2.default, { value: minutes.selected, type: 'minute', hasSelected: minutes.hasSelected }),
-        minutes.numbers,
-        _react2.default.createElement('div', {
-          ref: 'mask',
-          style: prepareStyles(styles.hitMask),
-          onTouchMove: this.handleTouch,
-          onTouchEnd: this.handleTouch,
-          onMouseUp: this.handleUp,
-          onMouseMove: this.handleMove
-        })
-      );
-    }
-  }]);
-  return ClockMinutes;
-}(_react.Component);
-
-ClockMinutes.defaultProps = {
-  initialMinutes: new Date().getMinutes(),
-  onChange: function onChange() {}
-};
-ClockMinutes.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ClockMinutes.propTypes = {
-  initialMinutes: _react.PropTypes.number,
-  onChange: _react.PropTypes.func
-} : void 0;
-exports.default = ClockMinutes;
-}).call(this,require('_process'))
-},{"./ClockNumber":124,"./ClockPointer":125,"./timeUtils":130,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],124:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _timeUtils = require('./timeUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var styles = {
-    root: {
-      directionInvariant: true,
-      display: 'inline-block',
-      position: 'absolute',
-      width: 32,
-      height: 32,
-      borderRadius: '100%',
-      left: 'calc(50% - 16px)',
-      top: 10,
-      textAlign: 'center',
-      paddingTop: 5,
-      userSelect: 'none', /* Chrome all / Safari all */
-      fontSize: '1.1em',
-      pointerEvents: 'none',
-      boxSizing: 'border-box'
-    }
-  };
-
-  var muiTheme = context.muiTheme;
-
-
-  var pos = props.value;
-
-  if (props.type === 'hour') {
-    pos %= 12;
-  } else {
-    pos = pos / 5;
-  }
-
-  var positions = [[0, 5], [54.5, 16.6], [94.4, 59.5], [109, 114], [94.4, 168.5], [54.5, 208.4], [0, 223], [-54.5, 208.4], [-94.4, 168.5], [-109, 114], [-94.4, 59.5], [-54.5, 19.6]];
-
-  var innerPositions = [[0, 40], [36.9, 49.9], [64, 77], [74, 114], [64, 151], [37, 178], [0, 188], [-37, 178], [-64, 151], [-74, 114], [-64, 77], [-37, 50]];
-
-  if (props.isSelected) {
-    styles.root.backgroundColor = muiTheme.timePicker.accentColor;
-    styles.root.color = muiTheme.timePicker.selectTextColor;
-  }
-
-  var transformPos = positions[pos];
-
-  if ((0, _timeUtils.isInner)(props)) {
-    styles.root.width = 28;
-    styles.root.height = 28;
-    styles.root.left = 'calc(50% - 14px)';
-    transformPos = innerPositions[pos];
-  }
-
-  var _transformPos = transformPos,
-      _transformPos2 = (0, _slicedToArray3.default)(_transformPos, 2),
-      x = _transformPos2[0],
-      y = _transformPos2[1];
-
-  styles.root.transform = 'translate(' + x + 'px, ' + y + 'px)';
-
-  return styles;
-}
-
-var ClockNumber = function (_Component) {
-  (0, _inherits3.default)(ClockNumber, _Component);
-
-  function ClockNumber() {
-    (0, _classCallCheck3.default)(this, ClockNumber);
-    return (0, _possibleConstructorReturn3.default)(this, (ClockNumber.__proto__ || (0, _getPrototypeOf2.default)(ClockNumber)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(ClockNumber, [{
-    key: 'render',
-    value: function render() {
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-      var clockNumber = this.props.value === 0 ? '00' : this.props.value;
-
-      return _react2.default.createElement(
-        'span',
-        { style: prepareStyles(styles.root) },
-        clockNumber
-      );
-    }
-  }]);
-  return ClockNumber;
-}(_react.Component);
-
-ClockNumber.defaultProps = {
-  value: 0,
-  type: 'minute',
-  isSelected: false
-};
-ClockNumber.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ClockNumber.propTypes = {
-  isSelected: _react.PropTypes.bool,
-  onSelected: _react.PropTypes.func,
-  type: _react.PropTypes.oneOf(['hour', 'minute']),
-  value: _react.PropTypes.number
-} : void 0;
-exports.default = ClockNumber;
-}).call(this,require('_process'))
-},{"./timeUtils":130,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/slicedToArray":175,"react":559}],125:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _timeUtils = require('./timeUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function calcAngle(value, base) {
-  value %= base;
-  var angle = 360 / base * value;
-  return angle;
-}
-
-function getStyles(props, context, state) {
-  var hasSelected = props.hasSelected,
-      type = props.type,
-      value = props.value;
-  var inner = state.inner;
-  var timePicker = context.muiTheme.timePicker;
-
-  var angle = type === 'hour' ? calcAngle(value, 12) : calcAngle(value, 60);
-
-  var styles = {
-    root: {
-      height: inner ? '30%' : '40%',
-      background: timePicker.accentColor,
-      width: 2,
-      left: 'calc(50% - 1px)',
-      position: 'absolute',
-      bottom: '50%',
-      transformOrigin: 'bottom',
-      pointerEvents: 'none',
-      transform: 'rotateZ(' + angle + 'deg)'
-    },
-    mark: {
-      boxSizing: 'content-box',
-      background: timePicker.selectTextColor,
-      border: '4px solid ' + timePicker.accentColor,
-      display: hasSelected && 'none',
-      width: 7,
-      height: 7,
-      position: 'absolute',
-      top: -5,
-      left: -6,
-      borderRadius: '100%'
-    }
-  };
-
-  return styles;
-}
-
-var ClockPointer = function (_Component) {
-  (0, _inherits3.default)(ClockPointer, _Component);
-
-  function ClockPointer() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, ClockPointer);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = ClockPointer.__proto__ || (0, _getPrototypeOf2.default)(ClockPointer)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      inner: false
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(ClockPointer, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({
-        inner: (0, _timeUtils.isInner)(this.props)
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      this.setState({
-        inner: (0, _timeUtils.isInner)(nextProps)
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      if (this.props.value === null) {
-        return _react2.default.createElement('span', null);
-      }
-
-      var styles = getStyles(this.props, this.context, this.state);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      return _react2.default.createElement(
-        'div',
-        { style: prepareStyles(styles.root) },
-        _react2.default.createElement('div', { style: prepareStyles(styles.mark) })
-      );
-    }
-  }]);
-  return ClockPointer;
-}(_react.Component);
-
-ClockPointer.defaultProps = {
-  hasSelected: false,
-  value: null,
-  type: 'minute'
-};
-ClockPointer.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ClockPointer.propTypes = {
-  hasSelected: _react.PropTypes.bool,
-  type: _react.PropTypes.oneOf(['hour', 'minute']),
-  value: _react.PropTypes.number
-} : void 0;
-exports.default = ClockPointer;
-}).call(this,require('_process'))
-},{"./timeUtils":130,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],126:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TimeDisplay = function (_Component) {
-  (0, _inherits3.default)(TimeDisplay, _Component);
-
-  function TimeDisplay() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TimeDisplay);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TimeDisplay.__proto__ || (0, _getPrototypeOf2.default)(TimeDisplay)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      transitionDirection: 'up'
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TimeDisplay, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.selectedTime !== this.props.selectedTime) {
-        var direction = nextProps.selectedTime > this.props.selectedTime ? 'up' : 'down';
-
-        this.setState({
-          transitionDirection: direction
-        });
-      }
-    }
-  }, {
-    key: 'sanitizeTime',
-    value: function sanitizeTime() {
-      var hour = this.props.selectedTime.getHours();
-      var min = this.props.selectedTime.getMinutes().toString();
-
-      if (this.props.format === 'ampm') {
-        hour %= 12;
-        hour = hour || 12;
-      }
-
-      hour = hour.toString();
-      if (hour.length < 2) hour = '0' + hour;
-      if (min.length < 2) min = '0' + min;
-
-      return [hour, min];
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          affix = _props.affix,
-          format = _props.format,
-          mode = _props.mode,
-          onSelectAffix = _props.onSelectAffix,
-          onSelectHour = _props.onSelectHour,
-          onSelectMin = _props.onSelectMin,
-          selectedTime = _props.selectedTime,
-          other = (0, _objectWithoutProperties3.default)(_props, ['affix', 'format', 'mode', 'onSelectAffix', 'onSelectHour', 'onSelectMin', 'selectedTime']);
-      var _context$muiTheme = this.context.muiTheme,
-          prepareStyles = _context$muiTheme.prepareStyles,
-          timePicker = _context$muiTheme.timePicker;
-
-
-      var styles = {
-        root: {
-          padding: '14px 0',
-          borderTopLeftRadius: 2,
-          borderTopRightRadius: 2,
-          backgroundColor: timePicker.headerColor,
-          color: timePicker.textColor
-        },
-        text: {
-          margin: '6px 0',
-          lineHeight: '58px',
-          height: 58,
-          fontSize: 58,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'baseline'
-        },
-        time: {
-          margin: '0 10px'
-        },
-        affix: {
-          flex: 1,
-          position: 'relative',
-          lineHeight: '17px',
-          height: 17,
-          fontSize: 17
-        },
-        affixTop: {
-          position: 'absolute',
-          top: -20,
-          left: 0
-        },
-        clickable: {
-          cursor: 'pointer'
-        },
-        inactive: {
-          opacity: 0.7
-        }
-      };
-
-      var _sanitizeTime = this.sanitizeTime(),
-          _sanitizeTime2 = (0, _slicedToArray3.default)(_sanitizeTime, 2),
-          hour = _sanitizeTime2[0],
-          min = _sanitizeTime2[1];
-
-      var buttons = [];
-      if (format === 'ampm') {
-        buttons = [_react2.default.createElement(
-          'div',
-          {
-            key: 'pm',
-            style: prepareStyles((0, _simpleAssign2.default)({}, styles.clickable, affix === 'pm' ? {} : styles.inactive)),
-            onTouchTap: function onTouchTap() {
-              return onSelectAffix('pm');
-            }
-          },
-          'PM'
-        ), _react2.default.createElement(
-          'div',
-          {
-            key: 'am',
-            style: prepareStyles((0, _simpleAssign2.default)({}, styles.affixTop, styles.clickable, affix === 'am' ? {} : styles.inactive)),
-            onTouchTap: function onTouchTap() {
-              return onSelectAffix('am');
-            }
-          },
-          'AM'
-        )];
-      }
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles(styles.root) }),
-        _react2.default.createElement(
-          'div',
-          { style: prepareStyles(styles.text) },
-          _react2.default.createElement('div', { style: prepareStyles((0, _simpleAssign2.default)({}, styles.affix)) }),
-          _react2.default.createElement(
-            'div',
-            { style: prepareStyles(styles.time) },
-            _react2.default.createElement(
-              'span',
-              {
-                style: prepareStyles((0, _simpleAssign2.default)({}, styles.clickable, mode === 'hour' ? {} : styles.inactive)),
-                onTouchTap: onSelectHour
-              },
-              hour
-            ),
-            _react2.default.createElement(
-              'span',
-              null,
-              ':'
-            ),
-            _react2.default.createElement(
-              'span',
-              {
-                style: prepareStyles((0, _simpleAssign2.default)({}, styles.clickable, mode === 'minute' ? {} : styles.inactive)),
-                onTouchTap: onSelectMin
-              },
-              min
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { style: prepareStyles((0, _simpleAssign2.default)({}, styles.affix)) },
-            buttons
-          )
-        )
-      );
-    }
-  }]);
-  return TimeDisplay;
-}(_react.Component);
-
-TimeDisplay.defaultProps = {
-  affix: '',
-  mode: 'hour'
-};
-TimeDisplay.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TimeDisplay.propTypes = {
-  affix: _react.PropTypes.oneOf(['', 'pm', 'am']),
-  format: _react.PropTypes.oneOf(['ampm', '24hr']),
-  mode: _react.PropTypes.oneOf(['hour', 'minute']),
-  onSelectAffix: _react.PropTypes.func,
-  onSelectHour: _react.PropTypes.func,
-  onSelectMin: _react.PropTypes.func,
-  selectedTime: _react.PropTypes.object.isRequired
-} : void 0;
-exports.default = TimeDisplay;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/slicedToArray":175,"react":559,"simple-assign":326}],127:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _TimePickerDialog = require('./TimePickerDialog');
-
-var _TimePickerDialog2 = _interopRequireDefault(_TimePickerDialog);
-
-var _TextField = require('../TextField');
-
-var _TextField2 = _interopRequireDefault(_TextField);
-
-var _timeUtils = require('./timeUtils');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var emptyTime = new Date();
-emptyTime.setHours(0);
-emptyTime.setMinutes(0);
-emptyTime.setSeconds(0);
-emptyTime.setMilliseconds(0);
-
-var TimePicker = function (_Component) {
-  (0, _inherits3.default)(TimePicker, _Component);
-
-  function TimePicker() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TimePicker);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TimePicker.__proto__ || (0, _getPrototypeOf2.default)(TimePicker)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      time: null,
-      dialogTime: new Date()
-    }, _this.handleAcceptDialog = function (time) {
-      _this.setState({
-        time: time
-      });
-      if (_this.props.onChange) _this.props.onChange(null, time);
-    }, _this.handleFocusInput = function (event) {
-      event.target.blur();
-      if (_this.props.onFocus) {
-        _this.props.onFocus(event);
-      }
-    }, _this.handleTouchTapInput = function (event) {
-      event.preventDefault();
-
-      if (!_this.props.disabled) {
-        _this.openDialog();
-      }
-
-      if (_this.props.onTouchTap) {
-        _this.props.onTouchTap(event);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TimePicker, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.setState({
-        time: this.isControlled() ? this.getControlledTime() : this.props.defaultTime
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.value !== this.props.value) {
-        this.setState({
-          time: this.getControlledTime(nextProps)
-        });
-      }
-    }
-
-    /**
-     * Alias for `openDialog()` for an api consistent with TextField.
-     */
-
-  }, {
-    key: 'focus',
-    value: function focus() {
-      this.openDialog();
-    }
-  }, {
-    key: 'openDialog',
-    value: function openDialog() {
-      this.setState({
-        dialogTime: this.state.time
-      });
-      this.refs.dialogWindow.show();
-    }
-  }, {
-    key: 'isControlled',
-    value: function isControlled() {
-      return this.props.value !== null;
-    }
-  }, {
-    key: 'getControlledTime',
-    value: function getControlledTime() {
-      var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props;
-
-      var result = null;
-      if (props.value instanceof Date) {
-        result = props.value;
-      }
-      return result;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          autoOk = _props.autoOk,
-          cancelLabel = _props.cancelLabel,
-          defaultTime = _props.defaultTime,
-          dialogBodyStyle = _props.dialogBodyStyle,
-          dialogStyle = _props.dialogStyle,
-          format = _props.format,
-          okLabel = _props.okLabel,
-          onFocus = _props.onFocus,
-          onTouchTap = _props.onTouchTap,
-          onShow = _props.onShow,
-          onDismiss = _props.onDismiss,
-          pedantic = _props.pedantic,
-          style = _props.style,
-          textFieldStyle = _props.textFieldStyle,
-          other = (0, _objectWithoutProperties3.default)(_props, ['autoOk', 'cancelLabel', 'defaultTime', 'dialogBodyStyle', 'dialogStyle', 'format', 'okLabel', 'onFocus', 'onTouchTap', 'onShow', 'onDismiss', 'pedantic', 'style', 'textFieldStyle']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-      var time = this.state.time;
-
-
-      return _react2.default.createElement(
-        'div',
-        { style: prepareStyles((0, _simpleAssign2.default)({}, style)) },
-        _react2.default.createElement(_TextField2.default, (0, _extends3.default)({}, other, {
-          style: textFieldStyle,
-          ref: 'input',
-          value: time === emptyTime ? null : (0, _timeUtils.formatTime)(time, format, pedantic),
-          onFocus: this.handleFocusInput,
-          onTouchTap: this.handleTouchTapInput
-        })),
-        _react2.default.createElement(_TimePickerDialog2.default, {
-          ref: 'dialogWindow',
-          bodyStyle: dialogBodyStyle,
-          initialTime: this.state.dialogTime,
-          onAccept: this.handleAcceptDialog,
-          onShow: onShow,
-          onDismiss: onDismiss,
-          format: format,
-          okLabel: okLabel,
-          cancelLabel: cancelLabel,
-          autoOk: autoOk,
-          style: dialogStyle
-        })
-      );
-    }
-  }]);
-  return TimePicker;
-}(_react.Component);
-
-TimePicker.defaultProps = {
-  autoOk: false,
-  cancelLabel: 'Cancel',
-  defaultTime: null,
-  disabled: false,
-  format: 'ampm',
-  okLabel: 'OK',
-  pedantic: false,
-  style: {},
-  value: null
-};
-TimePicker.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TimePicker.propTypes = {
-  /**
-   * If true, automatically accept and close the picker on set minutes.
-   */
-  autoOk: _react.PropTypes.bool,
-  /**
-   * Override the label of the 'Cancel' button.
-   */
-  cancelLabel: _react.PropTypes.node,
-  /**
-   * The initial time value of the TimePicker.
-   */
-  defaultTime: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of TimePickerDialog's body element.
-   */
-  dialogBodyStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of TimePickerDialog's root element.
-   */
-  dialogStyle: _react.PropTypes.object,
-  /**
-   * If true, the TimePicker is disabled.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * Tells the component to display the picker in `ampm` (12hr) format or `24hr` format.
-   */
-  format: _react.PropTypes.oneOf(['ampm', '24hr']),
-  /**
-   * Override the label of the 'OK' button.
-   */
-  okLabel: _react.PropTypes.node,
-  /**
-   * Callback function that is fired when the time value changes. The time value is passed in a Date Object.
-   * Since there is no particular event associated with the change the first argument will always be null
-   * and the second argument will be the new Date instance.
-   */
-  onChange: _react.PropTypes.func,
-  /**
-   * Callback function fired when the TimePicker dialog is dismissed.
-   */
-  onDismiss: _react.PropTypes.func,
-  /**
-   * Callback function fired when the TimePicker `TextField` gains focus.
-   */
-  onFocus: _react.PropTypes.func,
-  /**
-   * Callback function fired when the TimePicker dialog is shown.
-   */
-  onShow: _react.PropTypes.func,
-  /**
-   * Callback function fired when the TimePicker is tapped or clicked.
-   */
-  onTouchTap: _react.PropTypes.func,
-  /**
-   * If true, uses ("noon" / "midnight") instead of ("12 a.m." / "12 p.m.").
-   *
-   * It's technically more correct to refer to "12 noon" and "12 midnight" rather than "12 a.m." and "12 p.m."
-   * and it avoids confusion between different locales. By default (for compatibility reasons) TimePicker uses
-   * ("12 a.m." / "12 p.m.").
-   */
-  pedantic: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of TimePicker's TextField element.
-   */
-  textFieldStyle: _react.PropTypes.object,
-  /**
-   * Sets the time for the Time Picker programmatically.
-   */
-  value: _react.PropTypes.object
-} : void 0;
-exports.default = TimePicker;
-}).call(this,require('_process'))
-},{"../TextField":120,"./TimePickerDialog":128,"./timeUtils":130,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],128:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactEventListener = require('react-event-listener');
-
-var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
-
-var _keycode = require('keycode');
-
-var _keycode2 = _interopRequireDefault(_keycode);
-
-var _Clock = require('./Clock');
-
-var _Clock2 = _interopRequireDefault(_Clock);
-
-var _Dialog = require('../Dialog');
-
-var _Dialog2 = _interopRequireDefault(_Dialog);
-
-var _FlatButton = require('../FlatButton');
-
-var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TimePickerDialog = function (_Component) {
-  (0, _inherits3.default)(TimePickerDialog, _Component);
-
-  function TimePickerDialog() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, TimePickerDialog);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = TimePickerDialog.__proto__ || (0, _getPrototypeOf2.default)(TimePickerDialog)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      open: false
-    }, _this.handleRequestClose = function () {
-      _this.dismiss();
-    }, _this.handleTouchTapCancel = function () {
-      _this.dismiss();
-    }, _this.handleTouchTapOK = function () {
-      if (_this.props.onAccept) {
-        _this.props.onAccept(_this.refs.clock.getSelectedTime());
-      }
-      _this.setState({
-        open: false
-      });
-    }, _this.handleKeyUp = function (event) {
-      switch ((0, _keycode2.default)(event)) {
-        case 'enter':
-          _this.handleTouchTapOK();
-          break;
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(TimePickerDialog, [{
-    key: 'show',
-    value: function show() {
-      if (this.props.onShow && !this.state.open) this.props.onShow();
-      this.setState({
-        open: true
-      });
-    }
-  }, {
-    key: 'dismiss',
-    value: function dismiss() {
-      if (this.props.onDismiss && this.state.open) this.props.onDismiss();
-      this.setState({
-        open: false
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          bodyStyle = _props.bodyStyle,
-          initialTime = _props.initialTime,
-          onAccept = _props.onAccept,
-          format = _props.format,
-          autoOk = _props.autoOk,
-          okLabel = _props.okLabel,
-          cancelLabel = _props.cancelLabel,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['bodyStyle', 'initialTime', 'onAccept', 'format', 'autoOk', 'okLabel', 'cancelLabel', 'style']);
-
-
-      var styles = {
-        root: {
-          fontSize: 14,
-          color: this.context.muiTheme.timePicker.clockColor
-        },
-        dialogContent: {
-          width: 280
-        },
-        body: {
-          padding: 0
-        }
-      };
-
-      var actions = [_react2.default.createElement(_FlatButton2.default, {
-        key: 0,
-        label: cancelLabel,
-        primary: true,
-        onTouchTap: this.handleTouchTapCancel
-      }), _react2.default.createElement(_FlatButton2.default, {
-        key: 1,
-        label: okLabel,
-        primary: true,
-        onTouchTap: this.handleTouchTapOK
-      })];
-
-      var onClockChangeMinutes = autoOk === true ? this.handleTouchTapOK : undefined;
-      var open = this.state.open;
-
-      return _react2.default.createElement(
-        _Dialog2.default,
-        (0, _extends3.default)({}, other, {
-          style: (0, _simpleAssign2.default)(styles.root, style),
-          bodyStyle: (0, _simpleAssign2.default)(styles.body, bodyStyle),
-          actions: actions,
-          contentStyle: styles.dialogContent,
-          repositionOnUpdate: false,
-          open: open,
-          onRequestClose: this.handleRequestClose
-        }),
-        open && _react2.default.createElement(_reactEventListener2.default, { target: 'window', onKeyUp: this.handleKeyUp }),
-        open && _react2.default.createElement(_Clock2.default, {
-          ref: 'clock',
-          format: format,
-          initialTime: initialTime,
-          onChangeMinutes: onClockChangeMinutes
-        })
-      );
-    }
-  }]);
-  return TimePickerDialog;
-}(_react.Component);
-
-TimePickerDialog.defaultProps = {
-  okLabel: 'OK',
-  cancelLabel: 'Cancel'
-};
-TimePickerDialog.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? TimePickerDialog.propTypes = {
-  autoOk: _react.PropTypes.bool,
-  bodyStyle: _react.PropTypes.object,
-  cancelLabel: _react.PropTypes.node,
-  format: _react.PropTypes.oneOf(['ampm', '24hr']),
-  initialTime: _react.PropTypes.object,
-  okLabel: _react.PropTypes.node,
-  onAccept: _react.PropTypes.func,
-  onDismiss: _react.PropTypes.func,
-  onShow: _react.PropTypes.func,
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = TimePickerDialog;
-}).call(this,require('_process'))
-},{"../Dialog":39,"../FlatButton":48,"./Clock":121,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"react-event-listener":311,"simple-assign":326}],129:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _TimePicker = require('./TimePicker');
-
-var _TimePicker2 = _interopRequireDefault(_TimePicker);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _TimePicker2.default;
-},{"./TimePicker":127}],130:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.addHours = addHours;
-exports.addMinutes = addMinutes;
-exports.addSeconds = addSeconds;
-exports.formatTime = formatTime;
-exports.rad2deg = rad2deg;
-exports.getTouchEventOffsetValues = getTouchEventOffsetValues;
-exports.isInner = isInner;
-function addHours(d, hours) {
-  var newDate = clone(d);
-  newDate.setHours(d.getHours() + hours);
-  return newDate;
-}
-
-function addMinutes(d, minutes) {
-  var newDate = clone(d);
-  newDate.setMinutes(d.getMinutes() + minutes);
-  return newDate;
-}
-
-function addSeconds(d, seconds) {
-  var newDate = clone(d);
-  newDate.setSeconds(d.getMinutes() + seconds);
-  return newDate;
-}
-
-function clone(d) {
-  return new Date(d.getTime());
-}
-
-/**
- * @param date [Date] A Date object.
- * @param format [String] One of 'ampm', '24hr', defaults to 'ampm'.
- * @param pedantic [Boolean] Check time-picker/time-picker.jsx file.
- *
- * @return String A string representing the formatted time.
- */
-function formatTime(date) {
-  var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ampm';
-  var pedantic = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-  if (!date) return '';
-  var hours = date.getHours();
-  var mins = date.getMinutes().toString();
-
-  if (format === 'ampm') {
-    var isAM = hours < 12;
-    hours = hours % 12;
-    var additional = isAM ? ' am' : ' pm';
-    hours = (hours || 12).toString();
-
-    if (mins.length < 2) mins = '0' + mins;
-
-    if (pedantic) {
-      // Treat midday/midnight specially http://www.nist.gov/pml/div688/times.cfm
-      if (hours === '12' && mins === '00') {
-        return additional === ' pm' ? '12 noon' : '12 midnight';
-      }
-    }
-
-    return hours + (mins === '00' ? '' : ':' + mins) + additional;
-  }
-
-  hours = hours.toString();
-
-  if (hours.length < 2) hours = '0' + hours;
-  if (mins.length < 2) mins = '0' + mins;
-
-  return hours + ':' + mins;
-}
-
-function rad2deg(rad) {
-  return rad * 57.29577951308232;
-}
-
-function getTouchEventOffsetValues(event) {
-  var el = event.target;
-  var boundingRect = el.getBoundingClientRect();
-
-  return {
-    offsetX: event.clientX - boundingRect.left,
-    offsetY: event.clientY - boundingRect.top
-  };
-}
-
-function isInner(props) {
-  if (props.type !== 'hour') {
-    return false;
-  }
-  return props.value < 1 || props.value > 12;
-}
-},{}],131:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _Paper = require('../Paper');
-
-var _Paper2 = _interopRequireDefault(_Paper);
-
-var _EnhancedSwitch = require('../internal/EnhancedSwitch');
-
-var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context, state) {
-  var disabled = props.disabled,
-      elementStyle = props.elementStyle,
-      trackSwitchedStyle = props.trackSwitchedStyle,
-      thumbSwitchedStyle = props.thumbSwitchedStyle,
-      trackStyle = props.trackStyle,
-      thumbStyle = props.thumbStyle,
-      iconStyle = props.iconStyle,
-      rippleStyle = props.rippleStyle,
-      labelStyle = props.labelStyle;
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      toggle = _context$muiTheme.toggle;
-
-
-  var toggleSize = 20;
-  var toggleTrackWidth = 36;
-  var styles = {
-    icon: {
-      width: 36,
-      padding: '4px 0px 6px 2px'
-    },
-    ripple: {
-      top: -10,
-      left: -10,
-      color: state.switched ? toggle.thumbOnColor : baseTheme.palette.textColor
-    },
-    toggleElement: {
-      width: toggleTrackWidth
-    },
-    track: {
-      transition: _transitions2.default.easeOut(),
-      width: '100%',
-      height: 14,
-      borderRadius: 30,
-      backgroundColor: toggle.trackOffColor
-    },
-    thumb: {
-      transition: _transitions2.default.easeOut(),
-      position: 'absolute',
-      top: 1,
-      left: 0,
-      width: toggleSize,
-      height: toggleSize,
-      lineHeight: '24px',
-      borderRadius: '50%',
-      backgroundColor: toggle.thumbOffColor
-    },
-    trackWhenSwitched: {
-      backgroundColor: toggle.trackOnColor
-    },
-    thumbWhenSwitched: {
-      backgroundColor: toggle.thumbOnColor,
-      left: '100%'
-    },
-    trackWhenDisabled: {
-      backgroundColor: toggle.trackDisabledColor
-    },
-    thumbWhenDisabled: {
-      backgroundColor: toggle.thumbDisabledColor
-    },
-    label: {
-      color: disabled ? toggle.labelDisabledColor : toggle.labelColor,
-      width: 'calc(100% - ' + (toggleTrackWidth + 10) + 'px)'
-    }
-  };
-
-  (0, _simpleAssign2.default)(styles.track, trackStyle, state.switched && styles.trackWhenSwitched, state.switched && trackSwitchedStyle, disabled && styles.trackWhenDisabled);
-
-  (0, _simpleAssign2.default)(styles.thumb, thumbStyle, state.switched && styles.thumbWhenSwitched, state.switched && thumbSwitchedStyle, disabled && styles.thumbWhenDisabled);
-
-  if (state.switched) {
-    styles.thumb.marginLeft = 0 - styles.thumb.width;
-  }
-
-  (0, _simpleAssign2.default)(styles.icon, iconStyle);
-
-  (0, _simpleAssign2.default)(styles.ripple, rippleStyle);
-
-  (0, _simpleAssign2.default)(styles.label, labelStyle);
-
-  (0, _simpleAssign2.default)(styles.toggleElement, elementStyle);
-
-  return styles;
-}
-
-var Toggle = function (_Component) {
-  (0, _inherits3.default)(Toggle, _Component);
-
-  function Toggle() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, Toggle);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Toggle.__proto__ || (0, _getPrototypeOf2.default)(Toggle)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      switched: false
-    }, _this.handleStateChange = function (newSwitched) {
-      _this.setState({
-        switched: newSwitched
-      });
-    }, _this.handleToggle = function (event, isInputChecked) {
-      if (_this.props.onToggle) {
-        _this.props.onToggle(event, isInputChecked);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(Toggle, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var _props = this.props,
-          toggled = _props.toggled,
-          defaultToggled = _props.defaultToggled,
-          valueLink = _props.valueLink;
-
-
-      if (toggled || defaultToggled || valueLink && valueLink.value) {
-        this.setState({
-          switched: true
-        });
-      }
-    }
-  }, {
-    key: 'isToggled',
-    value: function isToggled() {
-      return this.refs.enhancedSwitch.isSwitched();
-    }
-  }, {
-    key: 'setToggled',
-    value: function setToggled(newToggledValue) {
-      this.refs.enhancedSwitch.setSwitched(newToggledValue);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props2 = this.props,
-          defaultToggled = _props2.defaultToggled,
-          elementStyle = _props2.elementStyle,
-          onToggle = _props2.onToggle,
-          trackSwitchedStyle = _props2.trackSwitchedStyle,
-          thumbSwitchedStyle = _props2.thumbSwitchedStyle,
-          toggled = _props2.toggled,
-          other = (0, _objectWithoutProperties3.default)(_props2, ['defaultToggled', 'elementStyle', 'onToggle', 'trackSwitchedStyle', 'thumbSwitchedStyle', 'toggled']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-
-      var toggleElement = _react2.default.createElement(
-        'div',
-        { style: prepareStyles((0, _simpleAssign2.default)({}, styles.toggleElement)) },
-        _react2.default.createElement('div', { style: prepareStyles((0, _simpleAssign2.default)({}, styles.track)) }),
-        _react2.default.createElement(_Paper2.default, { style: styles.thumb, circle: true, zDepth: 1 })
-      );
-
-      var enhancedSwitchProps = {
-        ref: 'enhancedSwitch',
-        inputType: 'checkbox',
-        switchElement: toggleElement,
-        rippleStyle: styles.ripple,
-        rippleColor: styles.ripple.color,
-        iconStyle: styles.icon,
-        trackStyle: styles.track,
-        thumbStyle: styles.thumb,
-        labelStyle: styles.label,
-        switched: this.state.switched,
-        onSwitch: this.handleToggle,
-        onParentShouldUpdate: this.handleStateChange,
-        labelPosition: this.props.labelPosition
-      };
-
-      if (this.props.hasOwnProperty('toggled')) {
-        enhancedSwitchProps.checked = toggled;
-      } else if (this.props.hasOwnProperty('defaultToggled')) {
-        enhancedSwitchProps.defaultChecked = defaultToggled;
-      }
-
-      return _react2.default.createElement(_EnhancedSwitch2.default, (0, _extends3.default)({}, other, enhancedSwitchProps));
-    }
-  }]);
-  return Toggle;
-}(_react.Component);
-
-Toggle.defaultProps = {
-  defaultToggled: false,
-  disabled: false,
-  labelPosition: 'left'
-};
-Toggle.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Toggle.propTypes = {
-  /**
-   * Determines whether the Toggle is initially turned on.
-   * **Warning:** This cannot be used in conjunction with `toggled`.
-   * Decide between using a controlled or uncontrolled input element and remove one of these props.
-   * More info: https://fb.me/react-controlled-components
-   */
-  defaultToggled: _react.PropTypes.bool,
-  /**
-   * Will disable the toggle if true.
-   */
-  disabled: _react.PropTypes.bool,
-  /**
-   * Overrides the inline-styles of the Toggle element.
-   */
-  elementStyle: _react.PropTypes.object,
-  /**
-   * Overrides the inline-styles of the Icon element.
-   */
-  iconStyle: _react.PropTypes.object,
-  /**
-   * Overrides the inline-styles of the input element.
-   */
-  inputStyle: _react.PropTypes.object,
-  /**
-   * Label for toggle.
-   */
-  label: _react.PropTypes.node,
-  /**
-   * Where the label will be placed next to the toggle.
-   */
-  labelPosition: _react.PropTypes.oneOf(['left', 'right']),
-  /**
-   * Overrides the inline-styles of the Toggle element label.
-   */
-  labelStyle: _react.PropTypes.object,
-  /**
-   * Callback function that is fired when the toggle switch is toggled.
-   *
-   * @param {object} event Change event targeting the toggle.
-   * @param {bool} isInputChecked The new value of the toggle.
-   */
-  onToggle: _react.PropTypes.func,
-  /**
-   * Override style of ripple.
-   */
-  rippleStyle: _react.PropTypes.object,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * Override style for thumb.
-   */
-  thumbStyle: _react.PropTypes.object,
-  /**
-  * Override the inline styles for thumb when the toggle switch is toggled on.
-  */
-  thumbSwitchedStyle: _react.PropTypes.object,
-  /**
-   * Toggled if set to true.
-   */
-  toggled: _react.PropTypes.bool,
-  /**
-   * Override style for track.
-   */
-  trackStyle: _react.PropTypes.object,
-  /**
-  * Override the inline styles for track when the toggle switch is toggled on.
-  */
-  trackSwitchedStyle: _react.PropTypes.object,
-  /**
-   * ValueLink prop for when using controlled toggle.
-   */
-  valueLink: _react.PropTypes.object
-} : void 0;
-exports.default = Toggle;
-}).call(this,require('_process'))
-},{"../Paper":73,"../internal/EnhancedSwitch":145,"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],132:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _Toggle = require('./Toggle');
-
-var _Toggle2 = _interopRequireDefault(_Toggle);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _Toggle2.default;
-},{"./Toggle":131}],133:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var noGutter = props.noGutter;
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      toolbar = _context$muiTheme.toolbar;
-
-
-  return {
-    root: {
-      boxSizing: 'border-box',
-      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
-      backgroundColor: toolbar.backgroundColor,
-      height: toolbar.height,
-      padding: noGutter ? 0 : '0px ' + baseTheme.spacing.desktopGutter + 'px',
-      display: 'flex',
-      justifyContent: 'space-between'
-    }
-  };
-}
-
-var Toolbar = function (_Component) {
-  (0, _inherits3.default)(Toolbar, _Component);
-
-  function Toolbar() {
-    (0, _classCallCheck3.default)(this, Toolbar);
-    return (0, _possibleConstructorReturn3.default)(this, (Toolbar.__proto__ || (0, _getPrototypeOf2.default)(Toolbar)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(Toolbar, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          className = _props.className,
-          noGutter = _props.noGutter,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'noGutter', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { className: className, style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, style)) }),
-        children
-      );
-    }
-  }]);
-  return Toolbar;
-}(_react.Component);
-
-Toolbar.defaultProps = {
-  noGutter: false
-};
-Toolbar.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? Toolbar.propTypes = {
-  /**
-   * Can be a `ToolbarGroup` to render a group of related items.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Do not apply `desktopGutter` to the `Toolbar`.
-   */
-  noGutter: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = Toolbar;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],134:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var firstChild = props.firstChild,
-      lastChild = props.lastChild;
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      button = _context$muiTheme.button,
-      toolbar = _context$muiTheme.toolbar;
-
-
-  var marginHorizontal = baseTheme.spacing.desktopGutter;
-  var marginVertical = (toolbar.height - button.height) / 2;
-
-  var styles = {
-    root: {
-      position: 'relative',
-      marginLeft: firstChild ? -marginHorizontal : undefined,
-      marginRight: lastChild ? -marginHorizontal : undefined,
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    },
-    dropDownMenu: {
-      root: {
-        color: toolbar.color, // removes hover color change, we want to keep it
-        marginRight: baseTheme.spacing.desktopGutter,
-        flex: 1,
-        whiteSpace: 'nowrap'
-      },
-      controlBg: {
-        backgroundColor: toolbar.menuHoverColor,
-        borderRadius: 0
-      },
-      underline: {
-        display: 'none'
-      }
-    },
-    button: {
-      margin: marginVertical + 'px ' + marginHorizontal + 'px',
-      position: 'relative'
-    },
-    icon: {
-      root: {
-        cursor: 'pointer',
-        lineHeight: toolbar.height + 'px',
-        paddingLeft: baseTheme.spacing.desktopGutter
-      }
-    },
-    span: {
-      color: toolbar.iconColor,
-      lineHeight: toolbar.height + 'px'
-    }
-  };
-
-  return styles;
-}
-
-var ToolbarGroup = function (_Component) {
-  (0, _inherits3.default)(ToolbarGroup, _Component);
-
-  function ToolbarGroup() {
-    (0, _classCallCheck3.default)(this, ToolbarGroup);
-    return (0, _possibleConstructorReturn3.default)(this, (ToolbarGroup.__proto__ || (0, _getPrototypeOf2.default)(ToolbarGroup)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(ToolbarGroup, [{
-    key: 'handleMouseLeaveFontIcon',
-    value: function handleMouseLeaveFontIcon(style) {
-      return function (event) {
-        event.target.style.zIndex = 'auto';
-        event.target.style.color = style.root.color;
-      };
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          children = _props.children,
-          className = _props.className,
-          firstChild = _props.firstChild,
-          lastChild = _props.lastChild,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'firstChild', 'lastChild', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      var newChildren = _react2.default.Children.map(children, function (currentChild) {
-        if (!currentChild) {
-          return null;
-        }
-        if (!currentChild.type) {
-          return currentChild;
-        }
-        switch (currentChild.type.muiName) {
-          case 'DropDownMenu':
-            return _react2.default.cloneElement(currentChild, {
-              style: (0, _simpleAssign2.default)({}, styles.dropDownMenu.root, currentChild.props.style),
-              underlineStyle: styles.dropDownMenu.underline
-            });
-          case 'RaisedButton':
-          case 'FlatButton':
-            return _react2.default.cloneElement(currentChild, {
-              style: (0, _simpleAssign2.default)({}, styles.button, currentChild.props.style)
-            });
-          case 'FontIcon':
-            return _react2.default.cloneElement(currentChild, {
-              style: (0, _simpleAssign2.default)({}, styles.icon.root, currentChild.props.style),
-              color: currentChild.props.color || _this2.context.muiTheme.toolbar.iconColor,
-              hoverColor: currentChild.props.hoverColor || _this2.context.muiTheme.toolbar.hoverColor
-            });
-          case 'ToolbarSeparator':
-          case 'ToolbarTitle':
-            return _react2.default.cloneElement(currentChild, {
-              style: (0, _simpleAssign2.default)({}, styles.span, currentChild.props.style)
-            });
-          default:
-            return currentChild;
-        }
-      }, this);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { className: className, style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, style)) }),
-        newChildren
-      );
-    }
-  }]);
-  return ToolbarGroup;
-}(_react.Component);
-
-ToolbarGroup.defaultProps = {
-  firstChild: false,
-  lastChild: false
-};
-ToolbarGroup.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ToolbarGroup.propTypes = {
-  /**
-   * Can be any node or number of nodes.
-   */
-  children: _react.PropTypes.node,
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Set this to true for if the `ToolbarGroup` is the first child of `Toolbar`
-   * to prevent setting the left gap.
-   */
-  firstChild: _react.PropTypes.bool,
-  /**
-   * Set this to true for if the `ToolbarGroup` is the last child of `Toolbar`
-   * to prevent setting the right gap.
-   */
-  lastChild: _react.PropTypes.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = ToolbarGroup;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],135:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      toolbar = _context$muiTheme.toolbar;
-
-
-  return {
-    root: {
-      backgroundColor: toolbar.separatorColor,
-      display: 'block',
-      height: baseTheme.spacing.desktopGutterMore,
-      marginLeft: baseTheme.spacing.desktopGutter,
-      width: 1
-    }
-  };
-}
-
-var ToolbarSeparator = function (_Component) {
-  (0, _inherits3.default)(ToolbarSeparator, _Component);
-
-  function ToolbarSeparator() {
-    (0, _classCallCheck3.default)(this, ToolbarSeparator);
-    return (0, _possibleConstructorReturn3.default)(this, (ToolbarSeparator.__proto__ || (0, _getPrototypeOf2.default)(ToolbarSeparator)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(ToolbarSeparator, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          className = _props.className,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['className', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement('span', (0, _extends3.default)({}, other, { className: className, style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, style)) }));
-    }
-  }]);
-  return ToolbarSeparator;
-}(_react.Component);
-
-ToolbarSeparator.muiName = 'ToolbarSeparator';
-ToolbarSeparator.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ToolbarSeparator.propTypes = {
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = ToolbarSeparator;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],136:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      toolbar = _context$muiTheme.toolbar;
-
-
-  return {
-    root: {
-      paddingRight: baseTheme.spacing.desktopGutterLess,
-      lineHeight: toolbar.height + 'px',
-      fontSize: toolbar.titleFontSize,
-      fontFamily: baseTheme.fontFamily,
-      position: 'relative',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-      overflow: 'hidden'
-    }
-  };
-}
-
-var ToolbarTitle = function (_Component) {
-  (0, _inherits3.default)(ToolbarTitle, _Component);
-
-  function ToolbarTitle() {
-    (0, _classCallCheck3.default)(this, ToolbarTitle);
-    return (0, _possibleConstructorReturn3.default)(this, (ToolbarTitle.__proto__ || (0, _getPrototypeOf2.default)(ToolbarTitle)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(ToolbarTitle, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          style = _props.style,
-          text = _props.text,
-          other = (0, _objectWithoutProperties3.default)(_props, ['style', 'text']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement(
-        'span',
-        (0, _extends3.default)({
-          style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, style))
-        }, other),
-        text
-      );
-    }
-  }]);
-  return ToolbarTitle;
-}(_react.Component);
-
-ToolbarTitle.muiName = 'ToolbarTitle';
-ToolbarTitle.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ToolbarTitle.propTypes = {
-  /**
-   * The css class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object,
-  /**
-   * The text to be displayed.
-   */
-  text: _react.PropTypes.node
-} : void 0;
-exports.default = ToolbarTitle;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],137:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.ToolbarTitle = exports.ToolbarSeparator = exports.ToolbarGroup = exports.Toolbar = undefined;
-
-var _Toolbar2 = require('./Toolbar');
-
-var _Toolbar3 = _interopRequireDefault(_Toolbar2);
-
-var _ToolbarGroup2 = require('./ToolbarGroup');
-
-var _ToolbarGroup3 = _interopRequireDefault(_ToolbarGroup2);
-
-var _ToolbarSeparator2 = require('./ToolbarSeparator');
-
-var _ToolbarSeparator3 = _interopRequireDefault(_ToolbarSeparator2);
-
-var _ToolbarTitle2 = require('./ToolbarTitle');
-
-var _ToolbarTitle3 = _interopRequireDefault(_ToolbarTitle2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Toolbar = _Toolbar3.default;
-exports.ToolbarGroup = _ToolbarGroup3.default;
-exports.ToolbarSeparator = _ToolbarSeparator3.default;
-exports.ToolbarTitle = _ToolbarTitle3.default;
-exports.default = _Toolbar3.default;
-},{"./Toolbar":133,"./ToolbarGroup":134,"./ToolbarSeparator":135,"./ToolbarTitle":136}],138:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ToolbarTitle = exports.ToolbarSeparator = exports.ToolbarGroup = exports.Toolbar = exports.Toggle = exports.TimePicker = exports.TextField = exports.TableRowColumn = exports.TableRow = exports.TableHeaderColumn = exports.TableHeader = exports.TableFooter = exports.TableBody = exports.Table = exports.Tab = exports.Tabs = exports.Snackbar = exports.Stepper = exports.StepLabel = exports.StepContent = exports.StepButton = exports.Step = exports.SvgIcon = exports.Subheader = exports.Slider = exports.SelectField = exports.RefreshIndicator = exports.RaisedButton = exports.RadioButtonGroup = exports.RadioButton = exports.Popover = exports.Paper = exports.MuiThemeProvider = exports.MenuItem = exports.Menu = exports.makeSelectable = exports.ListItem = exports.List = exports.LinearProgress = exports.IconMenu = exports.IconButton = exports.GridTile = exports.GridList = exports.FontIcon = exports.FloatingActionButton = exports.FlatButton = exports.DropDownMenu = exports.Drawer = exports.Divider = exports.Dialog = exports.DatePicker = exports.CircularProgress = exports.Chip = exports.Checkbox = exports.CardText = exports.CardTitle = exports.CardMedia = exports.CardHeader = exports.CardActions = exports.Card = exports.BottomNavigationItem = exports.BottomNavigation = exports.Badge = exports.Avatar = exports.AutoComplete = exports.AppBar = undefined;
-
-var _AppBar2 = require('./AppBar');
-
-var _AppBar3 = _interopRequireDefault(_AppBar2);
-
-var _AutoComplete2 = require('./AutoComplete');
-
-var _AutoComplete3 = _interopRequireDefault(_AutoComplete2);
-
-var _Avatar2 = require('./Avatar');
-
-var _Avatar3 = _interopRequireDefault(_Avatar2);
-
-var _Badge2 = require('./Badge');
-
-var _Badge3 = _interopRequireDefault(_Badge2);
-
-var _BottomNavigation2 = require('./BottomNavigation');
-
-var _BottomNavigation3 = _interopRequireDefault(_BottomNavigation2);
-
-var _BottomNavigationItem2 = require('./BottomNavigation/BottomNavigationItem');
-
-var _BottomNavigationItem3 = _interopRequireDefault(_BottomNavigationItem2);
-
-var _Card2 = require('./Card');
-
-var _Card3 = _interopRequireDefault(_Card2);
-
-var _CardActions2 = require('./Card/CardActions');
-
-var _CardActions3 = _interopRequireDefault(_CardActions2);
-
-var _CardHeader2 = require('./Card/CardHeader');
-
-var _CardHeader3 = _interopRequireDefault(_CardHeader2);
-
-var _CardMedia2 = require('./Card/CardMedia');
-
-var _CardMedia3 = _interopRequireDefault(_CardMedia2);
-
-var _CardTitle2 = require('./Card/CardTitle');
-
-var _CardTitle3 = _interopRequireDefault(_CardTitle2);
-
-var _CardText2 = require('./Card/CardText');
-
-var _CardText3 = _interopRequireDefault(_CardText2);
-
-var _Checkbox2 = require('./Checkbox');
-
-var _Checkbox3 = _interopRequireDefault(_Checkbox2);
-
-var _Chip2 = require('./Chip');
-
-var _Chip3 = _interopRequireDefault(_Chip2);
-
-var _CircularProgress2 = require('./CircularProgress');
-
-var _CircularProgress3 = _interopRequireDefault(_CircularProgress2);
-
-var _DatePicker2 = require('./DatePicker');
-
-var _DatePicker3 = _interopRequireDefault(_DatePicker2);
-
-var _Dialog2 = require('./Dialog');
-
-var _Dialog3 = _interopRequireDefault(_Dialog2);
-
-var _Divider2 = require('./Divider');
-
-var _Divider3 = _interopRequireDefault(_Divider2);
-
-var _Drawer2 = require('./Drawer');
-
-var _Drawer3 = _interopRequireDefault(_Drawer2);
-
-var _DropDownMenu2 = require('./DropDownMenu');
-
-var _DropDownMenu3 = _interopRequireDefault(_DropDownMenu2);
-
-var _FlatButton2 = require('./FlatButton');
-
-var _FlatButton3 = _interopRequireDefault(_FlatButton2);
-
-var _FloatingActionButton2 = require('./FloatingActionButton');
-
-var _FloatingActionButton3 = _interopRequireDefault(_FloatingActionButton2);
-
-var _FontIcon2 = require('./FontIcon');
-
-var _FontIcon3 = _interopRequireDefault(_FontIcon2);
-
-var _GridList2 = require('./GridList');
-
-var _GridList3 = _interopRequireDefault(_GridList2);
-
-var _GridTile2 = require('./GridList/GridTile');
-
-var _GridTile3 = _interopRequireDefault(_GridTile2);
-
-var _IconButton2 = require('./IconButton');
-
-var _IconButton3 = _interopRequireDefault(_IconButton2);
-
-var _IconMenu2 = require('./IconMenu');
-
-var _IconMenu3 = _interopRequireDefault(_IconMenu2);
-
-var _LinearProgress2 = require('./LinearProgress');
-
-var _LinearProgress3 = _interopRequireDefault(_LinearProgress2);
-
-var _List2 = require('./List');
-
-var _List3 = _interopRequireDefault(_List2);
-
-var _ListItem2 = require('./List/ListItem');
-
-var _ListItem3 = _interopRequireDefault(_ListItem2);
-
-var _makeSelectable2 = require('./List/makeSelectable');
-
-var _makeSelectable3 = _interopRequireDefault(_makeSelectable2);
-
-var _Menu2 = require('./Menu');
-
-var _Menu3 = _interopRequireDefault(_Menu2);
-
-var _MenuItem2 = require('./MenuItem');
-
-var _MenuItem3 = _interopRequireDefault(_MenuItem2);
-
-var _MuiThemeProvider2 = require('./styles/MuiThemeProvider');
-
-var _MuiThemeProvider3 = _interopRequireDefault(_MuiThemeProvider2);
-
-var _Paper2 = require('./Paper');
-
-var _Paper3 = _interopRequireDefault(_Paper2);
-
-var _Popover2 = require('./Popover');
-
-var _Popover3 = _interopRequireDefault(_Popover2);
-
-var _RadioButton2 = require('./RadioButton');
-
-var _RadioButton3 = _interopRequireDefault(_RadioButton2);
-
-var _RadioButtonGroup2 = require('./RadioButton/RadioButtonGroup');
-
-var _RadioButtonGroup3 = _interopRequireDefault(_RadioButtonGroup2);
-
-var _RaisedButton2 = require('./RaisedButton');
-
-var _RaisedButton3 = _interopRequireDefault(_RaisedButton2);
-
-var _RefreshIndicator2 = require('./RefreshIndicator');
-
-var _RefreshIndicator3 = _interopRequireDefault(_RefreshIndicator2);
-
-var _SelectField2 = require('./SelectField');
-
-var _SelectField3 = _interopRequireDefault(_SelectField2);
-
-var _Slider2 = require('./Slider');
-
-var _Slider3 = _interopRequireDefault(_Slider2);
-
-var _Subheader2 = require('./Subheader');
-
-var _Subheader3 = _interopRequireDefault(_Subheader2);
-
-var _SvgIcon2 = require('./SvgIcon');
-
-var _SvgIcon3 = _interopRequireDefault(_SvgIcon2);
-
-var _Step2 = require('./Stepper/Step');
-
-var _Step3 = _interopRequireDefault(_Step2);
-
-var _StepButton2 = require('./Stepper/StepButton');
-
-var _StepButton3 = _interopRequireDefault(_StepButton2);
-
-var _StepContent2 = require('./Stepper/StepContent');
-
-var _StepContent3 = _interopRequireDefault(_StepContent2);
-
-var _StepLabel2 = require('./Stepper/StepLabel');
-
-var _StepLabel3 = _interopRequireDefault(_StepLabel2);
-
-var _Stepper2 = require('./Stepper/Stepper');
-
-var _Stepper3 = _interopRequireDefault(_Stepper2);
-
-var _Snackbar2 = require('./Snackbar');
-
-var _Snackbar3 = _interopRequireDefault(_Snackbar2);
-
-var _Tabs2 = require('./Tabs');
-
-var _Tabs3 = _interopRequireDefault(_Tabs2);
-
-var _Tab2 = require('./Tabs/Tab');
-
-var _Tab3 = _interopRequireDefault(_Tab2);
-
-var _Table2 = require('./Table');
-
-var _Table3 = _interopRequireDefault(_Table2);
-
-var _TableBody2 = require('./Table/TableBody');
-
-var _TableBody3 = _interopRequireDefault(_TableBody2);
-
-var _TableFooter2 = require('./Table/TableFooter');
-
-var _TableFooter3 = _interopRequireDefault(_TableFooter2);
-
-var _TableHeader2 = require('./Table/TableHeader');
-
-var _TableHeader3 = _interopRequireDefault(_TableHeader2);
-
-var _TableHeaderColumn2 = require('./Table/TableHeaderColumn');
-
-var _TableHeaderColumn3 = _interopRequireDefault(_TableHeaderColumn2);
-
-var _TableRow2 = require('./Table/TableRow');
-
-var _TableRow3 = _interopRequireDefault(_TableRow2);
-
-var _TableRowColumn2 = require('./Table/TableRowColumn');
-
-var _TableRowColumn3 = _interopRequireDefault(_TableRowColumn2);
-
-var _TextField2 = require('./TextField');
-
-var _TextField3 = _interopRequireDefault(_TextField2);
-
-var _TimePicker2 = require('./TimePicker');
-
-var _TimePicker3 = _interopRequireDefault(_TimePicker2);
-
-var _Toggle2 = require('./Toggle');
-
-var _Toggle3 = _interopRequireDefault(_Toggle2);
-
-var _Toolbar2 = require('./Toolbar');
-
-var _Toolbar3 = _interopRequireDefault(_Toolbar2);
-
-var _ToolbarGroup2 = require('./Toolbar/ToolbarGroup');
-
-var _ToolbarGroup3 = _interopRequireDefault(_ToolbarGroup2);
-
-var _ToolbarSeparator2 = require('./Toolbar/ToolbarSeparator');
-
-var _ToolbarSeparator3 = _interopRequireDefault(_ToolbarSeparator2);
-
-var _ToolbarTitle2 = require('./Toolbar/ToolbarTitle');
-
-var _ToolbarTitle3 = _interopRequireDefault(_ToolbarTitle2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.AppBar = _AppBar3.default;
-exports.AutoComplete = _AutoComplete3.default;
-exports.Avatar = _Avatar3.default;
-exports.Badge = _Badge3.default;
-exports.BottomNavigation = _BottomNavigation3.default;
-exports.BottomNavigationItem = _BottomNavigationItem3.default;
-exports.Card = _Card3.default;
-exports.CardActions = _CardActions3.default;
-exports.CardHeader = _CardHeader3.default;
-exports.CardMedia = _CardMedia3.default;
-exports.CardTitle = _CardTitle3.default;
-exports.CardText = _CardText3.default;
-exports.Checkbox = _Checkbox3.default;
-exports.Chip = _Chip3.default;
-exports.CircularProgress = _CircularProgress3.default;
-exports.DatePicker = _DatePicker3.default;
-exports.Dialog = _Dialog3.default;
-exports.Divider = _Divider3.default;
-exports.Drawer = _Drawer3.default;
-exports.DropDownMenu = _DropDownMenu3.default;
-exports.FlatButton = _FlatButton3.default;
-exports.FloatingActionButton = _FloatingActionButton3.default;
-exports.FontIcon = _FontIcon3.default;
-exports.GridList = _GridList3.default;
-exports.GridTile = _GridTile3.default;
-exports.IconButton = _IconButton3.default;
-exports.IconMenu = _IconMenu3.default;
-exports.LinearProgress = _LinearProgress3.default;
-exports.List = _List3.default;
-exports.ListItem = _ListItem3.default;
-exports.makeSelectable = _makeSelectable3.default;
-exports.Menu = _Menu3.default;
-exports.MenuItem = _MenuItem3.default;
-exports.MuiThemeProvider = _MuiThemeProvider3.default;
-exports.Paper = _Paper3.default;
-exports.Popover = _Popover3.default;
-exports.RadioButton = _RadioButton3.default;
-exports.RadioButtonGroup = _RadioButtonGroup3.default;
-exports.RaisedButton = _RaisedButton3.default;
-exports.RefreshIndicator = _RefreshIndicator3.default;
-exports.SelectField = _SelectField3.default;
-exports.Slider = _Slider3.default;
-exports.Subheader = _Subheader3.default;
-exports.SvgIcon = _SvgIcon3.default;
-exports.Step = _Step3.default;
-exports.StepButton = _StepButton3.default;
-exports.StepContent = _StepContent3.default;
-exports.StepLabel = _StepLabel3.default;
-exports.Stepper = _Stepper3.default;
-exports.Snackbar = _Snackbar3.default;
-exports.Tabs = _Tabs3.default;
-exports.Tab = _Tab3.default;
-exports.Table = _Table3.default;
-exports.TableBody = _TableBody3.default;
-exports.TableFooter = _TableFooter3.default;
-exports.TableHeader = _TableHeader3.default;
-exports.TableHeaderColumn = _TableHeaderColumn3.default;
-exports.TableRow = _TableRow3.default;
-exports.TableRowColumn = _TableRowColumn3.default;
-exports.TextField = _TextField3.default;
-exports.TimePicker = _TimePicker3.default;
-exports.Toggle = _Toggle3.default;
-exports.Toolbar = _Toolbar3.default;
-exports.ToolbarGroup = _ToolbarGroup3.default;
-exports.ToolbarSeparator = _ToolbarSeparator3.default;
-exports.ToolbarTitle = _ToolbarTitle3.default;
-},{"./AppBar":2,"./AutoComplete":4,"./Avatar":6,"./Badge":8,"./BottomNavigation":11,"./BottomNavigation/BottomNavigationItem":10,"./Card":19,"./Card/CardActions":13,"./Card/CardHeader":15,"./Card/CardMedia":16,"./Card/CardText":17,"./Card/CardTitle":18,"./Checkbox":21,"./Chip":23,"./CircularProgress":25,"./DatePicker":37,"./Dialog":39,"./Divider":41,"./Drawer":43,"./DropDownMenu":45,"./FlatButton":48,"./FloatingActionButton":50,"./FontIcon":52,"./GridList":55,"./GridList/GridTile":54,"./IconButton":57,"./IconMenu":59,"./LinearProgress":61,"./List":65,"./List/ListItem":63,"./List/makeSelectable":66,"./Menu":68,"./MenuItem":71,"./Paper":73,"./Popover":77,"./RadioButton":80,"./RadioButton/RadioButtonGroup":79,"./RaisedButton":82,"./RefreshIndicator":84,"./SelectField":86,"./Slider":88,"./Snackbar":91,"./Stepper/Step":92,"./Stepper/StepButton":93,"./Stepper/StepContent":95,"./Stepper/StepLabel":96,"./Stepper/Stepper":97,"./Subheader":99,"./SvgIcon":101,"./Table":109,"./Table/TableBody":103,"./Table/TableFooter":104,"./Table/TableHeader":105,"./Table/TableHeaderColumn":106,"./Table/TableRow":107,"./Table/TableRowColumn":108,"./Tabs":114,"./Tabs/Tab":111,"./TextField":120,"./TimePicker":129,"./Toggle":132,"./Toolbar":137,"./Toolbar/ToolbarGroup":134,"./Toolbar/ToolbarSeparator":135,"./Toolbar/ToolbarTitle":136,"./styles/MuiThemeProvider":328}],139:[function(require,module,exports){
+},{"./TextField":50}],55:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -25503,160 +9881,7 @@ process.env.NODE_ENV !== "production" ? AutoLockScrolling.propTypes = {
 } : void 0;
 exports.default = AutoLockScrolling;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],140:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- *  BeforeAfterWrapper
- *    An alternative for the ::before and ::after css pseudo-elements for
- *    components whose styles are defined in javascript instead of css.
- *
- *  Usage: For the element that we want to apply before and after elements to,
- *    wrap its children with BeforeAfterWrapper. For example:
- *
- *                                            <Paper>
- *  <Paper>                                     <div> // See notice
- *    <BeforeAfterWrapper>        renders         <div/> // before element
- *      [children of paper]       ------>         [children of paper]
- *    </BeforeAfterWrapper>                       <div/> // after element
- *  </Paper>                                    </div>
- *                                            </Paper>
- *
- *  Notice: Notice that this div bundles together our elements. If the element
- *    that we want to apply before and after elements is a HTML tag (i.e. a
- *    div, p, or button tag), we can avoid this extra nesting by passing using
- *    the BeforeAfterWrapper in place of said tag like so:
- *
- *  <p>
- *    <BeforeAfterWrapper>   do this instead   <BeforeAfterWrapper elementType='p'>
- *      [children of p]          ------>         [children of p]
- *    </BeforeAfterWrapper>                    </BeforeAfterWrapper>
- *  </p>
- *
- *  BeforeAfterWrapper features spread functionality. This means that we can
- *  pass HTML tag properties directly into the BeforeAfterWrapper tag.
- *
- *  When using BeforeAfterWrapper, ensure that the parent of the beforeElement
- *  and afterElement have a defined style position.
- */
-
-var styles = {
-  box: {
-    boxSizing: 'border-box'
-  }
-};
-
-var BeforeAfterWrapper = function (_Component) {
-  (0, _inherits3.default)(BeforeAfterWrapper, _Component);
-
-  function BeforeAfterWrapper() {
-    (0, _classCallCheck3.default)(this, BeforeAfterWrapper);
-    return (0, _possibleConstructorReturn3.default)(this, (BeforeAfterWrapper.__proto__ || (0, _getPrototypeOf2.default)(BeforeAfterWrapper)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(BeforeAfterWrapper, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          beforeStyle = _props.beforeStyle,
-          afterStyle = _props.afterStyle,
-          beforeElementType = _props.beforeElementType,
-          afterElementType = _props.afterElementType,
-          elementType = _props.elementType,
-          other = (0, _objectWithoutProperties3.default)(_props, ['beforeStyle', 'afterStyle', 'beforeElementType', 'afterElementType', 'elementType']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      var beforeElement = void 0;
-      var afterElement = void 0;
-
-      if (beforeStyle) {
-        beforeElement = _react2.default.createElement(this.props.beforeElementType, {
-          style: prepareStyles((0, _simpleAssign2.default)({}, styles.box, beforeStyle)),
-          key: '::before'
-        });
-      }
-
-      if (afterStyle) {
-        afterElement = _react2.default.createElement(this.props.afterElementType, {
-          style: prepareStyles((0, _simpleAssign2.default)({}, styles.box, afterStyle)),
-          key: '::after'
-        });
-      }
-
-      var children = [beforeElement, this.props.children, afterElement];
-
-      var props = other;
-      props.style = prepareStyles((0, _simpleAssign2.default)({}, this.props.style));
-
-      return _react2.default.createElement(this.props.elementType, props, children);
-    }
-  }]);
-  return BeforeAfterWrapper;
-}(_react.Component);
-
-BeforeAfterWrapper.defaultProps = {
-  beforeElementType: 'div',
-  afterElementType: 'div',
-  elementType: 'div'
-};
-BeforeAfterWrapper.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? BeforeAfterWrapper.propTypes = {
-  afterElementType: _react.PropTypes.string,
-  afterStyle: _react.PropTypes.object,
-  beforeElementType: _react.PropTypes.string,
-  beforeStyle: _react.PropTypes.object,
-  children: _react.PropTypes.node,
-  elementType: _react.PropTypes.string,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = BeforeAfterWrapper;
-}).call(this,require('_process'))
-},{"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],141:[function(require,module,exports){
+},{"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451}],56:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -25827,72 +10052,7 @@ process.env.NODE_ENV !== "production" ? CircleRipple.propTypes = {
 } : void 0;
 exports.default = CircleRipple;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"../utils/autoPrefix":352,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"recompose/shallowEqual":322,"simple-assign":326}],142:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _BeforeAfterWrapper = require('./BeforeAfterWrapper');
-
-var _BeforeAfterWrapper2 = _interopRequireDefault(_BeforeAfterWrapper);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var styles = {
-  before: {
-    content: "' '",
-    display: 'table'
-  },
-  after: {
-    content: "' '",
-    clear: 'both',
-    display: 'table'
-  }
-};
-
-var ClearFix = function ClearFix(_ref) {
-  var style = _ref.style,
-      children = _ref.children,
-      other = (0, _objectWithoutProperties3.default)(_ref, ['style', 'children']);
-  return _react2.default.createElement(
-    _BeforeAfterWrapper2.default,
-    (0, _extends3.default)({}, other, {
-      beforeStyle: styles.before,
-      afterStyle: styles.after,
-      style: style
-    }),
-    children
-  );
-};
-
-ClearFix.muiName = 'ClearFix';
-
-process.env.NODE_ENV !== "production" ? ClearFix.propTypes = {
-  children: _react.PropTypes.node,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _react.PropTypes.object
-} : void 0;
-
-exports.default = ClearFix;
-}).call(this,require('_process'))
-},{"./BeforeAfterWrapper":140,"_process":560,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/objectWithoutProperties":173,"react":559}],143:[function(require,module,exports){
+},{"../styles/transitions":235,"../utils/autoPrefix":246,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256,"recompose/shallowEqual":224,"simple-assign":228}],57:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26020,7 +10180,7 @@ process.env.NODE_ENV !== "production" ? ClickAwayListener.propTypes = {
 } : void 0;
 exports.default = ClickAwayListener;
 }).call(this,require('_process'))
-},{"../utils/events":359,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364}],144:[function(require,module,exports){
+},{"../utils/events":252,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256}],58:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26425,794 +10585,7 @@ process.env.NODE_ENV !== "production" ? EnhancedButton.propTypes = {
 } : void 0;
 exports.default = EnhancedButton;
 }).call(this,require('_process'))
-},{"../utils/childUtils":355,"../utils/events":359,"./FocusRipple":148,"./TouchRipple":156,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"simple-assign":326}],145:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactEventListener = require('react-event-listener');
-
-var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
-
-var _keycode = require('keycode');
-
-var _keycode2 = _interopRequireDefault(_keycode);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _FocusRipple = require('./FocusRipple');
-
-var _FocusRipple2 = _interopRequireDefault(_FocusRipple);
-
-var _TouchRipple = require('./TouchRipple');
-
-var _TouchRipple2 = _interopRequireDefault(_TouchRipple);
-
-var _Paper = require('./../Paper');
-
-var _Paper2 = _interopRequireDefault(_Paper);
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getStyles(props, context) {
-  var baseTheme = context.muiTheme.baseTheme;
-
-
-  return {
-    root: {
-      cursor: props.disabled ? 'not-allowed' : 'pointer',
-      position: 'relative',
-      overflow: 'visible',
-      display: 'table',
-      height: 'auto',
-      width: '100%'
-    },
-    input: {
-      position: 'absolute',
-      cursor: 'inherit',
-      pointerEvents: 'all',
-      opacity: 0,
-      width: '100%',
-      height: '100%',
-      zIndex: 2,
-      left: 0,
-      boxSizing: 'border-box',
-      padding: 0,
-      margin: 0
-    },
-    controls: {
-      display: 'flex',
-      width: '100%',
-      height: '100%'
-    },
-    label: {
-      float: 'left',
-      position: 'relative',
-      display: 'block',
-      width: 'calc(100% - 60px)',
-      lineHeight: '24px',
-      color: baseTheme.palette.textColor,
-      fontFamily: baseTheme.fontFamily
-    },
-    wrap: {
-      transition: _transitions2.default.easeOut(),
-      float: 'left',
-      position: 'relative',
-      display: 'block',
-      flexShrink: 0,
-      width: 60 - baseTheme.spacing.desktopGutterLess,
-      marginRight: props.labelPosition === 'right' ? baseTheme.spacing.desktopGutterLess : 0,
-      marginLeft: props.labelPosition === 'left' ? baseTheme.spacing.desktopGutterLess : 0
-    },
-    ripple: {
-      color: props.rippleColor || baseTheme.palette.primary1Color,
-      height: '200%',
-      width: '200%',
-      top: -12,
-      left: -12
-    }
-  };
-}
-
-var EnhancedSwitch = function (_Component) {
-  (0, _inherits3.default)(EnhancedSwitch, _Component);
-
-  function EnhancedSwitch() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, EnhancedSwitch);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = EnhancedSwitch.__proto__ || (0, _getPrototypeOf2.default)(EnhancedSwitch)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      isKeyboardFocused: false
-    }, _this.handleChange = function (event) {
-      _this.tabPressed = false;
-      _this.setState({
-        isKeyboardFocused: false
-      });
-
-      var isInputChecked = _this.refs.checkbox.checked;
-
-      if (!_this.props.hasOwnProperty('checked') && _this.props.onParentShouldUpdate) {
-        _this.props.onParentShouldUpdate(isInputChecked);
-      }
-
-      if (_this.props.onSwitch) {
-        _this.props.onSwitch(event, isInputChecked);
-      }
-    }, _this.handleKeyDown = function (event) {
-      var code = (0, _keycode2.default)(event);
-
-      if (code === 'tab') {
-        _this.tabPressed = true;
-      }
-      if (_this.state.isKeyboardFocused && code === 'space') {
-        _this.handleChange(event);
-      }
-    }, _this.handleKeyUp = function (event) {
-      if (_this.state.isKeyboardFocused && (0, _keycode2.default)(event) === 'space') {
-        _this.handleChange(event);
-      }
-    }, _this.handleMouseDown = function (event) {
-      // only listen to left clicks
-      if (event.button === 0) {
-        _this.refs.touchRipple.start(event);
-      }
-    }, _this.handleMouseUp = function () {
-      _this.refs.touchRipple.end();
-    }, _this.handleMouseLeave = function () {
-      _this.refs.touchRipple.end();
-    }, _this.handleTouchStart = function (event) {
-      _this.refs.touchRipple.start(event);
-    }, _this.handleTouchEnd = function () {
-      _this.refs.touchRipple.end();
-    }, _this.handleBlur = function (event) {
-      _this.setState({
-        isKeyboardFocused: false
-      });
-
-      if (_this.props.onBlur) {
-        _this.props.onBlur(event);
-      }
-    }, _this.handleFocus = function (event) {
-      // setTimeout is needed becuase the focus event fires first
-      // Wait so that we can capture if this was a keyboard focus
-      // or touch focus
-      setTimeout(function () {
-        if (_this.tabPressed) {
-          _this.setState({
-            isKeyboardFocused: true
-          });
-        }
-      }, 150);
-
-      if (_this.props.onFocus) {
-        _this.props.onFocus(event);
-      }
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(EnhancedSwitch, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var inputNode = this.refs.checkbox;
-      if ((!this.props.switched || inputNode.checked !== this.props.switched) && this.props.onParentShouldUpdate) {
-        this.props.onParentShouldUpdate(inputNode.checked);
-      }
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      var hasCheckedProp = nextProps.hasOwnProperty('checked');
-      var hasNewDefaultProp = nextProps.hasOwnProperty('defaultChecked') && nextProps.defaultChecked !== this.props.defaultChecked;
-
-      if (hasCheckedProp || hasNewDefaultProp) {
-        var switched = nextProps.checked || nextProps.defaultChecked || false;
-
-        this.setState({
-          switched: switched
-        });
-
-        if (this.props.onParentShouldUpdate && switched !== this.props.switched) {
-          this.props.onParentShouldUpdate(switched);
-        }
-      }
-    }
-  }, {
-    key: 'isSwitched',
-    value: function isSwitched() {
-      return this.refs.checkbox.checked;
-    }
-
-    // no callback here because there is no event
-
-  }, {
-    key: 'setSwitched',
-    value: function setSwitched(newSwitchedValue) {
-      if (!this.props.hasOwnProperty('checked') || this.props.checked === false) {
-        if (this.props.onParentShouldUpdate) {
-          this.props.onParentShouldUpdate(newSwitchedValue);
-        }
-        this.refs.checkbox.checked = newSwitchedValue;
-      } else {
-        process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI: Cannot call set method while checked is defined as a property.') : void 0;
-      }
-    }
-  }, {
-    key: 'getValue',
-    value: function getValue() {
-      return this.refs.checkbox.value;
-    }
-
-    // Checkbox inputs only use SPACE to change their state. Using ENTER will
-    // update the ui but not the input.
-
-
-    /**
-     * Because both the ripples and the checkbox input cannot share pointer
-     * events, the checkbox input takes control of pointer events and calls
-     * ripple animations manually.
-     */
-
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          name = _props.name,
-          value = _props.value,
-          iconStyle = _props.iconStyle,
-          inputStyle = _props.inputStyle,
-          inputType = _props.inputType,
-          label = _props.label,
-          labelStyle = _props.labelStyle,
-          labelPosition = _props.labelPosition,
-          onSwitch = _props.onSwitch,
-          onBlur = _props.onBlur,
-          onFocus = _props.onFocus,
-          onMouseUp = _props.onMouseUp,
-          onMouseDown = _props.onMouseDown,
-          onMouseLeave = _props.onMouseLeave,
-          onTouchStart = _props.onTouchStart,
-          onTouchEnd = _props.onTouchEnd,
-          onParentShouldUpdate = _props.onParentShouldUpdate,
-          disabled = _props.disabled,
-          disableTouchRipple = _props.disableTouchRipple,
-          disableFocusRipple = _props.disableFocusRipple,
-          className = _props.className,
-          rippleColor = _props.rippleColor,
-          rippleStyle = _props.rippleStyle,
-          style = _props.style,
-          switched = _props.switched,
-          switchElement = _props.switchElement,
-          thumbStyle = _props.thumbStyle,
-          trackStyle = _props.trackStyle,
-          other = (0, _objectWithoutProperties3.default)(_props, ['name', 'value', 'iconStyle', 'inputStyle', 'inputType', 'label', 'labelStyle', 'labelPosition', 'onSwitch', 'onBlur', 'onFocus', 'onMouseUp', 'onMouseDown', 'onMouseLeave', 'onTouchStart', 'onTouchEnd', 'onParentShouldUpdate', 'disabled', 'disableTouchRipple', 'disableFocusRipple', 'className', 'rippleColor', 'rippleStyle', 'style', 'switched', 'switchElement', 'thumbStyle', 'trackStyle']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-      var wrapStyles = (0, _simpleAssign2.default)(styles.wrap, iconStyle);
-      var mergedRippleStyle = (0, _simpleAssign2.default)(styles.ripple, rippleStyle);
-
-      if (thumbStyle) {
-        wrapStyles.marginLeft /= 2;
-        wrapStyles.marginRight /= 2;
-      }
-
-      var labelElement = label && _react2.default.createElement(
-        'label',
-        { style: prepareStyles((0, _simpleAssign2.default)(styles.label, labelStyle)) },
-        label
-      );
-
-      var showTouchRipple = !disabled && !disableTouchRipple;
-      var showFocusRipple = !disabled && !disableFocusRipple;
-
-      var touchRipple = _react2.default.createElement(_TouchRipple2.default, {
-        ref: 'touchRipple',
-        key: 'touchRipple',
-        style: mergedRippleStyle,
-        color: mergedRippleStyle.color,
-        muiTheme: this.context.muiTheme,
-        centerRipple: true
-      });
-
-      var focusRipple = _react2.default.createElement(_FocusRipple2.default, {
-        key: 'focusRipple',
-        innerStyle: mergedRippleStyle,
-        color: mergedRippleStyle.color,
-        muiTheme: this.context.muiTheme,
-        show: this.state.isKeyboardFocused
-      });
-
-      var ripples = [showTouchRipple ? touchRipple : null, showFocusRipple ? focusRipple : null];
-
-      var inputElement = _react2.default.createElement('input', (0, _extends3.default)({}, other, {
-        ref: 'checkbox',
-        type: inputType,
-        style: prepareStyles((0, _simpleAssign2.default)(styles.input, inputStyle)),
-        name: name,
-        value: value,
-        disabled: disabled,
-        onBlur: this.handleBlur,
-        onFocus: this.handleFocus,
-        onChange: this.handleChange,
-        onMouseUp: showTouchRipple && this.handleMouseUp,
-        onMouseDown: showTouchRipple && this.handleMouseDown,
-        onMouseLeave: showTouchRipple && this.handleMouseLeave,
-        onTouchStart: showTouchRipple && this.handleTouchStart,
-        onTouchEnd: showTouchRipple && this.handleTouchEnd
-      }));
-
-      // If toggle component (indicated by whether the style includes thumb) manually lay out
-      // elements in order to nest ripple elements
-      var switchOrThumbElement = !thumbStyle ? _react2.default.createElement(
-        'div',
-        { style: prepareStyles(wrapStyles) },
-        switchElement,
-        ripples
-      ) : _react2.default.createElement(
-        'div',
-        { style: prepareStyles(wrapStyles) },
-        _react2.default.createElement('div', { style: prepareStyles((0, _simpleAssign2.default)({}, trackStyle)) }),
-        _react2.default.createElement(
-          _Paper2.default,
-          { style: thumbStyle, zDepth: 1, circle: true },
-          ' ',
-          ripples,
-          ' '
-        )
-      );
-
-      var elementsInOrder = labelPosition === 'right' ? _react2.default.createElement(
-        'div',
-        { style: styles.controls },
-        switchOrThumbElement,
-        labelElement
-      ) : _react2.default.createElement(
-        'div',
-        { style: styles.controls },
-        labelElement,
-        switchOrThumbElement
-      );
-
-      return _react2.default.createElement(
-        'div',
-        { ref: 'root', className: className, style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) },
-        _react2.default.createElement(_reactEventListener2.default, {
-          target: 'window',
-          onKeyDown: this.handleKeyDown,
-          onKeyUp: this.handleKeyUp
-        }),
-        inputElement,
-        elementsInOrder
-      );
-    }
-  }]);
-  return EnhancedSwitch;
-}(_react.Component);
-
-EnhancedSwitch.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? EnhancedSwitch.propTypes = {
-  checked: _react.PropTypes.bool,
-  className: _react.PropTypes.string,
-  defaultChecked: _react.PropTypes.bool,
-  disableFocusRipple: _react.PropTypes.bool,
-  disableTouchRipple: _react.PropTypes.bool,
-  disabled: _react.PropTypes.bool,
-  iconStyle: _react.PropTypes.object,
-  inputStyle: _react.PropTypes.object,
-  inputType: _react.PropTypes.string.isRequired,
-  label: _react.PropTypes.node,
-  labelPosition: _react.PropTypes.oneOf(['left', 'right']),
-  labelStyle: _react.PropTypes.object,
-  name: _react.PropTypes.string,
-  onBlur: _react.PropTypes.func,
-  onFocus: _react.PropTypes.func,
-  onMouseDown: _react.PropTypes.func,
-  onMouseLeave: _react.PropTypes.func,
-  onMouseUp: _react.PropTypes.func,
-  onParentShouldUpdate: _react.PropTypes.func,
-  onSwitch: _react.PropTypes.func,
-  onTouchEnd: _react.PropTypes.func,
-  onTouchStart: _react.PropTypes.func,
-  rippleColor: _react.PropTypes.string,
-  rippleStyle: _react.PropTypes.object,
-  style: _react.PropTypes.object,
-  switchElement: _react.PropTypes.element.isRequired,
-  switched: _react.PropTypes.bool.isRequired,
-  thumbStyle: _react.PropTypes.object,
-  trackStyle: _react.PropTypes.object,
-  value: _react.PropTypes.any
-} : void 0;
-exports.default = EnhancedSwitch;
-}).call(this,require('_process'))
-},{"../styles/transitions":333,"./../Paper":73,"./FocusRipple":148,"./TouchRipple":156,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"keycode":305,"react":559,"react-event-listener":311,"simple-assign":326,"warning":327}],146:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactAddonsTransitionGroup = require('react-addons-transition-group');
-
-var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
-
-var _ExpandTransitionChild = require('./ExpandTransitionChild');
-
-var _ExpandTransitionChild2 = _interopRequireDefault(_ExpandTransitionChild);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ExpandTransition = function (_Component) {
-  (0, _inherits3.default)(ExpandTransition, _Component);
-
-  function ExpandTransition() {
-    (0, _classCallCheck3.default)(this, ExpandTransition);
-    return (0, _possibleConstructorReturn3.default)(this, (ExpandTransition.__proto__ || (0, _getPrototypeOf2.default)(ExpandTransition)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(ExpandTransition, [{
-    key: 'renderChildren',
-    value: function renderChildren(children) {
-      var _props = this.props,
-          enterDelay = _props.enterDelay,
-          transitionDelay = _props.transitionDelay,
-          transitionDuration = _props.transitionDuration;
-
-      return _react2.default.Children.map(children, function (child) {
-        return _react2.default.createElement(
-          _ExpandTransitionChild2.default,
-          {
-            enterDelay: enterDelay,
-            transitionDelay: transitionDelay,
-            transitionDuration: transitionDuration,
-            key: child.key
-          },
-          child
-        );
-      }, this);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props2 = this.props,
-          children = _props2.children,
-          enterDelay = _props2.enterDelay,
-          loading = _props2.loading,
-          open = _props2.open,
-          style = _props2.style,
-          transitionDelay = _props2.transitionDelay,
-          transitionDuration = _props2.transitionDuration,
-          other = (0, _objectWithoutProperties3.default)(_props2, ['children', 'enterDelay', 'loading', 'open', 'style', 'transitionDelay', 'transitionDuration']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      var mergedRootStyles = (0, _simpleAssign2.default)({}, {
-        position: 'relative',
-        overflow: 'hidden',
-        height: 'auto'
-      }, style);
-
-      var newChildren = loading ? [] : this.renderChildren(children);
-
-      return _react2.default.createElement(
-        _reactAddonsTransitionGroup2.default,
-        (0, _extends3.default)({
-          style: prepareStyles(mergedRootStyles),
-          component: 'div'
-        }, other),
-        open && newChildren
-      );
-    }
-  }]);
-  return ExpandTransition;
-}(_react.Component);
-
-ExpandTransition.defaultProps = {
-  enterDelay: 0,
-  transitionDelay: 0,
-  transitionDuration: 450,
-  loading: false,
-  open: false
-};
-ExpandTransition.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ExpandTransition.propTypes = {
-  children: _react.PropTypes.node,
-  enterDelay: _react.PropTypes.number,
-  loading: _react.PropTypes.bool,
-  open: _react.PropTypes.bool,
-  style: _react.PropTypes.object,
-  transitionDelay: _react.PropTypes.number,
-  transitionDuration: _react.PropTypes.number
-} : void 0;
-exports.default = ExpandTransition;
-}).call(this,require('_process'))
-},{"./ExpandTransitionChild":147,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-addons-transition-group":309,"simple-assign":326}],147:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var reflow = function reflow(elem) {
-  return elem.offsetHeight;
-};
-
-var ExpandTransitionChild = function (_Component) {
-  (0, _inherits3.default)(ExpandTransitionChild, _Component);
-
-  function ExpandTransitionChild() {
-    (0, _classCallCheck3.default)(this, ExpandTransitionChild);
-    return (0, _possibleConstructorReturn3.default)(this, (ExpandTransitionChild.__proto__ || (0, _getPrototypeOf2.default)(ExpandTransitionChild)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(ExpandTransitionChild, [{
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.enterTimer);
-      clearTimeout(this.enteredTimer);
-      clearTimeout(this.leaveTimer);
-    }
-  }, {
-    key: 'componentWillAppear',
-    value: function componentWillAppear(callback) {
-      this.open();
-      callback();
-    }
-  }, {
-    key: 'componentDidAppear',
-    value: function componentDidAppear() {
-      this.setAutoHeight();
-    }
-  }, {
-    key: 'componentWillEnter',
-    value: function componentWillEnter(callback) {
-      var _this2 = this;
-
-      var _props = this.props,
-          enterDelay = _props.enterDelay,
-          transitionDelay = _props.transitionDelay,
-          transitionDuration = _props.transitionDuration;
-
-      var element = _reactDom2.default.findDOMNode(this);
-      element.style.height = 0;
-      this.enterTimer = setTimeout(function () {
-        return _this2.open();
-      }, enterDelay);
-      this.enteredTimer = setTimeout(function () {
-        return callback();
-      }, enterDelay + transitionDelay + transitionDuration);
-    }
-  }, {
-    key: 'componentDidEnter',
-    value: function componentDidEnter() {
-      this.setAutoHeight();
-    }
-  }, {
-    key: 'componentWillLeave',
-    value: function componentWillLeave(callback) {
-      var _props2 = this.props,
-          transitionDelay = _props2.transitionDelay,
-          transitionDuration = _props2.transitionDuration;
-
-      var element = _reactDom2.default.findDOMNode(this);
-      // Set fixed height first for animated property value
-      element.style.height = this.refs.wrapper.clientHeight + 'px';
-      reflow(element);
-      element.style.transitionDuration = transitionDuration + 'ms';
-      element.style.height = 0;
-      this.leaveTimer = setTimeout(function () {
-        return callback();
-      }, transitionDelay + transitionDuration);
-    }
-  }, {
-    key: 'setAutoHeight',
-    value: function setAutoHeight() {
-      var _ReactDOM$findDOMNode = _reactDom2.default.findDOMNode(this),
-          style = _ReactDOM$findDOMNode.style;
-
-      style.transitionDuration = 0;
-      style.height = 'auto';
-    }
-  }, {
-    key: 'open',
-    value: function open() {
-      var element = _reactDom2.default.findDOMNode(this);
-      element.style.height = this.refs.wrapper.clientHeight + 'px';
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props3 = this.props,
-          children = _props3.children,
-          enterDelay = _props3.enterDelay,
-          style = _props3.style,
-          transitionDelay = _props3.transitionDelay,
-          transitionDuration = _props3.transitionDuration,
-          other = (0, _objectWithoutProperties3.default)(_props3, ['children', 'enterDelay', 'style', 'transitionDelay', 'transitionDuration']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      var mergedRootStyles = (0, _simpleAssign2.default)({
-        position: 'relative',
-        height: 0,
-        width: '100%',
-        top: 0,
-        left: 0,
-        overflow: 'hidden',
-        transition: _transitions2.default.easeOut(transitionDuration + 'ms', ['height'], transitionDelay + 'ms')
-      }, style);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles(mergedRootStyles) }),
-        _react2.default.createElement(
-          'div',
-          { ref: 'wrapper' },
-          children
-        )
-      );
-    }
-  }]);
-  return ExpandTransitionChild;
-}(_react.Component);
-
-ExpandTransitionChild.defaultProps = {
-  enterDelay: 0,
-  transitionDelay: 0,
-  transitionDuration: 450
-};
-ExpandTransitionChild.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? ExpandTransitionChild.propTypes = {
-  children: _react.PropTypes.node,
-  enterDelay: _react.PropTypes.number,
-  style: _react.PropTypes.object,
-  transitionDelay: _react.PropTypes.number,
-  transitionDuration: _react.PropTypes.number
-} : void 0;
-exports.default = ExpandTransitionChild;
-}).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"simple-assign":326}],148:[function(require,module,exports){
+},{"../utils/childUtils":249,"../utils/events":252,"./FocusRipple":59,"./TouchRipple":65,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"keycode":207,"react":451,"simple-assign":228}],59:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27410,7 +10783,7 @@ process.env.NODE_ENV !== "production" ? FocusRipple.propTypes = {
 } : void 0;
 exports.default = FocusRipple;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"../utils/autoPrefix":352,"./ScaleIn":151,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"recompose/shallowEqual":322,"simple-assign":326}],149:[function(require,module,exports){
+},{"../styles/transitions":235,"../utils/autoPrefix":246,"./ScaleIn":62,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256,"recompose/shallowEqual":224,"simple-assign":228}],60:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27553,7 +10926,7 @@ process.env.NODE_ENV !== "production" ? Overlay.propTypes = {
 } : void 0;
 exports.default = Overlay;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"./AutoLockScrolling":139,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],150:[function(require,module,exports){
+},{"../styles/transitions":235,"./AutoLockScrolling":55,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],61:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27735,7 +11108,7 @@ process.env.NODE_ENV !== "production" ? RenderToLayer.propTypes = {
 } : void 0;
 exports.default = RenderToLayer;
 }).call(this,require('_process'))
-},{"../utils/dom":358,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364}],151:[function(require,module,exports){
+},{"../utils/dom":251,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256}],62:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27863,7 +11236,7 @@ process.env.NODE_ENV !== "production" ? ScaleIn.propTypes = {
 } : void 0;
 exports.default = ScaleIn;
 }).call(this,require('_process'))
-},{"./ScaleInChild":152,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-addons-transition-group":309,"simple-assign":326}],152:[function(require,module,exports){
+},{"./ScaleInChild":63,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-addons-transition-group":211,"simple-assign":228}],63:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -28032,295 +11405,7 @@ process.env.NODE_ENV !== "production" ? ScaleInChild.propTypes = {
 } : void 0;
 exports.default = ScaleInChild;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"../utils/autoPrefix":352,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"simple-assign":326}],153:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactAddonsTransitionGroup = require('react-addons-transition-group');
-
-var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
-
-var _SlideInChild = require('./SlideInChild');
-
-var _SlideInChild2 = _interopRequireDefault(_SlideInChild);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SlideIn = function (_Component) {
-  (0, _inherits3.default)(SlideIn, _Component);
-
-  function SlideIn() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, SlideIn);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = SlideIn.__proto__ || (0, _getPrototypeOf2.default)(SlideIn)).call.apply(_ref, [this].concat(args))), _this), _this.getLeaveDirection = function () {
-      return _this.props.direction;
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(SlideIn, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          enterDelay = _props.enterDelay,
-          children = _props.children,
-          childStyle = _props.childStyle,
-          direction = _props.direction,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['enterDelay', 'children', 'childStyle', 'direction', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      var mergedRootStyles = (0, _simpleAssign2.default)({}, {
-        position: 'relative',
-        overflow: 'hidden',
-        height: '100%'
-      }, style);
-
-      var newChildren = _react2.default.Children.map(children, function (child) {
-        return _react2.default.createElement(
-          _SlideInChild2.default,
-          {
-            key: child.key,
-            direction: direction,
-            enterDelay: enterDelay,
-            getLeaveDirection: _this2.getLeaveDirection,
-            style: childStyle
-          },
-          child
-        );
-      }, this);
-
-      return _react2.default.createElement(
-        _reactAddonsTransitionGroup2.default,
-        (0, _extends3.default)({}, other, {
-          style: prepareStyles(mergedRootStyles),
-          component: 'div'
-        }),
-        newChildren
-      );
-    }
-  }]);
-  return SlideIn;
-}(_react.Component);
-
-SlideIn.defaultProps = {
-  enterDelay: 0,
-  direction: 'left'
-};
-SlideIn.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? SlideIn.propTypes = {
-  childStyle: _react.PropTypes.object,
-  children: _react.PropTypes.node,
-  direction: _react.PropTypes.oneOf(['left', 'right', 'up', 'down']),
-  enterDelay: _react.PropTypes.number,
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = SlideIn;
-}).call(this,require('_process'))
-},{"./SlideInChild":154,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-addons-transition-group":309,"simple-assign":326}],154:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = require('simple-assign');
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _autoPrefix = require('../utils/autoPrefix');
-
-var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
-
-var _transitions = require('../styles/transitions');
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SlideInChild = function (_Component) {
-  (0, _inherits3.default)(SlideInChild, _Component);
-
-  function SlideInChild() {
-    (0, _classCallCheck3.default)(this, SlideInChild);
-    return (0, _possibleConstructorReturn3.default)(this, (SlideInChild.__proto__ || (0, _getPrototypeOf2.default)(SlideInChild)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(SlideInChild, [{
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.enterTimer);
-      clearTimeout(this.leaveTimer);
-    }
-  }, {
-    key: 'componentWillEnter',
-    value: function componentWillEnter(callback) {
-      var style = _reactDom2.default.findDOMNode(this).style;
-      var x = this.props.direction === 'left' ? '100%' : this.props.direction === 'right' ? '-100%' : '0';
-      var y = this.props.direction === 'up' ? '100%' : this.props.direction === 'down' ? '-100%' : '0';
-
-      style.opacity = '0';
-      _autoPrefix2.default.set(style, 'transform', 'translate(' + x + ', ' + y + ')');
-
-      this.enterTimer = setTimeout(callback, this.props.enterDelay);
-    }
-  }, {
-    key: 'componentDidEnter',
-    value: function componentDidEnter() {
-      var style = _reactDom2.default.findDOMNode(this).style;
-      style.opacity = '1';
-      _autoPrefix2.default.set(style, 'transform', 'translate(0,0)');
-    }
-  }, {
-    key: 'componentWillLeave',
-    value: function componentWillLeave(callback) {
-      var style = _reactDom2.default.findDOMNode(this).style;
-      var direction = this.props.getLeaveDirection();
-      var x = direction === 'left' ? '-100%' : direction === 'right' ? '100%' : '0';
-      var y = direction === 'up' ? '-100%' : direction === 'down' ? '100%' : '0';
-
-      style.opacity = '0';
-      _autoPrefix2.default.set(style, 'transform', 'translate(' + x + ', ' + y + ')');
-
-      this.leaveTimer = setTimeout(callback, 450);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          enterDelay = _props.enterDelay,
-          getLeaveDirection = _props.getLeaveDirection,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'enterDelay', 'getLeaveDirection', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-
-      var mergedRootStyles = (0, _simpleAssign2.default)({}, {
-        position: 'absolute',
-        height: '100%',
-        width: '100%',
-        top: 0,
-        left: 0,
-        transition: _transitions2.default.easeOut(null, ['transform', 'opacity'])
-      }, style);
-
-      return _react2.default.createElement(
-        'div',
-        (0, _extends3.default)({}, other, { style: prepareStyles(mergedRootStyles) }),
-        children
-      );
-    }
-  }]);
-  return SlideInChild;
-}(_react.Component);
-
-SlideInChild.defaultProps = {
-  enterDelay: 0
-};
-SlideInChild.contextTypes = {
-  muiTheme: _react.PropTypes.object.isRequired
-};
-process.env.NODE_ENV !== "production" ? SlideInChild.propTypes = {
-  children: _react.PropTypes.node,
-  direction: _react.PropTypes.string,
-  enterDelay: _react.PropTypes.number,
-  // This callback is needed bacause the direction could change when leaving the DOM
-  getLeaveDirection: _react.PropTypes.func.isRequired,
-  style: _react.PropTypes.object
-} : void 0;
-exports.default = SlideInChild;
-}).call(this,require('_process'))
-},{"../styles/transitions":333,"../utils/autoPrefix":352,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-dom":364,"simple-assign":326}],155:[function(require,module,exports){
+},{"../styles/transitions":235,"../utils/autoPrefix":246,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"react-dom":256,"simple-assign":228}],64:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -28547,7 +11632,7 @@ process.env.NODE_ENV !== "production" ? Tooltip.propTypes = {
 } : void 0;
 exports.default = Tooltip;
 }).call(this,require('_process'))
-},{"../styles/transitions":333,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"simple-assign":326}],156:[function(require,module,exports){
+},{"../styles/transitions":235,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451,"simple-assign":228}],65:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -28856,29 +11941,25 @@ process.env.NODE_ENV !== "production" ? TouchRipple.propTypes = {
 } : void 0;
 exports.default = TouchRipple;
 }).call(this,require('_process'))
-},{"../utils/dom":358,"./CircleRipple":141,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/toArray":176,"babel-runtime/helpers/toConsumableArray":177,"react":559,"react-addons-transition-group":309,"react-dom":364,"simple-assign":326}],157:[function(require,module,exports){
+},{"../utils/dom":251,"./CircleRipple":56,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"babel-runtime/helpers/toArray":82,"babel-runtime/helpers/toConsumableArray":83,"react":451,"react-addons-transition-group":211,"react-dom":256,"simple-assign":228}],66:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/array/from"), __esModule: true };
-},{"core-js/library/fn/array/from":179}],158:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/get-iterator"), __esModule: true };
-},{"core-js/library/fn/get-iterator":180}],159:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/is-iterable"), __esModule: true };
-},{"core-js/library/fn/is-iterable":181}],160:[function(require,module,exports){
+},{"core-js/library/fn/array/from":85}],67:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
-},{"core-js/library/fn/object/assign":182}],161:[function(require,module,exports){
+},{"core-js/library/fn/object/assign":86}],68:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
-},{"core-js/library/fn/object/create":183}],162:[function(require,module,exports){
+},{"core-js/library/fn/object/create":87}],69:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/define-property"), __esModule: true };
-},{"core-js/library/fn/object/define-property":184}],163:[function(require,module,exports){
+},{"core-js/library/fn/object/define-property":88}],70:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/get-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/get-prototype-of":185}],164:[function(require,module,exports){
+},{"core-js/library/fn/object/get-prototype-of":89}],71:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
-},{"core-js/library/fn/object/keys":186}],165:[function(require,module,exports){
+},{"core-js/library/fn/object/keys":90}],72:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":187}],166:[function(require,module,exports){
+},{"core-js/library/fn/object/set-prototype-of":91}],73:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol"), __esModule: true };
-},{"core-js/library/fn/symbol":188}],167:[function(require,module,exports){
+},{"core-js/library/fn/symbol":92}],74:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol/iterator"), __esModule: true };
-},{"core-js/library/fn/symbol/iterator":189}],168:[function(require,module,exports){
+},{"core-js/library/fn/symbol/iterator":93}],75:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -28888,7 +11969,7 @@ exports.default = function (instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 };
-},{}],169:[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -28916,7 +11997,7 @@ exports.default = function () {
     return Constructor;
   };
 }();
-},{"../core-js/object/define-property":162}],170:[function(require,module,exports){
+},{"../core-js/object/define-property":69}],77:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -28941,7 +12022,7 @@ exports.default = function (obj, key, value) {
 
   return obj;
 };
-},{"../core-js/object/define-property":162}],171:[function(require,module,exports){
+},{"../core-js/object/define-property":69}],78:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -28965,7 +12046,7 @@ exports.default = _assign2.default || function (target) {
 
   return target;
 };
-},{"../core-js/object/assign":160}],172:[function(require,module,exports){
+},{"../core-js/object/assign":67}],79:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -28999,7 +12080,7 @@ exports.default = function (subClass, superClass) {
   });
   if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
 };
-},{"../core-js/object/create":161,"../core-js/object/set-prototype-of":165,"../helpers/typeof":178}],173:[function(require,module,exports){
+},{"../core-js/object/create":68,"../core-js/object/set-prototype-of":72,"../helpers/typeof":84}],80:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29015,7 +12096,7 @@ exports.default = function (obj, keys) {
 
   return target;
 };
-},{}],174:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29033,59 +12114,7 @@ exports.default = function (self, call) {
 
   return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
 };
-},{"../helpers/typeof":178}],175:[function(require,module,exports){
-"use strict";
-
-exports.__esModule = true;
-
-var _isIterable2 = require("../core-js/is-iterable");
-
-var _isIterable3 = _interopRequireDefault(_isIterable2);
-
-var _getIterator2 = require("../core-js/get-iterator");
-
-var _getIterator3 = _interopRequireDefault(_getIterator2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = (0, _getIterator3.default)(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"]) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if ((0, _isIterable3.default)(Object(arr))) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError("Invalid attempt to destructure non-iterable instance");
-    }
-  };
-}();
-},{"../core-js/get-iterator":158,"../core-js/is-iterable":159}],176:[function(require,module,exports){
+},{"../helpers/typeof":84}],82:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29099,7 +12128,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function (arr) {
   return Array.isArray(arr) ? arr : (0, _from2.default)(arr);
 };
-},{"../core-js/array/from":157}],177:[function(require,module,exports){
+},{"../core-js/array/from":66}],83:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29121,7 +12150,7 @@ exports.default = function (arr) {
     return (0, _from2.default)(arr);
   }
 };
-},{"../core-js/array/from":157}],178:[function(require,module,exports){
+},{"../core-js/array/from":66}],84:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29143,66 +12172,58 @@ exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.d
 } : function (obj) {
   return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 };
-},{"../core-js/symbol":166,"../core-js/symbol/iterator":167}],179:[function(require,module,exports){
+},{"../core-js/symbol":73,"../core-js/symbol/iterator":74}],85:[function(require,module,exports){
 require('../../modules/es6.string.iterator');
 require('../../modules/es6.array.from');
 module.exports = require('../../modules/_core').Array.from;
-},{"../../modules/_core":196,"../../modules/es6.array.from":257,"../../modules/es6.string.iterator":266}],180:[function(require,module,exports){
-require('../modules/web.dom.iterable');
-require('../modules/es6.string.iterator');
-module.exports = require('../modules/core.get-iterator');
-},{"../modules/core.get-iterator":255,"../modules/es6.string.iterator":266,"../modules/web.dom.iterable":270}],181:[function(require,module,exports){
-require('../modules/web.dom.iterable');
-require('../modules/es6.string.iterator');
-module.exports = require('../modules/core.is-iterable');
-},{"../modules/core.is-iterable":256,"../modules/es6.string.iterator":266,"../modules/web.dom.iterable":270}],182:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.array.from":159,"../../modules/es6.string.iterator":168}],86:[function(require,module,exports){
 require('../../modules/es6.object.assign');
 module.exports = require('../../modules/_core').Object.assign;
-},{"../../modules/_core":196,"../../modules/es6.object.assign":259}],183:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.object.assign":161}],87:[function(require,module,exports){
 require('../../modules/es6.object.create');
 var $Object = require('../../modules/_core').Object;
 module.exports = function create(P, D){
   return $Object.create(P, D);
 };
-},{"../../modules/_core":196,"../../modules/es6.object.create":260}],184:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.object.create":162}],88:[function(require,module,exports){
 require('../../modules/es6.object.define-property');
 var $Object = require('../../modules/_core').Object;
 module.exports = function defineProperty(it, key, desc){
   return $Object.defineProperty(it, key, desc);
 };
-},{"../../modules/_core":196,"../../modules/es6.object.define-property":261}],185:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.object.define-property":163}],89:[function(require,module,exports){
 require('../../modules/es6.object.get-prototype-of');
 module.exports = require('../../modules/_core').Object.getPrototypeOf;
-},{"../../modules/_core":196,"../../modules/es6.object.get-prototype-of":262}],186:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.object.get-prototype-of":164}],90:[function(require,module,exports){
 require('../../modules/es6.object.keys');
 module.exports = require('../../modules/_core').Object.keys;
-},{"../../modules/_core":196,"../../modules/es6.object.keys":263}],187:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.object.keys":165}],91:[function(require,module,exports){
 require('../../modules/es6.object.set-prototype-of');
 module.exports = require('../../modules/_core').Object.setPrototypeOf;
-},{"../../modules/_core":196,"../../modules/es6.object.set-prototype-of":264}],188:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.object.set-prototype-of":166}],92:[function(require,module,exports){
 require('../../modules/es6.symbol');
 require('../../modules/es6.object.to-string');
 require('../../modules/es7.symbol.async-iterator');
 require('../../modules/es7.symbol.observable');
 module.exports = require('../../modules/_core').Symbol;
-},{"../../modules/_core":196,"../../modules/es6.object.to-string":265,"../../modules/es6.symbol":267,"../../modules/es7.symbol.async-iterator":268,"../../modules/es7.symbol.observable":269}],189:[function(require,module,exports){
+},{"../../modules/_core":100,"../../modules/es6.object.to-string":167,"../../modules/es6.symbol":169,"../../modules/es7.symbol.async-iterator":170,"../../modules/es7.symbol.observable":171}],93:[function(require,module,exports){
 require('../../modules/es6.string.iterator');
 require('../../modules/web.dom.iterable');
 module.exports = require('../../modules/_wks-ext').f('iterator');
-},{"../../modules/_wks-ext":252,"../../modules/es6.string.iterator":266,"../../modules/web.dom.iterable":270}],190:[function(require,module,exports){
+},{"../../modules/_wks-ext":156,"../../modules/es6.string.iterator":168,"../../modules/web.dom.iterable":172}],94:[function(require,module,exports){
 module.exports = function(it){
   if(typeof it != 'function')throw TypeError(it + ' is not a function!');
   return it;
 };
-},{}],191:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 module.exports = function(){ /* empty */ };
-},{}],192:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 var isObject = require('./_is-object');
 module.exports = function(it){
   if(!isObject(it))throw TypeError(it + ' is not an object!');
   return it;
 };
-},{"./_is-object":214}],193:[function(require,module,exports){
+},{"./_is-object":118}],97:[function(require,module,exports){
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = require('./_to-iobject')
@@ -29224,7 +12245,7 @@ module.exports = function(IS_INCLUDES){
     } return !IS_INCLUDES && -1;
   };
 };
-},{"./_to-index":244,"./_to-iobject":246,"./_to-length":247}],194:[function(require,module,exports){
+},{"./_to-index":148,"./_to-iobject":150,"./_to-length":151}],98:[function(require,module,exports){
 // getting tag from 19.1.3.6 Object.prototype.toString()
 var cof = require('./_cof')
   , TAG = require('./_wks')('toStringTag')
@@ -29248,16 +12269,16 @@ module.exports = function(it){
     // ES3 arguments fallback
     : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 };
-},{"./_cof":195,"./_wks":253}],195:[function(require,module,exports){
+},{"./_cof":99,"./_wks":157}],99:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = function(it){
   return toString.call(it).slice(8, -1);
 };
-},{}],196:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 var core = module.exports = {version: '2.4.0'};
 if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],197:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 'use strict';
 var $defineProperty = require('./_object-dp')
   , createDesc      = require('./_property-desc');
@@ -29266,7 +12287,7 @@ module.exports = function(object, index, value){
   if(index in object)$defineProperty.f(object, index, createDesc(0, value));
   else object[index] = value;
 };
-},{"./_object-dp":226,"./_property-desc":237}],198:[function(require,module,exports){
+},{"./_object-dp":130,"./_property-desc":141}],102:[function(require,module,exports){
 // optional / simple context binding
 var aFunction = require('./_a-function');
 module.exports = function(fn, that, length){
@@ -29287,18 +12308,18 @@ module.exports = function(fn, that, length){
     return fn.apply(that, arguments);
   };
 };
-},{"./_a-function":190}],199:[function(require,module,exports){
+},{"./_a-function":94}],103:[function(require,module,exports){
 // 7.2.1 RequireObjectCoercible(argument)
 module.exports = function(it){
   if(it == undefined)throw TypeError("Can't call method on  " + it);
   return it;
 };
-},{}],200:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 // Thank's IE8 for his funny defineProperty
 module.exports = !require('./_fails')(function(){
   return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 });
-},{"./_fails":205}],201:[function(require,module,exports){
+},{"./_fails":109}],105:[function(require,module,exports){
 var isObject = require('./_is-object')
   , document = require('./_global').document
   // in old IE typeof document.createElement is 'object'
@@ -29306,12 +12327,12 @@ var isObject = require('./_is-object')
 module.exports = function(it){
   return is ? document.createElement(it) : {};
 };
-},{"./_global":206,"./_is-object":214}],202:[function(require,module,exports){
+},{"./_global":110,"./_is-object":118}],106:[function(require,module,exports){
 // IE 8- don't enum bug keys
 module.exports = (
   'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
 ).split(',');
-},{}],203:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 // all enumerable object keys, includes symbols
 var getKeys = require('./_object-keys')
   , gOPS    = require('./_object-gops')
@@ -29327,7 +12348,7 @@ module.exports = function(it){
     while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))result.push(key);
   } return result;
 };
-},{"./_object-gops":231,"./_object-keys":234,"./_object-pie":235}],204:[function(require,module,exports){
+},{"./_object-gops":135,"./_object-keys":138,"./_object-pie":139}],108:[function(require,module,exports){
 var global    = require('./_global')
   , core      = require('./_core')
   , ctx       = require('./_ctx')
@@ -29389,7 +12410,7 @@ $export.W = 32;  // wrap
 $export.U = 64;  // safe
 $export.R = 128; // real proto method for `library` 
 module.exports = $export;
-},{"./_core":196,"./_ctx":198,"./_global":206,"./_hide":208}],205:[function(require,module,exports){
+},{"./_core":100,"./_ctx":102,"./_global":110,"./_hide":112}],109:[function(require,module,exports){
 module.exports = function(exec){
   try {
     return !!exec();
@@ -29397,17 +12418,17 @@ module.exports = function(exec){
     return true;
   }
 };
-},{}],206:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
   ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
 if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
-},{}],207:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 var hasOwnProperty = {}.hasOwnProperty;
 module.exports = function(it, key){
   return hasOwnProperty.call(it, key);
 };
-},{}],208:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 var dP         = require('./_object-dp')
   , createDesc = require('./_property-desc');
 module.exports = require('./_descriptors') ? function(object, key, value){
@@ -29416,19 +12437,19 @@ module.exports = require('./_descriptors') ? function(object, key, value){
   object[key] = value;
   return object;
 };
-},{"./_descriptors":200,"./_object-dp":226,"./_property-desc":237}],209:[function(require,module,exports){
+},{"./_descriptors":104,"./_object-dp":130,"./_property-desc":141}],113:[function(require,module,exports){
 module.exports = require('./_global').document && document.documentElement;
-},{"./_global":206}],210:[function(require,module,exports){
+},{"./_global":110}],114:[function(require,module,exports){
 module.exports = !require('./_descriptors') && !require('./_fails')(function(){
   return Object.defineProperty(require('./_dom-create')('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
-},{"./_descriptors":200,"./_dom-create":201,"./_fails":205}],211:[function(require,module,exports){
+},{"./_descriptors":104,"./_dom-create":105,"./_fails":109}],115:[function(require,module,exports){
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = require('./_cof');
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
-},{"./_cof":195}],212:[function(require,module,exports){
+},{"./_cof":99}],116:[function(require,module,exports){
 // check on default Array iterator
 var Iterators  = require('./_iterators')
   , ITERATOR   = require('./_wks')('iterator')
@@ -29437,17 +12458,17 @@ var Iterators  = require('./_iterators')
 module.exports = function(it){
   return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
 };
-},{"./_iterators":220,"./_wks":253}],213:[function(require,module,exports){
+},{"./_iterators":124,"./_wks":157}],117:[function(require,module,exports){
 // 7.2.2 IsArray(argument)
 var cof = require('./_cof');
 module.exports = Array.isArray || function isArray(arg){
   return cof(arg) == 'Array';
 };
-},{"./_cof":195}],214:[function(require,module,exports){
+},{"./_cof":99}],118:[function(require,module,exports){
 module.exports = function(it){
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
-},{}],215:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 // call something on iterator step with safe closing on error
 var anObject = require('./_an-object');
 module.exports = function(iterator, fn, value, entries){
@@ -29460,7 +12481,7 @@ module.exports = function(iterator, fn, value, entries){
     throw e;
   }
 };
-},{"./_an-object":192}],216:[function(require,module,exports){
+},{"./_an-object":96}],120:[function(require,module,exports){
 'use strict';
 var create         = require('./_object-create')
   , descriptor     = require('./_property-desc')
@@ -29474,7 +12495,7 @@ module.exports = function(Constructor, NAME, next){
   Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
   setToStringTag(Constructor, NAME + ' Iterator');
 };
-},{"./_hide":208,"./_object-create":225,"./_property-desc":237,"./_set-to-string-tag":240,"./_wks":253}],217:[function(require,module,exports){
+},{"./_hide":112,"./_object-create":129,"./_property-desc":141,"./_set-to-string-tag":144,"./_wks":157}],121:[function(require,module,exports){
 'use strict';
 var LIBRARY        = require('./_library')
   , $export        = require('./_export')
@@ -29545,7 +12566,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
   }
   return methods;
 };
-},{"./_export":204,"./_has":207,"./_hide":208,"./_iter-create":216,"./_iterators":220,"./_library":222,"./_object-gpo":232,"./_redefine":238,"./_set-to-string-tag":240,"./_wks":253}],218:[function(require,module,exports){
+},{"./_export":108,"./_has":111,"./_hide":112,"./_iter-create":120,"./_iterators":124,"./_library":126,"./_object-gpo":136,"./_redefine":142,"./_set-to-string-tag":144,"./_wks":157}],122:[function(require,module,exports){
 var ITERATOR     = require('./_wks')('iterator')
   , SAFE_CLOSING = false;
 
@@ -29567,13 +12588,13 @@ module.exports = function(exec, skipClosing){
   } catch(e){ /* empty */ }
   return safe;
 };
-},{"./_wks":253}],219:[function(require,module,exports){
+},{"./_wks":157}],123:[function(require,module,exports){
 module.exports = function(done, value){
   return {value: value, done: !!done};
 };
-},{}],220:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 module.exports = {};
-},{}],221:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 var getKeys   = require('./_object-keys')
   , toIObject = require('./_to-iobject');
 module.exports = function(object, el){
@@ -29584,9 +12605,9 @@ module.exports = function(object, el){
     , key;
   while(length > index)if(O[key = keys[index++]] === el)return key;
 };
-},{"./_object-keys":234,"./_to-iobject":246}],222:[function(require,module,exports){
+},{"./_object-keys":138,"./_to-iobject":150}],126:[function(require,module,exports){
 module.exports = true;
-},{}],223:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 var META     = require('./_uid')('meta')
   , isObject = require('./_is-object')
   , has      = require('./_has')
@@ -29640,7 +12661,7 @@ var meta = module.exports = {
   getWeak:  getWeak,
   onFreeze: onFreeze
 };
-},{"./_fails":205,"./_has":207,"./_is-object":214,"./_object-dp":226,"./_uid":250}],224:[function(require,module,exports){
+},{"./_fails":109,"./_has":111,"./_is-object":118,"./_object-dp":130,"./_uid":154}],128:[function(require,module,exports){
 'use strict';
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys  = require('./_object-keys')
@@ -29674,7 +12695,7 @@ module.exports = !$assign || require('./_fails')(function(){
     while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
   } return T;
 } : $assign;
-},{"./_fails":205,"./_iobject":211,"./_object-gops":231,"./_object-keys":234,"./_object-pie":235,"./_to-object":248}],225:[function(require,module,exports){
+},{"./_fails":109,"./_iobject":115,"./_object-gops":135,"./_object-keys":138,"./_object-pie":139,"./_to-object":152}],129:[function(require,module,exports){
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = require('./_an-object')
   , dPs         = require('./_object-dps')
@@ -29717,7 +12738,7 @@ module.exports = Object.create || function create(O, Properties){
   return Properties === undefined ? result : dPs(result, Properties);
 };
 
-},{"./_an-object":192,"./_dom-create":201,"./_enum-bug-keys":202,"./_html":209,"./_object-dps":227,"./_shared-key":241}],226:[function(require,module,exports){
+},{"./_an-object":96,"./_dom-create":105,"./_enum-bug-keys":106,"./_html":113,"./_object-dps":131,"./_shared-key":145}],130:[function(require,module,exports){
 var anObject       = require('./_an-object')
   , IE8_DOM_DEFINE = require('./_ie8-dom-define')
   , toPrimitive    = require('./_to-primitive')
@@ -29734,7 +12755,7 @@ exports.f = require('./_descriptors') ? Object.defineProperty : function defineP
   if('value' in Attributes)O[P] = Attributes.value;
   return O;
 };
-},{"./_an-object":192,"./_descriptors":200,"./_ie8-dom-define":210,"./_to-primitive":249}],227:[function(require,module,exports){
+},{"./_an-object":96,"./_descriptors":104,"./_ie8-dom-define":114,"./_to-primitive":153}],131:[function(require,module,exports){
 var dP       = require('./_object-dp')
   , anObject = require('./_an-object')
   , getKeys  = require('./_object-keys');
@@ -29748,7 +12769,7 @@ module.exports = require('./_descriptors') ? Object.defineProperties : function 
   while(length > i)dP.f(O, P = keys[i++], Properties[P]);
   return O;
 };
-},{"./_an-object":192,"./_descriptors":200,"./_object-dp":226,"./_object-keys":234}],228:[function(require,module,exports){
+},{"./_an-object":96,"./_descriptors":104,"./_object-dp":130,"./_object-keys":138}],132:[function(require,module,exports){
 var pIE            = require('./_object-pie')
   , createDesc     = require('./_property-desc')
   , toIObject      = require('./_to-iobject')
@@ -29765,7 +12786,7 @@ exports.f = require('./_descriptors') ? gOPD : function getOwnPropertyDescriptor
   } catch(e){ /* empty */ }
   if(has(O, P))return createDesc(!pIE.f.call(O, P), O[P]);
 };
-},{"./_descriptors":200,"./_has":207,"./_ie8-dom-define":210,"./_object-pie":235,"./_property-desc":237,"./_to-iobject":246,"./_to-primitive":249}],229:[function(require,module,exports){
+},{"./_descriptors":104,"./_has":111,"./_ie8-dom-define":114,"./_object-pie":139,"./_property-desc":141,"./_to-iobject":150,"./_to-primitive":153}],133:[function(require,module,exports){
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = require('./_to-iobject')
   , gOPN      = require('./_object-gopn').f
@@ -29786,7 +12807,7 @@ module.exports.f = function getOwnPropertyNames(it){
   return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
 };
 
-},{"./_object-gopn":230,"./_to-iobject":246}],230:[function(require,module,exports){
+},{"./_object-gopn":134,"./_to-iobject":150}],134:[function(require,module,exports){
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var $keys      = require('./_object-keys-internal')
   , hiddenKeys = require('./_enum-bug-keys').concat('length', 'prototype');
@@ -29794,9 +12815,9 @@ var $keys      = require('./_object-keys-internal')
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
 };
-},{"./_enum-bug-keys":202,"./_object-keys-internal":233}],231:[function(require,module,exports){
+},{"./_enum-bug-keys":106,"./_object-keys-internal":137}],135:[function(require,module,exports){
 exports.f = Object.getOwnPropertySymbols;
-},{}],232:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = require('./_has')
   , toObject    = require('./_to-object')
@@ -29810,7 +12831,7 @@ module.exports = Object.getPrototypeOf || function(O){
     return O.constructor.prototype;
   } return O instanceof Object ? ObjectProto : null;
 };
-},{"./_has":207,"./_shared-key":241,"./_to-object":248}],233:[function(require,module,exports){
+},{"./_has":111,"./_shared-key":145,"./_to-object":152}],137:[function(require,module,exports){
 var has          = require('./_has')
   , toIObject    = require('./_to-iobject')
   , arrayIndexOf = require('./_array-includes')(false)
@@ -29828,7 +12849,7 @@ module.exports = function(object, names){
   }
   return result;
 };
-},{"./_array-includes":193,"./_has":207,"./_shared-key":241,"./_to-iobject":246}],234:[function(require,module,exports){
+},{"./_array-includes":97,"./_has":111,"./_shared-key":145,"./_to-iobject":150}],138:[function(require,module,exports){
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
 var $keys       = require('./_object-keys-internal')
   , enumBugKeys = require('./_enum-bug-keys');
@@ -29836,9 +12857,9 @@ var $keys       = require('./_object-keys-internal')
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
 };
-},{"./_enum-bug-keys":202,"./_object-keys-internal":233}],235:[function(require,module,exports){
+},{"./_enum-bug-keys":106,"./_object-keys-internal":137}],139:[function(require,module,exports){
 exports.f = {}.propertyIsEnumerable;
-},{}],236:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 // most Object methods by ES6 should accept primitives
 var $export = require('./_export')
   , core    = require('./_core')
@@ -29849,7 +12870,7 @@ module.exports = function(KEY, exec){
   exp[KEY] = exec(fn);
   $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
 };
-},{"./_core":196,"./_export":204,"./_fails":205}],237:[function(require,module,exports){
+},{"./_core":100,"./_export":108,"./_fails":109}],141:[function(require,module,exports){
 module.exports = function(bitmap, value){
   return {
     enumerable  : !(bitmap & 1),
@@ -29858,9 +12879,9 @@ module.exports = function(bitmap, value){
     value       : value
   };
 };
-},{}],238:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 module.exports = require('./_hide');
-},{"./_hide":208}],239:[function(require,module,exports){
+},{"./_hide":112}],143:[function(require,module,exports){
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
 var isObject = require('./_is-object')
@@ -29886,7 +12907,7 @@ module.exports = {
     }({}, false) : undefined),
   check: check
 };
-},{"./_an-object":192,"./_ctx":198,"./_is-object":214,"./_object-gopd":228}],240:[function(require,module,exports){
+},{"./_an-object":96,"./_ctx":102,"./_is-object":118,"./_object-gopd":132}],144:[function(require,module,exports){
 var def = require('./_object-dp').f
   , has = require('./_has')
   , TAG = require('./_wks')('toStringTag');
@@ -29894,20 +12915,20 @@ var def = require('./_object-dp').f
 module.exports = function(it, tag, stat){
   if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 };
-},{"./_has":207,"./_object-dp":226,"./_wks":253}],241:[function(require,module,exports){
+},{"./_has":111,"./_object-dp":130,"./_wks":157}],145:[function(require,module,exports){
 var shared = require('./_shared')('keys')
   , uid    = require('./_uid');
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
-},{"./_shared":242,"./_uid":250}],242:[function(require,module,exports){
+},{"./_shared":146,"./_uid":154}],146:[function(require,module,exports){
 var global = require('./_global')
   , SHARED = '__core-js_shared__'
   , store  = global[SHARED] || (global[SHARED] = {});
 module.exports = function(key){
   return store[key] || (store[key] = {});
 };
-},{"./_global":206}],243:[function(require,module,exports){
+},{"./_global":110}],147:[function(require,module,exports){
 var toInteger = require('./_to-integer')
   , defined   = require('./_defined');
 // true  -> String#at
@@ -29925,7 +12946,7 @@ module.exports = function(TO_STRING){
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
-},{"./_defined":199,"./_to-integer":245}],244:[function(require,module,exports){
+},{"./_defined":103,"./_to-integer":149}],148:[function(require,module,exports){
 var toInteger = require('./_to-integer')
   , max       = Math.max
   , min       = Math.min;
@@ -29933,34 +12954,34 @@ module.exports = function(index, length){
   index = toInteger(index);
   return index < 0 ? max(index + length, 0) : min(index, length);
 };
-},{"./_to-integer":245}],245:[function(require,module,exports){
+},{"./_to-integer":149}],149:[function(require,module,exports){
 // 7.1.4 ToInteger
 var ceil  = Math.ceil
   , floor = Math.floor;
 module.exports = function(it){
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
-},{}],246:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = require('./_iobject')
   , defined = require('./_defined');
 module.exports = function(it){
   return IObject(defined(it));
 };
-},{"./_defined":199,"./_iobject":211}],247:[function(require,module,exports){
+},{"./_defined":103,"./_iobject":115}],151:[function(require,module,exports){
 // 7.1.15 ToLength
 var toInteger = require('./_to-integer')
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
-},{"./_to-integer":245}],248:[function(require,module,exports){
+},{"./_to-integer":149}],152:[function(require,module,exports){
 // 7.1.13 ToObject(argument)
 var defined = require('./_defined');
 module.exports = function(it){
   return Object(defined(it));
 };
-},{"./_defined":199}],249:[function(require,module,exports){
+},{"./_defined":103}],153:[function(require,module,exports){
 // 7.1.1 ToPrimitive(input [, PreferredType])
 var isObject = require('./_is-object');
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
@@ -29973,13 +12994,13 @@ module.exports = function(it, S){
   if(!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
   throw TypeError("Can't convert object to primitive value");
 };
-},{"./_is-object":214}],250:[function(require,module,exports){
+},{"./_is-object":118}],154:[function(require,module,exports){
 var id = 0
   , px = Math.random();
 module.exports = function(key){
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
-},{}],251:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 var global         = require('./_global')
   , core           = require('./_core')
   , LIBRARY        = require('./_library')
@@ -29989,9 +13010,9 @@ module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
 };
-},{"./_core":196,"./_global":206,"./_library":222,"./_object-dp":226,"./_wks-ext":252}],252:[function(require,module,exports){
+},{"./_core":100,"./_global":110,"./_library":126,"./_object-dp":130,"./_wks-ext":156}],156:[function(require,module,exports){
 exports.f = require('./_wks');
-},{"./_wks":253}],253:[function(require,module,exports){
+},{"./_wks":157}],157:[function(require,module,exports){
 var store      = require('./_shared')('wks')
   , uid        = require('./_uid')
   , Symbol     = require('./_global').Symbol
@@ -30003,7 +13024,7 @@ var $exports = module.exports = function(name){
 };
 
 $exports.store = store;
-},{"./_global":206,"./_shared":242,"./_uid":250}],254:[function(require,module,exports){
+},{"./_global":110,"./_shared":146,"./_uid":154}],158:[function(require,module,exports){
 var classof   = require('./_classof')
   , ITERATOR  = require('./_wks')('iterator')
   , Iterators = require('./_iterators');
@@ -30012,25 +13033,7 @@ module.exports = require('./_core').getIteratorMethod = function(it){
     || it['@@iterator']
     || Iterators[classof(it)];
 };
-},{"./_classof":194,"./_core":196,"./_iterators":220,"./_wks":253}],255:[function(require,module,exports){
-var anObject = require('./_an-object')
-  , get      = require('./core.get-iterator-method');
-module.exports = require('./_core').getIterator = function(it){
-  var iterFn = get(it);
-  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
-  return anObject(iterFn.call(it));
-};
-},{"./_an-object":192,"./_core":196,"./core.get-iterator-method":254}],256:[function(require,module,exports){
-var classof   = require('./_classof')
-  , ITERATOR  = require('./_wks')('iterator')
-  , Iterators = require('./_iterators');
-module.exports = require('./_core').isIterable = function(it){
-  var O = Object(it);
-  return O[ITERATOR] !== undefined
-    || '@@iterator' in O
-    || Iterators.hasOwnProperty(classof(O));
-};
-},{"./_classof":194,"./_core":196,"./_iterators":220,"./_wks":253}],257:[function(require,module,exports){
+},{"./_classof":98,"./_core":100,"./_iterators":124,"./_wks":157}],159:[function(require,module,exports){
 'use strict';
 var ctx            = require('./_ctx')
   , $export        = require('./_export')
@@ -30069,7 +13072,7 @@ $export($export.S + $export.F * !require('./_iter-detect')(function(iter){ Array
   }
 });
 
-},{"./_create-property":197,"./_ctx":198,"./_export":204,"./_is-array-iter":212,"./_iter-call":215,"./_iter-detect":218,"./_to-length":247,"./_to-object":248,"./core.get-iterator-method":254}],258:[function(require,module,exports){
+},{"./_create-property":101,"./_ctx":102,"./_export":108,"./_is-array-iter":116,"./_iter-call":119,"./_iter-detect":122,"./_to-length":151,"./_to-object":152,"./core.get-iterator-method":158}],160:[function(require,module,exports){
 'use strict';
 var addToUnscopables = require('./_add-to-unscopables')
   , step             = require('./_iter-step')
@@ -30104,20 +13107,20 @@ Iterators.Arguments = Iterators.Array;
 addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
-},{"./_add-to-unscopables":191,"./_iter-define":217,"./_iter-step":219,"./_iterators":220,"./_to-iobject":246}],259:[function(require,module,exports){
+},{"./_add-to-unscopables":95,"./_iter-define":121,"./_iter-step":123,"./_iterators":124,"./_to-iobject":150}],161:[function(require,module,exports){
 // 19.1.3.1 Object.assign(target, source)
 var $export = require('./_export');
 
 $export($export.S + $export.F, 'Object', {assign: require('./_object-assign')});
-},{"./_export":204,"./_object-assign":224}],260:[function(require,module,exports){
+},{"./_export":108,"./_object-assign":128}],162:[function(require,module,exports){
 var $export = require('./_export')
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 $export($export.S, 'Object', {create: require('./_object-create')});
-},{"./_export":204,"./_object-create":225}],261:[function(require,module,exports){
+},{"./_export":108,"./_object-create":129}],163:[function(require,module,exports){
 var $export = require('./_export');
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 $export($export.S + $export.F * !require('./_descriptors'), 'Object', {defineProperty: require('./_object-dp').f});
-},{"./_descriptors":200,"./_export":204,"./_object-dp":226}],262:[function(require,module,exports){
+},{"./_descriptors":104,"./_export":108,"./_object-dp":130}],164:[function(require,module,exports){
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject        = require('./_to-object')
   , $getPrototypeOf = require('./_object-gpo');
@@ -30127,7 +13130,7 @@ require('./_object-sap')('getPrototypeOf', function(){
     return $getPrototypeOf(toObject(it));
   };
 });
-},{"./_object-gpo":232,"./_object-sap":236,"./_to-object":248}],263:[function(require,module,exports){
+},{"./_object-gpo":136,"./_object-sap":140,"./_to-object":152}],165:[function(require,module,exports){
 // 19.1.2.14 Object.keys(O)
 var toObject = require('./_to-object')
   , $keys    = require('./_object-keys');
@@ -30137,13 +13140,13 @@ require('./_object-sap')('keys', function(){
     return $keys(toObject(it));
   };
 });
-},{"./_object-keys":234,"./_object-sap":236,"./_to-object":248}],264:[function(require,module,exports){
+},{"./_object-keys":138,"./_object-sap":140,"./_to-object":152}],166:[function(require,module,exports){
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = require('./_export');
 $export($export.S, 'Object', {setPrototypeOf: require('./_set-proto').set});
-},{"./_export":204,"./_set-proto":239}],265:[function(require,module,exports){
+},{"./_export":108,"./_set-proto":143}],167:[function(require,module,exports){
 
-},{}],266:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 'use strict';
 var $at  = require('./_string-at')(true);
 
@@ -30161,7 +13164,7 @@ require('./_iter-define')(String, 'String', function(iterated){
   this._i += point.length;
   return {value: point, done: false};
 });
-},{"./_iter-define":217,"./_string-at":243}],267:[function(require,module,exports){
+},{"./_iter-define":121,"./_string-at":147}],169:[function(require,module,exports){
 'use strict';
 // ECMAScript 6 symbols shim
 var global         = require('./_global')
@@ -30397,11 +13400,11 @@ setToStringTag($Symbol, 'Symbol');
 setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
-},{"./_an-object":192,"./_descriptors":200,"./_enum-keys":203,"./_export":204,"./_fails":205,"./_global":206,"./_has":207,"./_hide":208,"./_is-array":213,"./_keyof":221,"./_library":222,"./_meta":223,"./_object-create":225,"./_object-dp":226,"./_object-gopd":228,"./_object-gopn":230,"./_object-gopn-ext":229,"./_object-gops":231,"./_object-keys":234,"./_object-pie":235,"./_property-desc":237,"./_redefine":238,"./_set-to-string-tag":240,"./_shared":242,"./_to-iobject":246,"./_to-primitive":249,"./_uid":250,"./_wks":253,"./_wks-define":251,"./_wks-ext":252}],268:[function(require,module,exports){
+},{"./_an-object":96,"./_descriptors":104,"./_enum-keys":107,"./_export":108,"./_fails":109,"./_global":110,"./_has":111,"./_hide":112,"./_is-array":117,"./_keyof":125,"./_library":126,"./_meta":127,"./_object-create":129,"./_object-dp":130,"./_object-gopd":132,"./_object-gopn":134,"./_object-gopn-ext":133,"./_object-gops":135,"./_object-keys":138,"./_object-pie":139,"./_property-desc":141,"./_redefine":142,"./_set-to-string-tag":144,"./_shared":146,"./_to-iobject":150,"./_to-primitive":153,"./_uid":154,"./_wks":157,"./_wks-define":155,"./_wks-ext":156}],170:[function(require,module,exports){
 require('./_wks-define')('asyncIterator');
-},{"./_wks-define":251}],269:[function(require,module,exports){
+},{"./_wks-define":155}],171:[function(require,module,exports){
 require('./_wks-define')('observable');
-},{"./_wks-define":251}],270:[function(require,module,exports){
+},{"./_wks-define":155}],172:[function(require,module,exports){
 require('./es6.array.iterator');
 var global        = require('./_global')
   , hide          = require('./_hide')
@@ -30415,7 +13418,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
   if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
   Iterators[NAME] = Iterators.Array;
 }
-},{"./_global":206,"./_hide":208,"./_iterators":220,"./_wks":253,"./es6.array.iterator":258}],271:[function(require,module,exports){
+},{"./_global":110,"./_hide":112,"./_iterators":124,"./_wks":157,"./es6.array.iterator":160}],173:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30645,7 +13648,7 @@ function assignStyles(base) {
   });
 }
 module.exports = exports['default'];
-},{"./plugins/calc":272,"./plugins/flex":273,"./plugins/flexboxIE":274,"./plugins/flexboxOld":275,"./plugins/grabCursor":276,"./plugins/gradient":277,"./plugins/position":278,"./plugins/sizing":279,"./plugins/transition":280,"./plugins/zoomCursor":281,"./prefixProps":282,"./static/prefixAll":292,"./utils/capitalizeString":294,"./utils/getBrowserInformation":295,"./utils/getPrefixedKeyframes":296,"./utils/sortPrefixedStyle":301}],272:[function(require,module,exports){
+},{"./plugins/calc":174,"./plugins/flex":175,"./plugins/flexboxIE":176,"./plugins/flexboxOld":177,"./plugins/grabCursor":178,"./plugins/gradient":179,"./plugins/position":180,"./plugins/sizing":181,"./plugins/transition":182,"./plugins/zoomCursor":183,"./prefixProps":184,"./static/prefixAll":194,"./utils/capitalizeString":196,"./utils/getBrowserInformation":197,"./utils/getPrefixedKeyframes":198,"./utils/sortPrefixedStyle":203}],174:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30675,7 +13678,7 @@ function calc(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],273:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],175:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30707,7 +13710,7 @@ function flex(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],274:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],176:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30767,7 +13770,7 @@ function flexboxIE(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],275:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],177:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30834,7 +13837,7 @@ function flexboxOld(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],276:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],178:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30865,7 +13868,7 @@ function grabCursor(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],277:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],179:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30897,7 +13900,7 @@ function gradient(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],278:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],180:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30925,7 +13928,7 @@ function position(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],279:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],181:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30971,7 +13974,7 @@ function sizing(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],280:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],182:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31033,7 +14036,7 @@ function transition(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/unprefixProperty":302,"hyphenate-style-name":304}],281:[function(require,module,exports){
+},{"../utils/unprefixProperty":204,"hyphenate-style-name":206}],183:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31065,7 +14068,7 @@ function zoomCursor(_ref) {
   }
 }
 module.exports = exports['default'];
-},{"../utils/getPrefixedValue":297}],282:[function(require,module,exports){
+},{"../utils/getPrefixedValue":199}],184:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31073,7 +14076,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = { "chrome": { "transform": 35, "transformOrigin": 35, "transformOriginX": 35, "transformOriginY": 35, "backfaceVisibility": 35, "perspective": 35, "perspectiveOrigin": 35, "transformStyle": 35, "transformOriginZ": 35, "animation": 42, "animationDelay": 42, "animationDirection": 42, "animationFillMode": 42, "animationDuration": 42, "animationIterationCount": 42, "animationName": 42, "animationPlayState": 42, "animationTimingFunction": 42, "appearance": 55, "userSelect": 55, "fontKerning": 32, "textEmphasisPosition": 55, "textEmphasis": 55, "textEmphasisStyle": 55, "textEmphasisColor": 55, "boxDecorationBreak": 55, "clipPath": 55, "maskImage": 55, "maskMode": 55, "maskRepeat": 55, "maskPosition": 55, "maskClip": 55, "maskOrigin": 55, "maskSize": 55, "maskComposite": 55, "mask": 55, "maskBorderSource": 55, "maskBorderMode": 55, "maskBorderSlice": 55, "maskBorderWidth": 55, "maskBorderOutset": 55, "maskBorderRepeat": 55, "maskBorder": 55, "maskType": 55, "textDecorationStyle": 55, "textDecorationSkip": 55, "textDecorationLine": 55, "textDecorationColor": 55, "filter": 52, "fontFeatureSettings": 47, "breakAfter": 49, "breakBefore": 49, "breakInside": 49, "columnCount": 49, "columnFill": 49, "columnGap": 49, "columnRule": 49, "columnRuleColor": 49, "columnRuleStyle": 49, "columnRuleWidth": 49, "columns": 49, "columnSpan": 49, "columnWidth": 49 }, "safari": { "flex": 8, "flexBasis": 8, "flexDirection": 8, "flexGrow": 8, "flexFlow": 8, "flexShrink": 8, "flexWrap": 8, "alignContent": 8, "alignItems": 8, "alignSelf": 8, "justifyContent": 8, "order": 8, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8, "transformOrigin": 8, "transformOriginX": 8, "transformOriginY": 8, "backfaceVisibility": 8, "perspective": 8, "perspectiveOrigin": 8, "transformStyle": 8, "transformOriginZ": 8, "animation": 8, "animationDelay": 8, "animationDirection": 8, "animationFillMode": 8, "animationDuration": 8, "animationIterationCount": 8, "animationName": 8, "animationPlayState": 8, "animationTimingFunction": 8, "appearance": 10, "userSelect": 10, "backdropFilter": 10, "fontKerning": 9, "scrollSnapType": 10, "scrollSnapPointsX": 10, "scrollSnapPointsY": 10, "scrollSnapDestination": 10, "scrollSnapCoordinate": 10, "textEmphasisPosition": 7, "textEmphasis": 7, "textEmphasisStyle": 7, "textEmphasisColor": 7, "boxDecorationBreak": 10, "clipPath": 10, "maskImage": 10, "maskMode": 10, "maskRepeat": 10, "maskPosition": 10, "maskClip": 10, "maskOrigin": 10, "maskSize": 10, "maskComposite": 10, "mask": 10, "maskBorderSource": 10, "maskBorderMode": 10, "maskBorderSlice": 10, "maskBorderWidth": 10, "maskBorderOutset": 10, "maskBorderRepeat": 10, "maskBorder": 10, "maskType": 10, "textDecorationStyle": 10, "textDecorationSkip": 10, "textDecorationLine": 10, "textDecorationColor": 10, "shapeImageThreshold": 10, "shapeImageMargin": 10, "shapeImageOutside": 10, "filter": 9, "hyphens": 10, "flowInto": 10, "flowFrom": 10, "breakBefore": 8, "breakAfter": 8, "breakInside": 8, "regionFragment": 10, "columnCount": 8, "columnFill": 8, "columnGap": 8, "columnRule": 8, "columnRuleColor": 8, "columnRuleStyle": 8, "columnRuleWidth": 8, "columns": 8, "columnSpan": 8, "columnWidth": 8 }, "firefox": { "appearance": 51, "userSelect": 51, "boxSizing": 28, "textAlignLast": 48, "textDecorationStyle": 35, "textDecorationSkip": 35, "textDecorationLine": 35, "textDecorationColor": 35, "tabSize": 51, "hyphens": 42, "fontFeatureSettings": 33, "breakAfter": 51, "breakBefore": 51, "breakInside": 51, "columnCount": 51, "columnFill": 51, "columnGap": 51, "columnRule": 51, "columnRuleColor": 51, "columnRuleStyle": 51, "columnRuleWidth": 51, "columns": 51, "columnSpan": 51, "columnWidth": 51 }, "opera": { "flex": 16, "flexBasis": 16, "flexDirection": 16, "flexGrow": 16, "flexFlow": 16, "flexShrink": 16, "flexWrap": 16, "alignContent": 16, "alignItems": 16, "alignSelf": 16, "justifyContent": 16, "order": 16, "transform": 22, "transformOrigin": 22, "transformOriginX": 22, "transformOriginY": 22, "backfaceVisibility": 22, "perspective": 22, "perspectiveOrigin": 22, "transformStyle": 22, "transformOriginZ": 22, "animation": 29, "animationDelay": 29, "animationDirection": 29, "animationFillMode": 29, "animationDuration": 29, "animationIterationCount": 29, "animationName": 29, "animationPlayState": 29, "animationTimingFunction": 29, "appearance": 41, "userSelect": 41, "fontKerning": 19, "textEmphasisPosition": 41, "textEmphasis": 41, "textEmphasisStyle": 41, "textEmphasisColor": 41, "boxDecorationBreak": 41, "clipPath": 41, "maskImage": 41, "maskMode": 41, "maskRepeat": 41, "maskPosition": 41, "maskClip": 41, "maskOrigin": 41, "maskSize": 41, "maskComposite": 41, "mask": 41, "maskBorderSource": 41, "maskBorderMode": 41, "maskBorderSlice": 41, "maskBorderWidth": 41, "maskBorderOutset": 41, "maskBorderRepeat": 41, "maskBorder": 41, "maskType": 41, "textDecorationStyle": 41, "textDecorationSkip": 41, "textDecorationLine": 41, "textDecorationColor": 41, "filter": 39, "fontFeatureSettings": 34, "breakAfter": 36, "breakBefore": 36, "breakInside": 36, "columnCount": 36, "columnFill": 36, "columnGap": 36, "columnRule": 36, "columnRuleColor": 36, "columnRuleStyle": 36, "columnRuleWidth": 36, "columns": 36, "columnSpan": 36, "columnWidth": 36 }, "ie": { "flex": 10, "flexDirection": 10, "flexFlow": 10, "flexWrap": 10, "transform": 9, "transformOrigin": 9, "transformOriginX": 9, "transformOriginY": 9, "userSelect": 11, "wrapFlow": 11, "wrapThrough": 11, "wrapMargin": 11, "scrollSnapType": 11, "scrollSnapPointsX": 11, "scrollSnapPointsY": 11, "scrollSnapDestination": 11, "scrollSnapCoordinate": 11, "touchAction": 10, "hyphens": 11, "flowInto": 11, "flowFrom": 11, "breakBefore": 11, "breakAfter": 11, "breakInside": 11, "regionFragment": 11, "gridTemplateColumns": 11, "gridTemplateRows": 11, "gridTemplateAreas": 11, "gridTemplate": 11, "gridAutoColumns": 11, "gridAutoRows": 11, "gridAutoFlow": 11, "grid": 11, "gridRowStart": 11, "gridColumnStart": 11, "gridRowEnd": 11, "gridRow": 11, "gridColumn": 11, "gridColumnEnd": 11, "gridColumnGap": 11, "gridRowGap": 11, "gridArea": 11, "gridGap": 11, "textSizeAdjust": 11 }, "edge": { "userSelect": 14, "wrapFlow": 14, "wrapThrough": 14, "wrapMargin": 14, "scrollSnapType": 14, "scrollSnapPointsX": 14, "scrollSnapPointsY": 14, "scrollSnapDestination": 14, "scrollSnapCoordinate": 14, "hyphens": 14, "flowInto": 14, "flowFrom": 14, "breakBefore": 14, "breakAfter": 14, "breakInside": 14, "regionFragment": 14, "gridTemplateColumns": 14, "gridTemplateRows": 14, "gridTemplateAreas": 14, "gridTemplate": 14, "gridAutoColumns": 14, "gridAutoRows": 14, "gridAutoFlow": 14, "grid": 14, "gridRowStart": 14, "gridColumnStart": 14, "gridRowEnd": 14, "gridRow": 14, "gridColumn": 14, "gridColumnEnd": 14, "gridColumnGap": 14, "gridRowGap": 14, "gridArea": 14, "gridGap": 14 }, "ios_saf": { "flex": 8.1, "flexBasis": 8.1, "flexDirection": 8.1, "flexGrow": 8.1, "flexFlow": 8.1, "flexShrink": 8.1, "flexWrap": 8.1, "alignContent": 8.1, "alignItems": 8.1, "alignSelf": 8.1, "justifyContent": 8.1, "order": 8.1, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8.1, "transformOrigin": 8.1, "transformOriginX": 8.1, "transformOriginY": 8.1, "backfaceVisibility": 8.1, "perspective": 8.1, "perspectiveOrigin": 8.1, "transformStyle": 8.1, "transformOriginZ": 8.1, "animation": 8.1, "animationDelay": 8.1, "animationDirection": 8.1, "animationFillMode": 8.1, "animationDuration": 8.1, "animationIterationCount": 8.1, "animationName": 8.1, "animationPlayState": 8.1, "animationTimingFunction": 8.1, "appearance": 9.3, "userSelect": 9.3, "backdropFilter": 9.3, "fontKerning": 9.3, "scrollSnapType": 9.3, "scrollSnapPointsX": 9.3, "scrollSnapPointsY": 9.3, "scrollSnapDestination": 9.3, "scrollSnapCoordinate": 9.3, "boxDecorationBreak": 9.3, "clipPath": 9.3, "maskImage": 9.3, "maskMode": 9.3, "maskRepeat": 9.3, "maskPosition": 9.3, "maskClip": 9.3, "maskOrigin": 9.3, "maskSize": 9.3, "maskComposite": 9.3, "mask": 9.3, "maskBorderSource": 9.3, "maskBorderMode": 9.3, "maskBorderSlice": 9.3, "maskBorderWidth": 9.3, "maskBorderOutset": 9.3, "maskBorderRepeat": 9.3, "maskBorder": 9.3, "maskType": 9.3, "textSizeAdjust": 9.3, "textDecorationStyle": 9.3, "textDecorationSkip": 9.3, "textDecorationLine": 9.3, "textDecorationColor": 9.3, "shapeImageThreshold": 9.3, "shapeImageMargin": 9.3, "shapeImageOutside": 9.3, "filter": 9, "hyphens": 9.3, "flowInto": 9.3, "flowFrom": 9.3, "breakBefore": 8.1, "breakAfter": 8.1, "breakInside": 8.1, "regionFragment": 9.3, "columnCount": 8.1, "columnFill": 8.1, "columnGap": 8.1, "columnRule": 8.1, "columnRuleColor": 8.1, "columnRuleStyle": 8.1, "columnRuleWidth": 8.1, "columns": 8.1, "columnSpan": 8.1, "columnWidth": 8.1 }, "android": { "flex": 4.2, "flexBasis": 4.2, "flexDirection": 4.2, "flexGrow": 4.2, "flexFlow": 4.2, "flexShrink": 4.2, "flexWrap": 4.2, "alignContent": 4.2, "alignItems": 4.2, "alignSelf": 4.2, "justifyContent": 4.2, "order": 4.2, "transition": 4.2, "transitionDelay": 4.2, "transitionDuration": 4.2, "transitionProperty": 4.2, "transitionTimingFunction": 4.2, "transform": 4.4, "transformOrigin": 4.4, "transformOriginX": 4.4, "transformOriginY": 4.4, "backfaceVisibility": 4.4, "perspective": 4.4, "perspectiveOrigin": 4.4, "transformStyle": 4.4, "transformOriginZ": 4.4, "animation": 4.4, "animationDelay": 4.4, "animationDirection": 4.4, "animationFillMode": 4.4, "animationDuration": 4.4, "animationIterationCount": 4.4, "animationName": 4.4, "animationPlayState": 4.4, "animationTimingFunction": 4.4, "appearance": 51, "userSelect": 51, "fontKerning": 4.4, "textEmphasisPosition": 51, "textEmphasis": 51, "textEmphasisStyle": 51, "textEmphasisColor": 51, "boxDecorationBreak": 51, "clipPath": 51, "maskImage": 51, "maskMode": 51, "maskRepeat": 51, "maskPosition": 51, "maskClip": 51, "maskOrigin": 51, "maskSize": 51, "maskComposite": 51, "mask": 51, "maskBorderSource": 51, "maskBorderMode": 51, "maskBorderSlice": 51, "maskBorderWidth": 51, "maskBorderOutset": 51, "maskBorderRepeat": 51, "maskBorder": 51, "maskType": 51, "filter": 51, "fontFeatureSettings": 4.4, "breakAfter": 51, "breakBefore": 51, "breakInside": 51, "columnCount": 51, "columnFill": 51, "columnGap": 51, "columnRule": 51, "columnRuleColor": 51, "columnRuleStyle": 51, "columnRuleWidth": 51, "columns": 51, "columnSpan": 51, "columnWidth": 51 }, "and_chr": { "appearance": 51, "userSelect": 51, "textEmphasisPosition": 51, "textEmphasis": 51, "textEmphasisStyle": 51, "textEmphasisColor": 51, "boxDecorationBreak": 51, "clipPath": 51, "maskImage": 51, "maskMode": 51, "maskRepeat": 51, "maskPosition": 51, "maskClip": 51, "maskOrigin": 51, "maskSize": 51, "maskComposite": 51, "mask": 51, "maskBorderSource": 51, "maskBorderMode": 51, "maskBorderSlice": 51, "maskBorderWidth": 51, "maskBorderOutset": 51, "maskBorderRepeat": 51, "maskBorder": 51, "maskType": 51, "textDecorationStyle": 51, "textDecorationSkip": 51, "textDecorationLine": 51, "textDecorationColor": 51, "filter": 51 }, "and_uc": { "flex": 9.9, "flexBasis": 9.9, "flexDirection": 9.9, "flexGrow": 9.9, "flexFlow": 9.9, "flexShrink": 9.9, "flexWrap": 9.9, "alignContent": 9.9, "alignItems": 9.9, "alignSelf": 9.9, "justifyContent": 9.9, "order": 9.9, "transition": 9.9, "transitionDelay": 9.9, "transitionDuration": 9.9, "transitionProperty": 9.9, "transitionTimingFunction": 9.9, "transform": 9.9, "transformOrigin": 9.9, "transformOriginX": 9.9, "transformOriginY": 9.9, "backfaceVisibility": 9.9, "perspective": 9.9, "perspectiveOrigin": 9.9, "transformStyle": 9.9, "transformOriginZ": 9.9, "animation": 9.9, "animationDelay": 9.9, "animationDirection": 9.9, "animationFillMode": 9.9, "animationDuration": 9.9, "animationIterationCount": 9.9, "animationName": 9.9, "animationPlayState": 9.9, "animationTimingFunction": 9.9, "appearance": 9.9, "userSelect": 9.9, "fontKerning": 9.9, "textEmphasisPosition": 9.9, "textEmphasis": 9.9, "textEmphasisStyle": 9.9, "textEmphasisColor": 9.9, "maskImage": 9.9, "maskMode": 9.9, "maskRepeat": 9.9, "maskPosition": 9.9, "maskClip": 9.9, "maskOrigin": 9.9, "maskSize": 9.9, "maskComposite": 9.9, "mask": 9.9, "maskBorderSource": 9.9, "maskBorderMode": 9.9, "maskBorderSlice": 9.9, "maskBorderWidth": 9.9, "maskBorderOutset": 9.9, "maskBorderRepeat": 9.9, "maskBorder": 9.9, "maskType": 9.9, "textSizeAdjust": 9.9, "filter": 9.9, "hyphens": 9.9, "flowInto": 9.9, "flowFrom": 9.9, "breakBefore": 9.9, "breakAfter": 9.9, "breakInside": 9.9, "regionFragment": 9.9, "fontFeatureSettings": 9.9, "columnCount": 9.9, "columnFill": 9.9, "columnGap": 9.9, "columnRule": 9.9, "columnRuleColor": 9.9, "columnRuleStyle": 9.9, "columnRuleWidth": 9.9, "columns": 9.9, "columnSpan": 9.9, "columnWidth": 9.9 }, "op_mini": {} };
 module.exports = exports["default"];
-},{}],283:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31099,7 +14102,7 @@ function calc(property, value) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/isPrefixedValue":299,"../../utils/joinPrefixedValue":300}],284:[function(require,module,exports){
+},{"../../utils/isPrefixedValue":201,"../../utils/joinPrefixedValue":202}],186:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31126,7 +14129,7 @@ function cursor(property, value) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/joinPrefixedValue":300}],285:[function(require,module,exports){
+},{"../../utils/joinPrefixedValue":202}],187:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31143,7 +14146,7 @@ function flex(property, value) {
   }
 }
 module.exports = exports['default'];
-},{}],286:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31176,7 +14179,7 @@ function flexboxIE(property, value) {
   }
 }
 module.exports = exports['default'];
-},{}],287:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31213,7 +14216,7 @@ function flexboxOld(property, value) {
   }
 }
 module.exports = exports['default'];
-},{}],288:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31239,7 +14242,7 @@ function gradient(property, value) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/isPrefixedValue":299,"../../utils/joinPrefixedValue":300}],289:[function(require,module,exports){
+},{"../../utils/isPrefixedValue":201,"../../utils/joinPrefixedValue":202}],191:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31252,7 +14255,7 @@ function position(property, value) {
   }
 }
 module.exports = exports['default'];
-},{}],290:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31289,7 +14292,7 @@ function sizing(property, value) {
   }
 }
 module.exports = exports['default'];
-},{"../../utils/joinPrefixedValue":300}],291:[function(require,module,exports){
+},{"../../utils/joinPrefixedValue":202}],193:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31372,7 +14375,7 @@ function prefixValue(value) {
   return multipleValues.join(',');
 }
 module.exports = exports['default'];
-},{"../../utils/capitalizeString":294,"../../utils/isPrefixedValue":299,"../prefixProps":293,"hyphenate-style-name":304}],292:[function(require,module,exports){
+},{"../../utils/capitalizeString":196,"../../utils/isPrefixedValue":201,"../prefixProps":195,"hyphenate-style-name":206}],194:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31488,7 +14491,7 @@ function assignStyles(base) {
   });
 }
 module.exports = exports['default'];
-},{"../utils/capitalizeString":294,"../utils/sortPrefixedStyle":301,"./plugins/calc":283,"./plugins/cursor":284,"./plugins/flex":285,"./plugins/flexboxIE":286,"./plugins/flexboxOld":287,"./plugins/gradient":288,"./plugins/position":289,"./plugins/sizing":290,"./plugins/transition":291,"./prefixProps":293}],293:[function(require,module,exports){
+},{"../utils/capitalizeString":196,"../utils/sortPrefixedStyle":203,"./plugins/calc":185,"./plugins/cursor":186,"./plugins/flex":187,"./plugins/flexboxIE":188,"./plugins/flexboxOld":189,"./plugins/gradient":190,"./plugins/position":191,"./plugins/sizing":192,"./plugins/transition":193,"./prefixProps":195}],195:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31496,7 +14499,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = { "Webkit": { "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "backfaceVisibility": true, "perspective": true, "perspectiveOrigin": true, "transformStyle": true, "transformOriginZ": true, "animation": true, "animationDelay": true, "animationDirection": true, "animationFillMode": true, "animationDuration": true, "animationIterationCount": true, "animationName": true, "animationPlayState": true, "animationTimingFunction": true, "appearance": true, "userSelect": true, "fontKerning": true, "textEmphasisPosition": true, "textEmphasis": true, "textEmphasisStyle": true, "textEmphasisColor": true, "boxDecorationBreak": true, "clipPath": true, "maskImage": true, "maskMode": true, "maskRepeat": true, "maskPosition": true, "maskClip": true, "maskOrigin": true, "maskSize": true, "maskComposite": true, "mask": true, "maskBorderSource": true, "maskBorderMode": true, "maskBorderSlice": true, "maskBorderWidth": true, "maskBorderOutset": true, "maskBorderRepeat": true, "maskBorder": true, "maskType": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "filter": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true, "flex": true, "flexBasis": true, "flexDirection": true, "flexGrow": true, "flexFlow": true, "flexShrink": true, "flexWrap": true, "alignContent": true, "alignItems": true, "alignSelf": true, "justifyContent": true, "order": true, "transition": true, "transitionDelay": true, "transitionDuration": true, "transitionProperty": true, "transitionTimingFunction": true, "backdropFilter": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "shapeImageThreshold": true, "shapeImageMargin": true, "shapeImageOutside": true, "hyphens": true, "flowInto": true, "flowFrom": true, "regionFragment": true, "textSizeAdjust": true }, "Moz": { "appearance": true, "userSelect": true, "boxSizing": true, "textAlignLast": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "tabSize": true, "hyphens": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true }, "ms": { "flex": true, "flexBasis": false, "flexDirection": true, "flexGrow": false, "flexFlow": true, "flexShrink": false, "flexWrap": true, "alignContent": false, "alignItems": false, "alignSelf": false, "justifyContent": false, "order": false, "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "userSelect": true, "wrapFlow": true, "wrapThrough": true, "wrapMargin": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "touchAction": true, "hyphens": true, "flowInto": true, "flowFrom": true, "breakBefore": true, "breakAfter": true, "breakInside": true, "regionFragment": true, "gridTemplateColumns": true, "gridTemplateRows": true, "gridTemplateAreas": true, "gridTemplate": true, "gridAutoColumns": true, "gridAutoRows": true, "gridAutoFlow": true, "grid": true, "gridRowStart": true, "gridColumnStart": true, "gridRowEnd": true, "gridRow": true, "gridColumn": true, "gridColumnEnd": true, "gridColumnGap": true, "gridRowGap": true, "gridArea": true, "gridGap": true, "textSizeAdjust": true } };
 module.exports = exports["default"];
-},{}],294:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31509,7 +14512,7 @@ exports.default = function (str) {
 };
 
 module.exports = exports["default"];
-},{}],295:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31618,7 +14621,7 @@ exports.default = function (userAgent) {
 };
 
 module.exports = exports['default'];
-},{"bowser":303}],296:[function(require,module,exports){
+},{"bowser":205}],198:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31639,7 +14642,7 @@ exports.default = function (_ref) {
 };
 
 module.exports = exports['default'];
-},{}],297:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31651,7 +14654,7 @@ exports.default = function (prefixedValue, value, keepUnprefixed) {
 };
 
 module.exports = exports["default"];
-},{}],298:[function(require,module,exports){
+},{}],200:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31663,7 +14666,7 @@ exports.default = function (property) {
 };
 
 module.exports = exports["default"];
-},{}],299:[function(require,module,exports){
+},{}],201:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31677,7 +14680,7 @@ exports.default = function (value) {
 };
 
 module.exports = exports['default'];
-},{}],300:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31698,7 +14701,7 @@ exports.default = function (property, value) {
 };
 
 module.exports = exports['default'];
-},{}],301:[function(require,module,exports){
+},{}],203:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31726,7 +14729,7 @@ function sortPrefixedStyle(style) {
   }, {});
 }
 module.exports = exports['default'];
-},{"./isPrefixedProperty":298}],302:[function(require,module,exports){
+},{"./isPrefixedProperty":200}],204:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31739,7 +14742,7 @@ exports.default = function (property) {
 };
 
 module.exports = exports['default'];
-},{}],303:[function(require,module,exports){
+},{}],205:[function(require,module,exports){
 /*!
  * Bowser - a browser detector
  * https://github.com/ded/bowser
@@ -32321,7 +15324,7 @@ module.exports = exports['default'];
   return bowser
 });
 
-},{}],304:[function(require,module,exports){
+},{}],206:[function(require,module,exports){
 'use strict';
 
 var uppercasePattern = /[A-Z]/g;
@@ -32339,7 +15342,7 @@ function hyphenateStyleName(string) {
 
 module.exports = hyphenateStyleName;
 
-},{}],305:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
@@ -32487,7 +15490,7 @@ for (var alias in aliases) {
   codes[alias] = aliases[alias]
 }
 
-},{}],306:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -34698,7 +17701,7 @@ function stubFalse() {
 module.exports = merge;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],307:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -35141,11 +18144,11 @@ function toNumber(value) {
 module.exports = throttle;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],308:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 module.exports = require('react/lib/ReactFragment').create;
-},{"react/lib/ReactFragment":536}],309:[function(require,module,exports){
+},{"react/lib/ReactFragment":428}],211:[function(require,module,exports){
 module.exports = require('react/lib/ReactTransitionGroup');
-},{"react/lib/ReactTransitionGroup":543}],310:[function(require,module,exports){
+},{"react/lib/ReactTransitionGroup":435}],212:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35165,7 +18168,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function defineProperty(o, p, attr) {
   return (0, _defineProperty2.default)(o, p, attr);
 }
-},{"babel-runtime/core-js/object/define-property":162}],311:[function(require,module,exports){
+},{"babel-runtime/core-js/object/define-property":69}],213:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35394,7 +18397,7 @@ process.env.NODE_ENV !== "production" ? EventListener.propTypes = {
 } : void 0;
 exports.default = EventListener;
 }).call(this,require('_process'))
-},{"./supports":312,"_process":560,"babel-runtime/core-js/object/assign":160,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/core-js/object/keys":164,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/objectWithoutProperties":173,"babel-runtime/helpers/possibleConstructorReturn":174,"babel-runtime/helpers/typeof":178,"react":559,"react-addons-shallow-compare":313,"warning":327}],312:[function(require,module,exports){
+},{"./supports":214,"_process":452,"babel-runtime/core-js/object/assign":67,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/core-js/object/keys":71,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"babel-runtime/helpers/typeof":84,"react":451,"react-addons-shallow-compare":215,"warning":229}],214:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35443,9 +18446,9 @@ var passiveOption = exports.passiveOption = function () {
     return supportsPassiveOption;
   }();
 }();
-},{"./define-property":310}],313:[function(require,module,exports){
+},{"./define-property":212}],215:[function(require,module,exports){
 module.exports = require('react/lib/shallowCompare');
-},{"react/lib/shallowCompare":551}],314:[function(require,module,exports){
+},{"react/lib/shallowCompare":443}],216:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -35471,7 +18474,7 @@ function compose() {
     };
   });
 }
-},{}],315:[function(require,module,exports){
+},{}],217:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35494,7 +18497,7 @@ var createFactory = function createFactory(type) {
 };
 
 exports.default = createFactory;
-},{"./isReferentiallyTransparentFunctionComponent":319,"./utils/createEagerElementUtil":324}],316:[function(require,module,exports){
+},{"./isReferentiallyTransparentFunctionComponent":221,"./utils/createEagerElementUtil":226}],218:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35542,7 +18545,7 @@ var createHelper = function createHelper(func, helperName) {
 
 exports.default = createHelper;
 }).call(this,require('_process'))
-},{"./wrapDisplayName":325,"_process":560}],317:[function(require,module,exports){
+},{"./wrapDisplayName":227,"_process":452}],219:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35559,7 +18562,7 @@ var getDisplayName = function getDisplayName(Component) {
 };
 
 exports.default = getDisplayName;
-},{}],318:[function(require,module,exports){
+},{}],220:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35568,7 +18571,7 @@ var isClassComponent = function isClassComponent(Component) {
 };
 
 exports.default = isClassComponent;
-},{}],319:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35586,7 +18589,7 @@ var isReferentiallyTransparentFunctionComponent = function isReferentiallyTransp
 
 exports.default = isReferentiallyTransparentFunctionComponent;
 }).call(this,require('_process'))
-},{"./isClassComponent.js":318,"_process":560}],320:[function(require,module,exports){
+},{"./isClassComponent.js":220,"_process":452}],222:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35654,7 +18657,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],321:[function(require,module,exports){
+},{}],223:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35678,7 +18681,7 @@ var pure = (0, _shouldUpdate2.default)(function (props, nextProps) {
 });
 
 exports.default = (0, _createHelper2.default)(pure, 'pure', true, true);
-},{"./createHelper":316,"./shallowEqual":322,"./shouldUpdate":323}],322:[function(require,module,exports){
+},{"./createHelper":218,"./shallowEqual":224,"./shouldUpdate":225}],224:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35690,7 +18693,7 @@ var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _shallowEqual2.default;
-},{"fbjs/lib/shallowEqual":320}],323:[function(require,module,exports){
+},{"fbjs/lib/shallowEqual":222}],225:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35739,7 +18742,7 @@ var shouldUpdate = function shouldUpdate(test) {
 };
 
 exports.default = (0, _createHelper2.default)(shouldUpdate, 'shouldUpdate');
-},{"./createEagerFactory":315,"./createHelper":316,"react":559}],324:[function(require,module,exports){
+},{"./createEagerFactory":217,"./createHelper":218,"react":451}],226:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35774,7 +18777,7 @@ var createEagerElementUtil = function createEagerElementUtil(hasKey, isReferenti
 };
 
 exports.default = createEagerElementUtil;
-},{"react":559}],325:[function(require,module,exports){
+},{"react":451}],227:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35790,7 +18793,7 @@ var wrapDisplayName = function wrapDisplayName(BaseComponent, hocName) {
 };
 
 exports.default = wrapDisplayName;
-},{"./getDisplayName":317}],326:[function(require,module,exports){
+},{"./getDisplayName":219}],228:[function(require,module,exports){
 module.exports = function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
@@ -35803,7 +18806,7 @@ module.exports = function (target) {
   return target;
 };
 
-},{}],327:[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -35867,7 +18870,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":560}],328:[function(require,module,exports){
+},{"_process":452}],230:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35936,7 +18939,7 @@ process.env.NODE_ENV !== "production" ? MuiThemeProvider.propTypes = {
 } : void 0;
 exports.default = MuiThemeProvider;
 }).call(this,require('_process'))
-},{"./getMuiTheme":331,"_process":560,"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559}],329:[function(require,module,exports){
+},{"./getMuiTheme":233,"_process":452,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/possibleConstructorReturn":81,"react":451}],231:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35982,7 +18985,7 @@ exports.default = {
 }; /**
     * NB: If you update this file, please also update `docs/src/app/customization/Themes.js`
     */
-},{"../../utils/colorManipulator":356,"../colors":330,"../spacing":332}],330:[function(require,module,exports){
+},{"../../utils/colorManipulator":250,"../colors":232,"../spacing":234}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36273,7 +19276,7 @@ var faintBlack = exports.faintBlack = 'rgba(0, 0, 0, 0.12)';
 var fullWhite = exports.fullWhite = 'rgba(255, 255, 255, 1)';
 var darkWhite = exports.darkWhite = 'rgba(255, 255, 255, 0.87)';
 var lightWhite = exports.lightWhite = 'rgba(255, 255, 255, 0.54)';
-},{}],331:[function(require,module,exports){
+},{}],233:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36653,7 +19656,7 @@ function getMuiTheme(muiTheme) {
 
   return muiTheme;
 }
-},{"../utils/autoprefixer":353,"../utils/callOnce":354,"../utils/colorManipulator":356,"../utils/rtl":362,"./baseThemes/lightBaseTheme":329,"./colors":330,"./typography":334,"./zIndex":335,"babel-runtime/helpers/toConsumableArray":177,"lodash.merge":306,"recompose/compose":314}],332:[function(require,module,exports){
+},{"../utils/autoprefixer":247,"../utils/callOnce":248,"../utils/colorManipulator":250,"../utils/rtl":255,"./baseThemes/lightBaseTheme":231,"./colors":232,"./typography":236,"./zIndex":237,"babel-runtime/helpers/toConsumableArray":83,"lodash.merge":208,"recompose/compose":216}],234:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36673,7 +19676,7 @@ exports.default = {
   desktopSubheaderHeight: 48,
   desktopToolbarHeight: 56
 };
-},{}],333:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36708,7 +19711,7 @@ exports.default = {
     return property + ' ' + duration + ' ' + easeFunction + ' ' + delay;
   }
 };
-},{}],334:[function(require,module,exports){
+},{}],236:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36744,7 +19747,7 @@ var Typography = function Typography() {
 };
 
 exports.default = new Typography();
-},{"./colors":330,"babel-runtime/helpers/classCallCheck":168}],335:[function(require,module,exports){
+},{"./colors":232,"babel-runtime/helpers/classCallCheck":75}],237:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36762,40 +19765,7 @@ exports.default = {
   snackbar: 2900,
   tooltip: 3000
 };
-},{}],336:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ActionCheckCircle = function ActionCheckCircle(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' })
-  );
-};
-ActionCheckCircle = (0, _pure2.default)(ActionCheckCircle);
-ActionCheckCircle.displayName = 'ActionCheckCircle';
-ActionCheckCircle.muiName = 'SvgIcon';
-
-exports.default = ActionCheckCircle;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],337:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36828,7 +19798,7 @@ HardwareKeyboardArrowDown.displayName = 'HardwareKeyboardArrowDown';
 HardwareKeyboardArrowDown.muiName = 'SvgIcon';
 
 exports.default = HardwareKeyboardArrowDown;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],338:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],239:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36861,40 +19831,7 @@ HardwareKeyboardArrowUp.displayName = 'HardwareKeyboardArrowUp';
 HardwareKeyboardArrowUp.muiName = 'SvgIcon';
 
 exports.default = HardwareKeyboardArrowUp;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],339:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var NavigationArrowDropDown = function NavigationArrowDropDown(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M7 10l5 5 5-5z' })
-  );
-};
-NavigationArrowDropDown = (0, _pure2.default)(NavigationArrowDropDown);
-NavigationArrowDropDown.displayName = 'NavigationArrowDropDown';
-NavigationArrowDropDown.muiName = 'SvgIcon';
-
-exports.default = NavigationArrowDropDown;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],340:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],240:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36927,7 +19864,7 @@ NavigationCancel.displayName = 'NavigationCancel';
 NavigationCancel.muiName = 'SvgIcon';
 
 exports.default = NavigationCancel;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],341:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],241:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36960,73 +19897,7 @@ NavigationCheck.displayName = 'NavigationCheck';
 NavigationCheck.muiName = 'SvgIcon';
 
 exports.default = NavigationCheck;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],342:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var NavigationChevronLeft = function NavigationChevronLeft(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z' })
-  );
-};
-NavigationChevronLeft = (0, _pure2.default)(NavigationChevronLeft);
-NavigationChevronLeft.displayName = 'NavigationChevronLeft';
-NavigationChevronLeft.muiName = 'SvgIcon';
-
-exports.default = NavigationChevronLeft;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],343:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var NavigationChevronRight = function NavigationChevronRight(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' })
-  );
-};
-NavigationChevronRight = (0, _pure2.default)(NavigationChevronRight);
-NavigationChevronRight.displayName = 'NavigationChevronRight';
-NavigationChevronRight.muiName = 'SvgIcon';
-
-exports.default = NavigationChevronRight;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],344:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],242:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37059,7 +19930,7 @@ NavigationClose.displayName = 'NavigationClose';
 NavigationClose.muiName = 'SvgIcon';
 
 exports.default = NavigationClose;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],345:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],243:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37092,7 +19963,7 @@ NavigationExpandLess.displayName = 'NavigationExpandLess';
 NavigationExpandLess.muiName = 'SvgIcon';
 
 exports.default = NavigationExpandLess;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],346:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],244:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37125,7 +19996,7 @@ NavigationExpandMore.displayName = 'NavigationExpandMore';
 NavigationExpandMore.muiName = 'SvgIcon';
 
 exports.default = NavigationExpandMore;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],347:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],245:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37158,139 +20029,7 @@ NavigationMenu.displayName = 'NavigationMenu';
 NavigationMenu.muiName = 'SvgIcon';
 
 exports.default = NavigationMenu;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],348:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ToggleCheckBoxOutlineBlank = function ToggleCheckBoxOutlineBlank(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z' })
-  );
-};
-ToggleCheckBoxOutlineBlank = (0, _pure2.default)(ToggleCheckBoxOutlineBlank);
-ToggleCheckBoxOutlineBlank.displayName = 'ToggleCheckBoxOutlineBlank';
-ToggleCheckBoxOutlineBlank.muiName = 'SvgIcon';
-
-exports.default = ToggleCheckBoxOutlineBlank;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],349:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ToggleCheckBox = function ToggleCheckBox(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' })
-  );
-};
-ToggleCheckBox = (0, _pure2.default)(ToggleCheckBox);
-ToggleCheckBox.displayName = 'ToggleCheckBox';
-ToggleCheckBox.muiName = 'SvgIcon';
-
-exports.default = ToggleCheckBox;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],350:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ToggleRadioButtonChecked = function ToggleRadioButtonChecked(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z' })
-  );
-};
-ToggleRadioButtonChecked = (0, _pure2.default)(ToggleRadioButtonChecked);
-ToggleRadioButtonChecked.displayName = 'ToggleRadioButtonChecked';
-ToggleRadioButtonChecked.muiName = 'SvgIcon';
-
-exports.default = ToggleRadioButtonChecked;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],351:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pure = require('recompose/pure');
-
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = require('../../SvgIcon');
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ToggleRadioButtonUnchecked = function ToggleRadioButtonUnchecked(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _react2.default.createElement('path', { d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z' })
-  );
-};
-ToggleRadioButtonUnchecked = (0, _pure2.default)(ToggleRadioButtonUnchecked);
-ToggleRadioButtonUnchecked.displayName = 'ToggleRadioButtonUnchecked';
-ToggleRadioButtonUnchecked.muiName = 'SvgIcon';
-
-exports.default = ToggleRadioButtonUnchecked;
-},{"../../SvgIcon":101,"react":559,"recompose/pure":321}],352:[function(require,module,exports){
+},{"../../SvgIcon":48,"react":451,"recompose/pure":223}],246:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37301,7 +20040,7 @@ exports.default = {
     style[key] = value;
   }
 };
-},{}],353:[function(require,module,exports){
+},{}],247:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37378,7 +20117,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var hasWarnedAboutUserAgent = false;
 }).call(this,require('_process'))
-},{"_process":560,"babel-runtime/helpers/typeof":178,"inline-style-prefixer":271,"warning":327}],354:[function(require,module,exports){
+},{"_process":452,"babel-runtime/helpers/typeof":84,"inline-style-prefixer":173,"warning":229}],248:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37407,7 +20146,7 @@ function callOnce() {
   }
 }
 }).call(this,require('_process'))
-},{"_process":560,"warning":327}],355:[function(require,module,exports){
+},{"_process":452,"warning":229}],249:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37460,7 +20199,7 @@ function extendChildren(children, extendedProps, extendedChildren) {
     return _react2.default.cloneElement(child, newProps, newChildren);
   });
 }
-},{"react":559,"react-addons-create-fragment":308}],356:[function(require,module,exports){
+},{"react":451,"react-addons-create-fragment":210}],250:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37705,48 +20444,7 @@ function lighten(color, coefficient) {
   return convertColorToString(color);
 }
 }).call(this,require('_process'))
-},{"_process":560,"warning":327}],357:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = deprecated;
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var warned = {}; /**
-                  * This module is taken from https://github.com/react-bootstrap/react-prop-types.
-                  * It's not a dependency to reduce build size / install time.
-                  * It should be pretty stable.
-                  */
-function deprecated(validator, reason) {
-  return function validate(props, propName, componentName, location, propFullName) {
-    var componentNameSafe = componentName || '<<anonymous>>';
-    var propFullNameSafe = propFullName || propName;
-
-    if (props[propName] != null) {
-      var messageKey = componentName + '.' + propName;
-
-      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(warned[messageKey], 'The ' + location + ' `' + propFullNameSafe + '` of ' + ('`' + componentNameSafe + '` is deprecated. ' + reason)) : void 0;
-
-      warned[messageKey] = true;
-    }
-
-    for (var _len = arguments.length, args = Array(_len > 5 ? _len - 5 : 0), _key = 5; _key < _len; _key++) {
-      args[_key - 5] = arguments[_key];
-    }
-
-    return validator.apply(undefined, [props, propName, componentName, location, propFullName].concat(args));
-  };
-}
-}).call(this,require('_process'))
-},{"_process":560,"warning":327}],358:[function(require,module,exports){
+},{"_process":452,"warning":229}],251:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37771,7 +20469,7 @@ exports.default = {
     };
   }
 };
-},{}],359:[function(require,module,exports){
+},{}],252:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37811,7 +20509,7 @@ exports.default = {
     return ['keydown', 'keypress', 'keyup'].indexOf(event.type) !== -1;
   }
 };
-},{}],360:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37839,7 +20537,7 @@ var isIOS = exports.isIOS = function isIOS() {
   return (/iPad|iPhone|iPod/.test(window.navigator.userAgent) && !window.MSStream
   );
 };
-},{}],361:[function(require,module,exports){
+},{}],254:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37871,7 +20569,7 @@ exports.default = {
   zDepth: _react.PropTypes.oneOf([0, 1, 2, 3, 4, 5])
 
 };
-},{"react":559}],362:[function(require,module,exports){
+},{"react":451}],255:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37969,158 +20667,12 @@ function rtl(muiTheme) {
     };
   }
 }
-},{"babel-runtime/core-js/object/keys":164}],363:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.LARGE = exports.MEDIUM = exports.SMALL = undefined;
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-exports.default = withWidth;
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactEventListener = require('react-event-listener');
-
-var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SMALL = exports.SMALL = 1;
-var MEDIUM = exports.MEDIUM = 2;
-var LARGE = exports.LARGE = 3;
-
-function withWidth() {
-  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var _options$largeWidth = options.largeWidth,
-      largeWidth = _options$largeWidth === undefined ? 992 : _options$largeWidth,
-      _options$mediumWidth = options.mediumWidth,
-      mediumWidth = _options$mediumWidth === undefined ? 768 : _options$mediumWidth,
-      _options$resizeInterv = options.resizeInterval,
-      resizeInterval = _options$resizeInterv === undefined ? 166 : _options$resizeInterv;
-
-
-  return function (MyComponent) {
-    return function (_Component) {
-      (0, _inherits3.default)(WithWidth, _Component);
-
-      function WithWidth() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
-        (0, _classCallCheck3.default)(this, WithWidth);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-          args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = WithWidth.__proto__ || (0, _getPrototypeOf2.default)(WithWidth)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-          width: null
-        }, _this.handleResize = function () {
-          clearTimeout(_this.deferTimer);
-          _this.deferTimer = setTimeout(function () {
-            _this.updateWidth();
-          }, resizeInterval);
-        }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-      }
-
-      (0, _createClass3.default)(WithWidth, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-          this.updateWidth();
-        }
-      }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-          clearTimeout(this.deferTimer);
-        }
-      }, {
-        key: 'updateWidth',
-        value: function updateWidth() {
-          var innerWidth = window.innerWidth;
-          var width = void 0;
-
-          if (innerWidth >= largeWidth) {
-            width = LARGE;
-          } else if (innerWidth >= mediumWidth) {
-            width = MEDIUM;
-          } else {
-            // innerWidth < 768
-            width = SMALL;
-          }
-
-          if (width !== this.state.width) {
-            this.setState({
-              width: width
-            });
-          }
-        }
-      }, {
-        key: 'render',
-        value: function render() {
-          var width = this.state.width;
-
-          /**
-           * When rendering the component on the server,
-           * we have no idea about the screen width.
-           * In order to prevent blinks and help the reconciliation
-           * we are not rendering the component.
-           *
-           * A better alternative would be to send client hints.
-           * But the browser support of this API is low:
-           * http://caniuse.com/#search=client%20hint
-           */
-          if (width === null) {
-            return null;
-          }
-
-          return _react2.default.createElement(
-            _reactEventListener2.default,
-            { target: 'window', onResize: this.handleResize },
-            _react2.default.createElement(MyComponent, (0, _extends3.default)({
-              width: width
-            }, this.props))
-          );
-        }
-      }]);
-      return WithWidth;
-    }(_react.Component);
-  };
-}
-},{"babel-runtime/core-js/object/get-prototype-of":163,"babel-runtime/helpers/classCallCheck":168,"babel-runtime/helpers/createClass":169,"babel-runtime/helpers/extends":171,"babel-runtime/helpers/inherits":172,"babel-runtime/helpers/possibleConstructorReturn":174,"react":559,"react-event-listener":311}],364:[function(require,module,exports){
+},{"babel-runtime/core-js/object/keys":71}],256:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/ReactDOM');
 
-},{"./lib/ReactDOM":395}],365:[function(require,module,exports){
+},{"./lib/ReactDOM":287}],257:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38194,7 +20746,7 @@ var ARIADOMPropertyConfig = {
 };
 
 module.exports = ARIADOMPropertyConfig;
-},{}],366:[function(require,module,exports){
+},{}],258:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38218,7 +20770,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":398,"fbjs/lib/focusNode":501}],367:[function(require,module,exports){
+},{"./ReactDOMComponentTree":290,"fbjs/lib/focusNode":393}],259:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -38603,7 +21155,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventPropagators":384,"./FallbackCompositionState":385,"./SyntheticCompositionEvent":449,"./SyntheticInputEvent":453,"fbjs/lib/ExecutionEnvironment":493}],368:[function(require,module,exports){
+},{"./EventPropagators":276,"./FallbackCompositionState":277,"./SyntheticCompositionEvent":341,"./SyntheticInputEvent":345,"fbjs/lib/ExecutionEnvironment":385}],260:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38751,7 +21303,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],369:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -38962,7 +21514,7 @@ var CSSPropertyOperations = {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":368,"./ReactInstrumentation":427,"./dangerousStyleValue":466,"_process":560,"fbjs/lib/ExecutionEnvironment":493,"fbjs/lib/camelizeStyleName":495,"fbjs/lib/hyphenateStyleName":506,"fbjs/lib/memoizeStringOnly":510,"fbjs/lib/warning":514}],370:[function(require,module,exports){
+},{"./CSSProperty":260,"./ReactInstrumentation":319,"./dangerousStyleValue":358,"_process":452,"fbjs/lib/ExecutionEnvironment":385,"fbjs/lib/camelizeStyleName":387,"fbjs/lib/hyphenateStyleName":398,"fbjs/lib/memoizeStringOnly":402,"fbjs/lib/warning":406}],262:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -39083,7 +21635,7 @@ var CallbackQueue = function () {
 
 module.exports = PooledClass.addPoolingTo(CallbackQueue);
 }).call(this,require('_process'))
-},{"./PooledClass":389,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],371:[function(require,module,exports){
+},{"./PooledClass":281,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],263:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39404,7 +21956,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventPluginHub":381,"./EventPropagators":384,"./ReactDOMComponentTree":398,"./ReactUpdates":442,"./SyntheticEvent":451,"./getEventTarget":474,"./isEventSupported":482,"./isTextInputElement":483,"fbjs/lib/ExecutionEnvironment":493}],372:[function(require,module,exports){
+},{"./EventPluginHub":273,"./EventPropagators":276,"./ReactDOMComponentTree":290,"./ReactUpdates":334,"./SyntheticEvent":343,"./getEventTarget":366,"./isEventSupported":374,"./isTextInputElement":375,"fbjs/lib/ExecutionEnvironment":385}],264:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -39631,7 +22183,7 @@ var DOMChildrenOperations = {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":373,"./Danger":377,"./ReactDOMComponentTree":398,"./ReactInstrumentation":427,"./createMicrosoftUnsafeLocalFunction":465,"./setInnerHTML":487,"./setTextContent":488,"_process":560}],373:[function(require,module,exports){
+},{"./DOMLazyTree":265,"./Danger":269,"./ReactDOMComponentTree":290,"./ReactInstrumentation":319,"./createMicrosoftUnsafeLocalFunction":357,"./setInnerHTML":379,"./setTextContent":380,"_process":452}],265:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -39749,7 +22301,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./DOMNamespaces":374,"./createMicrosoftUnsafeLocalFunction":465,"./setInnerHTML":487,"./setTextContent":488}],374:[function(require,module,exports){
+},{"./DOMNamespaces":266,"./createMicrosoftUnsafeLocalFunction":357,"./setInnerHTML":379,"./setTextContent":380}],266:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39769,7 +22321,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],375:[function(require,module,exports){
+},{}],267:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -39981,7 +22533,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],376:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],268:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -40220,7 +22772,7 @@ var DOMPropertyOperations = {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":375,"./ReactDOMComponentTree":398,"./ReactInstrumentation":427,"./quoteAttributeValueForBrowser":484,"_process":560,"fbjs/lib/warning":514}],377:[function(require,module,exports){
+},{"./DOMProperty":267,"./ReactDOMComponentTree":290,"./ReactInstrumentation":319,"./quoteAttributeValueForBrowser":376,"_process":452,"fbjs/lib/warning":406}],269:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -40270,7 +22822,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":373,"./reactProdInvariant":485,"_process":560,"fbjs/lib/ExecutionEnvironment":493,"fbjs/lib/createNodesFromMarkup":498,"fbjs/lib/emptyFunction":499,"fbjs/lib/invariant":507}],378:[function(require,module,exports){
+},{"./DOMLazyTree":265,"./reactProdInvariant":377,"_process":452,"fbjs/lib/ExecutionEnvironment":385,"fbjs/lib/createNodesFromMarkup":390,"fbjs/lib/emptyFunction":391,"fbjs/lib/invariant":399}],270:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40296,7 +22848,7 @@ module.exports = Danger;
 var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 module.exports = DefaultEventPluginOrder;
-},{}],379:[function(require,module,exports){
+},{}],271:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40396,7 +22948,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventPropagators":384,"./ReactDOMComponentTree":398,"./SyntheticMouseEvent":455}],380:[function(require,module,exports){
+},{"./EventPropagators":276,"./ReactDOMComponentTree":290,"./SyntheticMouseEvent":347}],272:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40488,7 +23040,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-},{}],381:[function(require,module,exports){
+},{}],273:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -40768,7 +23320,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":382,"./EventPluginUtils":383,"./ReactErrorUtils":418,"./accumulateInto":462,"./forEachAccumulated":470,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],382:[function(require,module,exports){
+},{"./EventPluginRegistry":274,"./EventPluginUtils":275,"./ReactErrorUtils":310,"./accumulateInto":354,"./forEachAccumulated":362,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],274:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -41025,7 +23577,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],383:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],275:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -41253,7 +23805,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./ReactErrorUtils":418,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514}],384:[function(require,module,exports){
+},{"./ReactErrorUtils":310,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406}],276:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -41389,7 +23941,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventPluginHub":381,"./EventPluginUtils":383,"./accumulateInto":462,"./forEachAccumulated":470,"_process":560,"fbjs/lib/warning":514}],385:[function(require,module,exports){
+},{"./EventPluginHub":273,"./EventPluginUtils":275,"./accumulateInto":354,"./forEachAccumulated":362,"_process":452,"fbjs/lib/warning":406}],277:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -41484,7 +24036,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":389,"./getTextContentAccessor":479,"object-assign":515}],386:[function(require,module,exports){
+},{"./PooledClass":281,"./getTextContentAccessor":371,"object-assign":407}],278:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -41696,7 +24248,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":375}],387:[function(require,module,exports){
+},{"./DOMProperty":267}],279:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -41755,7 +24307,7 @@ var KeyEscapeUtils = {
 };
 
 module.exports = KeyEscapeUtils;
-},{}],388:[function(require,module,exports){
+},{}],280:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -41892,7 +24444,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypesSecret":435,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"react/lib/React":526}],389:[function(require,module,exports){
+},{"./ReactPropTypesSecret":327,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"react/lib/React":418}],281:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -42006,7 +24558,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],390:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],282:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -42334,7 +24886,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventPluginRegistry":382,"./ReactEventEmitterMixin":419,"./ViewportMetrics":461,"./getVendorPrefixedEventName":480,"./isEventSupported":482,"object-assign":515}],391:[function(require,module,exports){
+},{"./EventPluginRegistry":274,"./ReactEventEmitterMixin":311,"./ViewportMetrics":353,"./getVendorPrefixedEventName":372,"./isEventSupported":374,"object-assign":407}],283:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -42490,7 +25042,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":387,"./ReactReconciler":437,"./instantiateReactComponent":481,"./shouldUpdateReactComponent":489,"./traverseAllChildren":490,"_process":560,"fbjs/lib/warning":514,"react/lib/ReactComponentTreeHook":530}],392:[function(require,module,exports){
+},{"./KeyEscapeUtils":279,"./ReactReconciler":329,"./instantiateReactComponent":373,"./shouldUpdateReactComponent":381,"./traverseAllChildren":382,"_process":452,"fbjs/lib/warning":406,"react/lib/ReactComponentTreeHook":422}],284:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -42520,7 +25072,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":372,"./ReactDOMIDOperations":402}],393:[function(require,module,exports){
+},{"./DOMChildrenOperations":264,"./ReactDOMIDOperations":294}],285:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -42568,7 +25120,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],394:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],286:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -43472,7 +26024,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":393,"./ReactErrorUtils":418,"./ReactInstanceMap":426,"./ReactInstrumentation":427,"./ReactNodeTypes":432,"./ReactReconciler":437,"./checkReactTypeSpec":464,"./reactProdInvariant":485,"./shouldUpdateReactComponent":489,"_process":560,"fbjs/lib/emptyObject":500,"fbjs/lib/invariant":507,"fbjs/lib/shallowEqual":513,"fbjs/lib/warning":514,"object-assign":515,"react/lib/React":526,"react/lib/ReactCurrentOwner":531}],395:[function(require,module,exports){
+},{"./ReactComponentEnvironment":285,"./ReactErrorUtils":310,"./ReactInstanceMap":318,"./ReactInstrumentation":319,"./ReactNodeTypes":324,"./ReactReconciler":329,"./checkReactTypeSpec":356,"./reactProdInvariant":377,"./shouldUpdateReactComponent":381,"_process":452,"fbjs/lib/emptyObject":392,"fbjs/lib/invariant":399,"fbjs/lib/shallowEqual":405,"fbjs/lib/warning":406,"object-assign":407,"react/lib/React":418,"react/lib/ReactCurrentOwner":423}],287:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -43585,7 +26137,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactDOM;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":398,"./ReactDOMInvalidARIAHook":404,"./ReactDOMNullInputValuePropHook":405,"./ReactDOMUnknownPropertyHook":412,"./ReactDefaultInjection":415,"./ReactInstrumentation":427,"./ReactMount":430,"./ReactReconciler":437,"./ReactUpdates":442,"./ReactVersion":443,"./findDOMNode":468,"./getHostComponentFromComposite":475,"./renderSubtreeIntoContainer":486,"_process":560,"fbjs/lib/ExecutionEnvironment":493,"fbjs/lib/warning":514}],396:[function(require,module,exports){
+},{"./ReactDOMComponentTree":290,"./ReactDOMInvalidARIAHook":296,"./ReactDOMNullInputValuePropHook":297,"./ReactDOMUnknownPropertyHook":304,"./ReactDefaultInjection":307,"./ReactInstrumentation":319,"./ReactMount":322,"./ReactReconciler":329,"./ReactUpdates":334,"./ReactVersion":335,"./findDOMNode":360,"./getHostComponentFromComposite":367,"./renderSubtreeIntoContainer":378,"_process":452,"fbjs/lib/ExecutionEnvironment":385,"fbjs/lib/warning":406}],288:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -44588,7 +27140,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":366,"./CSSPropertyOperations":369,"./DOMLazyTree":373,"./DOMNamespaces":374,"./DOMProperty":375,"./DOMPropertyOperations":376,"./EventPluginHub":381,"./EventPluginRegistry":382,"./ReactBrowserEventEmitter":390,"./ReactDOMComponentFlags":397,"./ReactDOMComponentTree":398,"./ReactDOMInput":403,"./ReactDOMOption":406,"./ReactDOMSelect":407,"./ReactDOMTextarea":410,"./ReactInstrumentation":427,"./ReactMultiChild":431,"./ReactServerRenderingTransaction":439,"./escapeTextContentForBrowser":467,"./isEventSupported":482,"./reactProdInvariant":485,"./validateDOMNesting":491,"_process":560,"fbjs/lib/emptyFunction":499,"fbjs/lib/invariant":507,"fbjs/lib/shallowEqual":513,"fbjs/lib/warning":514,"object-assign":515}],397:[function(require,module,exports){
+},{"./AutoFocusUtils":258,"./CSSPropertyOperations":261,"./DOMLazyTree":265,"./DOMNamespaces":266,"./DOMProperty":267,"./DOMPropertyOperations":268,"./EventPluginHub":273,"./EventPluginRegistry":274,"./ReactBrowserEventEmitter":282,"./ReactDOMComponentFlags":289,"./ReactDOMComponentTree":290,"./ReactDOMInput":295,"./ReactDOMOption":298,"./ReactDOMSelect":299,"./ReactDOMTextarea":302,"./ReactInstrumentation":319,"./ReactMultiChild":323,"./ReactServerRenderingTransaction":331,"./escapeTextContentForBrowser":359,"./isEventSupported":374,"./reactProdInvariant":377,"./validateDOMNesting":383,"_process":452,"fbjs/lib/emptyFunction":391,"fbjs/lib/invariant":399,"fbjs/lib/shallowEqual":405,"fbjs/lib/warning":406,"object-assign":407}],289:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -44606,7 +27158,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],398:[function(require,module,exports){
+},{}],290:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -44803,7 +27355,7 @@ var ReactDOMComponentTree = {
 
 module.exports = ReactDOMComponentTree;
 }).call(this,require('_process'))
-},{"./DOMProperty":375,"./ReactDOMComponentFlags":397,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],399:[function(require,module,exports){
+},{"./DOMProperty":267,"./ReactDOMComponentFlags":289,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],291:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -44838,7 +27390,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 
 module.exports = ReactDOMContainerInfo;
 }).call(this,require('_process'))
-},{"./validateDOMNesting":491,"_process":560}],400:[function(require,module,exports){
+},{"./validateDOMNesting":383,"_process":452}],292:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -44898,7 +27450,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":373,"./ReactDOMComponentTree":398,"object-assign":515}],401:[function(require,module,exports){
+},{"./DOMLazyTree":265,"./ReactDOMComponentTree":290,"object-assign":407}],293:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -44917,7 +27469,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],402:[function(require,module,exports){
+},{}],294:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -44951,7 +27503,7 @@ var ReactDOMIDOperations = {
 };
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":372,"./ReactDOMComponentTree":398}],403:[function(require,module,exports){
+},{"./DOMChildrenOperations":264,"./ReactDOMComponentTree":290}],295:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -45231,7 +27783,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":376,"./LinkedValueUtils":388,"./ReactDOMComponentTree":398,"./ReactUpdates":442,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"object-assign":515}],404:[function(require,module,exports){
+},{"./DOMPropertyOperations":268,"./LinkedValueUtils":280,"./ReactDOMComponentTree":290,"./ReactUpdates":334,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"object-assign":407}],296:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -45326,7 +27878,7 @@ var ReactDOMInvalidARIAHook = {
 
 module.exports = ReactDOMInvalidARIAHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":375,"_process":560,"fbjs/lib/warning":514,"react/lib/ReactComponentTreeHook":530}],405:[function(require,module,exports){
+},{"./DOMProperty":267,"_process":452,"fbjs/lib/warning":406,"react/lib/ReactComponentTreeHook":422}],297:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -45371,7 +27923,7 @@ var ReactDOMNullInputValuePropHook = {
 
 module.exports = ReactDOMNullInputValuePropHook;
 }).call(this,require('_process'))
-},{"_process":560,"fbjs/lib/warning":514,"react/lib/ReactComponentTreeHook":530}],406:[function(require,module,exports){
+},{"_process":452,"fbjs/lib/warning":406,"react/lib/ReactComponentTreeHook":422}],298:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -45496,7 +28048,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":398,"./ReactDOMSelect":407,"_process":560,"fbjs/lib/warning":514,"object-assign":515,"react/lib/React":526}],407:[function(require,module,exports){
+},{"./ReactDOMComponentTree":290,"./ReactDOMSelect":299,"_process":452,"fbjs/lib/warning":406,"object-assign":407,"react/lib/React":418}],299:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -45698,7 +28250,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":388,"./ReactDOMComponentTree":398,"./ReactUpdates":442,"_process":560,"fbjs/lib/warning":514,"object-assign":515}],408:[function(require,module,exports){
+},{"./LinkedValueUtils":280,"./ReactDOMComponentTree":290,"./ReactUpdates":334,"_process":452,"fbjs/lib/warning":406,"object-assign":407}],300:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -45910,7 +28462,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":478,"./getTextContentAccessor":479,"fbjs/lib/ExecutionEnvironment":493}],409:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":370,"./getTextContentAccessor":371,"fbjs/lib/ExecutionEnvironment":385}],301:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -46076,7 +28628,7 @@ _assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":372,"./DOMLazyTree":373,"./ReactDOMComponentTree":398,"./escapeTextContentForBrowser":467,"./reactProdInvariant":485,"./validateDOMNesting":491,"_process":560,"fbjs/lib/invariant":507,"object-assign":515}],410:[function(require,module,exports){
+},{"./DOMChildrenOperations":264,"./DOMLazyTree":265,"./ReactDOMComponentTree":290,"./escapeTextContentForBrowser":359,"./reactProdInvariant":377,"./validateDOMNesting":383,"_process":452,"fbjs/lib/invariant":399,"object-assign":407}],302:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -46238,7 +28790,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":388,"./ReactDOMComponentTree":398,"./ReactUpdates":442,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"object-assign":515}],411:[function(require,module,exports){
+},{"./LinkedValueUtils":280,"./ReactDOMComponentTree":290,"./ReactUpdates":334,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"object-assign":407}],303:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -46376,7 +28928,7 @@ module.exports = {
   traverseEnterLeave: traverseEnterLeave
 };
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],412:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],304:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -46490,7 +29042,7 @@ var ReactDOMUnknownPropertyHook = {
 
 module.exports = ReactDOMUnknownPropertyHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":375,"./EventPluginRegistry":382,"_process":560,"fbjs/lib/warning":514,"react/lib/ReactComponentTreeHook":530}],413:[function(require,module,exports){
+},{"./DOMProperty":267,"./EventPluginRegistry":274,"_process":452,"fbjs/lib/warning":406,"react/lib/ReactComponentTreeHook":422}],305:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -46853,7 +29405,7 @@ if (/[?&]react_perf\b/.test(url)) {
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactHostOperationHistoryHook":423,"./ReactInvalidSetStateWarningHook":428,"_process":560,"fbjs/lib/ExecutionEnvironment":493,"fbjs/lib/performanceNow":512,"fbjs/lib/warning":514,"react/lib/ReactComponentTreeHook":530}],414:[function(require,module,exports){
+},{"./ReactHostOperationHistoryHook":315,"./ReactInvalidSetStateWarningHook":320,"_process":452,"fbjs/lib/ExecutionEnvironment":385,"fbjs/lib/performanceNow":404,"fbjs/lib/warning":406,"react/lib/ReactComponentTreeHook":422}],306:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -46921,7 +29473,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":442,"./Transaction":460,"fbjs/lib/emptyFunction":499,"object-assign":515}],415:[function(require,module,exports){
+},{"./ReactUpdates":334,"./Transaction":352,"fbjs/lib/emptyFunction":391,"object-assign":407}],307:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47007,7 +29559,7 @@ function inject() {
 module.exports = {
   inject: inject
 };
-},{"./ARIADOMPropertyConfig":365,"./BeforeInputEventPlugin":367,"./ChangeEventPlugin":371,"./DefaultEventPluginOrder":378,"./EnterLeaveEventPlugin":379,"./HTMLDOMPropertyConfig":386,"./ReactComponentBrowserEnvironment":392,"./ReactDOMComponent":396,"./ReactDOMComponentTree":398,"./ReactDOMEmptyComponent":400,"./ReactDOMTextComponent":409,"./ReactDOMTreeTraversal":411,"./ReactDefaultBatchingStrategy":414,"./ReactEventListener":420,"./ReactInjection":424,"./ReactReconcileTransaction":436,"./SVGDOMPropertyConfig":444,"./SelectEventPlugin":445,"./SimpleEventPlugin":446}],416:[function(require,module,exports){
+},{"./ARIADOMPropertyConfig":257,"./BeforeInputEventPlugin":259,"./ChangeEventPlugin":263,"./DefaultEventPluginOrder":270,"./EnterLeaveEventPlugin":271,"./HTMLDOMPropertyConfig":278,"./ReactComponentBrowserEnvironment":284,"./ReactDOMComponent":288,"./ReactDOMComponentTree":290,"./ReactDOMEmptyComponent":292,"./ReactDOMTextComponent":301,"./ReactDOMTreeTraversal":303,"./ReactDefaultBatchingStrategy":306,"./ReactEventListener":312,"./ReactInjection":316,"./ReactReconcileTransaction":328,"./SVGDOMPropertyConfig":336,"./SelectEventPlugin":337,"./SimpleEventPlugin":338}],308:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -47027,7 +29579,7 @@ module.exports = {
 var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 module.exports = REACT_ELEMENT_TYPE;
-},{}],417:[function(require,module,exports){
+},{}],309:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -47057,7 +29609,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],418:[function(require,module,exports){
+},{}],310:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -47136,7 +29688,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":560}],419:[function(require,module,exports){
+},{"_process":452}],311:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47169,7 +29721,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":381}],420:[function(require,module,exports){
+},{"./EventPluginHub":273}],312:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47324,7 +29876,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":389,"./ReactDOMComponentTree":398,"./ReactUpdates":442,"./getEventTarget":474,"fbjs/lib/EventListener":492,"fbjs/lib/ExecutionEnvironment":493,"fbjs/lib/getUnboundedScrollPosition":504,"object-assign":515}],421:[function(require,module,exports){
+},{"./PooledClass":281,"./ReactDOMComponentTree":290,"./ReactUpdates":334,"./getEventTarget":366,"fbjs/lib/EventListener":384,"fbjs/lib/ExecutionEnvironment":385,"fbjs/lib/getUnboundedScrollPosition":396,"object-assign":407}],313:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47346,7 +29898,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],422:[function(require,module,exports){
+},{}],314:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -47416,7 +29968,7 @@ var ReactHostComponent = {
 
 module.exports = ReactHostComponent;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],423:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],315:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -47450,7 +30002,7 @@ var ReactHostOperationHistoryHook = {
 };
 
 module.exports = ReactHostOperationHistoryHook;
-},{}],424:[function(require,module,exports){
+},{}],316:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47484,7 +30036,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":375,"./EventPluginHub":381,"./EventPluginUtils":383,"./ReactBrowserEventEmitter":390,"./ReactComponentEnvironment":393,"./ReactEmptyComponent":417,"./ReactHostComponent":422,"./ReactUpdates":442}],425:[function(require,module,exports){
+},{"./DOMProperty":267,"./EventPluginHub":273,"./EventPluginUtils":275,"./ReactBrowserEventEmitter":282,"./ReactComponentEnvironment":285,"./ReactEmptyComponent":309,"./ReactHostComponent":314,"./ReactUpdates":334}],317:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47608,7 +30160,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":408,"fbjs/lib/containsNode":496,"fbjs/lib/focusNode":501,"fbjs/lib/getActiveElement":502}],426:[function(require,module,exports){
+},{"./ReactDOMSelection":300,"fbjs/lib/containsNode":388,"fbjs/lib/focusNode":393,"fbjs/lib/getActiveElement":394}],318:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47656,7 +30208,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],427:[function(require,module,exports){
+},{}],319:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -47682,7 +30234,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = { debugTool: debugTool };
 }).call(this,require('_process'))
-},{"./ReactDebugTool":413,"_process":560}],428:[function(require,module,exports){
+},{"./ReactDebugTool":305,"_process":452}],320:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -47721,7 +30273,7 @@ var ReactInvalidSetStateWarningHook = {
 
 module.exports = ReactInvalidSetStateWarningHook;
 }).call(this,require('_process'))
-},{"_process":560,"fbjs/lib/warning":514}],429:[function(require,module,exports){
+},{"_process":452,"fbjs/lib/warning":406}],321:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -47771,7 +30323,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":463}],430:[function(require,module,exports){
+},{"./adler32":355}],322:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -48311,7 +30863,7 @@ var ReactMount = {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":373,"./DOMProperty":375,"./ReactBrowserEventEmitter":390,"./ReactDOMComponentTree":398,"./ReactDOMContainerInfo":399,"./ReactDOMFeatureFlags":401,"./ReactFeatureFlags":421,"./ReactInstanceMap":426,"./ReactInstrumentation":427,"./ReactMarkupChecksum":429,"./ReactReconciler":437,"./ReactUpdateQueue":441,"./ReactUpdates":442,"./instantiateReactComponent":481,"./reactProdInvariant":485,"./setInnerHTML":487,"./shouldUpdateReactComponent":489,"_process":560,"fbjs/lib/emptyObject":500,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"react/lib/React":526,"react/lib/ReactCurrentOwner":531}],431:[function(require,module,exports){
+},{"./DOMLazyTree":265,"./DOMProperty":267,"./ReactBrowserEventEmitter":282,"./ReactDOMComponentTree":290,"./ReactDOMContainerInfo":291,"./ReactDOMFeatureFlags":293,"./ReactFeatureFlags":313,"./ReactInstanceMap":318,"./ReactInstrumentation":319,"./ReactMarkupChecksum":321,"./ReactReconciler":329,"./ReactUpdateQueue":333,"./ReactUpdates":334,"./instantiateReactComponent":373,"./reactProdInvariant":377,"./setInnerHTML":379,"./shouldUpdateReactComponent":381,"_process":452,"fbjs/lib/emptyObject":392,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"react/lib/React":418,"react/lib/ReactCurrentOwner":423}],323:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -48763,7 +31315,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":391,"./ReactComponentEnvironment":393,"./ReactInstanceMap":426,"./ReactInstrumentation":427,"./ReactReconciler":437,"./flattenChildren":469,"./reactProdInvariant":485,"_process":560,"fbjs/lib/emptyFunction":499,"fbjs/lib/invariant":507,"react/lib/ReactCurrentOwner":531}],432:[function(require,module,exports){
+},{"./ReactChildReconciler":283,"./ReactComponentEnvironment":285,"./ReactInstanceMap":318,"./ReactInstrumentation":319,"./ReactReconciler":329,"./flattenChildren":361,"./reactProdInvariant":377,"_process":452,"fbjs/lib/emptyFunction":391,"fbjs/lib/invariant":399,"react/lib/ReactCurrentOwner":423}],324:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -48805,7 +31357,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"react/lib/React":526}],433:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"react/lib/React":418}],325:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -48901,7 +31453,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],434:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],326:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -48928,7 +31480,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":560}],435:[function(require,module,exports){
+},{"_process":452}],327:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -48945,7 +31497,7 @@ module.exports = ReactPropTypeLocationNames;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
-},{}],436:[function(require,module,exports){
+},{}],328:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -49125,7 +31677,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
 }).call(this,require('_process'))
-},{"./CallbackQueue":370,"./PooledClass":389,"./ReactBrowserEventEmitter":390,"./ReactInputSelection":425,"./ReactInstrumentation":427,"./ReactUpdateQueue":441,"./Transaction":460,"_process":560,"object-assign":515}],437:[function(require,module,exports){
+},{"./CallbackQueue":262,"./PooledClass":281,"./ReactBrowserEventEmitter":282,"./ReactInputSelection":317,"./ReactInstrumentation":319,"./ReactUpdateQueue":333,"./Transaction":352,"_process":452,"object-assign":407}],329:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -49295,7 +31847,7 @@ var ReactReconciler = {
 
 module.exports = ReactReconciler;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":427,"./ReactRef":438,"_process":560,"fbjs/lib/warning":514}],438:[function(require,module,exports){
+},{"./ReactInstrumentation":319,"./ReactRef":330,"_process":452,"fbjs/lib/warning":406}],330:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -49384,7 +31936,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":433}],439:[function(require,module,exports){
+},{"./ReactOwner":325}],331:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -49476,7 +32028,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
 }).call(this,require('_process'))
-},{"./PooledClass":389,"./ReactInstrumentation":427,"./ReactServerUpdateQueue":440,"./Transaction":460,"_process":560,"object-assign":515}],440:[function(require,module,exports){
+},{"./PooledClass":281,"./ReactInstrumentation":319,"./ReactServerUpdateQueue":332,"./Transaction":352,"_process":452,"object-assign":407}],332:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -49617,7 +32169,7 @@ var ReactServerUpdateQueue = function () {
 
 module.exports = ReactServerUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactUpdateQueue":441,"_process":560,"fbjs/lib/warning":514}],441:[function(require,module,exports){
+},{"./ReactUpdateQueue":333,"_process":452,"fbjs/lib/warning":406}],333:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -49845,7 +32397,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactInstanceMap":426,"./ReactInstrumentation":427,"./ReactUpdates":442,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"react/lib/ReactCurrentOwner":531}],442:[function(require,module,exports){
+},{"./ReactInstanceMap":318,"./ReactInstrumentation":319,"./ReactUpdates":334,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"react/lib/ReactCurrentOwner":423}],334:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -50098,7 +32650,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":370,"./PooledClass":389,"./ReactFeatureFlags":421,"./ReactReconciler":437,"./Transaction":460,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"object-assign":515}],443:[function(require,module,exports){
+},{"./CallbackQueue":262,"./PooledClass":281,"./ReactFeatureFlags":313,"./ReactReconciler":329,"./Transaction":352,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"object-assign":407}],335:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -50112,7 +32664,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.4.2';
-},{}],444:[function(require,module,exports){
+},{}],336:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -50414,7 +32966,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],445:[function(require,module,exports){
+},{}],337:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -50605,7 +33157,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventPropagators":384,"./ReactDOMComponentTree":398,"./ReactInputSelection":425,"./SyntheticEvent":451,"./isTextInputElement":483,"fbjs/lib/ExecutionEnvironment":493,"fbjs/lib/getActiveElement":502,"fbjs/lib/shallowEqual":513}],446:[function(require,module,exports){
+},{"./EventPropagators":276,"./ReactDOMComponentTree":290,"./ReactInputSelection":317,"./SyntheticEvent":343,"./isTextInputElement":375,"fbjs/lib/ExecutionEnvironment":385,"fbjs/lib/getActiveElement":394,"fbjs/lib/shallowEqual":405}],338:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -50835,7 +33387,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventPropagators":384,"./ReactDOMComponentTree":398,"./SyntheticAnimationEvent":447,"./SyntheticClipboardEvent":448,"./SyntheticDragEvent":450,"./SyntheticEvent":451,"./SyntheticFocusEvent":452,"./SyntheticKeyboardEvent":454,"./SyntheticMouseEvent":455,"./SyntheticTouchEvent":456,"./SyntheticTransitionEvent":457,"./SyntheticUIEvent":458,"./SyntheticWheelEvent":459,"./getEventCharCode":471,"./reactProdInvariant":485,"_process":560,"fbjs/lib/EventListener":492,"fbjs/lib/emptyFunction":499,"fbjs/lib/invariant":507}],447:[function(require,module,exports){
+},{"./EventPropagators":276,"./ReactDOMComponentTree":290,"./SyntheticAnimationEvent":339,"./SyntheticClipboardEvent":340,"./SyntheticDragEvent":342,"./SyntheticEvent":343,"./SyntheticFocusEvent":344,"./SyntheticKeyboardEvent":346,"./SyntheticMouseEvent":347,"./SyntheticTouchEvent":348,"./SyntheticTransitionEvent":349,"./SyntheticUIEvent":350,"./SyntheticWheelEvent":351,"./getEventCharCode":363,"./reactProdInvariant":377,"_process":452,"fbjs/lib/EventListener":384,"fbjs/lib/emptyFunction":391,"fbjs/lib/invariant":399}],339:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -50874,7 +33426,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":451}],448:[function(require,module,exports){
+},{"./SyntheticEvent":343}],340:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -50912,7 +33464,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":451}],449:[function(require,module,exports){
+},{"./SyntheticEvent":343}],341:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -50948,7 +33500,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":451}],450:[function(require,module,exports){
+},{"./SyntheticEvent":343}],342:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -50984,7 +33536,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":455}],451:[function(require,module,exports){
+},{"./SyntheticMouseEvent":347}],343:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -51254,7 +33806,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 }).call(this,require('_process'))
-},{"./PooledClass":389,"_process":560,"fbjs/lib/emptyFunction":499,"fbjs/lib/warning":514,"object-assign":515}],452:[function(require,module,exports){
+},{"./PooledClass":281,"_process":452,"fbjs/lib/emptyFunction":391,"fbjs/lib/warning":406,"object-assign":407}],344:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51290,7 +33842,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":458}],453:[function(require,module,exports){
+},{"./SyntheticUIEvent":350}],345:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51327,7 +33879,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":451}],454:[function(require,module,exports){
+},{"./SyntheticEvent":343}],346:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51411,7 +33963,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":458,"./getEventCharCode":471,"./getEventKey":472,"./getEventModifierState":473}],455:[function(require,module,exports){
+},{"./SyntheticUIEvent":350,"./getEventCharCode":363,"./getEventKey":364,"./getEventModifierState":365}],347:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51483,7 +34035,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":458,"./ViewportMetrics":461,"./getEventModifierState":473}],456:[function(require,module,exports){
+},{"./SyntheticUIEvent":350,"./ViewportMetrics":353,"./getEventModifierState":365}],348:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51528,7 +34080,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":458,"./getEventModifierState":473}],457:[function(require,module,exports){
+},{"./SyntheticUIEvent":350,"./getEventModifierState":365}],349:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51567,7 +34119,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":451}],458:[function(require,module,exports){
+},{"./SyntheticEvent":343}],350:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51626,7 +34178,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":451,"./getEventTarget":474}],459:[function(require,module,exports){
+},{"./SyntheticEvent":343,"./getEventTarget":366}],351:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51680,7 +34232,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":455}],460:[function(require,module,exports){
+},{"./SyntheticMouseEvent":347}],352:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -51907,7 +34459,7 @@ var TransactionImpl = {
 
 module.exports = TransactionImpl;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],461:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],353:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -51934,7 +34486,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],462:[function(require,module,exports){
+},{}],354:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -51994,7 +34546,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507}],463:[function(require,module,exports){
+},{"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399}],355:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52038,7 +34590,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],464:[function(require,module,exports){
+},{}],356:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -52127,7 +34679,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":434,"./ReactPropTypesSecret":435,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"react/lib/ReactComponentTreeHook":530}],465:[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":326,"./ReactPropTypesSecret":327,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"react/lib/ReactComponentTreeHook":422}],357:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52159,7 +34711,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],466:[function(require,module,exports){
+},{}],358:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -52240,7 +34792,7 @@ function dangerousStyleValue(name, value, component) {
 
 module.exports = dangerousStyleValue;
 }).call(this,require('_process'))
-},{"./CSSProperty":368,"_process":560,"fbjs/lib/warning":514}],467:[function(require,module,exports){
+},{"./CSSProperty":260,"_process":452,"fbjs/lib/warning":406}],359:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -52363,7 +34915,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],468:[function(require,module,exports){
+},{}],360:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -52425,7 +34977,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":398,"./ReactInstanceMap":426,"./getHostComponentFromComposite":475,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"react/lib/ReactCurrentOwner":531}],469:[function(require,module,exports){
+},{"./ReactDOMComponentTree":290,"./ReactInstanceMap":318,"./getHostComponentFromComposite":367,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"react/lib/ReactCurrentOwner":423}],361:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -52503,7 +35055,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":387,"./traverseAllChildren":490,"_process":560,"fbjs/lib/warning":514,"react/lib/ReactComponentTreeHook":530}],470:[function(require,module,exports){
+},{"./KeyEscapeUtils":279,"./traverseAllChildren":382,"_process":452,"fbjs/lib/warning":406,"react/lib/ReactComponentTreeHook":422}],362:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52534,7 +35086,7 @@ function forEachAccumulated(arr, cb, scope) {
 }
 
 module.exports = forEachAccumulated;
-},{}],471:[function(require,module,exports){
+},{}],363:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52584,7 +35136,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],472:[function(require,module,exports){
+},{}],364:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52686,7 +35238,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":471}],473:[function(require,module,exports){
+},{"./getEventCharCode":363}],365:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52729,7 +35281,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],474:[function(require,module,exports){
+},{}],366:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52764,7 +35316,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],475:[function(require,module,exports){
+},{}],367:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52794,7 +35346,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"./ReactNodeTypes":432}],476:[function(require,module,exports){
+},{"./ReactNodeTypes":324}],368:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52835,7 +35387,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],477:[function(require,module,exports){
+},{}],369:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52856,7 +35408,7 @@ function getNextDebugID() {
 }
 
 module.exports = getNextDebugID;
-},{}],478:[function(require,module,exports){
+},{}],370:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52930,7 +35482,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],479:[function(require,module,exports){
+},{}],371:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -52963,7 +35515,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":493}],480:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":385}],372:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53064,7 +35616,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":493}],481:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":385}],373:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -53194,7 +35746,7 @@ function instantiateReactComponent(node, shouldHaveDebugID) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":394,"./ReactEmptyComponent":417,"./ReactHostComponent":422,"./getNextDebugID":477,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"object-assign":515}],482:[function(require,module,exports){
+},{"./ReactCompositeComponent":286,"./ReactEmptyComponent":309,"./ReactHostComponent":314,"./getNextDebugID":369,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"object-assign":407}],374:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53254,7 +35806,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":493}],483:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":385}],375:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53305,7 +35857,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],484:[function(require,module,exports){
+},{}],376:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53331,7 +35883,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":467}],485:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":359}],377:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53370,7 +35922,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],486:[function(require,module,exports){
+},{}],378:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53386,7 +35938,7 @@ module.exports = reactProdInvariant;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":430}],487:[function(require,module,exports){
+},{"./ReactMount":322}],379:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53484,7 +36036,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./DOMNamespaces":374,"./createMicrosoftUnsafeLocalFunction":465,"fbjs/lib/ExecutionEnvironment":493}],488:[function(require,module,exports){
+},{"./DOMNamespaces":266,"./createMicrosoftUnsafeLocalFunction":357,"fbjs/lib/ExecutionEnvironment":385}],380:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53536,7 +36088,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":467,"./setInnerHTML":487,"fbjs/lib/ExecutionEnvironment":493}],489:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":359,"./setInnerHTML":379,"fbjs/lib/ExecutionEnvironment":385}],381:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -53578,7 +36130,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],490:[function(require,module,exports){
+},{}],382:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -53756,7 +36308,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":387,"./ReactElementSymbol":416,"./getIteratorFn":476,"./reactProdInvariant":485,"_process":560,"fbjs/lib/invariant":507,"fbjs/lib/warning":514,"react/lib/ReactCurrentOwner":531}],491:[function(require,module,exports){
+},{"./KeyEscapeUtils":279,"./ReactElementSymbol":308,"./getIteratorFn":368,"./reactProdInvariant":377,"_process":452,"fbjs/lib/invariant":399,"fbjs/lib/warning":406,"react/lib/ReactCurrentOwner":423}],383:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -54140,7 +36692,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"_process":560,"fbjs/lib/emptyFunction":499,"fbjs/lib/warning":514,"object-assign":515}],492:[function(require,module,exports){
+},{"_process":452,"fbjs/lib/emptyFunction":391,"fbjs/lib/warning":406,"object-assign":407}],384:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54226,7 +36778,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":499,"_process":560}],493:[function(require,module,exports){
+},{"./emptyFunction":391,"_process":452}],385:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -54262,7 +36814,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],494:[function(require,module,exports){
+},{}],386:[function(require,module,exports){
 "use strict";
 
 /**
@@ -54294,7 +36846,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],495:[function(require,module,exports){
+},{}],387:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -54334,7 +36886,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":494}],496:[function(require,module,exports){
+},{"./camelize":386}],388:[function(require,module,exports){
 'use strict';
 
 /**
@@ -54374,7 +36926,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":509}],497:[function(require,module,exports){
+},{"./isTextNode":401}],389:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54503,7 +37055,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 }).call(this,require('_process'))
-},{"./invariant":507,"_process":560}],498:[function(require,module,exports){
+},{"./invariant":399,"_process":452}],390:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54589,7 +37141,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":493,"./createArrayFromMixed":497,"./getMarkupWrap":503,"./invariant":507,"_process":560}],499:[function(require,module,exports){
+},{"./ExecutionEnvironment":385,"./createArrayFromMixed":389,"./getMarkupWrap":395,"./invariant":399,"_process":452}],391:[function(require,module,exports){
 "use strict";
 
 /**
@@ -54628,7 +37180,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],500:[function(require,module,exports){
+},{}],392:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -54650,7 +37202,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":560}],501:[function(require,module,exports){
+},{"_process":452}],393:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -54677,7 +37229,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],502:[function(require,module,exports){
+},{}],394:[function(require,module,exports){
 'use strict';
 
 /**
@@ -54716,7 +37268,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],503:[function(require,module,exports){
+},{}],395:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54813,7 +37365,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":493,"./invariant":507,"_process":560}],504:[function(require,module,exports){
+},{"./ExecutionEnvironment":385,"./invariant":399,"_process":452}],396:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -54852,7 +37404,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],505:[function(require,module,exports){
+},{}],397:[function(require,module,exports){
 'use strict';
 
 /**
@@ -54885,7 +37437,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],506:[function(require,module,exports){
+},{}],398:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -54924,7 +37476,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":505}],507:[function(require,module,exports){
+},{"./hyphenate":397}],399:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -54982,7 +37534,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":560}],508:[function(require,module,exports){
+},{"_process":452}],400:[function(require,module,exports){
 'use strict';
 
 /**
@@ -55007,7 +37559,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],509:[function(require,module,exports){
+},{}],401:[function(require,module,exports){
 'use strict';
 
 /**
@@ -55032,7 +37584,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":508}],510:[function(require,module,exports){
+},{"./isNode":400}],402:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -55062,7 +37614,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],511:[function(require,module,exports){
+},{}],403:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -55085,7 +37637,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":493}],512:[function(require,module,exports){
+},{"./ExecutionEnvironment":385}],404:[function(require,module,exports){
 'use strict';
 
 /**
@@ -55119,9 +37671,9 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":511}],513:[function(require,module,exports){
-arguments[4][320][0].apply(exports,arguments)
-},{"dup":320}],514:[function(require,module,exports){
+},{"./performance":403}],405:[function(require,module,exports){
+arguments[4][222][0].apply(exports,arguments)
+},{"dup":222}],406:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -55190,7 +37742,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":499,"_process":560}],515:[function(require,module,exports){
+},{"./emptyFunction":391,"_process":452}],407:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -55282,7 +37834,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],516:[function(require,module,exports){
+},{}],408:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -55399,7 +37951,7 @@ exports.default = _react2.default.createClass({
   }
 });
 module.exports = exports['default'];
-},{"./screen-reader-styles":517,"react":559}],517:[function(require,module,exports){
+},{"./screen-reader-styles":409,"react":451}],409:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -55416,9 +37968,9 @@ exports.default = {
   border: '0px'
 };
 module.exports = exports['default'];
-},{}],518:[function(require,module,exports){
-arguments[4][507][0].apply(exports,arguments)
-},{"_process":560,"dup":507}],519:[function(require,module,exports){
+},{}],410:[function(require,module,exports){
+arguments[4][399][0].apply(exports,arguments)
+},{"_process":452,"dup":399}],411:[function(require,module,exports){
 "use strict";
 
 /**
@@ -55453,7 +38005,7 @@ var keyOf = function keyOf(oneKeyObj) {
 };
 
 module.exports = keyOf;
-},{}],520:[function(require,module,exports){
+},{}],412:[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -55626,7 +38178,7 @@ function createTapEventPlugin(shouldRejectClick) {
 
 module.exports = createTapEventPlugin;
 
-},{"./TouchEventUtils":521,"fbjs/lib/keyOf":519,"react-dom/lib/EventConstants":380,"react-dom/lib/EventPluginUtils":383,"react-dom/lib/EventPropagators":384,"react-dom/lib/SyntheticUIEvent":458,"react-dom/lib/ViewportMetrics":461}],521:[function(require,module,exports){
+},{"./TouchEventUtils":413,"fbjs/lib/keyOf":411,"react-dom/lib/EventConstants":272,"react-dom/lib/EventPluginUtils":275,"react-dom/lib/EventPropagators":276,"react-dom/lib/SyntheticUIEvent":350,"react-dom/lib/ViewportMetrics":353}],413:[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -55670,14 +38222,14 @@ var TouchEventUtils = {
 
 module.exports = TouchEventUtils;
 
-},{}],522:[function(require,module,exports){
+},{}],414:[function(require,module,exports){
 module.exports = function(lastTouchEvent, clickTimestamp) {
   if (lastTouchEvent && (clickTimestamp - lastTouchEvent) < 750) {
     return true;
   }
 };
 
-},{}],523:[function(require,module,exports){
+},{}],415:[function(require,module,exports){
 (function (process){
 var invariant = require('fbjs/lib/invariant');
 var defaultClickRejectionStrategy = require('./defaultClickRejectionStrategy');
@@ -55707,11 +38259,11 @@ should be injected by the application.'
 };
 
 }).call(this,require('_process'))
-},{"./TapEventPlugin.js":520,"./defaultClickRejectionStrategy":522,"_process":560,"fbjs/lib/invariant":518,"react-dom/lib/EventPluginHub":381}],524:[function(require,module,exports){
-arguments[4][387][0].apply(exports,arguments)
-},{"dup":387}],525:[function(require,module,exports){
-arguments[4][389][0].apply(exports,arguments)
-},{"./reactProdInvariant":550,"_process":560,"dup":389,"fbjs/lib/invariant":555}],526:[function(require,module,exports){
+},{"./TapEventPlugin.js":412,"./defaultClickRejectionStrategy":414,"_process":452,"fbjs/lib/invariant":410,"react-dom/lib/EventPluginHub":273}],416:[function(require,module,exports){
+arguments[4][279][0].apply(exports,arguments)
+},{"dup":279}],417:[function(require,module,exports){
+arguments[4][281][0].apply(exports,arguments)
+},{"./reactProdInvariant":442,"_process":452,"dup":281,"fbjs/lib/invariant":447}],418:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -55802,7 +38354,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactChildren":527,"./ReactClass":528,"./ReactComponent":529,"./ReactDOMFactories":532,"./ReactElement":533,"./ReactElementValidator":535,"./ReactPropTypes":539,"./ReactPureComponent":541,"./ReactVersion":544,"./onlyChild":549,"_process":560,"fbjs/lib/warning":557,"object-assign":558}],527:[function(require,module,exports){
+},{"./ReactChildren":419,"./ReactClass":420,"./ReactComponent":421,"./ReactDOMFactories":424,"./ReactElement":425,"./ReactElementValidator":427,"./ReactPropTypes":431,"./ReactPureComponent":433,"./ReactVersion":436,"./onlyChild":441,"_process":452,"fbjs/lib/warning":449,"object-assign":450}],419:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -55993,7 +38545,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":525,"./ReactElement":533,"./traverseAllChildren":552,"fbjs/lib/emptyFunction":553}],528:[function(require,module,exports){
+},{"./PooledClass":417,"./ReactElement":425,"./traverseAllChildren":444,"fbjs/lib/emptyFunction":445}],420:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -56712,7 +39264,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./ReactComponent":529,"./ReactElement":533,"./ReactNoopUpdateQueue":537,"./ReactPropTypeLocationNames":538,"./reactProdInvariant":550,"_process":560,"fbjs/lib/emptyObject":554,"fbjs/lib/invariant":555,"fbjs/lib/warning":557,"object-assign":558}],529:[function(require,module,exports){
+},{"./ReactComponent":421,"./ReactElement":425,"./ReactNoopUpdateQueue":429,"./ReactPropTypeLocationNames":430,"./reactProdInvariant":442,"_process":452,"fbjs/lib/emptyObject":446,"fbjs/lib/invariant":447,"fbjs/lib/warning":449,"object-assign":450}],421:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -56832,7 +39384,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":537,"./canDefineProperty":545,"./reactProdInvariant":550,"_process":560,"fbjs/lib/emptyObject":554,"fbjs/lib/invariant":555,"fbjs/lib/warning":557}],530:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":429,"./canDefineProperty":437,"./reactProdInvariant":442,"_process":452,"fbjs/lib/emptyObject":446,"fbjs/lib/invariant":447,"fbjs/lib/warning":449}],422:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -57168,7 +39720,7 @@ var ReactComponentTreeHook = {
 
 module.exports = ReactComponentTreeHook;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":531,"./reactProdInvariant":550,"_process":560,"fbjs/lib/invariant":555,"fbjs/lib/warning":557}],531:[function(require,module,exports){
+},{"./ReactCurrentOwner":423,"./reactProdInvariant":442,"_process":452,"fbjs/lib/invariant":447,"fbjs/lib/warning":449}],423:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -57199,7 +39751,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],532:[function(require,module,exports){
+},{}],424:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -57371,7 +39923,7 @@ var ReactDOMFactories = {
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":533,"./ReactElementValidator":535,"_process":560}],533:[function(require,module,exports){
+},{"./ReactElement":425,"./ReactElementValidator":427,"_process":452}],425:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -57714,9 +40266,9 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":531,"./ReactElementSymbol":534,"./canDefineProperty":545,"_process":560,"fbjs/lib/warning":557,"object-assign":558}],534:[function(require,module,exports){
-arguments[4][416][0].apply(exports,arguments)
-},{"dup":416}],535:[function(require,module,exports){
+},{"./ReactCurrentOwner":423,"./ReactElementSymbol":426,"./canDefineProperty":437,"_process":452,"fbjs/lib/warning":449,"object-assign":450}],426:[function(require,module,exports){
+arguments[4][308][0].apply(exports,arguments)
+},{"dup":308}],427:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -57952,7 +40504,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":530,"./ReactCurrentOwner":531,"./ReactElement":533,"./canDefineProperty":545,"./checkReactTypeSpec":546,"./getIteratorFn":548,"_process":560,"fbjs/lib/warning":557}],536:[function(require,module,exports){
+},{"./ReactComponentTreeHook":422,"./ReactCurrentOwner":423,"./ReactElement":425,"./canDefineProperty":437,"./checkReactTypeSpec":438,"./getIteratorFn":440,"_process":452,"fbjs/lib/warning":449}],428:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -58023,7 +40575,7 @@ var ReactFragment = {
 
 module.exports = ReactFragment;
 }).call(this,require('_process'))
-},{"./ReactChildren":527,"./ReactElement":533,"./reactProdInvariant":550,"_process":560,"fbjs/lib/emptyFunction":553,"fbjs/lib/invariant":555,"fbjs/lib/warning":557}],537:[function(require,module,exports){
+},{"./ReactChildren":419,"./ReactElement":425,"./reactProdInvariant":442,"_process":452,"fbjs/lib/emptyFunction":445,"fbjs/lib/invariant":447,"fbjs/lib/warning":449}],429:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -58121,9 +40673,9 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":560,"fbjs/lib/warning":557}],538:[function(require,module,exports){
-arguments[4][434][0].apply(exports,arguments)
-},{"_process":560,"dup":434}],539:[function(require,module,exports){
+},{"_process":452,"fbjs/lib/warning":449}],430:[function(require,module,exports){
+arguments[4][326][0].apply(exports,arguments)
+},{"_process":452,"dup":326}],431:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -58559,9 +41111,9 @@ function getClassName(propValue) {
 
 module.exports = ReactPropTypes;
 }).call(this,require('_process'))
-},{"./ReactElement":533,"./ReactPropTypeLocationNames":538,"./ReactPropTypesSecret":540,"./getIteratorFn":548,"_process":560,"fbjs/lib/emptyFunction":553,"fbjs/lib/warning":557}],540:[function(require,module,exports){
-arguments[4][435][0].apply(exports,arguments)
-},{"dup":435}],541:[function(require,module,exports){
+},{"./ReactElement":425,"./ReactPropTypeLocationNames":430,"./ReactPropTypesSecret":432,"./getIteratorFn":440,"_process":452,"fbjs/lib/emptyFunction":445,"fbjs/lib/warning":449}],432:[function(require,module,exports){
+arguments[4][327][0].apply(exports,arguments)
+},{"dup":327}],433:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -58603,7 +41155,7 @@ _assign(ReactPureComponent.prototype, ReactComponent.prototype);
 ReactPureComponent.prototype.isPureReactComponent = true;
 
 module.exports = ReactPureComponent;
-},{"./ReactComponent":529,"./ReactNoopUpdateQueue":537,"fbjs/lib/emptyObject":554,"object-assign":558}],542:[function(require,module,exports){
+},{"./ReactComponent":421,"./ReactNoopUpdateQueue":429,"fbjs/lib/emptyObject":446,"object-assign":450}],434:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -58708,7 +41260,7 @@ var ReactTransitionChildMapping = {
 
 module.exports = ReactTransitionChildMapping;
 }).call(this,require('_process'))
-},{"./flattenChildren":547,"_process":560}],543:[function(require,module,exports){
+},{"./flattenChildren":439,"_process":452}],435:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -58937,9 +41489,9 @@ ReactTransitionGroup.defaultProps = {
 
 
 module.exports = ReactTransitionGroup;
-},{"./React":526,"./ReactTransitionChildMapping":542,"fbjs/lib/emptyFunction":553,"object-assign":558}],544:[function(require,module,exports){
-arguments[4][443][0].apply(exports,arguments)
-},{"dup":443}],545:[function(require,module,exports){
+},{"./React":418,"./ReactTransitionChildMapping":434,"fbjs/lib/emptyFunction":445,"object-assign":450}],436:[function(require,module,exports){
+arguments[4][335][0].apply(exports,arguments)
+},{"dup":335}],437:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -58967,7 +41519,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":560}],546:[function(require,module,exports){
+},{"_process":452}],438:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -59056,7 +41608,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":530,"./ReactPropTypeLocationNames":538,"./ReactPropTypesSecret":540,"./reactProdInvariant":550,"_process":560,"fbjs/lib/invariant":555,"fbjs/lib/warning":557}],547:[function(require,module,exports){
+},{"./ReactComponentTreeHook":422,"./ReactPropTypeLocationNames":430,"./ReactPropTypesSecret":432,"./reactProdInvariant":442,"_process":452,"fbjs/lib/invariant":447,"fbjs/lib/warning":449}],439:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -59134,9 +41686,9 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":524,"./ReactComponentTreeHook":530,"./traverseAllChildren":552,"_process":560,"fbjs/lib/warning":557}],548:[function(require,module,exports){
-arguments[4][476][0].apply(exports,arguments)
-},{"dup":476}],549:[function(require,module,exports){
+},{"./KeyEscapeUtils":416,"./ReactComponentTreeHook":422,"./traverseAllChildren":444,"_process":452,"fbjs/lib/warning":449}],440:[function(require,module,exports){
+arguments[4][368][0].apply(exports,arguments)
+},{"dup":368}],441:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -59176,9 +41728,9 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":533,"./reactProdInvariant":550,"_process":560,"fbjs/lib/invariant":555}],550:[function(require,module,exports){
-arguments[4][485][0].apply(exports,arguments)
-},{"dup":485}],551:[function(require,module,exports){
+},{"./ReactElement":425,"./reactProdInvariant":442,"_process":452,"fbjs/lib/invariant":447}],442:[function(require,module,exports){
+arguments[4][377][0].apply(exports,arguments)
+},{"dup":377}],443:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -59203,7 +41755,7 @@ function shallowCompare(instance, nextProps, nextState) {
 }
 
 module.exports = shallowCompare;
-},{"fbjs/lib/shallowEqual":556}],552:[function(require,module,exports){
+},{"fbjs/lib/shallowEqual":448}],444:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -59381,24 +41933,24 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":524,"./ReactCurrentOwner":531,"./ReactElementSymbol":534,"./getIteratorFn":548,"./reactProdInvariant":550,"_process":560,"fbjs/lib/invariant":555,"fbjs/lib/warning":557}],553:[function(require,module,exports){
-arguments[4][499][0].apply(exports,arguments)
-},{"dup":499}],554:[function(require,module,exports){
-arguments[4][500][0].apply(exports,arguments)
-},{"_process":560,"dup":500}],555:[function(require,module,exports){
-arguments[4][507][0].apply(exports,arguments)
-},{"_process":560,"dup":507}],556:[function(require,module,exports){
-arguments[4][320][0].apply(exports,arguments)
-},{"dup":320}],557:[function(require,module,exports){
-arguments[4][514][0].apply(exports,arguments)
-},{"./emptyFunction":553,"_process":560,"dup":514}],558:[function(require,module,exports){
-arguments[4][515][0].apply(exports,arguments)
-},{"dup":515}],559:[function(require,module,exports){
+},{"./KeyEscapeUtils":416,"./ReactCurrentOwner":423,"./ReactElementSymbol":426,"./getIteratorFn":440,"./reactProdInvariant":442,"_process":452,"fbjs/lib/invariant":447,"fbjs/lib/warning":449}],445:[function(require,module,exports){
+arguments[4][391][0].apply(exports,arguments)
+},{"dup":391}],446:[function(require,module,exports){
+arguments[4][392][0].apply(exports,arguments)
+},{"_process":452,"dup":392}],447:[function(require,module,exports){
+arguments[4][399][0].apply(exports,arguments)
+},{"_process":452,"dup":399}],448:[function(require,module,exports){
+arguments[4][222][0].apply(exports,arguments)
+},{"dup":222}],449:[function(require,module,exports){
+arguments[4][406][0].apply(exports,arguments)
+},{"./emptyFunction":445,"_process":452,"dup":406}],450:[function(require,module,exports){
+arguments[4][407][0].apply(exports,arguments)
+},{"dup":407}],451:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":526}],560:[function(require,module,exports){
+},{"./lib/React":418}],452:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -59580,7 +42132,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],561:[function(require,module,exports){
+},{}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59598,11 +42150,49 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _AppBar = require('material-ui/AppBar');
+
+var _AppBar2 = _interopRequireDefault(_AppBar);
+
+var _Avatar = require('material-ui/Avatar');
+
+var _Avatar2 = _interopRequireDefault(_Avatar);
+
+var _Drawer = require('material-ui/Drawer');
+
+var _Drawer2 = _interopRequireDefault(_Drawer);
+
+var _GridList = require('material-ui/GridList');
+
+var _IconButton = require('material-ui/IconButton');
+
+var _IconButton2 = _interopRequireDefault(_IconButton);
+
+var _Card = require('material-ui/Card');
+
+var _FlatButton = require('material-ui/FlatButton');
+
+var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+var _RaisedButton = require('material-ui/RaisedButton');
+
+var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+var _Chip = require('material-ui/Chip');
+
+var _Chip2 = _interopRequireDefault(_Chip);
+
+var _AutoComplete = require('material-ui/AutoComplete');
+
+var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+
+var _Paper = require('material-ui/Paper');
+
+var _Paper2 = _interopRequireDefault(_Paper);
+
 var _reactFontawesome = require('react-fontawesome');
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-
-var _materialUi = require('material-ui');
 
 var _close = require('material-ui/svg-icons/navigation/close');
 
@@ -59616,6 +42206,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// social bar style and layout
 var iconStyle = {
     social: {
         marginRight: 12,
@@ -59641,7 +42232,10 @@ var SocialBar = function SocialBar() {
         _react2.default.createElement(_reactFontawesome2.default, { name: 'facebook-official', size: '2x', style: iconStyle.social })
     );
 };
+// end social bar --------------------------------------
 
+
+// chips layout and style
 var itemStyles = {
     chip: {
         margin: 4
@@ -59657,81 +42251,127 @@ var ItemChips = function ItemChips() {
         'div',
         { style: itemStyles.wrapper },
         _react2.default.createElement(
-            _materialUi.Chip,
+            _Chip2.default,
             { style: itemStyles.chip },
             ' Conditions: Good '
         ),
         _react2.default.createElement(
-            _materialUi.Chip,
+            _Chip2.default,
             { style: itemStyles.chip },
             ' Size: 256x46 '
         ),
         _react2.default.createElement(
-            _materialUi.Chip,
+            _Chip2.default,
             { style: itemStyles.chip },
             ' Liters: 85lt '
         ),
         _react2.default.createElement(
-            _materialUi.Chip,
+            _Chip2.default,
             { style: itemStyles.chip },
             ' Price: 1900$ '
         )
     );
 };
+// chip style and layout end -------------------------------
 
-var YouTubeEmbed = function YouTubeEmbed() {
-    return _react2.default.createElement(
-        'div',
-        { style: { marginLeft: "2.5%" } },
-        _react2.default.createElement('iframe', {
-            width: '640',
-            height: '360',
-            frameBorder: '0',
-            src: 'https://www.youtube.com/embed/kI1-E6Bm-70?controls=1' })
-    );
+
+// youtube embed
+
+var YouTubeEmbed = function (_React$Component) {
+    _inherits(YouTubeEmbed, _React$Component);
+
+    function YouTubeEmbed() {
+        _classCallCheck(this, YouTubeEmbed);
+
+        return _possibleConstructorReturn(this, (YouTubeEmbed.__proto__ || Object.getPrototypeOf(YouTubeEmbed)).apply(this, arguments));
+    }
+
+    _createClass(YouTubeEmbed, [{
+        key: 'render',
+        value: function render() {
+            var source = "https://www.youtube.com/embed/" + this.props.videoid + "?controls=1";
+            return _react2.default.createElement(
+                'div',
+                { style: { marginLeft: "2.5%" } },
+                _react2.default.createElement('iframe', {
+                    width: '640',
+                    height: '360',
+                    frameBorder: '0',
+                    src: source })
+            );
+        }
+    }]);
+
+    return YouTubeEmbed;
+}(_react2.default.Component);
+// end youtube embed -----------------------------------------
+
+
+// card with avatar and style
+
+
+var cardStyle = {
+    paper: {
+        marginBottom: 20,
+        marginTop: 20,
+        width: 680
+    },
+    header: {
+        marginLeft: 5
+    },
+    title: {
+        marginLeft: 5,
+        height: 15
+    }
 };
 
-// Card with avatar goes inside the grid as main element and contains the videos
 var CardWithAvatar = function CardWithAvatar() {
     return _react2.default.createElement(
-        _materialUi.Paper,
-        { zDepth: 1 },
+        _Paper2.default,
+        { zDepth: 1, style: cardStyle.paper },
         _react2.default.createElement(
-            _materialUi.Card,
+            _Card.Card,
             null,
-            _react2.default.createElement(_materialUi.CardHeader, {
+            _react2.default.createElement(_Card.CardHeader, {
                 title: 'Avatar Name Url',
                 subtitle: 'added item XXX time ago',
-                avatar: 'images/avatar.jpg'
+                avatar: 'images/avatar.jpg',
+                style: cardStyle.header
             }),
             _react2.default.createElement(
-                _materialUi.CardMedia,
+                _Card.CardMedia,
                 null,
-                _react2.default.createElement(YouTubeEmbed, null)
+                _react2.default.createElement(YouTubeEmbed, { videoid: '7AsiCX4Z4Eo' })
             ),
-            _react2.default.createElement(_materialUi.CardTitle, { title: 'Simmer Quantum 85lt' }),
+            _react2.default.createElement(_Card.CardTitle, {
+                title: 'Simmer Quantum 85lt',
+                style: cardStyle.title
+            }),
             _react2.default.createElement(
-                _materialUi.CardText,
+                _Card.CardText,
                 null,
                 _react2.default.createElement(ItemChips, null)
             ),
             _react2.default.createElement(
-                _materialUi.CardActions,
+                _Card.CardActions,
                 null,
                 _react2.default.createElement(SocialBar, null)
             )
         )
     );
 };
+// card with avatar end -----------------------------------------
 
+
+// search style and data source
 var source = ["board", "sails", "misc"];
 var searchStyle = {
     paper: {
         align: "center",
-        width: "100%",
+        width: 680,
+        height: 50,
         marginTop: 20,
-        marginLeft: "26%",
-        marginRight: "26%",
+        marginBottom: 20,
         backgroundColor: "#FFFFFF"
     },
     input: {
@@ -59745,20 +42385,21 @@ var SearchBar = function SearchBar() {
         'div',
         { style: searchStyle.paper },
         _react2.default.createElement(
-            _materialUi.Paper,
+            _Paper2.default,
             { zDepth: 2 },
-            _react2.default.createElement(_materialUi.AutoComplete, {
+            _react2.default.createElement(_AutoComplete2.default, {
                 name: 'autocomp',
                 fullWidth: true,
                 dataSource: source,
-                hintText: 'Search for windsurf gear',
-                style: searchStyle.input
+                hintText: 'Search for windsurf gear'
             })
         )
     );
 };
+// end search style and data source ------------------------------
 
-// Grid styles
+
+// Grid style and layout 
 var gridStyles = {
     root: {
         display: 'flex',
@@ -59767,7 +42408,7 @@ var gridStyles = {
     },
     gridList: {
         marginTop: 20,
-        width: 680,
+        width: 720,
         height: 1000,
         overflowY: 'auto'
     }
@@ -59778,68 +42419,94 @@ var CustomGridList = function CustomGridList() {
     return _react2.default.createElement(
         'div',
         { style: gridStyles.root },
-        _react2.default.createElement(SearchBar, null),
         _react2.default.createElement(
-            _materialUi.GridList,
-            { cellHeight: 680, cols: 1, style: gridStyles.gridList },
+            _GridList.GridList,
+            { cellHeight: 'auto', cols: 1, style: gridStyles.gridList },
+            _react2.default.createElement(SearchBar, null),
             _react2.default.createElement(
-                _materialUi.GridTile,
+                _GridList.GridTile,
                 null,
                 _react2.default.createElement(CardWithAvatar, null)
             ),
             _react2.default.createElement(
-                _materialUi.GridTile,
+                _GridList.GridTile,
                 null,
                 _react2.default.createElement(CardWithAvatar, null)
             ),
             _react2.default.createElement(
-                _materialUi.GridTile,
+                _GridList.GridTile,
                 null,
                 _react2.default.createElement(CardWithAvatar, null)
             ),
             _react2.default.createElement(
-                _materialUi.GridTile,
+                _GridList.GridTile,
                 null,
                 _react2.default.createElement(CardWithAvatar, null)
             )
         )
     );
 };
+// end grid style and layout ---------------------------------------
 
+
+// app bar style and layout
 var barStyle = {
-    right: {
-        marginTop: 3,
+    rightLogin: {
+        marginTop: 4,
+        marginRight: 96
+    },
+    rightLogged: {
+        marginTop: 4,
         marginRight: 96
     },
     left: {
-        marginTop: 3,
+        marginTop: 4,
         marginLeft: 96
+    },
+    title: {
+        fontFamily: "'Architects Daughter', cursive"
     }
 };
-// Top app bar contains a drawer as well
 
-var CustomAppBar = function (_React$Component) {
-    _inherits(CustomAppBar, _React$Component);
+var Logged = function Logged() {
+    return _react2.default.createElement(_Avatar2.default, { style: barStyle.right, src: 'images/avatar.jpg' });
+};
+
+var Login = function Login() {
+    return _react2.default.createElement(
+        _RaisedButton2.default,
+        { 'default': true, style: barStyle.rightLogin },
+        'Login'
+    );
+};
+
+var CustomAppBar = function (_React$Component2) {
+    _inherits(CustomAppBar, _React$Component2);
 
     function CustomAppBar(props) {
         _classCallCheck(this, CustomAppBar);
 
-        var _this = _possibleConstructorReturn(this, (CustomAppBar.__proto__ || Object.getPrototypeOf(CustomAppBar)).call(this, props));
+        var _this2 = _possibleConstructorReturn(this, (CustomAppBar.__proto__ || Object.getPrototypeOf(CustomAppBar)).call(this, props));
 
-        _this.state = {
-            open: false
+        _this2.state = {
+            open: false,
+            logged: false
         };
 
-        _this.handleClose = function () {
-            return _this.setState({ open: false });
+        _this2.handleClose = function () {
+            return _this2.setState({ open: false });
         };
 
-        _this.handleToggle = function () {
-            return _this.setState({ open: !_this.state.open });
+        _this2.handleChange = function (event, logged) {
+            _this2.setState({ logged: logged });
         };
 
-        _this.state = { open: false };
-        return _this;
+        _this2.handleToggle = function () {
+            return _this2.setState({ open: !_this2.state.open });
+        };
+
+        _this2.state = { open: false };
+        return _this2;
     }
 
     _createClass(CustomAppBar, [{
@@ -59848,27 +42515,28 @@ var CustomAppBar = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_materialUi.AppBar, {
+                _react2.default.createElement(_AppBar2.default, {
                     title: _react2.default.createElement(
                         'span',
                         null,
                         ' WaterAndBoards '
                     ),
-                    iconElementRight: _react2.default.createElement(_materialUi.Avatar, { style: barStyle.right, src: 'images/avatar.jpg' }),
-                    iconElementLeft: _react2.default.createElement(_materialUi.Avatar, { style: barStyle.left, src: 'images/waterdrop.png' }),
+                    titleStyle: barStyle.title,
+                    iconElementRight: this.state.logged ? _react2.default.createElement(Logged, null) : _react2.default.createElement(Login, null),
+                    iconElementLeft: _react2.default.createElement(_Avatar2.default, { style: barStyle.left, src: 'images/waterdrop.png' }),
                     onRightIconButtonTouchTap: this.handleToggle
                 }),
                 _react2.default.createElement(
-                    _materialUi.Drawer,
+                    _Drawer2.default,
                     { openSecondary: true, open: this.state.open },
-                    _react2.default.createElement(_materialUi.AppBar, {
+                    _react2.default.createElement(_AppBar2.default, {
                         title: _react2.default.createElement(
                             'span',
                             null,
                             ' Settings '
                         ),
                         iconElementLeft: _react2.default.createElement(
-                            _materialUi.IconButton,
+                            _IconButton2.default,
                             { onTouchTap: this.handleClose },
                             _react2.default.createElement(_close2.default, null)
                         )
@@ -59880,11 +42548,13 @@ var CustomAppBar = function (_React$Component) {
 
     return CustomAppBar;
 }(_react2.default.Component);
+//  app bar end ----------------------------------------------------
+
 
 exports.CustomAppBar = CustomAppBar;
 exports.CustomGridList = CustomGridList;
 
-},{"material-ui":138,"material-ui/svg-icons/navigation/close":344,"react":559,"react-dom":364,"react-fontawesome":516}],562:[function(require,module,exports){
+},{"material-ui/AppBar":2,"material-ui/AutoComplete":4,"material-ui/Avatar":6,"material-ui/Card":14,"material-ui/Chip":16,"material-ui/Drawer":20,"material-ui/FlatButton":23,"material-ui/GridList":28,"material-ui/IconButton":30,"material-ui/Paper":40,"material-ui/RaisedButton":44,"material-ui/svg-icons/navigation/close":242,"react":451,"react-dom":256,"react-fontawesome":408}],454:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -59895,9 +42565,9 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactFontawesome = require('react-fontawesome');
+var _getMuiTheme = require('material-ui/styles/getMuiTheme');
 
-var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
 
 var _reactTapEventPlugin = require('react-tap-event-plugin');
 
@@ -59909,6 +42579,10 @@ var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
 var _components = require('./components.js');
 
+var _themes = require('./themes.js');
+
+var _themes2 = _interopRequireDefault(_themes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactTapEventPlugin2.default)();
@@ -59916,7 +42590,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var App = function App() {
   return _react2.default.createElement(
     _MuiThemeProvider2.default,
-    null,
+    { muiTheme: (0, _getMuiTheme2.default)(_themes2.default) },
     _react2.default.createElement(
       'div',
       null,
@@ -59928,4 +42602,55 @@ var App = function App() {
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('content'));
 
-},{"./components.js":561,"material-ui/styles/MuiThemeProvider":328,"react":559,"react-dom":364,"react-fontawesome":516,"react-tap-event-plugin":523}]},{},[562]);
+},{"./components.js":453,"./themes.js":455,"material-ui/styles/MuiThemeProvider":230,"material-ui/styles/getMuiTheme":233,"react":451,"react-dom":256,"react-tap-event-plugin":415}],455:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _colors = require('material-ui/styles/colors');
+
+var _colorManipulator = require('material-ui/utils/colorManipulator');
+
+var BlueGray = {
+  spacing: {
+    iconSize: 24,
+    desktopGutter: 24,
+    desktopGutterMore: 32,
+    desktopGutterLess: 16,
+    desktopGutterMini: 8,
+    desktopKeylineIncrement: 64,
+    desktopDropDownMenuItemHeight: 32,
+    desktopDropDownMenuFontSize: 15,
+    desktopLeftNavMenuItemHeight: 48,
+    desktopSubheaderHeight: 48,
+    desktopToolbarHeight: 56
+  },
+  fontFamily: 'Roboto, sans-serif',
+  palette: {
+    primary1Color: _colors.blue500,
+    primary2Color: _colors.blue700,
+    primary3Color: _colors.lightBlack,
+    accent1Color: _colors.purpleA200,
+    accent2Color: _colors.blueGrey100,
+    accent3Color: _colors.blueGrey500,
+    textColor: _colors.darkBlack,
+    alternateTextColor: _colors.white,
+    canvasColor: _colors.white,
+    borderColor: _colors.grey300,
+    disabledColor: (0, _colorManipulator.fade)(_colors.darkBlack, 0.3),
+    pickerHeaderColor: _colors.blue500,
+    backCanvas: {
+      viewportBackgroundColor: _colors.white,
+      navDrawerBoxShadow: true
+    }
+  },
+  avatar: {
+    borderColor: _colors.white
+  }
+};
+
+exports.default = BlueGray;
+
+},{"material-ui/styles/colors":232,"material-ui/utils/colorManipulator":250}]},{},[454]);
