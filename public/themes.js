@@ -6,7 +6,7 @@ import {
   darkBlack,
   grey300,
   lightBlack,
-  purpleA200,
+  redA200,
   white
 } from 'material-ui/styles/colors'
 import { fade } from 'material-ui/utils/colorManipulator'
@@ -31,7 +31,7 @@ const BlueGray = {
     primary1Color: blue500,
     primary2Color: blue700,
     primary3Color: lightBlack,
-    accent1Color: purpleA200,
+    accent1Color: redA200,
     accent2Color: blueGrey100,
     accent3Color: blueGrey500,
     textColor: darkBlack,

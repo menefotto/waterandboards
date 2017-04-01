@@ -10,36 +10,47 @@ import {Card, CardHeader, CardTitle, CardActions, CardMedia, CardText} from 'mat
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Chip from 'material-ui/Chip';
+import ActionSearch from 'material-ui/svg-icons/action/search';
 import AutoComplete from 'material-ui/AutoComplete';
 import Paper from 'material-ui/Paper';
-
 import FontAwesome from 'react-fontawesome';
+
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 
 // social bar style and layout
 const iconStyle = {
-    social: {
-        marginRight: 12,
-        marginLeft: 12,
-        marginTop: 0,
-        marginBottom : 4,
-    },
-    like : {
-        marginRight: 440,
-        marginLeft: 24,
-        marginTop: 0,
-        marginBottom : 4,
-    },
+   social: {
+      width: 32,
+      marginRight: 8, 
+      marginLeft: 8, 
+      marginTop: 0,
+      marginBottom : 4,
+  },
+  like : {
+      width: 32,
+      marginRight: 452,
+      marginLeft: 24,
+      marginTop: 0,
+      marginBottom : 4,
+  },
 }
 
 const SocialBar = () => (
-    <div>
+  <div>
+      <a>
         <FontAwesome name="heart" size="2x" style={iconStyle.like}/>
+      </a>
+      <a>
         <FontAwesome name="youtube-play" size="2x" style={iconStyle.social} />
+      </a>
+      <a>
         <FontAwesome name="twitter-square" size="2x" style={iconStyle.social} />
+      </a>
+      <a>
         <FontAwesome name="facebook-official" size="2x" style={iconStyle.social} />
-    </div>
+      </a>
+  </div>
 )
 // end social bar --------------------------------------
 
@@ -116,7 +127,7 @@ const CardWithAvatar = () => (
             <YouTubeEmbed videoid="7AsiCX4Z4Eo"/>
         </CardMedia>
             <CardTitle 
-                title="Simmer Quantum 85lt" 
+                title={ <strong> Simmer Quantum 85lt </strong> }
                 style={cardStyle.title}
             />
         <CardText>
@@ -143,20 +154,32 @@ const searchStyle = {
         backgroundColor: "#FFFFFF",
     },
     input: {
-        width : "90%",
+        width : "75%",
         marginLeft: "5%",
+        marginRight: "2%",
     }
 }
+
+const SearchButton = () => (
+    <RaisedButton
+        secondary={true}
+        icon={<ActionSearch />}
+    >
+    </RaisedButton>
+)
 
 const SearchBar = () => (
     <div style={searchStyle.paper}>
         <Paper zDepth={2} >
             <AutoComplete 
                 name="autocomp" 
-                fullWidth={true} 
+                fullWidth={true}
+                style={searchStyle.input}
                 dataSource={source} 
                 hintText="Search for windsurf gear"
+                autoFocus={true}
             />
+            <SearchButton style={{marginRight: "5%" }}/>
         </Paper>
     </div>
 )
