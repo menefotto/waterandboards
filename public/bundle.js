@@ -42246,6 +42246,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // social bar style and layout
 var iconStyle = {
     social: {
+        transform: 'translateY(1px)',
+        backgroundColor: "transparent",
+        border: 'none',
         width: 32,
         marginRight: 8,
         marginLeft: 8,
@@ -42253,11 +42256,18 @@ var iconStyle = {
         marginBottom: 4
     },
     like: {
-        width: 32,
-        marginRight: 452,
+        transform: 'translateY(1px)',
+        backgroundColor: "transparent",
+        border: 'none',
+        width: 40,
+        marginRight: 442,
         marginLeft: 24,
         marginTop: 0,
         marginBottom: 4
+    },
+    ico: {
+        paddingRight: 2,
+        paddingLeft: 0
     }
 };
 
@@ -42266,24 +42276,24 @@ var SocialBar = function SocialBar() {
         'div',
         null,
         _react2.default.createElement(
-            'a',
-            null,
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'heart', size: '2x', style: iconStyle.like })
+            'button',
+            { style: iconStyle.like },
+            _react2.default.createElement(_reactFontawesome2.default, { name: 'heart', size: '2x', style: iconStyle.ico })
         ),
         _react2.default.createElement(
-            'a',
-            null,
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'youtube-play', size: '2x', style: iconStyle.social })
+            'button',
+            { style: iconStyle.social },
+            _react2.default.createElement(_reactFontawesome2.default, { name: 'youtube-play', size: '2x', style: iconStyle.ico })
         ),
         _react2.default.createElement(
-            'a',
-            null,
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'twitter-square', size: '2x', style: iconStyle.social })
+            'button',
+            { style: iconStyle.social },
+            _react2.default.createElement(_reactFontawesome2.default, { name: 'twitter-square', size: '2x', style: iconStyle.ico })
         ),
         _react2.default.createElement(
-            'a',
-            null,
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'facebook-official', size: '2x', style: iconStyle.social })
+            'button',
+            { style: iconStyle.social },
+            _react2.default.createElement(_reactFontawesome2.default, { name: 'facebook-official', size: '2x', style: iconStyle.ico })
         )
     );
 };

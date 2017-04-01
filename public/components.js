@@ -20,7 +20,10 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 // social bar style and layout
 const iconStyle = {
-   social: {
+  social: {
+      transform: `translateY(1px)`,
+      backgroundColor: "transparent",
+      border: 'none',
       width: 32,
       marginRight: 8, 
       marginLeft: 8, 
@@ -28,28 +31,35 @@ const iconStyle = {
       marginBottom : 4,
   },
   like : {
-      width: 32,
-      marginRight: 452,
+      transform: `translateY(1px)`,
+      backgroundColor: "transparent",
+      border: 'none',
+      width: 40,
+      marginRight: 442,
       marginLeft: 24,
       marginTop: 0,
       marginBottom : 4,
+  },
+  ico : {
+      paddingRight: 2,
+      paddingLeft: 0,
   },
 }
 
 const SocialBar = () => (
   <div>
-      <a>
-        <FontAwesome name="heart" size="2x" style={iconStyle.like}/>
-      </a>
-      <a>
-        <FontAwesome name="youtube-play" size="2x" style={iconStyle.social} />
-      </a>
-      <a>
-        <FontAwesome name="twitter-square" size="2x" style={iconStyle.social} />
-      </a>
-      <a>
-        <FontAwesome name="facebook-official" size="2x" style={iconStyle.social} />
-      </a>
+      <button style={iconStyle.like}>
+        <FontAwesome name="heart" size="2x" style={iconStyle.ico} />
+      </button>
+      <button style={iconStyle.social}>
+        <FontAwesome name="youtube-play" size="2x" style={iconStyle.ico} />
+      </button>
+      <button style={iconStyle.social}>
+        <FontAwesome name="twitter-square" size="2x" style={iconStyle.ico} />
+      </button>
+      <button style={iconStyle.social}>
+        <FontAwesome name="facebook-official" size="2x" style={iconStyle.ico} />
+      </button>
   </div>
 )
 // end social bar --------------------------------------
