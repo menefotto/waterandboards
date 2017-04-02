@@ -42260,8 +42260,8 @@ var iconStyle = {
         backgroundColor: "transparent",
         border: 'none',
         width: 40,
-        marginRight: 442,
-        marginLeft: 24,
+        marginRight: 446,
+        marginLeft: 16,
         marginTop: 0,
         marginBottom: 4
     },
@@ -42278,22 +42278,41 @@ var SocialBar = function SocialBar() {
         _react2.default.createElement(
             'button',
             { style: iconStyle.like },
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'heart', size: '2x', style: iconStyle.ico })
+            _react2.default.createElement(_reactFontawesome2.default, {
+                name: 'heart',
+                size: '2x',
+                style: iconStyle.ico
+            })
         ),
         _react2.default.createElement(
             'button',
             { style: iconStyle.social },
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'youtube-play', size: '2x', style: iconStyle.ico })
+            _react2.default.createElement(_reactFontawesome2.default, {
+                name: 'youtube-play',
+                size: '2x',
+                title: 'share it on youtube',
+                style: iconStyle.ico
+            })
         ),
         _react2.default.createElement(
             'button',
             { style: iconStyle.social },
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'twitter-square', size: '2x', style: iconStyle.ico })
+            _react2.default.createElement(_reactFontawesome2.default, {
+                name: 'twitter-square',
+                size: '2x',
+                title: 'share it on twitter',
+                style: iconStyle.ico
+            })
         ),
         _react2.default.createElement(
             'button',
             { style: iconStyle.social },
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'facebook-official', size: '2x', style: iconStyle.ico })
+            _react2.default.createElement(_reactFontawesome2.default, {
+                name: 'facebook-official',
+                size: '2x',
+                title: 'share it on facebook',
+                style: iconStyle.ico
+            })
         )
     );
 };

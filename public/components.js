@@ -35,8 +35,8 @@ const iconStyle = {
       backgroundColor: "transparent",
       border: 'none',
       width: 40,
-      marginRight: 442,
-      marginLeft: 24,
+      marginRight: 446,
+      marginLeft: 16,
       marginTop: 0,
       marginBottom : 4,
   },
@@ -49,16 +49,35 @@ const iconStyle = {
 const SocialBar = () => (
   <div>
       <button style={iconStyle.like}>
-        <FontAwesome name="heart" size="2x" style={iconStyle.ico} />
+        <FontAwesome 
+          name="heart" 
+          size="2x" 
+          style={iconStyle.ico} 
+        />
       </button>
       <button style={iconStyle.social}>
-        <FontAwesome name="youtube-play" size="2x" style={iconStyle.ico} />
+        <FontAwesome 
+          name="youtube-play" 
+          size="2x" 
+          title="share it on youtube"
+          style={iconStyle.ico} 
+        />
       </button>
       <button style={iconStyle.social}>
-        <FontAwesome name="twitter-square" size="2x" style={iconStyle.ico} />
+        <FontAwesome 
+          name="twitter-square" 
+          size="2x" 
+          title="share it on twitter"
+          style={iconStyle.ico} 
+        />
       </button>
       <button style={iconStyle.social}>
-        <FontAwesome name="facebook-official" size="2x" style={iconStyle.ico} />
+        <FontAwesome 
+          name="facebook-official" 
+          size="2x" 
+          title="share it on facebook"
+          style={iconStyle.ico} 
+        />
       </button>
   </div>
 )
