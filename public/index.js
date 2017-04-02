@@ -9,6 +9,7 @@ injectTapEventPlugin();
 import {
    CustomAppBar,
    CustomGridList,
+   LoginRegisterPage,
 } from './components.js'
 import BlueGrey from './themes.js'
 
@@ -16,7 +17,7 @@ const App = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
     <div> 
       <CustomAppBar />
-      <CustomGridList />
+      <LoginRegisterPage />
     </div>
   </MuiThemeProvider>
 )

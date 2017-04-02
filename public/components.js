@@ -13,9 +13,86 @@ import Chip from 'material-ui/Chip';
 import ActionSearch from 'material-ui/svg-icons/action/search';
 import AutoComplete from 'material-ui/AutoComplete';
 import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import Divider from 'material-ui/Divider';
 import FontAwesome from 'react-fontawesome';
 
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+
+
+// login page
+
+const formStyles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  gridList: {
+    marginTop: 120,
+    width: 480,
+    height: 580,
+    overflowY: 'auto',
+  },
+  textFirst: {
+    marginTop: 20,
+    marginLeft: 120,
+  },
+  text: {
+    marginLeft: 120,
+  },
+ 
+  passwd: {
+    marginLeft: 120,
+  },
+  passwd2: {
+    marginLeft: 120,
+    paddingBotton: 40,
+  },
+}
+
+
+class LoginRegisterPage extends React.Component {
+ 
+    render(){
+      return(
+        <div style={formStyles.root}>
+          <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
+            <GridTile>
+              <Paper zDepth={3}>
+                <div>
+                  <TextField name="username" style={formStyles.textFirst} hintText="Username..." />
+                  <TextField name="fname" style={formStyles.text} hintText="First name..." />
+                  <TextField name="lname" style={formStyles.text} hintText="Last name..." />
+                  <TextField 
+                    name="password1" 
+                    style={formStyles.passwd} 
+                    hintText="Password..." 
+                    type="password"
+                  />
+                  <TextField 
+                    name="password2" 
+                    style={formStyles.passwd2} 
+                    hintText="Password..." 
+                    type="password"
+                  />
+                  <Divider />
+                </div>
+                <RaisedButton fullWidth={true}>
+                  Facebook Login
+                </RaisedButton>
+                <RaisedButton fullWidth={true}>
+                  Google Login
+                </RaisedButton>
+                <Divider />
+              </Paper>
+            </GridTile>
+          </GridList> 
+        </div>
+
+                  )
+    }    
+}
 
 
 // social bar style and layout
@@ -45,6 +122,7 @@ const iconStyle = {
       paddingLeft: 0,
   },
 }
+
 
 const SocialBar = () => (
   <div>
@@ -321,4 +399,4 @@ class CustomAppBar extends React.Component {
 //  app bar end ----------------------------------------------------
 
 
-export {CustomAppBar, CustomGridList};
+export {LoginRegisterPage, CustomAppBar, CustomGridList};

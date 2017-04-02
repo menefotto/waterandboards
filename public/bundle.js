@@ -2698,14 +2698,13 @@ var Chip = function (_Component) {
 
       var _props = this.props,
           childrenProp = _props.children,
-          containerElement = _props.containerElement,
           style = _props.style,
           className = _props.className,
           labelStyle = _props.labelStyle,
           labelColor = _props.labelColor,
           backgroundColor = _props.backgroundColor,
           onRequestDelete = _props.onRequestDelete,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'containerElement', 'style', 'className', 'labelStyle', 'labelColor', 'backgroundColor', 'onRequestDelete']);
+          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'style', 'className', 'labelStyle', 'labelColor', 'backgroundColor', 'onRequestDelete']);
 
 
       var deletable = this.props.onRequestDelete;
@@ -2740,8 +2739,8 @@ var Chip = function (_Component) {
         _EnhancedButton2.default,
         (0, _extends3.default)({}, other, buttonEventHandlers, {
           className: className,
-          containerElement: containerElement,
-          disableTouchRipple: true,
+          containerElement: 'div' // Firefox doesn't support nested buttons
+          , disableTouchRipple: true,
           disableFocusRipple: true,
           style: (0, _simpleAssign2.default)(styles.root, style)
         }),
@@ -2759,7 +2758,6 @@ var Chip = function (_Component) {
 }(_react.Component);
 
 Chip.defaultProps = {
-  containerElement: 'div', // Firefox doesn't support nested buttons
   onBlur: function onBlur() {},
   onFocus: function onFocus() {},
   onKeyDown: function onKeyDown() {},
@@ -2785,11 +2783,6 @@ process.env.NODE_ENV !== "production" ? Chip.propTypes = {
    * CSS `className` of the root element.
    */
   className: _react.PropTypes.node,
-  /**
-   * The element to use as the container for the Chip. Either a string to
-   * use a DOM element or a ReactElement.
-   */
-  containerElement: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   /**
    * Override the label color.
    */
@@ -3533,11 +3526,10 @@ var FlatButton = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props,
-          backgroundColor = _props.backgroundColor,
           children = _props.children,
           disabled = _props.disabled,
-          fullWidth = _props.fullWidth,
           hoverColor = _props.hoverColor,
+          backgroundColor = _props.backgroundColor,
           icon = _props.icon,
           label = _props.label,
           labelStyle = _props.labelStyle,
@@ -3546,9 +3538,8 @@ var FlatButton = function (_Component) {
           rippleColor = _props.rippleColor,
           secondary = _props.secondary,
           style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['backgroundColor', 'children', 'disabled', 'fullWidth', 'hoverColor', 'icon', 'label', 'labelStyle', 'labelPosition', 'primary', 'rippleColor', 'secondary', 'style']);
+          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'disabled', 'hoverColor', 'backgroundColor', 'icon', 'label', 'labelStyle', 'labelPosition', 'primary', 'rippleColor', 'secondary', 'style']);
       var _context$muiTheme = this.context.muiTheme,
-          borderRadius = _context$muiTheme.borderRadius,
           _context$muiTheme$but = _context$muiTheme.button,
           buttonHeight = _context$muiTheme$but.height,
           buttonMinWidth = _context$muiTheme$but.minWidth,
@@ -3577,10 +3568,10 @@ var FlatButton = function (_Component) {
       var mergedRootStyles = (0, _simpleAssign2.default)({}, {
         height: buttonHeight,
         lineHeight: buttonHeight + 'px',
-        minWidth: fullWidth ? '100%' : buttonMinWidth,
+        minWidth: buttonMinWidth,
         color: defaultTextColor,
         transition: _transitions2.default.easeOut(),
-        borderRadius: borderRadius,
+        borderRadius: 2,
         userSelect: 'none',
         overflow: 'hidden',
         backgroundColor: hovered ? buttonHoverColor : buttonBackgroundColor,
@@ -3656,7 +3647,6 @@ var FlatButton = function (_Component) {
 FlatButton.muiName = 'FlatButton';
 FlatButton.defaultProps = {
   disabled: false,
-  fullWidth: false,
   labelStyle: {},
   labelPosition: 'after',
   onKeyboardFocus: function onKeyboardFocus() {},
@@ -3685,29 +3675,9 @@ process.env.NODE_ENV !== "production" ? FlatButton.propTypes = {
    */
   children: _react.PropTypes.node,
   /**
-   * The CSS class name of the root element.
-   */
-  className: _react.PropTypes.string,
-  /**
-   * The element to use as the container for the FlatButton. Either a string to
-   * use a DOM element or a ReactElement. This is useful for wrapping the
-   * FlatButton in a custom Link component. If a ReactElement is given, ensure
-   * that it passes all of its given props through to the underlying DOM
-   * element and renders its children prop for proper integration.
-   */
-  containerElement: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-  /**
-   * If true, the element's ripple effect will be disabled.
-   */
-  disableTouchRipple: _react2.default.PropTypes.bool,
-  /**
    * Disables the button if set to true.
    */
   disabled: _react.PropTypes.bool,
-  /**
-   * If true, the button will take up the full width of its container.
-   */
-  fullWidth: _react.PropTypes.bool,
   /**
    * Color of button when mouse hovers over.
    */
@@ -3745,12 +3715,6 @@ process.env.NODE_ENV !== "production" ? FlatButton.propTypes = {
   onMouseLeave: _react.PropTypes.func,
   /** @ignore */
   onTouchStart: _react.PropTypes.func,
-  /**
-   * Callback function fired when the button is touch-tapped.
-   *
-   * @param {object} event TouchTap event targeting the button.
-   */
-  onTouchTap: _react.PropTypes.func,
   /**
    * If true, colors button according to
    * primaryTextColor from the Theme.
@@ -4868,12 +4832,6 @@ process.env.NODE_ENV !== "production" ? IconButton.propTypes = {
   /** @ignore */
   onTouchStart: _react.PropTypes.func,
   /**
-   * Callback function fired when the button is touch-tapped.
-   *
-   * @param {object} event TouchTap event targeting the button.
-   */
-  onTouchTap: _react.PropTypes.func,
-  /**
    * Override the inline-styles of the root element.
    */
   style: _react.PropTypes.object,
@@ -5334,8 +5292,10 @@ var ListItem = function (_Component) {
   }, {
     key: 'applyFocusState',
     value: function applyFocusState(focusState) {
-      if (this.button) {
-        var buttonEl = _reactDom2.default.findDOMNode(this.button);
+      var button = this.refs.enhancedButton;
+
+      if (button) {
+        var buttonEl = _reactDom2.default.findDOMNode(button);
 
         switch (focusState) {
           case 'none':
@@ -5345,7 +5305,7 @@ var ListItem = function (_Component) {
             buttonEl.focus();
             break;
           case 'keyboard-focused':
-            this.button.setKeyboardFocus();
+            button.setKeyboardFocus();
             buttonEl.focus();
             break;
         }
@@ -5424,12 +5384,9 @@ var ListItem = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props3 = this.props,
           autoGenerateNestedIndicator = _props3.autoGenerateNestedIndicator,
           children = _props3.children,
-          containerElement = _props3.containerElement,
           disabled = _props3.disabled,
           disableKeyboardFocus = _props3.disableKeyboardFocus,
           hoverColor = _props3.hoverColor,
@@ -5457,7 +5414,7 @@ var ListItem = function (_Component) {
           secondaryText = _props3.secondaryText,
           secondaryTextLines = _props3.secondaryTextLines,
           style = _props3.style,
-          other = (0, _objectWithoutProperties3.default)(_props3, ['autoGenerateNestedIndicator', 'children', 'containerElement', 'disabled', 'disableKeyboardFocus', 'hoverColor', 'initiallyOpen', 'innerDivStyle', 'insetChildren', 'leftAvatar', 'leftCheckbox', 'leftIcon', 'nestedItems', 'nestedLevel', 'nestedListStyle', 'onKeyboardFocus', 'onMouseEnter', 'onMouseLeave', 'onNestedListToggle', 'onTouchStart', 'onTouchTap', 'rightAvatar', 'rightIcon', 'rightIconButton', 'rightToggle', 'primaryText', 'primaryTogglesNestedList', 'secondaryText', 'secondaryTextLines', 'style']);
+          other = (0, _objectWithoutProperties3.default)(_props3, ['autoGenerateNestedIndicator', 'children', 'disabled', 'disableKeyboardFocus', 'hoverColor', 'initiallyOpen', 'innerDivStyle', 'insetChildren', 'leftAvatar', 'leftCheckbox', 'leftIcon', 'nestedItems', 'nestedLevel', 'nestedListStyle', 'onKeyboardFocus', 'onMouseEnter', 'onMouseLeave', 'onNestedListToggle', 'onTouchStart', 'onTouchTap', 'rightAvatar', 'rightIcon', 'rightIconButton', 'rightToggle', 'primaryText', 'primaryTogglesNestedList', 'secondaryText', 'secondaryTextLines', 'style']);
       var prepareStyles = this.context.muiTheme.prepareStyles;
 
       var styles = getStyles(this.props, this.context, this.state);
@@ -5550,7 +5507,7 @@ var ListItem = function (_Component) {
         simpleLabel ? this.createLabelElement(styles, contentChildren, other) : disabled ? this.createDisabledElement(styles, contentChildren, other) : _react2.default.createElement(
           _EnhancedButton2.default,
           (0, _extends3.default)({
-            containerElement: containerElement
+            containerElement: 'span'
           }, other, {
             disableKeyboardFocus: disableKeyboardFocus || this.state.rightIconButtonKeyboardFocused,
             onKeyboardFocus: this.handleKeyboardFocus,
@@ -5559,9 +5516,7 @@ var ListItem = function (_Component) {
             onTouchStart: this.handleTouchStart,
             onTouchEnd: this.handleTouchEnd,
             onTouchTap: primaryTogglesNestedList ? this.handleNestedListToggle : onTouchTap,
-            ref: function ref(node) {
-              return _this2.button = node;
-            },
+            ref: 'enhancedButton',
             style: (0, _simpleAssign2.default)({}, styles.root, style)
           }),
           _react2.default.createElement(
@@ -5580,7 +5535,6 @@ var ListItem = function (_Component) {
 ListItem.muiName = 'ListItem';
 ListItem.defaultProps = {
   autoGenerateNestedIndicator: true,
-  containerElement: 'span',
   disableKeyboardFocus: false,
   disabled: false,
   initiallyOpen: false,
@@ -5612,14 +5566,6 @@ process.env.NODE_ENV !== "production" ? ListItem.propTypes = {
    * Children passed into the `ListItem`.
    */
   children: _react.PropTypes.node,
-  /**
-   * The element to use as the container for the ListItem. Either a string to
-   * use a DOM element or a ReactElement. This is useful for wrapping the
-   * ListItem in a custom Link component. If a ReactElement is given, ensure
-   * that it passes all of its given props through to the underlying DOM
-   * element and renders its children prop for proper integration.
-   */
-  containerElement: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   /**
    * If true, the element will not be able to be focused by the keyboard.
    */
@@ -6002,39 +5948,37 @@ var Menu = function (_Component) {
     value: function cloneMenuItem(child, childIndex, styles, index) {
       var _this2 = this;
 
-      var childIsDisabled = child.props.disabled;
+      var _props = this.props,
+          desktop = _props.desktop,
+          menuItemStyle = _props.menuItemStyle,
+          selectedMenuItemStyle = _props.selectedMenuItemStyle;
 
-      var selectedChildStyles = {};
-      if (!childIsDisabled) {
-        var selected = this.isChildSelected(child, this.props);
 
-        if (selected) {
-          (0, _simpleAssign2.default)(selectedChildStyles, styles.selectedMenuItem, this.props.selectedMenuItemStyle);
-        }
+      var selected = this.isChildSelected(child, this.props);
+      var selectedChildrenStyles = {};
+
+      if (selected) {
+        selectedChildrenStyles = (0, _simpleAssign2.default)(styles.selectedMenuItem, selectedMenuItemStyle);
       }
-      var mergedChildStyles = (0, _simpleAssign2.default)({}, child.props.style, this.props.menuItemStyle, selectedChildStyles);
 
-      var extraProps = {
-        desktop: this.props.desktop,
-        style: mergedChildStyles
-      };
-      if (!childIsDisabled) {
-        var isFocused = childIndex === this.state.focusIndex;
-        var focusState = 'none';
-        if (isFocused) {
-          focusState = this.state.isKeyboardFocused ? 'keyboard-focused' : 'focused';
-        }
+      var mergedChildrenStyles = (0, _simpleAssign2.default)({}, child.props.style, menuItemStyle, selectedChildrenStyles);
 
-        (0, _simpleAssign2.default)(extraProps, {
-          focusState: focusState,
-          onTouchTap: function onTouchTap(event) {
-            _this2.handleMenuItemTouchTap(event, child, index);
-            if (child.props.onTouchTap) child.props.onTouchTap(event);
-          },
-          ref: isFocused ? 'focusedMenuItem' : null
-        });
+      var isFocused = childIndex === this.state.focusIndex;
+      var focusState = 'none';
+      if (isFocused) {
+        focusState = this.state.isKeyboardFocused ? 'keyboard-focused' : 'focused';
       }
-      return _react2.default.cloneElement(child, extraProps);
+
+      return _react2.default.cloneElement(child, {
+        desktop: desktop,
+        focusState: focusState,
+        onTouchTap: function onTouchTap(event) {
+          _this2.handleMenuItemTouchTap(event, child, index);
+          if (child.props.onTouchTap) child.props.onTouchTap(event);
+        },
+        ref: isFocused ? 'focusedMenuItem' : null,
+        style: mergedChildrenStyles
+      });
     }
   }, {
     key: 'decrementKeyboardFocusIndex',
@@ -6107,13 +6051,10 @@ var Menu = function (_Component) {
       this.setFocusIndex(event, focusIndex, false);
 
       if (multiple) {
-        menuValue = menuValue || [];
-
         var itemIndex = menuValue.indexOf(itemValue);
 
-        var _menuValue = menuValue,
-            _menuValue2 = (0, _toArray3.default)(_menuValue),
-            newMenuValue = _menuValue2.slice(0);
+        var _menuValue = (0, _toArray3.default)(menuValue),
+            newMenuValue = _menuValue;
 
         if (itemIndex === -1) {
           newMenuValue.push(itemValue);
@@ -6146,7 +6087,7 @@ var Menu = function (_Component) {
       var childValue = child.props.value;
 
       if (props.multiple) {
-        return menuValue && menuValue.length && menuValue.indexOf(childValue) !== -1;
+        return menuValue.length && menuValue.indexOf(childValue) !== -1;
       } else {
         return child.props.hasOwnProperty('value') && menuValue === childValue;
       }
@@ -6212,25 +6153,25 @@ var Menu = function (_Component) {
     value: function render() {
       var _this4 = this;
 
-      var _props = this.props,
-          autoWidth = _props.autoWidth,
-          children = _props.children,
-          desktop = _props.desktop,
-          disableAutoFocus = _props.disableAutoFocus,
-          initiallyKeyboardFocused = _props.initiallyKeyboardFocused,
-          listStyle = _props.listStyle,
-          maxHeight = _props.maxHeight,
-          multiple = _props.multiple,
-          onItemTouchTap = _props.onItemTouchTap,
-          onEscKeyDown = _props.onEscKeyDown,
-          onMenuItemFocusChange = _props.onMenuItemFocusChange,
-          selectedMenuItemStyle = _props.selectedMenuItemStyle,
-          menuItemStyle = _props.menuItemStyle,
-          style = _props.style,
-          value = _props.value,
-          valueLink = _props.valueLink,
-          width = _props.width,
-          other = (0, _objectWithoutProperties3.default)(_props, ['autoWidth', 'children', 'desktop', 'disableAutoFocus', 'initiallyKeyboardFocused', 'listStyle', 'maxHeight', 'multiple', 'onItemTouchTap', 'onEscKeyDown', 'onMenuItemFocusChange', 'selectedMenuItemStyle', 'menuItemStyle', 'style', 'value', 'valueLink', 'width']);
+      var _props2 = this.props,
+          autoWidth = _props2.autoWidth,
+          children = _props2.children,
+          desktop = _props2.desktop,
+          disableAutoFocus = _props2.disableAutoFocus,
+          initiallyKeyboardFocused = _props2.initiallyKeyboardFocused,
+          listStyle = _props2.listStyle,
+          maxHeight = _props2.maxHeight,
+          multiple = _props2.multiple,
+          onItemTouchTap = _props2.onItemTouchTap,
+          onEscKeyDown = _props2.onEscKeyDown,
+          onMenuItemFocusChange = _props2.onMenuItemFocusChange,
+          selectedMenuItemStyle = _props2.selectedMenuItemStyle,
+          menuItemStyle = _props2.menuItemStyle,
+          style = _props2.style,
+          value = _props2.value,
+          valueLink = _props2.valueLink,
+          width = _props2.width,
+          other = (0, _objectWithoutProperties3.default)(_props2, ['autoWidth', 'children', 'desktop', 'disableAutoFocus', 'initiallyKeyboardFocused', 'listStyle', 'maxHeight', 'multiple', 'onItemTouchTap', 'onEscKeyDown', 'onMenuItemFocusChange', 'selectedMenuItemStyle', 'menuItemStyle', 'style', 'value', 'valueLink', 'width']);
       var prepareStyles = this.context.muiTheme.prepareStyles;
 
       var styles = getStyles(this.props, this.context);
@@ -6248,7 +6189,7 @@ var Menu = function (_Component) {
 
         switch (childName) {
           case 'MenuItem':
-            newChild = _this4.cloneMenuItem(child, menuItemIndex, styles, index);
+            newChild = childIsDisabled ? _react2.default.cloneElement(child, { desktop: desktop }) : _this4.cloneMenuItem(child, menuItemIndex, styles, index);
             break;
 
           case 'Divider':
@@ -6616,10 +6557,6 @@ var _Menu = require('../Menu/Menu');
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
-var _propTypes = require('../utils/propTypes');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var nestedMenuStyle = {
@@ -6770,9 +6707,8 @@ var MenuItem = function (_Component) {
           secondaryText = _props.secondaryText,
           style = _props.style,
           animation = _props.animation,
-          anchorOrigin = _props.anchorOrigin,
           value = _props.value,
-          other = (0, _objectWithoutProperties3.default)(_props, ['checked', 'children', 'desktop', 'disabled', 'focusState', 'innerDivStyle', 'insetChildren', 'leftIcon', 'menuItems', 'rightIcon', 'secondaryText', 'style', 'animation', 'anchorOrigin', 'value']);
+          other = (0, _objectWithoutProperties3.default)(_props, ['checked', 'children', 'desktop', 'disabled', 'focusState', 'innerDivStyle', 'insetChildren', 'leftIcon', 'menuItems', 'rightIcon', 'secondaryText', 'style', 'animation', 'value']);
       var prepareStyles = this.context.muiTheme.prepareStyles;
 
       var styles = getStyles(this.props, this.context);
@@ -6811,7 +6747,7 @@ var MenuItem = function (_Component) {
           _Popover2.default,
           {
             animation: animation,
-            anchorOrigin: anchorOrigin,
+            anchorOrigin: { horizontal: 'right', vertical: 'top' },
             anchorEl: this.state.anchorEl,
             open: this.state.open,
             useLayerForClickAway: false,
@@ -6849,7 +6785,6 @@ var MenuItem = function (_Component) {
 
 MenuItem.muiName = 'MenuItem';
 MenuItem.defaultProps = {
-  anchorOrigin: { horizontal: 'right', vertical: 'top' },
   checked: false,
   desktop: false,
   disabled: false,
@@ -6860,11 +6795,6 @@ MenuItem.contextTypes = {
   muiTheme: _react.PropTypes.object.isRequired
 };
 process.env.NODE_ENV !== "production" ? MenuItem.propTypes = {
-  /**
-   * Location of the anchor for the popover of nested `MenuItem`
-   * elements.
-   */
-  anchorOrigin: _propTypes2.default.origin,
   /**
    * Override the default animation component used.
    */
@@ -6938,7 +6868,7 @@ process.env.NODE_ENV !== "production" ? MenuItem.propTypes = {
 } : void 0;
 exports.default = MenuItem;
 }).call(this,require('_process'))
-},{"../List/ListItem":32,"../Menu/Menu":34,"../Popover/Popover":41,"../svg-icons/navigation/check":242,"../utils/propTypes":255,"_process":453,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":452,"react-dom":257,"recompose/shallowEqual":224,"simple-assign":228}],38:[function(require,module,exports){
+},{"../List/ListItem":32,"../Menu/Menu":34,"../Popover/Popover":41,"../svg-icons/navigation/check":242,"_process":453,"babel-runtime/core-js/object/get-prototype-of":70,"babel-runtime/helpers/classCallCheck":75,"babel-runtime/helpers/createClass":76,"babel-runtime/helpers/extends":78,"babel-runtime/helpers/inherits":79,"babel-runtime/helpers/objectWithoutProperties":80,"babel-runtime/helpers/possibleConstructorReturn":81,"react":452,"react-dom":257,"recompose/shallowEqual":224,"simple-assign":228}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7014,8 +6944,7 @@ function getStyles(props, context) {
       zDepth = props.zDepth;
   var _context$muiTheme = context.muiTheme,
       baseTheme = _context$muiTheme.baseTheme,
-      paper = _context$muiTheme.paper,
-      borderRadius = _context$muiTheme.borderRadius;
+      paper = _context$muiTheme.paper;
 
 
   return {
@@ -7027,7 +6956,7 @@ function getStyles(props, context) {
       fontFamily: baseTheme.fontFamily,
       WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
       boxShadow: paper.zDepthShadows[zDepth - 1], // No shadow for 0 depth papers
-      borderRadius: circle ? '50%' : rounded ? borderRadius : '0px'
+      borderRadius: circle ? '50%' : rounded ? '2px' : '0px'
     }
   };
 }
@@ -7326,33 +7255,29 @@ var Popover = function (_Component) {
     value: function componentWillReceiveProps(nextProps) {
       var _this2 = this;
 
-      if (nextProps.open === this.props.open) {
-        return;
-      }
-
-      if (nextProps.open) {
-        clearTimeout(this.timeout);
-        this.timeout = null;
-        this.anchorEl = nextProps.anchorEl || this.props.anchorEl;
-        this.setState({
-          open: true,
-          closing: false
-        });
-      } else {
-        if (nextProps.animated) {
-          if (this.timeout !== null) return;
-          this.setState({ closing: true });
-          this.timeout = setTimeout(function () {
-            _this2.setState({
-              open: false
-            }, function () {
-              _this2.timeout = null;
-            });
-          }, 500);
-        } else {
+      if (nextProps.open !== this.state.open) {
+        if (nextProps.open) {
+          this.anchorEl = nextProps.anchorEl || this.props.anchorEl;
           this.setState({
-            open: false
+            open: true,
+            closing: false
           });
+        } else {
+          if (nextProps.animated) {
+            if (this.timeout !== null) return;
+            this.setState({ closing: true });
+            this.timeout = setTimeout(function () {
+              _this2.setState({
+                open: false
+              }, function () {
+                _this2.timeout = null;
+              });
+            }, 500);
+          } else {
+            this.setState({
+              open: false
+            });
+          }
         }
       }
     }
@@ -7878,8 +7803,7 @@ function getStyles(props, context, state) {
   var _context$muiTheme = context.muiTheme,
       baseTheme = _context$muiTheme.baseTheme,
       button = _context$muiTheme.button,
-      raisedButton = _context$muiTheme.raisedButton,
-      borderRadius = _context$muiTheme.borderRadius;
+      raisedButton = _context$muiTheme.raisedButton;
   var disabled = props.disabled,
       disabledBackgroundColor = props.disabledBackgroundColor,
       disabledLabelColor = props.disabledLabelColor,
@@ -7916,6 +7840,7 @@ function getStyles(props, context, state) {
   }
 
   var buttonHeight = style && style.height || button.height;
+  var borderRadius = 2;
 
   return {
     root: {
@@ -8202,18 +8127,6 @@ process.env.NODE_ENV !== "production" ? RaisedButton.propTypes = {
    */
   className: _react.PropTypes.string,
   /**
-    * The element to use as the container for the RaisedButton. Either a string to
-    * use a DOM element or a ReactElement. This is useful for wrapping the
-    * RaisedButton in a custom Link component. If a ReactElement is given, ensure
-    * that it passes all of its given props through to the underlying DOM
-    * element and renders its children prop for proper integration.
-    */
-  containerElement: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-  /**
-   * If true, the element's ripple effect will be disabled.
-   */
-  disableTouchRipple: _react2.default.PropTypes.bool,
-  /**
    * If true, the button will be disabled.
    */
   disabled: _react.PropTypes.bool,
@@ -8268,12 +8181,6 @@ process.env.NODE_ENV !== "production" ? RaisedButton.propTypes = {
   onTouchEnd: _react.PropTypes.func,
   /** @ignore */
   onTouchStart: _react.PropTypes.func,
-  /**
-   * Callback function fired when the button is touch-tapped.
-   *
-   * @param {object} event TouchTap event targeting the button.
-   */
-  onTouchTap: _react.PropTypes.func,
   /**
    * Override the inline style of the button overlay.
    */
@@ -8713,8 +8620,8 @@ var EnhancedTextarea = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.value !== this.props.value || nextProps.rowsMax !== this.props.rowsMax) {
-        this.syncHeightWithShadow(nextProps.value, null, nextProps);
+      if (nextProps.value !== this.props.value) {
+        this.syncHeightWithShadow(nextProps.value);
       }
     }
   }, {
@@ -8730,7 +8637,7 @@ var EnhancedTextarea = function (_Component) {
     }
   }, {
     key: 'syncHeightWithShadow',
-    value: function syncHeightWithShadow(newValue, event, props) {
+    value: function syncHeightWithShadow(newValue, event) {
       var shadow = this.refs.shadow;
 
       if (newValue !== undefined) {
@@ -8743,10 +8650,8 @@ var EnhancedTextarea = function (_Component) {
       // See https://github.com/tmpvar/jsdom/issues/1013
       if (newHeight === undefined) return;
 
-      props = props || this.props;
-
-      if (props.rowsMax >= props.rows) {
-        newHeight = Math.min(props.rowsMax * rowsHeight, newHeight);
+      if (this.props.rowsMax >= this.props.rows) {
+        newHeight = Math.min(this.props.rowsMax * rowsHeight, newHeight);
       }
 
       newHeight = Math.max(newHeight, rowsHeight);
@@ -8756,8 +8661,8 @@ var EnhancedTextarea = function (_Component) {
           height: newHeight
         });
 
-        if (props.onHeightChange) {
-          props.onHeightChange(event, newHeight);
+        if (this.props.onHeightChange) {
+          this.props.onHeightChange(event, newHeight);
         }
       }
     }
@@ -9007,7 +8912,7 @@ var getStyles = function getStyles(props, context, state) {
  * @returns True if the string provided is valid, false otherwise.
  */
 function isValid(value) {
-  return value !== '' && value !== undefined && value !== null && !(Array.isArray(value) && value.length === 0);
+  return value !== '' && value !== undefined && value !== null;
 }
 
 var TextField = function (_Component) {
@@ -10353,7 +10258,7 @@ var EnhancedButton = function (_Component) {
       injectStyle();
       listenForTabPresses();
       if (this.state.isKeyboardFocused) {
-        this.button.focus();
+        this.refs.enhancedButton.focus();
         this.props.onKeyboardFocus(null, true);
       }
     }
@@ -10370,9 +10275,7 @@ var EnhancedButton = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      if (this.focusTimeout) {
-        clearTimeout(this.focusTimeout);
-      }
+      clearTimeout(this.focusTimeout);
     }
   }, {
     key: 'isKeyboardFocused',
@@ -10447,8 +10350,6 @@ var EnhancedButton = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props3 = this.props,
           centerRipple = _props3.centerRipple,
           children = _props3.children,
@@ -10493,8 +10394,8 @@ var EnhancedButton = function (_Component) {
         fontSize: 'inherit',
         fontWeight: 'inherit',
         position: 'relative', // This is needed so that ripples do not bleed past border radius.
-        verticalAlign: href ? 'middle' : null,
-        zIndex: 1 }, style);
+        verticalAlign: href ? 'middle' : null
+      }, style);
 
       // Passing both background:none & backgroundColor can break due to object iteration order
       if (!mergedStyles.backgroundColor && !mergedStyles.background) {
@@ -10513,9 +10414,7 @@ var EnhancedButton = function (_Component) {
 
       var buttonProps = (0, _extends3.default)({}, other, {
         style: prepareStyles(mergedStyles),
-        ref: function ref(node) {
-          return _this2.button = node;
-        },
+        ref: 'enhancedButton',
         disabled: disabled,
         href: href,
         onBlur: this.handleBlur,
@@ -11465,8 +11364,7 @@ function getStyles(props, context, state) {
   var _context$muiTheme = context.muiTheme,
       baseTheme = _context$muiTheme.baseTheme,
       zIndex = _context$muiTheme.zIndex,
-      tooltip = _context$muiTheme.tooltip,
-      borderRadius = _context$muiTheme.borderRadius;
+      tooltip = _context$muiTheme.tooltip;
 
 
   var styles = {
@@ -11480,11 +11378,11 @@ function getStyles(props, context, state) {
       color: tooltip.color,
       overflow: 'hidden',
       top: -10000,
-      borderRadius: borderRadius,
+      borderRadius: 2,
       userSelect: 'none',
       opacity: 0,
       right: horizontalPosition === 'left' ? 12 : null,
-      left: horizontalPosition === 'center' ? (state.offsetWidth - 48) / 2 * -1 : horizontalPosition === 'right' ? 12 : null,
+      left: horizontalPosition === 'center' ? (state.offsetWidth - 48) / 2 * -1 : null,
       transition: _transitions2.default.easeOut('0ms', 'top', '450ms') + ', ' + _transitions2.default.easeOut('450ms', 'transform', '0ms') + ', ' + _transitions2.default.easeOut('450ms', 'opacity', '0ms')
     },
     label: {
@@ -18964,7 +18862,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   spacing: _spacing2.default,
   fontFamily: 'Roboto, sans-serif',
-  borderRadius: 2,
   palette: {
     primary1Color: _colors.cyan500,
     primary2Color: _colors.cyan700,
@@ -20233,7 +20130,6 @@ function extendChildren(children, extendedProps, extendedChildren) {
   });
 }
 },{"react":452,"react-addons-create-fragment":210}],251:[function(require,module,exports){
-(function (process){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20248,13 +20144,6 @@ exports.emphasize = emphasize;
 exports.fade = fade;
 exports.darken = darken;
 exports.lighten = lighten;
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * Returns a number whose value is limited to the given range.
  *
@@ -20337,7 +20226,7 @@ function convertHexToRGB(color) {
 /**
  * Returns an object with the type and values of a color.
  *
- * Note: Does not support rgb % values and color names.
+ * Note: Does not support rgb % values.
  *
  * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
  * @returns {{type: string, values: number[]}} A MUI color object
@@ -20348,9 +20237,6 @@ function decomposeColor(color) {
   }
 
   var marker = color.indexOf('(');
-
-  process.env.NODE_ENV !== "production" ? (0, _warning2.default)(marker !== -1, 'Material-UI: The ' + color + ' color was not parsed correctly,\n  because it has an unsupported format (color name or RGB %). This may cause issues in component rendering.') : void 0;
-
   var type = color.substring(0, marker);
   var values = color.substring(marker + 1, color.length - 1).split(',');
   values = values.map(function (value) {
@@ -20476,8 +20362,7 @@ function lighten(color, coefficient) {
 
   return convertColorToString(color);
 }
-}).call(this,require('_process'))
-},{"_process":453,"warning":229}],252:[function(require,module,exports){
+},{}],252:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42171,7 +42056,7 @@ process.umask = function() { return 0; };
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.CustomGridList = exports.CustomAppBar = undefined;
+exports.CustomGridList = exports.CustomAppBar = exports.LoginRegisterPage = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -42227,6 +42112,14 @@ var _Paper = require('material-ui/Paper');
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
+var _TextField = require('material-ui/TextField');
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
+var _Divider = require('material-ui/Divider');
+
+var _Divider2 = _interopRequireDefault(_Divider);
+
 var _reactFontawesome = require('react-fontawesome');
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
@@ -42243,7 +42136,105 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// login page
+
+var formStyles = {
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around'
+    },
+    gridList: {
+        marginTop: 120,
+        width: 480,
+        height: 580,
+        overflowY: 'auto'
+    },
+    textFirst: {
+        marginTop: 20,
+        marginLeft: 120
+    },
+    text: {
+        marginLeft: 120
+    },
+
+    passwd: {
+        marginLeft: 120
+    },
+    passwd2: {
+        marginLeft: 120,
+        paddingBotton: 40
+    }
+};
+
+var LoginRegisterPage = function (_React$Component) {
+    _inherits(LoginRegisterPage, _React$Component);
+
+    function LoginRegisterPage() {
+        _classCallCheck(this, LoginRegisterPage);
+
+        return _possibleConstructorReturn(this, (LoginRegisterPage.__proto__ || Object.getPrototypeOf(LoginRegisterPage)).apply(this, arguments));
+    }
+
+    _createClass(LoginRegisterPage, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { style: formStyles.root },
+                _react2.default.createElement(
+                    _GridList.GridList,
+                    { cellHeight: 'auto', cols: 1, style: formStyles.gridList },
+                    _react2.default.createElement(
+                        _GridList.GridTile,
+                        null,
+                        _react2.default.createElement(
+                            _Paper2.default,
+                            { zDepth: 3 },
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(_TextField2.default, { name: 'username', style: formStyles.textFirst, hintText: 'Username...' }),
+                                _react2.default.createElement(_TextField2.default, { name: 'fname', style: formStyles.text, hintText: 'First name...' }),
+                                _react2.default.createElement(_TextField2.default, { name: 'lname', style: formStyles.text, hintText: 'Last name...' }),
+                                _react2.default.createElement(_TextField2.default, {
+                                    name: 'password1',
+                                    style: formStyles.passwd,
+                                    hintText: 'Password...',
+                                    type: 'password'
+                                }),
+                                _react2.default.createElement(_TextField2.default, {
+                                    name: 'password2',
+                                    style: formStyles.passwd2,
+                                    hintText: 'Password...',
+                                    type: 'password'
+                                }),
+                                _react2.default.createElement(_Divider2.default, null)
+                            ),
+                            _react2.default.createElement(
+                                _RaisedButton2.default,
+                                { fullWidth: true },
+                                'Facebook Login'
+                            ),
+                            _react2.default.createElement(
+                                _RaisedButton2.default,
+                                { fullWidth: true },
+                                'Google Login'
+                            ),
+                            _react2.default.createElement(_Divider2.default, null)
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return LoginRegisterPage;
+}(_react2.default.Component);
+
 // social bar style and layout
+
+
 var iconStyle = {
     social: {
         transform: 'translateY(1px)',
@@ -42361,8 +42352,8 @@ var ItemChips = function ItemChips() {
 
 // youtube embed
 
-var YouTubeEmbed = function (_React$Component) {
-    _inherits(YouTubeEmbed, _React$Component);
+var YouTubeEmbed = function (_React$Component2) {
+    _inherits(YouTubeEmbed, _React$Component2);
 
     function YouTubeEmbed() {
         _classCallCheck(this, YouTubeEmbed);
@@ -42579,33 +42570,33 @@ var Login = function Login() {
     );
 };
 
-var CustomAppBar = function (_React$Component2) {
-    _inherits(CustomAppBar, _React$Component2);
+var CustomAppBar = function (_React$Component3) {
+    _inherits(CustomAppBar, _React$Component3);
 
     function CustomAppBar(props) {
         _classCallCheck(this, CustomAppBar);
 
-        var _this2 = _possibleConstructorReturn(this, (CustomAppBar.__proto__ || Object.getPrototypeOf(CustomAppBar)).call(this, props));
+        var _this3 = _possibleConstructorReturn(this, (CustomAppBar.__proto__ || Object.getPrototypeOf(CustomAppBar)).call(this, props));
 
-        _this2.state = {
+        _this3.state = {
             open: false,
             logged: false
         };
 
-        _this2.handleClose = function () {
-            return _this2.setState({ open: false });
+        _this3.handleClose = function () {
+            return _this3.setState({ open: false });
         };
 
-        _this2.handleChange = function (event, logged) {
-            _this2.setState({ logged: logged });
+        _this3.handleChange = function (event, logged) {
+            _this3.setState({ logged: logged });
         };
 
-        _this2.handleToggle = function () {
-            return _this2.setState({ open: !_this2.state.open });
+        _this3.handleToggle = function () {
+            return _this3.setState({ open: !_this3.state.open });
         };
 
-        _this2.state = { open: false };
-        return _this2;
+        _this3.state = { open: false };
+        return _this3;
     }
 
     _createClass(CustomAppBar, [{
@@ -42650,10 +42641,11 @@ var CustomAppBar = function (_React$Component2) {
 //  app bar end ----------------------------------------------------
 
 
+exports.LoginRegisterPage = LoginRegisterPage;
 exports.CustomAppBar = CustomAppBar;
 exports.CustomGridList = CustomGridList;
 
-},{"material-ui/AppBar":2,"material-ui/AutoComplete":4,"material-ui/Avatar":6,"material-ui/Card":14,"material-ui/Chip":16,"material-ui/Drawer":20,"material-ui/FlatButton":23,"material-ui/GridList":28,"material-ui/IconButton":30,"material-ui/Paper":40,"material-ui/RaisedButton":44,"material-ui/svg-icons/action/search":238,"material-ui/svg-icons/navigation/close":243,"react":452,"react-dom":257,"react-fontawesome":409}],455:[function(require,module,exports){
+},{"material-ui/AppBar":2,"material-ui/AutoComplete":4,"material-ui/Avatar":6,"material-ui/Card":14,"material-ui/Chip":16,"material-ui/Divider":18,"material-ui/Drawer":20,"material-ui/FlatButton":23,"material-ui/GridList":28,"material-ui/IconButton":30,"material-ui/Paper":40,"material-ui/RaisedButton":44,"material-ui/TextField":54,"material-ui/svg-icons/action/search":238,"material-ui/svg-icons/navigation/close":243,"react":452,"react-dom":257,"react-fontawesome":409}],455:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -42694,7 +42686,7 @@ var App = function App() {
       'div',
       null,
       _react2.default.createElement(_components.CustomAppBar, null),
-      _react2.default.createElement(_components.CustomGridList, null)
+      _react2.default.createElement(_components.LoginRegisterPage, null)
     )
   );
 };
