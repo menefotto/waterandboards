@@ -31,66 +31,136 @@ const formStyles = {
   gridList: {
     marginTop: 120,
     width: 480,
-    height: 580,
+    height: "auto",
     overflowY: 'auto',
+  },
+  gridTile: {
+    marginTop: 30,
+    height: 40,
   },
   textFirst: {
     marginTop: 20,
     marginLeft: 120,
   },
-  text: {
+  input: {
     marginLeft: 120,
   },
- 
-  passwd: {
-    marginLeft: 120,
+  inputClick: {
+    textAlign: "center",
+    paddingTop: 10,
   },
-  passwd2: {
-    marginLeft: 120,
-    paddingBotton: 40,
+  button: {
+    width: "70%",
+    marginTop: 25,
+    marginBottom: 15,
+    marginLeft: 80,
+  },
+  buttonFacebook: {
+    width: "70%",
+    marginTop: 15,
+    marginBottom: 5,
+    marginLeft: 80,
+  },
+  buttonGoogle: {
+    width: "70%",
+    marginTop: 5,
+    marginBottom: 15,
+    marginLeft: 80,
   },
 }
 
 
 class LoginRegisterPage extends React.Component {
- 
+     state = { 
+        register: false,
+    }
+
+    constructor(props) {
+        super(props)
+        this.state = {register: false}
+    }
+
+    handleRegister = () => this.setState({register: !this.state.register})
+
     render(){
       return(
         <div style={formStyles.root}>
-          <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
+        <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
             <GridTile>
-              <Paper zDepth={3}>
-                <div>
-                  <TextField name="username" style={formStyles.textFirst} hintText="Username..." />
-                  <TextField name="fname" style={formStyles.text} hintText="First name..." />
-                  <TextField name="lname" style={formStyles.text} hintText="Last name..." />
-                  <TextField 
-                    name="password1" 
-                    style={formStyles.passwd} 
-                    hintText="Password..." 
-                    type="password"
-                  />
-                  <TextField 
+            <Paper zDepth={3}>
+                <form>
+                <TextField 
+                    name="email" 
+                    style={formStyles.textFirst} 
+                    hintText="Email..." 
+                    type="email"
+                />
+                {
+                    this.state.register ?
+                    <div>
+                        <TextField 
+                            name="fname" 
+                            style={formStyles.input} 
+                            hintText="First name..." 
+                        />
+                        <TextField 
+                            name="lname" 
+                            style={formStyles.input} 
+                            hintText="Last name..." 
+                        /> 
+                        <TextField 
+                            name="password1" 
+                            style={formStyles.input} 
+                            hintText="Password..." 
+                            type="password"
+                        /> 
+                    </div> : null
+                }
+                <TextField 
                     name="password2" 
-                    style={formStyles.passwd2} 
+                    style={formStyles.input} 
                     hintText="Password..." 
                     type="password"
-                  />
-                  <Divider />
-                </div>
-                <RaisedButton fullWidth={true}>
-                  Facebook Login
-                </RaisedButton>
-                <RaisedButton fullWidth={true}>
-                  Google Login
+                /> 
+                <RaisedButton 
+                    backgroundColor={"#C0C0C0"} 
+                    style={formStyles.button}
+                >
+                    {this.state.register? "Register" : "Login"}
                 </RaisedButton>
                 <Divider />
-              </Paper>
+                <RaisedButton 
+                    backgroundColor={"#3B5998"} 
+                    style={formStyles.buttonFacebook}
+                >
+                    {this.state.register? "Register with Facebook" : "Login with Facebook"}
+                </RaisedButton>
+                <RaisedButton 
+                    backgroundColor={"#DB4437"} 
+                    style={formStyles.buttonGoogle}
+                >
+                    {this.state.register? "Register with Google" : "Login with Google"}
+                </RaisedButton>
+                </form>
+            </Paper>
             </GridTile>
-          </GridList> 
+            <GridTile>
+                <Paper zDepth={3} style={formStyles.gridTile}>
+                    { !this.state.register ? 
+                        <div 
+                            style={formStyles.inputClick}> 
+                            Don't have an account? <a onClick={this.handleRegister} href="#"> Register </a> 
+                        </div> : 
+                        <div 
+                            style={formStyles.inputClick}> 
+                            Have an account? <a onClick={this.handleRegister} href="#"> Login </a> 
+                        </div>
+                    }
+                </Paper>
+            </GridTile>
+        </GridList> 
         </div>
-
-                  )
+        )
     }    
 }
 

@@ -42147,33 +42147,62 @@ var formStyles = {
     gridList: {
         marginTop: 120,
         width: 480,
-        height: 580,
+        height: "auto",
         overflowY: 'auto'
+    },
+    gridTile: {
+        marginTop: 30,
+        height: 40
     },
     textFirst: {
         marginTop: 20,
         marginLeft: 120
     },
-    text: {
+    input: {
         marginLeft: 120
     },
-
-    passwd: {
-        marginLeft: 120
+    inputClick: {
+        textAlign: "center",
+        paddingTop: 10
     },
-    passwd2: {
-        marginLeft: 120,
-        paddingBotton: 40
+    button: {
+        width: "70%",
+        marginTop: 25,
+        marginBottom: 15,
+        marginLeft: 80
+    },
+    buttonFacebook: {
+        width: "70%",
+        marginTop: 15,
+        marginBottom: 5,
+        marginLeft: 80
+    },
+    buttonGoogle: {
+        width: "70%",
+        marginTop: 5,
+        marginBottom: 15,
+        marginLeft: 80
     }
 };
 
 var LoginRegisterPage = function (_React$Component) {
     _inherits(LoginRegisterPage, _React$Component);
 
-    function LoginRegisterPage() {
+    function LoginRegisterPage(props) {
         _classCallCheck(this, LoginRegisterPage);
 
-        return _possibleConstructorReturn(this, (LoginRegisterPage.__proto__ || Object.getPrototypeOf(LoginRegisterPage)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (LoginRegisterPage.__proto__ || Object.getPrototypeOf(LoginRegisterPage)).call(this, props));
+
+        _this.state = {
+            register: false
+        };
+
+        _this.handleRegister = function () {
+            return _this.setState({ register: !_this.state.register });
+        };
+
+        _this.state = { register: false };
+        return _this;
     }
 
     _createClass(LoginRegisterPage, [{
@@ -42192,36 +42221,95 @@ var LoginRegisterPage = function (_React$Component) {
                             _Paper2.default,
                             { zDepth: 3 },
                             _react2.default.createElement(
-                                'div',
+                                'form',
                                 null,
-                                _react2.default.createElement(_TextField2.default, { name: 'username', style: formStyles.textFirst, hintText: 'Username...' }),
-                                _react2.default.createElement(_TextField2.default, { name: 'fname', style: formStyles.text, hintText: 'First name...' }),
-                                _react2.default.createElement(_TextField2.default, { name: 'lname', style: formStyles.text, hintText: 'Last name...' }),
                                 _react2.default.createElement(_TextField2.default, {
-                                    name: 'password1',
-                                    style: formStyles.passwd,
-                                    hintText: 'Password...',
-                                    type: 'password'
+                                    name: 'email',
+                                    style: formStyles.textFirst,
+                                    hintText: 'Email...',
+                                    type: 'email'
                                 }),
+                                this.state.register ? _react2.default.createElement(
+                                    'div',
+                                    null,
+                                    _react2.default.createElement(_TextField2.default, {
+                                        name: 'fname',
+                                        style: formStyles.input,
+                                        hintText: 'First name...'
+                                    }),
+                                    _react2.default.createElement(_TextField2.default, {
+                                        name: 'lname',
+                                        style: formStyles.input,
+                                        hintText: 'Last name...'
+                                    }),
+                                    _react2.default.createElement(_TextField2.default, {
+                                        name: 'password1',
+                                        style: formStyles.input,
+                                        hintText: 'Password...',
+                                        type: 'password'
+                                    })
+                                ) : null,
                                 _react2.default.createElement(_TextField2.default, {
                                     name: 'password2',
-                                    style: formStyles.passwd2,
+                                    style: formStyles.input,
                                     hintText: 'Password...',
                                     type: 'password'
                                 }),
-                                _react2.default.createElement(_Divider2.default, null)
-                            ),
-                            _react2.default.createElement(
-                                _RaisedButton2.default,
-                                { fullWidth: true },
-                                'Facebook Login'
-                            ),
-                            _react2.default.createElement(
-                                _RaisedButton2.default,
-                                { fullWidth: true },
-                                'Google Login'
-                            ),
-                            _react2.default.createElement(_Divider2.default, null)
+                                _react2.default.createElement(
+                                    _RaisedButton2.default,
+                                    {
+                                        backgroundColor: "#C0C0C0",
+                                        style: formStyles.button
+                                    },
+                                    this.state.register ? "Register" : "Login"
+                                ),
+                                _react2.default.createElement(_Divider2.default, null),
+                                _react2.default.createElement(
+                                    _RaisedButton2.default,
+                                    {
+                                        backgroundColor: "#3B5998",
+                                        style: formStyles.buttonFacebook
+                                    },
+                                    this.state.register ? "Register with Facebook" : "Login with Facebook"
+                                ),
+                                _react2.default.createElement(
+                                    _RaisedButton2.default,
+                                    {
+                                        backgroundColor: "#DB4437",
+                                        style: formStyles.buttonGoogle
+                                    },
+                                    this.state.register ? "Register with Google" : "Login with Google"
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        _GridList.GridTile,
+                        null,
+                        _react2.default.createElement(
+                            _Paper2.default,
+                            { zDepth: 3, style: formStyles.gridTile },
+                            !this.state.register ? _react2.default.createElement(
+                                'div',
+                                {
+                                    style: formStyles.inputClick },
+                                'Don\'t have an account? ',
+                                _react2.default.createElement(
+                                    'a',
+                                    { onClick: this.handleRegister, href: '#' },
+                                    ' Register '
+                                )
+                            ) : _react2.default.createElement(
+                                'div',
+                                {
+                                    style: formStyles.inputClick },
+                                'Have an account? ',
+                                _react2.default.createElement(
+                                    'a',
+                                    { onClick: this.handleRegister, href: '#' },
+                                    ' Login '
+                                )
+                            )
                         )
                     )
                 )
