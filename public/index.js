@@ -9,17 +9,36 @@ injectTapEventPlugin();
 import {
    CustomAppBar,
    CustomGridList,
-   LoginRegisterPage,
+   LoginWidget,
 } from './components.js'
 import BlueGrey from './themes.js'
 
-const App = () => (
-  <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
-    <div> 
-      <CustomAppBar />
-      <LoginRegisterPage />
-    </div>
-  </MuiThemeProvider>
-)
+class App extends React.Component {
+  state = {
+    loginpage: false,
+  }
+
+  constructor(props) {
+        super(props)
+        this.state = {loginpage: false}
+  } 
+
+  handleLogin = () => this.setState({loginpage: true})
+
+  render(){
+    return(
+      <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
+        <div> 
+          <CustomAppBar />
+          {
+            this.state.loginpage ?
+              <LoginWidget /> :
+              <CustomGridList />
+          }
+        </div>
+      </MuiThemeProvider>
+    )
+  }
+}
 
 ReactDOM.render(<App/>, document.getElementById('content'))

@@ -42056,7 +42056,7 @@ process.umask = function() { return 0; };
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.CustomGridList = exports.CustomAppBar = exports.LoginRegisterPage = undefined;
+exports.CustomGridList = exports.CustomAppBar = exports.LoginWidget = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -42185,13 +42185,13 @@ var formStyles = {
     }
 };
 
-var LoginRegisterPage = function (_React$Component) {
-    _inherits(LoginRegisterPage, _React$Component);
+var LoginWidget = function (_React$Component) {
+    _inherits(LoginWidget, _React$Component);
 
-    function LoginRegisterPage(props) {
-        _classCallCheck(this, LoginRegisterPage);
+    function LoginWidget(props) {
+        _classCallCheck(this, LoginWidget);
 
-        var _this = _possibleConstructorReturn(this, (LoginRegisterPage.__proto__ || Object.getPrototypeOf(LoginRegisterPage)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (LoginWidget.__proto__ || Object.getPrototypeOf(LoginWidget)).call(this, props));
 
         _this.state = {
             register: false
@@ -42205,7 +42205,7 @@ var LoginRegisterPage = function (_React$Component) {
         return _this;
     }
 
-    _createClass(LoginRegisterPage, [{
+    _createClass(LoginWidget, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -42317,7 +42317,7 @@ var LoginRegisterPage = function (_React$Component) {
         }
     }]);
 
-    return LoginRegisterPage;
+    return LoginWidget;
 }(_react2.default.Component);
 
 // social bar style and layout
@@ -42729,12 +42729,14 @@ var CustomAppBar = function (_React$Component3) {
 //  app bar end ----------------------------------------------------
 
 
-exports.LoginRegisterPage = LoginRegisterPage;
+exports.LoginWidget = LoginWidget;
 exports.CustomAppBar = CustomAppBar;
 exports.CustomGridList = CustomGridList;
 
 },{"material-ui/AppBar":2,"material-ui/AutoComplete":4,"material-ui/Avatar":6,"material-ui/Card":14,"material-ui/Chip":16,"material-ui/Divider":18,"material-ui/Drawer":20,"material-ui/FlatButton":23,"material-ui/GridList":28,"material-ui/IconButton":30,"material-ui/Paper":40,"material-ui/RaisedButton":44,"material-ui/TextField":54,"material-ui/svg-icons/action/search":238,"material-ui/svg-icons/navigation/close":243,"react":452,"react-dom":257,"react-fontawesome":409}],455:[function(require,module,exports){
 'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -42764,20 +42766,52 @@ var _themes2 = _interopRequireDefault(_themes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 (0, _reactTapEventPlugin2.default)();
 
-var App = function App() {
-  return _react2.default.createElement(
-    _MuiThemeProvider2.default,
-    { muiTheme: (0, _getMuiTheme2.default)(_themes2.default) },
-    _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(_components.CustomAppBar, null),
-      _react2.default.createElement(_components.LoginRegisterPage, null)
-    )
-  );
-};
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = {
+      loginpage: false
+    };
+
+    _this.handleLogin = function () {
+      return _this.setState({ loginpage: true });
+    };
+
+    _this.state = { loginpage: false };
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _MuiThemeProvider2.default,
+        { muiTheme: (0, _getMuiTheme2.default)(_themes2.default) },
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_components.CustomAppBar, null),
+          this.state.loginpage ? _react2.default.createElement(_components.LoginWidget, null) : _react2.default.createElement(_components.CustomGridList, null)
+        )
+      );
+    }
+  }]);
+
+  return App;
+}(_react2.default.Component);
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('content'));
 

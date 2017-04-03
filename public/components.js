@@ -70,7 +70,7 @@ const formStyles = {
 }
 
 
-class LoginRegisterPage extends React.Component {
+class LoginWidget extends React.Component {
      state = { 
         register: false,
     }
@@ -469,4 +469,4 @@ class CustomAppBar extends React.Component {
 //  app bar end ----------------------------------------------------
 
 
-export {LoginRegisterPage, CustomAppBar, CustomGridList};
+export {LoginWidget, CustomAppBar, CustomGridList};
