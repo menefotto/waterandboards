@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import CustomAppBar from './components/CustomAppBar.js';
-import CustomGridList from './components/CustomGridList.js';
-import LoginWidget from './components/LoginWidget.js';
+import AppBar from './components/AppBar.js';
+import Grid from './components/Grid.js';
+import Login from './components/Login.js';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -38,11 +38,11 @@ class App extends React.Component {
       <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
         <Provider store={store}>
           <div> 
-            <CustomAppBar />
+            <AppBar />
             {
               this.state.loginpage ?
-                <LoginWidget /> :
-                <CustomGridList />
+                <Login /> :
+                <Grid />
             }
           </div>
         </Provider>

@@ -8,7 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 
-class CustomAppBar extends React.Component {
+class AppBar extends React.Component {
    propTypes: {
       element: PropTypes.element,
        logo: PropTypes.string.isRequired,
@@ -75,4 +75,4 @@ const barStyle = {
 
 
 
-export default CustomAppBar;
+export default AppBar;

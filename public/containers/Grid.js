@@ -4,12 +4,13 @@ import {
   GridList, 
   GridTile
 } from 'material-ui/GridList';
+
+import Card from './Card';
 import SearchBar from './SearchBar';
-import CardWithAvatar from './CardWithAvatar';
 
 
 // Actual grid
-class CustomGridList extends React.Component {
+class Grid extends React.Component {
 
    render(){
       return(
@@ -54,4 +55,4 @@ const gridStyles = {
   },
 }
 
-export default CustomGridList;
+export default Grid;

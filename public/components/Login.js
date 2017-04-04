@@ -11,7 +11,7 @@ import {
 } from 'material-ui/GridList';
 
 
-class LoginWidget extends React.Component {
+class Login extends React.Component {
    propTypes: {
       register: PropTypes.bool,
    }
@@ -150,4 +150,4 @@ const formStyles = {
 }
 
 
-export default LoginWidget;
+export default Login;
