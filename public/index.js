@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
 import CustomAppBar from './components/CustomAppBar.js';
 import CustomGridList from './components/CustomGridList.js';
 import LoginWidget from './components/LoginWidget.js';
@@ -10,6 +13,12 @@ import BlueGrey from './themes.js'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+
+const reducer = () => (
+  console.log("hello!")
+)
+
+const store = createStore(reducer)
 
 
 class App extends React.Component {
@@ -27,14 +36,16 @@ class App extends React.Component {
   render(){
     return(
       <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
-        <div> 
-          <CustomAppBar />
-          {
-            this.state.loginpage ?
-              <LoginWidget /> :
-              <CustomGridList />
-          }
-        </div>
+        <Provider store={store}>
+          <div> 
+            <CustomAppBar />
+            {
+              this.state.loginpage ?
+                <LoginWidget /> :
+                <CustomGridList />
+            }
+          </div>
+        </Provider>
       </MuiThemeProvider>
     )
   }

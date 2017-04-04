@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Chip from 'material-ui/Chip';
 import Paper from 'material-ui/Paper'; 
@@ -14,31 +14,59 @@ import SocialBar from './SocialBar';
 
 
 // CardWithAvatar start
-const CardWithAvatar = () => (
-    <Paper zDepth={1} style={cardStyle.paper}>
-      <Card>
-        <CardHeader
-        title="Avatar Name Url"
-        subtitle="added item XXX time ago"
-        avatar="images/avatar.jpg"
-        style={cardStyle.header}
-        />
-        <CardMedia>
-            <YouTubeEmbed videoid="7AsiCX4Z4Eo"/>
-        </CardMedia>
-            <CardTitle 
-                title={ <strong> Simmer Quantum 85lt </strong> }
-                style={cardStyle.title}
-            />
-        <CardText>
-            <ItemChips/>
-        </CardText>
-        <CardActions>
-            <SocialBar />
-        </CardActions>
-      </Card>
-    </Paper>
-);
+class CardWithAvatar extends React.Component {
+   propTypes = {
+      cardHeader : PropTypes.shape({
+         Title: PropTypes.string.isRequired,
+         Profile: PropTypes.string.isRequired,
+         Avatar: PropTypes.string.isRequired,
+         TimeAdded : PropTypes.string.isRequired,
+     }),
+     videoId : PropTypes.string.isRequired,
+     itemChips: PropTypes.shape({
+         Conditions : PropTypes.string.isRequired,
+         Size : PropTypes.string.isRequired,
+         Liters : PropTypes.string.isRequired,
+         Price : PropTypes.string.isRequired,
+      }),
+  };
+
+  render(){
+
+    const cardHeader = this.props.cardHeader
+    const videoId = this.props.videoId
+    const itemChips = this.props.itemChips
+    const socialLink = this.props.socialLink
+
+    return(
+      <Paper zDepth={1} style={cardStyle.paper}>
+        <Card>
+          <CardHeader
+          title={cardHeader.Profile}
+          subtitle={cardHeader.TimeAdded}
+          avatar={cardHeader.Avatar}
+          style={cardStyle.header}
+          />
+          <CardMedia>
+              <YouTubeEmbed videoId={videoId} />
+          </CardMedia>
+              <CardTitle 
+                  title={ <strong> cardHeader.Title </strong> }
+                  style={cardStyle.title}
+              />
+          <CardText>
+              <ItemChips chips={itemChips}/>
+          </CardText>
+          <CardActions>
+              <SocialBar />
+          </CardActions>
+        </Card>
+      </Paper>
+    );
+  }
+}
+
+
 // card with avatar end -----------------------------------------
 
 
@@ -59,23 +87,17 @@ const cardStyle = {
 }
 
 // youtube embed
-class YouTubeEmbed extends React.Component {
- 
-    render(){
-        var source = "https://www.youtube.com/embed/" +
-        this.props.videoid + "?controls=1";
-        return(
-            <div style={{marginLeft: "2.5%"}}>
-                <iframe 
-                    width="640" 
-                    height="360" 
-                    frameBorder="0"
-                    src={source}>
-                </iframe>
-            </div>
-        )
-    }
-}
+const YouTubeEmbed = ( videoId ) => (
+    <div style={{marginLeft: "2.5%"}}>
+        <iframe 
+            width="640" 
+            height="360" 
+            frameBorder="0"
+            src={"https://www.youtube.com/embed/" + videoId + "?controls=1"}>
+        </iframe>
+    </div>
+)
+
 // end youtube embed -----------------------------------------
 
 // chips layout and style
@@ -89,12 +111,12 @@ const itemStyles = {
   },
 };
 
-const ItemChips = () => (
+const ItemChips = ( chips ) => (
     <div style={itemStyles.wrapper}>
-      <Chip style={itemStyles.chip} > Conditions: Good </Chip> 
-      <Chip style={itemStyles.chip} > Size: 256x46 </Chip> 
-      <Chip style={itemStyles.chip} > Liters: 85lt </Chip> 
-      <Chip style={itemStyles.chip} > Price: 1900$ </Chip>
+      <Chip style={itemStyles.chip} > Conditions: {itemChips.Conditions} </Chip> 
+      <Chip style={itemStyles.chip} > Size: { itemChips.Size } </Chip> 
+      <Chip style={itemStyles.chip} > Liters: { itemChips.Liters }lt </Chip> 
+      <Chip style={itemStyles.chip} > Price: { itemChips.Price }$ </Chip>
     </div>
 )
 // chip style and layout end -------------------------------

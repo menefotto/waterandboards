@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import AppBar from 'material-ui/AppBar';
 import Avatar from 'material-ui/Avatar';
@@ -9,38 +9,35 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 
 class CustomAppBar extends React.Component {
-    state = { 
-        open: false,
-        logged: false,
-    }
+   propTypes: {
+      element: PropTypes.element,
+       logo: PropTypes.string.isRequired,
+       open: PropTypes.bool,
+       handleClose: PropTypes.func.isRequired,
+   }
 
-    constructor(props) {
-        super(props)
-        this.state = {open: false}
-    }
+   defaultProps: {
+      open: false,
+   }
 
-    handleClose = () => this.setState({open: false});
-    handleChange = (event, logged) => { this.setState({logged: logged});};
-    handleToggle = () => this.setState({open: !this.state.open});
-
-    render() {
-        return (
-            <div>
-                <AppBar
-                    title={<span> WaterAndBoards </span>}
-                    titleStyle={barStyle.title}
-                    iconElementRight={this.state.logged ? <Logged /> : <Login />}
-                    iconElementLeft={<Avatar style={barStyle.left} src="images/waterdrop.png" />} 
-                    onRightIconButtonTouchTap={this.handleToggle}
-                />
-                <Drawer openSecondary={true} open={this.state.open} >
-                    <AppBar
-                        title={<span> Settings </span>}
-                        iconElementLeft={<IconButton onTouchTap={this.handleClose}> <NavigationClose /> </IconButton>}
-                    />
-                </Drawer>
-            </div>
-        )
+   render() {
+      return (
+          <div>
+              <AppBar
+                  title={<span> WaterAndBoards </span>}
+                  titleStyle={barStyle.title}
+                  iconElementRight={element}
+                  iconElementLeft={<Avatar style={barStyle.left} src={this.props.logo} />} 
+                  onRightIconButtonTouchTap={this.handleToggle}
+              />
+              <Drawer openSecondary={true} open={this.props.open} >
+                  <AppBar
+                      title={<span> Settings </span>}
+                      iconElementLeft={<IconButton onTouchTap={this.props.handleClose}> <NavigationClose /> </IconButton>}
+                  />
+              </Drawer>
+          </div>
+      )
     }
 }
 //  app bar end ----------------------------------------------------

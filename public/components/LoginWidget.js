@@ -1,29 +1,29 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import {GridList, GridTile} from 'material-ui/GridList';
+import {
+  GridList, 
+  GridTile,
+} from 'material-ui/GridList';
 
 
 class LoginWidget extends React.Component {
-     state = { 
-        register: false,
-    }
+   propTypes: {
+      register: PropTypes.bool,
+   }
 
-    constructor(props) {
-        super(props)
-        this.state = {register: false}
-    }
+   defaultProps: {
+      register: false,
+   }
 
-    handleRegister = () => this.setState({register: !this.state.register})
-
-    render(){
-      return(
+   render(){
+     return(
         <div style={formStyles.root}>
-        <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
+          <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
             <GridTile>
             <Paper zDepth={3}>
                 <form>
@@ -34,7 +34,7 @@ class LoginWidget extends React.Component {
                     type="email"
                 />
                 {
-                    this.state.register ?
+                    this.props.register ?
                     <div>
                         <TextField 
                             name="fname" 
@@ -64,27 +64,27 @@ class LoginWidget extends React.Component {
                     backgroundColor={"#C0C0C0"} 
                     style={formStyles.button}
                 >
-                    {this.state.register? "Register" : "Login"}
+                    {this.props.register? "Register" : "Login"}
                 </RaisedButton>
                 <Divider />
                 <RaisedButton 
                     backgroundColor={"#3B5998"} 
                     style={formStyles.buttonFacebook}
                 >
-                    {this.state.register? "Register with Facebook" : "Login with Facebook"}
+                    {this.props.register? "Register with Facebook" : "Login with Facebook"}
                 </RaisedButton>
                 <RaisedButton 
                     backgroundColor={"#DB4437"} 
                     style={formStyles.buttonGoogle}
                 >
-                    {this.state.register? "Register with Google" : "Login with Google"}
+                    {this.props.register? "Register with Google" : "Login with Google"}
                 </RaisedButton>
                 </form>
             </Paper>
             </GridTile>
             <GridTile>
                 <Paper zDepth={3} style={formStyles.gridTile}>
-                    { !this.state.register ? 
+                    { !this.props.register ? 
                         <div 
                             style={formStyles.inputClick}> 
                             Don't have an account? <a onClick={this.handleRegister} href="#"> Register </a> 
@@ -96,7 +96,7 @@ class LoginWidget extends React.Component {
                     }
                 </Paper>
             </GridTile>
-        </GridList> 
+          </GridList> 
         </div>
         )
     }    
