@@ -20,25 +20,19 @@ class Grid extends React.Component {
             cols={1} 
             style={gridStyles.gridList}
           >
-              <SearchBar />
-              <GridTile>
-                  <CardWithAvatar/>
-              </GridTile>
-              <GridTile>
-                  <CardWithAvatar/>
-              </GridTile>
-              <GridTile>
-                  <CardWithAvatar/>
-              </GridTile>
-              <GridTile>
-                  <CardWithAvatar/>
-              </GridTile> 
-          </GridList> 
+            <SearchBar />
+         {/* for loops here possibly fetching as well */}
+         </GridList> 
         </div>
       )
    }
 }
 
+const Item = ({ Card }) => (
+  <GridTile>
+    Card
+  </GridTile>
+) 
 
 // Grid style and layout 
 const gridStyles = {
