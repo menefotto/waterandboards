@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import Avatar from 'material-ui/Avatar';
 import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
+import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
@@ -72,13 +73,13 @@ const Close = ({ onClick }) => {
   )
 }
 
-
 const Logged = ({ onClick }) => {
   return(
     <IconButton
       onTouchTap={onClick}
+      style={barStyle.rightLogged} 
     >
-      <Avatar style={barStyle.right} src="images/avatar.jpg" />
+      <Avatar src="images/avatar.jpg" style={{alignSelf: "center", marginBottom: 10}} />
     </IconButton>
   )
 }
@@ -93,30 +94,24 @@ const Login = ({ onClick }) => (
   </RaisedButton>
 )
 
-// Login.propTypes = {
-//   onClick: PropTypes.func.isRequired;
-//}
-
-
 // app bar style and layout
 const barStyle = {
-    rightLogin: {
-        marginTop: 4,
-        marginRight: 96,
-    },
-    rightLogged: {
-        marginTop: 4,
-        marginRight: 96,
-    },
-    left: {
-        marginTop: 4,
-        marginLeft: 96,
-    },
-    title: {
-        fontFamily: "'Architects Daughter', cursive"
-    }
+  rightLogin: {
+    marginTop: 4,
+    marginRight: 96,
+  },
+  rightLogged: {
+    marginTop: 4,
+    marginRight: 96,
+  },
+  left: {
+    marginTop: 4,
+    marginLeft: 96,
+  },
+  title: {
+      fontFamily: "'Architects Daughter', cursive"
+  }
 }
-
 
 
 export default AppBarCustom;

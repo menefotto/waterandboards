@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import AppBarCustom from "../components/AppBar";
+import ToolBar from "../components/ToolBar";
 import * as Actions from '../actions';
 
 
@@ -26,14 +27,16 @@ const AppBarFull = ({ actions }) => {
   }
 
   return (
-    <AppBarCustom
-      element={<span />}
-      opened={true}
-      logo={"../images/logo.png"}
-      hClose={handleClose}
-      hOpen={handleOpen}
-      hLogin={handleLogin}
-    />
+    <ToolBar />
+
+    //    <AppBarCustom
+    // element={<span />}
+    // opened={true}
+    // logo={"../images/logo.png"}
+    // hClose={handleClose}
+    // hOpen={handleOpen}
+    // hLogin={handleLogin}
+    ///>
   )
 }
 
