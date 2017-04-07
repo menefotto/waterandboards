@@ -20,8 +20,8 @@ const AppBar = ({ actions }) => {
   }
 
   const handleLogin = (e) => {
-    actions.toggleLoginState({
-      logged: true,
+    actions.toggleAppBarState({
+      simplebar: true,
     })
   }
 

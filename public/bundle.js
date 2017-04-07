@@ -42988,10 +42988,10 @@ var search = exports.search = function search(_ref) {
 };
 
 var loginState = exports.loginState = function loginState(_ref2) {
-  var login = _ref2.login;
+  var logged = _ref2.logged;
   return {
     type: LOGIN_STATE,
-    login: login
+    logged: logged
   };
 };
 
@@ -43004,7 +43004,7 @@ var registerState = exports.registerState = function registerState(_ref3) {
 };
 
 var toggleAppBarState = exports.toggleAppBarState = function toggleAppBarState(_ref4) {
-  var opened = _ref4.opened;
+  var simplebar = _ref4.simplebar;
   return {
     type: APPBAR_TOGGLE,
     simplebar: simplebar
@@ -43419,6 +43419,10 @@ var ToolBar = _react2.default.createClass({
     hSearch: _react.PropTypes.func.isRequired
   },
 
+  contextTypes: {
+    store: _react.PropTypes.object
+  },
+
   getDefaultProps: function getDefaultProps() {
     return {
       logo: "images/logo.png",
@@ -43426,7 +43430,33 @@ var ToolBar = _react2.default.createClass({
     };
   },
 
+  componentDidMount: function componentDidMount() {
+    var _this = this;
+
+    var store = this.context.store;
+
+    this.unsubscribe = store.subscribe(function () {
+      return _this.forceUpdate();
+    });
+  },
+  componentWillUnmount: function componentWillUnmount() {
+    this.unsubscribe();
+  },
   render: function render() {
+    var store = this.context.store;
+    var getState = store.getState;
+
+    var _getState = getState(),
+        AppBarReducer = _getState.AppBarReducer,
+        LoginPageReducer = _getState.LoginPageReducer;
+
+    var rightElement = void 0;
+    if (AppBarReducer.simplebar) {
+      rightElement = _react2.default.createElement('span', null);
+    } else {
+      rightElement = this.props.element == null ? _react2.default.createElement(Logged, { onClick: this.props.hOpen }) : _react2.default.createElement(SignUp, { onClick: this.props.hLogin });
+    }
+
     return _react2.default.createElement(
       _Toolbar.Toolbar,
       { style: barStyle.bar },
@@ -43439,12 +43469,12 @@ var ToolBar = _react2.default.createClass({
       _react2.default.createElement(
         _Toolbar.ToolbarGroup,
         { style: barStyle.center },
-        _react2.default.createElement(_SearchBar2.default, { onClick: this.props.hSearch })
+        AppBarReducer.simplebar ? _react2.default.createElement('span', null) : _react2.default.createElement(_SearchBar2.default, { onClick: this.props.hSearch })
       ),
       _react2.default.createElement(
         _Toolbar.ToolbarGroup,
         { lastChild: true },
-        this.props.element == null ? _react2.default.createElement(Logged, { onClick: this.props.hOpen }) : _react2.default.createElement(SignUp, { onClick: this.props.hLogin })
+        rightElement
       )
     );
   }
@@ -43452,7 +43482,6 @@ var ToolBar = _react2.default.createClass({
 
 var Logged = function Logged(_ref) {
   var onClick = _ref.onClick;
-
   return _react2.default.createElement(
     _IconButton2.default,
     {
@@ -43472,7 +43501,7 @@ var SignUp = function SignUp(_ref2) {
       style: barStyle.rightLogin,
       onClick: onClick
     },
-    'SignUp'
+    'Sign Up'
   );
 };
 
@@ -43690,8 +43719,8 @@ var AppBar = function AppBar(_ref) {
   };
 
   var handleLogin = function handleLogin(e) {
-    actions.toggleLoginState({
-      logged: true
+    actions.toggleAppBarState({
+      simplebar: true
     });
   };
 
@@ -43845,7 +43874,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactTapEventPlugin2.default)();
 
 var initialState = {
-  AppBarReducer: { opened: false },
+  AppBarReducer: { opened: false, simplebar: false },
   LoginPageReducer: { register: false }
 };
 
@@ -43900,7 +43929,6 @@ var AppBarReducer = function AppBarReducer() {
       });
 
     case _actions.LOGIN_STATE:
-
       return _extends({}, state, {
         logged: !state.logged
       });

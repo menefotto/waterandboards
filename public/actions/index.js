@@ -22,9 +22,9 @@ export const search = ({ searched }) => ({
   searched,
 });
 
-export const loginState = ({ login }) => ({
+export const loginState = ({ logged }) => ({
    type: LOGIN_STATE,
-   login,
+   logged,
 });
 
 export const registerState = ({ register }) => ({
@@ -32,7 +32,7 @@ export const registerState = ({ register }) => ({
    register,
 });
 
-export const toggleAppBarState = ({ opened }) => ({
+export const toggleAppBarState = ({ simplebar }) => ({
   type: APPBAR_TOGGLE,
   simplebar,
 });

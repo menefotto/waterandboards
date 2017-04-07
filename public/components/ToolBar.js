@@ -25,6 +25,10 @@ const ToolBar = React.createClass({
     hSearch: PropTypes.func.isRequired,
   },
 
+  contextTypes: {
+      store: PropTypes.object
+  },
+
   getDefaultProps: function() {
     return {
       logo: "images/logo.png",
@@ -32,7 +36,29 @@ const ToolBar = React.createClass({
     }
   },
 
+  componentDidMount() {
+    const { store } = this.context;
+    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
+  },
+
+  componentWillUnmount() {
+    this.unsubscribe(); 
+  },
+
   render(){
+    const { store } = this.context;
+    const { getState } = store;
+    const { AppBarReducer, LoginPageReducer } = getState();
+
+    let rightElement
+    if (AppBarReducer.simplebar){
+      rightElement = <span />
+    } else {
+      rightElement = this.props.element == null ?
+            <Logged onClick={this.props.hOpen} />:
+            <SignUp onClick={this.props.hLogin} />
+    }
+
     return(
       <Toolbar style={barStyle.bar}>
         <ToolbarGroup firstChild={true}>
@@ -40,14 +66,14 @@ const ToolBar = React.createClass({
           <ToolbarTitle text={this.props.bTitle} style={barStyle.title}/>
         </ToolbarGroup>
         <ToolbarGroup style={barStyle.center}>
-          <SearchBar onClick={this.props.hSearch} />
+          {
+            AppBarReducer.simplebar ?
+            <span />:
+            <SearchBar onClick={this.props.hSearch} />
+          }
         </ToolbarGroup>
         <ToolbarGroup lastChild={true}>
-          {
-            this.props.element == null ?
-            <Logged onClick={this.props.hOpen} />:
-            <SignUp onClick={this.props.hLogin} />
-          }
+          {rightElement}
         </ToolbarGroup>
       </Toolbar>
     )
@@ -55,16 +81,14 @@ const ToolBar = React.createClass({
 })
 
 
-const Logged = ({ onClick }) => {
-  return(
-    <IconButton
-      onTouchTap={onClick}
-      style={barStyle.right} 
-    >
-      <Avatar src="images/avatar.jpg" style={{alignSelf: "center"}} />
-    </IconButton>
-  )
-}
+const Logged = ({ onClick }) => (
+  <IconButton
+    onTouchTap={onClick}
+    style={barStyle.right} 
+  >
+    <Avatar src="images/avatar.jpg" style={{alignSelf: "center"}} />
+  </IconButton>
+)
 
 
 const SignUp = ({ onClick }) => (
@@ -73,7 +97,7 @@ const SignUp = ({ onClick }) => (
     style={barStyle.rightLogin}
     onClick={onClick}
   >
-      SignUp
+      Sign Up
   </RaisedButton>
 )
 

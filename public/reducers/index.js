@@ -24,7 +24,6 @@ const AppBarReducer = (state = false, action) => {
 
 
     case LOGIN_STATE:
-
       return {
         ...state,
         logged: !state.logged
