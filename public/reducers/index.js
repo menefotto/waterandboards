@@ -41,11 +41,11 @@ const AppBarReducer = (state = false, action) => {
 const LoginPageReducer = (state, action) => {
   switch(action.type){
     case REGISTER_STATE:
-      const registered = state.registered ? false: true;
+      const register = state.register ? false: true;
 
       return {
         ...state,
-        registered,
+        register,
       };
     default:
       return {

@@ -22,14 +22,14 @@ export const search = ({ searched }) => ({
   searched,
 });
 
-export const toggleLoginState = ({ logged }) => ({
+export const loginState = ({ login }) => ({
    type: LOGIN_STATE,
-   logged,
+   login,
 });
 
-export const toggleRegisterState = ({ registered }) => ({
+export const registerState = ({ register }) => ({
    type: REGISTER_STATE,
-   registered,
+   register,
 });
 
 export const toggleAppBarState = ({ opened }) => ({

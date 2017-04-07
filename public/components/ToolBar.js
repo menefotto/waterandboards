@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { 
   Toolbar, 
   ToolbarGroup, 
@@ -10,7 +8,6 @@ import {
 } from 'material-ui/Toolbar';
 import Avatar from 'material-ui/Avatar';
 import Drawer from 'material-ui/Drawer';
-import blue500 from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -49,24 +46,13 @@ const ToolBar = React.createClass({
           {
             this.props.element == null ?
             <Logged onClick={this.props.hOpen} />:
-            <Login onClick={this.props.hLogin} />
+            <SignUp onClick={this.props.hLogin} />
           }
         </ToolbarGroup>
       </Toolbar>
     )
   }
 })
-
-
-const Close = ({ onClick }) => {
-  return(
-    <IconButton 
-      onTouchTap={onClick}
-    > 
-      <NavigationClose /> 
-    </IconButton>
-  )
-}
 
 
 const Logged = ({ onClick }) => {
@@ -81,13 +67,13 @@ const Logged = ({ onClick }) => {
 }
 
 
-const Login = ({ onClick }) => (
+const SignUp = ({ onClick }) => (
   <RaisedButton 
     default={true} 
     style={barStyle.rightLogin}
     onClick={onClick}
   >
-      Login
+      SignUp
   </RaisedButton>
 )
 
@@ -95,7 +81,6 @@ const Login = ({ onClick }) => (
 const barStyle = {
   bar: {
     height: 70,
-    color: blue500,
   },
   rightLogin: {
     marginRight: 96,
@@ -106,7 +91,7 @@ const barStyle = {
   },
   center: {
     marginBottom: 20,
-    marginRight: 180, 
+    marginRight: 200, 
     marginLeft: 0,
   },
   left: {

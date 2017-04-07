@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-
+import { connect } from 'react-redux';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
@@ -9,24 +9,47 @@ import {
   GridList, 
   GridTile,
 } from 'material-ui/GridList';
+import checkCookie from '../utils';
 
 
-class Login extends React.Component {
-   propTypes: {
-      register: PropTypes.bool,
-   }
+const Login = React.createClass({
+  propTypes: {
+    register: PropTypes.bool,
+    hRegister: PropTypes.func.isRequired,
+    hLogin: PropTypes.func.isRequired,
+  },
 
-   defaultProps: {
+  contextTypes: {
+      store: PropTypes.object
+  },
+ 
+  getDefaultProps: function() {
+    //    registered = checkCookie("registered")
+    return {
       register: false,
-   }
+    }
+  },
 
-   render(){
-     return(
-        <div style={formStyles.root}>
-          <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
-            <GridTile>
+  componentDidMount() {
+    const { store } = this.context;
+    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
+  },
+
+  componentWillUnmount() {
+    this.unsubscribe(); 
+  },
+
+  render(){
+    const { store } = this.context;
+    const { getState } = store;
+    const { AppBarReducer, LoginPageReducer } = getState();
+
+    return(
+      <div style={formStyles.root}>
+        <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
+          <GridTile>
             <Paper zDepth={3}>
-                <form>
+              <form>
                 <TextField 
                     name="email" 
                     style={formStyles.textFirst} 
@@ -34,7 +57,7 @@ class Login extends React.Component {
                     type="email"
                 />
                 {
-                    this.props.register ?
+                    LoginPageReducer.register ?
                     <div>
                         <TextField 
                             name="fname" 
@@ -64,43 +87,44 @@ class Login extends React.Component {
                     backgroundColor={"#C0C0C0"} 
                     style={formStyles.button}
                 >
-                    {this.props.register? "Register" : "Login"}
+                    {LoginPageReducer.register? "Register" : "Login"}
                 </RaisedButton>
                 <Divider />
                 <RaisedButton 
                     backgroundColor={"#3B5998"} 
                     style={formStyles.buttonFacebook}
                 >
-                    {this.props.register? "Register with Facebook" : "Login with Facebook"}
+                    {LoginPageReducer.register? "Register with Facebook" : "Login with Facebook"}
                 </RaisedButton>
                 <RaisedButton 
                     backgroundColor={"#DB4437"} 
                     style={formStyles.buttonGoogle}
                 >
-                    {this.props.register? "Register with Google" : "Login with Google"}
+                    {LoginPageReducer.register? "Register with Google" : "Login with Google"}
                 </RaisedButton>
                 </form>
             </Paper>
             </GridTile>
             <GridTile>
                 <Paper zDepth={3} style={formStyles.gridTile}>
-                    { !this.props.register ? 
+                    { !LoginPageReducer.register ? 
                         <div 
                             style={formStyles.inputClick}> 
-                            Don't have an account? <a onClick={this.handleRegister} href="#"> Register </a> 
+                            Don't have an account? <a onClick={this.props.hRegister} href="#"> Register </a> 
                         </div> : 
                         <div 
                             style={formStyles.inputClick}> 
-                            Have an account? <a onClick={this.handleRegister} href="#"> Login </a> 
+                            Have an account? <a onClick={this.props.hLogin} href="#"> Login </a> 
                         </div>
                     }
                 </Paper>
             </GridTile>
           </GridList> 
         </div>
-        )
+      )
     }    
-}
+})
+
 
 const formStyles = {
   root: {

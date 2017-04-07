@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import AppBar from './containers/AppBar.js';
+import SignUp from './containers/SignUp.js';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import BlueGrey from './themes.js'
+import BlueGrey from './themes'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -14,7 +15,8 @@ injectTapEventPlugin();
 import rootReducer from './reducers';
 
 const initialState = {
-  AppBarReducer: { opened: false }
+  AppBarReducer: { opened: false },
+  LoginPageReducer: { register: false },
 }
 
 const reduxStore = createStore(
@@ -29,6 +31,7 @@ const App = () => (
     <Provider store={reduxStore}>
       <div> 
         <AppBar />
+        <SignUp />
       </div>
     </Provider>
   </MuiThemeProvider>
