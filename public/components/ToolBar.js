@@ -16,27 +16,22 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import SearchBar from "./SearchBar";
 
-function search(e) {
-  console.log("suga");
-}
 
 const ToolBar = React.createClass({
   propTypes : {
     logo: PropTypes.string,
-    bTitle: PropTypes.string
+    bTitle: PropTypes.string,
     element: PropTypes.element,
     hOpen: PropTypes.func.isRequired,
     hLogin: PropTypes.func.isRequired,
     hSearch: PropTypes.func.isRequired,
   },
 
-  contextTypes: {
-      store: PropTypes.object
-  },
-
-  defaultProps: {
-    logo: "images/logo.png"
-    title: "WaterAndBoards"
+  getDefaultProps: function() {
+    return {
+      logo: "images/logo.png",
+      bTitle: "WaterAndBoards",
+    }
   },
 
   render(){
@@ -52,7 +47,7 @@ const ToolBar = React.createClass({
         <ToolbarGroup lastChild={true}>
           {
             this.props.element == null ?
-            <Logged onClick={this.prop.hOpen} />:
+            <Logged onClick={this.props.hOpen} />:
             <Login onClick={this.props.hLogin} />
           }
         </ToolbarGroup>

@@ -17,6 +17,11 @@ export const DELETE_ITEM = "UPLOAD_ITEM_ACTION";
 export const UPDATE_PROFILE = "UPDATE_PROFILE_ACTION";
 
 
+export const search = ({ searched }) => ({
+  type: SEARCH,
+  searched,
+});
+
 export const toggleLoginState = ({ logged }) => ({
    type: LOGIN_STATE,
    logged,

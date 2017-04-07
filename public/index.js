@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-
-import AppBarFull from './containers/AppBarFull.js';
-import rootReducer from './reducers';
-
+import AppBar from './containers/AppBar.js';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import BlueGrey from './themes.js'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+
+
+import rootReducer from './reducers';
 
 const initialState = {
   AppBarReducer: { opened: false }
@@ -28,7 +28,7 @@ const App = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
     <Provider store={reduxStore}>
       <div> 
-        <AppBarFull />
+        <AppBar />
       </div>
     </Provider>
   </MuiThemeProvider>

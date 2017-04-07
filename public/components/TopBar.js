@@ -10,21 +10,28 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
+import ToolBar from "./ToolBar";
 import * as Actions from "../actions";
 
 
-const AppBarCustom = React.createClass({
+const TopBar = React.createClass({
   propTypes : {
     element: PropTypes.element,
-    logo: PropTypes.string.isRequired,
-    opened: PropTypes.bool,
+    logo: PropTypes.string,
+    sTitle: PropTypes.string,
     hClose: PropTypes.func.isRequired,
     hOpen: PropTypes.func.isRequired,
     hLogin: PropTypes.func.isRequired,
+    hSearch: PropTypes.func.isRequired,
   },
 
   contextTypes: {
       store: PropTypes.object
+  },
+
+  defaultProps: {
+    sTitle: "Settings",
+    element: <span />,
   },
 
   componentDidMount() {
@@ -43,15 +50,16 @@ const AppBarCustom = React.createClass({
 
     return(
       <div>
-        <AppBar
-          title={<span> WaterAndBoards </span>}
-          titleStyle={barStyle.title}
-          iconElementRight={this.props.element == null ? <Login onClick={this.props.hLogin} /> : <Logged onClick={this.props.hOpen} />}
-          iconElementLeft={<Avatar style={barStyle.left} src={this.props.logo} />} 
+        <ToolBar
+          element={this.props.element}
+          hOpen={this.props.hOpen}
+          hLogin={this.props.hOpen}
+          hSearch={this.props.hSearch}
         />
         <Drawer openSecondary={true} open={AppBarReducer.opened} >
           <AppBar
-            title={<span> Settings </span>}
+            title={this.props.sTitle}
+            style={{ height: 70 }}
             iconElementLeft={<Close onClick={this.props.hClose} />}
           />
         </Drawer>
@@ -73,45 +81,5 @@ const Close = ({ onClick }) => {
   )
 }
 
-const Logged = ({ onClick }) => {
-  return(
-    <IconButton
-      onTouchTap={onClick}
-      style={barStyle.rightLogged} 
-    >
-      <Avatar src="images/avatar.jpg" style={{alignSelf: "center", marginBottom: 10}} />
-    </IconButton>
-  )
-}
 
-const Login = ({ onClick }) => (
-  <RaisedButton 
-    default={true} 
-    style={barStyle.rightLogin}
-    onClick={onClick}
-  >
-      Login
-  </RaisedButton>
-)
-
-// app bar style and layout
-const barStyle = {
-  rightLogin: {
-    marginTop: 4,
-    marginRight: 96,
-  },
-  rightLogged: {
-    marginTop: 4,
-    marginRight: 96,
-  },
-  left: {
-    marginTop: 4,
-    marginLeft: 96,
-  },
-  title: {
-      fontFamily: "'Architects Daughter', cursive"
-  }
-}
-
-
-export default AppBarCustom;
+export default TopBar;

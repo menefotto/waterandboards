@@ -2,23 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import AppBarCustom from "../components/AppBar";
-import ToolBar from "../components/ToolBar";
+import TopBar from "../components/TopBar";
 import * as Actions from '../actions';
 
 
-const AppBarFull = ({ actions }) => {
+const AppBar = ({ actions }) => {
   const handleClose = (e) => {
     actions.toggleSideBar({
       opened: false,
     })
-  };
+  }
 
   const handleOpen = (e) => {
     actions.toggleSideBar({
       opened: true,
     })
-  };
+  }
 
   const handleLogin = (e) => {
     actions.toggleLoginState({
@@ -26,17 +25,20 @@ const AppBarFull = ({ actions }) => {
     })
   }
 
-  return (
-    <ToolBar />
+  const handleSearch = (e) => {
+    actions.search({
+      searched: true,
+    })
+  }
 
-    //    <AppBarCustom
-    // element={<span />}
-    // opened={true}
-    // logo={"../images/logo.png"}
-    // hClose={handleClose}
-    // hOpen={handleOpen}
-    // hLogin={handleLogin}
-    ///>
+
+  return (
+    <TopBar
+      hClose={handleClose}
+      hOpen={handleOpen}
+      hLogin={handleLogin}
+      hSearch={handleSearch}
+    />
   )
 }
 
@@ -57,4 +59,4 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(AppBarFull);
+export default connect(mapStateToProps, mapDispatchToProps)(AppBar);
