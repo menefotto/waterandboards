@@ -157,19 +157,19 @@ const formStyles = {
     width: "70%",
     marginTop: 25,
     marginBottom: 15,
-    marginLeft: 80,
+    marginLeft: 75,
   },
   buttonFacebook: {
     width: "70%",
     marginTop: 15,
     marginBottom: 5,
-    marginLeft: 80,
+    marginLeft: 75,
   },
   buttonGoogle: {
     width: "70%",
     marginTop: 5,
     marginBottom: 15,
-    marginLeft: 80,
+    marginLeft: 75,
   },
 }
 
