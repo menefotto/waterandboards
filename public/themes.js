@@ -32,7 +32,7 @@ const BlueGray = {
     primary2Color: blue700,
     primary3Color: lightBlack,
     accent1Color: redA200,
-    accent2Color: blueGrey100,
+    accent2Color: blue500, // changed from blueGrey100 to match the toolbar color
     accent3Color: blueGrey500,
     textColor: darkBlack,
     alternateTextColor: white,

@@ -10,6 +10,7 @@ import {
 } from 'material-ui/Toolbar';
 import Avatar from 'material-ui/Avatar';
 import Drawer from 'material-ui/Drawer';
+import blue500 from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -94,6 +95,10 @@ const Login = ({ onClick }) => (
 const barStyle = {
   bar: {
     height: 70,
+    color: blue500,
+  },
+  rightLogin: {
+    marginRight: 96,
   },
   right: {
     marginBottom: 20,

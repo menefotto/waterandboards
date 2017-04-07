@@ -29,9 +29,11 @@ const TopBar = React.createClass({
       store: PropTypes.object
   },
 
-  defaultProps: {
-    sTitle: "Settings",
-    element: <span />,
+  getDefaultProps: function() {
+    return{
+      sTitle: "Settings",
+      element: <span />,
+    }
   },
 
   componentDidMount() {
@@ -53,7 +55,7 @@ const TopBar = React.createClass({
         <ToolBar
           element={this.props.element}
           hOpen={this.props.hOpen}
-          hLogin={this.props.hOpen}
+          hLogin={this.props.hLogin}
           hSearch={this.props.hSearch}
         />
         <Drawer openSecondary={true} open={AppBarReducer.opened} >

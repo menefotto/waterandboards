@@ -42661,6 +42661,10 @@ var _Drawer = require('material-ui/Drawer');
 
 var _Drawer2 = _interopRequireDefault(_Drawer);
 
+var _colors = require('material-ui/styles/colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
 var _IconButton = require('material-ui/IconButton');
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
@@ -42762,7 +42766,11 @@ var Login = function Login(_ref3) {
 
 var barStyle = {
   bar: {
-    height: 70
+    height: 70,
+    color: _colors2.default
+  },
+  rightLogin: {
+    marginRight: 96
   },
   right: {
     marginBottom: 20,
@@ -42787,7 +42795,7 @@ var barStyle = {
 
 exports.default = ToolBar;
 
-},{"./SearchBar":488,"material-ui/Avatar":6,"material-ui/Drawer":10,"material-ui/FlatButton":13,"material-ui/IconButton":17,"material-ui/RaisedButton":31,"material-ui/Toolbar":46,"react":465,"react-dom":245,"react-redux":406,"redux":471}],490:[function(require,module,exports){
+},{"./SearchBar":488,"material-ui/Avatar":6,"material-ui/Drawer":10,"material-ui/FlatButton":13,"material-ui/IconButton":17,"material-ui/RaisedButton":31,"material-ui/Toolbar":46,"material-ui/styles/colors":223,"react":465,"react-dom":245,"react-redux":406,"redux":471}],490:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42863,9 +42871,11 @@ var TopBar = _react2.default.createClass({
     store: _react.PropTypes.object
   },
 
-  defaultProps: {
-    sTitle: "Settings",
-    element: _react2.default.createElement('span', null)
+  getDefaultProps: function getDefaultProps() {
+    return {
+      sTitle: "Settings",
+      element: _react2.default.createElement('span', null)
+    };
   },
 
   componentDidMount: function componentDidMount() {
@@ -42894,7 +42904,7 @@ var TopBar = _react2.default.createClass({
       _react2.default.createElement(_ToolBar2.default, {
         element: this.props.element,
         hOpen: this.props.hOpen,
-        hLogin: this.props.hOpen,
+        hLogin: this.props.hLogin,
         hSearch: this.props.hSearch
       }),
       _react2.default.createElement(
@@ -43168,7 +43178,7 @@ var BlueGray = {
     primary2Color: _colors.blue700,
     primary3Color: _colors.lightBlack,
     accent1Color: _colors.redA200,
-    accent2Color: _colors.blueGrey100,
+    accent2Color: _colors.blue500, // changed from blueGrey100 to match the toolbar color
     accent3Color: _colors.blueGrey500,
     textColor: _colors.darkBlack,
     alternateTextColor: _colors.white,
