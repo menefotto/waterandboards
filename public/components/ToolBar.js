@@ -21,18 +21,40 @@ function search(e) {
 }
 
 const ToolBar = React.createClass({
+  propTypes : {
+    logo: PropTypes.string,
+    bTitle: PropTypes.string
+    element: PropTypes.element,
+    hOpen: PropTypes.func.isRequired,
+    hLogin: PropTypes.func.isRequired,
+    hSearch: PropTypes.func.isRequired,
+  },
+
+  contextTypes: {
+      store: PropTypes.object
+  },
+
+  defaultProps: {
+    logo: "images/logo.png"
+    title: "WaterAndBoards"
+  },
+
   render(){
     return(
-      <Toolbar>
+      <Toolbar style={barStyle.bar}>
         <ToolbarGroup firstChild={true}>
-          <Avatar src="images/logo.png" style={barStyle.left} />
-          <ToolbarTitle text="WaterAndBoards" style={barStyle.title}/>
+          <Avatar src={this.props.logo} style={barStyle.left} />
+          <ToolbarTitle text={this.props.bTitle} style={barStyle.title}/>
         </ToolbarGroup>
         <ToolbarGroup style={barStyle.center}>
-          <SearchBar onClick={search} />
+          <SearchBar onClick={this.props.hSearch} />
         </ToolbarGroup>
         <ToolbarGroup lastChild={true}>
-          <Avatar src="images/avatar.jpg" style={barStyle.right}/>
+          {
+            this.props.element == null ?
+            <Logged onClick={this.prop.hOpen} />:
+            <Login onClick={this.props.hLogin} />
+          }
         </ToolbarGroup>
       </Toolbar>
     )
@@ -40,14 +62,51 @@ const ToolBar = React.createClass({
 })
 
 
+const Close = ({ onClick }) => {
+  return(
+    <IconButton 
+      onTouchTap={onClick}
+    > 
+      <NavigationClose /> 
+    </IconButton>
+  )
+}
+
+
+const Logged = ({ onClick }) => {
+  return(
+    <IconButton
+      onTouchTap={onClick}
+      style={barStyle.right} 
+    >
+      <Avatar src="images/avatar.jpg" style={{alignSelf: "center"}} />
+    </IconButton>
+  )
+}
+
+
+const Login = ({ onClick }) => (
+  <RaisedButton 
+    default={true} 
+    style={barStyle.rightLogin}
+    onClick={onClick}
+  >
+      Login
+  </RaisedButton>
+)
+
 
 const barStyle = {
+  bar: {
+    height: 70,
+  },
   right: {
-    marginBottom: 3,
+    marginBottom: 20,
     marginRight: 96,
   },
   center: {
-    marginRight: 0, 
+    marginBottom: 20,
+    marginRight: 180, 
     marginLeft: 0,
   },
   left: {
@@ -57,6 +116,7 @@ const barStyle = {
   title: {
     marginLeft: 4,
     marginRight: 2,
+    fontSize: 28,
     fontFamily: "'Architects Daughter', cursive",
   }
 }
