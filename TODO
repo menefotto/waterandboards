@@ -1,1 +1,3 @@
 fix default avatar icon not showing up.
+add corresponding actions for notifications
+implement side bar actions reducer and hadlers
