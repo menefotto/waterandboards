@@ -8,11 +8,10 @@ import {
 } from 'material-ui/Toolbar';
 import Avatar from 'material-ui/Avatar';
 import Drawer from 'material-ui/Drawer';
-import IconButton from 'material-ui/IconButton';
-import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import SearchBar from "./SearchBar";
+import Logged from "./Logged";
 
 
 const ToolBar = React.createClass({
@@ -79,16 +78,6 @@ const ToolBar = React.createClass({
     )
   }
 })
-
-
-const Logged = ({ onClick }) => (
-  <IconButton
-    onTouchTap={onClick}
-    style={barStyle.right} 
-  >
-    <Avatar src="images/avatar.jpg" style={{alignSelf: "center"}} />
-  </IconButton>
-)
 
 
 const SignUp = ({ onClick }) => (

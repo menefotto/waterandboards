@@ -15,7 +15,7 @@ injectTapEventPlugin();
 import rootReducer from './reducers';
 
 const initialState = {
-  AppBarReducer: { opened: false, simplebar: false },
+  AppBarReducer: { opened: false, simplebar: false, notifications: 4 },
   LoginPageReducer: { register: false },
 }
 

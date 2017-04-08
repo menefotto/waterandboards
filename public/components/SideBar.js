@@ -14,6 +14,7 @@ import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle';
 import CommunicationMessage from 'material-ui/svg-icons/communication/message';
 import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new';
 
+
 const SideBar = React.createClass({
   propTypes : {
     sTitle: PropTypes.string,
