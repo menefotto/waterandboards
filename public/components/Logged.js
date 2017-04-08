@@ -10,7 +10,8 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
   
 const Logged = React.createClass({
   propTypes : {
-    onClick: PropTypes.func.isRequired,
+    hSettings: PropTypes.func.isRequired,
+    hMenu: PropTypes.func.isRequired,
     avatar: PropTypes.string,
   },
 
@@ -46,7 +47,7 @@ const Logged = React.createClass({
     }
 
     return(
-      <div>
+      <div hSettings={this.props.hMenu}>
         <Badge
           badgeContent={AppBarReducer.notifications}
           badgeStyle={{top: 6, right: 6}}
@@ -55,7 +56,7 @@ const Logged = React.createClass({
           <NotificationsIcon style={{marginBottom: 5}} />
         </Badge>
         <IconButton
-          onTouchTap={this.props.onClick}
+          onTouchTap={this.props.hSettings}
           style={barStyle.right} 
         >
           <Avatar src={this.props.avatar} style={{alignSelf: "center"}} />
