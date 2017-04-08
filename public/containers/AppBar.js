@@ -31,13 +31,33 @@ const AppBar = ({ actions }) => {
     })
   }
 
+  const handleUploads = (e) => {
+  }
+
+  const handleMessages = (e) => {
+  }
+
+  const handleItems = (e) => {
+  }
+
+  const handleProfile = (e) => {
+  }
+
+  const handleLogout = (e) => {
+  }
 
   return (
     <TopBar
+      element={null}
       hClose={handleClose}
       hOpen={handleOpen}
       hLogin={handleLogin}
       hSearch={handleSearch}
+      hUploads={handleUploads}
+      hMessages={handleMessages}
+      hItems={handleItems}
+      hProfile={handleProfile}
+      hLogout={handleLogout}
     />
   )
 }
