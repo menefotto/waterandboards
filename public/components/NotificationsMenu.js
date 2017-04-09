@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import {Menu, MenuItem} from 'material-ui/Menu';
-import Popover from 'material-ui/Popover/Popover';
-import ActionDone from 'material-ui/svg-icons/action/done';
+import Popover from 'material-ui/Popover';
+import Divider from 'material-ui/Divider';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 
 
@@ -38,6 +38,7 @@ const NotificationsMenu = React.createClass({
           anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'middle', vertical: 'top'}}
           onRequestClose={this.props.hRequestClose}
+          style={{marginTop: 25, width: 350 }}
         >
           <Menu>
             {
@@ -61,6 +62,19 @@ const NoticationItem = React.createClass({
   propTypes: {
     idx: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
+    loadingStatus: PropTypes.element
+  },
+
+  getDefaultProps: function() {
+    return {
+      loadingStatus: 
+      <RefreshIndicator 
+        status={"loading"} 
+        style={leftElem} 
+        left={15} 
+        top={10} 
+      />,
+    }
   },
 
   contextTypes: {
@@ -80,27 +94,34 @@ const NoticationItem = React.createClass({
     const { store } = this.context;
     const { getState } = store;
     const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
-
     // notification status can be either none, done, loading
-    status = NotificationsReducer.list[this.props.idx].status
-
-    let defaultStatus
-    if (status === "done") {
-      defaultStatus = <ActionDone />
-    }else if (status === "loading"){
-      defaultStatus = <RefreshIndicator status={status}/>
-    }else{
-      defaultStatus = <span />
-    }
+    const status = NotificationsReducer.list[this.props.idx].status
 
     return (
       <div>
-        <MenuItem primaryText={this.props.text} />
-        {defaultStatus}
+        {
+          status === "loading" ? this.props.loadingStatus : <span />
+        }
+        {
+          status === "loading" ?
+          <MenuItem 
+            checked={NotificationsReducer.list[this.props.idx].checked}
+            primaryText={this.props.text}
+            style={{marginLeft: 5, marginBottom: 5 }}
+          />:
+          <MenuItem 
+            checked={NotificationsReducer.list[this.props.idx].checked}
+            primaryText={this.props.text}
+            style={{marginLeft: 60, marginBottom: 5 }}
+          />
+        }
+        <Divider />
       </div>
     )
   }
 })
+
+const leftElem = { display: 'inline-block', position: 'relative', marginRight: 40 }
 
 
 export default NotificationsMenu;
