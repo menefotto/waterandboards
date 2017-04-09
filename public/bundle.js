@@ -43566,10 +43566,12 @@ var toggleSideBar = exports.toggleSideBar = function toggleSideBar(_ref5) {
 
 // add notification to notification menu
 var addNotification = exports.addNotification = function addNotification(_ref6) {
-  var element = _ref6.element;
+  var text = _ref6.text,
+      status = _ref6.status;
   return {
     type: ADD_NOTIFICATION,
-    element: element
+    text: text,
+    status: status
   };
 };
 
@@ -43586,21 +43588,21 @@ var changeNotificationStatus = exports.changeNotificationStatus = function chang
 
 // open notification menu visibility
 var openNotificationMenu = exports.openNotificationMenu = function openNotificationMenu(_ref8) {
-  var showNotificationMenu = _ref8.showNotificationMenu,
+  var showMenu = _ref8.showMenu,
       anchorEl = _ref8.anchorEl;
   return {
-    type: OPEN_NOTIFICATION_MENU,
-    showNotificationMenu: showNotificationMenu,
+    type: OPEN_NOTIFICATIOS_MENU,
+    showMenu: showMenu,
     anchorEl: anchorEl
   };
 };
 
 // close notification menu visibility
 var closeNotificationMenu = exports.closeNotificationMenu = function closeNotificationMenu(_ref9) {
-  var showNotificationMenu = _ref9.showNotificationMenu;
+  var showMenu = _ref9.showMenu;
   return {
     type: CLOSE_NOTIFICATION_MENU,
-    showNotificationMenu: showNotificationMenu
+    showMenu: showMenu
   };
 };
 
@@ -43684,7 +43686,8 @@ var Logged = _react2.default.createClass({
 
     var _getState = getState(),
         AppBarReducer = _getState.AppBarReducer,
-        LoginPageReducer = _getState.LoginPageReducer;
+        LoginPageReducer = _getState.LoginPageReducer,
+        NotificationsReducer = _getState.NotificationsReducer;
 
     var defaultAvatar = void 0;
     if (this.props.avatar === "") {
@@ -43697,7 +43700,7 @@ var Logged = _react2.default.createClass({
       'div',
       null,
       _react2.default.createElement(_Badge2.default, {
-        badgeContent: AppBarReducer.notifications,
+        badgeContent: NotificationsReducer.total,
         badgeStyle: { top: 6, right: 6 },
         secondary: true
       }),
@@ -44036,9 +44039,8 @@ var NotificationsMenu = _react2.default.createClass({
 
     var _getState = getState(),
         AppBarReducer = _getState.AppBarReducer,
-        LoginPageReducer = _getState.LoginPageReducer;
-
-    var nofications = AppBarReducer.notifications;
+        LoginPageReducer = _getState.LoginPageReducer,
+        NotificationsReducer = _getState.NotificationsReducer;
 
     return _react2.default.createElement(
       'div',
@@ -44046,7 +44048,7 @@ var NotificationsMenu = _react2.default.createClass({
       _react2.default.createElement(
         _Popover2.default,
         {
-          open: AppBarReducer.showNotificationMenu,
+          open: AppBarReducer.showMenu,
           anchorEl: AppBarReducer.anchorEl,
           anchorOrigin: { horizontal: 'middle', vertical: 'bottom' },
           targetOrigin: { horizontal: 'middle', vertical: 'top' },
@@ -44055,8 +44057,8 @@ var NotificationsMenu = _react2.default.createClass({
         _react2.default.createElement(
           _Menu.Menu,
           null,
-          nofications.map(function (elem, idx) {
-            return _react2.default.createElement(NoticationItem, { idx: idx, text: elem.text });
+          NotificationsReducer.list.map(function (elem, idx) {
+            return _react2.default.createElement(NoticationItem, { key: idx, idx: idx, text: elem.text });
           })
         )
       )
@@ -44064,7 +44066,8 @@ var NotificationsMenu = _react2.default.createClass({
   }
 });
 
-// Notification status looks like the following: notification[{status:"done",text:"hello"}]
+// Notification status looks like the following: 
+// notification[{status:"done",text:"hello"}]
 
 
 var NoticationItem = _react2.default.createClass({
@@ -44097,12 +44100,13 @@ var NoticationItem = _react2.default.createClass({
 
     var _getState2 = getState(),
         AppBarReducer = _getState2.AppBarReducer,
-        LoginPageReducer = _getState2.LoginPageReducer;
+        LoginPageReducer = _getState2.LoginPageReducer,
+        NotificationsReducer = _getState2.NotificationsReducer;
 
     // notification status can be either none, done, loading
 
 
-    status = AppBarReducer.notifications[this.props.idx].status;
+    status = NotificationsReducer.list[this.props.idx].status;
 
     var defaultStatus = void 0;
     if (status === "done") {
@@ -44496,7 +44500,7 @@ var ToolBar = _react2.default.createClass({
       rightElement = _react2.default.createElement('span', null);
     } else {
       rightElement = this.props.element == null ? _react2.default.createElement(_Logged2.default, {
-        hMenu: this.props.hOpen,
+        hMenu: this.props.hMenu,
         hSettings: this.props.hOpen,
         hRequestClose: this.props.hRequestClose,
         hSeeAllNotifications: this.props.hSeeAllNotifications
@@ -44721,14 +44725,14 @@ var AppBar = function AppBar(_ref) {
 
   var handleNotificationOpen = function handleNotificationOpen(e) {
     actions.openNotificationMenu({
-      showNotificationMenu: true,
+      showMenu: true,
       anchorEl: e.currentTarget
     });
   };
 
   var handleNotificationClose = function handleNotificationClose(e) {
     actions.closeNotificationMenu({
-      showNotificationMenu: false
+      showMenu: false
     });
   };
 
@@ -44899,8 +44903,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactTapEventPlugin2.default)();
 
 var initialState = {
-  AppBarReducer: { opened: false, simplebar: false, notifications: 4 },
-  LoginPageReducer: { register: false }
+  AppBarReducer: {
+    opened: false,
+    simplebar: false,
+    showMenu: false,
+    anchorEl: null
+  },
+  LoginPageReducer: {
+    register: false
+  },
+  NotificationsReducer: {
+    total: 4,
+    list: [{ text: "test notification", status: "done" }, { text: "test notification", status: "loading" }]
+  }
 };
 
 var reduxStore = (0, _redux.createStore)(_reducers2.default, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -44960,15 +44975,22 @@ var AppBarReducer = function AppBarReducer() {
 
     case _actions.OPEN_NOTIFICATIONS_MENU:
       return _extends({}, state, {
-        showNotificationMenu: state.showNotificationMenu,
+        showMenu: state.showMenu,
         anchorEl: state.anchorEl
       });
 
     case _actions.CLOSE_NOTIFICATIONS_MENU:
       return _extends({}, state, {
-        showNotificationMenu: state.showNotificationMenu
+        showMenu: state.showMenu
       });
 
+    default:
+      return _extends({}, state);
+  }
+};
+
+var NotificationsReducer = function NotificationsReducer(state, action) {
+  switch (action.type) {
     default:
       return _extends({}, state);
   }
@@ -44983,6 +45005,7 @@ var LoginPageReducer = function LoginPageReducer(state, action) {
       return _extends({}, state, {
         register: register
       });
+
     default:
       return _extends({}, state);
   }
@@ -44990,7 +45013,8 @@ var LoginPageReducer = function LoginPageReducer(state, action) {
 
 var rootReducer = (0, _redux.combineReducers)({
   AppBarReducer: AppBarReducer,
-  LoginPageReducer: LoginPageReducer
+  LoginPageReducer: LoginPageReducer,
+  NotificationsReducer: NotificationsReducer
 });
 
 exports.default = rootReducer;

@@ -68,14 +68,14 @@ export const changeNotificationStatus = ({ idx, status }) => ({
 });
 
 // open notification menu visibility
-export const openNotificationMenu = ({ showNotificationMenu, anchorEl }) => ({
+export const openNotificationMenu = ({ showMenu, anchorEl }) => ({
   type: OPEN_NOTIFICATIOS_MENU,
-  showNotificationMenu,
+  showMenu,
   anchorEl,
 });
 
 // close notification menu visibility
-export const closeNotificationMenu = ({ showNotificationMenu }) => ({
+export const closeNotificationMenu = ({ showMenu }) => ({
   type: CLOSE_NOTIFICATION_MENU,
-  showNotificationMenu,
+  showMenu,
 });

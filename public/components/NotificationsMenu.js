@@ -28,22 +28,21 @@ const NotificationsMenu = React.createClass({
   render(){ 
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer } = getState();
-    const nofications = AppBarReducer.notifications
+    const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
 
     return(
       <div >
         <Popover
-          open={AppBarReducer.notification.showMenu}
-          anchorEl={AppBarReducer.notifications.anchorEl}
+          open={AppBarReducer.showMenu}
+          anchorEl={AppBarReducer.anchorEl}
           anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'middle', vertical: 'top'}}
           onRequestClose={this.props.hRequestClose}
         >
           <Menu>
             {
-              nofications.list.map((elem, idx) =>
-                <NoticationItem idx={idx} text={elem.text} />
+              NotificationsReducer.list.map((elem, idx) =>
+                <NoticationItem key={idx} idx={idx} text={elem.text} />
               )
             }
           </Menu>
@@ -80,10 +79,10 @@ const NoticationItem = React.createClass({
   render(){ 
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer } = getState();
+    const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
 
     // notification status can be either none, done, loading
-    status = AppBarReducer.notifications.list[this.props.idx].status
+    status = NotificationsReducer.list[this.props.idx].status
 
     let defaultStatus
     if (status === "done") {

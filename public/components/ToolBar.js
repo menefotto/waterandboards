@@ -58,7 +58,7 @@ const ToolBar = React.createClass({
     } else {
       rightElement = this.props.element == null ?
         <Logged 
-          hMenu={this.props.hOpen}
+          hMenu={this.props.hMenu}
           hSettings={this.props.hOpen}
           hRequestClose={this.props.hRequestClose}
           hSeeAllNotifications={this.props.hSeeAllNotifications}

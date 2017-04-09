@@ -16,40 +16,52 @@ const AppBarReducer = (state = false, action) => {
       return {
         ...state,
         simplebar: !state.simplebar
-    };
+      }
 
     case SIDEBAR_STATE:
       return {
         ...state,
         opened: !state.opened
-      };
+      }
 
 
     case LOGIN_STATE:
       return {
         ...state,
         logged: !state.logged
-      };
+      }
 
     case OPEN_NOTIFICATIONS_MENU:
       return {
         ...state,
-        showNotificationMenu: state.showNotificationMenu,
+        showMenu: state.showMenu,
         anchorEl: state.anchorEl,
-      };
+      }
+
 
     case CLOSE_NOTIFICATIONS_MENU:
       return {
         ...state,
-        showNotificationMenu: state.showNotificationMenu,
-      };
+        showMenu: state.showMenu,
+      }
+
 
     default:
       return {
         ...state,
-      };
+      }
   }
-};
+}
+
+const NotificationsReducer = ( state, action) => {
+  switch(action.type){
+    default:
+      return {
+        ...state,
+      }
+  }
+}
+
 
 // login page reducer
 const LoginPageReducer = (state, action) => {
@@ -60,17 +72,19 @@ const LoginPageReducer = (state, action) => {
       return {
         ...state,
         register,
-      };
+      }
+
     default:
       return {
         ...state,
-      };
+      }
   }
 }
 
 const rootReducer = combineReducers({
   AppBarReducer,
   LoginPageReducer,
+  NotificationsReducer,
 })
 
 export default rootReducer;

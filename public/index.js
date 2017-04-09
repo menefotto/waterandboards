@@ -11,24 +11,24 @@ import BlueGrey from './themes'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-
 import rootReducer from './reducers';
 
 const initialState = {
   AppBarReducer: { 
     opened: false, 
     simplebar: false, 
-    notifications: {
-      total: 4,
-      showMenu: false,
-      anchorEl: null,
-      list: [
-        {test:"test notification", status:"done"},
-        {test:"test notification", status:"loading"},
-      ],
+    showMenu: false,
+    anchorEl: null,
   },
   LoginPageReducer: { 
     register: false 
+  },
+  NotificationsReducer: {
+    total: 4,
+    list: [
+      {text:"test notification", status:"done"},
+      {text:"test notification", status:"loading"},
+    ],
   },
 }
 

@@ -39,7 +39,7 @@ const Logged = React.createClass({
   render(){ 
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer } = getState();
+    const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
 
     let defaultAvatar
     if (this.props.avatar === "" ){
@@ -51,7 +51,7 @@ const Logged = React.createClass({
     return(
       <div >
         <Badge
-          badgeContent={AppBarReducer.notifications}
+          badgeContent={NotificationsReducer.total}
           badgeStyle={{top: 6, right: 6}}
           secondary={true}
         >

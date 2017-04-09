@@ -33,14 +33,14 @@ const AppBar = ({ actions }) => {
 
   const handleNotificationOpen = (e) => {
     actions.openNotificationMenu({
-      showNotificationMenu: true,
+      showMenu: true,
       anchorEl: e.currentTarget,
     })
   }
 
   const handleNotificationClose = (e) => {
     actions.closeNotificationMenu({
-      showNotificationMenu: false,
+      showMenu: false,
     })
   }
 
