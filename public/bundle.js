@@ -43744,7 +43744,7 @@ var barStyle = {
   },
   icon: {
     marginRight: 30,
-    marginBottom: 25
+    marginBottom: 0
   },
   menu: {
     marginButtom: 30
@@ -44125,8 +44125,8 @@ var NoticationItem = _react2.default.createClass({
     var defaultStatus = void 0;
     if (status === "done") {
       defaultStatus = _react2.default.createElement(_done2.default, null);
-    } else if (status === "ongoing") {
-      defaultStatus = _react2.default.createElement(_RefreshIndicator2.default, { status: 'loading' });
+    } else if (status === "loading") {
+      defaultStatus = _react2.default.createElement(_RefreshIndicator2.default, { status: status });
     } else {
       defaultStatus = _react2.default.createElement('span', null);
     }
@@ -44930,7 +44930,7 @@ var initialState = {
   },
   NotificationsReducer: {
     total: 4,
-    list: [{ text: "test notification", status: "done" }, { text: "test notification", status: "loading" }]
+    list: [{ text: "test notification", status: "done" }, { text: "test notification 2", status: "loading" }]
   }
 };
 

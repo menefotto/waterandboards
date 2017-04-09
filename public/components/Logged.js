@@ -80,8 +80,7 @@ const Logged = React.createClass({
 
 const NotificationElement = ({ hMenu }) => {
   return(
-    
-      <NotificationsIcon />
+    <NotificationsIcon />
   )
 }
 
@@ -92,11 +91,11 @@ const barStyle = {
   },
   icon: {
     marginRight: 30,
-    marginBottom: 25,
+    marginBottom: 0,
   },
   menu: {
     marginButtom: 30,
-  }
+  },
 }
 
 
