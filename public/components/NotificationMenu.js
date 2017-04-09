@@ -17,11 +17,6 @@ const NotificationsMenu = React.createClass({
       store: PropTypes.object
   },
 
-  getDefaultProps: function() {
-    return {
-    }
-  },
-
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
@@ -64,6 +59,7 @@ const NotificationsMenu = React.createClass({
   Notification status looks like the following:
   notification[{status:"done",text:"hello"}]
 */}
+
 
 const NoticationItem = React.createClass({
   propTypes: {
