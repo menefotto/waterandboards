@@ -54,8 +54,12 @@ const ToolBar = React.createClass({
       rightElement = <span />
     } else {
       rightElement = this.props.element == null ?
-            <Logged onClick={this.props.hOpen} />:
-            <SignUp onClick={this.props.hLogin} />
+        <Logged 
+          onClick={this.props.hOpen} 
+          hMenu={this.props.hOpen}
+          hSettings={this.props.hOpen}
+        />:
+        <SignUp onClick={this.props.hLogin} />
     }
 
     return(

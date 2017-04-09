@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-
 import Badge from 'material-ui/Badge';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
@@ -47,13 +46,16 @@ const Logged = React.createClass({
     }
 
     return(
-      <div hSettings={this.props.hMenu}>
+      <div >
         <Badge
           badgeContent={AppBarReducer.notifications}
           badgeStyle={{top: 6, right: 6}}
           secondary={true}
         >
-          <NotificationsIcon style={{marginBottom: 5}} />
+          <NotificationsIcon 
+            style={{marginBottom: 5}} 
+            onClick={this.props.hMenu}
+          />
         </Badge>
         <IconButton
           onTouchTap={this.props.hSettings}

@@ -43048,7 +43048,8 @@ var Logged = _react2.default.createClass({
   displayName: 'Logged',
 
   propTypes: {
-    onClick: _react.PropTypes.func.isRequired,
+    hSettings: _react.PropTypes.func.isRequired,
+    hMenu: _react.PropTypes.func.isRequired,
     avatar: _react.PropTypes.string
   },
 
@@ -43099,12 +43100,15 @@ var Logged = _react2.default.createClass({
           badgeStyle: { top: 6, right: 6 },
           secondary: true
         },
-        _react2.default.createElement(_notifications2.default, { style: { marginBottom: 5 } })
+        _react2.default.createElement(_notifications2.default, {
+          style: { marginBottom: 5 },
+          onClick: this.props.hMenu
+        })
       ),
       _react2.default.createElement(
         _IconButton2.default,
         {
-          onTouchTap: this.props.onClick,
+          onTouchTap: this.props.hSettings,
           style: barStyle.right
         },
         _react2.default.createElement(_Avatar2.default, { src: this.props.avatar, style: { alignSelf: "center" } })
@@ -43729,7 +43733,11 @@ var ToolBar = _react2.default.createClass({
     if (AppBarReducer.simplebar) {
       rightElement = _react2.default.createElement('span', null);
     } else {
-      rightElement = this.props.element == null ? _react2.default.createElement(_Logged2.default, { onClick: this.props.hOpen }) : _react2.default.createElement(SignUp, { onClick: this.props.hLogin });
+      rightElement = this.props.element == null ? _react2.default.createElement(_Logged2.default, {
+        onClick: this.props.hOpen,
+        hMenu: this.props.hOpen,
+        hSettings: this.props.hOpen
+      }) : _react2.default.createElement(SignUp, { onClick: this.props.hLogin });
     }
 
     return _react2.default.createElement(
