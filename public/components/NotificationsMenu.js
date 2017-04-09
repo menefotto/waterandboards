@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import {Menu, MenuItem} from 'material-ui/Menu';
 import Popover from 'material-ui/Popover';
 import Divider from 'material-ui/Divider';
+import LinearProgress from 'material-ui/LinearProgress';
+import CircularProgress from 'material-ui/CircularProgress';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 
 
@@ -65,18 +67,6 @@ const NoticationItem = React.createClass({
     loadingStatus: PropTypes.element
   },
 
-  getDefaultProps: function() {
-    return {
-      loadingStatus: 
-      <RefreshIndicator 
-        status={"loading"} 
-        style={leftElem} 
-        left={15} 
-        top={10} 
-      />,
-    }
-  },
-
   contextTypes: {
       store: PropTypes.object
   },
@@ -100,20 +90,20 @@ const NoticationItem = React.createClass({
     return (
       <div>
         {
-          status === "loading" ? this.props.loadingStatus : <span />
-        }
-        {
           status === "loading" ?
           <MenuItem 
             checked={NotificationsReducer.list[this.props.idx].checked}
             primaryText={this.props.text}
-            style={{marginLeft: 5, marginBottom: 5 }}
+            style={{marginLeft: 60 }}
           />:
           <MenuItem 
             checked={NotificationsReducer.list[this.props.idx].checked}
             primaryText={this.props.text}
-            style={{marginLeft: 60, marginBottom: 5 }}
+            style={{marginLeft: 5, marginBottom: 5 }}
           />
+        }
+        {
+          status === "loading" ? <ProgressStatus /> : null
         }
         <Divider />
       </div>
@@ -121,7 +111,14 @@ const NoticationItem = React.createClass({
   }
 })
 
-const leftElem = { display: 'inline-block', position: 'relative', marginRight: 40 }
+
+const ProgressStatus = () => {
+  return(
+    <LinearProgress
+      style={{marginLeft: 15, width: "80%", marginBottom: 5}}
+    />
+  )
+}
 
 
 export default NotificationsMenu;
