@@ -17,8 +17,8 @@ export const DELETE_ITEM = "UPLOAD_ITEM_ACTION";
 export const UPDATE_PROFILE = "UPDATE_PROFILE_ACTION";
 
 // add and update notifications status
-export const OPEN_NOTIFICATION_MENU = "OPEN_NOTIFICATIOS_MENU";
-export const CLOSE_NOTIFICATION_MENU = "CLOSE_NOTIFICATIOS_MENU";
+export const OPEN_NOTIFICATION_MENU = "OPEN_NOTIFICATION_MENU";
+export const CLOSE_NOTIFICATION_MENU = "CLOSE_NOTIFICATION_MENU";
 export const ADD_NOTIFICATION = "ADD_NEW_NOTIFICATION";
 export const STATUS_NOTIFICATION = "CHANGE_NOTIFICATION_STATUS";
 
@@ -69,7 +69,7 @@ export const changeNotificationStatus = ({ idx, status }) => ({
 
 // open notification menu visibility
 export const openNotificationMenu = ({ showMenu, anchorEl }) => ({
-  type: OPEN_NOTIFICATIOS_MENU,
+  type: OPEN_NOTIFICATION_MENU,
   showMenu,
   anchorEl,
 });

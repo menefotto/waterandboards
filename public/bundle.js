@@ -43514,8 +43514,8 @@ var DELETE_ITEM = exports.DELETE_ITEM = "UPLOAD_ITEM_ACTION";
 var UPDATE_PROFILE = exports.UPDATE_PROFILE = "UPDATE_PROFILE_ACTION";
 
 // add and update notifications status
-var OPEN_NOTIFICATION_MENU = exports.OPEN_NOTIFICATION_MENU = "OPEN_NOTIFICATIOS_MENU";
-var CLOSE_NOTIFICATION_MENU = exports.CLOSE_NOTIFICATION_MENU = "CLOSE_NOTIFICATIOS_MENU";
+var OPEN_NOTIFICATION_MENU = exports.OPEN_NOTIFICATION_MENU = "OPEN_NOTIFICATION_MENU";
+var CLOSE_NOTIFICATION_MENU = exports.CLOSE_NOTIFICATION_MENU = "CLOSE_NOTIFICATION_MENU";
 var ADD_NOTIFICATION = exports.ADD_NOTIFICATION = "ADD_NEW_NOTIFICATION";
 var STATUS_NOTIFICATION = exports.STATUS_NOTIFICATION = "CHANGE_NOTIFICATION_STATUS";
 
@@ -43591,7 +43591,7 @@ var openNotificationMenu = exports.openNotificationMenu = function openNotificat
   var showMenu = _ref8.showMenu,
       anchorEl = _ref8.anchorEl;
   return {
-    type: OPEN_NOTIFICATIOS_MENU,
+    type: OPEN_NOTIFICATION_MENU,
     showMenu: showMenu,
     anchorEl: anchorEl
   };
@@ -43698,24 +43698,34 @@ var Logged = _react2.default.createClass({
 
     return _react2.default.createElement(
       'div',
-      null,
-      _react2.default.createElement(_Badge2.default, {
-        badgeContent: NotificationsReducer.total,
-        badgeStyle: { top: 6, right: 6 },
-        secondary: true
-      }),
+      { style: barStyle.right },
       _react2.default.createElement(
         _IconButton2.default,
         {
-          onTouchTap: this.props.hSettings,
-          style: barStyle.right
+          onTouchTap: this.props.hMenu,
+          style: barStyle.icon
         },
-        _react2.default.createElement(NotificationElement, { onClick: this.props.hMenu }),
-        _react2.default.createElement(_NotificationsMenu2.default, {
-          hRequestClose: this.props.hRequestClose,
-          hSeeAllNotifications: this.props.hSeeAllNotifications
-        }),
-        _react2.default.createElement(_Avatar2.default, { src: this.props.avatar, style: { alignSelf: "center" } })
+        _react2.default.createElement(
+          _Badge2.default,
+          {
+            badgeContent: NotificationsReducer.total,
+            badgeStyle: { top: 2, right: 2 },
+            secondary: true
+          },
+          _react2.default.createElement(NotificationElement, {
+            hMenu: this.props.hMenu
+          }),
+          _react2.default.createElement(_NotificationsMenu2.default, {
+            style: barStyle.menu,
+            hRequestClose: this.props.hRequestClose,
+            hSeeAllNotifications: this.props.hSeeAllNotifications
+          })
+        )
+      ),
+      _react2.default.createElement(
+        _IconButton2.default,
+        { onTouchTap: this.props.hSettings },
+        _react2.default.createElement(_Avatar2.default, { src: this.props.avatar })
       )
     );
   }
@@ -43724,16 +43734,20 @@ var Logged = _react2.default.createClass({
 var NotificationElement = function NotificationElement(_ref) {
   var hMenu = _ref.hMenu;
 
-  return _react2.default.createElement(_notifications2.default, {
-    style: { marginBottom: 5 },
-    onClick: hMenu
-  });
+  return _react2.default.createElement(_notifications2.default, null);
 };
 
 var barStyle = {
   right: {
-    marginBottom: 20,
-    marginRight: 96
+    marginRight: 96,
+    marginBottom: 10
+  },
+  icon: {
+    marginRight: 30,
+    marginBottom: 25
+  },
+  menu: {
+    marginButtom: 30
   }
 };
 
@@ -44724,6 +44738,8 @@ var AppBar = function AppBar(_ref) {
   };
 
   var handleNotificationOpen = function handleNotificationOpen(e) {
+    e.preventDefault();
+
     actions.openNotificationMenu({
       showMenu: true,
       anchorEl: e.currentTarget
@@ -44973,15 +44989,15 @@ var AppBarReducer = function AppBarReducer() {
         logged: !state.logged
       });
 
-    case _actions.OPEN_NOTIFICATIONS_MENU:
+    case _actions.OPEN_NOTIFICATION_MENU:
       return _extends({}, state, {
-        showMenu: state.showMenu,
-        anchorEl: state.anchorEl
+        showMenu: action.showMenu,
+        anchorEl: action.anchorEl
       });
 
-    case _actions.CLOSE_NOTIFICATIONS_MENU:
+    case _actions.CLOSE_NOTIFICATION_MENU:
       return _extends({}, state, {
-        showMenu: state.showMenu
+        showMenu: action.showMenu
       });
 
     default:

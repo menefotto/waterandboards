@@ -87,8 +87,8 @@ const NoticationItem = React.createClass({
     let defaultStatus
     if (status === "done") {
       defaultStatus = <ActionDone />
-    }else if (status === "ongoing"){
-      defaultStatus = <RefreshIndicator status="loading"/>
+    }else if (status === "loading"){
+      defaultStatus = <RefreshIndicator status={status}/>
     }else{
       defaultStatus = <span />
     }

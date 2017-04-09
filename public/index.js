@@ -27,7 +27,7 @@ const initialState = {
     total: 4,
     list: [
       {text:"test notification", status:"done"},
-      {text:"test notification", status:"loading"},
+      {text:"test notification 2", status:"loading"},
     ],
   },
 }

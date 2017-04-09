@@ -49,23 +49,28 @@ const Logged = React.createClass({
     }
 
     return(
-      <div >
-        <Badge
-          badgeContent={NotificationsReducer.total}
-          badgeStyle={{top: 6, right: 6}}
-          secondary={true}
+      <div style={barStyle.right}>
+        <IconButton 
+          onTouchTap={this.props.hMenu}
+          style={barStyle.icon}
         >
-        </Badge>
-        <IconButton
-          onTouchTap={this.props.hSettings}
-          style={barStyle.right} 
-        >
-          <NotificationElement onClick={this.props.hMenu} />
-          <NotificationsMenu 
-            hRequestClose={this.props.hRequestClose}
-            hSeeAllNotifications={this.props.hSeeAllNotifications}
-          />
-          <Avatar src={this.props.avatar} style={{alignSelf: "center"}} />
+          <Badge
+            badgeContent={NotificationsReducer.total}
+            badgeStyle={{top: 2, right: 2}}
+            secondary={true}
+          >
+            <NotificationElement 
+              hMenu={this.props.hMenu} 
+            />
+            <NotificationsMenu 
+              style={barStyle.menu}
+              hRequestClose={this.props.hRequestClose}
+              hSeeAllNotifications={this.props.hSeeAllNotifications}
+            />
+          </Badge>
+        </IconButton>
+        <IconButton onTouchTap={this.props.hSettings}>
+          <Avatar src={this.props.avatar} />
         </IconButton>
       </div>
     )
@@ -75,18 +80,23 @@ const Logged = React.createClass({
 
 const NotificationElement = ({ hMenu }) => {
   return(
-    <NotificationsIcon 
-      style={{marginBottom: 5}} 
-      onClick={hMenu}
-    />
+    
+      <NotificationsIcon />
   )
 }
 
 const barStyle = {
   right: {
-    marginBottom: 20,
     marginRight: 96,
+    marginBottom: 10,
   },
+  icon: {
+    marginRight: 30,
+    marginBottom: 25,
+  },
+  menu: {
+    marginButtom: 30,
+  }
 }
 
 

@@ -32,6 +32,8 @@ const AppBar = ({ actions }) => {
   }
 
   const handleNotificationOpen = (e) => {
+    e.preventDefault();
+
     actions.openNotificationMenu({
       showMenu: true,
       anchorEl: e.currentTarget,
