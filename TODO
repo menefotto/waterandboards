@@ -1,4 +1,5 @@
-fix default avatar icon not showing up.
-- add corresponding actions for notifications
-- implement side bar actions reducer and hadlers
-- fix logged component position
+- fix default avatar icon not showing up. #done
+- add corresponding actions for notifications #done
+- implement side bar actions reducer and hadlers #done
+- fix logged component position #done
+Fix notification menu position

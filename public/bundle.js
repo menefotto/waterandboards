@@ -44352,7 +44352,7 @@ var Logged = _react2.default.createClass({
         NotificationsReducer = _getState.NotificationsReducer;
 
     var defaultAvatar = void 0;
-    if (this.props.avatar === "") {
+    if (this.props.avatar.length === 0) {
       defaultAvatar = _react2.default.createElement(_Avatar2.default, { icon: _react2.default.createElement(_person2.default, null) });
     } else {
       defaultAvatar = _react2.default.createElement(_Avatar2.default, { src: this.props.avatar });
@@ -44363,7 +44363,7 @@ var Logged = _react2.default.createClass({
     if (NotificationsReducer === 0) {
       second = false, first = true;
     } else {
-      second = false, first = true;
+      second = true, first = false;
     }
 
     return _react2.default.createElement(
@@ -44379,15 +44379,13 @@ var Logged = _react2.default.createClass({
           _Badge2.default,
           {
             badgeContent: NotificationsReducer.total,
-            badgeStyle: { top: 2, right: 2 },
+            badgeStyle: { top: 10, right: 1 },
             secondary: second,
             primary: first
           },
-          _react2.default.createElement(NotificationElement, {
-            hMenu: this.props.hMenu
-          }),
+          _react2.default.createElement(_notifications2.default, null),
           _react2.default.createElement(_NotificationsMenu2.default, {
-            style: barStyle.menu,
+            style: { marginBottom: 35 },
             hRequestClose: this.props.hRequestClose,
             hSeeAllNotifications: this.props.hSeeAllNotifications
           })
@@ -44395,30 +44393,24 @@ var Logged = _react2.default.createClass({
       ),
       _react2.default.createElement(
         _IconButton2.default,
-        { onTouchTap: this.props.hSettings },
-        _react2.default.createElement(_Avatar2.default, { src: this.props.avatar })
+        {
+          onTouchTap: this.props.hSettings,
+          style: { marginBottom: 20 }
+        },
+        defaultAvatar
       )
     );
   }
 });
 
-var NotificationElement = function NotificationElement(_ref) {
-  var hMenu = _ref.hMenu;
-
-  return _react2.default.createElement(_notifications2.default, null);
-};
-
 var barStyle = {
   right: {
     marginRight: 96,
-    marginBottom: 10
+    marginBottom: 12
   },
   icon: {
     marginRight: 30,
-    marginBottom: 25
-  },
-  menu: {
-    marginButtom: 30
+    marginBottom: 0
   }
 };
 
@@ -44688,6 +44680,10 @@ var _Divider = require('material-ui/Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
+var _RaisedButton = require('material-ui/RaisedButton');
+
+var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
 var _LinearProgress = require('material-ui/LinearProgress');
 
 var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
@@ -44753,7 +44749,16 @@ var NotificationsMenu = _react2.default.createClass({
           null,
           NotificationsReducer.list.map(function (elem, idx) {
             return _react2.default.createElement(NoticationItem, { key: idx, idx: idx, text: elem.text });
-          })
+          }),
+          _react2.default.createElement(
+            _RaisedButton2.default,
+            { 'default': true, style: { width: "89%", marginTop: 5 } },
+            _react2.default.createElement(
+              'em',
+              null,
+              ' All Notifications '
+            )
+          )
         )
       )
     );
@@ -44828,7 +44833,7 @@ var ProgressStatus = function ProgressStatus() {
 
 exports.default = NotificationsMenu;
 
-},{"material-ui/CircularProgress":10,"material-ui/Divider":12,"material-ui/LinearProgress":23,"material-ui/Menu":28,"material-ui/Popover":37,"material-ui/RefreshIndicator":41,"react":490,"react-dom":270}],516:[function(require,module,exports){
+},{"material-ui/CircularProgress":10,"material-ui/Divider":12,"material-ui/LinearProgress":23,"material-ui/Menu":28,"material-ui/Popover":37,"material-ui/RaisedButton":39,"material-ui/RefreshIndicator":41,"react":490,"react-dom":270}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45615,7 +45620,7 @@ var initialState = {
     register: false
   },
   NotificationsReducer: {
-    total: 0,
+    total: 1,
     list: [{ text: "test notification", status: "loading", checked: false }, { text: "test notification 2", status: "done", checked: true }]
   }
 };

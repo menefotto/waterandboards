@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Menu, MenuItem} from 'material-ui/Menu';
 import Popover from 'material-ui/Popover';
 import Divider from 'material-ui/Divider';
+import RaisedButton from "material-ui/RaisedButton";
 import LinearProgress from 'material-ui/LinearProgress';
 import CircularProgress from 'material-ui/CircularProgress';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
@@ -48,6 +49,9 @@ const NotificationsMenu = React.createClass({
                 <NoticationItem key={idx} idx={idx} text={elem.text} />
               )
             }
+            <RaisedButton default={true} style={{width: "89%", marginTop: 5}}>
+              <em> All Notifications </em>
+            </RaisedButton>
           </Menu>
         </Popover>
       </div>

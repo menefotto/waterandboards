@@ -42,7 +42,7 @@ const Logged = React.createClass({
     const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
 
     let defaultAvatar
-    if (this.props.avatar === "" ){
+    if (this.props.avatar.length === 0){
       defaultAvatar = <Avatar icon={<SocialPerson />} />
     }else{
       defaultAvatar = <Avatar src={this.props.avatar} />
@@ -52,7 +52,7 @@ const Logged = React.createClass({
     if (NotificationsReducer === 0){
       second = false, first = true
     }else{
-      second = false, first = true
+      second = true, first = false
     }
 
     return(
@@ -63,22 +63,23 @@ const Logged = React.createClass({
         >
           <Badge
             badgeContent={NotificationsReducer.total}
-            badgeStyle={{top: 2, right: 2}}
+            badgeStyle={{top: 10, right: 1}}
             secondary={second}
             primary={first}
           >
-            <NotificationElement 
-              hMenu={this.props.hMenu} 
-            />
+            <NotificationsIcon />
             <NotificationsMenu 
-              style={barStyle.menu}
+              style={{marginBottom: 35}}
               hRequestClose={this.props.hRequestClose}
               hSeeAllNotifications={this.props.hSeeAllNotifications}
             />
           </Badge>
         </IconButton>
-        <IconButton onTouchTap={this.props.hSettings}>
-          <Avatar src={this.props.avatar} />
+        <IconButton 
+          onTouchTap={this.props.hSettings}
+          style={{marginBottom: 20}}
+        >
+          {defaultAvatar}
         </IconButton>
       </div>
     )
@@ -86,23 +87,14 @@ const Logged = React.createClass({
 })
 
 
-const NotificationElement = ({ hMenu }) => {
-  return(
-    <NotificationsIcon />
-  )
-}
-
 const barStyle = {
   right: {
     marginRight: 96,
-    marginBottom: 10,
+    marginBottom: 12,
   },
   icon: {
     marginRight: 30,
-    marginBottom: 25,
-  },
-  menu: {
-    marginButtom: 30,
+    marginBottom: 0,
   },
 }
 
