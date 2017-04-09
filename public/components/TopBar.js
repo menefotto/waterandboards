@@ -22,6 +22,9 @@ const TopBar = React.createClass({
     hItems: PropTypes.func.isRequired,
     hProfile: PropTypes.func.isRequired,
     hLogout: PropTypes.func.isRequired,
+    hMenu: PropTypes.func.isRequired,
+    hRequestClose: PropTypes.func.isRequired,
+    hSeeAllNotifications: PropTypes.func.isRequired,
   },
 
   getDefaultProps: function() {
@@ -38,6 +41,9 @@ const TopBar = React.createClass({
           hOpen={this.props.hOpen}
           hLogin={this.props.hLogin}
           hSearch={this.props.hSearch}
+          hMenu={this.props.hMenu}
+          hRequestClose={this.props.hRequestClose}
+          hSeeAllNotifications={this.props.hSeeAllNotifications}
         />
         <SideBar
           hUploads={this.props.hUploads}

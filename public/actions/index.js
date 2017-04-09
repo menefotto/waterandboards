@@ -16,28 +16,66 @@ export const DELETE_ITEM = "UPLOAD_ITEM_ACTION";
 // update profile action
 export const UPDATE_PROFILE = "UPDATE_PROFILE_ACTION";
 
+// add and update notifications status
+export const OPEN_NOTIFICATION_MENU = "OPEN_NOTIFICATIOS_MENU";
+export const CLOSE_NOTIFICATION_MENU = "CLOSE_NOTIFICATIOS_MENU";
+export const ADD_NOTIFICATION = "ADD_NEW_NOTIFICATION";
+export const STATUS_NOTIFICATION = "CHANGE_NOTIFICATION_STATUS";
 
+
+// handle function from the search bar
 export const search = ({ searched }) => ({
   type: SEARCH,
   searched,
 });
 
+// login state handles what to show on the left side of the app bar
 export const loginState = ({ logged }) => ({
    type: LOGIN_STATE,
    logged,
 });
 
+// toggle from login to register page
 export const registerState = ({ register }) => ({
    type: REGISTER_STATE,
    register,
 });
 
+// toggle sidebar type simple or full
 export const toggleAppBarState = ({ simplebar }) => ({
   type: APPBAR_TOGGLE,
   simplebar,
 });
 
+// change sidebar from open to close and viceversa
 export const toggleSideBar = ({ opened }) => ({
   type: SIDEBAR_STATE,
   opened,
+});
+
+// add notification to notification menu
+export const addNotification = ({ text, status }) => ({
+  type: ADD_NOTIFICATION,
+  text,
+  status,
+});
+
+// change notification status
+export const changeNotificationStatus = ({ idx, status }) => ({
+  type: ADD_NOTIFICATION,
+  idx,
+  status,
+});
+
+// open notification menu visibility
+export const openNotificationMenu = ({ showNotificationMenu, anchorEl }) => ({
+  type: OPEN_NOTIFICATIOS_MENU,
+  showNotificationMenu,
+  anchorEl,
+});
+
+// close notification menu visibility
+export const closeNotificationMenu = ({ showNotificationMenu }) => ({
+  type: CLOSE_NOTIFICATION_MENU,
+  showNotificationMenu,
 });

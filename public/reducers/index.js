@@ -3,6 +3,8 @@ import {
   APPBAR_TOGGLE,
   REGISTER_STATE,
   SIDEBAR_STATE,
+  OPEN_NOTIFICATIONS_MENU,
+  CLOSE_NOTIFICATIONS_MENU,
 } from "../actions";
 
 import { combineReducers } from 'redux'; 
@@ -27,6 +29,19 @@ const AppBarReducer = (state = false, action) => {
       return {
         ...state,
         logged: !state.logged
+      };
+
+    case OPEN_NOTIFICATIONS_MENU:
+      return {
+        ...state,
+        showNotificationMenu: state.showNotificationMenu,
+        anchorEl: state.anchorEl,
+      };
+
+    case CLOSE_NOTIFICATIONS_MENU:
+      return {
+        ...state,
+        showNotificationMenu: state.showNotificationMenu,
       };
 
     default:

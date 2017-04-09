@@ -5,13 +5,16 @@ import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import SocialPerson from 'material-ui/svg-icons/social/person';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import NotificationsMenu from "./NotificationsMenu.js";
 
-  
+
 const Logged = React.createClass({
   propTypes : {
-    hSettings: PropTypes.func.isRequired,
-    hMenu: PropTypes.func.isRequired,
     avatar: PropTypes.string,
+    hMenu: PropTypes.func.isRequired,
+    hSettings: PropTypes.func.isRequired,
+    hRequestClose: PropTypes.func.isRequired,
+    hSeeAllNotifications: PropTypes.func.isRequired,
   },
 
   contextTypes: {
@@ -42,7 +45,7 @@ const Logged = React.createClass({
     if (this.props.avatar === "" ){
       defaultAvatar = <Avatar icon={<SocialPerson />} />
     }else{
-      defaultAvatar = <Avatar src={this.props.avatar}  />
+      defaultAvatar = <Avatar src={this.props.avatar} />
     }
 
     return(
@@ -52,15 +55,16 @@ const Logged = React.createClass({
           badgeStyle={{top: 6, right: 6}}
           secondary={true}
         >
-          <NotificationsIcon 
-            style={{marginBottom: 5}} 
-            onClick={this.props.hMenu}
-          />
         </Badge>
         <IconButton
           onTouchTap={this.props.hSettings}
           style={barStyle.right} 
         >
+          <NotificationElement onClick={this.props.hMenu} />
+          <NotificationsMenu 
+            hRequestClose={this.props.hRequestClose}
+            hSeeAllNotifications={this.props.hSeeAllNotifications}
+          />
           <Avatar src={this.props.avatar} style={{alignSelf: "center"}} />
         </IconButton>
       </div>
@@ -68,6 +72,15 @@ const Logged = React.createClass({
   }
 })
 
+
+const NotificationElement = ({ hMenu }) => {
+  return(
+    <NotificationsIcon 
+      style={{marginBottom: 5}} 
+      onClick={hMenu}
+    />
+  )
+}
 
 const barStyle = {
   right: {

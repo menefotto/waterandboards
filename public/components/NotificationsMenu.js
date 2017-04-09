@@ -9,8 +9,7 @@ import RefreshIndicator from 'material-ui/RefreshIndicator';
 const NotificationsMenu = React.createClass({
   propTypes : {
     hRequestClose: PropTypes.func.isRequired,
-    hSeeAllActivity: PropTypes.func.isRequired,
-    anchorEl: PropTypes.element.isRequired, //used to the popover position
+    hSeeAllNotifications: PropTypes.func.isRequired,
   },
 
   contextTypes: {
@@ -35,15 +34,15 @@ const NotificationsMenu = React.createClass({
     return(
       <div >
         <Popover
-          open={AppBarReducer.notifications}
-          anchorEl={this.state.anchorEl}
+          open={AppBarReducer.notification.showMenu}
+          anchorEl={AppBarReducer.notifications.anchorEl}
           anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'middle', vertical: 'top'}}
           onRequestClose={this.props.hRequestClose}
         >
           <Menu>
             {
-              nofications.map((elem, idx) =>
+              nofications.list.map((elem, idx) =>
                 <NoticationItem idx={idx} text={elem.text} />
               )
             }
@@ -55,16 +54,14 @@ const NotificationsMenu = React.createClass({
 })
 
 
-{/* 
-  Notification status looks like the following:
-  notification[{status:"done",text:"hello"}]
-*/}
+// Notification status looks like the following: 
+// notification[{status:"done",text:"hello"}]
 
 
 const NoticationItem = React.createClass({
   propTypes: {
-    idx: PropTypes.interger.isRequired,
-    text: PropTypes.interger.isRequired,
+    idx: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
   },
 
   contextTypes: {
@@ -86,7 +83,7 @@ const NoticationItem = React.createClass({
     const { AppBarReducer, LoginPageReducer } = getState();
 
     // notification status can be either none, done, loading
-    status = AppBarReducer.notifications[this.props.idx].status
+    status = AppBarReducer.notifications.list[this.props.idx].status
 
     let defaultStatus
     if (status === "done") {
@@ -103,6 +100,7 @@ const NoticationItem = React.createClass({
         {defaultStatus}
       </div>
     )
+  }
 })
 
 

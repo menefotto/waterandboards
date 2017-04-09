@@ -22,6 +22,9 @@ const ToolBar = React.createClass({
     hOpen: PropTypes.func.isRequired,
     hLogin: PropTypes.func.isRequired,
     hSearch: PropTypes.func.isRequired,
+    hMenu: PropTypes.func.isRequired,
+    hRequestClose: PropTypes.func.isRequired,
+    hSeeAllNotifications: PropTypes.func.isRequired,
   },
 
   contextTypes: {
@@ -55,9 +58,10 @@ const ToolBar = React.createClass({
     } else {
       rightElement = this.props.element == null ?
         <Logged 
-          onClick={this.props.hOpen} 
           hMenu={this.props.hOpen}
           hSettings={this.props.hOpen}
+          hRequestClose={this.props.hRequestClose}
+          hSeeAllNotifications={this.props.hSeeAllNotifications}
         />:
         <SignUp onClick={this.props.hLogin} />
     }

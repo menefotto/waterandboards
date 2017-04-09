@@ -31,6 +31,24 @@ const AppBar = ({ actions }) => {
     })
   }
 
+  const handleNotificationOpen = (e) => {
+    actions.openNotificationMenu({
+      showNotificationMenu: true,
+      anchorEl: e.currentTarget,
+    })
+  }
+
+  const handleNotificationClose = (e) => {
+    actions.closeNotificationMenu({
+      showNotificationMenu: false,
+    })
+  }
+
+
+  const handleSeeAllNotifications = (e) => {
+    // action and reducer handling has to be implemented
+  }
+
   const handleUploads = (e) => {
   }
 
@@ -58,6 +76,9 @@ const AppBar = ({ actions }) => {
       hItems={handleItems}
       hProfile={handleProfile}
       hLogout={handleLogout}
+      hMenu={handleNotificationOpen}
+      hRequestClose={handleNotificationClose}
+      hSeeAllNotifications={handleSeeAllNotifications}
     />
   )
 }

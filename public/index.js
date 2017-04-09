@@ -15,8 +15,21 @@ injectTapEventPlugin();
 import rootReducer from './reducers';
 
 const initialState = {
-  AppBarReducer: { opened: false, simplebar: false, notifications: 4 },
-  LoginPageReducer: { register: false },
+  AppBarReducer: { 
+    opened: false, 
+    simplebar: false, 
+    notifications: {
+      total: 4,
+      showMenu: false,
+      anchorEl: null,
+      list: [
+        {test:"test notification", status:"done"},
+        {test:"test notification", status:"loading"},
+      ],
+  },
+  LoginPageReducer: { 
+    register: false 
+  },
 }
 
 const reduxStore = createStore(
