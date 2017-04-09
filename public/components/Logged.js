@@ -48,6 +48,13 @@ const Logged = React.createClass({
       defaultAvatar = <Avatar src={this.props.avatar} />
     }
 
+    let second, first
+    if (NotificationsReducer === 0){
+      second = false, first = true
+    }else{
+      second = false, first = true
+    }
+
     return(
       <div style={barStyle.right}>
         <IconButton 
@@ -57,7 +64,8 @@ const Logged = React.createClass({
           <Badge
             badgeContent={NotificationsReducer.total}
             badgeStyle={{top: 2, right: 2}}
-            secondary={true}
+            secondary={second}
+            primary={first}
           >
             <NotificationElement 
               hMenu={this.props.hMenu} 
@@ -91,7 +99,7 @@ const barStyle = {
   },
   icon: {
     marginRight: 30,
-    marginBottom: 0,
+    marginBottom: 25,
   },
   menu: {
     marginButtom: 30,

@@ -44358,6 +44358,14 @@ var Logged = _react2.default.createClass({
       defaultAvatar = _react2.default.createElement(_Avatar2.default, { src: this.props.avatar });
     }
 
+    var second = void 0,
+        first = void 0;
+    if (NotificationsReducer === 0) {
+      second = false, first = true;
+    } else {
+      second = false, first = true;
+    }
+
     return _react2.default.createElement(
       'div',
       { style: barStyle.right },
@@ -44372,7 +44380,8 @@ var Logged = _react2.default.createClass({
           {
             badgeContent: NotificationsReducer.total,
             badgeStyle: { top: 2, right: 2 },
-            secondary: true
+            secondary: second,
+            primary: first
           },
           _react2.default.createElement(NotificationElement, {
             hMenu: this.props.hMenu
@@ -44406,7 +44415,7 @@ var barStyle = {
   },
   icon: {
     marginRight: 30,
-    marginBottom: 0
+    marginBottom: 25
   },
   menu: {
     marginButtom: 30
@@ -45606,7 +45615,7 @@ var initialState = {
     register: false
   },
   NotificationsReducer: {
-    total: 4,
+    total: 0,
     list: [{ text: "test notification", status: "loading", checked: false }, { text: "test notification 2", status: "done", checked: true }]
   }
 };
