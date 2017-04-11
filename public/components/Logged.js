@@ -9,33 +9,27 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import NotificationsMenu from "./NotificationsMenu.js";
 
 // logged class
-const Logged = React.createClass({
+class Logged extends React.Component{
   propTypes : {
     avatar: PropTypes.string,
     hMenu: PropTypes.func.isRequired,
     hSettings: PropTypes.func.isRequired,
     hRequestClose: PropTypes.func.isRequired,
     hSeeAllNotifications: PropTypes.func.isRequired,
-  },
+  }
 
-  contextTypes: {
-      store: PropTypes.object
-  },
-
-  getDefaultProps: function() {
-    return {
-      avatar: "",
-    }
-  },
+  contextTypes : {
+    store: PropTypes.object
+  }
 
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  },
+  }
 
   componentWillUnmount() {
     this.unsubscribe(); 
-  },
+  }
 
   render(){ 
     const { store } = this.context;
@@ -85,7 +79,12 @@ const Logged = React.createClass({
       </div>
     )
   }
-})
+}
+
+
+Logged.defaultProps = {
+  avatar: "",
+}
 
 
 const barStyle = {

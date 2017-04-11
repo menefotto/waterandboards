@@ -14,32 +14,25 @@ import {
 import checkCookie from '../utils';
 
 
-const Login = React.createClass({
-  propTypes: {
+class Login extends React.Component{
+  propTypes : {
     register: PropTypes.bool,
     hRegister: PropTypes.func.isRequired,
     hLogin: PropTypes.func.isRequired,
-  },
+  }
 
-  contextTypes: {
+  contextTypes : {
       store: PropTypes.object
-  },
+  }
  
-  getDefaultProps: function() {
-    //    registered = checkCookie("registered")
-    return {
-      register: false,
-    }
-  },
-
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  },
+  }
 
   componentWillUnmount() {
     this.unsubscribe(); 
-  },
+  }
 
   render(){
     const { store } = this.context;
@@ -151,7 +144,12 @@ const Login = React.createClass({
         </div>
       )
     }    
-})
+}
+
+Login.defaultProps = {
+    //    registered = checkCookie("registered")
+  register: false,
+}
 
 
 const iconStyle = {

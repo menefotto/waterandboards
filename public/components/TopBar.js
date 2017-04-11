@@ -9,7 +9,7 @@ import ToolBar from "./ToolBar";
 import SideBar from './SideBar';
 import * as Actions from "../actions";
 
-const TopBar = React.createClass({
+class TopBar extends React.Component{
   propTypes : {
     element: PropTypes.element,
     logo: PropTypes.string,
@@ -26,13 +26,7 @@ const TopBar = React.createClass({
     hMenu: PropTypes.func.isRequired,
     hRequestClose: PropTypes.func.isRequired,
     hSeeAllNotifications: PropTypes.func.isRequired,
-  },
-
-  getDefaultProps: function() {
-    return{
-      element: <span />,
-    }
-  },
+  }
 
   render(){
     return(
@@ -57,7 +51,12 @@ const TopBar = React.createClass({
       </div>
     )
   }
-})
+}
+
+
+TopBar.defaultProps = {
+  element: <span />
+}
 
 
 //  app bar end ----------------------------------------------------

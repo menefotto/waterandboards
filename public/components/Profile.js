@@ -10,22 +10,22 @@ import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import RaisedButton from "material-ui/RaisedButton";
 
-const Profile = React.createClass({
+class Profile extends React.Component{
   propTypes : {
-  },
+  }
 
   contextTypes: {
       store: PropTypes.object
-  },
+  }
 
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  },
+  }
 
   componentWillUnmount() {
     this.unsubscribe(); 
-  },
+  }
 
   render(){ 
     const { store } = this.context;
@@ -90,7 +90,7 @@ const Profile = React.createClass({
       </div>
     )
   }
-})
+}
 
 
 const formStyles = {

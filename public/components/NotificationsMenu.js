@@ -10,24 +10,24 @@ import CircularProgress from 'material-ui/CircularProgress';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 
 
-const NotificationsMenu = React.createClass({
+class NotificationsMenu extends React.Component{
   propTypes : {
     hRequestClose: PropTypes.func.isRequired,
     hSeeAllNotifications: PropTypes.func.isRequired,
-  },
+  }
 
   contextTypes: {
       store: PropTypes.object
-  },
+  }
 
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  },
+  }
 
   componentWillUnmount() {
     this.unsubscribe(); 
-  },
+  }
 
   render(){ 
     const { store } = this.context;
@@ -58,32 +58,32 @@ const NotificationsMenu = React.createClass({
       </div>
     )
   }
-})
+}
 
 
 // Notification status looks like the following: 
 // notification[{status:"done",text:"hello"}]
 
 
-const NoticationItem = React.createClass({
+class NoticationItem extends React.Component{
   propTypes: {
     idx: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     loadingStatus: PropTypes.element
-  },
+  }
 
   contextTypes: {
       store: PropTypes.object
-  },
+  }
 
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  },
+  }
 
   componentWillUnmount() {
     this.unsubscribe(); 
-  },
+  }
 
   render(){ 
     const { store } = this.context;
@@ -114,7 +114,7 @@ const NoticationItem = React.createClass({
       </div>
     )
   }
-})
+}
 
 
 const ProgressStatus = () => {

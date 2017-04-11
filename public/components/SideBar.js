@@ -16,7 +16,7 @@ import CommunicationMessage from 'material-ui/svg-icons/communication/message';
 import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new';
 
 
-const SideBar = React.createClass({
+class SideBar extends React.Component{
   propTypes : {
     sTitle: PropTypes.string,
     hClose: PropTypes.func.isRequired,
@@ -25,26 +25,20 @@ const SideBar = React.createClass({
     hItems: PropTypes.func.isRequired,
     hProfile: PropTypes.func.isRequired,
     hLogout: PropTypes.func.isRequired,
-  },
+  }
  
-  getDefaultProps: function() {
-    return{
-      sTitle: "Settings",
-    }
-  },
-
   contextTypes: {
       store: PropTypes.object
-  },
+  }
 
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  },
+  }
 
   componentWillUnmount() {
     this.unsubscribe(); 
-  },
+  }
 
 
   render(){
@@ -90,7 +84,11 @@ const SideBar = React.createClass({
       </div>
     )
   }
-})
+}
+
+SideBar.defaultProps = {
+  sTitle: "Settings",
+}
 
 
 const PostedItems = () => {

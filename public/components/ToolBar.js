@@ -15,7 +15,11 @@ import SearchBar from "./SearchBar";
 import Logged from "./Logged";
 
 
-const ToolBar = React.createClass({
+class ToolBar extends React.Component{
+  constructor(props) {
+    super(props)
+  }
+
   propTypes : {
     logo: PropTypes.string,
     bTitle: PropTypes.string,
@@ -26,27 +30,20 @@ const ToolBar = React.createClass({
     hMenu: PropTypes.func.isRequired,
     hRequestClose: PropTypes.func.isRequired,
     hSeeAllNotifications: PropTypes.func.isRequired,
-  },
+  }
 
-  contextTypes: {
+  static contextTypes: {
       store: PropTypes.object
-  },
-
-  getDefaultProps: function() {
-    return {
-      logo: "images/logo.png",
-      bTitle: "WaterAndBoards",
-    }
-  },
+  }
 
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  },
+  }
 
   componentWillUnmount() {
     this.unsubscribe(); 
-  },
+  }
 
   render(){
     const { store } = this.context;
@@ -86,7 +83,12 @@ const ToolBar = React.createClass({
       </Toolbar>
     )
   }
-})
+}
+
+ToolBar.defaultProps = {
+  logo: "images/logo.png",
+  bTitle: "WaterAndBoards",
+}
 
 
 const SignUp = ({ onClick }) => (

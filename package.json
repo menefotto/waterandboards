@@ -2,6 +2,7 @@
   "name": "waterandboards",
   "version": "0.0.2",
   "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "express": "^4.13.4",
     "firebase": "^3.7.5",
     "lodash": "^4.17.4",
