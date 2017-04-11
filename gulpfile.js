@@ -18,7 +18,7 @@ var opts = assign({}, watchify.args, customOpts);
 var b = watchify(browserify(opts)); 
 
 // add transformations here
-b.transform("babelify", {presets: ["stage-0","es2015", "react"]});
+b.transform("babelify", {presets: ["es2015", "react","stage-0"]});
 
 // bundle function
 function bundle() {

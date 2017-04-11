@@ -16,7 +16,7 @@ class NotificationsMenu extends React.Component{
     hSeeAllNotifications: PropTypes.func.isRequired,
   }
 
-  contextTypes: {
+  static contextTypes = {
       store: PropTypes.object
   }
 

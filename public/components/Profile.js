@@ -11,10 +11,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from "material-ui/RaisedButton";
 
 class Profile extends React.Component{
-  propTypes : {
-  }
-
-  contextTypes: {
+  static contextTypes = {
       store: PropTypes.object
   }
 

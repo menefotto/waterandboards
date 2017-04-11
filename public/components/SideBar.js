@@ -27,7 +27,7 @@ class SideBar extends React.Component{
     hLogout: PropTypes.func.isRequired,
   }
  
-  contextTypes: {
+  static contextTypes = {
       store: PropTypes.object
   }
 

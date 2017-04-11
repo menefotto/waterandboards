@@ -16,10 +16,6 @@ import Logged from "./Logged";
 
 
 class ToolBar extends React.Component{
-  constructor(props) {
-    super(props)
-  }
-
   propTypes : {
     logo: PropTypes.string,
     bTitle: PropTypes.string,
@@ -32,8 +28,8 @@ class ToolBar extends React.Component{
     hSeeAllNotifications: PropTypes.func.isRequired,
   }
 
-  static contextTypes: {
-      store: PropTypes.object
+  static contextTypes = {
+    store: PropTypes.object.isRequired
   }
 
   componentDidMount() {
@@ -46,6 +42,7 @@ class ToolBar extends React.Component{
   }
 
   render(){
+    console.log("store: ",this.context.store)
     const { store } = this.context;
     const { getState } = store;
     const { AppBarReducer, LoginPageReducer } = getState();
