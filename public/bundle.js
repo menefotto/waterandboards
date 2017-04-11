@@ -44978,17 +44978,17 @@ var NotificationsMenu = _react2.default.createClass({
           anchorOrigin: { horizontal: 'middle', vertical: 'bottom' },
           targetOrigin: { horizontal: 'middle', vertical: 'top' },
           onRequestClose: this.props.hRequestClose,
-          style: { marginTop: 25, width: 350 }
+          style: { marginTop: 45, width: "20.5%" }
         },
         _react2.default.createElement(
           _Menu.Menu,
-          null,
+          { style: { width: "90%" } },
           NotificationsReducer.list.map(function (elem, idx) {
             return _react2.default.createElement(NoticationItem, { key: idx, idx: idx, text: elem.text });
           }),
           _react2.default.createElement(
             _RaisedButton2.default,
-            { 'default': true, style: { width: "89%", marginTop: 5 } },
+            { 'default': true, style: { width: "100%", marginTop: 5 } },
             _react2.default.createElement(
               'em',
               null,
@@ -45063,7 +45063,7 @@ var NoticationItem = _react2.default.createClass({
 
 var ProgressStatus = function ProgressStatus() {
   return _react2.default.createElement(_LinearProgress2.default, {
-    style: { marginLeft: 15, width: "80%", marginBottom: 5 }
+    style: { marginLeft: 15, width: "93%", marginBottom: 5, marginRight: 15 }
   });
 };
 

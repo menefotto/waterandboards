@@ -41,15 +41,15 @@ const NotificationsMenu = React.createClass({
           anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'middle', vertical: 'top'}}
           onRequestClose={this.props.hRequestClose}
-          style={{marginTop: 25, width: 350 }}
+          style={{marginTop: 45, width: "20.5%" }}
         >
-          <Menu>
+          <Menu style={{ width: "90%" }}>
             {
               NotificationsReducer.list.map((elem, idx) =>
                 <NoticationItem key={idx} idx={idx} text={elem.text} />
               )
             }
-            <RaisedButton default={true} style={{width: "89%", marginTop: 5}}>
+            <RaisedButton default={true} style={{width: "100%", marginTop: 5}}>
               <em> All Notifications </em>
             </RaisedButton>
           </Menu>
@@ -119,7 +119,7 @@ const NoticationItem = React.createClass({
 const ProgressStatus = () => {
   return(
     <LinearProgress
-      style={{marginLeft: 15, width: "80%", marginBottom: 5}}
+      style={{marginLeft: 15, width: "93%", marginBottom: 5, marginRight: 15}}
     />
   )
 }
