@@ -6,9 +6,14 @@ import {
   GridTile,
 } from 'material-ui/GridList';
 import Paper from 'material-ui/Paper';
+import Toggle from 'material-ui/Toggle';
 import Divider from 'material-ui/Divider';
+import Checkbox from 'material-ui/Checkbox';
+import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
+import {List, ListItem} from 'material-ui/List';
 import RaisedButton from "material-ui/RaisedButton";
+
 
 class Profile extends React.Component{
   static contextTypes = {
@@ -31,60 +36,73 @@ class Profile extends React.Component{
 
     return(
       <div style={formStyles.root}>
-        <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
-          <GridTile>
-            <Paper zDepth={2}>
-              <Divider />
-                <label style={formStyles.label}> Email </label>
-                <TextField 
-                  style={formStyles.text} 
-                  id="email" 
-                  underlineShow={false} 
-                />
-              <Divider />
-                <label style={formStyles.label}> Username </label>
-                <TextField 
-                  style={formStyles.text} 
-                  id="username" 
-                  underlineShow={false} 
-                />
-              <Divider />
-                <label style={formStyles.label}> First Name </label>
-                <TextField 
-                  style={formStyles.text} 
-                  id="firstname" 
-                  underlineShow={false} 
-                />
-              <Divider />
-                <label style={formStyles.label}> Last Name </label>
-                <TextField 
-                  style={formStyles.text} 
-                  id="lastname" 
-                  underlineShow={false} 
-                />
-              <Divider />
-                <label style={formStyles.label}> Password </label>
-                <TextField 
-                  style={formStyles.text} 
-                  id="password" 
-                  underlineShow={false} 
-                />
-              <Divider />
-                <label style={formStyles.label}> Profile Photo </label>
-                <TextField 
-                  style={formStyles.text} 
-                  id="profile-photo" 
-                  underlineShow={false} 
-                />
-              <Divider />
-                <RaisedButton secondary={true} style={formStyles.button}> 
-                  Delete Account 
-                </RaisedButton>
-              <Divider />
-            </Paper>
-          </GridTile>
-        </GridList> 
-      </div>
+        <List style={formStyles.gridList}>
+          <Subheader style={formStyles.header}>General</Subheader>
+          <ListItem
+            primaryText="Email"
+            secondaryText="Change your primary email"
+          />
+          <ListItem
+            primaryText="Phone Number"
+            secondaryText="Change your phone number"
+          />
+          <ListItem
+            primaryText="User Name"
+            secondaryText="Change your user name"
+          />
+          <ListItem
+            primaryText="First Name"
+            secondaryText="Change your first name"
+          />
+          <ListItem
+            primaryText="Last Name"
+            secondaryText="Change your last name"
+          />
+          <ListItem
+            primaryText="Profile photo"
+            secondaryText="Change your profile photo"
+          />
+          </List>
+        <Divider />
+        <List style={formStyles.gridList}>
+          <Subheader style={formStyles.header}>Notifications & Chat</Subheader>
+          <ListItem
+            primaryText="Show your status"
+            secondaryText="Your status is visible to everyone you use with"
+          />
+          <ListItem
+            leftCheckbox={<Checkbox />}
+            primaryText="Notifications"
+            secondaryText="Allow notifications"
+          />
+          <ListItem
+            leftCheckbox={<Checkbox />}
+            primaryText="Sounds"
+            secondaryText="Chat message"
+          />
+          <ListItem
+            leftCheckbox={<Checkbox />}
+            primaryText="Emails"
+            secondaryText="email message"
+          />
+        </List>
+        <Divider />
+        <List style={formStyles.gridList}>
+          <Subheader style={formStyles.header}>Account Operations</Subheader>
+          <ListItem
+            primaryText="Password"
+            secondaryText="Change your password"
+          />
+          <ListItem
+            primaryText="Reset Password"
+            secondaryText="Reset your password"
+          />
+          <ListItem
+            primaryText="Delete account"
+            secondaryText="proceed to delete your account"
+          />
+        </List>
+     </div>
     )
   }
 }
@@ -97,19 +115,16 @@ const formStyles = {
     justifyContent: 'space-around',
   },
   gridList: {
-    marginTop: 120,
+    backgroundColor: "#FFFFFF",
+    marginTop: 40,
     width: 480,
     height: "auto",
     overflowY: 'auto',
   },
-  button: {
-    width: "100%",
-  },
-  label: {
+  header: {
+    width: "90%",
+    fontSize: 24,
     marginLeft: 15,
-  },
-  text: {
-    width: "75%",
   },
 }
 
