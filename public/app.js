@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import AppBar from './containers/AppBar.js';
 import SignUp from './containers/SignUp.js';
+import Profile from './components/Profile.js';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import BlueGrey from './themes'
@@ -46,7 +47,7 @@ const App = () => (
     <Provider store={reduxStore}>
       <div> 
         <AppBar />
-        <SignUp />
+        <Profile />
       </div>
     </Provider>
   </MuiThemeProvider>
