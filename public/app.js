@@ -13,6 +13,8 @@ injectTapEventPlugin();
 
 import rootReducer from './reducers';
 
+// redux initial reducers state
+// fake comment
 const initialState = {
   AppBarReducer: { 
     opened: false, 

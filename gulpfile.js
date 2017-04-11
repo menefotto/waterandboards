@@ -1,57 +1,78 @@
+var del = require('del');
+var path = require('path');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var notify = require('gulp-notify');
-var watchify = require('watchify');
 var browserify = require('browserify');
-var babelify = require('babelify'); // Used to convert ES6 & JSX to ES5
+var webserver = require('gulp-webserver');
 var source = require('vinyl-source-stream');
+var runsequence = require('gulp-run-sequence');
 
-var production = process.env.NODE_ENV === 'production';
 
-
-function handleError(task) {
-  return function(err) {
-    gutil.log(gutil.colors.red(err));
-    notify.onError(task + ' failed, check the logs..')(err);
-  };
+/*
+ * Handles an error event.
+ */
+function swallowError(error) {
+  gutil.log(error);
+  this.emit('end');
 }
 
-function scripts(watch) {
-    var bundler, rebundle;
-    bundler = browserify('./public/index.js', {
-          basedir: __dirname, 
-          debug: !production, 
-          cache: {}, // required for watchify
-          packageCache: {}, // required for watchify
-          fullPaths: watch // required to be true only for watchify
-        });
-    if(watch) {
-          bundler = watchify(bundler) 
-        }
-
-
-    bundler.transform(babelify, {presets: ['es2015', 'react']});
-
-    rebundle = function() {
-          var stream = bundler.bundle();
-          stream.on('error', handleError('Browserify'));
-          stream = stream.pipe(source('bundle.js'));
-          return stream.pipe(gulp.dest('./public/'));
-        };
-
-    bundler.on('update', rebundle);
-    return rebundle();
-}
-
-
-gulp.task('scripts', function() {
-    return scripts(false);
+/*
+ * Clears out all the stuff that have been generated during development.
+ */
+gulp.task('clean', function(done) {
+  del(['./bundle.js'], done);
 });
 
-
-gulp.task('watchScripts', function() {
-    return scripts(true);
+/*
+ * Bundles the scripts, using Browserify.
+ */
+gulp.task('js', function() {
+  return browserify('./public/app.js')
+    .bundle()
+    .on('error', function (err) {
+      gutil.log(err.message);
+      this.emit('end');
+    })
+  //    .pipe(source('./public/bundle.js'))
+    .on('error', swallowError)
+    .pipe(gulp.dest('./public'));
 });
 
+/*
+ * Compiles the global styles, local styles, and the JavaSript/JSX code, and
+ * puts the compiled code into the `build` folder. Injects the necessary
+ * dpeendencies into the HTML.
+ */
+gulp.task('build', function (done) {
+  return runsequence(
+    //    'clean',
+    'js',
+    done
+  );
+});
 
-gulp.task('default', ['watchScripts', 'scripts'])
+/*
+ * Watch for changes in files.
+ */
+gulp.task('watch', function() {
+  gulp.watch(['public/*'], ['js']);
+});
+
+/*
+ * Run the server.
+ */
+gulp.task('server', ['watch'], function () {
+  return gulp.src('./public/')
+    .pipe(webserver({
+      livereload: true,
+      open: true
+    }));
+});
+
+/*
+ * The default is meant for development. Watches for changes, runs the builds,
+ * and fires up a web server. Also opens a new browser tab to the application.
+ */
+gulp.task('default', function () {
+  return runsequence('build', ['watch', 'server']);
+});

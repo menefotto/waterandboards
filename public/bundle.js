@@ -44405,6 +44405,92 @@ var closeNotificationMenu = exports.closeNotificationMenu = function closeNotifi
 },{}],515:[function(require,module,exports){
 'use strict';
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _redux = require('redux');
+
+var _reactRedux = require('react-redux');
+
+var _AppBar = require('./containers/AppBar.js');
+
+var _AppBar2 = _interopRequireDefault(_AppBar);
+
+var _SignUp = require('./containers/SignUp.js');
+
+var _SignUp2 = _interopRequireDefault(_SignUp);
+
+var _getMuiTheme = require('material-ui/styles/getMuiTheme');
+
+var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
+
+var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
+
+var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+
+var _themes = require('./themes');
+
+var _themes2 = _interopRequireDefault(_themes);
+
+var _reactTapEventPlugin = require('react-tap-event-plugin');
+
+var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
+var _reducers = require('./reducers');
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _reactTapEventPlugin2.default)();
+
+// redux initial reducers state
+// fake comment
+var initialState = {
+  AppBarReducer: {
+    opened: false,
+    simplebar: false,
+    showMenu: false,
+    anchorEl: null
+  },
+  LoginPageReducer: {
+    register: false
+  },
+  NotificationsReducer: {
+    total: 3,
+    list: [{ text: "test notification", status: "loading", checked: false }, { text: "test notification 2", status: "done", checked: true }]
+  }
+};
+
+var reduxStore = (0, _redux.createStore)(_reducers2.default, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+var App = function App() {
+  return _react2.default.createElement(
+    _MuiThemeProvider2.default,
+    { muiTheme: (0, _getMuiTheme2.default)(_themes2.default) },
+    _react2.default.createElement(
+      _reactRedux.Provider,
+      { store: reduxStore },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_AppBar2.default, null),
+        _react2.default.createElement(_SignUp2.default, null)
+      )
+    )
+  );
+};
+
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('content'));
+
+},{"./containers/AppBar.js":523,"./containers/SignUp.js":524,"./reducers":525,"./themes":526,"material-ui/styles/MuiThemeProvider":239,"material-ui/styles/getMuiTheme":242,"react":492,"react-dom":270,"react-redux":433,"react-tap-event-plugin":456,"redux":498}],516:[function(require,module,exports){
+'use strict';
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -44443,6 +44529,7 @@ var _NotificationsMenu2 = _interopRequireDefault(_NotificationsMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// logged class
 var Logged = _react2.default.createClass({
   displayName: 'Logged',
 
@@ -44549,7 +44636,7 @@ var barStyle = {
 
 exports.default = Logged;
 
-},{"./NotificationsMenu.js":517,"material-ui/Avatar":6,"material-ui/Badge":8,"material-ui/IconButton":21,"material-ui/svg-icons/social/notifications":258,"material-ui/svg-icons/social/person":259,"react":492,"react-dom":270}],516:[function(require,module,exports){
+},{"./NotificationsMenu.js":518,"material-ui/Avatar":6,"material-ui/Badge":8,"material-ui/IconButton":21,"material-ui/svg-icons/social/notifications":258,"material-ui/svg-icons/social/person":259,"react":492,"react-dom":270}],517:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44681,14 +44768,11 @@ var Login = _react2.default.createClass({
                 hintText: 'Password...',
                 type: 'password'
               }),
-              _react2.default.createElement(
-                _RaisedButton2.default,
-                {
-                  backgroundColor: "#C0C0C0",
-                  style: formStyles.button
-                },
-                LoginPageReducer.register ? "Register" : "Login"
-              ),
+              _react2.default.createElement(_RaisedButton2.default, {
+                backgroundColor: "#C0C0C0",
+                style: formStyles.button,
+                label: LoginPageReducer.register ? "Register" : "Login"
+              }),
               _react2.default.createElement(_Divider2.default, null),
               _react2.default.createElement(_RaisedButton2.default, {
                 children: _react2.default.createElement(_reactFontawesome2.default, {
@@ -44776,10 +44860,10 @@ var formStyles = {
   },
   textFirst: {
     marginTop: 20,
-    marginLeft: 120
+    marginLeft: 107
   },
   input: {
-    marginLeft: 120
+    marginLeft: 107
   },
   inputClick: {
     textAlign: "center",
@@ -44789,25 +44873,25 @@ var formStyles = {
     width: "70%",
     marginTop: 25,
     marginBottom: 15,
-    marginLeft: 75
+    marginLeft: 70
   },
   buttonFacebook: {
     width: "70%",
     marginTop: 15,
     marginBottom: 5,
-    marginLeft: 75
+    marginLeft: 70
   },
   buttonGoogle: {
     width: "70%",
     marginTop: 5,
     marginBottom: 15,
-    marginLeft: 75
+    marginLeft: 70
   }
 };
 
 exports.default = Login;
 
-},{"../utils":527,"material-ui/Divider":12,"material-ui/GridList":19,"material-ui/Paper":33,"material-ui/RaisedButton":39,"material-ui/TextField":51,"react":492,"react-dom":270,"react-fontawesome":422,"react-redux":433}],517:[function(require,module,exports){
+},{"../utils":527,"material-ui/Divider":12,"material-ui/GridList":19,"material-ui/Paper":33,"material-ui/RaisedButton":39,"material-ui/TextField":51,"react":492,"react-dom":270,"react-fontawesome":422,"react-redux":433}],518:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44985,7 +45069,7 @@ var ProgressStatus = function ProgressStatus() {
 
 exports.default = NotificationsMenu;
 
-},{"material-ui/CircularProgress":10,"material-ui/Divider":12,"material-ui/LinearProgress":23,"material-ui/Menu":28,"material-ui/Popover":37,"material-ui/RaisedButton":39,"material-ui/RefreshIndicator":41,"react":492,"react-dom":270}],518:[function(require,module,exports){
+},{"material-ui/CircularProgress":10,"material-ui/Divider":12,"material-ui/LinearProgress":23,"material-ui/Menu":28,"material-ui/Popover":37,"material-ui/RaisedButton":39,"material-ui/RefreshIndicator":41,"react":492,"react-dom":270}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45096,7 +45180,7 @@ var searchStyle = {
 
 exports.default = SearchBar;
 
-},{"material-ui/AutoComplete":4,"material-ui/Paper":33,"material-ui/RaisedButton":39,"material-ui/svg-icons/action/search":249,"react":492,"react-dom":270}],519:[function(require,module,exports){
+},{"material-ui/AutoComplete":4,"material-ui/Paper":33,"material-ui/RaisedButton":39,"material-ui/svg-icons/action/search":249,"react":492,"react-dom":270}],520:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45272,7 +45356,7 @@ var Close = function Close(_ref) {
 
 exports.default = SideBar;
 
-},{"material-ui/AppBar":2,"material-ui/Divider":12,"material-ui/Drawer":14,"material-ui/IconButton":21,"material-ui/MenuItem":31,"material-ui/SvgIcon":45,"material-ui/svg-icons/action/account-circle":247,"material-ui/svg-icons/action/power-settings-new":248,"material-ui/svg-icons/communication/message":250,"material-ui/svg-icons/editor/attach-money":251,"material-ui/svg-icons/file/cloud-upload":252,"material-ui/svg-icons/navigation/close":254,"material-ui/svg-icons/social/person":259,"react":492,"react-dom":270}],520:[function(require,module,exports){
+},{"material-ui/AppBar":2,"material-ui/Divider":12,"material-ui/Drawer":14,"material-ui/IconButton":21,"material-ui/MenuItem":31,"material-ui/SvgIcon":45,"material-ui/svg-icons/action/account-circle":247,"material-ui/svg-icons/action/power-settings-new":248,"material-ui/svg-icons/communication/message":250,"material-ui/svg-icons/editor/attach-money":251,"material-ui/svg-icons/file/cloud-upload":252,"material-ui/svg-icons/navigation/close":254,"material-ui/svg-icons/social/person":259,"react":492,"react-dom":270}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45435,7 +45519,7 @@ var barStyle = {
 
 exports.default = ToolBar;
 
-},{"./Logged":515,"./SearchBar":518,"material-ui/Avatar":6,"material-ui/Drawer":14,"material-ui/RaisedButton":39,"material-ui/Toolbar":56,"react":492,"react-dom":270}],521:[function(require,module,exports){
+},{"./Logged":516,"./SearchBar":519,"material-ui/Avatar":6,"material-ui/Drawer":14,"material-ui/RaisedButton":39,"material-ui/Toolbar":56,"react":492,"react-dom":270}],522:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45531,7 +45615,7 @@ var TopBar = _react2.default.createClass({
 
 exports.default = TopBar;
 
-},{"../actions":514,"./SideBar":519,"./ToolBar":520,"material-ui/AppBar":2,"react":492,"react-dom":270,"react-redux":433,"redux":498}],522:[function(require,module,exports){
+},{"../actions":514,"./SideBar":520,"./ToolBar":521,"material-ui/AppBar":2,"react":492,"react-dom":270,"react-redux":433,"redux":498}],523:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45652,7 +45736,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
  */
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AppBar);
 
-},{"../actions":514,"../components/TopBar":521,"react":492,"react-redux":433,"redux":498}],523:[function(require,module,exports){
+},{"../actions":514,"../components/TopBar":522,"react":492,"react-redux":433,"redux":498}],524:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45719,91 +45803,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
  */
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SignUp);
 
-},{"../actions":514,"../components/Login.js":516,"react":492,"react-dom":270,"react-redux":433,"redux":498}],524:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _redux = require('redux');
-
-var _reactRedux = require('react-redux');
-
-var _AppBar = require('./containers/AppBar.js');
-
-var _AppBar2 = _interopRequireDefault(_AppBar);
-
-var _SignUp = require('./containers/SignUp.js');
-
-var _SignUp2 = _interopRequireDefault(_SignUp);
-
-var _getMuiTheme = require('material-ui/styles/getMuiTheme');
-
-var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
-
-var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
-
-var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
-
-var _themes = require('./themes');
-
-var _themes2 = _interopRequireDefault(_themes);
-
-var _reactTapEventPlugin = require('react-tap-event-plugin');
-
-var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
-
-var _reducers = require('./reducers');
-
-var _reducers2 = _interopRequireDefault(_reducers);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _reactTapEventPlugin2.default)();
-
-var initialState = {
-  AppBarReducer: {
-    opened: false,
-    simplebar: false,
-    showMenu: false,
-    anchorEl: null
-  },
-  LoginPageReducer: {
-    register: false
-  },
-  NotificationsReducer: {
-    total: 3,
-    list: [{ text: "test notification", status: "loading", checked: false }, { text: "test notification 2", status: "done", checked: true }]
-  }
-};
-
-var reduxStore = (0, _redux.createStore)(_reducers2.default, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-var App = function App() {
-  return _react2.default.createElement(
-    _MuiThemeProvider2.default,
-    { muiTheme: (0, _getMuiTheme2.default)(_themes2.default) },
-    _react2.default.createElement(
-      _reactRedux.Provider,
-      { store: reduxStore },
-      _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_AppBar2.default, null),
-        _react2.default.createElement(_SignUp2.default, null)
-      )
-    )
-  );
-};
-
-_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('content'));
-
-},{"./containers/AppBar.js":522,"./containers/SignUp.js":523,"./reducers":525,"./themes":526,"material-ui/styles/MuiThemeProvider":239,"material-ui/styles/getMuiTheme":242,"react":492,"react-dom":270,"react-redux":433,"react-tap-event-plugin":456,"redux":498}],525:[function(require,module,exports){
+},{"../actions":514,"../components/Login.js":517,"react":492,"react-dom":270,"react-redux":433,"redux":498}],525:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45957,4 +45957,4 @@ var checkCookie = exports.checkCookie = function checkCookie(_ref) {
   return false;
 };
 
-},{}]},{},[524]);
+},{}]},{},[515]);

@@ -87,8 +87,10 @@ const Login = React.createClass({
                 <RaisedButton 
                     backgroundColor={"#C0C0C0"} 
                     style={formStyles.button}
+                    label={
+                      LoginPageReducer.register? "Register" : "Login"
+                    }
                 >
-                    {LoginPageReducer.register? "Register" : "Login"}
                 </RaisedButton>
                 <Divider />
                 <RaisedButton 
@@ -179,10 +181,10 @@ const formStyles = {
   },
   textFirst: {
     marginTop: 20,
-    marginLeft: 120,
+    marginLeft: 107,
   },
   input: {
-    marginLeft: 120,
+    marginLeft: 107,
   },
   inputClick: {
     textAlign: "center",
@@ -192,19 +194,19 @@ const formStyles = {
     width: "70%",
     marginTop: 25,
     marginBottom: 15,
-    marginLeft: 75,
+    marginLeft: 70,
   },
   buttonFacebook: {
     width: "70%",
     marginTop: 15,
     marginBottom: 5,
-    marginLeft: 75,
+    marginLeft: 70,
   },
   buttonGoogle: {
     width: "70%",
     marginTop: 5,
     marginBottom: 15,
-    marginLeft: 75,
+    marginLeft: 70,
   },
 }
 

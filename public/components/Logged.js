@@ -7,7 +7,7 @@ import SocialPerson from 'material-ui/svg-icons/social/person';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import NotificationsMenu from "./NotificationsMenu.js";
 
-
+// logged class
 const Logged = React.createClass({
   propTypes : {
     avatar: PropTypes.string,
