@@ -21,7 +21,7 @@ class Login extends React.Component{
     hLogin: PropTypes.func.isRequired,
   }
 
-  contextTypes : {
+  static contextTypes = {
       store: PropTypes.object
   }
  

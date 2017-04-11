@@ -9,6 +9,7 @@ import ToolBar from "./ToolBar";
 import SideBar from './SideBar';
 import * as Actions from "../actions";
 
+
 class TopBar extends React.Component{
   propTypes : {
     element: PropTypes.element,

@@ -42,7 +42,7 @@ class ToolBar extends React.Component{
   }
 
   render(){
-    console.log("store: ",this.context.store)
+    //console.log("store: ",this.context.store)
     const { store } = this.context;
     const { getState } = store;
     const { AppBarReducer, LoginPageReducer } = getState();

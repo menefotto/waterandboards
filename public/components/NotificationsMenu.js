@@ -72,7 +72,7 @@ class NoticationItem extends React.Component{
     loadingStatus: PropTypes.element
   }
 
-  contextTypes: {
+  static contextTypes = {
       store: PropTypes.object
   }
 

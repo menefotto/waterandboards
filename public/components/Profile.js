@@ -99,7 +99,7 @@ class Profile extends React.Component{
             secondaryText="Change your password"
           />
           <ListItem
-            primaryText="Reset Password"
+            primaryText="Password Reset"
             secondaryText="Reset your password"
           />
           <ListItem
