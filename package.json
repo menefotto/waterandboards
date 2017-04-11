@@ -6,16 +6,13 @@
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^11.2.0",
-    "del": "^2.2.2",
     "express": "^4.13.4",
     "firebase": "^3.7.5",
-    "gulp-livereload": "^3.8.1",
-    "gulp-notify": "^3.0.0",
-    "gulp-run-sequence": "^0.3.2",
+    "gulp": "^3.9.1",
     "gulp-util": "^3.0.8",
-    "gulp-webserver": "^0.9.1",
+    "lodash": "^4.17.4",
+    "lodash.assign": "^4.2.0",
     "material-ui": "^0.16.7",
-    "path": "^0.12.7",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-fontawesome": "^1.5.0",
@@ -23,6 +20,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "reactify": "^1.1.1",
     "redux": "^3.6.0",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.4.0"
   },
@@ -36,8 +34,7 @@
   "main": "index.js",
   "devDependencies": {
     "babel-preset-stage-1": "^6.22.0",
-    "gulp": "^3.9.1",
-    "typings": "^2.1.0"
+    "typings": "^2.1.1"
   },
   "repository": {
     "type": "git",
