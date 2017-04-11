@@ -69,7 +69,7 @@ const Logged = React.createClass({
           >
             <NotificationsIcon />
             <NotificationsMenu 
-              style={{marginBottom: 35}}
+              style={{marginBottom: 55, maxHeight: 500}}
               hRequestClose={this.props.hRequestClose}
               hSeeAllNotifications={this.props.hSeeAllNotifications}
             />
@@ -94,7 +94,6 @@ const barStyle = {
   },
   icon: {
     marginRight: 30,
-    marginBottom: 0,
   },
 }
 

@@ -24,7 +24,7 @@ const initialState = {
     register: false 
   },
   NotificationsReducer: {
-    total: 1,
+    total: 3,
     list: [
       {text:"test notification", status:"loading", checked: false},
       {text:"test notification 2", status:"done", checked: true},

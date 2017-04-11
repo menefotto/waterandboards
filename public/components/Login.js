@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
+import FontAwesome from 'react-fontawesome';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {
@@ -91,18 +92,42 @@ const Login = React.createClass({
                 </RaisedButton>
                 <Divider />
                 <RaisedButton 
-                    backgroundColor={"#3B5998"} 
-                    style={formStyles.buttonFacebook}
+                  children={
+                    <FontAwesome 
+                      name="facebook" 
+                      size="lg" 
+                      title="share it on facebook"
+                      style={iconStyle.f} 
+                    />
+                  }
+                  backgroundColor={"#3B5998"} 
+                  style={formStyles.buttonFacebook}
+                  label={
+                    LoginPageReducer.register? 
+                      "Register with Facebook" : 
+                      "Login with Facebook"
+                  }
                 >
-                    {LoginPageReducer.register? "Register with Facebook" : "Login with Facebook"}
                 </RaisedButton>
                 <RaisedButton 
-                    backgroundColor={"#DB4437"} 
-                    style={formStyles.buttonGoogle}
+                  children={
+                    <FontAwesome 
+                      name="google" 
+                      size="lg" 
+                      title="share it on google"
+                      style={iconStyle.g} 
+                    />
+                  }
+                  backgroundColor={"#DB4437"} 
+                  style={formStyles.buttonGoogle}
+                  label={
+                    LoginPageReducer.register? 
+                      "Register with Google" : 
+                      "Login with Google"
+                  }
                 >
-                    {LoginPageReducer.register? "Register with Google" : "Login with Google"}
                 </RaisedButton>
-                </form>
+              </form>
             </Paper>
             </GridTile>
             <GridTile>
@@ -124,6 +149,16 @@ const Login = React.createClass({
       )
     }    
 })
+
+
+const iconStyle = {
+  f: {
+    //marginRight: "30%",
+  },
+  g: {
+    // marginRight: "5%",
+  },
+}
 
 
 const formStyles = {
