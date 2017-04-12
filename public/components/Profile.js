@@ -71,22 +71,22 @@ class Profile extends React.Component{
             secondaryText="Your status is visible to everyone you use with"
           />
           <ListItem
-            leftCheckbox={<Toggle />}
+            leftCheckbox={<Toggle defaultToggled={NotificationsReducer.all}/>}
             primaryText="Notifications"
             secondaryText="Allow all notifications"
           />
           <ListItem
-            leftCheckbox={<Toggle />}
+            leftCheckbox={<Toggle defaultToggled={NotificationsReducer.gearwatch}/>}
             primaryText="Gear watch"
             secondaryText="Allow notifications for watched gear"
           />
           <ListItem
-            leftCheckbox={<Toggle />}
+            leftCheckbox={<Toggle defaultToggled={NotificationsReducer.chat}/>}
             primaryText="Chat messages"
             secondaryText="Allow chat messages notifications"
           />
           <ListItem
-            leftCheckbox={<Toggle />}
+            leftCheckbox={<Toggle defaultToggled={NotificationsReducer.email}/>}
             primaryText="Emails"
             secondaryText="Allow email messages notifications"
           />
@@ -125,6 +125,7 @@ const formStyles = {
     width: 480,
     height: "auto",
     overflowY: 'auto',
+    marginBottom: 40,
   },
   header: {
     fontFamily: "'Architects Daughter', cursive",

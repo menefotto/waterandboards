@@ -1,5 +1,8 @@
 - fix default avatar icon not showing up. #done
 - add corresponding actions for notifications #done
-- implement side bar actions reducer and hadlers #done
+- implement side bar actions reducer and handlers #done
 - fix logged component position #done
-Fix notification menu position
+- Fix notification menu position #done
+
+Add mobile wrapper to change size dynamically.
+The profile page should use modal dialogs to perform changes.

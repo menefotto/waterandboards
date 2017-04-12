@@ -26,6 +26,10 @@ const initialState = {
     register: false 
   },
   NotificationsReducer: {
+    all: true,
+    chat: true,
+    email: true,
+    gearwatch: true,
     total: 3,
     list: [
       {text:"test notification 1", status:"loading", checked: false},
