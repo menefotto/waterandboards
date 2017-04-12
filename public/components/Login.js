@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
-import FontAwesome from 'react-fontawesome';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {
@@ -12,7 +11,7 @@ import {
   GridTile,
 } from 'material-ui/GridList';
 import checkCookie from '../utils';
-
+import FontAwesome from '../deps/react-fontawesome';
 
 class Login extends React.Component{
   propTypes : {

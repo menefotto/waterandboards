@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FontAwesome from 'react-fontawesome';
+import FontAwesome from '../deps/react-fontawesome';
 
 
 // login page

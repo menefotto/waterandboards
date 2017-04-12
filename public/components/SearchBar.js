@@ -7,7 +7,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import ActionSearch from 'material-ui/svg-icons/action/search';
 
 const focus = () => {
-  console.log("called")
+  //  console.log("called")
 }
 
 class SearchBar extends React.Component {
