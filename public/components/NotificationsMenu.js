@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import {Menu, MenuItem} from 'material-ui/Menu';
 import Popover from 'material-ui/Popover';
 import Divider from 'material-ui/Divider';
 import RaisedButton from "material-ui/RaisedButton";
-import LinearProgress from 'material-ui/LinearProgress';
-import RefreshIndicator from 'material-ui/RefreshIndicator';
+import ActionDone from 'material-ui/svg-icons/action/done';
+import CircularProgress from 'material-ui/CircularProgress';
 
 
 class NotificationsMenu extends React.Component{
@@ -44,7 +43,7 @@ class NotificationsMenu extends React.Component{
           style={{marginTop: 45, width: "20.5%" }}
           className="notificationArea"
         >
-          <div>
+          <div style={{padding: 5}}>
             {
               NotificationRdx.list.map((elem, idx) =>
                 <NoticationItem key={idx} idx={idx} text={elem.text} />
@@ -95,19 +94,14 @@ class NoticationItem extends React.Component{
       <div>
         {
           status === "loading" ?
-          <MenuItem 
-            checked={NotificationRdx.list[this.props.idx].checked}
-            primaryText={this.props.text}
-            style={{marginLeft: 60 }}
+          <ItemStatus
+            done={NotificationRdx.list[this.props.idx].checked}
+            text={this.props.text}
           />:
-          <MenuItem 
-            checked={NotificationRdx.list[this.props.idx].checked}
-            primaryText={this.props.text}
-            style={{marginLeft: 5, marginBottom: 5 }}
+          <ItemStatus
+            done={NotificationRdx.list[this.props.idx].checked}
+            text={this.props.text}
           />
-        }
-        {
-          status === "loading" ? <ProgressStatus /> : null
         }
         <Divider />
       </div>
@@ -116,12 +110,38 @@ class NoticationItem extends React.Component{
 }
 
 
-const ProgressStatus = () => {
+const ItemStatus = ({text, done}) => {
   return(
-    <LinearProgress
-      style={{marginLeft: 15, width: "93%", marginBottom: 5, marginRight: 15}}
-    />
+    <div style={{marginBottom: 10, marginTop: 10}}>
+      {
+        done ? 
+        <CircularProgress 
+          style={ItemStatusStyle.progress}
+          thickness={5} 
+          size={25}
+        /> : 
+        <ActionDone 
+          style={ItemStatusStyle.progress}
+        />
+      }
+      <label 
+        style={ItemStatusStyle.text}
+      > 
+        {text} 
+      </label>
+    </div>
   )
+}
+
+
+const ItemStatusStyle = {
+  progress:  {
+    marginRight: 10,
+    marginLeft: 10,
+  },
+  text: {
+    marginLeft: 10,
+  }
 }
 
 
