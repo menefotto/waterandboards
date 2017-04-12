@@ -34,7 +34,7 @@ class Logged extends React.Component{
   render(){ 
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
+    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState();
 
     let defaultAvatar
     if (this.props.avatar.length === 0){
@@ -44,7 +44,7 @@ class Logged extends React.Component{
     }
 
     let second, first
-    if (NotificationsReducer === 0){
+    if (NotificationRdx === 0){
       second = false, first = true
     }else{
       second = true, first = false
@@ -57,7 +57,7 @@ class Logged extends React.Component{
           style={barStyle.icon}
         >
           <Badge
-            badgeContent={NotificationsReducer.total}
+            badgeContent={NotificationRdx.total}
             badgeStyle={{top: 10, right: 1}}
             secondary={second}
             primary={first}

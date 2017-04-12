@@ -10,7 +10,7 @@ import {
 import { combineReducers } from 'redux'; 
 
 // appbar type
-const AppBarReducer = (state = false, action) => {
+const AppBarRdx = (state = false, action) => {
   switch(action.type){
     case APPBAR_TOGGLE:
       return {
@@ -52,7 +52,7 @@ const AppBarReducer = (state = false, action) => {
   }
 }
 
-const NotificationsReducer = ( state, action) => {
+const NotificationRdx = ( state, action) => {
   switch(action.type){
     default:
       return {
@@ -63,7 +63,7 @@ const NotificationsReducer = ( state, action) => {
 
 
 // login page reducer
-const LoginPageReducer = (state, action) => {
+const LoginPageRdx = (state, action) => {
   switch(action.type){
     case REGISTER_STATE:
       const register = state.register ? false: true;
@@ -81,9 +81,9 @@ const LoginPageReducer = (state, action) => {
 }
 
 const rootReducer = combineReducers({
-  AppBarReducer,
-  LoginPageReducer,
-  NotificationsReducer,
+  AppBarRdx,
+  LoginPageRdx,
+  NotificationRdx,
 })
 
 export default rootReducer;

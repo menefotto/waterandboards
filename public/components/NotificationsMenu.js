@@ -6,7 +6,6 @@ import Popover from 'material-ui/Popover';
 import Divider from 'material-ui/Divider';
 import RaisedButton from "material-ui/RaisedButton";
 import LinearProgress from 'material-ui/LinearProgress';
-import CircularProgress from 'material-ui/CircularProgress';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 
 
@@ -32,13 +31,13 @@ class NotificationsMenu extends React.Component{
   render(){ 
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
+    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState();
 
     return(
       <div >
         <Popover
-          open={AppBarReducer.showMenu}
-          anchorEl={AppBarReducer.anchorEl}
+          open={AppBarRdx.showMenu}
+          anchorEl={AppBarRdx.anchorEl}
           anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'middle', vertical: 'top'}}
           onRequestClose={this.props.hRequestClose}
@@ -46,7 +45,7 @@ class NotificationsMenu extends React.Component{
         >
           <Menu style={{ width: "90%" }}>
             {
-              NotificationsReducer.list.map((elem, idx) =>
+              NotificationRdx.list.map((elem, idx) =>
                 <NoticationItem key={idx} idx={idx} text={elem.text} />
               )
             }
@@ -61,6 +60,28 @@ class NotificationsMenu extends React.Component{
 }
 
 
+const bubble = {
+  before: {
+    content: ' ',
+    position: "absolute",
+    width: 0,
+    height: 0,
+    left: 30,
+    top: 100,
+    border: "25 solid",
+    borderColor: "#666",
+  },
+  after: {
+    content: ' ',
+    position: "absolute",
+    width: 0,
+    height: 0,
+    left: 38,
+    top: 100,
+    border: "15 solid",
+    borderColor: "#fff",
+  }
+}
 // Notification status looks like the following: 
 // notification[{status:"done",text:"hello"}]
 
@@ -88,21 +109,21 @@ class NoticationItem extends React.Component{
   render(){ 
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer, NotificationsReducer } = getState();
+    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState();
     // notification status can be either none, done, loading
-    const status = NotificationsReducer.list[this.props.idx].status
+    const status = NotificationRdx.list[this.props.idx].status
 
     return (
       <div>
         {
           status === "loading" ?
           <MenuItem 
-            checked={NotificationsReducer.list[this.props.idx].checked}
+            checked={NotificationRdx.list[this.props.idx].checked}
             primaryText={this.props.text}
             style={{marginLeft: 60 }}
           />:
           <MenuItem 
-            checked={NotificationsReducer.list[this.props.idx].checked}
+            checked={NotificationRdx.list[this.props.idx].checked}
             primaryText={this.props.text}
             style={{marginLeft: 5, marginBottom: 5 }}
           />

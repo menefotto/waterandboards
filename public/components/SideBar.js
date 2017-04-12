@@ -44,11 +44,11 @@ class SideBar extends React.Component{
   render(){
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginReducer } = getState();
+    const { AppBarRdx, LoginReducer } = getState();
  
     return(
       <div>
-        <Drawer openSecondary={true} open={AppBarReducer.opened} >
+        <Drawer openSecondary={true} open={AppBarRdx.opened} >
           <AppBar
             title={this.props.sTitle}
             style={{ height: 70 }}

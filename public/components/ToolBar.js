@@ -45,10 +45,10 @@ class ToolBar extends React.Component{
     //console.log("store: ",this.context.store)
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer } = getState();
+    const { AppBarRdx, LoginPageRdx } = getState();
 
     let rightElement
-    if (AppBarReducer.simplebar){
+    if (AppBarRdx.simplebar){
       rightElement = <span />
     } else {
       rightElement = this.props.element == null ?
@@ -69,7 +69,7 @@ class ToolBar extends React.Component{
         </ToolbarGroup>
         <ToolbarGroup style={barStyle.center}>
           {
-            AppBarReducer.simplebar ?
+            AppBarRdx.simplebar ?
             <span />:
             <SearchBar onClick={this.props.hSearch} />
           }

@@ -37,7 +37,7 @@ class Login extends React.Component{
   render(){
     const { store } = this.context;
     const { getState } = store;
-    const { AppBarReducer, LoginPageReducer } = getState();
+    const { AppBarRdx, LoginPageRdx } = getState();
 
     return(
       <div style={formStyles.root}>
@@ -52,7 +52,7 @@ class Login extends React.Component{
                     type="email"
                 />
                 {
-                    LoginPageReducer.register ?
+                    LoginPageRdx.register ?
                     <div>
                         <TextField 
                             name="fname" 
@@ -82,7 +82,7 @@ class Login extends React.Component{
                     backgroundColor={"#C0C0C0"} 
                     style={formStyles.button}
                     label={
-                      LoginPageReducer.register? "Register" : "Login"
+                      LoginPageRdx.register? "Register" : "Login"
                     }
                 >
                 </RaisedButton>
@@ -99,7 +99,7 @@ class Login extends React.Component{
                   backgroundColor={"#3B5998"} 
                   style={formStyles.buttonFacebook}
                   label={
-                    LoginPageReducer.register? 
+                    LoginPageRdx.register? 
                       "Register with Facebook" : 
                       "Login with Facebook"
                   }
@@ -117,7 +117,7 @@ class Login extends React.Component{
                   backgroundColor={"#DB4437"} 
                   style={formStyles.buttonGoogle}
                   label={
-                    LoginPageReducer.register? 
+                    LoginPageRdx.register? 
                       "Register with Google" : 
                       "Login with Google"
                   }
@@ -128,7 +128,7 @@ class Login extends React.Component{
             </GridTile>
             <GridTile>
                 <Paper zDepth={3} style={formStyles.gridTile}>
-                    { !LoginPageReducer.register ? 
+                    { !LoginPageRdx.register ? 
                         <div 
                             style={formStyles.inputClick}> 
                             Don't have an account? <a onClick={this.props.hRegister} href="#"> Register </a> 

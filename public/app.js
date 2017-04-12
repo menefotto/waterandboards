@@ -7,25 +7,25 @@ import SignUp from './containers/SignUp.js';
 import Profile from './components/Profile.js';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import BlueGrey from './themes'
+import rootReducer from './reducers';
+import BlueGrey from './themes';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import rootReducer from './reducers';
 
 // redux initial reducers state
 const initialState = {
-  AppBarReducer: { 
+  AppBarRdx: { 
     opened: false, 
     simplebar: false, 
     showMenu: false,
     anchorEl: null,
   },
-  LoginPageReducer: { 
+  LoginPageRdx: { 
     register: false 
   },
-  NotificationsReducer: {
+  NotificationRdx: {
     all: true,
     chat: true,
     email: true,
