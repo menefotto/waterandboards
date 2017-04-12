@@ -42,12 +42,11 @@ class ToolBar extends React.Component{
   }
 
   render(){
-    //console.log("store: ",this.context.store)
     const { store } = this.context;
     const { getState } = store;
     const { AppBarRdx, LoginPageRdx } = getState();
 
-    let rightElement
+    let rightElement, searchElement
     if (AppBarRdx.simplebar){
       rightElement = <span />
     } else {
@@ -67,7 +66,12 @@ class ToolBar extends React.Component{
           <Avatar src={this.props.logo} style={barStyle.left} />
           <ToolbarTitle text={this.props.bTitle} style={barStyle.title}/>
         </ToolbarGroup>
-        <ToolbarGroup style={barStyle.center}>
+        <ToolbarGroup 
+          style={
+            this.props.element == null ? 
+              barStyle.centerLogged : barStyle.centerSignUp
+          }
+        >
           {
             AppBarRdx.simplebar ?
             <span />:
@@ -110,7 +114,12 @@ const barStyle = {
     marginBottom: 20,
     marginRight: 96,
   },
-  center: {
+  centerLogged: {
+    marginBottom: 20,
+    marginRight: 165, 
+    marginLeft: 0,
+  },
+  centerSignUp: {
     marginBottom: 20,
     marginRight: 200, 
     marginLeft: 0,

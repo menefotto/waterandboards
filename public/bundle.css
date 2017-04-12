@@ -1,23 +1,14 @@
 .public_components_NotificationsMenu_js-styles-menu {
-  width: 90%;
+  width: 100%;
+  position: relative;
 }
 .public_components_NotificationsMenu_js-styles-menu:before {
-  content: ' ';
+  content: '';
   position: absolute;
   width: 0px;
   height: 0px;
-  left: 30px;
-  top: 100px;
-  border: 25 solid;
-  border-color: #666;
-}
-.public_components_NotificationsMenu_js-styles-menu:after {
-  content: ' ';
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  left: 38px;
-  top: 100px;
-  border: 15 solid;
-  border-color: #fff;
+  border-top: 5px solid transparent;
+  border-right: 5px solid rgba(40,40,40,0.8);
+  border-bottom: 5px solid transparent;
+  margin: 1px 0 0 -15px;
 }

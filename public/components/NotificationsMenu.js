@@ -43,7 +43,7 @@ class NotificationsMenu extends React.Component{
           onRequestClose={this.props.hRequestClose}
           style={{marginTop: 45, width: "20.5%" }}
         >
-          <Menu className={styles.menu}>
+          <Menu>
             {
               NotificationRdx.list.map((elem, idx) =>
                 <NoticationItem key={idx} idx={idx} text={elem.text} />
@@ -59,32 +59,23 @@ class NotificationsMenu extends React.Component{
   }
 }
 
-
-const styles = cssInJS({
+// bubble notifications
+const styles = {
   menu: {
-    width: "90%",
-    ":before": {
-      content: ' ',
-      position: "absolute",
-      width: 0,
-      height: 0,
-      left: 30,
-      top: 100,
-      border: "25 solid",
-      borderColor: "#666",
-    },
-    ":after": {
-      content: ' ',
-      position: "absolute",
-      width: 0,
-      height: 0,
-      left: 38,
-      top: 100,
-      border: "15 solid",
-      borderColor: "#fff",
-    }
+    width: "100%",
+    position: "relative",
+  },
+  before: {
+    content: "",
+    position: "absolute",
+    width: 0,
+    height: 0,
+    borderTop: "5px solid transparent",
+    borderRight: "5px solid rgba(40,40,40,0.8)",
+    borderBottom: "5px solid transparent",
+    margin: "1px 0 0 -15px",
   }
-})
+}
 
 // Notification status looks like the following: 
 // notification[{status:"done",text:"hello"}]
