@@ -108,25 +108,25 @@ const barStyle = {
     height: 70,
   },
   rightLogin: {
-    marginRight: 96,
+    marginRight: "2%",
   },
   right: {
     marginBottom: 20,
-    marginRight: 96,
+    marginRight: "2%",
   },
   centerLogged: {
     marginBottom: 20,
-    marginRight: 165, 
+    marginRight: "5%", 
     marginLeft: 0,
   },
   centerSignUp: {
     marginBottom: 20,
-    marginRight: 200, 
+    marginRight: "30%", 
     marginLeft: 0,
   },
   left: {
     marginBottom: 3,
-    marginLeft: 96,
+    marginLeft: "8%",
   },
   title: {
     marginLeft: 4,

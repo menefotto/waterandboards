@@ -89,11 +89,12 @@ Logged.defaultProps = {
 
 const barStyle = {
   right: {
-    marginRight: 96,
+    width: 160,
     marginBottom: 12,
+    marginRight: "1%",
   },
   icon: {
-    marginRight: 30,
+    marginRight: "8%",
   },
 }
 
