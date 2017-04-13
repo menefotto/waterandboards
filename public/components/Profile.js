@@ -62,8 +62,7 @@ class Profile extends React.Component{
             primaryText="Profile photo"
             secondaryText="Change your profile photo"
           />
-          </List>
-        <Divider />
+        </List>
         <List style={formStyles.gridList}>
           <Subheader style={formStyles.header}>Notifications & Chat</Subheader>
           <ListItem
@@ -91,7 +90,6 @@ class Profile extends React.Component{
             secondaryText="Allow email messages notifications"
           />
         </List>
-        <Divider />
         <List style={formStyles.gridList}>
           <Subheader style={formStyles.header}>Account Operations</Subheader>
           <ListItem
@@ -121,11 +119,13 @@ const formStyles = {
   },
   gridList: {
     backgroundColor: "#FFFFFF",
-    marginTop: 40,
     width: 480,
     height: "auto",
     overflowY: 'auto',
+    marginTop: 40,
     marginBottom: 40,
+    marginRight: 15,
+    marginLeft: 15,
   },
   header: {
     fontFamily: "'Architects Daughter', cursive",
