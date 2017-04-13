@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import NotificationsMenu from "../components/NotificationMenu.js";
+import Notifications from "../components/NotificationMenu.js";
 import * as Actions from '../actions';
 
 
@@ -27,7 +27,7 @@ const Notifications = ({ actions, element }) => {
 
 
   return(
-    <NotificationsMenu 
+    <Notifications 
       hRequestClose={handleClose}
       handleSeeAllActivity={handleSeeAllActivity}
     />

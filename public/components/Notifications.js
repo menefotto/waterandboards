@@ -8,7 +8,7 @@ import ActionDone from 'material-ui/svg-icons/action/done';
 import CircularProgress from 'material-ui/CircularProgress';
 
 
-class NotificationsMenu extends React.Component{
+class Notifications extends React.Component{
   propTypes : {
     hRequestClose: PropTypes.func.isRequired,
     hSeeAllNotifications: PropTypes.func.isRequired,
@@ -145,4 +145,4 @@ const ItemStatusStyle = {
 }
 
 
-export default NotificationsMenu;
+export default Notifications;

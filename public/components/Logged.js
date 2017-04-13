@@ -6,7 +6,7 @@ import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import SocialPerson from 'material-ui/svg-icons/social/person';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
-import NotificationsMenu from "./NotificationsMenu.js";
+import Notifications from "./Notifications.js";
 
 // logged class
 class Logged extends React.Component{
@@ -63,7 +63,7 @@ class Logged extends React.Component{
             primary={first}
           >
             <NotificationsIcon />
-            <NotificationsMenu 
+            <Notifications 
               style={{marginBottom: 55, maxHeight: 500}}
               hRequestClose={this.props.hRequestClose}
               hSeeAllNotifications={this.props.hSeeAllNotifications}
