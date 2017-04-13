@@ -40,7 +40,7 @@ class Notifications extends React.Component{
           anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'middle', vertical: 'top'}}
           onRequestClose={this.props.hRequestClose}
-          style={{marginTop: 45, width: "20.5%" }}
+          style={{marginTop: 45, width: "20%"}}
           className="notificationArea"
         >
           <div style={{padding: 5}}>
@@ -49,7 +49,7 @@ class Notifications extends React.Component{
                 <NoticationItem key={idx} idx={idx} text={elem.text} />
               )
             }
-            <RaisedButton default={true} style={{width: "100%", marginTop: 5}}>
+            <RaisedButton default={true} style={{width: "95%", marginTop: 5}}>
               <em> All Notifications </em>
             </RaisedButton>
           </div>

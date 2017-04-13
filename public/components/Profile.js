@@ -39,14 +39,6 @@ class Profile extends React.Component{
         <List style={formStyles.gridList}>
           <Subheader style={formStyles.header}>General</Subheader>
           <ListItem
-            primaryText="Email"
-            secondaryText="Change your primary email"
-          />
-          <ListItem
-            primaryText="Phone Number"
-            secondaryText="Change your phone number"
-          />
-          <ListItem
             primaryText="User Name"
             secondaryText="Change your user name"
           />
@@ -57,6 +49,10 @@ class Profile extends React.Component{
           <ListItem
             primaryText="Last Name"
             secondaryText="Change your last name"
+          />
+          <ListItem
+            primaryText="Phone Number"
+            secondaryText="Change your phone number"
           />
           <ListItem
             primaryText="Profile photo"
@@ -92,6 +88,10 @@ class Profile extends React.Component{
         </List>
         <List style={formStyles.gridList}>
           <Subheader style={formStyles.header}>Account Operations</Subheader>
+          <ListItem
+            primaryText="Email"
+            secondaryText="Change your primary email"
+          />
           <ListItem
             primaryText="Password"
             secondaryText="Change your password"
