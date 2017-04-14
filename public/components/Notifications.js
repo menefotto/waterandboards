@@ -49,7 +49,7 @@ class Notifications extends React.Component{
                 <NoticationItem key={idx} idx={idx} text={elem.text} />
               )
             }
-            <RaisedButton default={true} style={{width: "95%", marginTop: 5}}>
+            <RaisedButton default={true} style={{width: "100%", marginTop: 5}}>
               <em> All Notifications </em>
             </RaisedButton>
           </div>
