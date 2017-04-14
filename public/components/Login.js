@@ -13,6 +13,7 @@ import {
 import checkCookie from '../utils'
 import FontAwesome from '../deps/react-fontawesome'
 
+
 class Login extends React.Component{
   propTypes : {
     register: PropTypes.bool,

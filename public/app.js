@@ -22,6 +22,7 @@ const initialState = {
     opened: false, 
     simplebar: false, 
     showMenu: false,
+    logged: true,
     anchorEl: null,
   },
   LoginPageRdx: { 

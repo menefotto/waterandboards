@@ -10,6 +10,7 @@ import {
 import Avatar from 'material-ui/Avatar'
 import Drawer from 'material-ui/Drawer'
 import RaisedButton from 'material-ui/RaisedButton'
+
 import SearchBar from "./SearchBar"
 import Logged from "./Logged"
 
@@ -49,7 +50,7 @@ class ToolBar extends React.Component{
     if (AppBarRdx.simplebar){
       rightElement = <span />
     } else {
-      rightElement = this.props.element == null ?
+      rightElement = AppBarRdx.logged ?
         <Logged 
           hMenu={this.props.hMenu}
           hSettings={this.props.hOpen}
@@ -67,7 +68,7 @@ class ToolBar extends React.Component{
         </ToolbarGroup>
         <ToolbarGroup 
           style={
-            this.props.element == null ? 
+            AppBarRdx.logged ? 
               barStyle.centerLogged : barStyle.centerSignUp
           }
         >
@@ -84,6 +85,7 @@ class ToolBar extends React.Component{
     )
   }
 }
+
 
 ToolBar.defaultProps = {
   logo: "images/logo.png",
@@ -120,7 +122,7 @@ const barStyle = {
   },
   centerSignUp: {
     marginBottom: 20,
-    marginRight: "30%", 
+    marginRight: "9%", 
     marginLeft: 0,
   },
   left: {

@@ -8,7 +8,7 @@ import Message from '../components/Message.js'
 import * as Actions from '../actions'
 
 
-const Logout = ({}) => {
+const Logout = ({ actions }) => {
   const handleOk = (e) => {
     actions.loginState({
       logged: false,
@@ -16,6 +16,10 @@ const Logout = ({}) => {
 
     actions.setMainElement({
       element: <Grid />,
+    })
+
+    actions.toggleSideBar({
+      opened: false,
     })
 
     actions.logoutSideBar({

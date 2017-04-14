@@ -25,13 +25,13 @@ const AppBarRdx = (state = false, action) => {
     case SIDEBAR_STATE:
       return {
         ...state,
-        opened: !state.opened
+        opened: action.opened
       }
 
     case LOGIN_STATE:
       return {
         ...state,
-        logged: !state.logged
+        logged: action.logged
       }
 
     case OPEN_NOTIFICATION_MENU:
