@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import FontAwesome from '../deps/react-fontawesome';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import FontAwesome from '../deps/react-fontawesome'
 
 
 // login page
@@ -69,4 +69,4 @@ const iconStyle = {
   },
 }
 
-export default SocialBar;
+export default SocialBar

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import srOnlyStyle from './screen-reader-styles'
 
 /**
@@ -25,7 +25,7 @@ import srOnlyStyle from './screen-reader-styles'
  */
 class FontAwesome extends React.Component {
   constructor() {
-    super();
+    super()
     //    this.displayName = "FontAwesome"
   }
 
@@ -105,4 +105,4 @@ FontAwesome.propTypes = {
 }
 
 
-export default FontAwesome;
+export default FontAwesome

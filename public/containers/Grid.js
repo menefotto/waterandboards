@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import {
   GridList, 
   GridTile
-} from 'material-ui/GridList';
+} from 'material-ui/GridList'
 
 // Actual grid
 class Grid extends React.Component {
@@ -44,4 +44,4 @@ const gridStyles = {
   },
 }
 
-export default Grid;
+export default Grid

@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
 import { 
   Toolbar, 
   ToolbarGroup, 
   ToobarSeparator, 
   ToolbarTitle 
-} from 'material-ui/Toolbar';
-import Avatar from 'material-ui/Avatar';
-import Drawer from 'material-ui/Drawer';
-import RaisedButton from 'material-ui/RaisedButton';
-import SearchBar from "./SearchBar";
-import Logged from "./Logged";
+} from 'material-ui/Toolbar'
+import Avatar from 'material-ui/Avatar'
+import Drawer from 'material-ui/Drawer'
+import RaisedButton from 'material-ui/RaisedButton'
+import SearchBar from "./SearchBar"
+import Logged from "./Logged"
 
 
 class ToolBar extends React.Component{
@@ -32,18 +32,18 @@ class ToolBar extends React.Component{
   }
 
   componentDidMount() {
-    const { store } = this.context;
+    const { store } = this.context
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
   }
 
   componentWillUnmount() {
-    this.unsubscribe(); 
+    this.unsubscribe() 
   }
 
   render(){
-    const { store } = this.context;
-    const { getState } = store;
-    const { AppBarRdx, LoginPageRdx } = getState();
+    const { store } = this.context
+    const { getState } = store
+    const { AppBarRdx, LoginPageRdx } = getState()
 
     let rightElement, searchElement
     if (AppBarRdx.simplebar){
@@ -136,4 +136,4 @@ const barStyle = {
 }
 
 
-export default ToolBar;
+export default ToolBar

@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import Popover from 'material-ui/Popover';
-import Divider from 'material-ui/Divider';
-import RaisedButton from "material-ui/RaisedButton";
-import ActionDone from 'material-ui/svg-icons/action/done';
-import CircularProgress from 'material-ui/CircularProgress';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import Popover from 'material-ui/Popover'
+import Divider from 'material-ui/Divider'
+import RaisedButton from "material-ui/RaisedButton"
+import ActionDone from 'material-ui/svg-icons/action/done'
+import CircularProgress from 'material-ui/CircularProgress'
 
 
 class Notifications extends React.Component{
@@ -19,18 +19,18 @@ class Notifications extends React.Component{
   }
 
   componentDidMount() {
-    const { store } = this.context;
+    const { store } = this.context
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
   }
 
   componentWillUnmount() {
-    this.unsubscribe(); 
+    this.unsubscribe() 
   }
 
   render(){ 
-    const { store } = this.context;
-    const { getState } = store;
-    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState();
+    const { store } = this.context
+    const { getState } = store
+    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
 
     return(
       <div >
@@ -75,18 +75,18 @@ class NoticationItem extends React.Component{
   }
 
   componentDidMount() {
-    const { store } = this.context;
+    const { store } = this.context
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
   }
 
   componentWillUnmount() {
-    this.unsubscribe(); 
+    this.unsubscribe() 
   }
 
   render(){ 
-    const { store } = this.context;
-    const { getState } = store;
-    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState();
+    const { store } = this.context
+    const { getState } = store
+    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
     // notification status can be either none, done, loading
     const status = NotificationRdx.list[this.props.idx].status
 
@@ -145,4 +145,4 @@ const ItemStatusStyle = {
 }
 
 
-export default Notifications;
+export default Notifications

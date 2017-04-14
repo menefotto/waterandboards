@@ -50,4 +50,4 @@ const BlueGray = {
   },
 }
 
-export default BlueGray;
+export default BlueGray

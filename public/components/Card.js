@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import Chip from 'material-ui/Chip';
-import Paper from 'material-ui/Paper'; 
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import Chip from 'material-ui/Chip'
+import Paper from 'material-ui/Paper' 
 import {
   Card, 
   CardHeader, 
@@ -10,8 +10,8 @@ import {
   CardActions, 
   CardMedia, 
   CardText
-} from 'material-ui/Card';
-import SocialBar from './SocialBar';
+} from 'material-ui/Card'
+import SocialBar from './SocialBar'
 
 
 // CardWithAvatar start
@@ -30,7 +30,7 @@ class CardCustom extends React.Component {
          Liters : PropTypes.string.isRequired,
          Price : PropTypes.string.isRequired,
       }),
-  };
+  }
 
   render(){
 
@@ -63,7 +63,7 @@ class CardCustom extends React.Component {
           </CardActions>
         </Card>
       </Paper>
-    );
+    )
   }
 }
 
@@ -110,7 +110,7 @@ const itemStyles = {
     display: 'flex',
     flexWrap: 'wrap',
   },
-};
+}
 
 const ItemChips = ( chips ) => (
     <div style={itemStyles.wrapper}>
@@ -123,4 +123,4 @@ const ItemChips = ( chips ) => (
 // chip style and layout end -------------------------------
 
 
-export default CardCustom;
+export default CardCustom

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
-import AutoComplete from 'material-ui/AutoComplete';
-import ActionSearch from 'material-ui/svg-icons/action/search';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import Paper from 'material-ui/Paper'
+import RaisedButton from 'material-ui/RaisedButton'
+import AutoComplete from 'material-ui/AutoComplete'
+import ActionSearch from 'material-ui/svg-icons/action/search'
 
 const focus = () => {
   //  console.log("called")
@@ -65,4 +65,4 @@ const searchStyle = {
     }
 }
 
-export default SearchBar;
+export default SearchBar

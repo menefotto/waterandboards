@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import Divider from 'material-ui/Divider';
-import MenuItem from 'material-ui/MenuItem';
-import SvgIcon from 'material-ui/SvgIcon';
-import IconButton from 'material-ui/IconButton';
-import SocialPerson from 'material-ui/svg-icons/social/person';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import FileCloudUpload from 'material-ui/svg-icons/file/cloud-upload';
-import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
-import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle';
-import CommunicationMessage from 'material-ui/svg-icons/communication/message';
-import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import AppBar from 'material-ui/AppBar'
+import Drawer from 'material-ui/Drawer'
+import Divider from 'material-ui/Divider'
+import MenuItem from 'material-ui/MenuItem'
+import SvgIcon from 'material-ui/SvgIcon'
+import IconButton from 'material-ui/IconButton'
+import SocialPerson from 'material-ui/svg-icons/social/person'
+import NavigationClose from 'material-ui/svg-icons/navigation/close'
+import FileCloudUpload from 'material-ui/svg-icons/file/cloud-upload'
+import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money'
+import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle'
+import CommunicationMessage from 'material-ui/svg-icons/communication/message'
+import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new'
 
 
 class SideBar extends React.Component{
@@ -32,19 +32,19 @@ class SideBar extends React.Component{
   }
 
   componentDidMount() {
-    const { store } = this.context;
+    const { store } = this.context
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
   }
 
   componentWillUnmount() {
-    this.unsubscribe(); 
+    this.unsubscribe() 
   }
 
 
   render(){
-    const { store } = this.context;
-    const { getState } = store;
-    const { AppBarRdx, LoginReducer } = getState();
+    const { store } = this.context
+    const { getState } = store
+    const { AppBarRdx, LoginReducer } = getState()
  
     return(
       <div>
@@ -110,4 +110,4 @@ const Close = ({ onClick }) => {
 }
 
 
-export default SideBar;
+export default SideBar

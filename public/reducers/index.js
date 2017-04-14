@@ -7,8 +7,8 @@ import {
   CLOSE_NOTIFICATION_MENU,
   GET_MAIN_ELEMENT,
   SET_MAIN_ELEMENT,
-} from "../actions";
-import { combineReducers } from 'redux'; 
+} from "../actions"
+import { combineReducers } from 'redux' 
 
 // appbar type
 const AppBarRdx = (state = false, action) => {
@@ -67,7 +67,7 @@ const NotificationRdx = ( state, action) => {
 const LoginPageRdx = (state, action) => {
   switch(action.type){
     case REGISTER_STATE:
-      const register = state.register ? false: true;
+      const register = state.register ? false: true
 
       return {
         ...state,
@@ -111,4 +111,4 @@ const rootReducer = combineReducers({
 })
 
 
-export default rootReducer;
+export default rootReducer

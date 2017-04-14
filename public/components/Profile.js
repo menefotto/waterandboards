@@ -1,18 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
 import {
   GridList, 
   GridTile,
-} from 'material-ui/GridList';
-import Paper from 'material-ui/Paper';
-import Toggle from 'material-ui/Toggle';
-import Divider from 'material-ui/Divider';
-import Checkbox from 'material-ui/Checkbox';
-import Subheader from 'material-ui/Subheader';
-import TextField from 'material-ui/TextField';
-import {List, ListItem} from 'material-ui/List';
-import RaisedButton from "material-ui/RaisedButton";
+} from 'material-ui/GridList'
+import Paper from 'material-ui/Paper'
+import Toggle from 'material-ui/Toggle'
+import Divider from 'material-ui/Divider'
+import Checkbox from 'material-ui/Checkbox'
+import Subheader from 'material-ui/Subheader'
+import TextField from 'material-ui/TextField'
+import {List, ListItem} from 'material-ui/List'
+import RaisedButton from "material-ui/RaisedButton"
 
 
 class Profile extends React.Component{
@@ -21,18 +21,18 @@ class Profile extends React.Component{
   }
 
   componentDidMount() {
-    const { store } = this.context;
+    const { store } = this.context
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
   }
 
   componentWillUnmount() {
-    this.unsubscribe(); 
+    this.unsubscribe() 
   }
 
   render(){ 
-    const { store } = this.context;
-    const { getState } = store;
-    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState();
+    const { store } = this.context
+    const { getState } = store
+    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
 
     return(
       <div style={formStyles.root}>
@@ -136,4 +136,4 @@ const formStyles = {
 }
 
 
-export default Profile;
+export default Profile

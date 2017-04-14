@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import Paper from 'material-ui/Paper';
-import Divider from 'material-ui/Divider';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import { connect } from 'react-redux'
+import Paper from 'material-ui/Paper'
+import Divider from 'material-ui/Divider'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
 import {
   GridList, 
   GridTile,
-} from 'material-ui/GridList';
-import checkCookie from '../utils';
-import FontAwesome from '../deps/react-fontawesome';
+} from 'material-ui/GridList'
+import checkCookie from '../utils'
+import FontAwesome from '../deps/react-fontawesome'
 
 class Login extends React.Component{
   propTypes : {
@@ -25,18 +25,18 @@ class Login extends React.Component{
   }
  
   componentDidMount() {
-    const { store } = this.context;
+    const { store } = this.context
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
   }
 
   componentWillUnmount() {
-    this.unsubscribe(); 
+    this.unsubscribe() 
   }
 
   render(){
-    const { store } = this.context;
-    const { getState } = store;
-    const { AppBarRdx, LoginPageRdx } = getState();
+    const { store } = this.context
+    const { getState } = store
+    const { AppBarRdx, LoginPageRdx } = getState()
 
     return(
       <div style={formStyles.root}>
@@ -209,4 +209,4 @@ const formStyles = {
 }
 
 
-export default Login;
+export default Login

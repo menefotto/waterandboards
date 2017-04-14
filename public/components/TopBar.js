@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import AppBar from 'material-ui/AppBar';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import AppBar from 'material-ui/AppBar'
 
-import ToolBar from "./ToolBar";
-import SideBar from './SideBar';
-import * as Actions from "../actions";
+import ToolBar from "./ToolBar"
+import SideBar from './SideBar'
+import * as Actions from "../actions"
 
 
 class TopBar extends React.Component{
@@ -63,4 +63,4 @@ TopBar.defaultProps = {
 //  app bar end ----------------------------------------------------
 //
 
-export default TopBar;
+export default TopBar

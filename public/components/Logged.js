@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import Badge from 'material-ui/Badge';
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
-import SocialPerson from 'material-ui/svg-icons/social/person';
-import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
-import Notifications from "./Notifications.js";
+import React from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+import Badge from 'material-ui/Badge'
+import Avatar from 'material-ui/Avatar'
+import IconButton from 'material-ui/IconButton'
+import SocialPerson from 'material-ui/svg-icons/social/person'
+import NotificationsIcon from 'material-ui/svg-icons/social/notifications'
+import Notifications from "./Notifications.js"
 
 // logged class
 class Logged extends React.Component{
@@ -23,18 +23,18 @@ class Logged extends React.Component{
   }
 
   componentDidMount() {
-    const { store } = this.context;
+    const { store } = this.context
     this.unsubscribe = store.subscribe( () => this.forceUpdate() )
   }
 
   componentWillUnmount() {
-    this.unsubscribe(); 
+    this.unsubscribe() 
   }
 
   render(){ 
-    const { store } = this.context;
-    const { getState } = store;
-    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState();
+    const { store } = this.context
+    const { getState } = store
+    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
 
     let defaultAvatar
     if (this.props.avatar.length === 0){
@@ -99,4 +99,4 @@ const barStyle = {
 }
 
 
-export default Logged;
+export default Logged

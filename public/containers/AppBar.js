@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import TopBar from "../components/TopBar";
-import * as Actions from '../actions';
+import TopBar from "../components/TopBar"
+import * as Actions from '../actions'
 
 
 const AppBar = ({ actions }) => {
@@ -32,7 +32,7 @@ const AppBar = ({ actions }) => {
   }
 
   const handleNotificationOpen = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     actions.openNotificationMenu({
       showMenu: true,
@@ -94,17 +94,17 @@ const mapStateToProps = (state, props) => {
   return {
     state: state
   }
-};
+}
 
 /**
  * Map the actions to props.
  */
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(Actions, dispatch)
-});
+})
 
 /**
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(AppBar);
+export default connect(mapStateToProps, mapDispatchToProps)(AppBar)
