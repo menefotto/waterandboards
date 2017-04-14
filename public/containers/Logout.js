@@ -28,9 +28,14 @@ const Logout = ({ actions }) => {
   }
 
   const handleCancel = (e) => {
+    actions.toggleSideBar({
+      opened: false,
+    })
+
     actions.logoutSideBar({
       logoutShow: false,
     })
+
   }
 
   return(
