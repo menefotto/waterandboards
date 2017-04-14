@@ -1,4 +1,5 @@
 import {
+  SEARCH,
   LOGIN_STATE,
   APPBAR_TOGGLE,
   REGISTER_STATE,
@@ -38,13 +39,11 @@ const AppBarRdx = (state = false, action) => {
         anchorEl: action.anchorEl,
       }
 
-
     case CLOSE_NOTIFICATION_MENU:
       return {
         ...state,
         showMenu: action.showMenu,
       }
-
 
     default:
       return {
@@ -102,12 +101,27 @@ const BodyRdx = (state, action) => {
   }
 }
 
+const GridRdx = (state, action) => {
+  switch(action.type){
+    case SEARCH:
+      return {
+        ...state,
+      }
+
+    default:
+      return {
+        ...state,
+      }
+  }
+}
+
 
 const rootReducer = combineReducers({
   BodyRdx,
   AppBarRdx,
   LoginPageRdx,
   NotificationRdx,
+  GridRdx,
 })
 
 

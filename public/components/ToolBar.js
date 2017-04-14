@@ -115,7 +115,7 @@ const barStyle = {
   },
   centerLogged: {
     marginBottom: 20,
-    marginRight: "7%", 
+    marginRight: "9%", 
     marginLeft: 0,
   },
   centerSignUp: {

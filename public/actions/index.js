@@ -11,6 +11,7 @@ export const DEFAULT_SEARCH = "DEFAULT_SEARCH_ACTION"
 // scroll action takes care of updating the results
 export const SEARCH_SCROLL = "SEARCH_SCROLL_ACTION"
 // upload and delete and remove action take care or operations on items
+export const GET_ITEM = "GET_ITEM"
 export const UPLOAD_ITEM = "UPLOAD_ITEM_ACTION"
 export const DELETE_ITEM = "UPLOAD_ITEM_ACTION"
 // update profile action
@@ -25,6 +26,7 @@ export const STATUS_NOTIFICATION = "CHANGE_NOTIFICATION_STATUS"
 // main element to display
 export const GET_MAIN_ELEMENT = "GET_MAIN_ELEMENT"
 export const SET_MAIN_ELEMENT = "SET_MAIN_ELEMENT"
+
 
 export const setMainElement = ({ element }) => ({
   type: SET_MAIN_ELEMENT,
@@ -92,3 +94,4 @@ export const closeNotificationMenu = ({ showMenu }) => ({
   type: CLOSE_NOTIFICATION_MENU,
   showMenu,
 })
+

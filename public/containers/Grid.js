@@ -1,31 +1,61 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import {
   GridList, 
   GridTile
 } from 'material-ui/GridList'
+import CardCustom from '../components/Card.js';
+
 
 // Actual grid
 class Grid extends React.Component {
+  static contextTypes = {
+    store: PropTypes.object
+  }
 
-   render(){
-      return(
-        <div style={gridStyles.root}>
-          <GridList 
-            cellHeight='auto' 
-            cols={1} 
-            style={gridStyles.gridList}
-          >
-           {/* for loops here possibly fetching as well */}
-         </GridList> 
-      </div>
-      )
-   }
+  componentDidMount() {
+    const { store } = this.context
+    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe() 
+  }
+
+  render(){
+    const { store } = this.context
+    const { getState } = store
+    const { GridRdx } = getState()
+
+    return(
+      <div style={gridStyles.root}>
+        <GridList 
+          cellHeight='auto' 
+          cols={1} 
+          style={gridStyles.gridList}
+        >
+          {
+            GridRdx.list.map((elem, idx) =>
+              <GridTile key={idx}>
+                <CardCustom
+                  videoId={elem.videoId}
+                  itemChips={elem.itemChips}
+                  cardHeader={elem.cardHeader}
+                />
+              </GridTile>
+            ) 
+          }
+       </GridList> 
+    </div>
+    )
+  }
 }
+
 
 const Item = ({ Card }) => (
   <GridTile>
-    Card
+    {Card}
   </GridTile>
 ) 
 

@@ -18,41 +18,40 @@ import SocialBar from './SocialBar'
 class CardCustom extends React.Component {
    propTypes = {
       cardHeader : PropTypes.shape({
-         Title: PropTypes.string.isRequired,
-         Profile: PropTypes.string.isRequired,
-         Avatar: PropTypes.string.isRequired,
-         TimeAdded : PropTypes.string.isRequired,
+         title: PropTypes.string.isRequired,
+         profile: PropTypes.string.isRequired,
+         avatar: PropTypes.string.isRequired,
+         timeAdded : PropTypes.string.isRequired,
      }),
      videoId : PropTypes.string.isRequired,
      itemChips: PropTypes.shape({
-         Conditions : PropTypes.string.isRequired,
-         Size : PropTypes.string.isRequired,
-         Liters : PropTypes.string.isRequired,
-         Price : PropTypes.string.isRequired,
+         conditions : PropTypes.string.isRequired,
+         size : PropTypes.string.isRequired,
+         liters : PropTypes.string.isRequired,
+         price : PropTypes.string.isRequired,
       }),
   }
 
   render(){
-
-    const cardHeader = this.props.cardHeader
     const videoId = this.props.videoId
     const itemChips = this.props.itemChips
-    const socialLink = this.props.socialLink
+    const cardHeader = this.props.cardHeader
+    //    const socialLink = this.props.socialLink
 
     return(
       <Paper zDepth={1} style={cardStyle.paper}>
         <Card>
           <CardHeader
-          title={cardHeader.Profile}
-          subtitle={cardHeader.TimeAdded}
-          avatar={cardHeader.Avatar}
+          title={cardHeader.profile}
+          subtitle={cardHeader.timeAdded}
+          avatar={cardHeader.avatar}
           style={cardStyle.header}
           />
           <CardMedia>
               <YouTubeEmbed videoId={videoId} />
           </CardMedia>
               <CardTitle 
-                  title={ <strong> cardHeader.Title </strong> }
+                  title={ <strong> {cardHeader.title} </strong> }
                   style={cardStyle.title}
               />
           <CardText>
@@ -112,12 +111,12 @@ const itemStyles = {
   },
 }
 
-const ItemChips = ( chips ) => (
+const ItemChips = ({ chips }) => (
     <div style={itemStyles.wrapper}>
-      <Chip style={itemStyles.chip} > Conditions: {itemChips.Conditions} </Chip> 
-      <Chip style={itemStyles.chip} > Size: { itemChips.Size } </Chip> 
-      <Chip style={itemStyles.chip} > Liters: { itemChips.Liters }lt </Chip> 
-      <Chip style={itemStyles.chip} > Price: { itemChips.Price }$ </Chip>
+      <Chip style={itemStyles.chip} > Conditions: {chips.conditions} </Chip> 
+      <Chip style={itemStyles.chip} > Size: {chips.size } </Chip> 
+      <Chip style={itemStyles.chip} > Liters: {chips.liters }lt </Chip> 
+      <Chip style={itemStyles.chip} > Price: {chips.price }$ </Chip>
     </div>
 )
 // chip style and layout end -------------------------------

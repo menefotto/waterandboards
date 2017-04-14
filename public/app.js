@@ -13,7 +13,7 @@ import Body from './components/Body.js'
 import Grid from './containers/Grid.js'
 
 
-// redux initial reducers state
+// redux initial reducers state +need splitting
 const initialState = {
   BodyRdx: {
     element: <Grid />,
@@ -38,7 +38,27 @@ const initialState = {
       {text:"test notification 2", status:"done", checked: true},
       {text:"test notification 3", status:"done", checked: true},
     ],
-  }
+  },
+  GridRdx: {
+    list: [
+      { cardHeader: 
+        { 
+          title: "Simmer Quantum",
+          profile: "wind85",
+          avatar: "images/avatar.jpg",
+          timeAdded: "4 hours ago",
+        }, 
+        videoId: "iXjb1wAfQPo",
+        itemChips:
+        {
+          conditions: "good",
+          size: "236x85",
+          liters: "85lt",
+          price: "1800$",
+        }
+      },
+    ]
+  },
 }
 
 
