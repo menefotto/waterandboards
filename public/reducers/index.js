@@ -4,12 +4,14 @@ import {
   APPBAR_TOGGLE,
   REGISTER_STATE,
   SIDEBAR_STATE,
+  SIDEBAR_LOGOUT,
   OPEN_NOTIFICATION_MENU,
   CLOSE_NOTIFICATION_MENU,
   GET_MAIN_ELEMENT,
   SET_MAIN_ELEMENT,
 } from "../actions"
 import { combineReducers } from 'redux' 
+
 
 // appbar type
 const AppBarRdx = (state = false, action) => {
@@ -52,6 +54,7 @@ const AppBarRdx = (state = false, action) => {
   }
 }
 
+
 const NotificationRdx = ( state, action) => {
   switch(action.type){
     default:
@@ -79,6 +82,7 @@ const LoginPageRdx = (state, action) => {
       }
   }
 }
+
 
 const BodyRdx = (state, action) => {
   switch(action.type){
@@ -116,12 +120,29 @@ const GridRdx = (state, action) => {
 }
 
 
+const SideBarRdx = (state, action) => {
+  switch(action.type){
+    case SIDEBAR_LOGOUT:
+      return {
+        ...state,
+        logoutShow: action.logoutShow,
+      }
+
+    default:
+      return {
+        ...state,
+      }
+  }
+}
+
+
 const rootReducer = combineReducers({
   BodyRdx,
   AppBarRdx,
   LoginPageRdx,
   NotificationRdx,
   GridRdx,
+  SideBarRdx,
 })
 
 

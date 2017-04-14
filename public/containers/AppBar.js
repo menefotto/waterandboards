@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import TopBar from "../components/TopBar"
+import TopBar from '../components/TopBar'
+import Profile from '../components/Profile.js'
 import * as Actions from '../actions'
 
 
@@ -63,12 +64,18 @@ const AppBar = ({ actions }) => {
   }
 
   const handleProfile = (e) => {
+    actions.setMainElement({
+      element: <Profile />
+    })
     actions.toggleSideBar({
       opened: false,
     })
   }
 
   const handleLogout = (e) => {
+    actions.logoutSideBar({
+      logoutShow: true,
+    })
   }
 
   return (

@@ -59,6 +59,9 @@ const initialState = {
       },
     ]
   },
+  SideBarRdx: {
+    logoutShow: false,
+  },
 }
 
 
@@ -76,5 +79,6 @@ const App = () => (
     </Provider>
   </MuiThemeProvider>
 )
+
 
 ReactDOM.render(<App/>, document.getElementById('content'))

@@ -14,6 +14,7 @@ import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money'
 import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle'
 import CommunicationMessage from 'material-ui/svg-icons/communication/message'
 import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new'
+import Logout from '../containers/Logout.js'
 
 
 class SideBar extends React.Component{
@@ -25,6 +26,7 @@ class SideBar extends React.Component{
     hItems: PropTypes.func.isRequired,
     hProfile: PropTypes.func.isRequired,
     hLogout: PropTypes.func.isRequired,
+    oLogout: PropTypes.object.isRequired,
   }
  
   static contextTypes = {
@@ -79,6 +81,7 @@ class SideBar extends React.Component{
             primaryText="LogOut" 
             leftIcon={<ActionPowerSettingsNew />} 
             onTouchTap={this.props.hLogout}
+            children={this.props.oLogout}
           />
         </Drawer>
       </div>

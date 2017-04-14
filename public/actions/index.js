@@ -1,19 +1,20 @@
 // All the action names
 export const LOGIN_STATE = "LOGIN_STATE_ACTION"
 export const REGISTER_STATE = "REGISTER_STATE_ACTION"
-export const SIDEBAR_STATE = "SIDEBAR_STATE_ACTION"
+
 // appbar_toogle toggles the appbar from simple bar to login/logout bar
 export const APPBAR_TOGGLE = "APPBAR_TOGGLE"
+
 // search bar action
 export const SEARCH = "SEARCH_ACTION"
-// default search performed show the most recents added items
 export const DEFAULT_SEARCH = "DEFAULT_SEARCH_ACTION"
-// scroll action takes care of updating the results
 export const SEARCH_SCROLL = "SEARCH_SCROLL_ACTION"
+
 // upload and delete and remove action take care or operations on items
 export const GET_ITEM = "GET_ITEM"
 export const UPLOAD_ITEM = "UPLOAD_ITEM_ACTION"
 export const DELETE_ITEM = "UPLOAD_ITEM_ACTION"
+
 // update profile action
 export const UPDATE_PROFILE = "UPDATE_PROFILE_ACTION"
 
@@ -26,6 +27,14 @@ export const STATUS_NOTIFICATION = "CHANGE_NOTIFICATION_STATUS"
 // main element to display
 export const GET_MAIN_ELEMENT = "GET_MAIN_ELEMENT"
 export const SET_MAIN_ELEMENT = "SET_MAIN_ELEMENT"
+
+// sidebar
+export const SIDEBAR_STATE = "SIDEBAR_STATE_ACTION"
+export const SIDEBAR_LOGOUT = "SIDEBAR_LOGOUT"
+export const SIDEBAR_MESSAGES = "SIDEBAR_MESSAGES"
+export const SIDEBAR_PROFILE = "SIDEBAR_PROFILE"
+export const SIDEBAR_POSTED_ITEMS = "SIDEBAR_POSTED_ITEMS"
+export const SIDEBAR_UPLOADS = "SIDEBAR_UPLOADS"
 
 
 export const setMainElement = ({ element }) => ({
@@ -44,7 +53,7 @@ export const search = ({ searched }) => ({
   searched,
 })
 
-// login state handles what to show on the left side of the app bar
+// login state handles what to show on the right side of the app bar
 export const loginState = ({ logged }) => ({
    type: LOGIN_STATE,
    logged,
@@ -66,6 +75,12 @@ export const toggleAppBarState = ({ simplebar }) => ({
 export const toggleSideBar = ({ opened }) => ({
   type: SIDEBAR_STATE,
   opened,
+})
+
+// change sidebar from open to close and viceversa
+export const logoutSideBar = ({ logoutShow }) => ({
+  type: SIDEBAR_LOGOUT,
+  logoutShow,
 })
 
 // add notification to notification menu
@@ -94,4 +109,3 @@ export const closeNotificationMenu = ({ showMenu }) => ({
   type: CLOSE_NOTIFICATION_MENU,
   showMenu,
 })
-

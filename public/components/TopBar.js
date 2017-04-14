@@ -7,6 +7,7 @@ import AppBar from 'material-ui/AppBar'
 
 import ToolBar from "./ToolBar"
 import SideBar from './SideBar'
+import Logout from '../containers/Logout.js'
 import * as Actions from "../actions"
 
 
@@ -47,6 +48,7 @@ class TopBar extends React.Component{
           hProfile={this.props.hProfile}
           hItems={this.props.hItems}
           hLogout={this.props.hLogout}
+          oLogout={<Logout />}
           hClose={this.props.hClose}
         />
       </div>
