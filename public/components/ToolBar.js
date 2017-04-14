@@ -10,7 +10,6 @@ import {
 import Avatar from 'material-ui/Avatar';
 import Drawer from 'material-ui/Drawer';
 import RaisedButton from 'material-ui/RaisedButton';
-
 import SearchBar from "./SearchBar";
 import Logged from "./Logged";
 

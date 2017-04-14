@@ -28,7 +28,7 @@ class SideBar extends React.Component{
   }
  
   static contextTypes = {
-      store: PropTypes.object
+    store: PropTypes.object
   }
 
   componentDidMount() {
@@ -70,7 +70,7 @@ class SideBar extends React.Component{
             onTouchTap={this.props.hItems}
           />
           <MenuItem 
-            primaryText="Profile" 
+            primaryText="Profile Settings" 
             leftIcon={<ActionAccountCircle />} 
             onTouchTap={this.props.hProfile}
           />

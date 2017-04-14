@@ -5,10 +5,6 @@ import {
   GridTile
 } from 'material-ui/GridList';
 
-import Card from './Card';
-import SearchBar from './SearchBar';
-
-
 // Actual grid
 class Grid extends React.Component {
 
@@ -20,10 +16,9 @@ class Grid extends React.Component {
             cols={1} 
             style={gridStyles.gridList}
           >
-            <SearchBar />
-         {/* for loops here possibly fetching as well */}
+           {/* for loops here possibly fetching as well */}
          </GridList> 
-        </div>
+      </div>
       )
    }
 }

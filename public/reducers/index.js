@@ -5,8 +5,9 @@ import {
   SIDEBAR_STATE,
   OPEN_NOTIFICATION_MENU,
   CLOSE_NOTIFICATION_MENU,
+  GET_MAIN_ELEMENT,
+  SET_MAIN_ELEMENT,
 } from "../actions";
-
 import { combineReducers } from 'redux'; 
 
 // appbar type
@@ -80,10 +81,34 @@ const LoginPageRdx = (state, action) => {
   }
 }
 
+const BodyRdx = (state, action) => {
+  switch(action.type){
+    case GET_MAIN_ELEMENT:
+      return {
+        ...state,
+        element: state.element,
+      }
+
+    case SET_MAIN_ELEMENT:
+      return {
+        ...state,
+        element: action.element,
+      }
+
+    default:
+      return {
+        ...state,
+      }
+  }
+}
+
+
 const rootReducer = combineReducers({
+  BodyRdx,
   AppBarRdx,
   LoginPageRdx,
   NotificationRdx,
 })
+
 
 export default rootReducer;

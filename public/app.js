@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import AppBar from './containers/AppBar.js';
-import SignUp from './containers/SignUp.js';
-import Profile from './components/Profile.js';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import rootReducer from './reducers';
-import BlueGrey from './themes';
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+
+import BlueGrey from './themes';
+import rootReducer from './reducers';
+import Body from './components/Body.js';
 
 
 // redux initial reducers state
 const initialState = {
+  BodyRdx: {
+    element: null,
+  },
   AppBarRdx: { 
     opened: false, 
     simplebar: false, 
@@ -36,8 +37,9 @@ const initialState = {
       {text:"test notification 2", status:"done", checked: true},
       {text:"test notification 3", status:"done", checked: true},
     ],
-  },
+  }
 }
+
 
 const reduxStore = createStore(
   rootReducer, 
@@ -49,10 +51,7 @@ const reduxStore = createStore(
 const App = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
     <Provider store={reduxStore}>
-      <div> 
-        <AppBar />
-        <Profile />
-      </div>
+      <Body />
     </Provider>
   </MuiThemeProvider>
 )

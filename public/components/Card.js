@@ -15,7 +15,7 @@ import SocialBar from './SocialBar';
 
 
 // CardWithAvatar start
-class Card extends React.Component {
+class CardCustom extends React.Component {
    propTypes = {
       cardHeader : PropTypes.shape({
          Title: PropTypes.string.isRequired,
@@ -123,4 +123,4 @@ const ItemChips = ( chips ) => (
 // chip style and layout end -------------------------------
 
 
-export default Card;
+export default CardCustom;

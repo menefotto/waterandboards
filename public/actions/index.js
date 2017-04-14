@@ -22,6 +22,19 @@ export const CLOSE_NOTIFICATION_MENU = "CLOSE_NOTIFICATION_MENU";
 export const ADD_NOTIFICATION = "ADD_NEW_NOTIFICATION";
 export const STATUS_NOTIFICATION = "CHANGE_NOTIFICATION_STATUS";
 
+// main element to display
+export const GET_MAIN_ELEMENT = "GET_MAIN_ELEMENT";
+export const SET_MAIN_ELEMENT = "SET_MAIN_ELEMENT";
+
+export const setMainElement = ({ element }) => ({
+  type: SET_MAIN_ELEMENT,
+  element,
+});
+
+export const getMainElement = ({ element }) => ({
+  type: GET_MAIN_ELEMENT,
+  element,
+});
 
 // handle function from the search bar
 export const search = ({ searched }) => ({

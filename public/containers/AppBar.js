@@ -46,21 +46,26 @@ const AppBar = ({ actions }) => {
     })
   }
 
-
   const handleSeeAllNotifications = (e) => {
     // action and reducer handling has to be implemented
   }
 
   const handleUploads = (e) => {
+
   }
 
   const handleMessages = (e) => {
+
   }
 
   const handleItems = (e) => {
+
   }
 
   const handleProfile = (e) => {
+    actions.toggleSideBar({
+      opened: false,
+    })
   }
 
   const handleLogout = (e) => {
