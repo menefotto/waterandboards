@@ -16,19 +16,7 @@ import Logged from "./Logged"
 
 
 class ToolBar extends React.Component{
-  propTypes : {
-    logo: PropTypes.string,
-    bTitle: PropTypes.string,
-    element: PropTypes.element,
-    hOpen: PropTypes.func.isRequired,
-    hLogin: PropTypes.func.isRequired,
-    hSearch: PropTypes.func.isRequired,
-    hMenu: PropTypes.func.isRequired,
-    hRequestClose: PropTypes.func.isRequired,
-    hSeeAllNotifications: PropTypes.func.isRequired,
-  }
-
-  static contextTypes = {
+ static contextTypes = {
     store: PropTypes.object.isRequired
   }
 
@@ -87,6 +75,19 @@ class ToolBar extends React.Component{
 }
 
 
+ToolBar.propTypes = {
+  logo: PropTypes.string,
+  bTitle: PropTypes.string,
+  element: PropTypes.element,
+  hOpen: PropTypes.func.isRequired,
+  hLogin: PropTypes.func.isRequired,
+  hSearch: PropTypes.func.isRequired,
+  hMenu: PropTypes.func.isRequired,
+  hRequestClose: PropTypes.func.isRequired,
+  hSeeAllNotifications: PropTypes.func.isRequired,
+}
+
+ 
 ToolBar.defaultProps = {
   logo: "images/logo.png",
   bTitle: "WaterAndBoards",

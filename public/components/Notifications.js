@@ -9,12 +9,7 @@ import CircularProgress from 'material-ui/CircularProgress'
 
 
 class Notifications extends React.Component{
-  propTypes : {
-    hRequestClose: PropTypes.func.isRequired,
-    hSeeAllNotifications: PropTypes.func.isRequired,
-  }
-
-  static contextTypes = {
+ static contextTypes = {
       store: PropTypes.object
   }
 
@@ -59,17 +54,15 @@ class Notifications extends React.Component{
   }
 }
 
+Notifications.propTypes = {
+  hRequestClose: PropTypes.func.isRequired,
+  hSeeAllNotifications: PropTypes.func.isRequired,
+}
+
+
 // Notification status looks like the following: 
 // notification[{status:"done",text:"hello"}]
-
-
 class NoticationItem extends React.Component{
-  propTypes: {
-    idx: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    loadingStatus: PropTypes.element
-  }
-
   static contextTypes = {
       store: PropTypes.object
   }
@@ -109,7 +102,13 @@ class NoticationItem extends React.Component{
   }
 }
 
+NoticationItem.propTypes = {
+  idx: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
+  loadingStatus: PropTypes.element
+}
 
+ 
 const ItemStatus = ({text, done}) => {
   return(
     <div style={{marginBottom: 10, marginTop: 10}}>
@@ -132,7 +131,6 @@ const ItemStatus = ({text, done}) => {
     </div>
   )
 }
-
 
 const ItemStatusStyle = {
   progress:  {

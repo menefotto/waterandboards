@@ -16,22 +16,6 @@ import SocialBar from './SocialBar'
 
 // CardWithAvatar start
 class CardCustom extends React.Component {
-   propTypes = {
-      cardHeader : PropTypes.shape({
-         title: PropTypes.string.isRequired,
-         profile: PropTypes.string.isRequired,
-         avatar: PropTypes.string.isRequired,
-         timeAdded : PropTypes.string.isRequired,
-     }),
-     videoId : PropTypes.string.isRequired,
-     itemChips: PropTypes.shape({
-         conditions : PropTypes.string.isRequired,
-         size : PropTypes.string.isRequired,
-         liters : PropTypes.string.isRequired,
-         price : PropTypes.string.isRequired,
-      }),
-  }
-
   render(){
     const videoId = this.props.videoId
     const itemChips = this.props.itemChips
@@ -67,7 +51,21 @@ class CardCustom extends React.Component {
 }
 
 
-// card with avatar end -----------------------------------------
+CardCustom.propTypes = {
+  cardHeader : PropTypes.shape({
+     title: PropTypes.string.isRequired,
+     profile: PropTypes.string.isRequired,
+     avatar: PropTypes.string.isRequired,
+     timeAdded : PropTypes.string.isRequired,
+ }),
+ videoId : PropTypes.string.isRequired,
+ itemChips: PropTypes.shape({
+     conditions : PropTypes.string.isRequired,
+     size : PropTypes.string.isRequired,
+     liters : PropTypes.string.isRequired,
+     price : PropTypes.string.isRequired,
+  }),
+}
 
 
 // card with avatar and style
@@ -86,7 +84,7 @@ const cardStyle = {
     },
 }
 
-// youtube embed
+
 const YouTubeEmbed = ({ videoId }) => {
   const id = "https://www.youtube.com/embed/" + videoId + "?controls=0"
   return(
@@ -101,18 +99,6 @@ const YouTubeEmbed = ({ videoId }) => {
   )
 }
 
-// end youtube embed -----------------------------------------
-
-// chips layout and style
-const itemStyles = {
-  chip: {
-    margin: 4,
-  },
-  wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-}
 
 const ItemChips = ({ chips }) => (
     <div style={itemStyles.wrapper}>
@@ -122,7 +108,16 @@ const ItemChips = ({ chips }) => (
       <Chip style={itemStyles.chip} > Price: {chips.price }$ </Chip>
     </div>
 )
-// chip style and layout end -------------------------------
+
+const itemStyles = {
+  chip: {
+    margin: 4,
+  },
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+}
 
 
 export default CardCustom

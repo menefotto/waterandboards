@@ -10,14 +10,6 @@ import Notifications from "./Notifications.js"
 
 // logged class
 class Logged extends React.Component{
-  propTypes : {
-    avatar: PropTypes.string,
-    hMenu: PropTypes.func.isRequired,
-    hSettings: PropTypes.func.isRequired,
-    hRequestClose: PropTypes.func.isRequired,
-    hSeeAllNotifications: PropTypes.func.isRequired,
-  }
-
   static contextTypes = {
     store: PropTypes.object
   }
@@ -86,6 +78,13 @@ Logged.defaultProps = {
   avatar: "",
 }
 
+Logged.propTypes = {
+  avatar: PropTypes.string,
+  hMenu: PropTypes.func.isRequired,
+  hSettings: PropTypes.func.isRequired,
+  hRequestClose: PropTypes.func.isRequired,
+  hSeeAllNotifications: PropTypes.func.isRequired,
+}
 
 const barStyle = {
   right: {

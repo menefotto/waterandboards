@@ -18,17 +18,6 @@ import Logout from '../containers/Logout.js'
 
 
 class SideBar extends React.Component{
-  propTypes : {
-    sTitle: PropTypes.string,
-    hClose: PropTypes.func.isRequired,
-    hUploads: PropTypes.func.isRequired,
-    hMessages: PropTypes.func.isRequired,
-    hItems: PropTypes.func.isRequired,
-    hProfile: PropTypes.func.isRequired,
-    hLogout: PropTypes.func.isRequired,
-    oLogout: PropTypes.object.isRequired,
-  }
- 
   static contextTypes = {
     store: PropTypes.object
   }
@@ -88,6 +77,19 @@ class SideBar extends React.Component{
     )
   }
 }
+
+
+SideBar.propTypes = {
+  sTitle: PropTypes.string,
+  hClose: PropTypes.func.isRequired,
+  hUploads: PropTypes.func.isRequired,
+  hMessages: PropTypes.func.isRequired,
+  hItems: PropTypes.func.isRequired,
+  hProfile: PropTypes.func.isRequired,
+  hLogout: PropTypes.func.isRequired,
+  oLogout: PropTypes.object.isRequired,
+}
+ 
 
 SideBar.defaultProps = {
   sTitle: "Settings",

@@ -11,10 +11,6 @@ const focus = () => {
 }
 
 class SearchBar extends React.Component {
-   propTypes: {
-      handleSearch: PropTypes.func.isRequired,
-   }
-
   render(){
     return(
       <div style={searchStyle.paper}>
@@ -29,15 +25,21 @@ class SearchBar extends React.Component {
                 onNewRequest={this.props.handleSearch}
                 onFocus={focus}
             />
-            <SearchButton style={{marginRight: "5%" }} onClick={this.props.handleSearch} />
+            <SearchButton 
+              style={{marginRight: "5%" }} 
+              onClick={this.props.handleSearch} 
+            />
         </Paper>
       </div>
     )
   }
 }
-// end search style and data source ------------------------------
 
+SearchBar.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+}
 
+ 
 const SearchButton = ( onClick ) => (
     <RaisedButton
         secondary={true}
@@ -45,7 +47,6 @@ const SearchButton = ( onClick ) => (
     >
     </RaisedButton>
 )
-
 
 // search style and data source
 const source = ["board","sails","misc"]
@@ -64,5 +65,6 @@ const searchStyle = {
         marginRight: "5%",
     }
 }
+
 
 export default SearchBar

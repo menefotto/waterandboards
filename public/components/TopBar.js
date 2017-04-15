@@ -12,24 +12,6 @@ import * as Actions from "../actions"
 
 
 class TopBar extends React.Component{
-  propTypes : {
-    element: PropTypes.element,
-    logo: PropTypes.string,
-    sTitle: PropTypes.string,
-    hClose: PropTypes.func.isRequired,
-    hOpen: PropTypes.func.isRequired,
-    hLogin: PropTypes.func.isRequired,
-    hSearch: PropTypes.func.isRequired,
-    hUploads: PropTypes.func.isRequired,
-    hMessages: PropTypes.func.isRequired,
-    hItems: PropTypes.func.isRequired,
-    hProfile: PropTypes.func.isRequired,
-    hLogout: PropTypes.func.isRequired,
-    hMenu: PropTypes.func.isRequired,
-    hRequestClose: PropTypes.func.isRequired,
-    hSeeAllNotifications: PropTypes.func.isRequired,
-  }
-
   render(){
     return(
       <div>
@@ -57,12 +39,28 @@ class TopBar extends React.Component{
 }
 
 
+TopBar.propTypes = {
+  element: PropTypes.element,
+  logo: PropTypes.string,
+  sTitle: PropTypes.string,
+  hClose: PropTypes.func.isRequired,
+  hOpen: PropTypes.func.isRequired,
+  hLogin: PropTypes.func.isRequired,
+  hSearch: PropTypes.func.isRequired,
+  hUploads: PropTypes.func.isRequired,
+  hMessages: PropTypes.func.isRequired,
+  hItems: PropTypes.func.isRequired,
+  hProfile: PropTypes.func.isRequired,
+  hLogout: PropTypes.func.isRequired,
+  hMenu: PropTypes.func.isRequired,
+  hRequestClose: PropTypes.func.isRequired,
+  hSeeAllNotifications: PropTypes.func.isRequired,
+}
+
+
 TopBar.defaultProps = {
   element: <span />
 }
 
-
-//  app bar end ----------------------------------------------------
-//
 
 export default TopBar

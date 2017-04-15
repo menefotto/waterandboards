@@ -7,16 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 
 
 class Message extends React.Component{
-  propTypes: {
-    hOk: PropTypes.func.isRequired,
-    optionalText: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    hCancel: PropTypes.func.isRequired,
-    rButtonLabel: PropTypes.string.isRequired,
-    lButtonLabel: PropTypes.string.isRequired,
-  }
-
-  static contextTypes = {
+ static contextTypes = {
     store: PropTypes.object,
   }
 
@@ -63,5 +54,14 @@ class Message extends React.Component{
   }
 }
 
+Message.propTypes = {
+  hOk: PropTypes.func.isRequired,
+  optionalText: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  hCancel: PropTypes.func.isRequired,
+  rButtonLabel: PropTypes.string.isRequired,
+  lButtonLabel: PropTypes.string.isRequired,
+}
 
+ 
 export default Message

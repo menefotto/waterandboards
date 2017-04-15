@@ -15,12 +15,6 @@ import FontAwesome from '../deps/react-fontawesome'
 
 
 class Login extends React.Component{
-  propTypes : {
-    register: PropTypes.bool,
-    hRegister: PropTypes.func.isRequired,
-    hLogin: PropTypes.func.isRequired,
-  }
-
   static contextTypes = {
       store: PropTypes.object
   }
@@ -93,7 +87,6 @@ class Login extends React.Component{
                       name="facebook" 
                       size="lg" 
                       title="share it on facebook"
-                      style={iconStyle.f} 
                     />
                   }
                   backgroundColor={"#3B5998"} 
@@ -111,7 +104,6 @@ class Login extends React.Component{
                       name="google" 
                       size="lg" 
                       title="share it on google"
-                      style={iconStyle.g} 
                     />
                   }
                   backgroundColor={"#DB4437"} 
@@ -146,21 +138,16 @@ class Login extends React.Component{
     }    
 }
 
+Loggin.propTypes = {
+  register: PropTypes.bool,
+  hRegister: PropTypes.func.isRequired,
+  hLogin: PropTypes.func.isRequired,
+}
+
 Login.defaultProps = {
     //    registered = checkCookie("registered")
   register: false,
 }
-
-
-const iconStyle = {
-  f: {
-    //marginRight: "30%",
-  },
-  g: {
-    // marginRight: "5%",
-  },
-}
-
 
 const formStyles = {
   root: {

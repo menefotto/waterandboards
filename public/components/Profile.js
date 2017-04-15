@@ -110,7 +110,6 @@ class Profile extends React.Component{
   }
 }
 
-
 const formStyles = {
   root: {
     display: 'flex',
