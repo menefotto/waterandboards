@@ -5,5 +5,5 @@
 - Fix notification menu position #done
 - The profile page should use modal dialogs to perform changes. #done
 
-
+Add likes increment/decrement
 Add mobile wrapper to change size dynamically.

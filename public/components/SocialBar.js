@@ -30,10 +30,11 @@ class SocialBar extends React.Component{
       <div style={iconStyle.bar}>
         <Checkbox
           style={iconStyle.like}
-          label={GridRdx.list[this.props.idx].likes + " likes"}
-          labelStyle={{minWidth: 60}}
+          iconStyle={{width: 23,height: 27}}
+          labelStyle={{minWidth: 60, fontSize: 12}}
           uncheckedIcon={<ActionFavoriteBorder />}
           checkedIcon={<ActionFavorite style={{fill: 'red'}} />} 
+          label={GridRdx.list[this.props.idx].likes + " likes"}
         />
         {/* fill workaround since it doesn't change color otherwise */}
         <button style={iconStyle.socialT}>
