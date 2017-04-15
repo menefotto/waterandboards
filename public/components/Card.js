@@ -15,35 +15,36 @@ import SocialBar from './SocialBar'
 import YouTubeEmbed from './YouTubeEmbed'
 
 
-// CardWithAvatar start
 class CardCustom extends React.Component {
 
   render(){
-    const videoId = this.props.videoId
-    const itemChips = this.props.itemChips
     const cardHeader = this.props.cardHeader
+    const itemChips = this.props.itemChips
+    const videoId = this.props.videoId
+    const index = this.props.index
     //    const socialLink = this.props.socialLink
+
     return(
       <Paper zDepth={1} style={cardStyle.paper}>
         <Card>
           <CardHeader
-          title={cardHeader.profile}
-          subtitle={cardHeader.timeAdded}
-          avatar={cardHeader.avatar}
-          style={cardStyle.header}
+            title={cardHeader.profile}
+            subtitle={cardHeader.timeAdded}
+            avatar={cardHeader.avatar}
+            style={cardStyle.header}
           />
           <CardMedia>
-              <YouTubeEmbed videoId={videoId} />
+            <YouTubeEmbed videoId={videoId} />
           </CardMedia>
-              <CardTitle 
-                  title={ <strong> {cardHeader.title} </strong> }
-                  style={cardStyle.title}
-              />
+            <CardTitle 
+              style={cardStyle.title}
+              title={<strong> {cardHeader.title} </strong>}
+            />
           <CardText>
-              <ItemChips chips={itemChips}/>
+            <ItemChips chips={itemChips}/>
           </CardText>
           <CardActions>
-              <SocialBar />
+            <SocialBar idx={index}/>
           </CardActions>
         </Card>
       </Paper>
@@ -58,6 +59,7 @@ CardCustom.propTypes = {
     avatar: PropTypes.string.isRequired,
     timeAdded : PropTypes.string.isRequired,
   }),
+  index: PropTypes.number.isRequired,
   videoId : PropTypes.string.isRequired,
   itemChips: PropTypes.shape({
     conditions : PropTypes.string.isRequired,

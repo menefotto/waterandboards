@@ -39,6 +39,7 @@ class Grid extends React.Component {
             GridRdx.list.map((elem, idx) =>
               <GridTile key={idx}>
                 <CardCustom
+                  index={idx}
                   videoId={elem.videoId}
                   itemChips={elem.itemChips}
                   cardHeader={elem.cardHeader}
@@ -59,7 +60,6 @@ const Item = ({ Card }) => (
   </GridTile>
 ) 
 
-// Grid style and layout 
 const gridStyles = {
   root: {
     display: 'flex',

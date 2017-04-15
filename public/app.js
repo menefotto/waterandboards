@@ -49,13 +49,14 @@ const initialState = {
           timeAdded: "4 hours ago",
         }, 
         videoId: "6xZqqZs4Gjk",
+        likes: 1,
         itemChips:
         {
           conditions: "good",
           size: "236x85",
           liters: "85",
           price: "1800",
-        }
+        },
       },
     ]
   },
