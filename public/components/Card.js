@@ -87,16 +87,19 @@ const cardStyle = {
 }
 
 // youtube embed
-const YouTubeEmbed = ( videoId ) => (
+const YouTubeEmbed = ({ videoId }) => {
+  const id = "https://www.youtube.com/embed/" + videoId + "?controls=0"
+  return(
     <div style={{marginLeft: "2.5%"}}>
         <iframe 
             width="640" 
             height="360" 
             frameBorder="0"
-            src={"https://www.youtube.com/embed/" + videoId + "?controls=1"}>
+            src={id}>
         </iframe>
-    </div>
-)
+      </div>
+  )
+}
 
 // end youtube embed -----------------------------------------
 

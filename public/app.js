@@ -49,13 +49,13 @@ const initialState = {
           avatar: "images/avatar.jpg",
           timeAdded: "4 hours ago",
         }, 
-        videoId: "iXjb1wAfQPo",
+        videoId: "6xZqqZs4Gjk",
         itemChips:
         {
           conditions: "good",
           size: "236x85",
-          liters: "85lt",
-          price: "1800$",
+          liters: "85",
+          price: "1800",
         }
       },
     ]
