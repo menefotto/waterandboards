@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import { 
   Toolbar, 
   ToolbarGroup, 
@@ -10,13 +10,12 @@ import {
 import Avatar from 'material-ui/Avatar'
 import Drawer from 'material-ui/Drawer'
 import RaisedButton from 'material-ui/RaisedButton'
-
 import SearchBar from "./SearchBar"
 import Logged from "./Logged"
 
 
 class ToolBar extends React.Component{
- static contextTypes = {
+  static contextTypes = {
     store: PropTypes.object.isRequired
   }
 
@@ -50,9 +49,9 @@ class ToolBar extends React.Component{
 
     return(
       <Toolbar style={barStyle.bar}>
-        <ToolbarGroup firstChild={true}>
-          <Avatar src={this.props.logo} style={barStyle.left} />
-          <ToolbarTitle text={this.props.bTitle} style={barStyle.title}/>
+        <ToolbarGroup style={barStyle.left} firstChild={true}>
+          <Avatar src={this.props.logo} />
+          <ToolbarTitle text={this.props.bTitle} style={barStyle.title} />
         </ToolbarGroup>
         <ToolbarGroup 
           style={
@@ -66,14 +65,19 @@ class ToolBar extends React.Component{
             <SearchBar onClick={this.props.hSearch} />
           }
         </ToolbarGroup>
-        <ToolbarGroup lastChild={true}>
+        <ToolbarGroup 
+          style={
+            AppBarRdx.logged ? 
+              barStyle.rightLogged : barStyle.right
+          } 
+          lastChild={true}
+        >
           {rightElement}
         </ToolbarGroup>
       </Toolbar>
     )
   }
 }
-
 
 ToolBar.propTypes = {
   logo: PropTypes.string,
@@ -94,45 +98,42 @@ ToolBar.defaultProps = {
 
 
 const SignUp = ({ onClick }) => (
-  <RaisedButton 
-    default={true} 
-    style={barStyle.rightLogin}
-    onClick={onClick}
-  >
+  <div>
+    <RaisedButton 
+      default={true} 
+      onClick={onClick}
+    >
       Sign Up
-  </RaisedButton>
+    </RaisedButton>
+  </div>
 )
-
 
 const barStyle = {
   bar: {
     height: 70,
+    width: "100%",
   },
-  rightLogin: {
-    marginRight: "2%",
+  left: {
+    marginLeft: "2%",
   },
   right: {
-    marginBottom: 20,
     marginRight: "2%",
+  },
+  rightLogged: {
+    marginRight: "0%",
   },
   centerLogged: {
     marginBottom: 20,
-    marginRight: "9%", 
-    marginLeft: 0,
+    marginRight: "15%", 
   },
   centerSignUp: {
     marginBottom: 20,
-    marginRight: "9%", 
-    marginLeft: 0,
-  },
-  left: {
-    marginBottom: 3,
-    marginLeft: "8%",
+    marginRight: "19%", 
   },
   title: {
+    fontSize: 28,
     marginLeft: 4,
     marginRight: 2,
-    fontSize: 28,
     fontFamily: "'Architects Daughter', cursive",
   }
 }

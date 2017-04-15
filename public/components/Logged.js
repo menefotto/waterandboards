@@ -90,7 +90,6 @@ const barStyle = {
   right: {
     width: 160,
     marginBottom: 12,
-    marginRight: "1%",
   },
   icon: {
     marginRight: "8%",
