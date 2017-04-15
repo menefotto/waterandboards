@@ -10,8 +10,8 @@ import ActionSearch from 'material-ui/svg-icons/action/search'
 class SearchBar extends React.Component {
   render(){
     return(
-      <div style={searchStyle.paper}>
-        <Paper zDepth={2} >
+      <div>
+        <Paper zDepth={2} style={searchStyle.paper}>
             <AutoComplete 
                 name="autocomp" 
                 autoFocus={true}
@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
                 onNewRequest={this.props.handleSearch}
             />
             <SearchButton 
-              style={{marginRight: "5%"}} 
+              style={searchStyle.button} 
               onClick={this.props.handleSearch} 
             />
         </Paper>
@@ -46,19 +46,22 @@ const SearchButton = ( onClick ) => (
 
 const source = ["board","sails","misc"]
 const searchStyle = {
-    paper: {
-        align: "center",
-        height: 30,
-        width: 500,
-        marginTop : 0,
-        marginBottom: 0,
-        backgroundColor: "#FFFFFF",
-    },
-    input: {
-        width : 350,
-        marginLeft: "5%",
-        marginRight: "5%",
-    }
+  paper: {
+    align: "center",
+    height: 50,
+    width: "150%",
+    marginTop : 20,
+    marginBottom: 0,
+    backgroundColor: "#FFFFFF",
+  },
+  input: {
+    width : "60%",
+    marginLeft: "7.5%",
+    marginRight: "5%",
+  },
+  button: {
+    width: "20%",
+  },
 }
 
 
