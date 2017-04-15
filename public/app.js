@@ -10,7 +10,7 @@ injectTapEventPlugin()
 import BlueGrey from './themes'
 import rootReducer from './reducers'
 import Body from './components/Body.js'
-import Grid from './containers/Grid.js'
+import Grid from './components/Grid.js'
 
 
 // redux initial reducers state +need splitting

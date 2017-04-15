@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Grid from '../containers/Grid.js'
+import Grid from '../components/Grid.js'
 import Message from '../components/Message.js'
 import * as Actions from '../actions'
 

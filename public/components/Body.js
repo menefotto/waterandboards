@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Profile from './Profile.js'
 import SignUp from '../containers/SignUp.js'
 import AppBar from '../containers/AppBar.js'
-import Grid from '../containers/Grid.js'
+import Grid from '../components/Grid.js'
 
 
 class Body extends React.Component{
