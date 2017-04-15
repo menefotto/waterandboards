@@ -87,7 +87,6 @@ ToolBar.propTypes = {
   hSeeAllNotifications: PropTypes.func.isRequired,
 }
 
- 
 ToolBar.defaultProps = {
   logo: "images/logo.png",
   bTitle: "WaterAndBoards",

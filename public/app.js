@@ -13,7 +13,6 @@ import Body from './components/Body.js'
 import Grid from './components/Grid.js'
 
 
-// redux initial reducers state +need splitting
 const initialState = {
   BodyRdx: {
     element: <Grid />,
@@ -74,7 +73,9 @@ const reduxStore = createStore(
 
 
 const App = () => (
-  <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
+  <MuiThemeProvider 
+    muiTheme={getMuiTheme(BlueGrey)}
+  >
     <Provider store={reduxStore}>
       <Body />
     </Provider>

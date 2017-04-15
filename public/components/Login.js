@@ -138,14 +138,14 @@ class Login extends React.Component{
     }    
 }
 
-Loggin.propTypes = {
+Login.propTypes = {
   register: PropTypes.bool,
   hRegister: PropTypes.func.isRequired,
   hLogin: PropTypes.func.isRequired,
 }
 
 Login.defaultProps = {
-    //    registered = checkCookie("registered")
+  // registered = checkCookie("registered")
   register: false,
 }
 

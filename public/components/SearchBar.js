@@ -6,9 +6,6 @@ import RaisedButton from 'material-ui/RaisedButton'
 import AutoComplete from 'material-ui/AutoComplete'
 import ActionSearch from 'material-ui/svg-icons/action/search'
 
-const focus = () => {
-  //  console.log("called")
-}
 
 class SearchBar extends React.Component {
   render(){
@@ -17,16 +14,15 @@ class SearchBar extends React.Component {
         <Paper zDepth={2} >
             <AutoComplete 
                 name="autocomp" 
-                fullWidth={true}
-                style={searchStyle.input}
-                dataSource={source} 
-                hintText="Search for windsurf gear"
                 autoFocus={true}
+                fullWidth={true}
+                dataSource={source} 
+                style={searchStyle.input}
+                hintText="Search for windsurf gear"
                 onNewRequest={this.props.handleSearch}
-                onFocus={focus}
             />
             <SearchButton 
-              style={{marginRight: "5%" }} 
+              style={{marginRight: "5%"}} 
               onClick={this.props.handleSearch} 
             />
         </Paper>
@@ -36,7 +32,7 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-  handleSearch: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func,
 }
 
  
@@ -48,7 +44,6 @@ const SearchButton = ( onClick ) => (
     </RaisedButton>
 )
 
-// search style and data source
 const source = ["board","sails","misc"]
 const searchStyle = {
     paper: {

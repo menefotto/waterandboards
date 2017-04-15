@@ -1,7 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
 import TopBar from '../components/TopBar'
 import Profile from '../components/Profile.js'
 import * as Actions from '../actions'
@@ -51,22 +51,20 @@ const AppBar = ({ actions }) => {
     // action and reducer handling has to be implemented
   }
 
-  const handleUploads = (e) => {
+  const handleItems = (e) => {
+  }
 
+  const handleUploads = (e) => {
   }
 
   const handleMessages = (e) => {
-
-  }
-
-  const handleItems = (e) => {
-
   }
 
   const handleProfile = (e) => {
     actions.setMainElement({
       element: <Profile />
     })
+
     actions.toggleSideBar({
       opened: false,
     })
