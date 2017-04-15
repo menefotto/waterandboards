@@ -8,7 +8,7 @@ import SocialPerson from 'material-ui/svg-icons/social/person'
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications'
 import Notifications from "./Notifications.js"
 
-// logged class
+
 class Logged extends React.Component{
   static contextTypes = {
     store: PropTypes.object

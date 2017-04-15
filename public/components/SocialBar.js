@@ -6,7 +6,6 @@ import ActionFavorite from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 
 
-// login page
 const SocialBar = () => (
   <div style={iconStyle.bar}>
     <Checkbox
@@ -14,7 +13,7 @@ const SocialBar = () => (
       uncheckedIcon={<ActionFavoriteBorder />}
       checkedIcon={<ActionFavorite style={{color: '#FF0000'}} />}
     />
-    <button style={iconStyle.social}>
+    <button style={iconStyle.socialT}>
       <FontAwesome 
         name="twitter-square" 
         size="2x" 
@@ -22,7 +21,7 @@ const SocialBar = () => (
         style={iconStyle.ico} 
       />
     </button>
-    <button style={iconStyle.social}>
+    <button style={iconStyle.socialF}>
       <FontAwesome 
         name="facebook-official" 
         size="2x" 
@@ -33,33 +32,47 @@ const SocialBar = () => (
   </div>
 )
 
-
-// social bar style and layout
 const iconStyle = {
   bar: {
-    height: 60,
+    height: 40,
+    width: 660,
+    marginBottom: 10,
+    display: 'flex',  // display and flexDirection are used to inline it
+    flexDirection: 'row',
   },
-  social: {
-    backgroundColor: "transparent",
-    transform: `translateY(1px)`,
-    marginBottom : 4,
-    marginRight: 8, 
-    marginLeft: 8, 
-    marginTop: 0,
-    border: 'none',
+  socialT: {
     width: 32,
-  },
-  like : {
-    marginBottom : 4,
-    marginLeft: 16,
-    marginRight: 10 ,
+    border: 'none',
     marginTop: 0,
+    marginRight: 8, 
+    marginLeft: 460, 
+    marginBottom : 0,
+    transform: `translateY(1px)`,
+    backgroundColor: "transparent",
+  },
+  socialF: {
+    width: 32,
+    border: 'none',
+    marginTop: 0,
+    marginLeft: 0, 
+    marginRight: 8, 
+    marginBottom : 0,
+    transform: `translateY(1px)`,
+    backgroundColor: "transparent",
+  },
+
+  like : {
     width: 60,
+    marginTop: 10,
+    marginLeft: 25,
+    marginRight: 10,
+    marginBottom : 4,
   },
   ico : {
-    paddingRight: 2,
     paddingLeft: 0,
+    paddingRight: 2,
   },
 }
+
 
 export default SocialBar

@@ -17,6 +17,7 @@ import YouTubeEmbed from './YouTubeEmbed'
 
 // CardWithAvatar start
 class CardCustom extends React.Component {
+
   render(){
     const videoId = this.props.videoId
     const itemChips = this.props.itemChips
@@ -67,26 +68,27 @@ CardCustom.propTypes = {
 }
 
 const cardStyle = {
-    paper: {
-        marginBottom: 20,
-        marginTop: 20,
-        width: 680,
-    },
-    header : {
-        marginLeft: 5,
-    },
-    title : {
-        marginLeft: 5,
-        height: 15,
-    },
+  paper: {
+    width: 680,
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  header : {
+    marginLeft: 5,
+  },
+  title : {
+    height: 15,
+    marginLeft: 5,
+  },
 }
+
 
 const ItemChips = ({ chips }) => (
     <div style={itemStyles.wrapper}>
       <Chip style={itemStyles.chip} > Conditions: {chips.conditions} </Chip> 
-      <Chip style={itemStyles.chip} > Size: {chips.size } </Chip> 
-      <Chip style={itemStyles.chip} > Liters: {chips.liters }lt </Chip> 
-      <Chip style={itemStyles.chip} > Price: {chips.price }$ </Chip>
+      <Chip style={itemStyles.chip} > Size: { chips.size } </Chip> 
+      <Chip style={itemStyles.chip} > Liters: { chips.liters }lt </Chip> 
+      <Chip style={itemStyles.chip} > Price: { chips.price }$ </Chip>
     </div>
 )
 
