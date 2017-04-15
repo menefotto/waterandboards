@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Checkbox from 'material-ui/Checkbox'
+import red500 from 'material-ui/styles/colors';
 import FontAwesome from '../deps/react-fontawesome'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
@@ -11,8 +12,9 @@ const SocialBar = () => (
     <Checkbox
       style={iconStyle.like}
       uncheckedIcon={<ActionFavoriteBorder />}
-      checkedIcon={<ActionFavorite style={{color: '#FF0000'}} />}
+      checkedIcon={<ActionFavorite style={{fill: 'red'}} />} 
     />
+    {/* fill workaround since it doesn't change color otherwise */}
     <button style={iconStyle.socialT}>
       <FontAwesome 
         name="twitter-square" 
@@ -33,6 +35,10 @@ const SocialBar = () => (
 )
 
 const iconStyle = {
+  ico : {
+    paddingLeft: 0,
+    paddingRight: 2,
+  },
   bar: {
     height: 40,
     width: 660,
@@ -67,10 +73,6 @@ const iconStyle = {
     marginLeft: 25,
     marginRight: 10,
     marginBottom : 4,
-  },
-  ico : {
-    paddingLeft: 0,
-    paddingRight: 2,
   },
 }
 
