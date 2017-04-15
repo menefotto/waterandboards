@@ -42,9 +42,9 @@ class Message extends React.Component{
     return(
       <div>
         <Dialog
-          title={this.props.title}
-          actions={actions}
           modal={true}
+          actions={actions}
+          title={this.props.title}
           open={SideBarRdx.logoutShow}
         >
           {this.props.optionalText}

@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import Chip from 'material-ui/Chip'
 import Paper from 'material-ui/Paper' 
 import {
@@ -12,6 +12,7 @@ import {
   CardText
 } from 'material-ui/Card'
 import SocialBar from './SocialBar'
+import YouTubeEmbed from './YouTubeEmbed'
 
 
 // CardWithAvatar start
@@ -21,7 +22,6 @@ class CardCustom extends React.Component {
     const itemChips = this.props.itemChips
     const cardHeader = this.props.cardHeader
     //    const socialLink = this.props.socialLink
-
     return(
       <Paper zDepth={1} style={cardStyle.paper}>
         <Card>
@@ -50,25 +50,22 @@ class CardCustom extends React.Component {
   }
 }
 
-
 CardCustom.propTypes = {
   cardHeader : PropTypes.shape({
-     title: PropTypes.string.isRequired,
-     profile: PropTypes.string.isRequired,
-     avatar: PropTypes.string.isRequired,
-     timeAdded : PropTypes.string.isRequired,
- }),
- videoId : PropTypes.string.isRequired,
- itemChips: PropTypes.shape({
-     conditions : PropTypes.string.isRequired,
-     size : PropTypes.string.isRequired,
-     liters : PropTypes.string.isRequired,
-     price : PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    profile: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    timeAdded : PropTypes.string.isRequired,
+  }),
+  videoId : PropTypes.string.isRequired,
+  itemChips: PropTypes.shape({
+    conditions : PropTypes.string.isRequired,
+    size : PropTypes.string.isRequired,
+    liters : PropTypes.string.isRequired,
+    price : PropTypes.string.isRequired,
   }),
 }
 
-
-// card with avatar and style
 const cardStyle = {
     paper: {
         marginBottom: 20,
@@ -83,22 +80,6 @@ const cardStyle = {
         height: 15,
     },
 }
-
-
-const YouTubeEmbed = ({ videoId }) => {
-  const id = "https://www.youtube.com/embed/" + videoId + "?controls=0"
-  return(
-    <div style={{marginLeft: "2.5%"}}>
-        <iframe 
-            width="640" 
-            height="360" 
-            frameBorder="0"
-            src={id}>
-        </iframe>
-      </div>
-  )
-}
-
 
 const ItemChips = ({ chips }) => (
     <div style={itemStyles.wrapper}>
