@@ -3,6 +3,7 @@
 - implement side bar actions reducer and handlers #done
 - fix logged component position #done
 - Fix notification menu position #done
+- The profile page should use modal dialogs to perform changes. #done
+
 
 Add mobile wrapper to change size dynamically.
-The profile page should use modal dialogs to perform changes.

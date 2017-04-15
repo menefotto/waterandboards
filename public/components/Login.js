@@ -155,26 +155,26 @@ const formStyles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
   },
-  gridList: {
-    marginTop: 120,
-    width: 480,
-    height: "auto",
-    overflowY: 'auto',
-  },
-  gridTile: {
-    marginTop: 30,
-    height: 40,
-  },
-  textFirst: {
-    marginTop: 20,
-    marginLeft: 107,
-  },
   input: {
     marginLeft: 107,
   },
   inputClick: {
     textAlign: "center",
     paddingTop: 10,
+  },
+  gridTile: {
+    marginTop: 30,
+    height: 40,
+  },
+  gridList: {
+    marginTop: 120,
+    width: 480,
+    height: "auto",
+    overflowY: 'auto',
+  },
+  textFirst: {
+    marginTop: 20,
+    marginLeft: 107,
   },
   button: {
     width: "70%",

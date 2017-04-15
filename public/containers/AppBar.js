@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import TopBar from '../components/TopBar'
+import SignUp from "../containers/SignUp.js"
 import Profile from '../components/Profile.js'
 import * as Actions from '../actions'
 
@@ -21,6 +22,10 @@ const AppBar = ({ actions }) => {
   }
 
   const handleLogin = (e) => {
+    actions.setMainElement({
+      element: <SignUp />
+    })
+
     actions.toggleAppBarState({
       simplebar: true,
     })

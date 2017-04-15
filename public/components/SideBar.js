@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import Divider from 'material-ui/Divider'
@@ -67,7 +67,7 @@ class SideBar extends React.Component{
           />
           <Divider />
           <MenuItem 
-            primaryText="LogOut" 
+            primaryText="Logout" 
             leftIcon={<ActionPowerSettingsNew />} 
             onTouchTap={this.props.hLogout}
             children={this.props.oLogout}
@@ -77,7 +77,6 @@ class SideBar extends React.Component{
     )
   }
 }
-
 
 SideBar.propTypes = {
   sTitle: PropTypes.string,
@@ -90,7 +89,6 @@ SideBar.propTypes = {
   oLogout: PropTypes.object.isRequired,
 }
  
-
 SideBar.defaultProps = {
   sTitle: "Settings",
 }
