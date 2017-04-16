@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import AppBar from 'material-ui/AppBar'
-
 import ToolBar from "./ToolBar"
 import SideBar from './SideBar'
 import Logout from '../containers/Logout.js'
