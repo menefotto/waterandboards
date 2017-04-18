@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { 
   Toolbar, 
   ToolbarGroup, 
@@ -10,8 +11,9 @@ import {
 import Avatar from 'material-ui/Avatar'
 import Drawer from 'material-ui/Drawer'
 import RaisedButton from 'material-ui/RaisedButton'
-import SearchBar from "./SearchBar"
+import SignUp from "./SignUp"
 import Logged from "./Logged"
+import SearchBar from "./SearchBar"
 
 
 class ToolBar extends React.Component{
@@ -95,18 +97,6 @@ ToolBar.defaultProps = {
   logo: "images/logo.png",
   bTitle: "WaterAndBoards",
 }
-
-
-const SignUp = ({ onClick }) => (
-  <div>
-    <RaisedButton 
-      default={true} 
-      onClick={onClick}
-    >
-      Sign Up
-    </RaisedButton>
-  </div>
-)
 
 const barStyle = {
   bar: {

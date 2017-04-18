@@ -15,6 +15,7 @@ import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle'
 import CommunicationMessage from 'material-ui/svg-icons/communication/message'
 import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new'
 import Logout from '../containers/Logout.js'
+import ButtonLink from './ButtonLink.js'
 
 
 class SideBar extends React.Component{
@@ -46,22 +47,22 @@ class SideBar extends React.Component{
             iconElementLeft={<Close onClick={this.props.hClose} />}
           />
           <MenuItem 
-            primaryText="Uploads" 
+            primaryText={<ButtonLink to="uploads" text="Uploads" />}
             leftIcon={<FileCloudUpload />} 
             onTouchTap={this.props.hUploads}
           />
           <MenuItem 
-            primaryText="Messages" 
+            primaryText={<ButtonLink to="messages" text="Messages" />}
             leftIcon={<CommunicationMessage />} 
             onTouchTap={this.props.hMessages}
           />
           <MenuItem 
-            primaryText="Posted Items" 
+            primaryText={<ButtonLink to="posted-items" text="Posted Items" />}
             leftIcon={<EditorAttachMoney />} 
             onTouchTap={this.props.hItems}
           />
           <MenuItem 
-            primaryText="Profile Settings" 
+            primaryText={<ButtonLink to="/profile" text="Profile" />}
             leftIcon={<ActionAccountCircle />} 
             onTouchTap={this.props.hProfile}
           />
