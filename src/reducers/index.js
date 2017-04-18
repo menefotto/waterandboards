@@ -84,32 +84,17 @@ const LoginPageRdx = (state, action) => {
 }
 
 
-const BodyRdx = (state, action) => {
-  switch(action.type){
-    case GET_MAIN_ELEMENT:
-      return {
-        ...state,
-        element: state.element,
-      }
-
-    case SET_MAIN_ELEMENT:
-      return {
-        ...state,
-        element: action.element,
-      }
-
-    default:
-      return {
-        ...state,
-      }
-  }
-}
-
 const GridRdx = (state, action) => {
   switch(action.type){
     case SEARCH:
       return {
         ...state,
+      }
+
+    case PLAY_VIDEO:
+      return {
+        ...state,
+        play: action.play,
       }
 
     default:

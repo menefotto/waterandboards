@@ -1,7 +1,4 @@
 const initialState = {
-  BodyRdx: {
-    element: null,
-  },
   AppBarRdx: { 
     opened: false, 
     simplebar: false, 
@@ -34,6 +31,7 @@ const initialState = {
           timeAdded: "4 hours ago",
         }, 
         videoId: "6xZqqZs4Gjk",
+        play: false,
         likes: 1,
         itemChips:
         {
