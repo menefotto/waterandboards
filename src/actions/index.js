@@ -37,9 +37,10 @@ export const PLAY_VIDEO = "PLAY_VIDEO"
 
 
 // handle play video function
-export const playVideo = ({ play }) => ({
+export const playVideo = ({ play, index }) => ({
   type: PLAY_VIDEO,
   play,
+  index,
 })
 
 // handle function from the search bar

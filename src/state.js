@@ -41,6 +41,25 @@ const initialState = {
           price: "1800",
         },
       },
+      { cardHeader: 
+        { 
+          title: "Simmer Quantum",
+          profile: "wind85",
+          avatar: "images/avatar.jpg",
+          timeAdded: "4 hours ago",
+        }, 
+        videoId: "6xZqqZs4Gjk",
+        play: false,
+        likes: 1,
+        itemChips:
+        {
+          conditions: "good",
+          size: "236x85",
+          liters: "85",
+          price: "1800",
+        },
+      },
+
     ]
   },
   SideBarRdx: {

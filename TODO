@@ -7,5 +7,7 @@
 - Test webpack #done
 - Added react router #done
 
+- Fix conditional iframe not showing up...
+
 Add likes increment/decrement
 Add mobile wrapper to change size dynamically.

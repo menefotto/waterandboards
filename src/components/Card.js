@@ -12,16 +12,15 @@ import {
   CardText
 } from 'material-ui/Card'
 import SocialBar from './SocialBar'
-import YouTubeEmbed from './YouTubeEmbed'
+import YouTube from '../containers/YouTube'
 
 
 class CardCustom extends React.Component {
 
   render(){
-    const cardHeader = this.props.cardHeader
-    const itemChips = this.props.itemChips
     const videoId = this.props.videoId
-    const index = this.props.index
+    const itemChips = this.props.itemChips
+    const cardHeader = this.props.cardHeader
     //    const socialLink = this.props.socialLink
 
     return(
@@ -34,7 +33,7 @@ class CardCustom extends React.Component {
             style={cardStyle.header}
           />
           <CardMedia>
-            <YouTubeEmbed videoId={videoId} />
+            <YouTube videoId={videoId} idx={this.props.index} />
           </CardMedia>
             <CardTitle 
               style={cardStyle.title}
@@ -44,7 +43,7 @@ class CardCustom extends React.Component {
             <ItemChips chips={itemChips}/>
           </CardText>
           <CardActions>
-            <SocialBar idx={index}/>
+            <SocialBar idx={this.props.index}/>
           </CardActions>
         </Card>
       </Paper>

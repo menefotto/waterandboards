@@ -5,6 +5,7 @@ import {
   REGISTER_STATE,
   SIDEBAR_STATE,
   SIDEBAR_LOGOUT,
+  PLAY_VIDEO,
   OPEN_NOTIFICATION_MENU,
   CLOSE_NOTIFICATION_MENU,
   GET_MAIN_ELEMENT,
@@ -91,10 +92,17 @@ const GridRdx = (state, action) => {
         ...state,
       }
 
+    // simplify the nesting
     case PLAY_VIDEO:
       return {
         ...state,
-        play: action.play,
+        list: {
+          ...state.list,        
+          [action.index]: {
+            ...state.list[action.index],
+            play: action.play
+          }
+        }
       }
 
     default:
@@ -122,7 +130,6 @@ const SideBarRdx = (state, action) => {
 
 
 const rootReducer = combineReducers({
-  BodyRdx,
   AppBarRdx,
   LoginPageRdx,
   NotificationRdx,

@@ -27,7 +27,9 @@ class Grid extends React.Component {
     const { store } = this.context
     const { getState } = store
     const { GridRdx } = getState()
-
+    // workaroud apparently even though I am feeding to it an array
+    // the store gives me back something else likely an object #ugly
+    const list = Array.prototype.slice.call(GridRdx.list)
     return(
       <div style={gridStyles.root}>
         <GridList 
@@ -36,7 +38,7 @@ class Grid extends React.Component {
           style={gridStyles.gridList}
         >
           {
-            GridRdx.list.map((elem, idx) =>
+            list.map((elem, idx) =>
               <GridTile key={idx}>
                 <CardCustom
                   index={idx}

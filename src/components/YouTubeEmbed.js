@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 
 
 const sizes = {
@@ -9,30 +10,12 @@ const sizes = {
 }
 
 const urls = {
-  video = "https://www.youtube.com/embed/"
-  image = "https://i1.ytimg.com/vi/"
+  video: "https://www.youtube.com/embed/",
+  image: "https://i1.ytimg.com/vi/"
 }
 
 
 class YouTubeEmbed extends React.Component{
-
-  let dimensions
-  switch(size){
-    case "small":
-      dimensions = size.small
-      break
-    case "medium":
-      dimensions = size.medium
-      break
-    case "default":
-      dimensions = sizes.normal
-      break
-    default:
-      dimensions = sizes.normal
-  }
-
-  const vid = urls.video + videoId + "?controls=0&autoplay=1"
-  const iid = urls.image + videoId +  dimensions.n + ".jpg"
 
   static contextTypes = {
     store: PropTypes.object
@@ -48,6 +31,24 @@ class YouTubeEmbed extends React.Component{
   }
 
   render(){
+    let dimensions
+    switch(this.props.size){
+      case "small":
+        dimensions = sizes.small
+        break
+      case "medium":
+        dimensions = sizes.medium
+        break
+      case "default":
+        dimensions = sizes.normal
+        break
+      default:
+        dimensions = sizes.normal
+    }
+
+    const vid = urls.video + this.props.videoId + "?autoplay=1"
+    const iid = urls.image + this.props.videoId + "/" + dimensions.n + ".jpg"
+
     const { store } = this.context
     const { getState } = store
     const { GridRdx } = getState()
@@ -64,7 +65,7 @@ class YouTubeEmbed extends React.Component{
           />:
           <img 
             src={iid} 
-            onClick={hPlayVideo}
+            onClick={this.props.hPlayVideo}
             width={dimensions.w} 
             height={dimensions.h} 
           />
