@@ -24,6 +24,7 @@ config = {
     new webpack.optimize.AggressiveMergingPlugin()
   ],
   devServer: {
+    historyApiFallback: true,
     contentBase: './src/',
     compress: true,
     port: 9000
