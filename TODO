@@ -5,6 +5,7 @@
 - Fix notification menu position #done
 - The profile page should use modal dialogs to perform changes. #done
 - Test webpack #done
+- Added react router #done
 
 Add likes increment/decrement
 Add mobile wrapper to change size dynamically.
