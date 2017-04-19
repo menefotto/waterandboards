@@ -13,7 +13,7 @@ import rootReducer from './reducers'
 import initialState from './state.js'
 import NotFound from './components/NotFound.js'
 import Body from './components/Body.js'
-import Grid from './components/Grid.js'
+import Feed from './containers/Feed.js'
 import SignUp from './containers/SignUp.js'
 import Profile from './components/Profile.js'
 import YouTube from './containers/YouTube.js'
@@ -32,8 +32,8 @@ const App = () => (
       <Router>
         <Body>
           <Switch>
-            <Route path="/" exact component={Grid} />
-            <Route path="/logged" component={Grid} />
+            <Route path="/" exact component={Feed} />
+            <Route path="/logged" component={Feed} />
             <Route path="/signup" component={SignUp} />
             <Route path="/profile" component={Profile} />
             <Route component={NotFound} />

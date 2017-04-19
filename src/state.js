@@ -22,6 +22,7 @@ const initialState = {
     ],
   },
   GridRdx: {
+    cols: 1,
     list: [
       { cardHeader: 
         { 

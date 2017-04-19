@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 
-const sizes = {
-  small: {w:"320", h:"180", n:"default"},
-  medium: {w:"480",h:"360", n:"hqdefault"},
-  normal: {w:"640",h:"480", n:"sddefault"},
-}
-
 const urls = {
   image: "https://i1.ytimg.com/vi/",
   video: "https://www.youtube.com/embed/"
@@ -31,23 +25,9 @@ class YouTubeEmbed extends React.Component{
   }
 
   render(){
-    let dimensions
-    switch(this.props.size){
-      case "small":
-        dimensions = sizes.small
-        break
-      case "medium":
-        dimensions = sizes.medium
-        break
-      case "default":
-        dimensions = sizes.normal
-        break
-      default:
-        dimensions = sizes.normal
-    }
-
-    const vid = urls.video + this.props.videoId + "?autoplay=1"
-    const iid = urls.image + this.props.videoId + "/" + dimensions.n + ".jpg"
+    const video = this.props.videoId
+    const vid = urls.video + video + "?autoplay=1"
+    const iid = urls.image + video + "/" + this.props.size.n + ".jpg"
 
     const { store } = this.context
     const { getState } = store
@@ -60,14 +40,14 @@ class YouTubeEmbed extends React.Component{
             <iframe 
               src={vid}
               frameBorder="0"
-              width={dimensions.w} 
-              height={dimensions.h}
+              width={this.props.size.w} 
+              height={this.props.size.h}
             />:
             <img 
               src={iid} 
+              width={this.props.size.w} 
+              height={this.props.size.h} 
               onClick={this.props.hPlayVideo}
-              width={dimensions.w} 
-              height={dimensions.h} 
             />
         }
       </div>
@@ -76,15 +56,15 @@ class YouTubeEmbed extends React.Component{
 }
 
 YouTubeEmbed.propTypes = {
-  size: PropTypes.string,
+  size: PropTypes.object.isRequired,
   idx: PropTypes.number.isRequired,
   hPlayVideo: PropTypes.func.isRequired,
   videoId: PropTypes.string.isRequired,
 }
 
 YouTubeEmbed.defaultProps = {
-  size: "default",
+  size: {},
 }
-
+    
 
 export default YouTubeEmbed

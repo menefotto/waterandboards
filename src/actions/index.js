@@ -39,6 +39,15 @@ export const PLAY_VIDEO = "PLAY_VIDEO"
 export const INCREMENT_LIKES = "INCREMENT_LIKES"
 export const DECREMENT_LIKES = "DECREMENT_LIKES"
 
+// chage colons number 
+export const CHANGE_COLONS_NUMBER = "CHANGE_COLONS_NUMBER"
+
+
+// grid view change colons number
+export const addColons = ({ coln }) => ({
+  type: CHANGE_COLONS_NUMBER,
+  coln,
+})
 
 // decrement/increment item likes
 export const incLikes = ({ idx }) => ({

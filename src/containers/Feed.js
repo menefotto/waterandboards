@@ -2,27 +2,20 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import YouTubeEmbed from "../components/YouTubeEmbed.js"
+import Grid from '../components/Grid'
 import * as Actions from '../actions'
 
 
-const YouTube = ({ actions, idx, videoId, size }) => {
-  const handlePlayVideo = (e) => {
-    e.preventDefault()
 
-    actions.playVideo({
-      play: true,
-      index: idx
+const Feed = ({ actions }) => {
+  const handleChangeView = (e) => {
+    actions.addColons({
+      coln: 1
     })
   }
 
   return(
-    <YouTubeEmbed 
-      idx={idx}
-      size={size}
-      videoId={videoId}
-      hPlayVideo={handlePlayVideo}
-    />
+    <Grid hChangeView={handleChangeView} />
   )
 }
 
@@ -44,5 +37,5 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(YouTube)
+export default connect(mapStateToProps, mapDispatchToProps)(Feed)
 

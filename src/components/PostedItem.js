@@ -2,9 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Chip from 'material-ui/Chip'
-import Paper from 'material-ui/Paper' 
 import {
-  Card, 
   CardHeader, 
   CardTitle, 
   CardActions, 
@@ -15,7 +13,7 @@ import Social from '../containers/Social'
 import YouTube from '../containers/YouTube'
 
 
-class CardCustom extends React.Component {
+class PostedItem extends React.Component {
 
   render(){
     const videoId = this.props.videoId
@@ -23,34 +21,36 @@ class CardCustom extends React.Component {
     const cardHeader = this.props.cardHeader
     //    const socialLink = this.props.socialLink
     return(
-      <Paper zDepth={1} style={cardStyle.paper}>
-        <Card>
-          <CardHeader
-            title={cardHeader.profile}
-            subtitle={cardHeader.timeAdded}
-            avatar={cardHeader.avatar}
-            style={cardStyle.header}
+      <div style={cardStyle.paper}>
+        <CardHeader
+          style={cardStyle.header}
+          avatar={cardHeader.avatar}
+          subtitle={cardHeader.timeAdded}
+          title={<strong> {cardHeader.profile} </strong>}
+        />
+        <CardMedia>
+          <YouTube 
+            videoId={videoId} 
+            idx={this.props.index} 
+            size={this.props.size}
           />
-          <CardMedia>
-            <YouTube videoId={videoId} idx={this.props.index} />
-          </CardMedia>
-            <CardTitle 
-              style={cardStyle.title}
-              title={<strong> {cardHeader.title} </strong>}
-            />
-          <CardText>
-            <ItemChips chips={itemChips}/>
-          </CardText>
-          <CardActions>
-            <Social index={this.props.index}/>
-          </CardActions>
-        </Card>
-      </Paper>
+        </CardMedia>
+          <CardTitle 
+            style={cardStyle.title}
+            title={<strong> {cardHeader.title} </strong>}
+          />
+        <CardText>
+          <ItemChips chips={itemChips}/>
+        </CardText>
+        <CardActions>
+          <Social index={this.props.index}/>
+        </CardActions>
+      </div>
     )
   }
 }
 
-CardCustom.propTypes = {
+PostedItem.propTypes = {
   cardHeader : PropTypes.shape({
     title: PropTypes.string.isRequired,
     profile: PropTypes.string.isRequired,
@@ -65,6 +65,7 @@ CardCustom.propTypes = {
     liters : PropTypes.string.isRequired,
     price : PropTypes.string.isRequired,
   }),
+  size: PropTypes.object.isRequired,
 }
 
 const cardStyle = {
@@ -72,6 +73,8 @@ const cardStyle = {
     width: 680,
     marginTop: 20,
     marginBottom: 20,
+    backgroundColor: "#FFF",
+    boxShadow: '2px 2px 5px #888888',
   },
   header : {
     marginLeft: 5,
@@ -103,4 +106,4 @@ const itemStyles = {
 }
 
 
-export default CardCustom
+export default PostedItem

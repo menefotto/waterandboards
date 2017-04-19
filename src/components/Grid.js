@@ -6,8 +6,15 @@ import {
   GridTile
 } from 'material-ui/GridList'
 import IconButton from 'material-ui/IconButton'
-import CardCustom from '../components/Card.js';
+import PostedItem from '../components/PostedItem.js';
 import ActionViewModule from 'material-ui/svg-icons/action/view-module'
+
+
+const sizes = {
+  small: {w:"320", h:"180", n:"default"},
+  medium: {w:"480",h:"360", n:"hqdefault"},
+  normal: {w:"640",h:"480", n:"sddefault"},
+}
 
 
 class Grid extends React.Component {
@@ -30,13 +37,29 @@ class Grid extends React.Component {
     const { getState } = store
     const { GridRdx } = getState()
 
+    let dimensions
+    switch(GridRdx.cols){
+      case 3:
+        dimensions = sizes.small
+        break
+      case 2:
+        dimensions = sizes.medium
+        break
+      case 1:
+        dimensions = sizes.normal
+        break
+      default:
+        dimensions = sizes.normal
+    }
+
     const cards = []
     // work around till I fix the reducer to always return an array
     for(let idx = 0; idx < Object.keys(GridRdx.list).length; idx++){
       cards.push (
         <GridTile key={idx}>
-          <CardCustom
+          <PostedItem
             index={idx}
+            size={dimensions}
             videoId={GridRdx.list[idx].videoId}
             itemChips={GridRdx.list[idx].itemChips}
             cardHeader={GridRdx.list[idx].cardHeader}
@@ -47,22 +70,27 @@ class Grid extends React.Component {
 
     return(
       <div style={gridStyles.root}>
+        <GridList 
+          cellHeight='auto' 
+          cols={GridRdx.cols} 
+          style={gridStyles.gridList}
+        >
         <IconButton 
           tooltip="change view" 
           style={gridStyles.views}
+          onTouchTap={this.props.hChangeView}
         >
           <ActionViewModule />
         </IconButton>
-        <GridList 
-          cellHeight='auto' 
-          cols={1} 
-          style={gridStyles.gridList}
-        >
           {cards}   
-       </GridList> 
+      </GridList> 
     </div>
     )
   }
+}
+
+Grid.propTypes = {
+  hChangeView: PropTypes.func.isRequired,
 }
 
 const gridStyles = {
@@ -78,9 +106,7 @@ const gridStyles = {
     overflowY: 'auto',
   },
   views: {
-    position: "absolute",
-    marginTop: "3%",
-    marginLeft: "30%",
+    marginLeft: "90%",
   },
 }
 

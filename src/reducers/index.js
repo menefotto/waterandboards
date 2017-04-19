@@ -12,6 +12,7 @@ import {
   SET_MAIN_ELEMENT,
   INCREMENT_LIKES,
   DECREMENT_LIKES,
+  CHANGE_COLONS_NUMBER,
 } from "../actions"
 import { combineReducers } from 'redux' 
 
@@ -131,6 +132,21 @@ const GridRdx = (state, action) => {
           }
         }
 
+      }
+
+    case CHANGE_COLONS_NUMBER:
+      let colsn
+      if (state.cols === 1){
+        colsn = state.cols + action.coln
+      } else if(state.cols === 2){
+        colsn = state.cols + action.coln
+      } else if(state.cols === 3){
+        colsn = 1
+      }
+
+      return{
+        ...state,
+        cols: colsn
       }
 
     default:
