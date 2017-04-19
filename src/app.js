@@ -11,6 +11,7 @@ injectTapEventPlugin()
 import BlueGrey from './themes'
 import rootReducer from './reducers'
 import initialState from './state.js'
+import NotFound from './components/NotFound.js'
 import Body from './components/Body.js'
 import Grid from './components/Grid.js'
 import SignUp from './containers/SignUp.js'
@@ -30,10 +31,11 @@ const App = () => (
     <Provider store={reduxStore}>
       <Router>
         <Body>
-          <Route path="/" component={Grid} />
+          <Route path="/" exact component={Grid} />
           <Route path="/logged" component={Grid} />
           <Route path="/signup" component={SignUp} />
           <Route path="/profile" component={Profile} />
+          <Route component={NotFound} />
         </Body>
       </Router>
     </Provider>
