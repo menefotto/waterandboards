@@ -8,6 +8,8 @@ import * as Actions from '../actions'
 
 const YouTube = ({ actions, idx, videoId }) => {
   const handlePlayVideo = (e) => {
+    e.preventDefault()
+
     actions.playVideo({
       play: true,
       index: idx

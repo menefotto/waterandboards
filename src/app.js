@@ -15,6 +15,7 @@ import Body from './components/Body.js'
 import Grid from './components/Grid.js'
 import SignUp from './containers/SignUp.js'
 import Profile from './components/Profile.js'
+import YouTube from './containers/YouTube.js'
 
 
 const reduxStore = createStore(
@@ -29,7 +30,7 @@ const App = () => (
     <Provider store={reduxStore}>
       <Router>
         <Body>
-          <Route exact path="/" component={Grid} />
+          <Route path="/" component={Grid} />
           <Route path="/logged" component={Grid} />
           <Route path="/signup" component={SignUp} />
           <Route path="/profile" component={Profile} />

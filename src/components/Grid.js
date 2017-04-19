@@ -8,8 +8,8 @@ import {
 import CardCustom from '../components/Card.js';
 
 
-// Actual grid
 class Grid extends React.Component {
+
   static contextTypes = {
     store: PropTypes.object
   }
@@ -27,9 +27,22 @@ class Grid extends React.Component {
     const { store } = this.context
     const { getState } = store
     const { GridRdx } = getState()
-    // workaroud apparently even though I am feeding to it an array
-    // the store gives me back something else likely an object #ugly
-    const list = Array.prototype.slice.call(GridRdx.list)
+
+    const cards = []
+    // work around till I fix the reducer to always return an array
+    for(let idx = 0; idx < Object.keys(GridRdx.list).length; idx++){
+      cards.push (
+        <GridTile key={idx}>
+          <CardCustom
+            index={idx}
+            videoId={GridRdx.list[idx].videoId}
+            itemChips={GridRdx.list[idx].itemChips}
+            cardHeader={GridRdx.list[idx].cardHeader}
+          />
+        </GridTile>
+      )
+    }
+
     return(
       <div style={gridStyles.root}>
         <GridList 
@@ -37,30 +50,12 @@ class Grid extends React.Component {
           cols={1} 
           style={gridStyles.gridList}
         >
-          {
-            list.map((elem, idx) =>
-              <GridTile key={idx}>
-                <CardCustom
-                  index={idx}
-                  videoId={elem.videoId}
-                  itemChips={elem.itemChips}
-                  cardHeader={elem.cardHeader}
-                />
-              </GridTile>
-            ) 
-          }
+          {cards}   
        </GridList> 
     </div>
     )
   }
 }
-
-
-const Item = ({ Card }) => (
-  <GridTile>
-    {Card}
-  </GridTile>
-) 
 
 const gridStyles = {
   root: {
@@ -75,5 +70,6 @@ const gridStyles = {
     overflowY: 'auto',
   },
 }
+
 
 export default Grid

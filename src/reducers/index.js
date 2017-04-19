@@ -1,11 +1,11 @@
 import {
   SEARCH,
+  PLAY_VIDEO,
   LOGIN_STATE,
   APPBAR_TOGGLE,
   REGISTER_STATE,
   SIDEBAR_STATE,
   SIDEBAR_LOGOUT,
-  PLAY_VIDEO,
   OPEN_NOTIFICATION_MENU,
   CLOSE_NOTIFICATION_MENU,
   GET_MAIN_ELEMENT,
@@ -66,7 +66,6 @@ const NotificationRdx = ( state, action) => {
 }
 
 
-// login page reducer
 const LoginPageRdx = (state, action) => {
   switch(action.type){
     case REGISTER_STATE:

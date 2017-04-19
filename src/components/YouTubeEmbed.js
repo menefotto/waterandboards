@@ -10,8 +10,8 @@ const sizes = {
 }
 
 const urls = {
-  video: "https://www.youtube.com/embed/",
-  image: "https://i1.ytimg.com/vi/"
+  image: "https://i1.ytimg.com/vi/",
+  video: "https://www.youtube.com/embed/"
 }
 
 
@@ -57,18 +57,18 @@ class YouTubeEmbed extends React.Component{
       <div style={{marginLeft: "2.5%"}}>
         {
           GridRdx.list[this.props.idx].play ?
-          <iframe 
-            src={vid}
-            frameBorder="0"
-            width={dimensions.w} 
-            height={dimensions.h}
-          />:
-          <img 
-            src={iid} 
-            onClick={this.props.hPlayVideo}
-            width={dimensions.w} 
-            height={dimensions.h} 
-          />
+            <iframe 
+              src={vid}
+              frameBorder="0"
+              width={dimensions.w} 
+              height={dimensions.h}
+            />:
+            <img 
+              src={iid} 
+              onClick={this.props.hPlayVideo}
+              width={dimensions.w} 
+              height={dimensions.h} 
+            />
         }
       </div>
     )

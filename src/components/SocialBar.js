@@ -8,6 +8,7 @@ import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 
 
 class SocialBar extends React.Component{
+
   static contextTypes = {
     store: PropTypes.object
   }

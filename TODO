@@ -6,8 +6,7 @@
 - The profile page should use modal dialogs to perform changes. #done
 - Test webpack #done
 - Added react router #done
-
-- Fix conditional iframe not showing up...
+- Fix conditional iframe not showing up #done
 
 Add likes increment/decrement
 Add mobile wrapper to change size dynamically.
