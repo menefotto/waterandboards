@@ -5,7 +5,9 @@ import {
   GridList, 
   GridTile
 } from 'material-ui/GridList'
+import IconButton from 'material-ui/IconButton'
 import CardCustom from '../components/Card.js';
+import ActionViewModule from 'material-ui/svg-icons/action/view-module'
 
 
 class Grid extends React.Component {
@@ -45,6 +47,12 @@ class Grid extends React.Component {
 
     return(
       <div style={gridStyles.root}>
+        <IconButton 
+          tooltip="change view" 
+          style={gridStyles.views}
+        >
+          <ActionViewModule />
+        </IconButton>
         <GridList 
           cellHeight='auto' 
           cols={1} 
@@ -68,6 +76,11 @@ const gridStyles = {
     width: 720,
     height: 1000,
     overflowY: 'auto',
+  },
+  views: {
+    position: "absolute",
+    marginTop: "3%",
+    marginLeft: "30%",
   },
 }
 
