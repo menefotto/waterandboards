@@ -10,6 +10,8 @@ import {
   CLOSE_NOTIFICATION_MENU,
   GET_MAIN_ELEMENT,
   SET_MAIN_ELEMENT,
+  INCREMENT_LIKES,
+  DECREMENT_LIKES,
 } from "../actions"
 import { combineReducers } from 'redux' 
 
@@ -102,6 +104,33 @@ const GridRdx = (state, action) => {
             play: action.play
           }
         }
+      }
+
+    case INCREMENT_LIKES:
+      return{
+        ...state,
+        list: {
+          ...state.list,
+          [action.idx]: {
+            ...state.list[action.idx],
+            likes: state.list[action.idx].likes + 1,
+            liked: true,
+          }
+        }
+      }
+
+    case DECREMENT_LIKES:
+      return{
+        ...state,
+        list: {
+          ...state.list,
+          [action.idx]: {
+            ...state.list[action.idx],
+            likes:  state.list[action.idx].likes - 1,
+            liked: false,
+          }
+        }
+
       }
 
     default:

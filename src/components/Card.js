@@ -11,7 +11,7 @@ import {
   CardMedia, 
   CardText
 } from 'material-ui/Card'
-import SocialBar from './SocialBar'
+import Social from '../containers/Social'
 import YouTube from '../containers/YouTube'
 
 
@@ -22,7 +22,6 @@ class CardCustom extends React.Component {
     const itemChips = this.props.itemChips
     const cardHeader = this.props.cardHeader
     //    const socialLink = this.props.socialLink
-
     return(
       <Paper zDepth={1} style={cardStyle.paper}>
         <Card>
@@ -43,7 +42,7 @@ class CardCustom extends React.Component {
             <ItemChips chips={itemChips}/>
           </CardText>
           <CardActions>
-            <SocialBar idx={this.props.index}/>
+            <Social index={this.props.index}/>
           </CardActions>
         </Card>
       </Paper>

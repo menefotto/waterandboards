@@ -30,7 +30,9 @@ class SocialBar extends React.Component{
     return(
       <div style={iconStyle.bar}>
         <Checkbox
+          checked={GridRdx.list[this.props.idx].liked}
           style={iconStyle.like}
+          onCheck={this.props.hChecked}
           iconStyle={{width: 23,height: 27}}
           labelStyle={{minWidth: 60, fontSize: 12}}
           uncheckedIcon={<ActionFavoriteBorder />}
@@ -61,6 +63,7 @@ class SocialBar extends React.Component{
 
 SocialBar.propTypes = {
   idx: PropTypes.number.isRequired,
+  hChecked: PropTypes.func.isRequired,
 }
 
 const iconStyle = {

@@ -31,16 +31,19 @@ class Grid extends React.Component {
     const cards = []
     // work around till I fix the reducer to always return an array
     for(let idx = 0; idx < Object.keys(GridRdx.list).length; idx++){
-      cards.push (
-        <GridTile key={idx}>
-          <CardCustom
-            index={idx}
-            videoId={GridRdx.list[idx].videoId}
-            itemChips={GridRdx.list[idx].itemChips}
-            cardHeader={GridRdx.list[idx].cardHeader}
-          />
-        </GridTile>
-      )
+      if(GridRdx.list[idx] !== undefined){
+        // work around getting a third undefined element
+        cards.push (
+          <GridTile key={idx}>
+            <CardCustom
+              index={idx}
+              videoId={GridRdx.list[idx].videoId}
+              itemChips={GridRdx.list[idx].itemChips}
+              cardHeader={GridRdx.list[idx].cardHeader}
+            />
+          </GridTile>
+        )
+      }
     }
 
     return(

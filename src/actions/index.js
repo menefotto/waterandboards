@@ -35,6 +35,21 @@ export const SIDEBAR_UPLOADS = "SIDEBAR_UPLOADS"
 // play video clicked
 export const PLAY_VIDEO = "PLAY_VIDEO"
 
+// increment and decrement likes
+export const INCREMENT_LIKES = "INCREMENT_LIKES"
+export const DECREMENT_LIKES = "DECREMENT_LIKES"
+
+
+// decrement/increment item likes
+export const incLikes = ({ idx }) => ({
+  type: INCREMENT_LIKES,
+  idx,
+})
+
+export const decLikes = ({ idx }) => ({
+  type: DECREMENT_LIKES,
+  idx,
+})
 
 // handle play video function
 export const playVideo = ({ play, index }) => ({

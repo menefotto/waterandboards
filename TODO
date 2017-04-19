@@ -7,6 +7,8 @@
 - Test webpack #done
 - Added react router #done
 - Fix conditional iframe not showing up #done
+- Add likes increment/decrement #done
+- Add checked/not checked on likes #done
 
-Add likes increment/decrement
+
 Add mobile wrapper to change size dynamically.

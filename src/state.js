@@ -3,7 +3,7 @@ const initialState = {
     opened: false, 
     simplebar: false, 
     showMenu: false,
-    logged: true,
+    logged: false,
     anchorEl: null,
   },
   LoginPageRdx: { 
@@ -33,6 +33,7 @@ const initialState = {
         videoId: "6xZqqZs4Gjk",
         play: false,
         likes: 1,
+        liked: false,
         itemChips:
         {
           conditions: "good",
@@ -51,6 +52,7 @@ const initialState = {
         videoId: "6xZqqZs4Gjk",
         play: false,
         likes: 1,
+        liked: false,
         itemChips:
         {
           conditions: "good",
