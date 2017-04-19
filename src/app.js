@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -31,11 +31,13 @@ const App = () => (
     <Provider store={reduxStore}>
       <Router>
         <Body>
-          <Route path="/" exact component={Grid} />
-          <Route path="/logged" component={Grid} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/profile" component={Profile} />
-          <Route component={NotFound} />
+          <Switch>
+            <Route path="/" exact component={Grid} />
+            <Route path="/logged" component={Grid} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/profile" component={Profile} />
+            <Route component={NotFound} />
+          </Switch>
         </Body>
       </Router>
     </Provider>
