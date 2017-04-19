@@ -101,7 +101,7 @@ ToolBar.defaultProps = {
 const barStyle = {
   bar: {
     height: 70,
-    width: "100%",
+    width: "auto",
   },
   left: {
     marginLeft: "2%",
@@ -113,12 +113,25 @@ const barStyle = {
     marginRight: "0%",
   },
   centerLogged: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
+    width: 400,
+    bottom: "94.5%",
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginBottom: 20,
-    marginRight: "18%", 
   },
   centerSignUp: {
-    marginBottom: 20,
-    marginRight: "19%", 
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
+    width: 400,
+    bottom: "94.5%",
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   title: {
     fontSize: 28,
@@ -127,6 +140,5 @@ const barStyle = {
     fontFamily: "'Architects Daughter', cursive",
   }
 }
-
 
 export default ToolBar

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
-import Paper from 'material-ui/Paper'
 import RaisedButton from 'material-ui/RaisedButton'
 import AutoComplete from 'material-ui/AutoComplete'
 import ActionSearch from 'material-ui/svg-icons/action/search'
@@ -10,22 +9,20 @@ import ActionSearch from 'material-ui/svg-icons/action/search'
 class SearchBar extends React.Component {
   render(){
     return(
-      <div>
-        <Paper zDepth={2} style={searchStyle.paper}>
-            <AutoComplete 
-                name="autocomp" 
-                autoFocus={true}
-                fullWidth={true}
-                dataSource={source} 
-                style={searchStyle.input}
-                hintText="Search for windsurf gear"
-                onNewRequest={this.props.handleSearch}
-            />
-            <SearchButton 
-              style={searchStyle.button} 
-              onClick={this.props.handleSearch} 
-            />
-        </Paper>
+      <div style={searchStyle.paper}>
+        <AutoComplete 
+            name="autocomp" 
+            autoFocus={true}
+            fullWidth={true}
+            dataSource={source} 
+            style={searchStyle.input}
+            hintText="Search for windsurf gear"
+            onNewRequest={this.props.handleSearch}
+        />
+        <SearchButton 
+          style={searchStyle.button} 
+          onClick={this.props.handleSearch} 
+        />
       </div>
     )
   }
@@ -49,7 +46,7 @@ const searchStyle = {
   paper: {
     align: "center",
     height: 50,
-    width: "150%",
+    width: "100%",
     marginTop : 20,
     marginBottom: 0,
     backgroundColor: "#FFFFFF",
@@ -57,10 +54,11 @@ const searchStyle = {
   input: {
     width : "60%",
     marginLeft: "7.5%",
-    marginRight: "5%",
+    marginRight: "2%",
   },
   button: {
-    width: "20%",
+    width: "auto",
+    marginRight: "7.5",
   },
 }
 
