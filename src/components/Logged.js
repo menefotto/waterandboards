@@ -6,6 +6,7 @@ import Avatar from 'material-ui/Avatar'
 import IconButton from 'material-ui/IconButton'
 import SocialPerson from 'material-ui/svg-icons/social/person'
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications'
+import FileCloudUpload from 'material-ui/svg-icons/file/cloud-upload'
 import Notifications from "./Notifications.js"
 
 
@@ -44,6 +45,9 @@ class Logged extends React.Component{
 
     return(
       <div style={barStyle.right}>
+        <IconButton tooltip={"upload new item"}>
+          <FileCloudUpload />
+        </IconButton>
         <IconButton 
           onTouchTap={this.props.hMenu}
           style={barStyle.icon}

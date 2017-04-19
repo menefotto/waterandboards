@@ -110,7 +110,7 @@ const barStyle = {
     marginRight: "2%",
   },
   rightLogged: {
-    marginRight: "0%",
+    marginRight: "2%",
   },
   centerLogged: {
     position: 'absolute',
@@ -121,7 +121,6 @@ const barStyle = {
     bottom: "94.5%",
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: 20,
   },
   centerSignUp: {
     position: 'absolute',
