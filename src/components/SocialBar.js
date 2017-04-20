@@ -33,7 +33,6 @@ class SocialBar extends React.Component{
           checked={GridRdx.list[this.props.idx].liked}
           style={styles.like}
           onCheck={this.props.hChecked}
-          styles={{width: 23,height: 27}}
           labelStyle={{minWidth: 60, fontSize: 12}}
           uncheckedIcon={<ActionFavoriteBorder />}
           checkedIcon={<ActionFavorite style={{fill: 'red'}} />} 
