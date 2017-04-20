@@ -10,13 +10,6 @@ import PostedItem from '../components/PostedItem.js';
 import ActionViewModule from 'material-ui/svg-icons/action/view-module'
 
 
-const sizes = {
-  small: {w:320, h:180, n:"default"},
-  medium: {w:480,h:360, n:"hqdefault"},
-  normal: {w:640,h:480, n:"sddefault"},
-}
-
-
 class Grid extends React.Component {
 
   static contextTypes = {
@@ -52,8 +45,8 @@ class Grid extends React.Component {
         gStyle = {...gridStyles.size, width: 700}
     }
 
+    // Object keys is work-around till I fix the reducer to always return an array
     const cards = []
-    // work around till I fix the reducer to always return an array
     for(let idx = 0; idx < Object.keys(GridRdx.list).length; idx++){
       cards.push (
         <GridTile key={idx}>

@@ -28,34 +28,36 @@ class SocialBar extends React.Component{
     const { GridRdx } = getState()
 
     return(
-      <div style={iconStyle.bar}>
+      <div style={styles.bar}>
         <Checkbox
           checked={GridRdx.list[this.props.idx].liked}
-          style={iconStyle.like}
+          style={styles.like}
           onCheck={this.props.hChecked}
-          iconStyle={{width: 23,height: 27}}
+          styles={{width: 23,height: 27}}
           labelStyle={{minWidth: 60, fontSize: 12}}
           uncheckedIcon={<ActionFavoriteBorder />}
           checkedIcon={<ActionFavorite style={{fill: 'red'}} />} 
           label={GridRdx.list[this.props.idx].likes + " likes"}
         />
         {/* fill workaround since it doesn't change color otherwise */}
-        <button style={iconStyle.socialT}>
-          <FontAwesome 
-            name="twitter-square" 
-            size="2x" 
-            title="share it on twitter"
-            style={iconStyle.ico} 
-          />
-        </button>
-        <button style={iconStyle.socialF}>
-          <FontAwesome 
-            name="facebook-official" 
-            size="2x" 
-            title="share it on facebook"
-            style={iconStyle.ico} 
-          />
-        </button>
+        <div style={styles.social}>
+          <button style={styles.socialT}>
+            <FontAwesome 
+              name="twitter-square" 
+              size="2x" 
+              title="share it on twitter"
+              style={styles.ico} 
+            />
+          </button>
+          <button style={styles.socialF}>
+            <FontAwesome 
+              name="facebook-official" 
+              size="2x" 
+              title="share it on facebook"
+              style={styles.ico} 
+            />
+          </button>
+        </div>
       </div>
     )
   }
@@ -66,45 +68,39 @@ SocialBar.propTypes = {
   hChecked: PropTypes.func.isRequired,
 }
 
-const iconStyle = {
-  ico : {
+const styles = {
+  ico: {
     paddingLeft: 0,
     paddingRight: 2,
   },
   bar: {
     height: 40,
-    width: 660,
+    width: "auto",
     marginBottom: 10,
     display: 'flex',  // display and flexDirection are used to inline it
     flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  social: {
+    marginRight: 40,
+  },
+  like: {
+    width: 60,
+    marginLeft: 30,
   },
   socialT: {
     width: 32,
     border: 'none',
-    marginTop: 0,
-    marginRight: 8, 
-    marginLeft: 440, 
-    marginBottom : 0,
+    marginRight: 15, 
     transform: `translateY(1px)`,
     backgroundColor: "transparent",
   },
   socialF: {
     width: 32,
     border: 'none',
-    marginTop: 0,
-    marginLeft: 0, 
-    marginRight: 8, 
-    marginBottom : 0,
+    marginRight: 30, 
     transform: `translateY(1px)`,
     backgroundColor: "transparent",
-  },
-
-  like : {
-    width: 60,
-    marginTop: 10,
-    marginLeft: 25,
-    marginRight: 10,
-    marginBottom : 4,
   },
 }
 

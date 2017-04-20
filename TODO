@@ -1,3 +1,5 @@
+# Todos done and to finish
+
 - fix default avatar icon not showing up. #done
 - add corresponding actions for notifications #done
 - implement side bar actions reducer and handlers #done
@@ -9,6 +11,8 @@
 - Fix conditional iframe not showing up #done
 - Add likes increment/decrement #done
 - Add checked/not checked on likes #done
+- Change object view dynamically #done
+- Change social bar to adjust dinamically #done
 
 
 Add mobile wrapper to change size dynamically.
