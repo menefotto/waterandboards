@@ -11,12 +11,12 @@ injectTapEventPlugin()
 import BlueGrey from './themes'
 import rootReducer from './reducers'
 import initialState from './state.js'
-import NotFound from './components/NotFound.js'
 import Body from './components/Body.js'
 import Feed from './containers/Feed.js'
 import SignUp from './containers/SignUp.js'
 import Profile from './components/Profile.js'
 import YouTube from './containers/YouTube.js'
+import NotFound from './components/NotFound.js'
 
 
 const reduxStore = createStore(

@@ -90,7 +90,7 @@ const gridStyles = {
   size : {
     marginTop: 10,
     width: 720,
-    height: '1300',
+    height: 1300,
     overflowY: 'auto',
   },
   tile: {
