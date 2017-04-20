@@ -34,7 +34,7 @@ class YouTubeEmbed extends React.Component{
     const { GridRdx } = getState()
 
     return(
-      <div style={{marginLeft: "2.5%"}}>
+      <div style={{display: 'flex', justifyContent: 'space-around'}}>
         {
           GridRdx.list[this.props.idx].play ?
             <iframe 

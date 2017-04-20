@@ -76,7 +76,6 @@ const cardStyle = {
     marginTop: 20,
     marginBottom: 20,
     backgroundColor: "#FFF",
-    boxShadow: '2px 2px 5px #888888',
   },
     header : {
     marginLeft: 5,

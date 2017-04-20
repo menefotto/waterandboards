@@ -39,17 +39,17 @@ class Grid extends React.Component {
         gStyle = {...gridStyles.size, width: 1080}
         break
       case 1:
-        gStyle = {...gridStyles.size, width: 700}
+        gStyle = {...gridStyles.size, width: 720}
         break
       default:
-        gStyle = {...gridStyles.size, width: 700}
+        gStyle = {...gridStyles.size, width: 720}
     }
 
     // Object keys is work-around till I fix the reducer to always return an array
     const cards = []
     for(let idx = 0; idx < Object.keys(GridRdx.list).length; idx++){
       cards.push (
-        <GridTile key={idx}>
+        <GridTile key={idx} style={gridStyles.tile}>
           <PostedItem
             index={idx}
             size={GridRdx.size}
@@ -88,10 +88,13 @@ Grid.propTypes = {
 
 const gridStyles = {
   size : {
-    marginTop: 20,
+    marginTop: 10,
     width: 720,
-    height: 1000,
+    height: '1300',
     overflowY: 'auto',
+  },
+  tile: {
+    margin: 5,
   },
   root: {
     display: 'flex',
