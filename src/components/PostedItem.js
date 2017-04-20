@@ -15,13 +15,15 @@ import YouTube from '../containers/YouTube'
 
 class PostedItem extends React.Component {
 
-  render(){
+    render(){
     const videoId = this.props.videoId
     const itemChips = this.props.itemChips
     const cardHeader = this.props.cardHeader
-    //    const socialLink = this.props.socialLink
+    //const socialLink = this.props.socialLink
+ 
+    const cStylePaper = {...cardStyle.paper, width: this.props.size.w + 40}
     return(
-      <div style={cardStyle.paper}>
+      <div style={cStylePaper}>
         <CardHeader
           style={cardStyle.header}
           avatar={cardHeader.avatar}
@@ -69,14 +71,14 @@ PostedItem.propTypes = {
 }
 
 const cardStyle = {
-  paper: {
+  paper : {
     width: 680,
     marginTop: 20,
     marginBottom: 20,
     backgroundColor: "#FFF",
     boxShadow: '2px 2px 5px #888888',
   },
-  header : {
+    header : {
     marginLeft: 5,
   },
   title : {

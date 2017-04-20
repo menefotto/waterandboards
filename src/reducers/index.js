@@ -135,18 +135,22 @@ const GridRdx = (state, action) => {
       }
 
     case CHANGE_COLONS_NUMBER:
-      let colsn
+      let colsn, dimensions
       if (state.cols === 1){
         colsn = state.cols + action.coln
+        dimensions = {w:480,h:360, n:"hqdefault"}
       } else if(state.cols === 2){
         colsn = state.cols + action.coln
+        dimensions = {w:320, h:180, n:"default"}
       } else if(state.cols === 3){
         colsn = 1
+        dimensions = {w:640,h:480, n:"sddefault"}
       }
 
       return{
         ...state,
-        cols: colsn
+        cols: colsn,
+        size: dimensions,
       }
 
     default:

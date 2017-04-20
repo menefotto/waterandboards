@@ -11,9 +11,9 @@ import ActionViewModule from 'material-ui/svg-icons/action/view-module'
 
 
 const sizes = {
-  small: {w:"320", h:"180", n:"default"},
-  medium: {w:"480",h:"360", n:"hqdefault"},
-  normal: {w:"640",h:"480", n:"sddefault"},
+  small: {w:320, h:180, n:"default"},
+  medium: {w:480,h:360, n:"hqdefault"},
+  normal: {w:640,h:480, n:"sddefault"},
 }
 
 
@@ -37,19 +37,19 @@ class Grid extends React.Component {
     const { getState } = store
     const { GridRdx } = getState()
 
-    let dimensions
+    let dimensions, gStyle
     switch(GridRdx.cols){
       case 3:
-        dimensions = sizes.small
+        gStyle = {...gridStyles.size, width: 1140}
         break
       case 2:
-        dimensions = sizes.medium
+        gStyle = {...gridStyles.size, width: 1080}
         break
       case 1:
-        dimensions = sizes.normal
+        gStyle = {...gridStyles.size, width: 700}
         break
       default:
-        dimensions = sizes.normal
+        gStyle = {...gridStyles.size, width: 700}
     }
 
     const cards = []
@@ -59,7 +59,7 @@ class Grid extends React.Component {
         <GridTile key={idx}>
           <PostedItem
             index={idx}
-            size={dimensions}
+            size={GridRdx.size}
             videoId={GridRdx.list[idx].videoId}
             itemChips={GridRdx.list[idx].itemChips}
             cardHeader={GridRdx.list[idx].cardHeader}
@@ -70,11 +70,6 @@ class Grid extends React.Component {
 
     return(
       <div style={gridStyles.root}>
-        <GridList 
-          cellHeight='auto' 
-          cols={GridRdx.cols} 
-          style={gridStyles.gridList}
-        >
         <IconButton 
           tooltip="change view" 
           style={gridStyles.views}
@@ -82,6 +77,11 @@ class Grid extends React.Component {
         >
           <ActionViewModule />
         </IconButton>
+        <GridList 
+          cellHeight='auto' 
+          cols={GridRdx.cols} 
+          style={gStyle}
+        >
           {cards}   
       </GridList> 
     </div>
@@ -94,19 +94,20 @@ Grid.propTypes = {
 }
 
 const gridStyles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-  gridList: {
+  size : {
     marginTop: 20,
     width: 720,
     height: 1000,
     overflowY: 'auto',
   },
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
   views: {
     marginLeft: "90%",
+    marginBottom: "1%",
   },
 }
 
