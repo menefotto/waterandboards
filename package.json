@@ -3,19 +3,20 @@
   "version": "0.0.2",
   "dependencies": {
     "firebase": "^3.7.5",
+    "font-awesome": "^4.7.0",
     "material-ui": "^0.17.3",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.15.0",
+    "preact-tap-event-plugin": "^0.1.2",
     "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
-    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0"
   },
   "scripts": {
     "preinstall": "npm i typings -D && typings i dt~react dt~react-dom -D",
     "build": "webpack -p --progress --optimize-minimize --config webpack.config.js",
-    "start": "webpack-dev-server -p --optimize-minimize --progress --hot --https"
+    "start": "webpack-dev-server -p --optimize-minimize --progress --hot"
   },
   "description": "WanterAndBoards.com react front-end",
   "main": "app.js",
@@ -27,10 +28,14 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.22.0",
+    "css-loader": "^0.28.0",
+    "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "lodash.assign": "^4.2.0",
     "path": "^0.12.7",
+    "style-loader": "^0.16.1",
     "typings": "^2.1.1",
+    "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
   },
