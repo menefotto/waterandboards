@@ -11,12 +11,6 @@ injectTapEventPlugin()
 import BlueGrey from './themes'
 import rootReducer from './reducers'
 import initialState from './state.js'
-import Body from './components/Body.js'
-import Feed from './containers/Feed.js'
-import SignUp from './containers/SignUp.js'
-import Profile from './components/Profile.js'
-import YouTube from './containers/YouTube.js'
-import NotFound from './components/NotFound.js'
 
 
 const reduxStore = createStore(
@@ -24,6 +18,49 @@ const reduxStore = createStore(
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 ) 
+
+function asyncComponent(getComponent) {
+  return class AsyncComponent extends React.Component {
+    static Component = null;
+    state = { Component: AsyncComponent.Component };
+
+    componentWillMount() {
+      if (!this.state.Component) {
+        getComponent().then(Component => {
+          AsyncComponent.Component = Component
+          this.setState({ Component })
+        })
+      }
+    }
+    render() {
+      const { Component } = this.state
+      if (Component) {
+        return <Component {...this.props} />
+      }
+      return null
+    }
+  }
+}
+
+const Body = asyncComponent(() =>
+  System.import('./components/Body').then(module => module.default)
+)
+
+const Feed = asyncComponent(() =>
+  System.import('./containers/Feed').then(module => module.default)
+)
+
+const SignUp = asyncComponent(() =>
+  System.import('./containers/SignUp').then(module => module.default)
+)
+
+const Profile = asyncComponent(() =>
+  System.import('./components/Profile').then(module => module.default)
+)
+
+const NotFound = asyncComponent(() =>
+  System.import('./components/NotFound').then(module => module.default)
+)
 
 
 const App = () => (

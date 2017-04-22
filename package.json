@@ -7,7 +7,6 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-iframe-component": "^1.0.1",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
@@ -16,7 +15,7 @@
   "scripts": {
     "preinstall": "npm i typings -D && typings i dt~react dt~react-dom -D",
     "build": "webpack -p --progress --optimize-minimize --config webpack.config.js",
-    "start": "webpack-dev-server --progress --inline --hot"
+    "start": "webpack-dev-server -p --optimize-minimize --progress --hot --https"
   },
   "description": "WanterAndBoards.com react front-end",
   "main": "app.js",
@@ -28,6 +27,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.22.0",
+    "html-webpack-plugin": "^2.28.0",
     "lodash.assign": "^4.2.0",
     "path": "^0.12.7",
     "typings": "^2.1.1",

@@ -9,6 +9,7 @@ import {
   CardMedia, 
   CardText
 } from 'material-ui/Card'
+import ButtonLink from './ButtonLink'
 import Social from '../containers/Social'
 import YouTube from '../containers/YouTube'
 
@@ -28,7 +29,7 @@ class PostedItem extends React.Component {
           style={cardStyle.header}
           avatar={cardHeader.avatar}
           subtitle={cardHeader.timeAdded}
-          title={<strong> {cardHeader.profile} </strong>}
+          title={<ButtonLink text={<strong>{cardHeader.profile}</strong>} to={"#"} />}
         />
         <CardMedia>
           <YouTube 
@@ -39,7 +40,7 @@ class PostedItem extends React.Component {
         </CardMedia>
           <CardTitle 
             style={cardStyle.title}
-            title={<strong> {cardHeader.title} </strong>}
+            title={<ButtonLink text={<strong> {cardHeader.title} </strong>} to={"#"} />}
           />
         <CardText>
           <ItemChips chips={itemChips}/>
