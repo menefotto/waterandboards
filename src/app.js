@@ -2,7 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Route from 'react-router-dom/Route'
+import Switch from 'react-router-dom/Switch'
+import BrowserRouter from 'react-router-dom/BrowserRouter'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -11,6 +13,7 @@ injectTapEventPlugin()
 import BlueGrey from './themes'
 import rootReducer from './reducers'
 import initialState from './state.js'
+require('preact/devtools');
 
 
 const reduxStore = createStore(
@@ -66,7 +69,7 @@ const NotFound = asyncComponent(() =>
 const App = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
     <Provider store={reduxStore}>
-      <Router>
+      <BrowserRouter>
         <Body>
           <Switch>
             <Route path="/" exact component={Feed} />
@@ -76,7 +79,7 @@ const App = () => (
             <Route component={NotFound} />
           </Switch>
         </Body>
-      </Router>
+      </BrowserRouter>
     </Provider>
   </MuiThemeProvider>
 )

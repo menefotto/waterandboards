@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import Link from 'react-router-dom/Link'
 import { 
   Toolbar, 
   ToolbarGroup, 

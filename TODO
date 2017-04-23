@@ -14,6 +14,9 @@
 - Change object view dynamically #done
 - Change social bar to adjust dinamically #done
 - Fixed centering of items #done
+- Added infinite scroll #done
+- Add font-awesome #done
+- Removed local dependency react-fontawesome #done
 
 
 Fix bug into third view

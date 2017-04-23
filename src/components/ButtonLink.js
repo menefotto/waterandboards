@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Link } from 'react-router-dom'
+import Link from 'react-router-dom/Link'
 
 
 const ButtonLink = ({ text, to }) => {
