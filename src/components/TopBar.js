@@ -17,6 +17,7 @@ class TopBar extends React.Component{
           element={this.props.element}
           hOpen={this.props.hOpen}
           hLogin={this.props.hLogin}
+          hLogo={this.props.hLogo}
           hSearch={this.props.hSearch}
           hMenu={this.props.hMenu}
           hRequestClose={this.props.hRequestClose}
@@ -42,6 +43,7 @@ TopBar.propTypes = {
   element: PropTypes.element,
   hMenu: PropTypes.func.isRequired,
   hOpen: PropTypes.func.isRequired,
+  hLogo: PropTypes.func.isRequired,
   hItems: PropTypes.func.isRequired,
   hClose: PropTypes.func.isRequired,
   hLogin: PropTypes.func.isRequired,

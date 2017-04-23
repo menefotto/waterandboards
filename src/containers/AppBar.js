@@ -8,37 +8,36 @@ import Profile from '../components/Profile.js'
 import * as Actions from '../actions'
 
 
-class AppBar extends React.PureComponent{
-
-  handleClose = (e) => {
+const AppBar = ({ actions }) => {
+  const handleClose = (e) => {
     actions.toggleSideBar({
       opened: false,
     })
   }
 
-  handleOpen = (e) => {
+  const handleOpen = (e) => {
     actions.toggleSideBar({
       opened: true,
     })
   }
 
-  handleLogin = (e) => {
-    actions.setMainElement({
-      element: <SignUp />
-    })
-
+  const handleLogin = (e) => {
     actions.toggleAppBarState({
       simplebar: true,
     })
   }
 
-  handleSearch = (e) => {
+  const handleLogo = (e) => {
+    location.reload()
+  }
+
+  const handleSearch = (e) => {
     actions.search({
       searched: true,
     })
   }
 
-  handleNotificationOpen = (e) => {
+  const handleNotificationOpen = (e) => {
     e.preventDefault()
 
     actions.openNotificationMenu({
@@ -47,26 +46,26 @@ class AppBar extends React.PureComponent{
     })
   }
 
-  handleNotificationClose = (e) => {
+  const handleNotificationClose = (e) => {
     actions.closeNotificationMenu({
       showMenu: false,
     })
   }
 
-  handleSeeAllNotifications = (e) => {
+  const handleSeeAllNotifications = (e) => {
     // action and reducer handling has to be implemented
   }
 
-  handleItems = (e) => {
+  const handleItems = (e) => {
   }
 
-  handleUploads = (e) => {
+  const handleUploads = (e) => {
   }
 
-  handleMessages = (e) => {
+  const handleMessages = (e) => {
   }
 
-  handleProfile = (e) => {
+  const handleProfile = (e) => {
     actions.setMainElement({
       element: <Profile />
     })
@@ -76,31 +75,30 @@ class AppBar extends React.PureComponent{
     })
   }
 
-  handleLogout = (e) => {
+  const handleLogout = (e) => {
     actions.logoutSideBar({
       logoutShow: true,
     })
   }
 
-  render(){
-    return (
-      <TopBar
-        element={null}
-        hClose={this.handleClose}
-        hOpen={this.handleOpen}
-        hLogin={this.handleLogin}
-        hSearch={this.handleSearch}
-        hUploads={this.handleUploads}
-        hMessages={this.handleMessages}
-        hItems={this.handleItems}
-        hProfile={this.handleProfile}
-        hLogout={this.handleLogout}
-        hMenu={this.handleNotificationOpen}
-        hRequestClose={this.handleNotificationClose}
-        hSeeAllNotifications={this.handleSeeAllNotifications}
-      />
-    )
-  }
+  return (
+    <TopBar
+      element={null}
+      hClose={handleClose}
+      hOpen={handleOpen}
+      hLogin={handleLogin}
+      hLogo={handleLogo}
+      hSearch={handleSearch}
+      hUploads={handleUploads}
+      hMessages={handleMessages}
+      hItems={handleItems}
+      hProfile={handleProfile}
+      hLogout={handleLogout}
+      hMenu={handleNotificationOpen}
+      hRequestClose={handleNotificationClose}
+      hSeeAllNotifications={handleSeeAllNotifications}
+    />
+  )
 }
 
 const mapStateToProps = (state, props) => {
