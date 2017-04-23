@@ -27,7 +27,10 @@ config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({ use: ['style-loader', 'css-loader']}),
+        loader: ExtractTextPlugin.extract({ 
+          fallback: "style-loader",
+          use: "css-loader"
+        }),
       },
       {
         test: /\.(png|jpe?g|gif|ico)$/,
@@ -69,7 +72,7 @@ config = {
       // (the commons chunk name)
       // filename: "commons.js",
       // // (the filename of the commons chunk)
-      // // minChunks: 3,
+      minChunks: 3,
       // // (Modules must be shared between 3 entries)
       // // chunks: ["pageA", "pageB"],
       // // (Only use these entries)
