@@ -50,33 +50,35 @@ class ToolBar extends React.Component{
     }
 
     return(
-      <Toolbar style={barStyle.bar}>
-        <ToolbarGroup style={barStyle.left} firstChild={true}>
-          <Avatar src={this.props.logo} />
-          <ToolbarTitle text={this.props.bTitle} style={barStyle.title} />
-        </ToolbarGroup>
-        <ToolbarGroup 
-          style={
-            AppBarRdx.logged ? 
-              barStyle.centerLogged : barStyle.centerSignUp
-          }
-        >
-          {
-            AppBarRdx.simplebar ?
-            <span />:
-            <SearchBar onClick={this.props.hSearch} />
-          }
-        </ToolbarGroup>
-        <ToolbarGroup 
-          style={
-            AppBarRdx.logged ? 
-              barStyle.rightLogged : barStyle.right
-          } 
-          lastChild={true}
-        >
-          {rightElement}
-        </ToolbarGroup>
-      </Toolbar>
+      <div style={barStyle.bar}>
+        <Toolbar>
+          <ToolbarGroup style={barStyle.left} firstChild={true}>
+            <Avatar src={this.props.logo} />
+            <ToolbarTitle text={this.props.bTitle} style={barStyle.title} />
+          </ToolbarGroup>
+          <ToolbarGroup 
+            style={
+              AppBarRdx.logged ? 
+                barStyle.centerLogged : barStyle.centerSignUp
+            }
+          >
+            {
+              AppBarRdx.simplebar ?
+              <span />:
+              <SearchBar onClick={this.props.hSearch} />
+            }
+          </ToolbarGroup>
+          <ToolbarGroup 
+            style={
+              AppBarRdx.logged ? 
+                barStyle.rightLogged : barStyle.right
+            } 
+            lastChild={true}
+          >
+            {rightElement}
+          </ToolbarGroup>
+        </Toolbar>
+      </div>
     )
   }
 }
@@ -101,7 +103,7 @@ ToolBar.defaultProps = {
 const barStyle = {
   bar: {
     height: 70,
-    width: "auto",
+    width: "100%",
   },
   left: {
     marginLeft: "2%",
@@ -113,22 +115,23 @@ const barStyle = {
     marginRight: "2%",
   },
   centerLogged: {
-    position: 'absolute',
-    top: 0,
+    top: -7,
     right: 0,
     left: 0,
     width: 400,
-    bottom: "94.5%",
+    height: 50,
+    bottom: 0,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
   centerSignUp: {
     position: 'absolute',
-    top: 0,
+    top: -7,
     right: 0,
     left: 0,
     width: 400,
-    bottom: "94.5%",
+    height: 50,
+    bottom: 0,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
@@ -139,5 +142,6 @@ const barStyle = {
     fontFamily: "'Architects Daughter', cursive",
   }
 }
+
 
 export default ToolBar
