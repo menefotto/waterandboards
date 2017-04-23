@@ -2,10 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Checkbox from 'material-ui/Checkbox'
-import FontAwesome from '../deps/react-fontawesome'
+import FontAwesome from 'react-fontawesome'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite'
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
-import 'font-awesome/css/font-awesome.css'
+import 'font-awesome/css/font-awesome.min.css'
+
 
 class SocialBar extends React.Component{
 

@@ -11,7 +11,8 @@ import {
   GridTile,
 } from 'material-ui/GridList'
 import checkCookie from '../utils'
-import FontAwesome from '../deps/react-fontawesome'
+import FontAwesome from 'react-fontawesome'
+import 'font-awesome/css/font-awesome.min.css'
 
 
 class Login extends React.Component{

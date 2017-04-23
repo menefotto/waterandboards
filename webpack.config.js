@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
 config = {
@@ -26,7 +27,7 @@ config = {
       },
       {
         test: /\.css$/,
-        loader: 'css-loader?name=assents/[name].[hash].css',
+        loader: ExtractTextPlugin.extract({ use: ['style-loader', 'css-loader']}),
       },
       {
         test: /\.(png|jpe?g|gif|ico)$/,
@@ -74,7 +75,8 @@ config = {
       // // (Only use these entries)
       children: true,
       async: true,
-   }),
+    }),
+    new ExtractTextPlugin('bundle.css'),
   ],
   devServer: {
     historyApiFallback: true,
