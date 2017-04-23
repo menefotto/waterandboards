@@ -102,6 +102,9 @@ ToolBar.defaultProps = {
 
 const barStyle = {
   bar: {
+    position: 'fixed',
+    overflow: 'hidden',
+    zIndex: 1,
     height: 70,
     width: "100%",
   },
