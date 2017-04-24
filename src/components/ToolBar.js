@@ -120,6 +120,7 @@ const barStyle = {
     marginRight: "2%",
   },
   centerLogged: {
+    position: 'absolute',
     top: -7,
     right: 0,
     left: 0,
