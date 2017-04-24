@@ -13,8 +13,18 @@ injectTapEventPlugin()
 import BlueGrey from './themes'
 import rootReducer from './reducers'
 import initialState from './state.js'
+import { 
+  asyncComponent, 
+  saveState, 
+  loadState 
+}from './utils'
 require('preact/devtools');
 
+
+//if(loadState() === undefined){
+// saveState(initialState)
+//}
+//const localState = loadState()
 
 const reduxStore = createStore(
   rootReducer, 
@@ -22,28 +32,11 @@ const reduxStore = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 ) 
 
-function asyncComponent(getComponent) {
-  return class AsyncComponent extends React.Component {
-    static Component = null;
-    state = { Component: AsyncComponent.Component };
+//reduxStore.subscribe(() => {
+//  saveState(reduxStore.getState())
+//  console.log("State saved!")
+//})
 
-    componentWillMount() {
-      if (!this.state.Component) {
-        getComponent().then(Component => {
-          AsyncComponent.Component = Component
-          this.setState({ Component })
-        })
-      }
-    }
-    render() {
-      const { Component } = this.state
-      if (Component) {
-        return <Component {...this.props} />
-      }
-      return null
-    }
-  }
-}
 
 const Body = asyncComponent(() =>
   System.import('./components/Body').then(module => module.default)

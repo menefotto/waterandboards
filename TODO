@@ -17,12 +17,15 @@
 - Added infinite scroll #done
 - Add font-awesome #done
 - Removed local dependency react-fontawesome #done
+- Fixed ripple effect chrome not-working #done
+- Fixed logged componenet positioning #done
 
 
+Add item page
 Fix bug into third view
 Add links to posted item
 Add watch list items
-Add item page
 Add link to everything posted by user
 Add mobile wrapper to change size dynamically.
 Implement small surf/windsurf game for 404 page.
+

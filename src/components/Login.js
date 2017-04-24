@@ -2,13 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
-import Paper from 'material-ui/Paper'
 import Divider from 'material-ui/Divider'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import {
   GridList, 
-  GridTile,
 } from 'material-ui/GridList'
 import checkCookie from '../utils'
 import FontAwesome from 'react-fontawesome'
@@ -37,104 +35,94 @@ class Login extends React.Component{
     return(
       <div style={formStyles.root}>
         <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
-          <GridTile>
-            <Paper zDepth={3}>
-              <form>
-                <TextField 
-                    name="email" 
-                    style={formStyles.textFirst} 
-                    hintText="Email..." 
-                    type="email"
-                />
-                {
-                    LoginPageRdx.register ?
-                    <div>
-                        <TextField 
-                            name="fname" 
-                            style={formStyles.input} 
-                            hintText="First name..." 
-                        />
-                        <TextField 
-                            name="lname" 
-                            style={formStyles.input} 
-                            hintText="Last name..." 
-                        /> 
-                        <TextField 
-                            name="password1" 
-                            style={formStyles.input} 
-                            hintText="Password..." 
-                            type="password"
-                        /> 
-                    </div> : null
+          <div style={formStyles.paper}>
+            <form>
+              <TextField 
+                  name="email" 
+                  style={formStyles.textFirst} 
+                  hintText="Email..." 
+                  type="email"
+              />
+              {
+                  LoginPageRdx.register ?
+                  <div>
+                      <TextField 
+                          name="fname" 
+                          style={formStyles.input} 
+                          hintText="First name..." 
+                      />
+                      <TextField 
+                          name="lname" 
+                          style={formStyles.input} 
+                          hintText="Last name..." 
+                      /> 
+                      <TextField 
+                          name="password1" 
+                          style={formStyles.input} 
+                          hintText="Password..." 
+                          type="password"
+                      /> 
+                  </div> : null
+              }
+              <TextField 
+                  name="password2" 
+                  style={formStyles.input} 
+                  hintText="Password..." 
+                  type="password"
+              /> 
+              <RaisedButton 
+                  backgroundColor={"#C0C0C0"} 
+                  style={formStyles.button}
+                  label={
+                    LoginPageRdx.register? "Register" : "Login"
+                  }
+              >
+              </RaisedButton>
+              <Divider />
+              <RaisedButton 
+                children={
+                  <FontAwesome 
+                    name="google" 
+                    size="lg" 
+                    title="share it on google"
+                  />
                 }
-                <TextField 
-                    name="password2" 
-                    style={formStyles.input} 
-                    hintText="Password..." 
-                    type="password"
-                /> 
-                <RaisedButton 
-                    backgroundColor={"#C0C0C0"} 
-                    style={formStyles.button}
-                    label={
-                      LoginPageRdx.register? "Register" : "Login"
-                    }
-                >
-                </RaisedButton>
-                <Divider />
-                <RaisedButton 
-                  children={
-                    <FontAwesome 
-                      name="facebook" 
-                      size="lg" 
-                      title="share it on facebook"
-                    />
-                  }
-                  backgroundColor={"#3B5998"} 
-                  style={formStyles.buttonFacebook}
-                  label={
-                    LoginPageRdx.register? 
-                      "Register with Facebook" : 
-                      "Login with Facebook"
-                  }
-                >
-                </RaisedButton>
-                <RaisedButton 
-                  children={
-                    <FontAwesome 
-                      name="google" 
-                      size="lg" 
-                      title="share it on google"
-                    />
-                  }
-                  backgroundColor={"#DB4437"} 
-                  style={formStyles.buttonGoogle}
-                  label={
-                    LoginPageRdx.register? 
-                      "Register with Google" : 
-                      "Login with Google"
-                  }
-                >
-                </RaisedButton>
-              </form>
-            </Paper>
-            </GridTile>
-            <GridTile>
-                <Paper zDepth={3} style={formStyles.gridTile}>
-                    { !LoginPageRdx.register ? 
-                        <div 
-                            style={formStyles.inputClick}> 
-                            Don't have an account? <a onClick={this.props.hRegister} href="#"> Register </a> 
-                        </div> : 
-                        <div 
-                            style={formStyles.inputClick}> 
-                            Have an account? <a onClick={this.props.hLogin} href="#"> Login </a> 
-                        </div>
-                    }
-                </Paper>
-            </GridTile>
-          </GridList> 
-        </div>
+                backgroundColor={"#DB4437"} 
+                style={formStyles.buttonGoogle}
+                label={
+                  LoginPageRdx.register? 
+                    "Register with Google" : 
+                    "Login with Google"
+                }
+              >
+              </RaisedButton>
+              <RaisedButton 
+                children={
+                  <FontAwesome 
+                    name="facebook" 
+                    size="lg" 
+                    title="share it on facebook"
+                  />
+                }
+                backgroundColor={"#3B5998"} 
+                style={formStyles.buttonFacebook}
+                label={
+                  LoginPageRdx.register? 
+                    "Register with Facebook" : 
+                    "Login with Facebook"
+                }
+              >
+              </RaisedButton>
+            </form>
+          </div>
+          <div style={formStyles.gridTile}>
+            { !LoginPageRdx.register ? 
+                <RegisterLink hRegister={this.props.hRegister} />:
+                <LoginLink hLogin={this.props.hLogin} />
+            }
+          </div>
+        </GridList> 
+      </div>
       )
     }    
 }
@@ -150,6 +138,23 @@ Login.defaultProps = {
   register: false,
 }
 
+
+const RegisterLink = ({ hRegister  }) => {
+  return(
+    <div style={formStyles.inputClick}> 
+      Don't have an account? <a onClick={hRegister} href="#"> Register </a> 
+    </div> 
+  )
+}
+
+const LoginLink = ({ hLogin  }) => {
+  return(
+    <div style={formStyles.inputClick}> 
+      Have an account? <a onClick={hLogin} href="#"> Login </a> 
+    </div>
+  )
+}
+
 const formStyles = {
   root: {
     display: 'flex',
@@ -163,9 +168,15 @@ const formStyles = {
     textAlign: "center",
     paddingTop: 10,
   },
+  paper: {
+    borderRadius: 5,
+    backgroundColor: "#FFF"
+  },
   gridTile: {
     marginTop: 30,
     height: 40,
+    borderRadius: 5,
+    backgroundColor: "#FFF",
   },
   gridList: {
     marginTop: 120,
@@ -183,16 +194,16 @@ const formStyles = {
     marginBottom: 15,
     marginLeft: 70,
   },
-  buttonFacebook: {
-    width: "70%",
-    marginTop: 15,
-    marginBottom: 5,
-    marginLeft: 70,
-  },
   buttonGoogle: {
     width: "70%",
-    marginTop: 5,
-    marginBottom: 15,
+    marginTop: 15,
+    marginBottom: 10,
+    marginLeft: 70,
+  },
+  buttonFacebook: {
+    width: "70%",
+    marginTop: 0,
+    marginBottom: 30,
     marginLeft: 70,
   },
 }

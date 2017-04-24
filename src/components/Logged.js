@@ -29,11 +29,11 @@ class Logged extends React.Component{
     const { getState } = store
     const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
 
-    let defaultAvatar
+    let avatar
     if (this.props.avatar.length === 0){
-      defaultAvatar = <Avatar icon={<SocialPerson />} />
+      avatar = <Avatar onTouchTap={this.props.hSettings} icon={<SocialPerson/>}/>
     }else{
-      defaultAvatar = <Avatar src={this.props.avatar} />
+      avatar = <Avatar onTouchTap={this.props.hSettings} src={this.props.avatar}/>
     }
 
     let second, first
@@ -45,33 +45,15 @@ class Logged extends React.Component{
 
     return(
       <div style={barStyle.right}>
-        <IconButton tooltip={"upload new item"}>
-          <FileCloudUpload />
-        </IconButton>
-        <IconButton 
-          onTouchTap={this.props.hMenu}
-          style={barStyle.icon}
-        >
-          <Badge
-            badgeContent={NotificationRdx.total}
-            badgeStyle={{top: 10, right: 1}}
-            secondary={second}
-            primary={first}
-          >
-            <NotificationsIcon />
-            <Notifications 
-              style={{marginBottom: 55, maxHeight: 500}}
-              hRequestClose={this.props.hRequestClose}
-              hSeeAllNotifications={this.props.hSeeAllNotifications}
-            />
-          </Badge>
-        </IconButton>
-        <IconButton 
-          onTouchTap={this.props.hSettings}
-          style={{marginBottom: 20}}
-        >
-          {defaultAvatar}
-        </IconButton>
+        <Notification
+          first={first}
+          second={second}
+          Rdx={NotificationRdx}
+          hMenu={this.props.hMenu}
+          hClose={this.props.hRequestClose}
+          hNotifications={this.props.hSeeAllNotifications}
+        />
+        {avatar}
       </div>
     )
   }
@@ -90,13 +72,34 @@ Logged.propTypes = {
   hSeeAllNotifications: PropTypes.func.isRequired,
 }
 
+
+const Notification = ({first, second, hMenu, hClose, hNotifications, Rdx}) => {
+  return(
+    <Badge
+      primary={first}
+      secondary={second}
+      badgeContent={Rdx.total}
+      badgeStyle={{top: 25, right: 15}}
+    >
+      <IconButton 
+        disableTouchRipple={true}
+        onTouchTap={hMenu}
+      >
+        <NotificationsIcon />
+      </IconButton>
+      <Notifications 
+        hRequestClose={hClose}
+        hSeeAllNotifications={hNotifications}
+      />
+    </Badge>
+  )
+}
+
 const barStyle = {
   right: {
-    width: 160,
-    marginBottom: 12,
-  },
-  icon: {
-    marginRight: "8%",
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }
 

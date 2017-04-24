@@ -3,8 +3,7 @@ const initialState = {
     opened: false, 
     simplebar: false, 
     showMenu: false,
-    logged: false,
-    anchorEl: null,
+    logged: true,
   },
   LoginPageRdx: { 
     register: false 

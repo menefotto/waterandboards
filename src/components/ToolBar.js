@@ -54,7 +54,7 @@ class ToolBar extends React.PureComponent{
       <div style={barStyle.bar}>
         <Toolbar>
           <ToolbarGroup style={barStyle.left} firstChild={true}>
-            <Avatar src={this.props.logo} onClick={this.props.hLogo}/>
+            <Avatar src={this.props.logo} onTouchTap={this.props.hLogo}/>
             <ToolbarTitle text={this.props.bTitle} style={barStyle.title} />
           </ToolbarGroup>
           <ToolbarGroup 
@@ -88,7 +88,7 @@ ToolBar.propTypes = {
   logo: PropTypes.string,
   bTitle: PropTypes.string,
   element: PropTypes.element,
-  hOpen: PropTypes.func.isRequired,
+  hSettings: PropTypes.func.isRequired,
   hLogin: PropTypes.func.isRequired,
   hLogo: PropTypes.func.isRequired,
   hSearch: PropTypes.func.isRequired,

@@ -2,14 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import withRouter from 'react-router-dom/withRouter'
 import TopBar from '../components/TopBar'
 import SignUp from "../containers/SignUp.js"
 import Profile from '../components/Profile.js'
 import * as Actions from '../actions'
 
 
-const AppBar = ({ actions }) => {
+const AppBarRouted = ({ actions, location }) => {
   const handleClose = (e) => {
+    e.preventDefault()
     actions.toggleSideBar({
       opened: false,
     })
@@ -28,7 +30,14 @@ const AppBar = ({ actions }) => {
   }
 
   const handleLogo = (e) => {
-    location.reload()
+    if(location.pathname !== "/signup"){
+      console.log(location.pathname)
+      //window.location.reload()
+    }else{
+      actions.registerState({
+        register: true,
+      })
+    }
   }
 
   const handleSearch = (e) => {
@@ -100,6 +109,10 @@ const AppBar = ({ actions }) => {
     />
   )
 }
+
+
+const AppBar = withRouter(AppBarRouted)
+
 
 const mapStateToProps = (state, props) => {
   return {

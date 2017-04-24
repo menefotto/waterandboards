@@ -5,7 +5,6 @@ import {
   GridList, 
   GridTile,
 } from 'material-ui/GridList'
-import Paper from 'material-ui/Paper'
 import Toggle from 'material-ui/Toggle'
 import Divider from 'material-ui/Divider'
 import Checkbox from 'material-ui/Checkbox'

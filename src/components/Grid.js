@@ -31,18 +31,14 @@ class Grid extends React.Component {
     switch(GridRdx.cols){
       case 3:
         gStyle = {...gridStyles.size, width: 1140}
-        gStyle = {...gridStyles.size, width: 1140}
         break
       case 2:
-        gStyle = {...gridStyles.size, width: 1080}
         gStyle = {...gridStyles.size, width: 1080}
         break
       case 1:
         gStyle = {...gridStyles.size, width: 720}
-        gStyle = {...gridStyles.size, width: 720}
         break
       default:
-        gStyle = {...gridStyles.size, width: 720}
         gStyle = {...gridStyles.size, width: 720}
     }
 

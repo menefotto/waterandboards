@@ -26,7 +26,7 @@ class Notifications extends React.Component{
   render(){ 
     const { store } = this.context
     const { getState } = store
-    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
+    const { AppBarRdx , NotificationRdx} = getState()
 
     return(
       <div >
@@ -36,7 +36,7 @@ class Notifications extends React.Component{
           anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'middle', vertical: 'top'}}
           onRequestClose={this.props.hRequestClose}
-          style={{marginTop: 45, width: "auto", padding: 10}}
+          style={{marginTop: 35, width: "auto", padding: 10 }}
           className="notificationArea"
         >
           <div style={{padding: 5}}>
