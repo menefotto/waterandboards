@@ -70,6 +70,7 @@ const AppBarRdx = (state = false, action) => {
         default:
           return{
             ...state,
+            searchbar: true,
           }
       }
       
