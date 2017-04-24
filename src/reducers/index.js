@@ -15,6 +15,7 @@ import {
   CHANGE_COLONS_NUMBER,
 } from "../actions"
 import { combineReducers } from 'redux' 
+import { routerReducer, LOCATION_CHANGE } from 'react-router-redux'
 
 
 // appbar type
@@ -51,8 +52,30 @@ const AppBarRdx = (state = false, action) => {
         showMenu: action.showMenu,
       }
 
+    case LOCATION_CHANGE:
+      switch(action.payload.pathname){
+        case '/signup':
+          return{
+            ...state,
+            simplebar: true,
+            searchbar: false,
+          }
+
+        case '/profile':
+          return{
+            ...state,
+            searchbar: false,
+          }
+
+        default:
+          return{
+            ...state,
+          }
+      }
+      
+
     default:
-      return {
+      return{
         ...state,
       }
   }
@@ -183,6 +206,7 @@ const rootReducer = combineReducers({
   NotificationRdx,
   GridRdx,
   SideBarRdx,
+  routerReducer,
 })
 
 

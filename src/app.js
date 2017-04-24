@@ -1,14 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import Route from 'react-router-dom/Route'
 import Switch from 'react-router-dom/Switch'
-import BrowserRouter from 'react-router-dom/BrowserRouter'
+import { 
+  createStore, 
+  applyMiddleware, 
+  compose 
+} from 'redux'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
+
+import createHistory from 'history/createBrowserHistory'
+import { 
+  ConnectedRouter, 
+  routerReducer, 
+  routerMiddleware, 
+  push 
+} from 'react-router-redux'
 
 import BlueGrey from './themes'
 import rootReducer from './reducers'
@@ -18,24 +29,20 @@ import {
   saveState, 
   loadState 
 }from './utils'
-require('preact/devtools');
+import 'preact/devtools'
 
 
-//if(loadState() === undefined){
-// saveState(initialState)
-//}
-//const localState = loadState()
+// Create a history of your choosing (we're using a browser history in this case)
+const history = createHistory()
+// // Build the middleware for intercepting and dispatching navigation actions
+const middleware = routerMiddleware(history)
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const reduxStore = createStore(
-  rootReducer, 
+  rootReducer,
   initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  composeEnhancers(applyMiddleware(middleware)),
 ) 
-
-//reduxStore.subscribe(() => {
-//  saveState(reduxStore.getState())
-//  console.log("State saved!")
-//})
 
 
 const Body = asyncComponent(() =>
@@ -62,7 +69,7 @@ const NotFound = asyncComponent(() =>
 const App = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(BlueGrey)}>
     <Provider store={reduxStore}>
-      <BrowserRouter>
+      <ConnectedRouter history={history}>
         <Body>
           <Switch>
             <Route path="/" exact component={Feed} />
@@ -72,7 +79,7 @@ const App = () => (
             <Route component={NotFound} />
           </Switch>
         </Body>
-      </BrowserRouter>
+      </ConnectedRouter>
     </Provider>
   </MuiThemeProvider>
 )

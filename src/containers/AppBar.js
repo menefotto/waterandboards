@@ -9,7 +9,7 @@ import Profile from '../components/Profile.js'
 import * as Actions from '../actions'
 
 
-const AppBarRouted = ({ actions, location }) => {
+const AppBar = ({ actions, location }) => {
   const handleClose = (e) => {
     e.preventDefault()
     actions.toggleSideBar({
@@ -75,10 +75,6 @@ const AppBarRouted = ({ actions, location }) => {
   }
 
   const handleProfile = (e) => {
-    actions.setMainElement({
-      element: <Profile />
-    })
-
     actions.toggleSideBar({
       opened: false,
     })
@@ -109,9 +105,6 @@ const AppBarRouted = ({ actions, location }) => {
     />
   )
 }
-
-
-const AppBar = withRouter(AppBarRouted)
 
 
 const mapStateToProps = (state, props) => {

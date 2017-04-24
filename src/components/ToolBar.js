@@ -64,7 +64,7 @@ class ToolBar extends React.PureComponent{
             }
           >
             {
-              AppBarRdx.simplebar ?
+              !AppBarRdx.searchbar ?
               <span />:
               <SearchBar onClick={this.props.hSearch} />
             }

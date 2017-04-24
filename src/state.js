@@ -4,6 +4,7 @@ const initialState = {
     simplebar: false, 
     showMenu: false,
     logged: true,
+    searchbar: true,
   },
   LoginPageRdx: { 
     register: false 
