@@ -43,7 +43,7 @@ class SideBar extends React.Component{
         <Drawer openSecondary={true} open={AppBarRdx.opened} >
           <AppBar
             title={this.props.sTitle}
-            style={{ height: 60 }}
+            style={{ height: 56 }}
             iconElementLeft={<Close onClick={this.props.hClose} />}
           />
           <MenuItem 
