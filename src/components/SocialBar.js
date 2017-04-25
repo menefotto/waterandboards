@@ -24,7 +24,7 @@ class SocialBar extends React.Component{
         />
         {/* fill workaround since it doesn't change color otherwise */}
         <div style={styles.social}>
-          <button style={styles.socialT}>
+          <button style={styles.socialT} onTouchTap={this.props.hTwitter} >
             <FontAwesome 
               name="twitter-square" 
               size="2x" 
@@ -32,7 +32,7 @@ class SocialBar extends React.Component{
               style={styles.ico} 
             />
           </button>
-          <button style={styles.socialF}>
+          <button style={styles.socialF} onTouchTap={this.props.hFacebook} >
             <FontAwesome 
               name="facebook-official" 
               size="2x" 
@@ -51,6 +51,8 @@ SocialBar.propTypes = {
   liked: PropTypes.bool.isRequired,
   likes: PropTypes.number.isRequired,
   hChecked: PropTypes.func.isRequired,
+  hTwitter : PropTypes.func.isRequired,
+  hFacebook : PropTypes.func.isRequired,
 }
 
 SocialBar.defaultProps = {

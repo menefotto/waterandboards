@@ -21,12 +21,14 @@
 - Fixed logged componenet positioning #done
 - Decoupled containers to components #done
 - !! Fix login page reset links sometimes doesn't show on page #done
+- Add links to posted item #added to state
+- Added password change/reset pages #done
+- Implemented social share #done
 
 
 !! Fix bug in feed
 Add item page
 Fix bug into third view
-Add links to posted item
 Add watch list items
 Add link to everything posted by user
 Add mobile wrapper to change size dynamically.
