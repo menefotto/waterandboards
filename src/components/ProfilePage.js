@@ -14,9 +14,11 @@ import {List, ListItem} from 'material-ui/List'
 import RaisedButton from "material-ui/RaisedButton"
 
 
-class Profile extends React.Component{
+class ProfilePage extends React.Component{
  
   render(){ 
+    const notifications = this.props.notifications
+
     return(
       <div style={formStyles.root}>
         <List style={formStyles.gridList}>
@@ -49,22 +51,22 @@ class Profile extends React.Component{
             secondaryText="Your status is visible to everyone you use with"
           />
           <ListItem
-            leftCheckbox={<Toggle defaultToggled={NotificationRdx.all}/>}
+            leftCheckbox={<Toggle defaultToggled={notifications.all}/>}
             primaryText="Notifications"
             secondaryText="Allow all notifications"
           />
           <ListItem
-            leftCheckbox={<Toggle defaultToggled={NotificationRdx.gearwatch}/>}
+            leftCheckbox={<Toggle defaultToggled={notifications.gearwatch}/>}
             primaryText="Gear watch"
             secondaryText="Allow notifications for watched gear"
           />
           <ListItem
-            leftCheckbox={<Toggle defaultToggled={NotificationRdx.chat}/>}
+            leftCheckbox={<Toggle defaultToggled={notifications.chat}/>}
             primaryText="Chat messages"
             secondaryText="Allow chat messages notifications"
           />
           <ListItem
-            leftCheckbox={<Toggle defaultToggled={NotificationRdx.email}/>}
+            leftCheckbox={<Toggle defaultToggled={notifications.email}/>}
             primaryText="Emails"
             secondaryText="Allow email messages notifications"
           />
@@ -93,6 +95,10 @@ class Profile extends React.Component{
   }
 }
 
+ProfilePage.propTypes = {
+  notifications: PropTypes.object.isRequired,
+}
+
 const formStyles = {
   root: {
     display: 'flex',
@@ -119,4 +125,4 @@ const formStyles = {
 }
 
 
-export default Profile
+export default ProfilePage

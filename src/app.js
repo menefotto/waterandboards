@@ -60,7 +60,7 @@ const Login = asyncComponent(() =>
 )
 
 const Profile = asyncComponent(() =>
-  System.import(com + 'ProfilePage').then(module => module.default)
+  System.import(con + 'ProfilePageContainer').then(module => module.default)
 )
 
 const NotFound = asyncComponent(() =>
@@ -68,11 +68,11 @@ const NotFound = asyncComponent(() =>
 )
 
 const ResetPasswd = asyncComponent(() =>
-  System.import(con + 'ResetPasswdContainer.js').then(module => module.default)
+  System.import(con + 'ResetPasswdContainer').then(module => module.default)
 )
 
 const ChangePasswd = asyncComponent(() =>
-  System.import(con + 'ChangePasswdContainer.js').then(module => module.default)
+  System.import(con + 'ChangePasswdContainer').then(module => module.default)
 )
 
 

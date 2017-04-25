@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Feed from '../components/Feed'
+import ProfilePage from '../components/ProfilePage'
 import * as Actions from '../actions'
 
 
-const FeedContainer = ({ actions, feed}) => {
+const ProfilePageContainer = ({ actions, notifications }) => {
   const handleChangeView = (e) => {
     actions.addColons({
       coln: 1
@@ -15,17 +15,13 @@ const FeedContainer = ({ actions, feed}) => {
   }
 
   return(
-    <Feed feed={feed} hChangeView={handleChangeView} />
+    <ProfilePage notifications={notifications} hChangeView={handleChangeView} />
   )
-}
-
-FeedContainer.propTypes = {
-  feed: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = (state, props) => {
   return {
-    feed: state.FeedRdx,
+    notifications: state.NotificationRdx,
   }
 }
 
@@ -40,5 +36,5 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(FeedContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePageContainer)
 

@@ -6,8 +6,6 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { GridList } from 'material-ui/GridList'
 import ButtonLink from './ButtonLink'
-import FontAwesome from 'react-fontawesome'
-import 'font-awesome/css/font-awesome.min.css'
 
 
 class Login extends React.Component{
@@ -55,39 +53,31 @@ class Login extends React.Component{
                 backgroundColor={"#C0C0C0"} 
                 style={formStyles.button}
                 labelColor={"#FFF"}
-                label={this.props.register? "Register" : "Login"}
+                label={this.props.register? <strong> Register </strong> : <strong> Login </strong> }
               >
               </RaisedButton>
               <ResetLink />
               <Divider />
               <RaisedButton 
-                children={
-                  <FontAwesome 
-                    name="google" 
-                    size="lg" 
-                    title="share it on google"
-                    inverse={true}
-                  />
-                }
+                icon={ <img src="../images/Google.svg" width={35} height={35}/> }
                 backgroundColor={"#4285F4"} 
                 style={formStyles.buttonGoogle}
                 labelColor={"#FFF"}
-                label={this.props.register? "Register with Google" : "Login with Google"}
+                label={this.props.register? 
+                    <strong> Register with Google </strong> : 
+                    <strong> Login with Google </strong>
+                }
               >
               </RaisedButton>
               <RaisedButton 
-                children={
-                  <FontAwesome 
-                    name="facebook" 
-                    size="lg" 
-                    title="share it on facebook"
-                    inverse={true}
-                  />
-                }
+                icon={ <img src="../images/Facebook.png" width={35} height={35}/> }
                 backgroundColor={"#3B5998"} 
                 style={formStyles.buttonFacebook}
                 labelColor={"#FFF"}
-                label={this.props.register? "Register with Facebook" : "Login with Facebook"}
+                label={this.props.register? 
+                    <strong> Register with Facebook </strong>: 
+                    <strong> Login with Facebook </strong>
+                }
               >
               </RaisedButton>
             </form>

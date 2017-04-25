@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Avatar from 'material-ui/Avatar'
 import Checkbox from 'material-ui/Checkbox'
-import FontAwesome from 'react-fontawesome'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite'
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
 
