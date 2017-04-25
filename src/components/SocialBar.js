@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import Avatar from 'material-ui/Avatar'
 import Checkbox from 'material-ui/Checkbox'
 import FontAwesome from 'react-fontawesome'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite'
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
-import 'font-awesome/css/font-awesome.min.css'
 
 
 class SocialBar extends React.Component{
@@ -25,20 +25,10 @@ class SocialBar extends React.Component{
         {/* fill workaround since it doesn't change color otherwise */}
         <div style={styles.social}>
           <button style={styles.socialT} onTouchTap={this.props.hTwitter} >
-            <FontAwesome 
-              name="twitter-square" 
-              size="2x" 
-              title="share it on twitter"
-              style={styles.ico} 
-            />
+            <Avatar size={25} src="../images/Twitter.png" />
           </button>
           <button style={styles.socialF} onTouchTap={this.props.hFacebook} >
-            <FontAwesome 
-              name="facebook-official" 
-              size="2x" 
-              title="share it on facebook"
-              style={styles.ico} 
-            />
+            <Avatar size={25} src="../images/Facebook.png" />
           </button>
         </div>
       </div>
@@ -77,6 +67,7 @@ const styles = {
   },
   like: {
     width: 60,
+    maringTop: 10,
     marginLeft: 30,
   },
   socialT: {
@@ -89,7 +80,7 @@ const styles = {
   socialF: {
     width: 32,
     border: 'none',
-    marginRight: 30, 
+    marginRight: 35, 
     transform: `translateY(1px)`,
     backgroundColor: "transparent",
   },
