@@ -7,28 +7,14 @@ import InfiniteScroll from 'react-infinite-scroller'
 import { NotificationItem } from './Notifications'
 
 class NotificationPage extends React.Component{
-  static contextTypes = {
-    store: PropTypes.object
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
 
   render(){
-    const { store } = this.context
-    const { getState } = store
-    const { AppBarRdx , NotificationRdx} = getState()
-  
-    const elements = []
-    const items = NotificationRdx.list
-    for (let idx = 0; idx < items.length ;idx++){
-      items.push(<NotificationItem key={idx} idx={idx} text={items[idx].text}/>)
+
+    const items = []
+    const list = this.props.notifications.list
+
+    for (let idx = 0; idx < list.length; idx++){
+      items.push(<NotificationItem key={idx} idx={idx} text={list[idx].text}/>)
     }
 
     return(
@@ -41,11 +27,15 @@ class NotificationPage extends React.Component{
           hasMore={false}
           useWindow={true}
         >
-          {elements}   
+          {items}   
         </InfiniteScroll> 
       </div>
     )
   }
+}
+
+NotificationPage.propTypes = {
+  notifications: PropTypes.object.isRequired,
 }
 
 const gridStyles = {

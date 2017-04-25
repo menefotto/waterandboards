@@ -63,6 +63,10 @@ const Profile = asyncComponent(() =>
   System.import(con + 'ProfilePageContainer').then(module => module.default)
 )
 
+const Notifications = asyncComponent(() =>
+  System.import(con + 'NotificationPageContainer').then(module => module.default)
+)
+
 const NotFound = asyncComponent(() =>
   System.import(com + 'NotFound').then(module => module.default)
 )
@@ -85,6 +89,7 @@ const App = () => (
             <Route path="/" exact component={Feed} />
             <Route path="/logged" component={Feed} />
             <Route path="/signup" component={Login} />
+            <Route path="/notifications" component={Notifications} />
             <Route path="/password-reset" component={ResetPasswd} />
             <Route path="/password-change" component={ChangePasswd} />
             <Route path="/profile" component={Profile} />
