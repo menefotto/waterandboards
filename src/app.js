@@ -45,24 +45,34 @@ const reduxStore = createStore(
 ) 
 
 
+let com = "./components/", con = "./containers/"
+
 const Body = asyncComponent(() =>
-  System.import('./components/Body').then(module => module.default)
+  System.import(com + 'Body').then(module => module.default)
 )
 
 const Feed = asyncComponent(() =>
-  System.import('./containers/FeedContainer').then(module => module.default)
+  System.import(con + 'FeedContainer').then(module => module.default)
 )
 
 const Login = asyncComponent(() =>
-  System.import('./containers/LoginContainer').then(module => module.default)
+  System.import(con + 'LoginContainer').then(module => module.default)
 )
 
 const Profile = asyncComponent(() =>
-  System.import('./components/ProfilePage').then(module => module.default)
+  System.import(com + 'ProfilePage').then(module => module.default)
 )
 
 const NotFound = asyncComponent(() =>
-  System.import('./components/NotFound').then(module => module.default)
+  System.import(com + 'NotFound').then(module => module.default)
+)
+
+const ResetPasswd = asyncComponent(() =>
+  System.import(con + 'ResetPasswdContainer.js').then(module => module.default)
+)
+
+const ChangePasswd = asyncComponent(() =>
+  System.import(con + 'ChangePasswdContainer.js').then(module => module.default)
 )
 
 
@@ -75,6 +85,8 @@ const App = () => (
             <Route path="/" exact component={Feed} />
             <Route path="/logged" component={Feed} />
             <Route path="/signup" component={Login} />
+            <Route path="/password-reset" component={ResetPasswd} />
+            <Route path="/password-change" component={ChangePasswd} />
             <Route path="/profile" component={Profile} />
             <Route component={NotFound} />
           </Switch>

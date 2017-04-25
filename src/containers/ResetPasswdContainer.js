@@ -3,26 +3,22 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Feed from '../components/Feed'
+import ResetPasswd from '../components/ResetPasswd.js'
 import * as Actions from '../actions'
 
 
 
-const FeedContainer = ({ actions, feed}) => {
-  const handleChangeView = (e) => {
-    actions.addColons({
-      coln: 1
-    })
+const ResetPasswdContainer = ({ actions }) => {
+
+  const handleReset = (e) => {
+    // do stuff
   }
 
   return(
-    <Feed feed={feed} hChangeView={handleChangeView} />
+    <ResetPasswd hReset={handleReset} />
   )
 }
 
-FeedContainer.propTypes = {
-  feed: PropTypes.object.isRequired,
-}
 
 const mapStateToProps = (state, props) => {
   return {
@@ -41,5 +37,5 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(FeedContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswdContainer)
 

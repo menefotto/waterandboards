@@ -10,20 +10,20 @@ import ActionViewModule from 'material-ui/svg-icons/action/view-module'
 class Feed extends React.Component {
   
   render(){
-    let dimensions, gStyle, feed = this.props.feed
-
+    let dimensions, styles
+    let feed = this.props.feed
     switch(feed.cols){
       case 3:
-        gStyle = {...FeedStyles.size, width: 1140}
+        styles = {...FeedStyles.size, width: 1140}
         break
       case 2:
-        gStyle = {...FeedStyles.size, width: 1080}
+        styles = {...FeedStyles.size, width: 1080}
         break
       case 1:
-        gStyle = {...FeedStyles.size, width: 720}
+        styles = {...FeedStyles.size, width: 720}
         break
       default:
-        gStyle = {...FeedStyles.size, width: 720}
+        styles = {...FeedStyles.size, width: 720}
     }
 
     const items = []

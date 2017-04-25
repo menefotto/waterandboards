@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom'
 import Link from 'react-router-dom/Link'
 
 
-const ButtonLink = ({ text, to, decoration='none' }) => {
-  const styleB = { 
-    color: 'black', 
-    textDecoration: decoration
+const ButtonLink = ({ text, to, decoration='none', color='black' }) => {
+  let styleLink
+  if (decoration === 'none' ){
+    styleLink = { 
+      color: color, 
+      textDecoration: decoration
+    }
   }
+
   return(
-    <Link style={styleB} to={to}> {text} </Link>
+    <Link style={styleLink} to={to}> {text} </Link>
   )
 }
 

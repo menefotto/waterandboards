@@ -1,14 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
-import { connect } from 'react-redux'
-import Link from 'react-router-dom/Link'
 import Divider from 'material-ui/Divider'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
-import {
-  GridList, 
-} from 'material-ui/GridList'
+import { GridList } from 'material-ui/GridList'
 import ButtonLink from './ButtonLink'
 import FontAwesome from 'react-fontawesome'
 import 'font-awesome/css/font-awesome.min.css'
@@ -121,8 +117,9 @@ Login.defaultProps = {
 
 const ResetLink = () => {
   return(
-    <div style={formStyles.reset}>
-      Don't remember your password? <Link text="Reset it" to="/" />
+    <div style={formStyles.resetLink}>
+      Don't remember your password? 
+      <ButtonLink decoration="underline" text="Reset it" to="/" />
     </div>
   )
 }
@@ -177,7 +174,7 @@ const formStyles = {
     marginTop: 20,
     marginLeft: 107,
   },
-  reset:{
+  resetLink:{
     marginTop: 15,
     textAlign: "center",
     marginBottom: 15,

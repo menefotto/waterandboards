@@ -61,6 +61,28 @@ const AppBarRdx = (state = false, action) => {
             searchbar: false,
           }
 
+        case '/logged':
+          return{
+            ...state,
+            simplebar: false,
+            searchbar: true,
+            logged: true,
+          }
+
+        case '/password-reset' :
+          return{
+            ...state,
+            simplebar: true,
+            searchbar: false,
+          }
+
+        case '/password-change':
+          return{
+            ...state,
+            simplebar: true,
+            searchbar: false,
+          }
+
         case '/':
           return{
             ...state,
@@ -81,7 +103,6 @@ const AppBarRdx = (state = false, action) => {
           }
       }
       
-
     default:
       return{
         ...state,

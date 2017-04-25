@@ -20,10 +20,10 @@
 - Fixed ripple effect chrome not-working #done
 - Fixed logged componenet positioning #done
 - Decoupled containers to components #done
+- !! Fix login page reset links sometimes doesn't show on page #done
+
 
 !! Fix bug in feed
-!! Fix login page reset links sometimes doesn't show on page
-
 Add item page
 Fix bug into third view
 Add links to posted item
