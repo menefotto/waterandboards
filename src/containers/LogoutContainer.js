@@ -7,7 +7,7 @@ import Message from '../components/Message.js'
 import * as Actions from '../actions'
 
 
-const LogoutContainer = ({ actions }) => {
+const LogoutContainer = ({ actions, showLogout }) => {
   const handleOk = (e) => {
     actions.loginState({
       logged: false,
@@ -37,16 +37,17 @@ const LogoutContainer = ({ actions }) => {
     <Message 
       hOk={handleOk}
       hCancel={handleCancel}
-      rButtonLabel={"LogoutContainer"}
       lButtonLabel={"Cancel"}
-      title={"Are you sure you want to LogoutContainer?"}
+      showMessage={showLogout}
+      rButtonLabel={"LogoutContainer"}
+      title={"Are you sure you want to logout"}
     />
   )
 }
 
 const mapStateToProps = (state, props) => {
   return {
-    state: state
+    showLogout: state.SideBarRdx.showLogout,
   }
 }
 

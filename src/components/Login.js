@@ -14,24 +14,8 @@ import 'font-awesome/css/font-awesome.min.css'
 
 
 class Login extends React.Component{
-  static contextTypes = {
-      store: PropTypes.object
-  }
- 
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
 
   render(){
-    const { store } = this.context
-    const { getState } = store
-    const { AppBarRdx, LoginPageRdx } = getState()
-
     return(
       <div style={formStyles.root}>
         <GridList cellHeight='auto' cols={1} style={formStyles.gridList} >
@@ -44,7 +28,7 @@ class Login extends React.Component{
                   type="email"
               />
               {
-                  LoginPageRdx.register ?
+                  this.props.register ?
                   <div>
                       <TextField 
                           name="fname" 
@@ -74,7 +58,7 @@ class Login extends React.Component{
                   backgroundColor={"#C0C0C0"} 
                   style={formStyles.button}
                   label={
-                    LoginPageRdx.register? "Register" : "Login"
+                    this.props.register? "Register" : "Login"
                   }
               >
               </RaisedButton>
@@ -90,7 +74,7 @@ class Login extends React.Component{
                 backgroundColor={"#DD4B39"} 
                 style={formStyles.buttonGoogle}
                 label={
-                  LoginPageRdx.register? 
+                  this.props.register? 
                     "Register with Google" : 
                     "Login with Google"
                 }
@@ -107,7 +91,7 @@ class Login extends React.Component{
                 backgroundColor={"#3B5998"} 
                 style={formStyles.buttonFacebook}
                 label={
-                  LoginPageRdx.register? 
+                  this.props.register? 
                     "Register with Facebook" : 
                     "Login with Facebook"
                 }
@@ -116,7 +100,7 @@ class Login extends React.Component{
             </form>
           </div>
           <div style={formStyles.gridTile}>
-            { !LoginPageRdx.register ? 
+            { !this.props.register ? 
                 <RegisterLink hRegister={this.props.hRegister} />:
                 <LoginLink hLogin={this.props.hLogin} />
             }
@@ -134,7 +118,6 @@ Login.propTypes = {
 }
 
 Login.defaultProps = {
-  // registered = checkCookie("registered")
   register: false,
 }
 

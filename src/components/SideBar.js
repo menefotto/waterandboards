@@ -19,25 +19,8 @@ import ButtonLink from './ButtonLink.js'
 
 
 class SideBar extends React.Component{
-  static contextTypes = {
-    store: PropTypes.object
-  }
 
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
-
-  render(){
-    const { store } = this.context
-    const { getState } = store
-    const { AppBarRdx, LoginReducer } = getState()
- 
+  return(){
     return(
       <div style={styles.sidebar}>
         <Drawer openSecondary={true} open={AppBarRdx.opened} >

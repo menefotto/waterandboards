@@ -104,7 +104,7 @@ const initialState = {
     ]
   },
   SideBarRdx: {
-    logoutShow: false,
+    showLogout: false,
   },
 }
 

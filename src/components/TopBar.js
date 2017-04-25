@@ -12,7 +12,10 @@ class TopBar extends React.Component{
   render(){
     return(
       <div>
-        <ToolBar hLogo={this.props.hLogo} />
+        <ToolBar 
+          hLogo={this.props.hLogo} 
+          appBar={this.props.appBar}
+        />
         <SideBarContainer />
       </div>
     )
@@ -21,6 +24,7 @@ class TopBar extends React.Component{
 
 TopBar.propTypes = {
   hLogo: PropTypes.func.isRequired,
+  appBar: PropTypes.object.isRequired,
 }
 
 

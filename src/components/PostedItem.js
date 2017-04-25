@@ -12,13 +12,14 @@ import SocialBarContainer from '../containers/SocialBarContainer'
 
 class PostedItem extends React.Component {
 
-    render(){
-    const videoId = this.props.videoId
-    const itemChips = this.props.itemChips
-    const cardHeader = this.props.cardHeader
-    //const socialLink = this.props.socialLink
- 
-    const cStylePaper = {...cardStyle.paper, width: this.props.size.w + 40}
+  render(){
+  const videoId = this.props.videoId
+  const itemChips = this.props.itemChips
+  const cardHeader = this.props.cardHeader
+  //const socialLink = this.props.socialLink
+
+  const cStylePaper = {...cardStyle.paper, width: this.props.size.w + 40}
+
     return(
       <div style={cStylePaper}>
         <CardHeader

@@ -9,20 +9,6 @@ import Notifications from "../components/Notifications.js"
 
 class NotificationsContainer extends React.Component{
 
-  static contextTypes = {
-    store: PropTypes.object
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
-   
   handleNotificationOpen = (e) => {
     e.preventDefault()
 
@@ -39,16 +25,11 @@ class NotificationsContainer extends React.Component{
   }
 
   handleAllNotifications = (e) => {
-    // action and reducer handling has to be implemented
   }
 
   render(){ 
-    const { store } = this.context
-    const { getState } = store
-    const { NotificationRdx} = getState()
-
     let second, first
-    if (NotificationRdx.total === 0){
+    if (this.props.notificationTotal === 0){
       second = false, first = true
     }else{
       second = true, first = false
@@ -58,8 +39,8 @@ class NotificationsContainer extends React.Component{
       <Notifications
         first={first}
         second={second}
-        total={NotificationRdx.total}
         hOpen={this.handleNotificationOpen}
+        total={this.props.notificationTotal}
         hClose={this.handleNotificationClose}
         hShowAll={this.handleAllNotifications}
       />
@@ -70,7 +51,7 @@ class NotificationsContainer extends React.Component{
 
 const mapStateToProps = (state, props) => {
   return {
-    state: state
+    notificationTotal: state.NotificationRdx.total,
   }
 }
 

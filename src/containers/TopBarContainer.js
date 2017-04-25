@@ -6,21 +6,21 @@ import TopBar from '../components/TopBar'
 import * as Actions from '../actions'
 
 
-const TopBarContainer = ({ actions }) => {
+const TopBarContainer = ({ actions, appBar }) => {
 
   const handleLogo = (e) => {
     location.reload()
   }
 
   return (
-    <TopBar hLogo={handleLogo} />
+    <TopBar appBar={appBar} hLogo={handleLogo} />
   )
 }
 
 
 const mapStateToProps = (state, props) => {
   return {
-    state: state
+    appBar: state.AppBarRdx,
   }
 }
 

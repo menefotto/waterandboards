@@ -1,35 +1,52 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import YouTube from "../components/YouTube"
 import * as Actions from '../actions'
 
 
-const YouTubeContainer = ({ actions, idx, videoId, size }) => {
-  const handlePlayVideo = (e) => {
+class YouTubeContainer extends React.Component{
+
+  hPlayVideo = (e) => {
     e.preventDefault()
 
-    actions.playVideo({
+    this.props.actions.playVideo({
       play: true,
-      index: idx
+      index: this.props.idx
     })
   }
 
-  return(
-    <YouTube
-      idx={idx}
-      size={size}
-      videoId={videoId}
-      hPlayVideo={handlePlayVideo}
-    />
-  )
+  render(){
+    const play = this.props.feed.list[this.props.idx].play
+
+    return(
+      <YouTube 
+        play={play}
+        idx={this.props.idx} 
+        size={this.props.size} 
+        videoId={this.props.videoId} 
+        hPlayVideo={this.hPlayVideo} 
+      />
+    )
+  }
 }
 
+YouTubeContainer.propTypes = {
+  size: PropTypes.object.isRequired,
+  idx: PropTypes.number.isRequired,
+  videoId: PropTypes.string.isRequired,
+}
+
+YouTubeContainer.defaultProps = {
+  size: {},
+}
+ 
 
 const mapStateToProps = (state, props) => {
   return {
-    state: state
+    feed: state.FeedRdx
   }
 }
 
@@ -45,4 +62,3 @@ const mapDispatchToProps = (dispatch) => ({
  * the Redux store.
  */
 export default connect(mapStateToProps, mapDispatchToProps)(YouTubeContainer)
-

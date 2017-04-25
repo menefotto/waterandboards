@@ -7,24 +7,8 @@ import RaisedButton from 'material-ui/RaisedButton'
 
 
 class Message extends React.Component{
- static contextTypes = {
-    store: PropTypes.object,
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
 
   render(){
-    const { store } = this.context
-    const { getState } = store
-    const { SideBarRdx } = getState()
-
     const actions = [
       <FlatButton
         label={this.props.lButtonLabel}
@@ -45,7 +29,7 @@ class Message extends React.Component{
           modal={true}
           actions={actions}
           title={this.props.title}
-          open={SideBarRdx.logoutShow}
+          open={this.props.showMessage}
         >
           {this.props.optionalText}
         </Dialog>
@@ -55,12 +39,17 @@ class Message extends React.Component{
 }
 
 Message.propTypes = {
-  hOk: PropTypes.func.isRequired,
   optionalText: PropTypes.string,
+  hOk: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   hCancel: PropTypes.func.isRequired,
+  showMessage: PropTypes.bool.isRequired,
   rButtonLabel: PropTypes.string.isRequired,
   lButtonLabel: PropTypes.string.isRequired,
+}
+
+Message.defaultProps = {
+  showMessage: false,
 }
 
  

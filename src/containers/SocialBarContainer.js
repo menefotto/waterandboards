@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import SocialBar from '../components/SocialBar'
 import * as Actions from '../actions'
 
 
-const SocialBarContainer = ({ actions, index }) => {
+const SocialBarContainer = ({ actions, index, feed }) => {
   const handleChecked = (e, checked) => {
     if(checked){
       actions.incLikes({
@@ -20,13 +21,22 @@ const SocialBarContainer = ({ actions, index }) => {
   }
 
   return(
-    <SocialBar idx={index} hChecked={handleChecked}/>
+    <SocialBar 
+      idx={index} 
+      likes={feed.list[index].likes} 
+      liked={feed.list[index].liked} 
+      hChecked={handleChecked}
+    />
   )
+}
+
+SocialBarContainer.propTypes = {
+  feed: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = (state, props) => {
   return {
-    state: state
+    feed: state.FeedRdx,
   }
 }
 

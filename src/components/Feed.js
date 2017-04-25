@@ -8,27 +8,11 @@ import ActionViewModule from 'material-ui/svg-icons/action/view-module'
 
 
 class Feed extends React.Component {
-
-  static contextTypes = {
-    store: PropTypes.object
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
+  
   render(){
-    const { store } = this.context
-    const { getState } = store
-    const { FeedRdx } = getState()
+    let dimensions, gStyle, feed = this.props.feed
 
-    let dimensions, gStyle
-    switch(FeedRdx.cols){
+    switch(feed.cols){
       case 3:
         gStyle = {...FeedStyles.size, width: 1140}
         break
@@ -42,17 +26,16 @@ class Feed extends React.Component {
         gStyle = {...FeedStyles.size, width: 720}
     }
 
-    // Object keys is work-around till I fix the reducer to always return an array
     const items = []
-    for(let idx = 0; idx < Object.keys(FeedRdx.list).length; idx++){
+    for(let idx = 0; idx < feed.list.length; idx++){
       items.push (
         <div key={idx} style={FeedStyles.tile}>
           <PostedItem
             index={idx}
-            size={FeedRdx.size}
-            videoId={FeedRdx.list[idx].videoId}
-            itemChips={FeedRdx.list[idx].itemChips}
-            cardHeader={FeedRdx.list[idx].cardHeader}
+            size={feed.size}
+            videoId={feed.list[idx].videoId}
+            itemChips={feed.list[idx].itemChips}
+            cardHeader={feed.list[idx].cardHeader}
           />
         </div>
       )
@@ -83,6 +66,7 @@ class Feed extends React.Component {
 }
 
 Feed.propTypes = {
+  feed: PropTypes.object.isRequired,
   hChangeView: PropTypes.func.isRequired,
 }
 
@@ -102,7 +86,6 @@ const FeedStyles = {
     justifyContent: 'space-around',
   },
   views: {
-    //position: 'absolute',
     height: 25,
     marginTop: 100,
     marginLeft: "90%",

@@ -15,6 +15,10 @@ const SearchBarContainer = ({ actions }) => {
 
   const handleSearchClick = (e) => {
     let text = document.getElementById("autocomp").value
+    if (text.length === 0){
+      return
+    }
+
     actions.search({
       term: text,
     })

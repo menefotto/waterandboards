@@ -11,32 +11,15 @@ const urls = {
 
 class YouTube extends React.Component{
 
-  static contextTypes = {
-    store: PropTypes.object
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
   render(){
     const video = this.props.videoId
     const vid = urls.video + video + "?autoplay=1"
     const iid = urls.image + video + "/" + this.props.size.n + ".jpg"
 
-    const { store } = this.context
-    const { getState } = store
-    const { FeedRdx } = getState()
-
     return(
       <div style={{display: 'flex', justifyContent: 'space-around'}}>
         {
-          FeedRdx.list[this.props.idx].play ?
+          this.props.play ?
             <iframe 
               src={vid}
               frameBorder="0"
@@ -56,6 +39,7 @@ class YouTube extends React.Component{
 }
 
 YouTube.propTypes = {
+  play: PropTypes.bool.isRequired,
   size: PropTypes.object.isRequired,
   idx: PropTypes.number.isRequired,
   hPlayVideo: PropTypes.func.isRequired,

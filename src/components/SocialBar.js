@@ -10,34 +10,17 @@ import 'font-awesome/css/font-awesome.min.css'
 
 class SocialBar extends React.Component{
 
-  static contextTypes = {
-    store: PropTypes.object
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
   render(){
-    const { store } = this.context
-    const { getState } = store
-    const { FeedRdx } = getState()
-
     return(
       <div style={styles.bar}>
         <Checkbox
-          checked={FeedRdx.list[this.props.idx].liked}
           style={styles.like}
+          checked={this.props.liked}
           onCheck={this.props.hChecked}
+          label={this.props.likes + " likes"}
           labelStyle={{minWidth: 60, fontSize: 12}}
           uncheckedIcon={<ActionFavoriteBorder />}
           checkedIcon={<ActionFavorite style={{fill: 'red'}} />} 
-          label={FeedRdx.list[this.props.idx].likes + " likes"}
         />
         {/* fill workaround since it doesn't change color otherwise */}
         <div style={styles.social}>
@@ -65,7 +48,13 @@ class SocialBar extends React.Component{
 
 SocialBar.propTypes = {
   idx: PropTypes.number.isRequired,
+  liked: PropTypes.bool.isRequired,
+  likes: PropTypes.number.isRequired,
   hChecked: PropTypes.func.isRequired,
+}
+
+SocialBar.defaultProps = {
+  liked: false, 
 }
 
 const styles = {

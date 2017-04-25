@@ -6,7 +6,7 @@ import Login from "../components/Login.js"
 import * as Actions from '../actions'
 
 
-const LoginContainer = ({ actions }) => {
+const LoginContainer = ({ actions, register }) => {
   const handleRegister = (e) => {
     actions.registerState({
       register: true
@@ -15,6 +15,7 @@ const LoginContainer = ({ actions }) => {
 
   return(
     <Login 
+      register={register}
       hLogin={handleRegister}
       hRegister={handleRegister}
     />
@@ -24,7 +25,7 @@ const LoginContainer = ({ actions }) => {
 
 const mapStateToProps = (state, props) => {
   return {
-    state: state
+    register : state.LoginPageRdx.register,
   }
 }
 

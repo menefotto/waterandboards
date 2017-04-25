@@ -9,19 +9,6 @@ import Logged from '../components/Logged'
 
 class LoggedContainer extends React.Component{
 
-  static contextTypes = {
-    store: PropTypes.object
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
   handleSettings = (e) => {
     this.props.actions.toggleSideBar({
       opened: true,
@@ -29,11 +16,6 @@ class LoggedContainer extends React.Component{
   }
 
   render(){ 
-    // add listening for when avatar picture change
-    //const { store } = this.context
-    //const { getState } = store
-    //const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
-
     return(
       <Logged hSettings={this.handleSettings}/>
     )

@@ -20,28 +20,11 @@ import logoBase64 from "../images/logo"
 
 class ToolBar extends React.PureComponent{
 
-  static contextTypes = {
-    store: PropTypes.object.isRequired
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
   render(){
-    const { store } = this.context
-    const { getState } = store
-    const { AppBarRdx, LoginPageRdx } = getState()
-
     let rightElement, searchElement
-    let logged = AppBarRdx.logged
+    let logged = this.props.appBar.logged
 
-    if (AppBarRdx.simplebar){
+    if (this.props.appBar.simplebar){
       rightElement = <span />
     } else {
       rightElement = logged ? <LoggedContainer /> : <SignUpContainer />
@@ -58,7 +41,7 @@ class ToolBar extends React.PureComponent{
             style={logged ? barStyle.centerLogged : barStyle.centerSignUp}
           >
             {
-              !AppBarRdx.searchbar ? <span /> : <SearchBarContainer />
+              !this.props.appBar.searchbar ? <span /> : <SearchBarContainer />
             }
           </ToolbarGroup>
           <ToolbarGroup 
@@ -77,6 +60,7 @@ ToolBar.propTypes = {
   logo: PropTypes.string,
   bTitle: PropTypes.string,
   hLogo: PropTypes.func.isRequired,
+  appBar : PropTypes.object.isRequired,
 }
 
 ToolBar.defaultProps = {
