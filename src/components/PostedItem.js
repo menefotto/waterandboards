@@ -6,8 +6,8 @@ import {
   CardActions, 
 } from 'material-ui/Card'
 import ButtonLink from './ButtonLink'
-import Social from '../containers/Social'
-import YouTube from '../containers/YouTube'
+import YouTubeContainer from '../containers/YouTubeContainer'
+import SocialBarContainer from '../containers/SocialBarContainer'
 
 
 class PostedItem extends React.Component {
@@ -28,7 +28,7 @@ class PostedItem extends React.Component {
           title={<ButtonLink text={<strong>{cardHeader.profile}</strong>} to={"#"} />}
         />
         <div>
-          <YouTube 
+          <YouTubeContainer
             videoId={videoId} 
             idx={this.props.index} 
             size={this.props.size}
@@ -41,7 +41,7 @@ class PostedItem extends React.Component {
           <ItemChips chips={itemChips}/>
         </div>
         <div>
-          <Social index={this.props.index}/>
+          <SocialBarContainer index={this.props.index}/>
         </div>
       </div>
     )

@@ -87,7 +87,7 @@ class Login extends React.Component{
                     title="share it on google"
                   />
                 }
-                backgroundColor={"#DB4437"} 
+                backgroundColor={"#DD4B39"} 
                 style={formStyles.buttonGoogle}
                 label={
                   LoginPageRdx.register? 

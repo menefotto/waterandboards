@@ -11,17 +11,18 @@ class SearchBar extends React.Component {
     return(
       <div style={searchStyle.paper}>
         <AutoComplete 
+            id="autocomp"
             name="autocomp" 
             autoFocus={true}
             fullWidth={true}
             dataSource={source} 
             style={searchStyle.input}
             hintText="Search for windsurf gear"
-            onNewRequest={this.props.handleSearch}
+            onNewRequest={this.props.hSearch}
         />
         <SearchButton 
           style={searchStyle.button} 
-          onClick={this.props.handleSearch} 
+          hSearchClick={this.props.hSearchClick} 
         />
       </div>
     )
@@ -29,16 +30,18 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-  handleSearch: PropTypes.func,
+  hSearch: PropTypes.func.isRequired,
+  hSearchClick: PropTypes.func.isRequired,
 }
 
  
-const SearchButton = ( onClick ) => (
-    <RaisedButton
-        secondary={true}
-        icon={<ActionSearch />}
-    >
-    </RaisedButton>
+const SearchButton = ({ hSearchClick })  => (
+  <RaisedButton
+    onTouchTap={hSearchClick}
+    secondary={true}
+    icon={<ActionSearch />}
+  >
+  </RaisedButton>
 )
 
 const source = ["board","sails","misc"]

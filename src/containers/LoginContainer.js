@@ -2,20 +2,22 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Grid from '../components/Grid'
+import Login from "../components/Login.js"
 import * as Actions from '../actions'
 
 
-
-const Feed = ({ actions }) => {
-  const handleChangeView = (e) => {
-    actions.addColons({
-      coln: 1
+const LoginContainer = ({ actions }) => {
+  const handleRegister = (e) => {
+    actions.registerState({
+      register: true
     })
   }
 
   return(
-    <Grid hChangeView={handleChangeView} />
+    <Login 
+      hLogin={handleRegister}
+      hRegister={handleRegister}
+    />
   )
 }
 
@@ -37,5 +39,5 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(Feed)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer)
 

@@ -20,7 +20,7 @@
   "scripts": {
     "preinstall": "npm i typings -D && typings i dt~react dt~react-dom -D",
     "build": "webpack -p --progress --optimize-minimize --config webpack.config.js",
-    "start": "webpack-dev-server -p --optimize-minimize --progress --hot"
+    "start": "webpack-dev-server --progress --hot"
   },
   "description": "WanterAndBoards.com react front-end",
   "main": "app.js",

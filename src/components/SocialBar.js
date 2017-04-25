@@ -26,18 +26,18 @@ class SocialBar extends React.Component{
   render(){
     const { store } = this.context
     const { getState } = store
-    const { GridRdx } = getState()
+    const { FeedRdx } = getState()
 
     return(
       <div style={styles.bar}>
         <Checkbox
-          checked={GridRdx.list[this.props.idx].liked}
+          checked={FeedRdx.list[this.props.idx].liked}
           style={styles.like}
           onCheck={this.props.hChecked}
           labelStyle={{minWidth: 60, fontSize: 12}}
           uncheckedIcon={<ActionFavoriteBorder />}
           checkedIcon={<ActionFavorite style={{fill: 'red'}} />} 
-          label={GridRdx.list[this.props.idx].likes + " likes"}
+          label={FeedRdx.list[this.props.idx].likes + " likes"}
         />
         {/* fill workaround since it doesn't change color otherwise */}
         <div style={styles.social}>

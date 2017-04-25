@@ -2,27 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import YouTubeEmbed from "../components/YouTubeEmbed.js"
+import TopBar from '../components/TopBar'
 import * as Actions from '../actions'
 
 
-const YouTube = ({ actions, idx, videoId, size }) => {
-  const handlePlayVideo = (e) => {
-    e.preventDefault()
+const TopBarContainer = ({ actions }) => {
 
-    actions.playVideo({
-      play: true,
-      index: idx
-    })
+  const handleLogo = (e) => {
+    location.reload()
   }
 
-  return(
-    <YouTubeEmbed 
-      idx={idx}
-      size={size}
-      videoId={videoId}
-      hPlayVideo={handlePlayVideo}
-    />
+  return (
+    <TopBar hLogo={handleLogo} />
   )
 }
 
@@ -44,5 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(YouTube)
-
+export default connect(mapStateToProps, mapDispatchToProps)(TopBarContainer)

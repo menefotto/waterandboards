@@ -7,7 +7,7 @@ import PostedItem from '../components/PostedItem.js';
 import ActionViewModule from 'material-ui/svg-icons/action/view-module'
 
 
-class Grid extends React.Component {
+class Feed extends React.Component {
 
   static contextTypes = {
     store: PropTypes.object
@@ -25,34 +25,34 @@ class Grid extends React.Component {
   render(){
     const { store } = this.context
     const { getState } = store
-    const { GridRdx } = getState()
+    const { FeedRdx } = getState()
 
     let dimensions, gStyle
-    switch(GridRdx.cols){
+    switch(FeedRdx.cols){
       case 3:
-        gStyle = {...gridStyles.size, width: 1140}
+        gStyle = {...FeedStyles.size, width: 1140}
         break
       case 2:
-        gStyle = {...gridStyles.size, width: 1080}
+        gStyle = {...FeedStyles.size, width: 1080}
         break
       case 1:
-        gStyle = {...gridStyles.size, width: 720}
+        gStyle = {...FeedStyles.size, width: 720}
         break
       default:
-        gStyle = {...gridStyles.size, width: 720}
+        gStyle = {...FeedStyles.size, width: 720}
     }
 
     // Object keys is work-around till I fix the reducer to always return an array
     const items = []
-    for(let idx = 0; idx < Object.keys(GridRdx.list).length; idx++){
+    for(let idx = 0; idx < Object.keys(FeedRdx.list).length; idx++){
       items.push (
-        <div key={idx} style={gridStyles.tile}>
+        <div key={idx} style={FeedStyles.tile}>
           <PostedItem
             index={idx}
-            size={GridRdx.size}
-            videoId={GridRdx.list[idx].videoId}
-            itemChips={GridRdx.list[idx].itemChips}
-            cardHeader={GridRdx.list[idx].cardHeader}
+            size={FeedRdx.size}
+            videoId={FeedRdx.list[idx].videoId}
+            itemChips={FeedRdx.list[idx].itemChips}
+            cardHeader={FeedRdx.list[idx].cardHeader}
           />
         </div>
       )
@@ -62,15 +62,15 @@ class Grid extends React.Component {
       <div>
         <IconButton 
           tooltip="change view" 
-          style={gridStyles.views}
+          style={FeedStyles.views}
           onTouchTap={this.props.hChangeView}
         >
           <ActionViewModule />
         </IconButton>
-        <div style={gridStyles.root}>
+        <div style={FeedStyles.root}>
           <InfiniteScroll
             pageStart={0}
-            loadMore={null}
+            loadMore={() => { return false }}
             hasMore={false}
             useWindow={true}
           >
@@ -82,11 +82,11 @@ class Grid extends React.Component {
   }
 }
 
-Grid.propTypes = {
+Feed.propTypes = {
   hChangeView: PropTypes.func.isRequired,
 }
 
-const gridStyles = {
+const FeedStyles = {
   tile: {
     margin: 5,
     height: 'auto',
@@ -111,4 +111,4 @@ const gridStyles = {
 }
 
 
-export default Grid
+export default Feed

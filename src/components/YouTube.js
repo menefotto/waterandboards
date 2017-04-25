@@ -9,7 +9,7 @@ const urls = {
 }
 
 
-class YouTubeEmbed extends React.Component{
+class YouTube extends React.Component{
 
   static contextTypes = {
     store: PropTypes.object
@@ -31,12 +31,12 @@ class YouTubeEmbed extends React.Component{
 
     const { store } = this.context
     const { getState } = store
-    const { GridRdx } = getState()
+    const { FeedRdx } = getState()
 
     return(
       <div style={{display: 'flex', justifyContent: 'space-around'}}>
         {
-          GridRdx.list[this.props.idx].play ?
+          FeedRdx.list[this.props.idx].play ?
             <iframe 
               src={vid}
               frameBorder="0"
@@ -55,16 +55,16 @@ class YouTubeEmbed extends React.Component{
   }
 }
 
-YouTubeEmbed.propTypes = {
+YouTube.propTypes = {
   size: PropTypes.object.isRequired,
   idx: PropTypes.number.isRequired,
   hPlayVideo: PropTypes.func.isRequired,
   videoId: PropTypes.string.isRequired,
 }
 
-YouTubeEmbed.defaultProps = {
+YouTube.defaultProps = {
   size: {},
 }
     
 
-export default YouTubeEmbed
+export default YouTube

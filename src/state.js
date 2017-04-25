@@ -1,10 +1,10 @@
 const initialState = {
   AppBarRdx: { 
+    logged: false,
     opened: false, 
-    simplebar: false, 
-    showMenu: false,
-    logged: true,
     searchbar: true,
+    showMenu: false,
+    simplebar: false, 
   },
   LoginPageRdx: { 
     register: false 
@@ -21,7 +21,7 @@ const initialState = {
       {text:"test notification 3", status:"done", checked: true},
     ],
   },
-  GridRdx: {
+  FeedRdx: {
     cols: 1,
     size: {w:640, h:480, n:"sddefault"},
     list: [

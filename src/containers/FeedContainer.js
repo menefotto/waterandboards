@@ -2,30 +2,23 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import SocialBar from '../components/SocialBar'
+import Feed from '../components/Feed'
 import * as Actions from '../actions'
 
 
-const Social = ({ actions, index }) => {
-  const handleChecked = (e, checked) => {
-    if(checked){
-      actions.incLikes({
-        idx: index,
-      })
-    }else{
-      actions.decLikes({
-        idx: index,
-      })
-    }
+
+const FeedContainer = ({ actions }) => {
+  const handleChangeView = (e) => {
+    actions.addColons({
+      coln: 1
+    })
   }
 
   return(
-    <SocialBar
-      idx={index}
-      hChecked={handleChecked}
-    />
+    <Feed hChangeView={handleChangeView} />
   )
 }
+
 
 const mapStateToProps = (state, props) => {
   return {
@@ -44,4 +37,5 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(Social)
+export default connect(mapStateToProps, mapDispatchToProps)(FeedContainer)
+

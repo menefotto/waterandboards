@@ -3,27 +3,22 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Grid from '../components/Grid.js'
 import Message from '../components/Message.js'
 import * as Actions from '../actions'
 
 
-const Logout = ({ actions }) => {
+const LogoutContainer = ({ actions }) => {
   const handleOk = (e) => {
     actions.loginState({
       logged: false,
-    })
-
-    actions.setMainElement({
-      element: <Grid />,
     })
 
     actions.toggleSideBar({
       opened: false,
     })
 
-    actions.logoutSideBar({
-      logoutShow: false,
+    actions.LogoutContainerSideBar({
+      LogoutContainerShow: false,
     })
   }
 
@@ -32,8 +27,8 @@ const Logout = ({ actions }) => {
       opened: false,
     })
 
-    actions.logoutSideBar({
-      logoutShow: false,
+    actions.LogoutContainerSideBar({
+      LogoutContainerShow: false,
     })
 
   }
@@ -42,9 +37,9 @@ const Logout = ({ actions }) => {
     <Message 
       hOk={handleOk}
       hCancel={handleCancel}
-      rButtonLabel={"Logout"}
+      rButtonLabel={"LogoutContainer"}
       lButtonLabel={"Cancel"}
-      title={"Are you sure you want to logout?"}
+      title={"Are you sure you want to LogoutContainer?"}
     />
   )
 }
@@ -66,4 +61,4 @@ const mapDispatchToProps = (dispatch) => ({
  * Connect the component to
  * the Redux store.
  */
-export default connect(mapStateToProps, mapDispatchToProps)(Logout)
+export default connect(mapStateToProps, mapDispatchToProps)(LogoutContainer)

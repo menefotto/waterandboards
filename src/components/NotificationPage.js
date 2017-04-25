@@ -37,7 +37,7 @@ class NotificationPage extends React.Component{
         <Divider />
         <InfiniteScroll
           pageStart={0}
-          loadMore={null}
+          loadMore={() => {return false}}
           hasMore={false}
           useWindow={true}
         >

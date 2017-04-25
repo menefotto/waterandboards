@@ -11,13 +11,15 @@ import {
 import Avatar from 'material-ui/Avatar'
 import Drawer from 'material-ui/Drawer'
 import RaisedButton from 'material-ui/RaisedButton'
-import SignUp from "./SignUp"
-import Logged from "./Logged"
-import SearchBar from "./SearchBar"
+import SignUpContainer from "../containers/SignUpContainer"
+import SearchBarContainer from "../containers/SearchBarContainer"
+import LoggedContainer from "../containers/LoggedContainer"
+
 import logoBase64 from "../images/logo"
 
 
 class ToolBar extends React.PureComponent{
+
   static contextTypes = {
     store: PropTypes.object.isRequired
   }
@@ -37,17 +39,12 @@ class ToolBar extends React.PureComponent{
     const { AppBarRdx, LoginPageRdx } = getState()
 
     let rightElement, searchElement
+    let logged = AppBarRdx.logged
+
     if (AppBarRdx.simplebar){
       rightElement = <span />
     } else {
-      rightElement = AppBarRdx.logged ?
-        <Logged 
-          hMenu={this.props.hMenu}
-          hSettings={this.props.hOpen}
-          hRequestClose={this.props.hRequestClose}
-          hSeeAllNotifications={this.props.hSeeAllNotifications}
-        />:
-        <SignUp onClick={this.props.hLogin} />
+      rightElement = logged ? <LoggedContainer /> : <SignUpContainer />
     }
 
     return(
@@ -58,22 +55,14 @@ class ToolBar extends React.PureComponent{
             <ToolbarTitle text={this.props.bTitle} style={barStyle.title} />
           </ToolbarGroup>
           <ToolbarGroup 
-            style={
-              AppBarRdx.logged ? 
-                barStyle.centerLogged : barStyle.centerSignUp
-            }
+            style={logged ? barStyle.centerLogged : barStyle.centerSignUp}
           >
             {
-              !AppBarRdx.searchbar ?
-              <span />:
-              <SearchBar onClick={this.props.hSearch} />
+              !AppBarRdx.searchbar ? <span /> : <SearchBarContainer />
             }
           </ToolbarGroup>
           <ToolbarGroup 
-            style={
-              AppBarRdx.logged ? 
-                barStyle.rightLogged : barStyle.right
-            } 
+            style={logged ? barStyle.rightLogged : barStyle.right} 
             lastChild={true}
           >
             {rightElement}
@@ -87,14 +76,7 @@ class ToolBar extends React.PureComponent{
 ToolBar.propTypes = {
   logo: PropTypes.string,
   bTitle: PropTypes.string,
-  element: PropTypes.element,
-  hSettings: PropTypes.func.isRequired,
-  hLogin: PropTypes.func.isRequired,
   hLogo: PropTypes.func.isRequired,
-  hSearch: PropTypes.func.isRequired,
-  hMenu: PropTypes.func.isRequired,
-  hRequestClose: PropTypes.func.isRequired,
-  hSeeAllNotifications: PropTypes.func.isRequired,
 }
 
 ToolBar.defaultProps = {

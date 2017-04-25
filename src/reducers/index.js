@@ -24,7 +24,7 @@ const AppBarRdx = (state = false, action) => {
     case APPBAR_TOGGLE:
       return {
         ...state,
-        simplebar: !state.simplebar
+        simplebar: action.simplebar
       }
 
     case SIDEBAR_STATE:
@@ -59,6 +59,13 @@ const AppBarRdx = (state = false, action) => {
             ...state,
             simplebar: true,
             searchbar: false,
+          }
+
+        case '/':
+          return{
+            ...state,
+            simplebar: false,
+            searchbar: true,
           }
 
         case '/profile':
@@ -111,7 +118,7 @@ const LoginPageRdx = (state, action) => {
 }
 
 
-const GridRdx = (state, action) => {
+const FeedRdx = (state, action) => {
   switch(action.type){
     case SEARCH:
       return {
@@ -205,7 +212,7 @@ const rootReducer = combineReducers({
   AppBarRdx,
   LoginPageRdx,
   NotificationRdx,
-  GridRdx,
+  FeedRdx,
   SideBarRdx,
   routerReducer,
 })

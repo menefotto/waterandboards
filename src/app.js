@@ -50,15 +50,15 @@ const Body = asyncComponent(() =>
 )
 
 const Feed = asyncComponent(() =>
-  System.import('./containers/Feed').then(module => module.default)
+  System.import('./containers/FeedContainer').then(module => module.default)
 )
 
-const SignUp = asyncComponent(() =>
-  System.import('./containers/SignUp').then(module => module.default)
+const Login = asyncComponent(() =>
+  System.import('./containers/LoginContainer').then(module => module.default)
 )
 
 const Profile = asyncComponent(() =>
-  System.import('./components/Profile').then(module => module.default)
+  System.import('./components/ProfilePage').then(module => module.default)
 )
 
 const NotFound = asyncComponent(() =>
@@ -74,7 +74,7 @@ const App = () => (
           <Switch>
             <Route path="/" exact component={Feed} />
             <Route path="/logged" component={Feed} />
-            <Route path="/signup" component={SignUp} />
+            <Route path="/signup" component={Login} />
             <Route path="/profile" component={Profile} />
             <Route component={NotFound} />
           </Switch>

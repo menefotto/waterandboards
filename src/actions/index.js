@@ -68,9 +68,9 @@ export const playVideo = ({ play, index }) => ({
 })
 
 // handle function from the search bar
-export const search = ({ searched }) => ({
+export const search = ({ term }) => ({
   type: SEARCH,
-  searched,
+  term,
 })
 
 // login state handles what to show on the right side of the app bar
