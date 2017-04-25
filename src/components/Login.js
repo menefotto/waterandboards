@@ -22,44 +22,45 @@ class Login extends React.Component{
           <div style={formStyles.paper}>
             <form>
               <TextField 
-                  name="email" 
-                  style={formStyles.textFirst} 
-                  hintText="Email..." 
-                  type="email"
+                name="email" 
+                style={formStyles.textFirst} 
+                hintText="Email..." 
+                type="email"
               />
               {
                   this.props.register ?
                   <div>
-                      <TextField 
-                          name="fname" 
-                          style={formStyles.input} 
-                          hintText="First name..." 
-                      />
-                      <TextField 
-                          name="lname" 
-                          style={formStyles.input} 
-                          hintText="Last name..." 
-                      /> 
-                      <TextField 
-                          name="password1" 
-                          style={formStyles.input} 
-                          hintText="Password..." 
-                          type="password"
-                      /> 
+                    <TextField 
+                      name="fname" 
+                      style={formStyles.input} 
+                      hintText="First name..." 
+                    />
+                    <TextField 
+                      name="lname" 
+                      style={formStyles.input} 
+                      hintText="Last name..." 
+                    /> 
+                    <TextField 
+                      name="password1" 
+                      style={formStyles.input} 
+                      hintText="Password..." 
+                      type="password"
+                    /> 
                   </div> : null
               }
               <TextField 
-                  name="password2" 
-                  style={formStyles.input} 
-                  hintText="Password..." 
-                  type="password"
+                name="password2" 
+                style={formStyles.input} 
+                hintText="Password..." 
+                type="password"
               /> 
               <RaisedButton 
-                  backgroundColor={"#C0C0C0"} 
-                  style={formStyles.button}
-                  label={
-                    this.props.register? "Register" : "Login"
-                  }
+                backgroundColor={"#C0C0C0"} 
+                style={formStyles.button}
+                labelColor={"#FFF"}
+                label={
+                  this.props.register? "Register" : "Login"
+                }
               >
               </RaisedButton>
               <Divider />
@@ -69,10 +70,12 @@ class Login extends React.Component{
                     name="google" 
                     size="lg" 
                     title="share it on google"
+                    inverse={true}
                   />
                 }
                 backgroundColor={"#DD4B39"} 
                 style={formStyles.buttonGoogle}
+                labelColor={"#FFF"}
                 label={
                   this.props.register? 
                     "Register with Google" : 
@@ -86,10 +89,12 @@ class Login extends React.Component{
                     name="facebook" 
                     size="lg" 
                     title="share it on facebook"
+                    inverse={true}
                   />
                 }
                 backgroundColor={"#3B5998"} 
                 style={formStyles.buttonFacebook}
+                labelColor={"#FFF"}
                 label={
                   this.props.register? 
                     "Register with Facebook" : 

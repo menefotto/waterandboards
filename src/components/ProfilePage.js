@@ -15,24 +15,8 @@ import RaisedButton from "material-ui/RaisedButton"
 
 
 class Profile extends React.Component{
-  static contextTypes = {
-      store: PropTypes.object
-  }
-
-  componentDidMount() {
-    const { store } = this.context
-    this.unsubscribe = store.subscribe( () => this.forceUpdate() )
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe() 
-  }
-
+ 
   render(){ 
-    const { store } = this.context
-    const { getState } = store
-    const { AppBarRdx, LoginPageRdx, NotificationRdx } = getState()
-
     return(
       <div style={formStyles.root}>
         <List style={formStyles.gridList}>
