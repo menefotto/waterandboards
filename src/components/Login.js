@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
+import Link from 'react-router-dom/Link'
 import Divider from 'material-ui/Divider'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import {
   GridList, 
 } from 'material-ui/GridList'
-import checkCookie from '../utils'
+import ButtonLink from './ButtonLink'
 import FontAwesome from 'react-fontawesome'
 import 'font-awesome/css/font-awesome.min.css'
 
@@ -22,10 +23,10 @@ class Login extends React.Component{
           <div style={formStyles.paper}>
             <form>
               <TextField 
-                name="email" 
-                style={formStyles.textFirst} 
-                hintText="Email..." 
-                type="email"
+                  name="email" 
+                  style={formStyles.textFirst} 
+                  hintText="Email..." 
+                  type="email"
               />
               {
                   this.props.register ?
@@ -58,11 +59,10 @@ class Login extends React.Component{
                 backgroundColor={"#C0C0C0"} 
                 style={formStyles.button}
                 labelColor={"#FFF"}
-                label={
-                  this.props.register? "Register" : "Login"
-                }
+                label={this.props.register? "Register" : "Login"}
               >
               </RaisedButton>
+              <ResetLink />
               <Divider />
               <RaisedButton 
                 children={
@@ -73,14 +73,10 @@ class Login extends React.Component{
                     inverse={true}
                   />
                 }
-                backgroundColor={"#DD4B39"} 
+                backgroundColor={"#4285F4"} 
                 style={formStyles.buttonGoogle}
                 labelColor={"#FFF"}
-                label={
-                  this.props.register? 
-                    "Register with Google" : 
-                    "Login with Google"
-                }
+                label={this.props.register? "Register with Google" : "Login with Google"}
               >
               </RaisedButton>
               <RaisedButton 
@@ -95,11 +91,7 @@ class Login extends React.Component{
                 backgroundColor={"#3B5998"} 
                 style={formStyles.buttonFacebook}
                 labelColor={"#FFF"}
-                label={
-                  this.props.register? 
-                    "Register with Facebook" : 
-                    "Login with Facebook"
-                }
+                label={this.props.register? "Register with Facebook" : "Login with Facebook"}
               >
               </RaisedButton>
             </form>
@@ -127,11 +119,11 @@ Login.defaultProps = {
 }
 
 
-const RegisterLink = ({ hRegister  }) => {
+const ResetLink = () => {
   return(
-    <div style={formStyles.inputClick}> 
-      Don't have an account? <a onClick={hRegister} href="#"> Register </a> 
-    </div> 
+    <div style={formStyles.reset}>
+      Don't remember your password? <Link text="Reset it" to="/" />
+    </div>
   )
 }
 
@@ -142,6 +134,15 @@ const LoginLink = ({ hLogin  }) => {
     </div>
   )
 }
+
+const RegisterLink = ({ hRegister  }) => {
+  return(
+    <div style={formStyles.inputClick}> 
+      Don't have an account? <a onClick={hRegister} href="#"> Register </a> 
+    </div> 
+  )
+}
+
 
 const formStyles = {
   root: {
@@ -167,14 +168,19 @@ const formStyles = {
     backgroundColor: "#FFF",
   },
   gridList: {
-    marginTop: 120,
     width: 480,
     height: "auto",
     overflowY: 'auto',
+    marginTop: 120,
   },
   textFirst: {
     marginTop: 20,
     marginLeft: 107,
+  },
+  reset:{
+    marginTop: 15,
+    textAlign: "center",
+    marginBottom: 15,
   },
   button: {
     width: "70%",
@@ -187,6 +193,7 @@ const formStyles = {
     marginTop: 15,
     marginBottom: 10,
     marginLeft: 70,
+    fontFamily: 'Roboto, sans-serif',
   },
   buttonFacebook: {
     width: "70%",
