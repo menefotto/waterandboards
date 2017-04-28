@@ -2,22 +2,26 @@
   "name": "waterandboards",
   "version": "0.0.2",
   "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
     "firebase": "^3.7.5",
-    "material-ui": "^0.17.3",
+    "material-ui": "^0.17.4",
     "preact": "^8.1.0",
-    "prop-types": "^15.5.8",
     "preact-compat": "^3.15.0",
     "preact-tap-event-plugin": "^0.1.2",
+    "prop-types": "^15.5.8",
     "react-infinite-scroller": "^1.0.8",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "sw-toolbox": "^3.6.0"
   },
   "scripts": {
     "preinstall": "npm i typings -D && typings i dt~react dt~react-dom -D",
     "build": "webpack -p --progress --optimize-minimize --config webpack.config.js",
-    "start": "webpack-dev-server --progress --hot"
+    "watch": "webpack-dev-server --progress --hot",
+    "start": "node server.js"
   },
   "description": "WanterAndBoards.com react front-end",
   "main": "app.js",
@@ -28,7 +32,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-preset-stage-1": "^6.22.0",
+    "compression": "^1.6.2",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",

@@ -9,7 +9,7 @@ config = {
   output: {
     path: __dirname + '/lib',
     filename: '[name]-bundle.js',
-    chunkFilename: '[name]-[hash].chunk.js'
+    chunkFilename: '[name].chunk.js'
   },
   resolve: {
     alias: {
@@ -32,26 +32,6 @@ config = {
           use: "css-loader"
         }),
       },
-      {
-        test: /\.(png|jpe?g|gif|ico)$/,
-        loader: 'file-loader?name=assets/[name].[hash].[ext]'
-      },
-      {
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-      },
     ]
   },
   plugins: [
@@ -64,14 +44,7 @@ config = {
       template: 'src/index.html'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      //name: "commons",
-      // (the commons chunk name)
-      // filename: "commons.js",
-      // // (the filename of the commons chunk)
       minChunks: 3,
-      // // (Modules must be shared between 3 entries)
-      // // chunks: ["pageA", "pageB"],
-      // // (Only use these entries)
       children: true,
       async: true,
     }),
@@ -81,7 +54,7 @@ config = {
     historyApiFallback: true,
     contentBase: './src/',
     compress: true,
-    port: 9000
+    port: 8080
   }
 }
 

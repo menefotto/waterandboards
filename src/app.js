@@ -31,6 +31,8 @@ import {
 }from './utils'
 import 'preact/devtools'
 
+import Body from './components/Body.js'
+
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()
@@ -47,9 +49,9 @@ const reduxStore = createStore(
 
 let com = "./components/", con = "./containers/"
 
-const Body = asyncComponent(() =>
-  System.import(com + 'Body').then(module => module.default)
-)
+//const Body = asyncComponent(() =>
+//  System.import(com + 'Body').then(module => module.default)
+//)
 
 const Feed = asyncComponent(() =>
   System.import(con + 'FeedContainer').then(module => module.default)
